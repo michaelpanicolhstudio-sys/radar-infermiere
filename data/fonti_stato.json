@@ -1,1 +1,67 @@
-{}
+{
+ "ASUIT – bandi e concorsi": {
+  "giorni_a_zero": 0,
+  "massimo_candidati": 5,
+  "ultimi_candidati": 5,
+  "ultimo_ok": "2026-11-13"
+ },
+ "Cooperazione trentina – lavora con noi": {
+  "giorni_a_zero": 1,
+  "massimo_candidati": 0,
+  "ultimo_ok": null
+ },
+ "Gruppo Bonvicini – lavora con noi": {
+  "giorni_a_zero": 0,
+  "massimo_candidati": 1,
+  "ultimi_candidati": 1,
+  "ultimo_ok": "2026-11-13"
+ },
+ "OPI Bolzano – offerte di lavoro": {
+  "giorni_a_zero": 0,
+  "massimo_candidati": 20,
+  "ultimi_candidati": 20,
+  "ultimo_ok": "2026-11-13"
+ },
+ "OPI Trento – annunci di lavoro": {
+  "giorni_a_zero": 0,
+  "massimo_candidati": 16,
+  "ultimi_candidati": 16,
+  "ultimo_ok": "2026-11-13"
+ },
+ "SABES – graduatoria infermieri Bolzano": {
+  "giorni_a_zero": 0,
+  "massimo_candidati": 0,
+  "ultimo_errore": "pagina quasi vuota: forse è cambiata o è caricata in modo dinamico",
+  "ultimo_ok": null
+ },
+ "SABES – graduatoria infermieri Brunico": {
+  "giorni_a_zero": 0,
+  "massimo_candidati": 0,
+  "ultimo_errore": "risposta HTTP 404",
+  "ultimo_ok": null
+ },
+ "SABES – graduatoria infermieri Merano": {
+  "giorni_a_zero": 0,
+  "massimo_candidati": 0,
+  "ultimo_errore": "pagina quasi vuota: forse è cambiata o è caricata in modo dinamico",
+  "ultimo_ok": null
+ },
+ "Schloss Moos – libera professione (suedtirolerjobs)": {
+  "giorni_a_zero": 0,
+  "massimo_candidati": 1,
+  "ultimi_candidati": 1,
+  "ultimo_ok": "2026-11-13"
+ },
+ "UPIPA – concorsi delle APSP": {
+  "giorni_a_zero": 0,
+  "massimo_candidati": 6,
+  "ultimi_candidati": 6,
+  "ultimo_ok": "2026-11-13"
+ },
+ "Villa Sant'Anna Merano – lavora con noi": {
+  "giorni_a_zero": 0,
+  "massimo_candidati": 0,
+  "ultimo_errore": "pagina quasi vuota: forse è cambiata o è caricata in modo dinamico",
+  "ultimo_ok": null
+ }
+}
