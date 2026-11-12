@@ -1,0 +1,1333 @@
+{
+ "122658c12669": {
+  "affidabilita": "ufficiale",
+  "avvisi": [
+   "Cita tedesco o bilinguismo"
+  ],
+  "cambi": [],
+  "cita_tedesco": true,
+  "compenso": null,
+  "contratto": "Concorso / graduatoria",
+  "data_novita": null,
+  "datore": "ASDAA / SABES",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "posto da dipendente",
+    "punti": 5,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 35 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "ore e turni non indicati",
+    "punti": 5,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "ente o albo ufficiale",
+    "punti": 10,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "SABES – graduatoria infermieri Bolzano",
+  "id": "122658c12669",
+  "impronta": "ef1e24373d78",
+  "km": 42,
+  "minuti": 35,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Per il tempo indeterminato serve il bilinguismo B2. Scadenze successive: 31/05 e 30/09.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": null,
+  "punteggio": 37,
+  "scadenza": "2027-01-31",
+  "segnali_turni": {},
+  "titolo": "Graduatoria permanente infermieri – Bolzano",
+  "turni": null,
+  "ultimo_visto": "2026-11-12",
+  "url": "https://sabes.onboard.org/it/jobs/byekMD4w",
+  "zona": "Bolzano"
+ },
+ "1a836b7c1e81": {
+  "affidabilita": "aggregatore",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": "P.IVA / libera professione",
+  "data_novita": null,
+  "datore": "Italiassistenza spa",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "libera professione / P.IVA",
+    "punti": 30,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 35 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "ore e turni non indicati",
+    "punti": 5,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "aggregatore o avviso di ricerca",
+    "punti": 3,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "Indeed (estratto di ricerca)",
+  "id": "1a836b7c1e81",
+  "impronta": "c7e3a1247c7b",
+  "km": 42,
+  "minuti": 35,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Link all'elenco, non all'annuncio: cerca il nome dell'azienda. Rimborso chilometrico. Visto anche a luglio e maggio: forse sempre aperto.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": "2026-09-12",
+  "punteggio": 55,
+  "scadenza": null,
+  "segnali_turni": {},
+  "titolo": "Infermiere/a con partita IVA – Bolzano e provincia",
+  "turni": null,
+  "ultimo_visto": "2026-11-12",
+  "url": "https://it.indeed.com/q-infermiere-l-trentino-alto-adige-offerte-lavoro.html?nis=5&ch=1",
+  "zona": "Bolzano"
+ },
+ "2520bf34250f": {
+  "affidabilita": "ufficiale",
+  "avvisi": [
+   "Cita tedesco o bilinguismo"
+  ],
+  "cambi": [],
+  "cita_tedesco": true,
+  "compenso": null,
+  "contratto": "P.IVA / libera professione",
+  "data_novita": null,
+  "datore": "Paziente privato (tramite OPI Bolzano)",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "libera professione / P.IVA",
+    "punti": 30,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 35 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "3 h al giorno, 5–6 giorni a settimana",
+    "punti": 4,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "ente o albo ufficiale",
+    "punti": 10,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "OPI Bolzano – offerte di lavoro",
+  "id": "2520bf34250f",
+  "impronta": "425181896b0e",
+  "km": 42,
+  "minuti": 35,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Serve esperienza dialitica. Annuncio di fine luglio: chiedere se è ancora aperto.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": "2026-07-28",
+  "punteggio": 61,
+  "scadenza": null,
+  "segnali_turni": {
+   "ore_settimana": 16
+  },
+  "titolo": "Infermiere/a per emodialisi domiciliare",
+  "turni": "3 h al giorno, 5–6 giorni a settimana",
+  "ultimo_visto": "2026-11-12",
+  "url": "https://www.opibz.it/cercasi-infermiere-a-per-emodialisi-domiciliare-bolzano/",
+  "zona": "Bolzano"
+ },
+ "289b1a76f5b5": {
+  "affidabilita": "ufficiale",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": null,
+  "data_novita": null,
+  "datore": "Cooperativa Sociale Villa Maria Onlus",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "contratto non indicato",
+    "punti": 8,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 35 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "tempo pieno, notti, weekend/festivi",
+    "punti": 14,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "ente o albo ufficiale",
+    "punti": 10,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "OPI Trento – annunci di lavoro",
+  "id": "289b1a76f5b5",
+  "impronta": "45f6516bad78",
+  "km": 36,
+  "minuti": 35,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Contratto non indicato.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": "2026-10-15",
+  "punteggio": 49,
+  "scadenza": null,
+  "segnali_turni": {
+   "notti": true,
+   "pieno": true,
+   "weekend": true
+  },
+  "titolo": "Infermiere per persone con disabilità",
+  "turni": "tempo pieno, notti, weekend/festivi",
+  "ultimo_visto": "2026-11-12",
+  "url": "https://opi.tn.it/cooperativa-sociale-villa-maria-onlus-ricerca-di-personale/",
+  "zona": "Calliano"
+ },
+ "36e85170a7c8": {
+  "affidabilita": "ufficiale",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": "P.IVA / libera professione",
+  "data_novita": null,
+  "datore": "APSP «Clementino Vannetti»",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "libera professione / P.IVA",
+    "punti": 30,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 40 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "ore e turni non indicati",
+    "punti": 5,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "ente o albo ufficiale",
+    "punti": 10,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "OPI Trento – annunci di lavoro",
+  "id": "36e85170a7c8",
+  "impronta": "28cad5e1e2d1",
+  "km": 45,
+  "minuti": 40,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Scadenza prorogata al 27/11/2026 ore 12:00. Domanda via PEC. Posti, ore e compenso sono nel PDF dell'avviso (non letto).",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": "2026-10-16",
+  "punteggio": 62,
+  "scadenza": "2026-11-27",
+  "segnali_turni": {},
+  "titolo": "Incarichi libero-professionali di infermiere (avviso di pubblica selezione)",
+  "turni": null,
+  "ultimo_visto": "2026-11-12",
+  "url": "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/",
+  "zona": "Rovereto"
+ },
+ "507e1f139787": {
+  "affidabilita": "aggregatore",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": "P.IVA / libera professione",
+  "data_novita": null,
+  "datore": "CHC Italy (Cerba HealthCare)",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "libera professione / P.IVA",
+    "punti": 30,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 25 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "ore e turni non indicati",
+    "punti": 5,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "aggregatore o avviso di ricerca",
+    "punti": 3,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "Indeed (estratto di ricerca)",
+  "id": "507e1f139787",
+  "impronta": "b3569c42576a",
+  "km": 20,
+  "minuti": 25,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Link all'elenco, non all'annuncio: cerca il nome dell'azienda.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": "2026-10-28",
+  "punteggio": 55,
+  "scadenza": null,
+  "segnali_turni": {},
+  "titolo": "Infermiere P.IVA (TN)",
+  "turni": null,
+  "ultimo_visto": "2026-11-12",
+  "url": "https://it.indeed.com/q-infermiere-professionale-l-rovereto,-trentino-alto-adige-offerte-lavoro.html",
+  "zona": "Trento"
+ },
+ "574415e5114d": {
+  "affidabilita": "struttura",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": null,
+  "data_novita": null,
+  "datore": "Gruppo Bonvicini",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "contratto non indicato",
+    "punti": 8,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 35 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "36 h/settimana (Centro Emodialisi)",
+    "punti": 7,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "sito della struttura",
+    "punti": 8,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "Gruppo Bonvicini – lavora con noi",
+  "id": "574415e5114d",
+  "impronta": "3937fb7aa78f",
+  "km": 42,
+  "minuti": 35,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Contratto non indicato.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": null,
+  "punteggio": 40,
+  "scadenza": null,
+  "segnali_turni": {
+   "ore_settimana": 36
+  },
+  "titolo": "Infermiere – Casa di Cura e Centro Emodialisi",
+  "turni": "36 h/settimana (Centro Emodialisi)",
+  "ultimo_visto": "2026-11-12",
+  "url": "https://www.gruppobonvicini.it/lavora-con-noi/",
+  "zona": "Bolzano"
+ },
+ "58b32002d315": {
+  "affidabilita": "struttura",
+  "avvisi": [
+   "Cita tedesco o bilinguismo"
+  ],
+  "cambi": [],
+  "cita_tedesco": true,
+  "compenso": null,
+  "contratto": "P.IVA o dipendente",
+  "data_novita": null,
+  "datore": "Casa di Cura Villa Sant'Anna",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "P.IVA possibile (anche assunzione)",
+    "punti": 24,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 55 min d'auto",
+    "punti": 5,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "turni da 12 h",
+    "punti": 10,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "sito della struttura",
+    "punti": 8,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "Villa Sant'Anna Merano – lavora con noi",
+  "id": "58b32002d315",
+  "impronta": "55c7115e8bd7",
+  "km": 70,
+  "minuti": 55,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Titolo preferenziale: italiano + tedesco. Sulla stessa pagina anche poliambulatorio e centro di degenza. Annunci senza data.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": null,
+  "punteggio": 52,
+  "scadenza": null,
+  "segnali_turni": {
+   "dodici": true
+  },
+  "titolo": "Infermiere/a: assunzione o libera professione",
+  "turni": "turni da 12 h",
+  "ultimo_visto": "2026-11-12",
+  "url": "https://villa-santanna.eu/lavora-con-noi/",
+  "zona": "Merano"
+ },
+ "66454cb15985": {
+  "affidabilita": "ufficiale",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": "Concorso / graduatoria",
+  "data_novita": null,
+  "datore": "APSP «Giovanni Endrizzi»",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "posto da dipendente",
+    "punti": 5,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 15 min d'auto",
+    "punti": 20,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "ore e turni non indicati",
+    "punti": 5,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "ente o albo ufficiale",
+    "punti": 10,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "UPIPA – concorsi delle APSP",
+  "id": "66454cb15985",
+  "impronta": "7e50b2cf390c",
+  "km": 12,
+  "minuti": 15,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Scadenza ore 12:00.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": null,
+  "punteggio": 45,
+  "scadenza": "2026-11-19",
+  "segnali_turni": {},
+  "titolo": "Concorso per infermieri",
+  "turni": null,
+  "ultimo_visto": "2026-11-12",
+  "url": "https://www.upipa.tn.it/Bacheca/Concorsi/APSP-di-Lavis-Infermieri",
+  "zona": "Lavis"
+ },
+ "670aca98057e": {
+  "affidabilita": "aggregatore",
+  "avvisi": [
+   "Cita tedesco o bilinguismo"
+  ],
+  "cambi": [],
+  "cita_tedesco": true,
+  "compenso": null,
+  "contratto": "P.IVA / libera professione",
+  "data_novita": null,
+  "datore": "Seniorenwohnheim Schloss Moos",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "libera professione / P.IVA",
+    "punti": 30,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 80 min d'auto",
+    "punti": 5,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "notti, weekend/festivi",
+    "punti": 12,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "aggregatore o avviso di ricerca",
+    "punti": 3,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "Schloss Moos – libera professione (suedtirolerjobs)",
+  "id": "670aca98057e",
+  "impronta": "ed8d55d22829",
+  "km": 110,
+  "minuti": 80,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Annuncio in tedesco, sede a Wiesen-Pfitsch. Anche per coprire malattie lunghe.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": "2026-10-18",
+  "punteggio": 55,
+  "scadenza": null,
+  "segnali_turni": {
+   "notti": true,
+   "weekend": true
+  },
+  "titolo": "Freiberufliche Tätigkeit in der Pflege (Krankenpfleger/in)",
+  "turni": "notti, weekend/festivi",
+  "ultimo_visto": "2026-11-12",
+  "url": "https://www.suedtirolerjobs.it/jobs/freiberufliche-taetigkeit-in-der-pflege,115073",
+  "zona": "Vipiteno"
+ },
+ "68fe6d52ecbc": {
+  "affidabilita": "ufficiale",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": "es. Cles: 36.960,54 € lordi l'anno",
+  "contratto": "Dipendente a tempo determinato",
+  "data_novita": null,
+  "datore": "ASUIT (Trentino)",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "posto da dipendente",
+    "punti": 5,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato (es. Cles: 36.960,54 € lordi l'anno)",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 0 min d'auto",
+    "punti": 20,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "ore e turni non indicati",
+    "punti": 5,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "ente o albo ufficiale",
+    "punti": 10,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "ASUIT – bandi e concorsi",
+  "id": "68fe6d52ecbc",
+  "impronta": "4ea91d595009",
+  "km": 0,
+  "minuti": 0,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Più sedi (Mezzolombardo, Cles, Trento, Rovereto, Pergine, Borgo, Arco, Tione, Primiero, Cavalese). Sessioni 15/11 e 11/12/2026, candidatura tramite inPA.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": null,
+  "punteggio": 45,
+  "scadenza": "2026-11-15",
+  "segnali_turni": {},
+  "titolo": "Selezioni per infermieri a tempo determinato (SC 04/26–13/26)",
+  "turni": null,
+  "ultimo_visto": "2026-11-12",
+  "url": "https://www.asuit.tn.it/bandi-concorsi",
+  "zona": "Mezzolombardo"
+ },
+ "74acb1da2a46": {
+  "affidabilita": "ufficiale",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": "da circa 2.500 € netti al mese",
+  "contratto": "Dipendente a tempo determinato",
+  "data_novita": null,
+  "datore": "RSA Ciasa de Palsa Ojöp Frëinademetz",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "posto da dipendente",
+    "punti": 5,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato (da circa 2.500 € netti al mese)",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 105 min d'auto: lontano",
+    "punti": 0,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "36 h/settimana o part-time, alloggio",
+    "punti": 7,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "ente o albo ufficiale",
+    "punti": 10,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "OPI Bolzano – offerte di lavoro",
+  "id": "74acb1da2a46",
+  "impronta": "84e5fc6647b9",
+  "km": 125,
+  "minuti": 105,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Alloggio nella struttura per 6 mesi.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": "2026-10-27",
+  "punteggio": 27,
+  "scadenza": null,
+  "segnali_turni": {
+   "ore_settimana": 36,
+   "pieno": true
+  },
+  "titolo": "Infermiere/a (m/f/d) per la RSA",
+  "turni": "36 h/settimana o part-time, alloggio",
+  "ultimo_visto": "2026-11-12",
+  "url": "https://www.opibz.it/cerchiamo-infermierei-m-f-d-per-la-nostra-rsa-ciasa-de-palsa-ojop-freinademetz/",
+  "zona": "Val Badia"
+ },
+ "78cece7b434e": {
+  "affidabilita": "aggregatore",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": "P.IVA / libera professione",
+  "data_novita": null,
+  "datore": "ParaMedica srl",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "libera professione / P.IVA",
+    "punti": 30,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 40 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "tempo pieno, notti, alloggio",
+    "punti": 11,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "aggregatore o avviso di ricerca",
+    "punti": 3,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "Indeed (estratto di ricerca)",
+  "id": "78cece7b434e",
+  "impronta": "0110a9e625f1",
+  "km": 45,
+  "minuti": 40,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Link all'elenco, non all'annuncio: cerca il nome dell'azienda. Compenso non indicato nell'annuncio (stima precedente 25–28 €/h, non confermata).",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": "2026-10-29",
+  "punteggio": 61,
+  "scadenza": null,
+  "segnali_turni": {
+   "notti": true,
+   "pieno": true
+  },
+  "titolo": "Infermieri RSA zona Rovereto",
+  "turni": "tempo pieno, notti, alloggio",
+  "ultimo_visto": "2026-11-12",
+  "url": "https://it.indeed.com/q-infermiere-con-alloggio-l-trento,-trentino-alto-adige-offerte-lavoro.html",
+  "zona": "Rovereto"
+ },
+ "81698a595c4b": {
+  "affidabilita": "aggregatore",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": "Collaborazione",
+  "data_novita": null,
+  "datore": "IQVIA Solutions Italy",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "collaborazione",
+    "punti": 20,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 25 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "ore e turni non indicati",
+    "punti": 5,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "aggregatore o avviso di ricerca",
+    "punti": 3,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "Indeed (estratto di ricerca)",
+  "id": "81698a595c4b",
+  "impronta": "ec20a7bdb8cd",
+  "km": 20,
+  "minuti": 25,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Link all'elenco, non all'annuncio: cerca il nome dell'azienda. Bolzano e Trento. Annuncio di luglio: verificare.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": "2026-07-19",
+  "punteggio": 45,
+  "scadenza": null,
+  "segnali_turni": {},
+  "titolo": "Infermiere per attività domiciliari",
+  "turni": null,
+  "ultimo_visto": "2026-11-12",
+  "url": "https://it.indeed.com/q-infermieri,-oss-,-osa-l-provincia-di-bolzano,-trentino-alto-adige-offerte-lavoro.html",
+  "zona": "Trento"
+ },
+ "896ed83875f4": {
+  "affidabilita": "ufficiale",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": "Dipendente a tempo indeterminato",
+  "data_novita": null,
+  "datore": "Casa di Cura Eremo",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "posto da dipendente",
+    "punti": 5,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 55 min d'auto",
+    "punti": 5,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "ore e turni non indicati",
+    "punti": 5,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "ente o albo ufficiale",
+    "punti": 10,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "OPI Trento – annunci di lavoro",
+  "id": "896ed83875f4",
+  "impronta": "4db9a5aafdc6",
+  "km": 55,
+  "minuti": 55,
+  "nota_manuale": "Inserito a mano il 12/11/2026.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": "2026-10-19",
+  "punteggio": 30,
+  "scadenza": null,
+  "segnali_turni": {},
+  "titolo": "Personale infermieristico a tempo indeterminato (CCNL AIOP)",
+  "turni": null,
+  "ultimo_visto": "2026-11-12",
+  "url": "https://opi.tn.it/casa-cura-eremo-arco-tn/",
+  "zona": "Arco"
+ },
+ "a6f9490fa59e": {
+  "affidabilita": "ufficiale",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": "Concorso / graduatoria",
+  "data_novita": null,
+  "datore": "APSP «Clementino Vannetti»",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "posto da dipendente",
+    "punti": 5,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 40 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "ore e turni non indicati",
+    "punti": 5,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "ente o albo ufficiale",
+    "punti": 10,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "OPI Trento – annunci di lavoro",
+  "id": "a6f9490fa59e",
+  "impronta": "ff70c054b786",
+  "km": 45,
+  "minuti": 40,
+  "nota_manuale": "Inserito a mano il 12/11/2026.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": "2026-10-15",
+  "punteggio": 37,
+  "scadenza": "2026-11-13",
+  "segnali_turni": {},
+  "titolo": "Concorso per infermieri – 10 posti a tempo indeterminato",
+  "turni": null,
+  "ultimo_visto": "2026-11-12",
+  "url": "https://opi.tn.it/a-p-s-p-c-vannetti-bando/",
+  "zona": "Rovereto"
+ },
+ "c833b99cef99": {
+  "affidabilita": "ufficiale",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": "P.IVA o dipendente",
+  "data_novita": null,
+  "datore": "Hotel Palace Merano",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "P.IVA possibile (anche assunzione)",
+    "punti": 24,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 55 min d'auto",
+    "punti": 5,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "ore e turni non indicati",
+    "punti": 5,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "ente o albo ufficiale",
+    "punti": 10,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "OPI Bolzano – offerte di lavoro",
+  "id": "c833b99cef99",
+  "impronta": "e35986935a8a",
+  "km": 70,
+  "minuti": 55,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Annuncio di marzo 2026: verificare se è ancora aperto.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": "2026-03-05",
+  "punteggio": 49,
+  "scadenza": null,
+  "segnali_turni": {},
+  "titolo": "Infermiere professionale – si valuta anche la libera professione",
+  "turni": null,
+  "ultimo_visto": "2026-11-12",
+  "url": "https://www.opibz.it/hotel-palace-merano-cerca-infermiere/",
+  "zona": "Merano"
+ },
+ "c8c0d102e54e": {
+  "affidabilita": "aggregatore",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": "P.IVA / libera professione",
+  "data_novita": null,
+  "datore": "Privatassistenza",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "libera professione / P.IVA",
+    "punti": 30,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 25 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "ore e turni non indicati",
+    "punti": 5,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "aggregatore o avviso di ricerca",
+    "punti": 3,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "Bakeca (estratto di ricerca)",
+  "id": "c8c0d102e54e",
+  "impronta": "c5dc36c735ef",
+  "km": 20,
+  "minuti": 25,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Link all'elenco, non all'annuncio: cerca il nome dell'azienda.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": "2026-11-02",
+  "punteggio": 55,
+  "scadenza": null,
+  "segnali_turni": {},
+  "titolo": "Infermiere/a con partita IVA a Trento – assistenza domiciliare",
+  "turni": null,
+  "ultimo_visto": "2026-11-12",
+  "url": "https://www.bakeca.it/annunci/medicina-salute-assistenza/luogo/trentino-alto-adige/",
+  "zona": "Trento"
+ },
+ "cc61f5255538": {
+  "affidabilita": "aggregatore",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": "P.IVA / libera professione",
+  "data_novita": null,
+  "datore": "Italiassistenza spa",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "libera professione / P.IVA",
+    "punti": 30,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 25 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "ore e turni non indicati",
+    "punti": 5,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "aggregatore o avviso di ricerca",
+    "punti": 3,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "Indeed (estratto di ricerca)",
+  "id": "cc61f5255538",
+  "impronta": "c50044a85de7",
+  "km": 20,
+  "minuti": 25,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Link all'elenco, non all'annuncio: cerca il nome dell'azienda. Richieste: automunito, albo, ECM.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": "2026-10-29",
+  "punteggio": 55,
+  "scadenza": null,
+  "segnali_turni": {},
+  "titolo": "Infermiere/a con partita IVA a Trento",
+  "turni": null,
+  "ultimo_visto": "2026-11-12",
+  "url": "https://it.indeed.com/q-infermieri-l-trento,-trentino-alto-adige-offerte-lavoro.html",
+  "zona": "Trento"
+ },
+ "dffa7088f831": {
+  "affidabilita": "aggregatore",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": "P.IVA o dipendente",
+  "data_novita": null,
+  "datore": "Gruppo KOS / Ninacare (centro di riabilitazione)",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "P.IVA possibile (anche assunzione)",
+    "punti": 24,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 55 min d'auto",
+    "punti": 5,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "tempo pieno",
+    "punti": 7,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "aggregatore o avviso di ricerca",
+    "punti": 3,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "Bakeca (estratto di ricerca)",
+  "id": "dffa7088f831",
+  "impronta": "07025703cf79",
+  "km": 55,
+  "minuti": 55,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Link all'elenco, non all'annuncio: cerca il nome dell'azienda. Data dell'annuncio non indicata.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": null,
+  "punteggio": 44,
+  "scadenza": null,
+  "segnali_turni": {
+   "pieno": true
+  },
+  "titolo": "Infermiere/a – indeterminato o P.IVA",
+  "turni": "tempo pieno",
+  "ultimo_visto": "2026-11-12",
+  "url": "https://www.bakeca.it/annunci/medicina-salute-assistenza/luogo/trentino-alto-adige/",
+  "zona": "Arco"
+ },
+ "ed9ea67da326": {
+  "affidabilita": "ufficiale",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": "Concorso / graduatoria",
+  "data_novita": null,
+  "datore": "APSP «San Giuseppe» di Primiero",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "posto da dipendente",
+    "punti": 5,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 120 min d'auto: lontano",
+    "punti": 0,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "ore e turni non indicati",
+    "punti": 5,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "ente o albo ufficiale",
+    "punti": 10,
+    "voce": "Fonte"
+   }
+  ],
+  "estratto": "",
+  "euro_ora": null,
+  "fonte": "OPI Trento – annunci di lavoro",
+  "id": "ed9ea67da326",
+  "impronta": "dedaac9e5099",
+  "km": 105,
+  "minuti": 120,
+  "nota_manuale": "Inserito a mano il 12/11/2026. Scadenza ore 12:00. Tipo di rapporto da controllare nel bando.",
+  "novita": null,
+  "origine": "manuale",
+  "primo_visto": "2026-11-12",
+  "pubblicato": "2026-07-03",
+  "punteggio": 25,
+  "scadenza": "2026-12-04",
+  "segnali_turni": {},
+  "titolo": "Infermiere – ricerca di personale",
+  "turni": null,
+  "ultimo_visto": "2026-11-12",
+  "url": "https://opi.tn.it/apsp-san-giuseppe-di-primiero-tn-ricerca-di-personale/",
+  "zona": "Primiero San Martino di Castrozza"
+ }
+}

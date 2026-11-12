@@ -1,0 +1,162 @@
+# ============================================================
+#  RADAR INFERMIERE P.IVA – configurazione
+#  Puoi modificare questo file direttamente su GitHub (icona
+#  della matita). Attenzione agli spazi a inizio riga: contano.
+# ============================================================
+
+profilo:
+  casa: Mezzolombardo
+  # no = non lo parlo | base = lo sto studiando | b2 = ho l'attestato
+  tedesco: base
+  # true = mostra anche concorsi e posti da dipendente (etichettati, punteggio basso)
+  includi_dipendenti: true
+  # Minuti d'auto massimi da casa. Scrivi un numero (es. 90) oppure null per nessun limite.
+  minuti_massimi: null
+
+# ---- Pesi del punteggio (la somma dovrebbe fare 100) ----
+pesi:
+  contratto: 30
+  compenso: 25
+  distanza: 20
+  turni: 15
+  fonte: 10
+
+# Punti tolti se l'annuncio cita tedesco/bilinguismo e tu hai "tedesco: no".
+penalita_bilinguismo: 10
+
+# ---- Feed RSS di Google Alerts ----
+# Incolla qui i link dei tuoi feed, uno per riga, così:
+#   - "https://www.google.com/alerts/feeds/1234567890/1234567890"
+feed_google_alerts: []
+
+# ---- Fonti ----
+# tipo:
+#   elenco = pagina con una lista di annunci (il Radar apre ogni annuncio)
+#   pagina = singola pagina "lavora con noi" tenuta d'occhio
+#   rss    = feed RSS/Atom
+# affidabilita: ufficiale | struttura | aggregatore
+# attiva: false per spegnere una fonte senza cancellarla
+fonti:
+  - nome: OPI Trento – annunci di lavoro
+    tipo: elenco
+    url: https://opi.tn.it/segreteria/annunci-di-lavoro/
+    affidabilita: ufficiale
+    tutti_i_link: true      # nella pagina ci sono solo annunci: li apre tutti
+    attiva: true
+
+  - nome: OPI Bolzano – offerte di lavoro
+    tipo: elenco
+    url: https://www.opibz.it/?page_id=5109
+    affidabilita: ufficiale
+    tutti_i_link: true
+    attiva: true
+
+  - nome: UPIPA – concorsi delle APSP
+    tipo: elenco
+    url: https://www.upipa.tn.it/Bacheca/Concorsi
+    affidabilita: ufficiale
+    attiva: true
+
+  - nome: ASUIT – bandi e concorsi
+    tipo: elenco
+    url: https://www.asuit.tn.it/bandi-concorsi
+    altre_pagine:
+      - https://www.asuit.tn.it/bandi-concorsi?page=1
+      - https://www.asuit.tn.it/bandi-concorsi?page=2
+    affidabilita: ufficiale
+    datore: ASUIT (Trentino)
+    attiva: true
+
+  - nome: SABES – graduatoria infermieri Bolzano
+    tipo: pagina
+    url: https://sabes.onboard.org/it/jobs/byekMD4w
+    affidabilita: ufficiale
+    datore: ASDAA / SABES
+    zona: Bolzano
+    attiva: true
+
+  - nome: SABES – graduatoria infermieri Merano
+    tipo: pagina
+    url: https://sabes.onboard.org/it/jobs/dGXzrPmg
+    affidabilita: ufficiale
+    datore: ASDAA / SABES
+    zona: Merano
+    attiva: true
+
+  - nome: SABES – graduatoria infermieri Brunico
+    tipo: pagina
+    url: https://sabes.onboard.org/it/jobs/QgeyM2eJ
+    affidabilita: ufficiale
+    datore: ASDAA / SABES
+    zona: Brunico
+    attiva: true
+
+  - nome: Villa Sant'Anna Merano – lavora con noi
+    tipo: pagina
+    url: https://villa-santanna.eu/lavora-con-noi/
+    affidabilita: struttura
+    datore: Casa di Cura Villa Sant'Anna
+    zona: Merano
+    attiva: true
+
+  - nome: Gruppo Bonvicini – lavora con noi
+    tipo: pagina
+    url: https://www.gruppobonvicini.it/lavora-con-noi/
+    affidabilita: struttura
+    datore: Gruppo Bonvicini
+    zona: Bolzano
+    attiva: true
+
+  - nome: Schloss Moos – libera professione (suedtirolerjobs)
+    tipo: pagina
+    url: https://www.suedtirolerjobs.it/jobs/freiberufliche-taetigkeit-in-der-pflege,115073
+    affidabilita: aggregatore
+    datore: Seniorenwohnheim Schloss Moos
+    zona: Vipiteno
+    attiva: true
+
+  - nome: Cooperazione trentina – lavora con noi
+    tipo: elenco
+    url: https://www.cooperazionetrentina.it/lavoraconnoi
+    affidabilita: struttura
+    attiva: true
+
+  # --- Da completare: non conosco l'indirizzo esatto della pagina "lavora con noi".
+  # --- Quando lo trovi, incollalo in "url" e metti "attiva: true".
+  - nome: Casa di Cura Eremo (Arco) – lavora con noi
+    tipo: pagina
+    url: ""
+    affidabilita: struttura
+    datore: Casa di Cura Eremo
+    zona: Arco
+    attiva: false
+
+  - nome: Gruppo KOS (Arco) – lavora con noi
+    tipo: pagina
+    url: ""
+    affidabilita: struttura
+    datore: Gruppo KOS
+    zona: Arco
+    attiva: false
+
+# ---- Parole chiave (minuscole, senza accenti particolari) ----
+parole:
+  # Almeno una deve comparire perché un annuncio sia considerato "per infermieri"
+  infermiere: [infermier, krankenpfleg, pflegefach, pflegekraft, berufskrankenpfleg]
+  # Link da aprire nelle pagine "elenco" (quando tutti_i_link non è attivo)
+  link: [infermier, krankenpfleg, pflege, libero profession, libero-profession,
+         libera profession, incarichi lp, freiberuf, partita iva, p.iva,
+         selezione, concorso, avviso, personale, sanitari]
+  # Titoli da scartare se non nominano l'infermiere
+  escludi_titolo: [coordinat, dirigente medico, assistente sanitario, operatore socio,
+                   fisioterap, medicina turistica, cuoco, amministrativ]
+
+# ---- Comportamento in rete (educato) ----
+rete:
+  user_agent: "RadarInfermierePIVA/1.0 (ricerca personale di offerte di lavoro, una visita al giorno)"
+  pausa_secondi: 3          # pausa tra due richieste allo stesso sito
+  timeout_secondi: 25
+  max_annunci_per_fonte: 25
+
+# ---- Pulizia ----
+giorni_prima_di_togliere: 30   # un annuncio sparito dalla fonte resta visibile per questi giorni

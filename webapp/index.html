@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Radar Infermiere</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141917" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Radar">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="testata">
+  <div>
+    <h1>Radar <span>infermiere P.IVA</span></h1>
+    <p id="aggiornato" class="sotto">Carico i dati…</p>
+  </div>
+</header>
+
+<main id="vista" tabindex="-1"></main>
+
+<nav class="schede" aria-label="Sezioni">
+  <button data-vista="offerte" class="attiva"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Offerte</button>
+  <button data-vista="scadenze"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg>Scadenze</button>
+  <button data-vista="report"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7"/></svg>Report</button>
+  <button data-vista="mappa"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg>Mappa</button>
+</nav>
+
+<div id="scheda" class="scheda" hidden role="dialog" aria-modal="true" aria-label="Scheda offerta"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
