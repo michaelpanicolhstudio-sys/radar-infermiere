@@ -89,7 +89,7 @@ fonti:
     affidabilita: ufficiale
     datore: ASDAA / SABES
     zona: Brunico
-    attiva: true
+    attiva: false   # 13/11/2026: la pagina risponde 404 (annuncio rimosso)
 
   - nome: Villa Sant'Anna Merano – lavora con noi
     tipo: pagina
@@ -119,7 +119,7 @@ fonti:
     tipo: elenco
     url: https://www.cooperazionetrentina.it/lavoraconnoi
     affidabilita: struttura
-    attiva: true
+    attiva: false   # 13/11/2026: elenco caricato in modo dinamico, nessun link leggibile
 
   # --- Da completare: non conosco l'indirizzo esatto della pagina "lavora con noi".
   # --- Quando lo trovi, incollalo in "url" e metti "attiva: true".
@@ -149,7 +149,8 @@ parole:
          selezione, concorso, avviso, personale, sanitari]
   # Titoli da scartare se non nominano l'infermiere
   escludi_titolo: [coordinat, dirigente medico, assistente sanitario, operatore socio,
-                   fisioterap, medicina turistica, cuoco, amministrativ]
+                   fisioterap, medicina turistica, cuoco, amministrativ, responsabile,
+                   dirigenza, funzionario, in comando]
 
 # ---- Comportamento in rete (educato) ----
 rete:
@@ -160,3 +161,4 @@ rete:
 
 # ---- Pulizia ----
 giorni_prima_di_togliere: 30   # un annuncio sparito dalla fonte resta visibile per questi giorni
+giorni_annuncio_datato: 120    # pubblicato da più giorni e senza scadenza valida = "datato" (fuori dalle attive)

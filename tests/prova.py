@@ -72,6 +72,20 @@ ELENCO = """<html><body><nav><a href="/chi-siamo/">Chi siamo e contatti dell'ent
 l = estrai.link_da_elenco(ELENCO, "https://ente.it/annunci/", CFG["parole"]["link"], tutti=True)
 verifica("link dell'elenco (menu e privacy esclusi)", [x["url"] for x in l], ["https://ente.it/apsp-vannetti-lp/", "https://ente.it/casa-cura-eremo/", "https://ente.it/bando.pdf"])
 
+l = estrai.link_da_elenco('<main><a href="/segreteria/">Torna alla pagina precedente Segreteria</a>'
+    '<a href="/coop-doc/">Cooperativa D.O.C. Ricerca personale infermieristico 12 gennaio 2026 – Cooperativa D.O.C. ricerca</a></main>',
+    "https://ente.it/segreteria/annunci-di-lavoro/", CFG["parole"]["link"], tutti=True)
+verifica("titolo senza data e riassunto, niente 'torna indietro'", [x["titolo"] for x in l], ["Cooperativa D.O.C. Ricerca personale infermieristico"])
+verifica("datore: taglia 'cerca…'", estrai.estrai_datore("Fondazione Pitsch cerca infermieri/e"), "Fondazione Pitsch")
+verifica("datore: titolo generico = nessuno", estrai.estrai_datore("Avviso – Collegio tecnico – Dirigenza"), None)
+vecchio = {"pubblicato": "2026-03-05", "scadenza": None}
+verifica("annuncio datato", (motore.e_datato(vecchio, OGGI, CFG), motore.e_datato({"pubblicato": "2026-03-05", "scadenza": "2026-12-01"}, OGGI, CFG)), (True, False))
+mem = {"a": {"id": "a", "zona": "Rovereto", "scadenza": "2026-11-20", "contratto": "Concorso / graduatoria", "punteggio": 30, "primo_visto": "2026-11-12", "origine": "manuale"},
+       "b": {"id": "b", "zona": "Rovereto", "scadenza": "2026-11-20", "contratto": "Concorso / graduatoria", "punteggio": 39, "primo_visto": "2026-11-13"},
+       "c": {"id": "c", "zona": "Rovereto", "scadenza": "2026-11-20", "contratto": "P.IVA / libera professione", "punteggio": 60, "primo_visto": "2026-11-13"}}
+motore.segna_doppioni(mem, OGGI)
+verifica("doppioni: stesso bando su due siti", [mem[k].get("doppione_di") for k in "abc"], [None, "a", None])
+
 print("Giro completo su due giorni (rete finta)")
 class ReteFinta:
     def __init__(self, pagine): self.pagine = pagine

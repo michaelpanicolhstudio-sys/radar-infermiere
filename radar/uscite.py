@@ -135,7 +135,8 @@ def costruisci_sito(cfg: dict, oggi: date, destinazione: Path | None = None) -> 
         if not motore.visibile(a, cfg):
             continue
         o = {k: a.get(k) for k in CAMPI_APP}
-        o["scaduto"] = motore.e_scaduto(a, oggi)
+        o["datato"] = motore.e_datato(a, oggi, cfg)
+        o["scaduto"] = motore.e_scaduto(a, oggi) or o["datato"]
         o["dipendente"] = motore.e_dipendente(a)
         offerte.append(o)
     offerte.sort(key=lambda o: -o["punteggio"])

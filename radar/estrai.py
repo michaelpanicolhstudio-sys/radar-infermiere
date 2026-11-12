@@ -121,6 +121,11 @@ def leggi_pagina(html: str) -> dict:
     for tag in nodo.find_all(["script", "style", "noscript", "nav", "form", "aside", "footer", "svg"]):
         tag.decompose()
     testo = pulisci(nodo.get_text(" "))
+    if len(testo) < 200 and soup.body is not None and nodo is not soup.body:
+        # Il blocco "principale" è quasi vuoto: meglio leggere tutta la pagina.
+        for tag in soup.body.find_all(["script", "style", "noscript", "nav", "form", "footer", "svg"]):
+            tag.decompose()
+        testo = pulisci(soup.body.get_text(" "))
     return {"titolo": titolo[:200], "testo": testo, "pubblicato": pubblicato}
 
 
@@ -148,7 +153,15 @@ def link_da_elenco(html: str, base: str, parole: list[str], tutti: bool) -> list
         norm = normalizza_url(url)
         if norm == base_norm or norm in visti:
             continue
+        if base_norm.startswith(norm.rstrip("/") + "/") or "/tags/" in p.path.lower():
+            continue  # "torna indietro", pagine superiori, pagine di etichette
         titolo = pulisci(a.get_text(" ") or a.get("title") or "")
+        if re.match(r"(torna|indietro|zur[üu]ck|leggi tutto|continua|weiterlesen)\b", titolo, re.I):
+            continue
+        # Alcune bacheche mettono nel link "Titolo  12 gennaio 2026 – riassunto": tiene solo il titolo.
+        m_data = re.search(r"\s\d{1,2}\s+(?:" + "|".join(MESI) + r")\s+\d{4}", titolo, re.I)
+        if m_data and m_data.start() >= 12:
+            titolo = titolo[:m_data.start()].rstrip(" –—-|")
         if tutti:
             if len(titolo) < 15 or p.path.count("/") < 1 or p.path in ("", "/"):
                 continue
@@ -371,15 +384,27 @@ def estrai_turni(testo: str) -> tuple[str | None, dict]:
     return (", ".join(etichette) or None), segnali
 
 
+_RE_ENTE = (r"(?:A\.?\s?P\.?\s?S\.?\s?P\.?|RSA|Casa di (?:Cura|riposo)|(?:Società )?Cooperativa|Fondazione|Residenza|"
+            r"Seniorenwohnheim|Stiftung|Sozialgenossenschaft|Clinica|Poliambulatorio|Comunità|Hotel|Azienda|INPS|INAIL)")
+_RE_TAGLIO = re.compile(r"\s+(?:cerca|cercasi|ricerca|ricerchiamo|sucht|assume|seleziona|selezione|bando|concorso|avviso)\b.*$", re.I)
+
+
 def estrai_datore(titolo: str) -> str | None:
-    """Nei titoli tipo 'APSP Vannetti – Rovereto – Selezione…' il datore è il primo pezzo."""
+    """Nei titoli tipo 'APSP Vannetti – Rovereto – Selezione…' il datore è il primo pezzo.
+    Se non si capisce con sicurezza, meglio None (nell'app compare il titolo)."""
     pezzi = [p.strip() for p in re.split(r"\s+[–—|-]\s+", titolo) if p.strip()]
-    if len(pezzi) >= 2 and 3 <= len(pezzi[0]) <= 80:
-        return pezzi[0]
-    m = re.search(
-        r"((?:A\.?P\.?S\.?P\.?|RSA|Casa di (?:Cura|riposo)|Cooperativa|Fondazione|Residenza|"
-        r"Seniorenwohnheim|Stiftung|Sozialgenossenschaft|Clinica|Poliambulatorio)\s+[^,.;:()]{3,50})", titolo)
-    return pulisci(m.group(1)) if m else None
+    candidato = None
+    if len(pezzi) >= 2 and re.match(_RE_ENTE, pezzi[0], re.I):
+        candidato = pezzi[0]
+    else:
+        m = re.search("(" + _RE_ENTE + r"\s+[^,;:()–—|]{3,60})", titolo)
+        candidato = m.group(1) if m else None
+    if not candidato:
+        return None
+    candidato = pulisci(_RE_TAGLIO.sub("", candidato)).strip(" -–")
+    if len(candidato) < 4 or candidato.lower() == titolo.lower().strip():
+        return None
+    return candidato[:80]
 
 
 def frammento(testo: str, parole: list[str], lunghezza: int = 220) -> str:

@@ -64,7 +64,7 @@
     if (eNuovo(o)) righe.appendChild(el("span", { class: "pill nuovo", text: o.novita === "nuovo" ? "Nuovo" : "Aggiornato" }));
     righe.appendChild(el("span", { class: "pill" + (ePiva(o) ? " piva" : ""), text: o.contratto || "Contratto n.d." }));
     if (g !== null && g >= 0 && g <= 7) righe.appendChild(el("span", { class: "pill scade", text: quando(o) }));
-    if (o.scaduto) righe.appendChild(el("span", { class: "pill", text: "Scaduta" }));
+    if (o.scaduto) righe.appendChild(el("span", { class: "pill", text: o.datato ? "Datata" : "Scaduta" }));
     if (m.stato) righe.appendChild(el("span", { class: "pill mio", text: ETICHETTE[m.stato] }));
     var meta = [o.zona ? o.zona + " · " + o.minuti + " min" : "Zona n.d.", o.compenso || "Compenso n.d."];
     if (g !== null && g > 7) meta.push("scade il " + giorno(o.scadenza));
@@ -112,7 +112,7 @@
     var fonti = {};
     DATI.offerte.forEach(function (o) { fonti[o.fonte] = 1; });
     var barra = el("div", { class: "filtri" },
-      scelta("stato", [["attive", "Attive"], ["nuove", "Novità"], ["valutare", "Da valutare"], ["interessante", "Interessanti"], ["contattato", "Contattate"], ["scartato", "Scartate"], ["scadute", "Scadute"], ["tutte", "Tutte"]]),
+      scelta("stato", [["attive", "Attive"], ["nuove", "Novità"], ["valutare", "Da valutare"], ["interessante", "Interessanti"], ["contattato", "Contattate"], ["scartato", "Scartate"], ["scadute", "Scadute o datate"], ["tutte", "Tutte"]]),
       scelta("contratto", [["", "Ogni contratto"], ["piva", "P.IVA e collaborazioni"], ["dip", "Dipendente"], ["nd", "Non indicato"]]),
       scelta("distanza", [["", "Ogni distanza"], ["20", "Entro 20 min"], ["45", "Entro 45 min"], ["90", "Entro 90 min"]]),
       scelta("fonte", [["", "Ogni fonte"]].concat(Object.keys(fonti).sort().map(function (f) { return [f, f]; }))));
@@ -233,7 +233,8 @@
     corpo.appendChild(el("div", { class: "capo" },
       el("div", {}, el("h2", { text: o.datore || o.titolo }), o.datore ? el("p", { class: "ruolo", text: o.titolo }) : null),
       el("div", { class: classeVoto(o.punteggio), text: String(o.punteggio) })));
-    if (o.scaduto) corpo.appendChild(el("p", { class: "avviso rosso", text: "Scadenza passata (" + giorno(o.scadenza) + ")." }));
+    if (o.datato) corpo.appendChild(el("p", { class: "avviso rosso", text: "Annuncio datato: pubblicato il " + giorno(o.pubblicato) + ". Probabilmente non è più aperto." }));
+    else if (o.scaduto) corpo.appendChild(el("p", { class: "avviso rosso", text: "Scadenza passata (" + giorno(o.scadenza) + ")." }));
     else if (giorniDa(o.scadenza) !== null && giorniDa(o.scadenza) <= 7) corpo.appendChild(el("p", { class: "avviso rosso", text: "Attenzione: " + quando(o) + "." }));
     if (o.sparito_dal) corpo.appendChild(el("p", { class: "avviso", text: "Dal " + giorno(o.sparito_dal) + " non compare più nell'elenco della fonte: potrebbe essere chiuso." }));
     if (o.cambi && o.cambi.length && eNuovo(o)) corpo.appendChild(el("p", { class: "avviso", text: "Aggiornato il " + giorno(o.data_novita) + ": " + o.cambi.join("; ") }));

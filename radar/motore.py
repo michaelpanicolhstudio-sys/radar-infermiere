@@ -181,8 +181,34 @@ def e_scaduto(a: dict, oggi: date) -> bool:
     return bool(a.get("scadenza")) and a["scadenza"] < oggi.isoformat()
 
 
+def e_datato(a: dict, oggi: date, cfg: dict) -> bool:
+    """Pubblicato da molto tempo e senza una scadenza ancora valida: probabilmente non è più aperto."""
+    giorni = int(cfg.get("giorni_annuncio_datato", 120))
+    if not a.get("pubblicato") or (a.get("scadenza") and a["scadenza"] >= oggi.isoformat()):
+        return False
+    return (oggi - date.fromisoformat(a["pubblicato"])).days > giorni
+
+
+def segna_doppioni(memoria: dict, oggi: date) -> None:
+    """Lo stesso bando visto su due siti (stessa zona, stessa scadenza, stesso tipo): ne resta uno."""
+    gruppi: dict[tuple, list[dict]] = {}
+    for a in memoria.values():
+        a.pop("doppione_di", None)
+        if a.get("scadenza") and a.get("zona") and not e_scaduto(a, oggi):
+            famiglia = "piva" if "P.IVA" in (a.get("contratto") or "") else "altro"
+            gruppi.setdefault((a["zona"], a["scadenza"], famiglia), []).append(a)
+    for gruppo in gruppi.values():
+        if len(gruppo) < 2:
+            continue
+        gruppo.sort(key=lambda a: (a.get("origine") != "manuale", -a["punteggio"], a["primo_visto"]))
+        for altro in gruppo[1:]:
+            altro["doppione_di"] = gruppo[0]["id"]
+
+
 def visibile(a: dict, cfg: dict) -> bool:
     profilo = cfg.get("profilo", {})
+    if a.get("doppione_di"):
+        return False
     if not profilo.get("includi_dipendenti", True) and e_dipendente(a):
         return False
     limite = profilo.get("minuti_massimi")
@@ -212,19 +238,21 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str],
                     cambi.append(f"{NOMI_CAMPI[campo]}: {vecchio.get(campo) or 'n.d.'} → {a.get(campo) or 'n.d.'}")
         a["primo_visto"] = vecchio.get("primo_visto", oggi_s)
         a["ultimo_visto"] = oggi_s
-        # Un dato letto a mano non viene cancellato da una lettura automatica che non lo trova.
+        # Annunci letti a mano: i dati controllati da una persona vincono su quelli automatici.
+        # Fa eccezione la scadenza, che può essere prorogata.
         if vecchio.get("origine") == "manuale":
-            for campo in ("contratto", "compenso", "euro_ora", "scadenza", "turni", "zona", "km", "minuti", "datore"):
-                if a.get(campo) is None and vecchio.get(campo) is not None:
+            for campo in ("titolo", "datore", "contratto", "compenso", "euro_ora", "turni", "segnali_turni",
+                          "zona", "km", "minuti", "pubblicato"):
+                if vecchio.get(campo) not in (None, "", {}):
                     a[campo] = vecchio[campo]
-            if not a.get("segnali_turni"):
-                a["segnali_turni"] = vecchio.get("segnali_turni") or {}
+            if a.get("scadenza") is None:
+                a["scadenza"] = vecchio.get("scadenza")
             a["origine"] = "manuale"
             a["nota_manuale"] = vecchio.get("nota_manuale")
             a["punteggio"], a["dettaglio_punteggio"] = punteggio.calcola(a, cfg)
-            cambi = [c for c in cambi if not c.endswith("→ n.d.") and not c.startswith("titolo:")]
-            a["titolo"] = vecchio["titolo"]
             a["impronta"] = _impronta(a)
+            cambi = ([f"scadenza: {vecchio.get('scadenza') or 'n.d.'} → {a['scadenza']}"]
+                     if a.get("scadenza") != vecchio.get("scadenza") else [])
         if cambi:
             a.update(novita="aggiornato", data_novita=oggi_s, cambi=cambi)
             aggiornati.append(a)
@@ -308,9 +336,12 @@ def giro(cfg: dict, rete, oggi: date, registra=print) -> dict:
         registra(f"   {esito['candidati']} voci, {len(esito['annunci'])} annunci pertinenti")
 
     novita = aggiorna_memoria(memoria, list(trovati.values()), fonti_lette, oggi, cfg)
+    segna_doppioni(memoria, oggi)
 
-    attivi = [a for a in memoria.values()
-              if visibile(a, cfg) and not e_scaduto(a, oggi) and not a.get("sparito_dal")]
+    def aperto(a: dict) -> bool:
+        return visibile(a, cfg) and not e_scaduto(a, oggi) and not e_datato(a, oggi, cfg)
+
+    attivi = [a for a in memoria.values() if aperto(a) and not a.get("sparito_dal")]
     attivi.sort(key=lambda a: -a["punteggio"])
     tra7 = (oggi + timedelta(days=7)).isoformat()
     scadenze = sorted((a for a in attivi if a.get("scadenza") and a["scadenza"] <= tra7),
@@ -318,8 +349,8 @@ def giro(cfg: dict, rete, oggi: date, registra=print) -> dict:
     report = {
         "data": oggi.isoformat(),
         "attivi": len(attivi),
-        "nuovi": [_riga(a) for a in novita["nuovi"] if visibile(a, cfg) and not e_scaduto(a, oggi)],
-        "aggiornati": [_riga(a) for a in novita["aggiornati"] if visibile(a, cfg)],
+        "nuovi": [_riga(a) for a in novita["nuovi"] if aperto(a)],
+        "aggiornati": [_riga(a) for a in novita["aggiornati"] if aperto(a)],
         "top5": [_riga(a) for a in attivi[:5]],
         "scadenze7": [_riga(a) for a in scadenze],
         "problemi": problemi,
