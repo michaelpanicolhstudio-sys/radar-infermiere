@@ -19,7 +19,7 @@ CAMPI_CONFRONTO = ["titolo", "contratto", "compenso", "scadenza", "turni"]
 NOMI_CAMPI = {"titolo": "titolo", "contratto": "contratto", "compenso": "compenso",
               "scadenza": "scadenza", "turni": "ore e turni"}
 # Si aumenta quando cambiano le regole di pertinenza: le pagine già scartate vengono riaperte una volta.
-VERSIONE_REGOLE = 3
+VERSIONE_REGOLE = 4
 VERSIONE_PDF = 2      # cambia quando migliorano le regole: i PDF già letti vengono riletti
 # Siti-bacheca: i loro indirizzi email non sono il contatto della struttura che cerca personale.
 DOMINI_BACHECA = {"opi.tn.it", "opibz.it", "upipa.tn.it", "suedtirolerjobs.it", "fnopi.it", "google.com"}
@@ -204,6 +204,11 @@ def _costruisci(cand: dict, testo: str, pubblicato, fonte: dict, cfg: dict, comu
                 break
     if cand.get("datore") and not fonte.get("datore"):
         campi["datore"] = cand["datore"]
+        # Il nome della struttura nell'elenco (es. «Altenheim St. Pankraz») dice dove si lavora:
+        # vale più dei comuni citati nel testo o nel bando (es. «Bozen» come provincia o sede dell'ufficio).
+        dal_nome = estrai.trova_comune(cand["datore"], "", comuni)
+        if dal_nome:
+            campi.update(zona=dal_nome["nome"], km=dal_nome["km"], minuti=dal_nome["minuti"])
     if fonte.get("zona") and (not campi["zona"] or fonte.get("tipo") == "pagina"):
         c = next((c for c in comuni if c["nome"] == fonte["zona"]), None)
         if c:
@@ -262,7 +267,7 @@ def _dettaglio(cand: dict, fonte: dict, rete, cfg: dict, comuni: list[dict], ogg
             if fonte.get("link_e_datore"):
                 # Nell'elenco il link porta il nome della struttura: il titolo vero è nella pagina.
                 vero = pagina["titolo"] if estrai.contiene(pagina["titolo"], cfg["parole"]["infermiere"]) \
-                    else estrai.titolo_da_indirizzo(cand["url"])
+                    else estrai.titolo_leggibile(estrai.titolo_da_indirizzo(cand["url"]))
                 cand = {**cand, "datore": cand["titolo"], "titolo": vero or cand["titolo"]}
             elif len(cand["titolo"]) < 15 and pagina["titolo"]:
                 cand = {**cand, "titolo": pagina["titolo"]}

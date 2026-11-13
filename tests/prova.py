@@ -291,6 +291,25 @@ vecchi = {str(i): {"id": str(i), "titolo": t, "datore": None, "zona": "Caldaro",
 motore.segna_doppioni(vecchi, OGGI)
 verifica("doppioni: stessa struttura (stessa email), resta il più recente", [a.get("doppione_di") for a in vecchi.values()], ["2", "2", None])
 
+print("Bacheca delle case di riposo (VdS)")
+# 13/11: «Altenheim St. Pankraz» finiva a Bolzano perché il testo nominava Bozen.
+fonte_vds = {"nome": "VdS", "tipo": "elenco", "affidabilita": "struttura", "link_e_datore": True}
+cand_vds = {"url": "https://vds.it/de/swh/507/job/krankenpflegerinnen-7ter-fe-mit-18-20-und-22-wochenstunden",
+            "titolo": "Infermiere/a", "datore": "Altenheim St. Pankraz ÖBPB"}
+a_vds, _ = motore._costruisci(cand_vds, "Wir suchen Krankenpfleger/innen. Bewerbungen an das Büro in Bozen, Bozen Zentrum." + RIEMP,
+                              None, fonte_vds, CFG, COMUNI, OGGI, [])
+verifica("VdS: la zona viene dal nome della casa di riposo", a_vds["zona"], "San Pancrazio")
+cand_vds2 = dict(cand_vds, datore="Seniorenwohnheim \"Leoheim\"")
+a_vds2, _ = motore._costruisci(cand_vds2, "Wir suchen Krankenpfleger/innen in Welschnofen." + RIEMP, None, fonte_vds, CFG, COMUNI, OGGI, [])
+verifica("VdS: nome senza comune, resta la zona del testo", a_vds2["zona"], "Nova Levante")
+verifica("VdS: titolo leggibile dall'indirizzo (ore)",
+         estrai.titolo_leggibile("Krankenpflegerinnen 7ter fe mit 18 20 und 22 wochenstunden"), "Infermiere/a – part-time (18, 20 o 22 ore/settimana)")
+verifica("VdS: titolo leggibile dall'indirizzo (graduatoria con altri profili)",
+         estrai.titolo_leggibile("Kundmachung befristete rangordnung sozialbetreuer pflegehelfer krankenpfleger"),
+         "Infermiere/a – graduatoria, a tempo determinato (con altri profili)")
+verifica("VdS: titolo senza dettagli", estrai.titolo_leggibile("Berufskrankenpflegerin berufsbild nr 64 der viiter funktionsebeneinfermierea"), "Infermiere/a")
+verifica("VdS: altri ruoli restano come sono", estrai.titolo_leggibile("Befristete anstellung als sozialbetreuerin"), "Befristete anstellung als sozialbetreuerin")
+
 print("Conti, posta e contatti")
 from radar import conti, posta
 par = conti.parametri({})

@@ -803,6 +803,43 @@ def titolo_da_indirizzo(url: str) -> str:
     return (pezzo[:1].upper() + pezzo[1:])[:120]
 
 
+_RE_ALTRI_PROFILI = re.compile(r"sozialbetreu|pflegehelf|heimgehilf|verwaltung|erzieh|\boss\b|\bosa\b|operator", re.I)
+
+
+def titolo_leggibile(grezzo: str) -> str:
+    """Titolo in italiano da un indirizzo in tedesco (es. «krankenpflegerinnen 7ter fe mit 18 20 und
+    22 wochenstunden» → «Infermiere/a – part-time (18, 20 o 22 ore/settimana)»).
+    Usa solo parole presenti nell'indirizzo; se non è un annuncio per infermieri lo lascia com'è."""
+    t = grezzo.lower()
+    if not re.search(r"krankenpfleg|pflegefach|infermier", t):
+        return grezzo
+    dettagli = []
+    if re.search(r"rangordnung|graduatori", t):
+        dettagli.append("graduatoria")
+    if re.search(r"freiberuf|libera?\s+profession", t):
+        dettagli.append("libera professione")
+    if re.search(r"unbefrist|indeterminat", t):
+        dettagli.append("a tempo indeterminato")
+    elif re.search(r"befrist|provisorisch|determinat", t):
+        dettagli.append("a tempo determinato")
+    if re.search(r"vollzeit|tempo\s+pieno", t):
+        dettagli.append("tempo pieno")
+    ore = re.search(r"((?:\d{1,2}\s+)+)(?:und\s+(\d{1,2})\s+)?wochenstunden", t)
+    if ore:
+        numeri = ore.group(1).split() + ([ore.group(2)] if ore.group(2) else [])
+        testo_ore = ", ".join(numeri[:-1]) + " o " + numeri[-1] if len(numeri) > 1 else numeri[0]
+        dettagli.append(f"part-time ({testo_ore} ore/settimana)")
+    elif re.search(r"teilzeit|part\s*time", t):
+        dettagli.append("part-time")
+    mesi = re.search(r"(\d{1,2})\s+monat", t)
+    if mesi:
+        dettagli.append(f"per {mesi.group(1)} mesi")
+    titolo = "Infermiere/a" + (" – " + ", ".join(dettagli) if dettagli else "")
+    if _RE_ALTRI_PROFILI.search(t):
+        titolo += " (con altri profili)"
+    return titolo
+
+
 def estrai_struttura(titolo: str, testo: str) -> str | None:
     for campione in (titolo, testo[:700]):
         for etichetta, rx in _STRUTTURE:
