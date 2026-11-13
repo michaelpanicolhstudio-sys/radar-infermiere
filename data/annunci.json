@@ -8,6 +8,7 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "Concorso / graduatoria",
+  "da_pdf": null,
   "data_novita": "2026-11-13",
   "datore": "Fondazione Pitsch",
   "dettaglio_punteggio": [
@@ -42,19 +43,26 @@
     "voce": "Fonte"
    }
   ],
+  "email": "personal@pitsch.it",
   "estratto": "…m nella Residenza per Anziani cerchiamo Infermiere-i Operatori-trici socioassistenziali / OSA Operatori-trici sociosanitari-e / OSS Per ulteriori informazioni contattare 0473 273753 (ufficio personale) oppure personal@pi…",
   "euro_ora": null,
   "fonte": "OPI Bolzano – offerte di lavoro",
   "id": "054de6ae7326",
   "impronta": "0c7a07b8f820",
+  "in_tedesco": false,
   "km": null,
+  "letto_il": "2026-11-13",
   "minuti": null,
   "novita": "nuovo",
+  "pdf_letti": [],
+  "pec": null,
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-06-12",
   "punteggio": 30,
   "scadenza": null,
   "segnali_turni": {},
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "Fondazione Pitsch cerca personale",
   "turni": null,
   "ultimo_visto": "2026-11-13",
@@ -196,6 +204,7 @@
   "cita_tedesco": true,
   "compenso": null,
   "contratto": "P.IVA / libera professione",
+  "da_pdf": null,
   "data_novita": null,
   "datore": "Paziente privato (tramite OPI Bolzano)",
   "dettaglio_punteggio": [
@@ -230,16 +239,21 @@
     "voce": "Fonte"
    }
   ],
+  "email": null,
   "estratto": "CERCASI INFERMIERE/A PER EMODIALISI DOMICILIARE – BOLZANO Si ricerca infermiere/a per assistere un paziente nell’esecuzione dell’emodialisi domiciliare presso il proprio domicilio a Bolzano. Impegno richiesto: 3 ore al g…",
   "euro_ora": null,
   "fonte": "OPI Bolzano – offerte di lavoro",
   "id": "2520bf34250f",
   "impronta": "425181896b0e",
+  "in_tedesco": false,
   "km": 42,
+  "letto_il": "2026-11-13",
   "minuti": 35,
   "nota_manuale": "Inserito a mano il 12/11/2026. Serve esperienza dialitica. Annuncio di fine luglio: chiedere se è ancora aperto.",
   "novita": null,
   "origine": "manuale",
+  "pdf_letti": [],
+  "pec": null,
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-07-28",
   "punteggio": 61,
@@ -247,6 +261,8 @@
   "segnali_turni": {
    "ore_settimana": 16
   },
+  "struttura": "Domiciliare",
+  "tipo_fonte": "elenco",
   "titolo": "Infermiere/a per emodialisi domiciliare",
   "turni": "3 h al giorno, 5–6 giorni a settimana",
   "ultimo_visto": "2026-11-13",
@@ -260,6 +276,7 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": null,
+  "da_pdf": null,
   "data_novita": null,
   "datore": "Cooperativa Sociale Villa Maria Onlus",
   "dettaglio_punteggio": [
@@ -294,16 +311,21 @@
     "voce": "Fonte"
    }
   ],
+  "email": "ufficio.personale@coopvillamaria.org",
   "estratto": "…Maria Onlus è alla ricerca di personale infermieristico da inserire all’interno del proprio organico. Siamo alla ricerca di persone motivate, orientate alla cura di persone con disabilità e desiderose di inserirsi in un…",
   "euro_ora": null,
   "fonte": "OPI Trento – annunci di lavoro",
   "id": "289b1a76f5b5",
   "impronta": "45f6516bad78",
+  "in_tedesco": false,
   "km": 36,
+  "letto_il": "2026-11-13",
   "minuti": 35,
   "nota_manuale": "Inserito a mano il 12/11/2026. Contratto non indicato.",
   "novita": null,
   "origine": "manuale",
+  "pdf_letti": [],
+  "pec": "villamariasegreteria@pec.cooperazionetrentina.it",
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-15",
   "punteggio": 49,
@@ -313,6 +335,8 @@
    "pieno": true,
    "weekend": true
   },
+  "struttura": "Disabilità o sociale",
+  "tipo_fonte": "elenco",
   "titolo": "Infermiere per persone con disabilità",
   "turni": "tempo pieno, notti, weekend/festivi",
   "ultimo_visto": "2026-11-13",
@@ -321,13 +345,12 @@
  },
  "2bce154a28cb": {
   "affidabilita": "ufficiale",
-  "avvisi": [
-   "Zona non riconosciuta"
-  ],
+  "avvisi": [],
   "cambi": [],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": null,
+  "da_pdf": null,
   "data_novita": "2026-11-13",
   "datore": "A.P.S.P. Padre Odone Nicolini",
   "dettaglio_punteggio": [
@@ -345,7 +368,7 @@
    },
    {
     "max": 20,
-    "motivo": "zona non riconosciuta",
+    "motivo": "circa 78 min d'auto",
     "punti": 5,
     "voce": "Distanza"
    },
@@ -362,24 +385,31 @@
     "voce": "Fonte"
    }
   ],
+  "email": "mail@rsapdb.it",
   "estratto": "…no – Prezzo TN Avviso ricerca personale infermieristico L’APSP Padre Odone Nicolini di Pieve di Bono – Prezzo ricerca infermieri/e da inserire all’interno della propria équipe assistenziale. L’azienda cerca professionist…",
   "euro_ora": null,
   "fonte": "OPI Trento – annunci di lavoro",
   "id": "2bce154a28cb",
   "impronta": "be143774f29a",
-  "km": null,
-  "minuti": null,
+  "in_tedesco": false,
+  "km": 75,
+  "letto_il": "2026-11-13",
+  "minuti": 78,
   "novita": "nuovo",
+  "pdf_letti": [],
+  "pec": "odone@pec.apsppievedibono.it",
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-06-01",
   "punteggio": 33,
   "scadenza": null,
   "segnali_turni": {},
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "A.P.S.P. Padre Odone Nicolini – Pieve di Bono – Prezzo TN – ricerca personale",
   "turni": null,
   "ultimo_visto": "2026-11-13",
   "url": "https://opi.tn.it/a-p-s-p-odone-nicolini/",
-  "zona": null
+  "zona": "Pieve di Bono-Prezzo"
  },
  "2ca01aeef33f": {
   "affidabilita": "ufficiale",
@@ -390,6 +420,7 @@
   "cita_tedesco": true,
   "compenso": null,
   "contratto": "Dipendente",
+  "da_pdf": null,
   "data_novita": "2026-11-13",
   "datore": null,
   "dettaglio_punteggio": [
@@ -424,14 +455,19 @@
     "voce": "Fonte"
    }
   ],
+  "email": "giacomo.strapazzon@eurac.edu",
   "estratto": "…in montagna di Eurac Research cerca un infermiere/infermiera a tempo parziale in grado di supportare l’attività dell’ambulatorio di medicina di montagna e anche l’attività di ricerca. La sede di lavoro è in Via Ipazia 2…",
   "euro_ora": null,
   "fonte": "OPI Bolzano – offerte di lavoro",
   "id": "2ca01aeef33f",
   "impronta": "5439509c60aa",
+  "in_tedesco": false,
   "km": 42,
+  "letto_il": "2026-11-13",
   "minuti": 35,
   "novita": "nuovo",
+  "pdf_letti": [],
+  "pec": null,
   "primo_visto": "2026-11-13",
   "pubblicato": "2024-07-17",
   "punteggio": 39,
@@ -440,6 +476,8 @@
    "parziale": true,
    "pieno": true
   },
+  "struttura": null,
+  "tipo_fonte": "elenco",
   "titolo": "Study nurse @Bolzano @Istituto per la Medicina di Emergenza in Montagna – EURAC RESEARCH",
   "turni": "tempo pieno, part-time",
   "ultimo_visto": "2026-11-13",
@@ -453,6 +491,7 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "P.IVA / libera professione",
+  "da_pdf": null,
   "data_novita": null,
   "datore": "APSP «Clementino Vannetti»",
   "dettaglio_punteggio": [
@@ -487,86 +526,33 @@
     "voce": "Fonte"
    }
   ],
+  "email": null,
   "estratto": "…to di incarichi libero professionali di infermiere. L’avviso è pubblicato sul sito web azienda www.apspvannetti.it e in calce alla pagina. Le domande dovranno pervenire mezzo PEC all’indirizzo apspvannetti@pec.it entro e…",
   "euro_ora": null,
   "fonte": "OPI Trento – annunci di lavoro",
   "id": "36e85170a7c8",
   "impronta": "28cad5e1e2d1",
+  "in_tedesco": false,
   "km": 45,
+  "letto_il": "2026-11-13",
   "minuti": 40,
   "nota_manuale": "Inserito a mano il 12/11/2026. Scadenza prorogata al 27/11/2026 ore 12:00. Domanda via PEC. Posti, ore e compenso sono nel PDF dell'avviso (non letto).",
   "novita": null,
   "origine": "manuale",
+  "pdf_letti": [],
+  "pec": "apspvannetti@pec.it",
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-16",
   "punteggio": 62,
   "scadenza": "2026-11-27",
   "segnali_turni": {},
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "Incarichi libero-professionali di infermiere (avviso di pubblica selezione)",
   "turni": null,
   "ultimo_visto": "2026-11-13",
   "url": "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/",
   "zona": "Rovereto"
- },
- "3ca69f8fe699": {
-  "affidabilita": "ufficiale",
-  "avvisi": [],
-  "cambi": [],
-  "cita_tedesco": false,
-  "compenso": null,
-  "contratto": "Collaborazione",
-  "data_novita": "2026-11-13",
-  "datore": "Società Cooperativa Sociale Stella Montis Fondo",
-  "dettaglio_punteggio": [
-   {
-    "max": 30,
-    "motivo": "collaborazione",
-    "punti": 20,
-    "voce": "Contratto"
-   },
-   {
-    "max": 25,
-    "motivo": "compenso orario non indicato",
-    "punti": 5,
-    "voce": "Compenso"
-   },
-   {
-    "max": 20,
-    "motivo": "circa 45 min d'auto",
-    "punti": 12,
-    "voce": "Distanza"
-   },
-   {
-    "max": 15,
-    "motivo": "ore e turni non indicati",
-    "punti": 5,
-    "voce": "Ore e turni"
-   },
-   {
-    "max": 10,
-    "motivo": "ente o albo ufficiale",
-    "punti": 10,
-    "voce": "Fonte"
-   }
-  ],
-  "estratto": "…hiamo un/una Coordinatore/Coordinatrice Infermieristico/a Alla Cooperativa Sociale Stella Montis cerchiamo una figura di coordinamento capace di unire competenza professionale, attenzione alle persone e capacità organizz…",
-  "euro_ora": null,
-  "fonte": "OPI Trento – annunci di lavoro",
-  "id": "3ca69f8fe699",
-  "impronta": "2853f7f575cc",
-  "km": 38,
-  "minuti": 45,
-  "novita": "nuovo",
-  "primo_visto": "2026-11-13",
-  "pubblicato": "2026-10-15",
-  "punteggio": 52,
-  "scadenza": null,
-  "segnali_turni": {},
-  "titolo": "Società Cooperativa Sociale Stella Montis Fondo – Borgo d’Ananunia (TN) – ricerca di personale",
-  "turni": null,
-  "ultimo_visto": "2026-11-13",
-  "url": "https://opi.tn.it/societa-cooperativa-sociale-stella-montis-fondo-borgo-dananunia-tn-ricerca-di-personale/",
-  "zona": "Borgo d'Anaunia"
  },
  "4f1d5c684f83": {
   "affidabilita": "ufficiale",
@@ -575,6 +561,26 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": null,
+  "da_pdf": {
+   "caratteri": 2253,
+   "cita_tedesco": false,
+   "compenso": null,
+   "contratto": null,
+   "email": "info@ah-kaltern.it",
+   "estratto": "…ah-kaltern.it  www.altenheimkaltern.it Krankenpfleger/in in Voll- und Teilzeit Infermiere/a a tempo pieno o part time Unser Altenheim in Kaltern ist für seine hervorragende Arbeitsatmosphäre, lang- jährigen Mitarbeiter,…",
+   "euro_ora": null,
+   "infermiere": true,
+   "km": 32,
+   "minuti": 35,
+   "pec": null,
+   "scadenza": null,
+   "segnali_turni": {
+    "parziale": true,
+    "pieno": true
+   },
+   "turni": "tempo pieno, part-time",
+   "zona": "Caldaro"
+  },
   "data_novita": "2026-11-13",
   "datore": null,
   "dettaglio_punteggio": [
@@ -609,14 +615,21 @@
     "voce": "Fonte"
    }
   ],
+  "email": "info@ah-kaltern.it",
   "estratto": "Infermiere/a a tempo pieno o part time Fondazione Casa di Riposo Heinrich von Rottenburg Kaltern – Caldaro Azienda pubblica di servizi alla persona Via Mendola 21 I-39052 Caldaro (BZ) Tel. 0471 96 32 69 – Fax 0471 96 32…",
   "euro_ora": null,
   "fonte": "OPI Bolzano – offerte di lavoro",
   "id": "4f1d5c684f83",
   "impronta": "575a78bc82f5",
+  "in_tedesco": false,
   "km": 32,
+  "letto_il": "2026-11-13",
   "minuti": 35,
   "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.opibz.it/wp-content/uploads/2023/09/stellenanzeige-krankenpfleger.pdf"
+  ],
+  "pec": null,
   "primo_visto": "2026-11-13",
   "pubblicato": "2024-07-29",
   "punteggio": 42,
@@ -625,6 +638,8 @@
    "parziale": true,
    "pieno": true
   },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "Infermiere/a a tempo pieno o part time",
   "turni": "tempo pieno, part-time",
   "ultimo_visto": "2026-11-13",
@@ -700,6 +715,26 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": null,
+  "da_pdf": {
+   "caratteri": 2253,
+   "cita_tedesco": false,
+   "compenso": null,
+   "contratto": null,
+   "email": "info@ah-kaltern.it",
+   "estratto": "…ah-kaltern.it  www.altenheimkaltern.it Krankenpfleger/in in Voll- und Teilzeit Infermiere/a a tempo pieno o part time Unser Altenheim in Kaltern ist für seine hervorragende Arbeitsatmosphäre, lang- jährigen Mitarbeiter,…",
+   "euro_ora": null,
+   "infermiere": true,
+   "km": 32,
+   "minuti": 35,
+   "pec": null,
+   "scadenza": null,
+   "segnali_turni": {
+    "parziale": true,
+    "pieno": true
+   },
+   "turni": "tempo pieno, part-time",
+   "zona": "Caldaro"
+  },
   "data_novita": "2026-11-13",
   "datore": null,
   "dettaglio_punteggio": [
@@ -734,14 +769,21 @@
     "voce": "Fonte"
    }
   ],
+  "email": "info@ah-kaltern.it",
   "estratto": "…Riposo Heinrich von Rottenburg Caldaro Infermiere/a a tempo pieno o part time La nostra casa di riposo a Caldaro è conosciuta per la sua ottima atmosfera lavorativa, il personale con anni di esperienza, orari flessibili…",
   "euro_ora": null,
   "fonte": "OPI Bolzano – offerte di lavoro",
   "id": "545dfd92f36a",
   "impronta": "246a2fc88b4c",
+  "in_tedesco": false,
   "km": 32,
+  "letto_il": "2026-11-13",
   "minuti": 35,
   "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.opibz.it/wp-content/uploads/2025/06/stellenanzeige-krankenpfleger.pdf"
+  ],
+  "pec": null,
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-06-25",
   "punteggio": 42,
@@ -750,6 +792,8 @@
    "parziale": true,
    "pieno": true
   },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "Fondazione Casa di Riposo Heinrich von Rottenburg Caldaro",
   "turni": "tempo pieno, part-time",
   "ultimo_visto": "2026-11-13",
@@ -763,6 +807,27 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "Concorso / graduatoria",
+  "da_pdf": {
+   "caratteri": 40000,
+   "cita_tedesco": false,
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "email": null,
+   "estratto": "…TIMANALI) nella figura professionale di INFERMIERE Area 3 (Funzionari) – Livello Base – 1^posizione retributiva di cui n. 3 (tre) posti riservati ai volontari delle forze armate Il Direttore visto il Regolamento del Pers…",
+   "euro_ora": null,
+   "infermiere": true,
+   "km": 45,
+   "minuti": 40,
+   "pec": "apspvannetti@pec.it",
+   "scadenza": "2026-11-13",
+   "segnali_turni": {
+    "ore_settimana": 36,
+    "parziale": true,
+    "pieno": true
+   },
+   "turni": "36 h/settimana, tempo pieno, part-time",
+   "zona": "Rovereto"
+  },
   "data_novita": "2026-11-13",
   "datore": "APSP Vannetti Rovereto",
   "dettaglio_punteggio": [
@@ -798,14 +863,21 @@
    }
   ],
   "doppione_di": "a6f9490fa59e",
+  "email": null,
   "estratto": "…enu di sezione APSP Vannetti Rovereto - Infermiere Bando di Concorso pubblico per esami per la copertura di n. 10 (dieci) posti a tempo indeterminato e a tempo pieno (36 ore settimanali) di cui 3 posti riservati ai volon…",
   "euro_ora": null,
   "fonte": "UPIPA – concorsi delle APSP",
   "id": "55e151b00b95",
   "impronta": "932c67b4de94",
+  "in_tedesco": false,
   "km": 45,
+  "letto_il": "2026-11-13",
   "minuti": 40,
   "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.upipa.tn.it/content/download/49459/695812/file/bando_IP_signed.pdf"
+  ],
+  "pec": "apspvannetti@pec.it",
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-10-16",
   "punteggio": 39,
@@ -814,6 +886,8 @@
    "ore_settimana": 36,
    "pieno": true
   },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "APSP Vannetti Rovereto - Infermiere",
   "turni": "36 h/settimana, tempo pieno",
   "ultimo_visto": "2026-11-13",
@@ -827,6 +901,7 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": null,
+  "da_pdf": null,
   "data_novita": null,
   "datore": "Gruppo Bonvicini",
   "dettaglio_punteggio": [
@@ -861,16 +936,21 @@
     "voce": "Fonte"
    }
   ],
+  "email": null,
   "estratto": "…ndicativo: 8.00 – 15.30/16.00 Candidati Infermiere Casa di Cura Bonvicini Candidati OSS (Operatore Socio Sanitario) Casa di Cura Bonvicini Candidati Infermiere Centro Emodialisi Alto Adige 36 ore settimanali Candidati Me…",
   "euro_ora": null,
   "fonte": "Gruppo Bonvicini – lavora con noi",
   "id": "574415e5114d",
   "impronta": "3937fb7aa78f",
+  "in_tedesco": false,
   "km": 42,
+  "letto_il": "2026-11-13",
   "minuti": 35,
   "nota_manuale": "Inserito a mano il 12/11/2026. Contratto non indicato.",
   "novita": null,
   "origine": "manuale",
+  "pdf_letti": [],
+  "pec": null,
   "primo_visto": "2026-11-12",
   "pubblicato": null,
   "punteggio": 40,
@@ -878,6 +958,8 @@
   "segnali_turni": {
    "ore_settimana": 36
   },
+  "struttura": "Clinica o ambulatorio",
+  "tipo_fonte": "pagina",
   "titolo": "Infermiere – Casa di Cura e Centro Emodialisi",
   "turni": "36 h/settimana (Centro Emodialisi)",
   "ultimo_visto": "2026-11-13",
@@ -893,6 +975,7 @@
   "cita_tedesco": true,
   "compenso": null,
   "contratto": "P.IVA o dipendente",
+  "da_pdf": null,
   "data_novita": null,
   "datore": "Casa di Cura Villa Sant'Anna",
   "dettaglio_punteggio": [
@@ -927,16 +1010,21 @@
     "voce": "Fonte"
    }
   ],
+  "email": "clinica@villa-santanna.eu",
   "estratto": "…te ditte esterne e al primo intervento. Infermiera/e bilingue full time per Poliambulatorio. Medici specialisti per potenziamento attività del Poliambulatorio del Centro Medico Sant’Anna. Collaborazione su base libero-pr…",
   "euro_ora": null,
   "fonte": "Villa Sant'Anna Merano – lavora con noi",
   "id": "58b32002d315",
   "impronta": "55c7115e8bd7",
+  "in_tedesco": false,
   "km": 70,
+  "letto_il": "2026-11-13",
   "minuti": 55,
   "nota_manuale": "Inserito a mano il 12/11/2026. Titolo preferenziale: italiano + tedesco. Sulla stessa pagina anche poliambulatorio e centro di degenza. Annunci senza data.",
   "novita": null,
   "origine": "manuale",
+  "pdf_letti": [],
+  "pec": null,
   "primo_visto": "2026-11-12",
   "pubblicato": null,
   "punteggio": 52,
@@ -944,6 +1032,8 @@
   "segnali_turni": {
    "dodici": true
   },
+  "struttura": "Clinica o ambulatorio",
+  "tipo_fonte": "pagina",
   "titolo": "Infermiere/a: assunzione o libera professione",
   "turni": "turni da 12 h",
   "ultimo_visto": "2026-11-13",
@@ -953,17 +1043,20 @@
  "5919c5f7f3f5": {
   "affidabilita": "ufficiale",
   "avvisi": [],
-  "cambi": [],
+  "cambi": [
+   "contratto: P.IVA o dipendente → Concorso / graduatoria"
+  ],
   "cita_tedesco": false,
   "compenso": null,
-  "contratto": "P.IVA o dipendente",
+  "contratto": "Concorso / graduatoria",
+  "da_pdf": null,
   "data_novita": "2026-11-13",
   "datore": "A.P.S.P. “OPERA ROMANI”",
   "dettaglio_punteggio": [
    {
     "max": 30,
-    "motivo": "P.IVA possibile (anche assunzione)",
-    "punti": 24,
+    "motivo": "posto da dipendente",
+    "punti": 5,
     "voce": "Contratto"
    },
    {
@@ -991,21 +1084,28 @@
     "voce": "Fonte"
    }
   ],
+  "email": "info@operaromani.it",
   "estratto": "…ndeterminato in figura professionale di infermiere categoria c – livello evoluto – 1^ posizione retributiva Nr. 5 posti presso l’AP.S.P. Opera Romani Nr. 3 posti presso l’A.P.S.P. Residenza Valle dei Laghi *Ai sensi dell…",
   "euro_ora": null,
   "fonte": "OPI Trento – annunci di lavoro",
   "id": "5919c5f7f3f5",
-  "impronta": "1e2284b66696",
+  "impronta": "5553df2ab731",
+  "in_tedesco": false,
   "km": 40,
+  "letto_il": "2026-11-13",
   "minuti": 38,
-  "novita": "nuovo",
+  "novita": "aggiornato",
+  "pdf_letti": [],
+  "pec": "operaromani@legalmail.it",
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-04-28",
-  "punteggio": 58,
+  "punteggio": 39,
   "scadenza": "2026-05-22",
   "segnali_turni": {
    "pieno": true
   },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "A.P.S.P. “OPERA ROMANI” – Nomi TN – bando di concorso",
   "turni": "tempo pieno",
   "ultimo_visto": "2026-11-13",
@@ -1014,11 +1114,14 @@
  },
  "5e990d728c4c": {
   "affidabilita": "ufficiale",
-  "avvisi": [],
+  "avvisi": [
+   "Testo molto breve: l'annuncio potrebbe essere un'immagine. Apri il link"
+  ],
   "cambi": [],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": null,
+  "da_pdf": null,
   "data_novita": "2026-11-13",
   "datore": null,
   "dettaglio_punteggio": [
@@ -1053,32 +1156,154 @@
     "voce": "Fonte"
    }
   ],
-  "estratto": "La casa di riposo di Silandro cerca nuovi collaboratori/trici admin 2026-09-25T17:04:45+02:00 25 Settembre 2026 | JOB | Share This Story, Choose Your Platform! Facebook X Reddit LinkedIn WhatsApp Tumblr Pinterest Vk Emai…",
+  "email": null,
+  "estratto": "La casa di riposo di Silandro cerca nuovi collaboratori/trici",
   "euro_ora": null,
   "fonte": "OPI Bolzano – offerte di lavoro",
   "id": "5e990d728c4c",
   "impronta": "0055773b95c9",
+  "in_tedesco": false,
   "km": 105,
+  "letto_il": "2026-11-13",
   "minuti": 90,
   "novita": "nuovo",
+  "pdf_letti": [],
+  "pec": null,
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-09-25",
   "punteggio": 33,
   "scadenza": null,
   "segnali_turni": {},
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "La casa di riposo di Silandro cerca nuovi collaboratori/trici",
   "turni": null,
   "ultimo_visto": "2026-11-13",
   "url": "https://www.opibz.it/la-casa-di-riposo-di-silandro-cerca-nuovi-collaboratori-trici/",
   "zona": "Silandro"
  },
- "66454cb15985": {
+ "6529422d89d3": {
   "affidabilita": "ufficiale",
   "avvisi": [],
   "cambi": [],
   "cita_tedesco": false,
   "compenso": null,
+  "contratto": "P.IVA / libera professione",
+  "da_pdf": {
+   "caratteri": 19305,
+   "cita_tedesco": false,
+   "compenso": null,
+   "contratto": "P.IVA / libera professione",
+   "email": "urp@asuit.tn.it",
+   "estratto": "…LISTI IN ORTOPEDIA E TRAUMATOLOGIA E AD INFERMIERI PER LO SVOLGIMENTO DI PRESTAZIONI DI PRONTO SOCCORSO ORTOPEDICO-TRAUMATOLOGICO NELLE UU.OO. DI PRONTO SOCCORSO DEGLI OSPEDALI DI CLES E CAVALESE, NONCHÉ PRESSO GLI AMBUL…",
+   "euro_ora": null,
+   "infermiere": true,
+   "km": 65,
+   "minuti": 75,
+   "pec": "asuit@pec.asuit.tn.it",
+   "scadenza": "2026-09-10",
+   "segnali_turni": {
+    "dodici": true
+   },
+   "turni": "turni da 12 h, alloggio",
+   "zona": "Madonna di Campiglio"
+  },
+  "data_novita": "2026-11-13",
+  "datore": "ASUIT (Trentino)",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "libera professione / P.IVA",
+    "punti": 30,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 75 min d'auto",
+    "punti": 5,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "turni da 12 h",
+    "punti": 10,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "ente o albo ufficiale",
+    "punti": 10,
+    "voce": "Fonte"
+   }
+  ],
+  "email": "incarichilp@asuit.tn.it",
+  "estratto": "…LISTI IN ORTOPEDIA E TRAUMATOLOGIA E AD INFERMIERI PER LO SVOLGIMENTO DI PRESTAZIONI DI PRONTO SOCCORSO ORTOPEDICO-TRAUMATOLOGICO NELLE UU.OO. DI PRONTO SOCCORSO DEGLI OSPEDALI DI CLES E CAVALESE, NONCHÉ PRESSO GLI AMBUL…",
+  "euro_ora": null,
+  "fonte": "ASUIT – bandi e concorsi",
+  "id": "6529422d89d3",
+  "impronta": "5eebd26b79c4",
+  "in_tedesco": false,
+  "km": 65,
+  "letto_il": "2026-11-13",
+  "minuti": 75,
+  "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.asuit.tn.it/system/files/paragrafi/elemento_protonterapia/53625/p_allegati/64522/SLP%2015%2026%20%20Avviso.pdf"
+  ],
+  "pec": "asuit@pec.asuit.tn.it",
+  "primo_visto": "2026-11-13",
+  "pubblicato": null,
+  "punteggio": 60,
+  "scadenza": "2026-08-13",
+  "segnali_turni": {
+   "dodici": true
+  },
+  "struttura": "Stagionale o turistico",
+  "tipo_fonte": "elenco",
+  "titolo": "AVVISO DI SELEZIONE PUBBLICA PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONALI A MEDICI SPECIALISTI IN ORTOPEDIA E TRAUMATOLOGIA E AD INFERMIERI PER LO SVOLGIMENTO DI PRESTAZIONI DI PRONTO SOCCORS",
+  "turni": "turni da 12 h",
+  "ultimo_visto": "2026-11-13",
+  "url": "https://www.asuit.tn.it/bandi-concorsi/avviso-di-selezione-pubblica-il-conferimento-di-incarichi-libero-professionali-14",
+  "zona": "Madonna di Campiglio"
+ },
+ "66454cb15985": {
+  "affidabilita": "ufficiale",
+  "avvisi": [
+   "Dal PDF allegato: ore e turni"
+  ],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
   "contratto": "Concorso / graduatoria",
+  "da_pdf": {
+   "caratteri": 40000,
+   "cita_tedesco": false,
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "email": "info@apsplavis.it",
+   "estratto": "…PER LA COPERTURA DI N. 3 (TRE) POSTI DI INFERMIERE A TEMPO PIENO (36 ORE SETTIMANALI), CON CONTRATTO A TEMPO INDETERMINATO, AREA 3 FUNZIONARI LIVELLO BASE, 1^ POSIZIONE RETRIBUTIVA DEI QUALI N. 1 A TEMPO PIENO RISERVATO…",
+   "euro_ora": null,
+   "infermiere": true,
+   "km": 12,
+   "minuti": 15,
+   "pec": "amministrazione@pec.apsplavis.it",
+   "scadenza": "2026-11-19",
+   "segnali_turni": {
+    "notti": true,
+    "ore_settimana": 36,
+    "parziale": true,
+    "pieno": true,
+    "weekend": true
+   },
+   "turni": "36 h/settimana, notti, weekend/festivi, tempo pieno, part-time",
+   "zona": "Lavis"
+  },
   "data_novita": null,
   "datore": "APSP «Giovanni Endrizzi»",
   "dettaglio_punteggio": [
@@ -1102,8 +1327,8 @@
    },
    {
     "max": 15,
-    "motivo": "ore e turni non indicati",
-    "punti": 5,
+    "motivo": "36 h/settimana, notti, weekend/festivi, tempo pieno, part-time",
+    "punti": 14,
     "voce": "Ore e turni"
    },
    {
@@ -1113,23 +1338,38 @@
     "voce": "Fonte"
    }
   ],
+  "email": "info@apsplavis.it",
   "estratto": "Vai menu di sezione APSP di Lavis - Infermieri Titolo del bando APSP di Lavis - Infermieri Tipologia di bando Concorso Testo bando Scarica il file (File application/pdf 319,52 kB) File domanda di ammissione Scarica il fi…",
   "euro_ora": null,
   "fonte": "UPIPA – concorsi delle APSP",
   "id": "66454cb15985",
-  "impronta": "7e50b2cf390c",
+  "impronta": "8d0be3dc47ec",
+  "in_tedesco": false,
   "km": 12,
+  "letto_il": "2026-11-13",
   "minuti": 15,
   "nota_manuale": "Inserito a mano il 12/11/2026. Scadenza ore 12:00.",
   "novita": null,
   "origine": "manuale",
+  "pdf_letti": [
+   "https://www.upipa.tn.it/content/download/49489/696076/file/Bando_IP_APSP_Giovanni_Endrizzi_2026_prot._5351.pdf"
+  ],
+  "pec": "amministrazione@pec.apsplavis.it",
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-23",
-  "punteggio": 45,
+  "punteggio": 54,
   "scadenza": "2026-11-19",
-  "segnali_turni": {},
+  "segnali_turni": {
+   "notti": true,
+   "ore_settimana": 36,
+   "parziale": true,
+   "pieno": true,
+   "weekend": true
+  },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "Concorso per infermieri",
-  "turni": null,
+  "turni": "36 h/settimana, notti, weekend/festivi, tempo pieno, part-time",
   "ultimo_visto": "2026-11-13",
   "url": "https://www.upipa.tn.it/Bacheca/Concorsi/APSP-di-Lavis-Infermieri",
   "zona": "Lavis"
@@ -1141,6 +1381,7 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "P.IVA / libera professione",
+  "da_pdf": null,
   "data_novita": null,
   "datore": "Seniorenwohnheim Schloss Moos",
   "dettaglio_punteggio": [
@@ -1175,16 +1416,21 @@
     "voce": "Fonte"
    }
   ],
+  "email": "info@schlossmoos.it",
   "estratto": "…egehelfer/in (Vollzeit) Leifers Caritas Krankenpfleger*in Lana ST. JOSEF Krankenpfleger:in (w/m/d) Siculiana, Sizilien ADLER Spa Resorts & Retreats",
   "euro_ora": null,
   "fonte": "Schloss Moos – libera professione (suedtirolerjobs)",
   "id": "670aca98057e",
   "impronta": "ed8d55d22829",
+  "in_tedesco": false,
   "km": 110,
+  "letto_il": "2026-11-13",
   "minuti": 80,
   "nota_manuale": "Inserito a mano il 12/11/2026. Annuncio in tedesco, sede a Wiesen-Pfitsch. Anche per coprire malattie lunghe.",
   "novita": null,
   "origine": "manuale",
+  "pdf_letti": [],
+  "pec": null,
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-18",
   "punteggio": 55,
@@ -1193,6 +1439,8 @@
    "notti": true,
    "weekend": true
   },
+  "struttura": "Disabilità o sociale",
+  "tipo_fonte": "pagina",
   "titolo": "Freiberufliche Tätigkeit in der Pflege (Krankenpfleger/in)",
   "turni": "notti, weekend/festivi",
   "ultimo_visto": "2026-11-13",
@@ -1268,6 +1516,7 @@
   "cita_tedesco": false,
   "compenso": "da circa 2.500 € netti al mese",
   "contratto": "Dipendente a tempo determinato",
+  "da_pdf": null,
   "data_novita": null,
   "datore": "RSA Ciasa de Palsa Ojöp Frëinademetz",
   "dettaglio_punteggio": [
@@ -1302,16 +1551,21 @@
     "voce": "Fonte"
    }
   ],
+  "email": null,
   "estratto": "CERCHIAMO INFERMIERE:I (m/f/d) per la nostra RSA Ciasa de Palsa Ojöp Frëinademetz CERCHIAMO INFERMIERE:I (m/f/d) per la nostra RSA Ciasa de Palsa Ojöp Frëinademetz, STRUTTURA PUBBLICA, sita in Val Badia – Provincia Auton…",
   "euro_ora": null,
   "fonte": "OPI Bolzano – offerte di lavoro",
   "id": "74acb1da2a46",
   "impronta": "84e5fc6647b9",
+  "in_tedesco": false,
   "km": 125,
+  "letto_il": "2026-11-13",
   "minuti": 105,
   "nota_manuale": "Inserito a mano il 12/11/2026. Alloggio nella struttura per 6 mesi.",
   "novita": null,
   "origine": "manuale",
+  "pdf_letti": [],
+  "pec": null,
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-27",
   "punteggio": 27,
@@ -1320,6 +1574,8 @@
    "ore_settimana": 36,
    "pieno": true
   },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "Infermiere/a (m/f/d) per la RSA",
   "turni": "36 h/settimana o part-time, alloggio",
   "ultimo_visto": "2026-11-13",
@@ -1460,6 +1716,7 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "Dipendente a tempo determinato",
+  "da_pdf": null,
   "data_novita": "2026-11-13",
   "datore": "A.P.S.P. “Levico CURAE”",
   "dettaglio_punteggio": [
@@ -1494,19 +1751,26 @@
     "voce": "Fonte"
    }
   ],
+  "email": "info@apsplevicocurae.it",
   "estratto": "…determinato in figura professionale di infermiere (categoria c – livello evoluto – 1° posizione retributiva) motivata da esigenze di servizio indifferibili e urgenti La domanda di ammissione alla selezione è disponibile…",
   "euro_ora": null,
   "fonte": "OPI Trento – annunci di lavoro",
   "id": "82fac1ad7767",
   "impronta": "8e210ea50836",
+  "in_tedesco": false,
   "km": 42,
+  "letto_il": "2026-11-13",
   "minuti": 42,
   "novita": "nuovo",
+  "pdf_letti": [],
+  "pec": "apsplevicocurae@pec.it",
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-04-22",
   "punteggio": 37,
   "scadenza": "2026-05-22",
   "segnali_turni": {},
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "A.P.S.P. “Levico CURAE” – Levico Terme (TN) – selezione",
   "turni": null,
   "ultimo_visto": "2026-11-13",
@@ -1520,6 +1784,26 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "Concorso / graduatoria",
+  "da_pdf": {
+   "caratteri": 40000,
+   "cita_tedesco": false,
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "email": "segreteria@apsp-primiero.net",
+   "estratto": "…e sett.) nella figura professionale di: INFERMIERE Area 3 Funzionari, livello Base – 1^ posizione retributiva la graduatoria sarà utilizzata anche per la copertura di ev entuali posti che dovessero rendersi vacanti nel p…",
+   "euro_ora": null,
+   "infermiere": true,
+   "km": 105,
+   "minuti": 120,
+   "pec": "segreteria@pec.apsp-primiero.net",
+   "scadenza": "2026-12-04",
+   "segnali_turni": {
+    "parziale": true,
+    "pieno": true
+   },
+   "turni": "tempo pieno, part-time",
+   "zona": "Primiero San Martino di Castrozza"
+  },
   "data_novita": "2026-11-13",
   "datore": "APSP di Primiero",
   "dettaglio_punteggio": [
@@ -1555,14 +1839,21 @@
    }
   ],
   "doppione_di": "ed9ea67da326",
+  "email": "segreteria@apsp-primiero.net",
   "estratto": "Vai menu di sezione APSP di Primiero - Infermiere Concorso pubblico per esami per la copertura di nr. 2 posti a tempo indeterminato e a tempo pieno 36 h/settimanali nella figura professionale di Infermiere, Area 3 Funzio…",
   "euro_ora": null,
   "fonte": "UPIPA – concorsi delle APSP",
   "id": "878da88d62f1",
   "impronta": "bcc769c37d96",
+  "in_tedesco": false,
   "km": 105,
+  "letto_il": "2026-11-13",
   "minuti": 120,
   "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.upipa.tn.it/content/download/49535/696663/file/Bando_concorso_IP_signed.pdf"
+  ],
+  "pec": "segreteria@pec.apsp-primiero.net",
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-11-03",
   "punteggio": 27,
@@ -1571,6 +1862,8 @@
    "ore_settimana": 36,
    "pieno": true
   },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "APSP di Primiero - Infermiere",
   "turni": "36 h/settimana, tempo pieno",
   "ultimo_visto": "2026-11-13",
@@ -1584,6 +1877,7 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "Dipendente a tempo indeterminato",
+  "da_pdf": null,
   "data_novita": null,
   "datore": "Casa di Cura Eremo",
   "dettaglio_punteggio": [
@@ -1618,21 +1912,28 @@
     "voce": "Fonte"
    }
   ],
+  "email": "info@eremoarco.it",
   "estratto": "…di cura Eremo Arco TN Ricerca Personale Infermieristico La Casa di Cura Eremo di Arco, centro di riabilitazione motoria cardiologica e neuromotoria, seleziona Personale Infermieristico da inserire in Struttura. I requisi…",
   "euro_ora": null,
   "fonte": "OPI Trento – annunci di lavoro",
   "id": "896ed83875f4",
   "impronta": "4db9a5aafdc6",
+  "in_tedesco": false,
   "km": 55,
+  "letto_il": "2026-11-13",
   "minuti": 55,
   "nota_manuale": "Inserito a mano il 12/11/2026.",
   "novita": null,
   "origine": "manuale",
+  "pdf_letti": [],
+  "pec": null,
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-19",
   "punteggio": 30,
   "scadenza": null,
   "segnali_turni": {},
+  "struttura": "Clinica o ambulatorio",
+  "tipo_fonte": "elenco",
   "titolo": "Personale infermieristico a tempo indeterminato (CCNL AIOP)",
   "turni": null,
   "ultimo_visto": "2026-11-13",
@@ -1642,12 +1943,29 @@
  "8ac4e9fdd77c": {
   "affidabilita": "ufficiale",
   "avvisi": [
-   "Zona non riconosciuta"
+   "Cita tedesco o bilinguismo"
   ],
   "cambi": [],
-  "cita_tedesco": false,
+  "cita_tedesco": true,
   "compenso": null,
   "contratto": "Concorso / graduatoria",
+  "da_pdf": {
+   "caratteri": 7287,
+   "cita_tedesco": true,
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "email": "info@bzgbga.it",
+   "estratto": "…lle due lingue “B1” (ex livello “C”); • Berufskrankenpfleger/Berufskrankenpflegerin (7ter Funktionsebene), Zweisprachigkeitsnachweis „B2“(ehemals Niveau „B“) erforderlich; • Infermiere/Infermiera professionale (VIIter qu…",
+   "euro_ora": null,
+   "infermiere": true,
+   "km": 70,
+   "minuti": 55,
+   "pec": "bzgburggrafenamt.ccburgraviato@legalmail.it",
+   "scadenza": null,
+   "segnali_turni": {},
+   "turni": null,
+   "zona": "Merano"
+  },
   "data_novita": "2026-11-13",
   "datore": "Comunità comprensoriale Burgraviato",
   "dettaglio_punteggio": [
@@ -1665,7 +1983,7 @@
    },
    {
     "max": 20,
-    "motivo": "zona non riconosciuta",
+    "motivo": "circa 55 min d'auto",
     "punti": 5,
     "voce": "Distanza"
    },
@@ -1682,149 +2000,33 @@
     "voce": "Fonte"
    }
   ],
+  "email": "info@bzgbga.it",
   "estratto": "Comunità comprensoriale Burgraviato – Avviso pubblico La Comunità comprensoriale Burgraviato ha aperto i termini per la presentazione delle domande di inserimento nelle graduatorie per i posti a tempo determinato . Alleg…",
   "euro_ora": null,
   "fonte": "OPI Bolzano – offerte di lavoro",
   "id": "8ac4e9fdd77c",
   "impronta": "7b0b5017feae",
-  "km": null,
-  "minuti": null,
+  "in_tedesco": false,
+  "km": 70,
+  "letto_il": "2026-11-13",
+  "minuti": 55,
   "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.opibz.it/wp-content/uploads/2024/07/Kundmachung-08.08.2024-Avviso-pubblico.pdf"
+  ],
+  "pec": "bzgburggrafenamt.ccburgraviato@legalmail.it",
   "primo_visto": "2026-11-13",
   "pubblicato": "2024-07-17",
   "punteggio": 30,
   "scadenza": null,
   "segnali_turni": {},
+  "struttura": "Disabilità o sociale",
+  "tipo_fonte": "elenco",
   "titolo": "Comunità comprensoriale Burgraviato – Avviso pubblico",
   "turni": null,
   "ultimo_visto": "2026-11-13",
   "url": "https://www.opibz.it/comunita-comprensoriale-burgraviato-avviso-pubblico/",
-  "zona": null
- },
- "8cf6eedf9c7c": {
-  "affidabilita": "ufficiale",
-  "avvisi": [
-   "Cita tedesco o bilinguismo"
-  ],
-  "cambi": [],
-  "cita_tedesco": true,
-  "compenso": null,
-  "contratto": null,
-  "data_novita": "2026-11-13",
-  "datore": "INPS",
-  "dettaglio_punteggio": [
-   {
-    "max": 30,
-    "motivo": "contratto non indicato",
-    "punti": 8,
-    "voce": "Contratto"
-   },
-   {
-    "max": 25,
-    "motivo": "compenso orario non indicato",
-    "punti": 5,
-    "voce": "Compenso"
-   },
-   {
-    "max": 20,
-    "motivo": "circa 35 min d'auto",
-    "punti": 12,
-    "voce": "Distanza"
-   },
-   {
-    "max": 15,
-    "motivo": "ore e turni non indicati",
-    "punti": 5,
-    "voce": "Ore e turni"
-   },
-   {
-    "max": 10,
-    "motivo": "ente o albo ufficiale",
-    "punti": 10,
-    "voce": "Fonte"
-   }
-  ],
-  "estratto": "INPS – Ricerca infermiere/a La Sede provinciale Inps di Bolzano cerca un/una infermiere/a professionale in forza presso la ASL (Dipendente Pubblico) in comando ai termini dell’Art. 30 del D.Lgs. 30-3-2001 n. 165 con pate…",
-  "euro_ora": null,
-  "fonte": "OPI Bolzano – offerte di lavoro",
-  "id": "8cf6eedf9c7c",
-  "impronta": "e45a953a3640",
-  "km": 42,
-  "minuti": 35,
-  "novita": "nuovo",
-  "primo_visto": "2026-11-13",
-  "pubblicato": "2025-02-24",
-  "punteggio": 40,
-  "scadenza": null,
-  "segnali_turni": {},
-  "titolo": "INPS – Ricerca infermiere/a",
-  "turni": null,
-  "ultimo_visto": "2026-11-13",
-  "url": "https://www.opibz.it/inps-ricerca-infermiere-a/",
-  "zona": "Bolzano"
- },
- "8f03c58d63f6": {
-  "affidabilita": "ufficiale",
-  "avvisi": [
-   "Cita tedesco o bilinguismo",
-   "Zona non riconosciuta"
-  ],
-  "cambi": [],
-  "cita_tedesco": true,
-  "compenso": null,
-  "contratto": null,
-  "data_novita": "2026-11-13",
-  "datore": null,
-  "dettaglio_punteggio": [
-   {
-    "max": 30,
-    "motivo": "contratto non indicato",
-    "punti": 8,
-    "voce": "Contratto"
-   },
-   {
-    "max": 25,
-    "motivo": "compenso orario non indicato",
-    "punti": 5,
-    "voce": "Compenso"
-   },
-   {
-    "max": 20,
-    "motivo": "zona non riconosciuta",
-    "punti": 5,
-    "voce": "Distanza"
-   },
-   {
-    "max": 15,
-    "motivo": "ore e turni non indicati",
-    "punti": 5,
-    "voce": "Ore e turni"
-   },
-   {
-    "max": 10,
-    "motivo": "ente o albo ufficiale",
-    "punti": 10,
-    "voce": "Fonte"
-   }
-  ],
-  "estratto": "…0807 | info@opibz.it Instagram Facebook Infermiere a Caorle Infermiere a Caorle admin 2026-04-17T15:15:22+02:00 17 Aprile 2026 | JOB | Share This Story, Choose Your Platform! Facebook X Reddit LinkedIn WhatsApp Tumblr Pi…",
-  "euro_ora": null,
-  "fonte": "OPI Bolzano – offerte di lavoro",
-  "id": "8f03c58d63f6",
-  "impronta": "3ec96a4c7487",
-  "km": null,
-  "minuti": null,
-  "novita": "nuovo",
-  "primo_visto": "2026-11-13",
-  "pubblicato": "2026-04-17",
-  "punteggio": 33,
-  "scadenza": null,
-  "segnali_turni": {},
-  "titolo": "Infermiere a Caorle",
-  "turni": null,
-  "ultimo_visto": "2026-11-13",
-  "url": "https://www.opibz.it/infermiere-a-caorle/",
-  "zona": null
+  "zona": "Merano"
  },
  "903c6d8db71c": {
   "affidabilita": "ufficiale",
@@ -1833,6 +2035,7 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": null,
+  "da_pdf": null,
   "data_novita": "2026-11-13",
   "datore": "Fondazione Casa di Riposo Heinrich von Rottenburg (APSP)",
   "dettaglio_punteggio": [
@@ -1867,19 +2070,26 @@
     "voce": "Fonte"
    }
   ],
+  "email": "info@ah-kaltern.it",
   "estratto": "…di personale in figura professionale di Infermiere. Le candidature dovranno pervenire all’indirizzo info@ah-kaltern.it Fondazione Casa di Riposo Heinrich von Rottenburg via Mendola 21 39052 Caldaro Codice IPA: UFMPXZ Par…",
   "euro_ora": null,
   "fonte": "OPI Trento – annunci di lavoro",
   "id": "903c6d8db71c",
   "impronta": "84e717aa3553",
+  "in_tedesco": false,
   "km": 32,
+  "letto_il": "2026-11-13",
   "minuti": 35,
   "novita": "nuovo",
+  "pdf_letti": [],
+  "pec": "ah-kaltern@legalmail.it",
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-06-23",
   "punteggio": 40,
   "scadenza": null,
   "segnali_turni": {},
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "Fondazione Casa di Riposo Heinrich von Rottenburg (APSP) – Caldaro BZ – ricerca personale",
   "turni": null,
   "ultimo_visto": "2026-11-13",
@@ -1895,6 +2105,26 @@
   "cita_tedesco": true,
   "compenso": null,
   "contratto": "Concorso / graduatoria",
+  "da_pdf": {
+   "caratteri": 3000,
+   "cita_tedesco": true,
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "email": "info@altenheimlatsch.it",
+   "estratto": "…per l’assunzione a tempo determinato di BerufskrankenpflegerInnen Infermiere professionale VII.ter Funktionsebene, mit Vollzeit- und Teilzeitarbeit, der deutschen Sprachgruppe vorbehalten, erstellt wird. Voraussetzung fü…",
+   "euro_ora": null,
+   "infermiere": true,
+   "km": 95,
+   "minuti": 82,
+   "pec": null,
+   "scadenza": "2026-03-06",
+   "segnali_turni": {
+    "parziale": true,
+    "pieno": true
+   },
+   "turni": "tempo pieno, part-time",
+   "zona": "Laces"
+  },
   "data_novita": "2026-11-13",
   "datore": null,
   "dettaglio_punteggio": [
@@ -1912,8 +2142,8 @@
    },
    {
     "max": 20,
-    "motivo": "circa 45 min d'auto",
-    "punti": 12,
+    "motivo": "circa 82 min d'auto",
+    "punti": 5,
     "voce": "Distanza"
    },
    {
@@ -1929,38 +2159,63 @@
     "voce": "Fonte"
    }
   ],
+  "email": "info@altenheimlatsch.it",
   "estratto": "…’assunzione a tempo determinato di un/a infermiera/e professionale a tempo pieno e tempo parziale IL DIRETTORE rende noto che sarà formato una graduatoria per esami per l’assunzione a tempo determinato di Infermiere prof…",
   "euro_ora": null,
   "fonte": "OPI Bolzano – offerte di lavoro",
   "id": "9d74be023dc2",
   "impronta": "e3585d17c31d",
-  "km": 38,
-  "minuti": 45,
+  "in_tedesco": false,
+  "km": 95,
+  "letto_il": "2026-11-13",
+  "minuti": 82,
   "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.opibz.it/wp-content/uploads/2026/02/Kundmachung-Rangordnung-Berufskrankenpfleger-befristet-Marz-2026.pdf"
+  ],
+  "pec": null,
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-02-27",
-  "punteggio": 39,
+  "punteggio": 32,
   "scadenza": "2026-03-06",
   "segnali_turni": {
    "parziale": true,
    "pieno": true
   },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "Fondo Ospedale della S.S. Trinità RESIDENZA PER ANZIANI ANNENBERG LACES – Formazione di una graduatoria per l’assunzione a tempo determinato di un/a infermiera/e professionale a tempo pieno e tempo pa",
   "turni": "tempo pieno, part-time",
   "ultimo_visto": "2026-11-13",
   "url": "https://www.opibz.it/fondo-ospedale-della-s-s-trinita-residenza-per-anziani-annenberg-laces-formazione-di-una-graduatoria-per-lassunzione-a-tempo-determinato-di-un-a-infermiera-e-professionale-a-tempo-pieno-e-tempo-p/",
-  "zona": "Borgo d'Anaunia"
+  "zona": "Laces"
  },
  "9e598fb2d9f6": {
   "affidabilita": "ufficiale",
   "avvisi": [
-   "Cita tedesco o bilinguismo",
-   "Zona non riconosciuta"
+   "Cita tedesco o bilinguismo"
   ],
   "cambi": [],
   "cita_tedesco": true,
   "compenso": null,
   "contratto": "Concorso / graduatoria",
+  "da_pdf": {
+   "caratteri": 9039,
+   "cita_tedesco": true,
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "email": "info@bzgbga.it",
+   "estratto": "…lle due lingue “B1” (ex livello “C”); • Berufskrankenpfleger/Berufskrankenpflegerin (7ter Funktionsebene), Zweisprachigkeitsnachweis „B2“ (ehemals Niveau „B“) erforderlich; • Infermiere/Infermiera professionale, (VIIter…",
+   "euro_ora": null,
+   "infermiere": true,
+   "km": 70,
+   "minuti": 55,
+   "pec": "bzgburggrafenamt.ccburgraviato@legalmail.it",
+   "scadenza": null,
+   "segnali_turni": {},
+   "turni": null,
+   "zona": "Merano"
+  },
   "data_novita": "2026-11-13",
   "datore": "Comunità Comprensoriale Burgraviato",
   "dettaglio_punteggio": [
@@ -1978,7 +2233,7 @@
    },
    {
     "max": 20,
-    "motivo": "zona non riconosciuta",
+    "motivo": "circa 55 min d'auto",
     "punti": 5,
     "voce": "Distanza"
    },
@@ -1995,24 +2250,33 @@
     "voce": "Fonte"
    }
   ],
-  "estratto": "…peratore/operatrice socio-assistenziale Infermiere/Infermiera professionale Download: Avviso pubblico Domanda di ammissione admin 2023-09-24T17:00:38+02:00 24 Settembre 2023 | JOB | Share This Story, Choose Your Platform…",
+  "email": "info@bzgbga.it",
+  "estratto": "…peratore/operatrice socio-assistenziale Infermiere/Infermiera professionale Download: Avviso pubblico Domanda di ammissione",
   "euro_ora": null,
   "fonte": "OPI Bolzano – offerte di lavoro",
   "id": "9e598fb2d9f6",
   "impronta": "9b32d89b83c5",
-  "km": null,
-  "minuti": null,
+  "in_tedesco": false,
+  "km": 70,
+  "letto_il": "2026-11-13",
+  "minuti": 55,
   "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.opibz.it/wp-content/uploads/2023/09/Kundmachung-Rangordnung-befristete-Anstellungen-10.11.2023.pdf"
+  ],
+  "pec": "bzgburggrafenamt.ccburgraviato@legalmail.it",
   "primo_visto": "2026-11-13",
   "pubblicato": "2023-09-24",
   "punteggio": 30,
   "scadenza": null,
   "segnali_turni": {},
+  "struttura": "Disabilità o sociale",
+  "tipo_fonte": "elenco",
   "titolo": "Comunità Comprensoriale Burgraviato – Assunzioni a tempo determinato",
   "turni": null,
   "ultimo_visto": "2026-11-13",
   "url": "https://www.opibz.it/comunita-comprensoriale-burgraviato-assunzioni-a-tempo-determinato/",
-  "zona": null
+  "zona": "Merano"
  },
  "a6f9490fa59e": {
   "affidabilita": "ufficiale",
@@ -2021,6 +2285,7 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "Concorso / graduatoria",
+  "da_pdf": null,
   "data_novita": null,
   "datore": "APSP «Clementino Vannetti»",
   "dettaglio_punteggio": [
@@ -2055,16 +2320,21 @@
     "voce": "Fonte"
    }
   ],
+  "email": null,
   "estratto": "…ttimanali) nel profilo professionale di Infermiere, Area 3 (funzionari), livello base, 1^ posizione retributiva di cui n. 3 (tre) posti riservati ai volontari delle forze armate. L’avviso è pubblicato sul sito web aziend…",
   "euro_ora": null,
   "fonte": "OPI Trento – annunci di lavoro",
   "id": "a6f9490fa59e",
   "impronta": "67c963adb409",
+  "in_tedesco": false,
   "km": 45,
+  "letto_il": "2026-11-13",
   "minuti": 40,
   "nota_manuale": "Inserito a mano il 12/11/2026.",
   "novita": null,
   "origine": "manuale",
+  "pdf_letti": [],
+  "pec": "apspvannetti@pec.it",
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-15",
   "punteggio": 39,
@@ -2073,6 +2343,8 @@
    "ore_settimana": 36,
    "pieno": true
   },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "Concorso per infermieri – 10 posti a tempo indeterminato",
   "turni": "36 h/settimana, tempo pieno",
   "ultimo_visto": "2026-11-13",
@@ -2081,11 +2353,35 @@
  },
  "ab90496fa705": {
   "affidabilita": "ufficiale",
-  "avvisi": [],
-  "cambi": [],
-  "cita_tedesco": false,
+  "avvisi": [
+   "Dal PDF allegato: ore e turni",
+   "Cita tedesco o bilinguismo"
+  ],
+  "cambi": [
+   "ore e turni: n.d. → weekend/festivi"
+  ],
+  "cita_tedesco": true,
   "compenso": null,
   "contratto": "Concorso / graduatoria",
+  "da_pdf": {
+   "caratteri": 42398,
+   "cita_tedesco": true,
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "email": "risorseumane.bolzano@inps.it",
+   "estratto": "…ig ist, angeben; g) Laurea triennale di infermiere appartenente alla Classe L/SNT01 della lauree delle Professioni Sanitarie Infermieristiche, oppure Diploma Universitario di Infermiere conseguito ai sensi dell’art.6, co…",
+   "euro_ora": null,
+   "infermiere": true,
+   "km": 42,
+   "minuti": 35,
+   "pec": "direzione.provinciale.bolzano@postacert.i",
+   "scadenza": "2025-12-26",
+   "segnali_turni": {
+    "weekend": true
+   },
+   "turni": "weekend/festivi",
+   "zona": "Bolzano"
+  },
   "data_novita": "2026-11-13",
   "datore": "INPS",
   "dettaglio_punteggio": [
@@ -2109,8 +2405,8 @@
    },
    {
     "max": 15,
-    "motivo": "ore e turni non indicati",
-    "punti": 5,
+    "motivo": "weekend/festivi",
+    "punti": 8,
     "voce": "Ore e turni"
    },
    {
@@ -2120,21 +2416,33 @@
     "voce": "Fonte"
    }
   ],
+  "email": "risorseumane.bolzano@inps.it",
   "estratto": "INPS – Ricerca infermiere/a Concorso pubblico, per titoli ed esami, a 1 posto di funzionario sanitario nel ruolo locale dell’INPS di Bolzano Presentazione delle domande a mezzo di posta elettronica certificata (P.E.C.) a…",
   "euro_ora": null,
   "fonte": "OPI Bolzano – offerte di lavoro",
   "id": "ab90496fa705",
-  "impronta": "5e1bb958c859",
+  "impronta": "6ac3f97f38d5",
+  "in_tedesco": false,
   "km": 42,
+  "letto_il": "2026-11-13",
   "minuti": 35,
-  "novita": "nuovo",
+  "novita": "aggiornato",
+  "pdf_letti": [
+   "https://www.opibz.it/wp-content/uploads/2025/12/bando-funzionario-sanitario-con-delibera-ed-allegati.pdf",
+   "https://www.opibz.it/wp-content/uploads/2025/12/flyer-concorso-funzionario-sanitario.pdf"
+  ],
+  "pec": "direzione.provinciale.bolzano@postacert.i",
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-12-19",
-  "punteggio": 37,
+  "punteggio": 40,
   "scadenza": "2025-12-26",
-  "segnali_turni": {},
+  "segnali_turni": {
+   "weekend": true
+  },
+  "struttura": null,
+  "tipo_fonte": "elenco",
   "titolo": "INPS – Ricerca infermiere/a",
-  "turni": null,
+  "turni": "weekend/festivi",
   "ultimo_visto": "2026-11-13",
   "url": "https://www.opibz.it/inps-ricerca-infermiere-a-2/",
   "zona": "Bolzano"
@@ -2142,19 +2450,42 @@
  "b0d14534f7ab": {
   "affidabilita": "ufficiale",
   "avvisi": [
+   "Dal PDF allegato: contratto, ore e turni",
    "Zona non riconosciuta"
   ],
-  "cambi": [],
+  "cambi": [
+   "contratto: n.d. → Dipendente a tempo determinato",
+   "ore e turni: n.d. → tempo pieno, alloggio"
+  ],
   "cita_tedesco": false,
   "compenso": null,
-  "contratto": null,
+  "contratto": "Dipendente a tempo determinato",
+  "da_pdf": {
+   "caratteri": 1784,
+   "cita_tedesco": false,
+   "compenso": null,
+   "contratto": "Dipendente a tempo determinato",
+   "email": "job@cooperativadoc.it",
+   "estratto": "COOPERATIVA D.O.C. RICERCA PERSONALE INFERMIERISTICO PER SOGGIORNI-VACANZA ESTIVI PER MINORI D.O.C. s.c.s.: oltre 35 anni di esperienza nella progettazione educativa, nella gestione alberghiera e nell’erogazione di perco…",
+   "euro_ora": null,
+   "infermiere": true,
+   "km": null,
+   "minuti": null,
+   "pec": null,
+   "scadenza": null,
+   "segnali_turni": {
+    "pieno": true
+   },
+   "turni": "tempo pieno, alloggio",
+   "zona": null
+  },
   "data_novita": "2026-11-13",
   "datore": "Cooperativa D.O.C.",
   "dettaglio_punteggio": [
    {
     "max": 30,
-    "motivo": "contratto non indicato",
-    "punti": 8,
+    "motivo": "posto da dipendente",
+    "punti": 5,
     "voce": "Contratto"
    },
    {
@@ -2171,8 +2502,8 @@
    },
    {
     "max": 15,
-    "motivo": "ore e turni non indicati",
-    "punti": 5,
+    "motivo": "tempo pieno, alloggio",
+    "punti": 7,
     "voce": "Ore e turni"
    },
    {
@@ -2182,24 +2513,130 @@
     "voce": "Fonte"
    }
   ],
+  "email": "job@cooperativadoc.it",
   "estratto": "…26 Cooperativa D.O.C. Ricerca personale infermieristico Ricerca personale infermieristico per soggiorni-vacanza estivi per minori Per la stagione estiva 2026, Cooperativa D.O.C. ricerca personale infermieristico da inser…",
   "euro_ora": null,
   "fonte": "OPI Trento – annunci di lavoro",
   "id": "b0d14534f7ab",
-  "impronta": "623936c3422c",
+  "impronta": "09fbe03f39ef",
+  "in_tedesco": false,
   "km": null,
+  "letto_il": "2026-11-13",
   "minuti": null,
-  "novita": "nuovo",
+  "novita": "aggiornato",
+  "pdf_letti": [
+   "https://opi.tn.it/wp-content/uploads/2025/01/D.O.C.-ricerca-Infermieri-estate-2025.pdf?x30900"
+  ],
+  "pec": null,
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-01-12",
-  "punteggio": 33,
+  "punteggio": 32,
   "scadenza": null,
-  "segnali_turni": {},
+  "segnali_turni": {
+   "pieno": true
+  },
+  "struttura": "Stagionale o turistico",
+  "tipo_fonte": "elenco",
   "titolo": "Cooperativa D.O.C. Ricerca personale infermieristico",
-  "turni": null,
+  "turni": "tempo pieno, alloggio",
   "ultimo_visto": "2026-11-13",
   "url": "https://opi.tn.it/cooperativa-d-o-c-ricerca-personale-infermieristico/",
   "zona": null
+ },
+ "b6439eafe514": {
+  "affidabilita": "ufficiale",
+  "avvisi": [
+   "Dal PDF allegato: ore e turni"
+  ],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": "Concorso / graduatoria",
+  "da_pdf": {
+   "caratteri": 30171,
+   "cita_tedesco": false,
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "email": "concorsi@asuit.tn.it",
+   "estratto": "…COLLABORATORE PROFESSIONALE SANITARIO – INFERMIERE PRESSO LA SEDE DI CAVALESE In esecuzione della determinazione della sostituta Dirigente del Servizio Acquisizione e sviluppo n. 1593/2026 del 21 settembre 2026 è emesso…",
+   "euro_ora": null,
+   "infermiere": true,
+   "km": 20,
+   "minuti": 25,
+   "pec": null,
+   "scadenza": "2026-12-31",
+   "segnali_turni": {
+    "parziale": true,
+    "pieno": true
+   },
+   "turni": "tempo pieno, part-time",
+   "zona": "Trento"
+  },
+  "data_novita": "2026-11-13",
+  "datore": "ASUIT (Trentino)",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "posto da dipendente",
+    "punti": 5,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 55 min d'auto",
+    "punti": 5,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "tempo pieno, part-time",
+    "punti": 7,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "ente o albo ufficiale",
+    "punti": 10,
+    "voce": "Fonte"
+   }
+  ],
+  "email": "concorsi@asuit.tn.it",
+  "estratto": "…Collaboratore professionale sanitario - Infermiere presso la sede di Cavalese Bando In atto Selezione pubblica Codice: SC 03/26 Date e scadenze Cos'è Come partecipare Graduatoria tempo determinato Ufficio di riferimento…",
+  "euro_ora": null,
+  "fonte": "ASUIT – bandi e concorsi",
+  "id": "b6439eafe514",
+  "impronta": "09b46d8fcfe2",
+  "in_tedesco": false,
+  "km": 50,
+  "letto_il": "2026-11-13",
+  "minuti": 55,
+  "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.asuit.tn.it/system/files/paragrafi/elemento_protonterapia/54121/p_allegati/64966/SC%2003%2026%20AVVISO%20APERTO%20INFERMIERE%20per%20Cavalese%20con%20valutaz%20titoli.pdf",
+   "https://www.asuit.tn.it/system/files/paragrafi/elemento_protonterapia/54121/p_allegati/65580/ISTRUZIONI%20INPA%20AVVISO%20APERTO.pdf"
+  ],
+  "pec": null,
+  "primo_visto": "2026-11-13",
+  "pubblicato": null,
+  "punteggio": 32,
+  "scadenza": "2026-10-22",
+  "segnali_turni": {
+   "parziale": true,
+   "pieno": true
+  },
+  "struttura": null,
+  "tipo_fonte": "elenco",
+  "titolo": "Selezione pubblica, per titoli, per la formazione di graduatorie per assunzioni a tempo determinato nel profilo professionale di Collaboratore professionale sanitario - Infermiere presso la sede di Ca",
+  "turni": "tempo pieno, part-time",
+  "ultimo_visto": "2026-11-13",
+  "url": "https://www.asuit.tn.it/bandi-concorsi/selezione-pubblica-titoli-la-formazione-di-graduatorie-assunzioni-tempo-determinato",
+  "zona": "Cavalese"
  },
  "c833b99cef99": {
   "affidabilita": "ufficiale",
@@ -2208,6 +2645,7 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "P.IVA o dipendente",
+  "da_pdf": null,
   "data_novita": null,
   "datore": "Hotel Palace Merano",
   "dettaglio_punteggio": [
@@ -2242,21 +2680,28 @@
     "voce": "Fonte"
    }
   ],
+  "email": "ufficio.personale@palace.it",
   "estratto": "Hotel Palace Merano cerca infermiere L’ Hotel Palace, prestigioso 5* sito a Merano, per ampliamento dell’organico del proprio reparto sanitario, è alla ricerca di nuovi collaboratori con la mansione di: Infermiere profes…",
   "euro_ora": null,
   "fonte": "OPI Bolzano – offerte di lavoro",
   "id": "c833b99cef99",
   "impronta": "e35986935a8a",
+  "in_tedesco": false,
   "km": 70,
+  "letto_il": "2026-11-13",
   "minuti": 55,
   "nota_manuale": "Inserito a mano il 12/11/2026. Annuncio di marzo 2026: verificare se è ancora aperto.",
   "novita": null,
   "origine": "manuale",
+  "pdf_letti": [],
+  "pec": null,
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-03-05",
   "punteggio": 49,
   "scadenza": null,
   "segnali_turni": {},
+  "struttura": "Stagionale o turistico",
+  "tipo_fonte": "elenco",
   "titolo": "Infermiere professionale – si valuta anche la libera professione",
   "turni": null,
   "ultimo_visto": "2026-11-13",
@@ -2458,6 +2903,7 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "P.IVA / libera professione",
+  "da_pdf": null,
   "data_novita": "2026-11-13",
   "datore": null,
   "dettaglio_punteggio": [
@@ -2492,19 +2938,26 @@
     "voce": "Fonte"
    }
   ],
+  "email": null,
   "estratto": "…nto di incarichi libero professionali a infermieri presso gli ambulatori di primo soccorso traumatologico di Madonna di Campiglio e Sen Jan di Fassa per il potenziamento invernale – Azienda Provinciale per i Servizi Sani…",
   "euro_ora": null,
   "fonte": "OPI Trento – annunci di lavoro",
   "id": "e034b1ea15bf",
   "impronta": "8e6398b001f9",
+  "in_tedesco": false,
   "km": 65,
+  "letto_il": "2026-11-13",
   "minuti": 75,
   "novita": "nuovo",
+  "pdf_letti": [],
+  "pec": "apss@pec.apss.tn.it",
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-01-07",
   "punteggio": 55,
   "scadenza": null,
   "segnali_turni": {},
+  "struttura": "Stagionale o turistico",
+  "tipo_fonte": "elenco",
   "titolo": "Avviso di selezione pubblica per il conferimento di incarichi libero professionali a infermieri presso gli ambulatori di primo soccorso traumatologico di Madonna di Campiglio e Sen Jan di Fassa per il",
   "turni": null,
   "ultimo_visto": "2026-11-13",
@@ -2518,6 +2971,7 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "Dipendente a tempo determinato",
+  "da_pdf": null,
   "data_novita": "2026-11-13",
   "datore": "A.P.S.P. Centro Residenziale A. Collini",
   "dettaglio_punteggio": [
@@ -2552,19 +3006,26 @@
     "voce": "Fonte"
    }
   ],
+  "email": "segreteria@apsp-pinzolo.it",
   "estratto": "…” – Pinzolo TN Avviso ricerca personale infermieristico a tempo determinato L’A.P.S.P. Centro Residenziale “A. Collini” con sede a Pinzolo (TN) è alla ricerca urgente di personale nella figura professionale di infermiere…",
   "euro_ora": null,
   "fonte": "OPI Trento – annunci di lavoro",
   "id": "e07683069c18",
   "impronta": "cf3b664e2042",
+  "in_tedesco": false,
   "km": 62,
+  "letto_il": "2026-11-13",
   "minuti": 72,
   "novita": "nuovo",
+  "pdf_letti": [],
+  "pec": "segreteria@pec.apsp-pinzolo.it",
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-05-22",
   "punteggio": 30,
   "scadenza": "2026-05-22",
   "segnali_turni": {},
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "A.P.S.P. Centro Residenziale A. Collini – Ricerca personale tempo determinato",
   "turni": null,
   "ultimo_visto": "2026-11-13",
@@ -2578,6 +3039,26 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": null,
+  "da_pdf": {
+   "caratteri": 2253,
+   "cita_tedesco": false,
+   "compenso": null,
+   "contratto": null,
+   "email": "info@ah-kaltern.it",
+   "estratto": "…ah-kaltern.it  www.altenheimkaltern.it Krankenpfleger/in in Voll- und Teilzeit Infermiere/a a tempo pieno o part time Unser Altenheim in Kaltern ist für seine hervorragende Arbeitsatmosphäre, lang- jährigen Mitarbeiter,…",
+   "euro_ora": null,
+   "infermiere": true,
+   "km": 32,
+   "minuti": 35,
+   "pec": null,
+   "scadenza": null,
+   "segnali_turni": {
+    "parziale": true,
+    "pieno": true
+   },
+   "turni": "tempo pieno, part-time",
+   "zona": "Caldaro"
+  },
   "data_novita": "2026-11-13",
   "datore": null,
   "dettaglio_punteggio": [
@@ -2612,14 +3093,22 @@
     "voce": "Fonte"
    }
   ],
+  "doppione_di": "4f1d5c684f83",
+  "email": "info@ah-kaltern.it",
   "estratto": "Infermiere/a a tempo pieno o part time Fondazione Casa di Riposo Heinrich von Rottenburg Kaltern – Caldaro Azienda pubblica di servizi alla persona Via Mendola 21 I-39052 Caldaro (BZ) Tel. 0471 96 32 69 – Fax 0471 96 32…",
   "euro_ora": null,
   "fonte": "OPI Bolzano – offerte di lavoro",
   "id": "e3a6ad6a55c4",
   "impronta": "575a78bc82f5",
+  "in_tedesco": false,
   "km": 32,
+  "letto_il": "2026-11-13",
   "minuti": 35,
   "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.opibz.it/wp-content/uploads/2023/09/stellenanzeige-krankenpfleger.pdf"
+  ],
+  "pec": null,
   "primo_visto": "2026-11-13",
   "pubblicato": "2023-09-13",
   "punteggio": 42,
@@ -2628,6 +3117,8 @@
    "parziale": true,
    "pieno": true
   },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "Infermiere/a a tempo pieno o part time",
   "turni": "tempo pieno, part-time",
   "ultimo_visto": "2026-11-13",
@@ -2641,6 +3132,7 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "Concorso / graduatoria",
+  "da_pdf": null,
   "data_novita": null,
   "datore": "APSP «San Giuseppe» di Primiero",
   "dettaglio_punteggio": [
@@ -2675,21 +3167,28 @@
     "voce": "Fonte"
    }
   ],
+  "email": "segreteria@apsp-primiero.net",
   "estratto": "…di Primiero è alla ricerca di personale infermieristico da inserire all’interno del proprio organico. Siamo alla ricerca di persone motivate, orientate alla cura dell’anziano e desiderose di inserirsi in un contesto dina…",
   "euro_ora": null,
   "fonte": "OPI Trento – annunci di lavoro",
   "id": "ed9ea67da326",
   "impronta": "dedaac9e5099",
+  "in_tedesco": false,
   "km": 105,
+  "letto_il": "2026-11-13",
   "minuti": 120,
   "nota_manuale": "Inserito a mano il 12/11/2026. Scadenza ore 12:00. Tipo di rapporto da controllare nel bando.",
   "novita": null,
   "origine": "manuale",
+  "pdf_letti": [],
+  "pec": "segreteria@pec.apsp-primiero.net",
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-07-03",
   "punteggio": 25,
   "scadenza": "2026-12-04",
   "segnali_turni": {},
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "Infermiere – ricerca di personale",
   "turni": null,
   "ultimo_visto": "2026-11-13",
@@ -2699,12 +3198,14 @@
  "f789e905e74a": {
   "affidabilita": "ufficiale",
   "avvisi": [
+   "Testo molto breve: l'annuncio potrebbe essere un'immagine. Apri il link",
    "Zona non riconosciuta"
   ],
   "cambi": [],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "Concorso / graduatoria",
+  "da_pdf": null,
   "data_novita": "2026-11-13",
   "datore": "Fondazione Pitsch",
   "dettaglio_punteggio": [
@@ -2739,34 +3240,134 @@
     "voce": "Fonte"
    }
   ],
-  "estratto": "Fondazione Pitsch cerca infermieri/e Richiesta inserimento in graduatoria ital_NEU 2025 admin 2025-08-08T16:38:01+02:00 08 Agosto 2025 | JOB | Share This Story, Choose Your Platform! Facebook X Reddit LinkedIn WhatsApp T…",
+  "email": null,
+  "estratto": "Fondazione Pitsch cerca infermieri/e Richiesta inserimento in graduatoria ital_NEU 2025",
   "euro_ora": null,
   "fonte": "OPI Bolzano – offerte di lavoro",
   "id": "f789e905e74a",
   "impronta": "4efba8df41b6",
+  "in_tedesco": false,
   "km": null,
+  "letto_il": "2026-11-13",
   "minuti": null,
   "novita": "nuovo",
+  "pdf_letti": [],
+  "pec": null,
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-08-08",
   "punteggio": 30,
   "scadenza": null,
   "segnali_turni": {},
+  "struttura": null,
+  "tipo_fonte": "elenco",
   "titolo": "Fondazione Pitsch cerca infermieri/e",
   "turni": null,
   "ultimo_visto": "2026-11-13",
   "url": "https://www.opibz.it/fondazione-pitsch-cerca-infermieri-e/",
   "zona": null
  },
- "fe748243f94c": {
+ "fcf952f9b681": {
   "affidabilita": "ufficiale",
   "avvisi": [
-   "Zona non riconosciuta"
+   "Dal PDF allegato: contratto, scadenza, ore e turni"
   ],
   "cambi": [],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "Concorso / graduatoria",
+  "da_pdf": {
+   "caratteri": 22882,
+   "cita_tedesco": false,
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "email": "concorsi@asuit.tn.it",
+   "estratto": "…COLLABORATORE PROFESSIONALE SANITARIO – INFERMIERE PRESSO LA SEDE DI CAVALESE In esecuzione della determinazione della sostituta Dirigente del Servizio Acquisizione e sviluppo n. 1593/2026 del 21 settembre 2026 è emesso…",
+   "euro_ora": null,
+   "infermiere": true,
+   "km": 50,
+   "minuti": 55,
+   "pec": null,
+   "scadenza": "2026-12-31",
+   "segnali_turni": {
+    "parziale": true,
+    "pieno": true
+   },
+   "turni": "tempo pieno, part-time",
+   "zona": "Cavalese"
+  },
+  "data_novita": "2026-11-13",
+  "datore": "ASUIT (Trentino)",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "posto da dipendente",
+    "punti": 5,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 55 min d'auto",
+    "punti": 5,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "tempo pieno, part-time",
+    "punti": 7,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "ente o albo ufficiale",
+    "punti": 10,
+    "voce": "Fonte"
+   }
+  ],
+  "email": "concorsi@asuit.tn.it",
+  "estratto": "…COLLABORATORE PROFESSIONALE SANITARIO – INFERMIERE PRESSO LA SEDE DI CAVALESE In esecuzione della determinazione della sostituta Dirigente del Servizio Acquisizione e sviluppo n. 1593/2026 del 21 settembre 2026 è emesso…",
+  "euro_ora": null,
+  "fonte": "ASUIT – bandi e concorsi",
+  "id": "fcf952f9b681",
+  "impronta": "b0eb39fbcfea",
+  "in_tedesco": false,
+  "km": 50,
+  "letto_il": "2026-11-13",
+  "minuti": 55,
+  "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.asuit.tn.it/system/files/paragrafi/elemento_protonterapia/54121/p_allegati/64966/SC%2003%2026%20AVVISO%20APERTO%20INFERMIERE%20per%20Cavalese%20con%20valutaz%20titoli.pdf"
+  ],
+  "pec": null,
+  "primo_visto": "2026-11-13",
+  "pubblicato": null,
+  "punteggio": 32,
+  "scadenza": "2026-12-31",
+  "segnali_turni": {
+   "parziale": true,
+   "pieno": true
+  },
+  "struttura": null,
+  "tipo_fonte": "elenco",
+  "titolo": "SC 03/26 AVVISO APERTO INFERMIERE CAVALESE",
+  "turni": "tempo pieno, part-time",
+  "ultimo_visto": "2026-11-13",
+  "url": "https://www.asuit.tn.it/system/files/paragrafi/elemento_protonterapia/54121/p_allegati/64966/SC%2003%2026%20AVVISO%20APERTO%20INFERMIERE%20per%20Cavalese%20con%20valutaz%20titoli.pdf",
+  "zona": "Cavalese"
+ },
+ "fe748243f94c": {
+  "affidabilita": "ufficiale",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": "Concorso / graduatoria",
+  "da_pdf": null,
   "data_novita": "2026-11-13",
   "datore": "A.P.S.P. Suor Agnese",
   "dettaglio_punteggio": [
@@ -2784,7 +3385,7 @@
    },
    {
     "max": 20,
-    "motivo": "zona non riconosciuta",
+    "motivo": "circa 80 min d'auto",
     "punti": 5,
     "voce": "Distanza"
    },
@@ -2801,14 +3402,19 @@
     "voce": "Fonte"
    }
   ],
+  "email": "info@apspsuoragnese.it",
   "estratto": "…026 A.P.S.P. Suor Agnese – Concorso per infermieri 15 luglio 2026 – APSP “SUOR AGNESE” – Castello Tesino TN Bando di concorso pubblico per esami per la copertura di n. 3 (tre) posti a tempo pieno a tempo indeterminato in…",
   "euro_ora": null,
   "fonte": "OPI Trento – annunci di lavoro",
   "id": "fe748243f94c",
   "impronta": "fdd72c09b9d2",
-  "km": null,
-  "minuti": null,
+  "in_tedesco": false,
+  "km": 80,
+  "letto_il": "2026-11-13",
+  "minuti": 80,
   "novita": "nuovo",
+  "pdf_letti": [],
+  "pec": "apspsuoragnese@pec.it",
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-07-15",
   "punteggio": 32,
@@ -2817,10 +3423,12 @@
    "ore_settimana": 36,
    "pieno": true
   },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
   "titolo": "A.P.S.P. Suor Agnese – Concorso per infermieri",
   "turni": "36 h/settimana, tempo pieno",
   "ultimo_visto": "2026-11-13",
   "url": "https://opi.tn.it/a-p-s-p-suor-agnese/",
-  "zona": null
+  "zona": "Castello Tesino"
  }
 }
