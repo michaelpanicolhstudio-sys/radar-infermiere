@@ -25,7 +25,7 @@
  "OPI Trento – annunci di lavoro": {
   "giorni_a_zero": 0,
   "massimo_candidati": 16,
-  "ultimi_candidati": 16,
+  "ultimi_candidati": 15,
   "ultimo_ok": "2026-11-13"
  },
  "SABES – graduatoria infermieri Bolzano": {
@@ -55,13 +55,13 @@
  "UPIPA – concorsi delle APSP": {
   "giorni_a_zero": 0,
   "massimo_candidati": 6,
-  "ultimi_candidati": 6,
+  "ultimi_candidati": 4,
   "ultimo_ok": "2026-11-13"
  },
  "Villa Sant'Anna Merano – lavora con noi": {
   "giorni_a_zero": 0,
-  "massimo_candidati": 0,
-  "ultimo_errore": "pagina quasi vuota: forse è cambiata o è caricata in modo dinamico",
-  "ultimo_ok": null
+  "massimo_candidati": 1,
+  "ultimi_candidati": 1,
+  "ultimo_ok": "2026-11-13"
  }
 }

@@ -1,0 +1,147 @@
+{
+ "aggiornati": [],
+ "attivi": 21,
+ "data": "2026-11-13",
+ "fonti_lette": 7,
+ "fonti_totali": 9,
+ "nuovi": [
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": "Collaborazione",
+   "datore": "Società Cooperativa Sociale Stella Montis Fondo",
+   "id": "3ca69f8fe699",
+   "minuti": 45,
+   "punteggio": 52,
+   "scadenza": null,
+   "titolo": "Società Cooperativa Sociale Stella Montis Fondo – Borgo d’Ananunia (TN) – ricerca di personale",
+   "url": "https://opi.tn.it/societa-cooperativa-sociale-stella-montis-fondo-borgo-dananunia-tn-ricerca-di-personale/",
+   "zona": "Borgo d'Anaunia"
+  },
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": null,
+   "datore": null,
+   "id": "5e990d728c4c",
+   "minuti": 90,
+   "punteggio": 33,
+   "scadenza": null,
+   "titolo": "La casa di riposo di Silandro cerca nuovi collaboratori/trici",
+   "url": "https://www.opibz.it/la-casa-di-riposo-di-silandro-cerca-nuovi-collaboratori-trici/",
+   "zona": "Silandro"
+  }
+ ],
+ "problemi": [
+  "SABES – graduatoria infermieri Bolzano: pagina quasi vuota: forse è cambiata o è caricata in modo dinamico",
+  "SABES – graduatoria infermieri Merano: pagina quasi vuota: forse è cambiata o è caricata in modo dinamico"
+ ],
+ "scadenze7": [
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "datore": "APSP «Clementino Vannetti»",
+   "id": "a6f9490fa59e",
+   "minuti": 40,
+   "punteggio": 39,
+   "scadenza": "2026-11-13",
+   "titolo": "Concorso per infermieri – 10 posti a tempo indeterminato",
+   "url": "https://opi.tn.it/a-p-s-p-c-vannetti-bando/",
+   "zona": "Rovereto"
+  },
+  {
+   "cambi": [],
+   "compenso": "es. Cles: 36.960,54 € lordi l'anno",
+   "contratto": "Dipendente a tempo determinato",
+   "datore": "ASUIT (Trentino)",
+   "id": "68fe6d52ecbc",
+   "minuti": 0,
+   "punteggio": 45,
+   "scadenza": "2026-11-15",
+   "titolo": "Selezioni per infermieri a tempo determinato (SC 04/26–13/26)",
+   "url": "https://www.asuit.tn.it/bandi-concorsi",
+   "zona": "Mezzolombardo"
+  },
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "datore": "APSP «Giovanni Endrizzi»",
+   "id": "66454cb15985",
+   "minuti": 15,
+   "punteggio": 45,
+   "scadenza": "2026-11-19",
+   "titolo": "Concorso per infermieri",
+   "url": "https://www.upipa.tn.it/Bacheca/Concorsi/APSP-di-Lavis-Infermieri",
+   "zona": "Lavis"
+  }
+ ],
+ "top5": [
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": "P.IVA / libera professione",
+   "datore": "APSP «Clementino Vannetti»",
+   "id": "36e85170a7c8",
+   "minuti": 40,
+   "punteggio": 62,
+   "scadenza": "2026-11-27",
+   "titolo": "Incarichi libero-professionali di infermiere (avviso di pubblica selezione)",
+   "url": "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/",
+   "zona": "Rovereto"
+  },
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": "P.IVA / libera professione",
+   "datore": "Paziente privato (tramite OPI Bolzano)",
+   "id": "2520bf34250f",
+   "minuti": 35,
+   "punteggio": 61,
+   "scadenza": null,
+   "titolo": "Infermiere/a per emodialisi domiciliare",
+   "url": "https://www.opibz.it/cercasi-infermiere-a-per-emodialisi-domiciliare-bolzano/",
+   "zona": "Bolzano"
+  },
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": "P.IVA / libera professione",
+   "datore": "ParaMedica srl",
+   "id": "78cece7b434e",
+   "minuti": 40,
+   "punteggio": 61,
+   "scadenza": null,
+   "titolo": "Infermieri RSA zona Rovereto",
+   "url": "https://it.indeed.com/q-infermiere-con-alloggio-l-trento,-trentino-alto-adige-offerte-lavoro.html",
+   "zona": "Rovereto"
+  },
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": "P.IVA / libera professione",
+   "datore": "Italiassistenza spa",
+   "id": "1a836b7c1e81",
+   "minuti": 35,
+   "punteggio": 55,
+   "scadenza": null,
+   "titolo": "Infermiere/a con partita IVA – Bolzano e provincia",
+   "url": "https://it.indeed.com/q-infermiere-l-trentino-alto-adige-offerte-lavoro.html?nis=5&ch=1",
+   "zona": "Bolzano"
+  },
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": "P.IVA / libera professione",
+   "datore": "CHC Italy (Cerba HealthCare)",
+   "id": "507e1f139787",
+   "minuti": 25,
+   "punteggio": 55,
+   "scadenza": null,
+   "titolo": "Infermiere P.IVA (TN)",
+   "url": "https://it.indeed.com/q-infermiere-professionale-l-rovereto,-trentino-alto-adige-offerte-lavoro.html",
+   "zona": "Trento"
+  }
+ ]
+}
