@@ -27,7 +27,10 @@ penalita_bilinguismo: 10
 # ---- Feed RSS di Google Alerts ----
 # Incolla qui i link dei tuoi feed, uno per riga, così:
 #   - "https://www.google.com/alerts/feeds/1234567890/1234567890"
-feed_google_alerts: []
+feed_google_alerts:
+  - "https://www.google.com/alerts/feeds/15325904899053201770/17973737193246577484"
+  - "https://www.google.com/alerts/feeds/15325904899053201770/12962960680803267172"
+  - "https://www.google.com/alerts/feeds/15325904899053201770/15453296471160879272"
 
 # ---- Fonti ----
 # tipo:
