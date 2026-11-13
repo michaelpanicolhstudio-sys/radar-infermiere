@@ -673,7 +673,7 @@ def estrai_compenso(testo: str) -> tuple[str | None, float | None]:
 def indizi_compenso(testo: str, massimo: int = 3) -> list[str]:
     """Messa a punto: le frasi dove si parla di soldi, quando il compenso non è stato riconosciuto."""
     frasi, ultimo = [], -200
-    for m in re.finditer(r"€|\beuro\b", testo, re.I):
+    for m in re.finditer(r"€\s*\d|\beuro\s*\d|\d[\d.,]*\s*(?:€|euro\b)", testo, re.I):
         if m.start() - ultimo < 150:
             continue
         ultimo = m.start()
