@@ -66,23 +66,6 @@
   },
   {
    "cambi": [
-    "titolo: Seniorenwohnheim Stiftung Lorenzerhof → Kundmachung befristete rangordnung sozialbetreuer pflegehelfer krankenpfleger",
-    "ore e turni: 5 h/settimana → 28 h/settimana"
-   ],
-   "compenso": null,
-   "contratto": "Concorso / graduatoria",
-   "datore": "Seniorenwohnheim Stiftung Lorenzerhof",
-   "id": "f4d1cabf121e",
-   "minuti": 65,
-   "piva": false,
-   "punteggio": 30,
-   "scadenza": "2026-11-20",
-   "titolo": "Kundmachung befristete rangordnung sozialbetreuer pflegehelfer krankenpfleger",
-   "url": "https://www.vds-suedtirol.it/de/swh/475/job/kundmachung-befristete-rangordnung-sozialbetreuer-pflegehelfer-krankenpfleger",
-   "zona": "San Pancrazio"
-  },
-  {
-   "cambi": [
     "titolo: Altenheim St. Pankraz ÖBPB → Krankenpflegerinnen 7ter fe mit 18 20 und 22 wochenstunden",
     "ore e turni: 5 h/settimana, tempo pieno, part-time → 22 h/settimana"
    ],
@@ -131,12 +114,12 @@
    "zona": "Bolzano"
   }
  ],
- "attivi": 33,
+ "attivi": 32,
  "attivi_piva": 11,
  "data": "2026-11-13",
  "fonti_lette": 24,
  "fonti_totali": 24,
- "giri": 8,
+ "giri": 9,
  "nuovi": [
   {
    "cambi": [],
@@ -325,23 +308,6 @@
   },
   {
    "cambi": [
-    "titolo: Altenheim St. Pankraz ÖBPB → Krankenpflegerinnen 7ter fe mit 18 20 und 22 wochenstunden",
-    "ore e turni: 5 h/settimana, tempo pieno, part-time → 22 h/settimana"
-   ],
-   "compenso": null,
-   "contratto": "Concorso / graduatoria",
-   "datore": "Altenheim St. Pankraz ÖBPB",
-   "id": "47168b48e2bf",
-   "minuti": 35,
-   "piva": false,
-   "punteggio": 37,
-   "scadenza": "2026-11-20",
-   "titolo": "Krankenpflegerinnen 7ter fe mit 18 20 und 22 wochenstunden",
-   "url": "https://www.vds-suedtirol.it/de/swh/507/job/krankenpflegerinnen-7ter-fe-mit-18-20-und-22-wochenstunden",
-   "zona": "Bolzano"
-  },
-  {
-   "cambi": [
     "titolo: Seniorenheim Algund Mathias Ladurner ÖBPB → Berufskrankenpflegerin gesucht"
    ],
    "compenso": null,
@@ -352,25 +318,25 @@
    "piva": false,
    "punteggio": 30,
    "scadenza": "2026-11-20",
-   "titolo": "Berufskrankenpflegerin gesucht",
+   "titolo": "Infermiere/a",
    "url": "https://www.vds-suedtirol.it/de/swh/445/job/berufskrankenpflegerin-gesucht-4",
    "zona": "Lagundo"
   },
   {
    "cambi": [
-    "titolo: Seniorenwohnheim Stiftung Lorenzerhof → Kundmachung befristete rangordnung sozialbetreuer pflegehelfer krankenpfleger",
-    "ore e turni: 5 h/settimana → 28 h/settimana"
+    "titolo: Altenheim St. Pankraz ÖBPB → Krankenpflegerinnen 7ter fe mit 18 20 und 22 wochenstunden",
+    "ore e turni: 5 h/settimana, tempo pieno, part-time → 22 h/settimana"
    ],
    "compenso": null,
    "contratto": "Concorso / graduatoria",
-   "datore": "Seniorenwohnheim Stiftung Lorenzerhof",
-   "id": "f4d1cabf121e",
+   "datore": "Altenheim St. Pankraz ÖBPB",
+   "id": "47168b48e2bf",
    "minuti": 65,
    "piva": false,
    "punteggio": 30,
    "scadenza": "2026-11-20",
-   "titolo": "Kundmachung befristete rangordnung sozialbetreuer pflegehelfer krankenpfleger",
-   "url": "https://www.vds-suedtirol.it/de/swh/475/job/kundmachung-befristete-rangordnung-sozialbetreuer-pflegehelfer-krankenpfleger",
+   "titolo": "Infermiere/a – part-time (18, 20 o 22 ore/settimana)",
+   "url": "https://www.vds-suedtirol.it/de/swh/507/job/krankenpflegerinnen-7ter-fe-mit-18-20-und-22-wochenstunden",
    "zona": "San Pancrazio"
   },
   {
@@ -378,14 +344,14 @@
     "titolo: Stiftung \"Hans Messerschmied\" Ö.B.P.B → Vollzeitstelle als berufskrankenpflegerin provisorisch fuer 12 monate posto tempo pieno"
    ],
    "compenso": null,
-   "contratto": null,
+   "contratto": "Dipendente a tempo determinato",
    "datore": "Stiftung \"Hans Messerschmied\" Ö.B.P.B",
    "id": "29e4149a9367",
    "minuti": 120,
    "piva": false,
-   "punteggio": 28,
+   "punteggio": 25,
    "scadenza": "2026-11-20",
-   "titolo": "Vollzeitstelle als berufskrankenpflegerin provisorisch fuer 12 monate posto tempo pieno",
+   "titolo": "Infermiere/a – a tempo determinato, tempo pieno, per 12 mesi",
    "url": "https://www.vds-suedtirol.it/de/swh/467/job/vollzeitstelle-als-berufskrankenpflegerin-provisorisch-fuer-12-monate-posto-tempo-pieno",
    "zona": "San Candido"
   }
