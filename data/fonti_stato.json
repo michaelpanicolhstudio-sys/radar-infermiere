@@ -1,6 +1,6 @@
 {
  "APSP Margherita Grazioli (Trento) – lavora con noi": {
-  "giorni_a_zero": 1,
+  "giorni_a_zero": 2,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -13,7 +13,7 @@
   "ultimo_ok": "2026-11-13"
  },
  "APSP Vannetti Rovereto – concorsi e avvisi": {
-  "giorni_a_zero": 1,
+  "giorni_a_zero": 2,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -27,11 +27,11 @@
  },
  "ASUIT – bandi e concorsi": {
   "giorni_a_zero": 0,
-  "letti": 3,
+  "letti": 1,
   "massimo_candidati": 5,
   "pertinenti": 3,
   "regole": 3,
-  "riusati": 0,
+  "riusati": 2,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 3,
@@ -78,7 +78,7 @@
   "ultimo_ok": "2026-11-13"
  },
  "Google Alerts 1": {
-  "giorni_a_zero": 4,
+  "giorni_a_zero": 5,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -91,7 +91,7 @@
   "ultimo_ok": "2026-11-13"
  },
  "Google Alerts 2": {
-  "giorni_a_zero": 4,
+  "giorni_a_zero": 5,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -104,7 +104,7 @@
   "ultimo_ok": "2026-11-13"
  },
  "Google Alerts 3": {
-  "giorni_a_zero": 4,
+  "giorni_a_zero": 5,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -157,11 +157,11 @@
  },
  "OPI Bolzano – offerte di lavoro": {
   "giorni_a_zero": 0,
-  "letti": 20,
+  "letti": 3,
   "massimo_candidati": 20,
   "pertinenti": 14,
   "regole": 3,
-  "riusati": 0,
+  "riusati": 11,
   "scartati": 6,
   "scarti": {
    "5bafa01d710d": {
@@ -201,11 +201,11 @@
  },
  "OPI Trento – annunci di lavoro": {
   "giorni_a_zero": 0,
-  "letti": 15,
+  "letti": 5,
   "massimo_candidati": 16,
   "pertinenti": 13,
   "regole": 3,
-  "riusati": 0,
+  "riusati": 8,
   "scartati": 2,
   "scarti": {
    "3ca69f8fe699": {
@@ -250,7 +250,7 @@
   "ultimo_ok": "2026-11-13"
  },
  "UPIPA – avvisi delle APSP": {
-  "giorni_a_zero": 4,
+  "giorni_a_zero": 5,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -264,7 +264,7 @@
  },
  "UPIPA – concorsi delle APSP": {
   "giorni_a_zero": 0,
-  "letti": 4,
+  "letti": 3,
   "massimo_candidati": 6,
   "pertinenti": 3,
   "regole": 3,
