@@ -589,6 +589,7 @@ RE_SCADENZA_FORTE = re.compile(
     r"entro\s+(?:e\s+non\s+oltre\s+)?(?:le\s+ore\s+[\d.:,]+\s+)?(?:del(?:\s+giorno)?|il(?:\s+giorno)?)\s|"
     r"entro\s+e\s+non\s+oltre|prorog\w*|bewerbungsfrist|einreichfrist|bis\s+(?:zum|spätestens)", re.I)
 RE_SCADENZA_DEBOLE = re.compile(r"entro\b|termine\b|frist\w*", re.I)
+_RE_FINE_FRASE = re.compile(r"(?<![\d\s])\s*[.!?]\s+(?=[A-ZÀ-ÖØ-Ý])")
 
 RE_LINGUA = re.compile(
     r"bilingu|zweisprach|patentino|attestato\s+di\s+(?:bilinguismo|conoscenza)|deutschkenntnis|"
@@ -689,6 +690,11 @@ def estrai_scadenza_frase(testo: str, oggi: date) -> tuple[date | None, str | No
         trovati = []
         for m in rx.finditer(testo):
             finestra = testo[m.end(): m.end() + 110]
+            # La data deve stare nella stessa frase: «entro il 2 ottobre. AGGIORNAMENTO DEL 22/10/2026»
+            # non è una scadenza al 22/10. Il punto dopo una cifra («20. November») non chiude la frase.
+            fine = _RE_FINE_FRASE.search(finestra)
+            if fine:
+                finestra = finestra[: fine.start()]
             for d in RE_DATA.finditer(finestra):
                 giorno = _data_da_match(d)
                 if giorno and abs((giorno - oggi).days) < 730:

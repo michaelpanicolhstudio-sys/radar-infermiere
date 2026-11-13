@@ -271,6 +271,12 @@ verifica("compenso: 'euro-pea' non è un indizio", estrai.indizi_compenso("citta
 verifica("compenso: indizi quando non si riconosce", len(estrai.indizi_compenso("Il budget complessivo è di € 12.000 annui.")), 1)
 sc = estrai.estrai_scadenza_frase("Le domande dovranno pervenire entro e non oltre le ore 12.00 del giorno 06/11/2026. Proroga termini di scadenza: 27/11/2026 ore 12.00", OGGI)
 verifica("scadenza con la frase da cui è presa", (str(sc[0]), "Proroga termini di scadenza: 27/11/2026" in sc[1]), ("2026-11-27", True))
+verifica("scadenza: la data dell'aggiornamento nella frase dopo non è la scadenza (ASUIT Cavalese)",
+         estrai.estrai_scadenza_frase("Saranno valutate le candidature pervenute entro il giorno 2 ottobre. AGGIORNAMENTO DI DATA 22/10/2026! Si comunica che", OGGI), (None, None))
+verifica("scadenza: «20. November 2026» resta una data",
+         str(estrai.estrai_scadenza("Bewerbungsfrist: 20. November 2026, 12 Uhr", OGGI)), "2026-11-20")
+verifica("scadenza: «ore 12.00 del 27/11/2026. Le domande…» resta letta",
+         str(estrai.estrai_scadenza("Scadenza: ore 12.00 del 27/11/2026. Le domande vanno inviate via PEC.", OGGI)), "2026-11-27")
 verifica("datore: minuscolo nel titolo", estrai.estrai_datore("La casa di riposo di Silandro cerca nuovi collaboratori/trici"), "Casa di riposo di Silandro")
 verifica("datore: una frase non è un nome", estrai.estrai_datore("Cerchiamo infermiere per la nostra residenza a Trento"), None)
 verifica("datore: dalle prime righe del testo", estrai.estrai_datore_da_testo("Infermiere/a a tempo pieno o part time Fondazione Casa di Riposo Heinrich von Rottenburg Kaltern – Caldaro Azienda pubblica di servizi alla persona Via Mendola 21"), "Fondazione Casa di Riposo Heinrich von Rottenburg Kaltern")

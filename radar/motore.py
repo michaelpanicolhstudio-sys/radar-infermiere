@@ -19,8 +19,8 @@ CAMPI_CONFRONTO = ["titolo", "contratto", "compenso", "scadenza", "turni"]
 NOMI_CAMPI = {"titolo": "titolo", "contratto": "contratto", "compenso": "compenso",
               "scadenza": "scadenza", "turni": "ore e turni"}
 # Si aumenta quando cambiano le regole di pertinenza: le pagine già scartate vengono riaperte una volta.
-VERSIONE_REGOLE = 4
-VERSIONE_PDF = 2      # cambia quando migliorano le regole: i PDF già letti vengono riletti
+VERSIONE_REGOLE = 5
+VERSIONE_PDF = 3      # cambia quando migliorano le regole: i PDF già letti vengono riletti
 # Siti-bacheca: i loro indirizzi email non sono il contatto della struttura che cerca personale.
 DOMINI_BACHECA = {"opi.tn.it", "opibz.it", "upipa.tn.it", "suedtirolerjobs.it", "fnopi.it", "google.com"}
 
