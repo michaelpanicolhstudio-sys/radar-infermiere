@@ -2,10 +2,12 @@
  "aggiornati": [],
  "attivi": 21,
  "data": "2026-11-13",
- "fonti_lette": 7,
+ "fonti_lette": 6,
  "fonti_totali": 7,
  "nuovi": [],
- "problemi": [],
+ "problemi": [
+  "Villa Sant'Anna Merano – lavora con noi: errore di rete (ConnectionError)"
+ ],
  "scadenze7": [
   {
    "cambi": [],

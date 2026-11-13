@@ -62,6 +62,7 @@
   "giorni_a_zero": 0,
   "massimo_candidati": 1,
   "ultimi_candidati": 1,
+  "ultimo_errore": "errore di rete (ConnectionError)",
   "ultimo_ok": "2026-11-13"
  }
 }
