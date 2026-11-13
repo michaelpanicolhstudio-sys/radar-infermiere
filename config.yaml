@@ -122,6 +122,46 @@ fonti:
     zona: Vipiteno
     attiva: true
 
+  # --- Aggiunte il 13/11/2026 dopo l'esplorazione dei siti ---
+  # Bacheca dell'associazione delle case di riposo dell'Alto Adige (in tedesco).
+  - nome: Case di riposo dell'Alto Adige (VdS) – offerte
+    tipo: elenco
+    url: https://www.vds-suedtirol.it/de/jobs
+    altre_pagine:
+      - https://www.vds-suedtirol.it/de/jobs?page=1
+      - https://www.vds-suedtirol.it/de/jobs?page=2
+    parole_link: [krankenpfleg, pflegefach, infermier, freiberuf]
+    affidabilita: struttura
+    puo_essere_vuota: true
+    attiva: true
+
+  - nome: Schloss Moos – Jobs (sito della cooperativa)
+    tipo: pagina
+    url: https://sozialgenossenschaft-vinzenz.it/schloss-moos/schloss-moos-jobs/
+    affidabilita: struttura
+    datore: Seniorenwohnheim Schloss Moos
+    zona: Vipiteno
+    puo_essere_vuota: true
+    attiva: true
+
+  - nome: Vinzenzhaus Bolzano – Jobs
+    tipo: pagina
+    url: https://sozialgenossenschaft-vinzenz.it/vinzenzhaus/vinzenzhaus-jobs/
+    affidabilita: struttura
+    datore: Seniorenwohnheim Vinzenzhaus
+    zona: Bolzano
+    puo_essere_vuota: true
+    attiva: true
+
+  - nome: Altenheim Kaltern (Caldaro) – Karriere
+    tipo: pagina
+    url: https://www.ah-kaltern.it/karriere
+    affidabilita: struttura
+    datore: Fondazione Heinrich von Rottenburg (Altenheim Kaltern)
+    zona: Caldaro
+    puo_essere_vuota: true
+    attiva: true
+
   # --- Spente: pagine caricate in modo dinamico o rimosse (verifica del 13/11/2026) ---
   - nome: SABES – graduatoria infermieri Bolzano
     tipo: pagina
@@ -139,17 +179,34 @@ fonti:
 
 # ---- Solo per la messa a punto: pagine di cui elencare i link nel file data/diagnostica.json ----
 esplora:
-  - https://mezzolombardo.upipa.opencontent.it/
-  - https://mezzocorona.upipa.opencontent.it/
-  - https://www.apspvannetti.it/
-  - https://lavis.upipa.opencontent.it/
-  - https://cles.upipa.opencontent.it/
-  - https://www.eremoarco.it/
-  - https://www.coopvillamaria.org/
-  - https://www.schlossmoos.it/
-  - https://www.vds-suedtirol.it/
-  - https://www.ah-kaltern.it/
-  - https://www.suedtirolerjobs.it/jobs/krankenpfleger
+  - https://www.vds-suedtirol.it/de/jobs
+  - https://www.apspvannetti.it/Albo-pretorio
+  - https://www.apspvannetti.it/Opera-con-noi/Lavoratore-Dipendente
+  - https://bollettino.regione.taa.it/it/Concorsi.aspx
+  # Indirizzi da verificare (ipotesi): se non esistono compare solo un errore nella diagnostica.
+  - https://www.villamelitta.it/
+  - https://www.brixsana.it/
+  - https://www.martinsbrunn.it/
+  - https://www.sancamillo.org/
+  - https://www.solatrix.it/
+  - https://www.civicatrento.it/
+  - https://www.apspgrazioli.it/
+
+# ---- Strutture conosciute che negli annunci non scrivono il comune: parola nel testo -> comune ----
+zone_strutture:
+  pitsch: Merano
+  martinsbrunn: Merano
+  ciasa de palsa: Val Badia
+  eurac: Bolzano
+  vinzenzhaus: Bolzano
+  schloss moos: Vipiteno
+  villa melitta: Bolzano
+  brixsana: Bressanone
+  solatrix: Rovereto
+  villa bianca: Trento
+  san camillo: Trento
+  villa maria: Calliano
+  casa di cura eremo: Arco
 
 # ---- Lettura dei PDF allegati agli annunci (bandi, avvisi) ----
 pdf:
@@ -203,4 +260,5 @@ rete:
 giorni_prima_di_togliere: 30   # un annuncio sparito dalla fonte resta visibile per questi giorni
 giorni_annuncio_datato: 120    # pubblicato da più giorni e senza scadenza valida = "datato" (fuori dalle attive)
 giorni_rilettura_datati: 30    # gli annunci datati o scaduti vengono riletti solo ogni tot giorni
+giorni_scaduti_visibili: 60    # dopo tot giorni dalla scadenza un annuncio esce dall'app
 giorni_memoria_scarti: 14      # una pagina scartata (non per infermieri) non viene riaperta per tot giorni

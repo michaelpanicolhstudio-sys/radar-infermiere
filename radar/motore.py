@@ -20,6 +20,7 @@ NOMI_CAMPI = {"titolo": "titolo", "contratto": "contratto", "compenso": "compens
               "scadenza": "scadenza", "turni": "ore e turni"}
 # Si aumenta quando cambiano le regole di pertinenza: le pagine già scartate vengono riaperte una volta.
 VERSIONE_REGOLE = 2
+VERSIONE_PDF = 2      # cambia quando migliorano le regole: i PDF già letti vengono riletti
 # Siti-bacheca: i loro indirizzi email non sono il contatto della struttura che cerca personale.
 DOMINI_BACHECA = {"opi.tn.it", "opibz.it", "upipa.tn.it", "suedtirolerjobs.it", "fnopi.it", "google.com"}
 
@@ -105,7 +106,8 @@ def _leggi_pdf(link_pdf: list[dict], titolo: str, rete, cfg: dict, comuni: list[
     if not opzioni.get("leggi", True) or not link_pdf:
         return None, []
     indirizzi = [p["url"] for p in link_pdf[: int(opzioni.get("massimo_per_annuncio", 2))]]
-    if vecchio and vecchio.get("pdf_letti") == indirizzi and vecchio.get("da_pdf") is not None:
+    if (vecchio and vecchio.get("pdf_letti") == indirizzi and vecchio.get("da_pdf") is not None
+            and vecchio["da_pdf"].get("v") == VERSIONE_PDF):
         return vecchio["da_pdf"], indirizzi  # già letti in un giro precedente: non si riscaricano
     testi, errori = [], 0
     for indirizzo in indirizzi:
@@ -118,10 +120,13 @@ def _leggi_pdf(link_pdf: list[dict], titolo: str, rete, cfg: dict, comuni: list[
         return None, []  # nessun PDF scaricato: si riprova al prossimo giro
     testo = " ".join(t for t in testi if t)
     if len(testo) < 100:
-        return {"caratteri": len(testo)}, indirizzi
+        return {"caratteri": len(testo), "v": VERSIONE_PDF}, indirizzi
     campi = estrai.estrai_campi(titolo, testo, comuni, oggi, cfg["parole"]["infermiere"])
-    da_pdf = {k: campi[k] for k in ("compenso", "euro_ora", "scadenza", "turni", "segnali_turni",
+    da_pdf = {k: campi[k] for k in ("compenso", "euro_ora", "scadenza", "scadenza_frase", "turni", "segnali_turni",
                                     "zona", "km", "minuti", "cita_tedesco", "estratto")}
+    da_pdf["v"] = VERSIONE_PDF
+    if da_pdf["compenso"] is None:
+        da_pdf["indizi_compenso"] = estrai.indizi_compenso(testo)
     # Il tipo di rapporto si legge solo dall'intestazione: più avanti i bandi citano la
     # "libera professione" tra le incompatibilità, e sarebbe un falso segnale.
     da_pdf["contratto"] = estrai.estrai_contratto(testo[:1500])
@@ -158,6 +163,8 @@ def _costruisci(cand: dict, testo: str, pubblicato, fonte: dict, cfg: dict, comu
             if campi.get(campo) is None and da_pdf.get(campo) is not None:
                 campi[campo] = da_pdf[campo]
                 presi.append(NOMI_CAMPI[campo])
+                if campo == "scadenza":
+                    campi["scadenza_frase"] = da_pdf.get("scadenza_frase")
                 if campo == "turni":
                     campi["segnali_turni"] = da_pdf.get("segnali_turni") or {}
         if campi.get("euro_ora") is None and (da_pdf.get("euro_ora") is not None
@@ -180,8 +187,21 @@ def _costruisci(cand: dict, testo: str, pubblicato, fonte: dict, cfg: dict, comu
     if fonte.get("solo_regione") and not campi["zona"] and not estrai.RE_REGIONE.search(tutto):
         return None, "fuori regione"
 
+    # Una "scadenza" uguale al giorno di pubblicazione è quasi sempre la data del post letta per errore.
+    if campi["scadenza"] and pubblicato and campi["scadenza"] == pubblicato.isoformat():
+        campi["scadenza"] = campi["scadenza_frase"] = None
     if fonte.get("datore"):
         campi["datore"] = fonte["datore"]
+    elif not campi["datore"]:
+        campi["datore"] = estrai.datore_noto(f"{titolo} {corpo[:800]}")
+    if not campi["zona"]:
+        # Strutture conosciute che negli annunci non scrivono il comune.
+        vicino = f"{titolo} {campi['datore'] or ''} {corpo[:600]}".lower()
+        for parola, nome in (cfg.get("zone_strutture") or {}).items():
+            c = next((c for c in comuni if c["nome"] == nome), None)
+            if c and str(parola).lower() in vicino:
+                campi.update(zona=c["nome"], km=c["km"], minuti=c["minuti"])
+                break
     if fonte.get("zona") and not campi["zona"]:
         c = next((c for c in comuni if c["nome"] == fonte["zona"]), None)
         if c:
@@ -216,7 +236,7 @@ def _costruisci(cand: dict, testo: str, pubblicato, fonte: dict, cfg: dict, comu
 
 
 def _dettaglio(cand: dict, fonte: dict, rete, cfg: dict, comuni: list[dict], oggi: date,
-               vecchio: dict | None) -> tuple[dict | None, str | None]:
+               vecchio: dict | None, nota: dict | None = None) -> tuple[dict | None, str | None]:
     avvisi: list[str] = []
     testo, pubblicato, link_pdf = "", cand.get("pubblicato"), []
     if cand.get("pdf"):
@@ -232,6 +252,10 @@ def _dettaglio(cand: dict, fonte: dict, rete, cfg: dict, comuni: list[dict], ogg
             testo = pagina["testo"]
             pubblicato = pubblicato or pagina["pubblicato"]
             link_pdf = pagina["pdf"]
+            if nota is not None and not link_pdf and len(nota.setdefault("senza_pdf", [])) < 6:
+                dubbi = estrai.allegati_dubbi(html, cand["url"])
+                if dubbi:
+                    nota["senza_pdf"].append({"url": cand["url"], "link": dubbi})
             if len(cand["titolo"]) < 15 and pagina["titolo"]:
                 cand = {**cand, "titolo": pagina["titolo"]}
             if len(testo) < 200 and not link_pdf:
@@ -271,6 +295,8 @@ def raccogli_fonte(fonte: dict, rete, cfg: dict, comuni: list[dict], oggi: date,
             esito["errore"] = "pagina quasi vuota: forse è cambiata o è caricata in modo dinamico"
             return esito
         cand = {"url": fonte["url"], "titolo": fonte.get("titolo") or pagina["titolo"] or fonte["nome"]}
+        nota["pagine"][-1]["inizio"] = pagina["testo"][:400]
+        nota["pagine"][-1]["pdf"] = [x["url"] for x in pagina["pdf"][:6]]
         a, motivo = _costruisci(cand, pagina["testo"], None, fonte, cfg, comuni, oggi, [], controlla_ruolo=False)
         if a:
             esito["annunci"].append(a)
@@ -328,7 +354,7 @@ def raccogli_fonte(fonte: dict, rete, cfg: dict, comuni: list[dict], oggi: date,
             esito["annunci"].append({**vecchio, "_riusato": True})
             esito["riusati"] += 1
             continue
-        a, motivo = _dettaglio(cand, fonte, rete, cfg, comuni, oggi, vecchio)
+        a, motivo = _dettaglio(cand, fonte, rete, cfg, comuni, oggi, vecchio, nota)
         esito["letti"] += 1
         if a:
             esito["annunci"].append(a)
@@ -454,6 +480,16 @@ def segna_doppioni(memoria: dict, oggi: date) -> None:
         datore, titolo = estrai.chiave(a.get("datore")), estrai.chiave(a.get("titolo"))
         if len(titolo) >= (8 if datore else 15):
             gruppi.setdefault((datore, titolo, a["zona"], e_piva(a)), []).append(a)
+    risolvi(gruppi)
+    # 3) Stessa struttura che ripubblica la ricerca: stesso indirizzo email, stessa zona, nessuna scadenza aperta.
+    #    Resta l'annuncio a mano o il più recente.
+    gruppi = {}
+    for a in memoria.values():
+        if a.get("doppione_di") or not a.get("zona") or not a.get("email"):
+            continue
+        if a.get("scadenza") and not e_scaduto(a, oggi):
+            continue
+        gruppi.setdefault((a["email"].lower(), a["zona"], e_piva(a)), []).append(a)
     risolvi(gruppi)
 
 

@@ -263,6 +263,33 @@ dopo = motore.leggi_json(motore.FILE_ANNUNCI, {})[manuale["id"]]
 verifica("dati a mano conservati, scadenza aggiornata", (dopo["titolo"], dopo["turni"], dopo["scadenza"], dopo["origine"]), ("Personale infermieristico (CCNL AIOP)", "turni da 12 h", "2026-11-18", "manuale"))
 verifica("la proroga compare tra gli aggiornati", [x["cambi"] for x in r["aggiornati"]], [["scadenza: n.d. → 2026-11-18"]])
 
+print("Regole della seconda messa a punto")
+verifica("compenso: tra medici e infermieri vale quello degli infermieri",
+         estrai.estrai_compenso("ai medici un compenso orario lordo pari a € 80,00; agli infermieri un compenso orario lordo onnicomprensivo di Euro 40,00")[1], 40.0)
+verifica("compenso: 'lordo omnicomprensivo orario'", estrai.estrai_compenso("compenso lordo omnicomprensivo orario di euro 40,00")[1], 40.0)
+verifica("compenso: indizi quando non si riconosce", len(estrai.indizi_compenso("Il budget complessivo è di € 12.000 annui.")), 1)
+sc = estrai.estrai_scadenza_frase("Le domande dovranno pervenire entro e non oltre le ore 12.00 del giorno 06/11/2026. Proroga termini di scadenza: 27/11/2026 ore 12.00", OGGI)
+verifica("scadenza con la frase da cui è presa", (str(sc[0]), "Proroga termini di scadenza: 27/11/2026" in sc[1]), ("2026-11-27", True))
+verifica("datore: minuscolo nel titolo", estrai.estrai_datore("La casa di riposo di Silandro cerca nuovi collaboratori/trici"), "Casa di riposo di Silandro")
+verifica("datore: una frase non è un nome", estrai.estrai_datore("Cerchiamo infermiere per la nostra residenza a Trento"), None)
+verifica("datore: dalle prime righe del testo", estrai.estrai_datore_da_testo("Infermiere/a a tempo pieno o part time Fondazione Casa di Riposo Heinrich von Rottenburg Kaltern – Caldaro Azienda pubblica di servizi alla persona Via Mendola 21"), "Fondazione Casa di Riposo Heinrich von Rottenburg Kaltern")
+verifica("datore: vecchio nome dell'azienda sanitaria trentina", estrai.datore_noto("… potenziamento invernale – Azienda Provinciale per i Servizi Sanitari"), "ASUIT (Trentino)")
+html_allegati = """<html><body><header><a href="/carta.pdf">Carta dei servizi</a></header>
+<article><div class="entry-content"><p>L'APSP ricerca infermieri in libera professione. Domande entro il 27/11/2026.</p></div></article>
+<div class="allegati"><div class="blocco"><h4>Avviso di pubblica selezione</h4><a href="/wp-content/uploads/2026/10/doc-123.pdf">scarica il pdf</a></div>
+<div class="blocco"><h4>Modulo di domanda</h4><a href="/wp-content/uploads/2026/10/doc-124.pdf">download</a></div>
+<iframe src="/visore/viewer.html?file=%2Fwp-content%2Fuploads%2F2026%2F10%2Fproroga-termini.pdf"></iframe></div>
+<footer><a href="/privacy.pdf">Privacy</a></footer></body></html>"""
+trovati_pdf = [x["url"] for x in estrai.leggi_pagina(html_allegati, "https://ente.it/avviso/")["pdf"]]
+verifica("PDF fuori dal testo: presi avviso e proroga, non il modulo né il piè di pagina",
+         trovati_pdf, ["https://ente.it/wp-content/uploads/2026/10/doc-123.pdf", "https://ente.it/wp-content/uploads/2026/10/proroga-termini.pdf"])
+vecchi = {str(i): {"id": str(i), "titolo": t, "datore": None, "zona": "Caldaro", "email": "info@ah-kaltern.it", "contratto": None,
+                   "scadenza": None, "pubblicato": pub, "punteggio": 40, "primo_visto": "2026-11-13"}
+          for i, (t, pub) in enumerate([("Infermiere/a a tempo pieno o part time", "2023-09-13"), ("Fondazione Heinrich von Rottenburg Caldaro", "2025-06-25"),
+                                        ("Ricerca personale infermieristico", "2026-06-23")])}
+motore.segna_doppioni(vecchi, OGGI)
+verifica("doppioni: stessa struttura (stessa email), resta il più recente", [a.get("doppione_di") for a in vecchi.values()], ["2", "2", None])
+
 print("Web app e calendario")
 dest = uscite.costruisci_sito(cfg, date(2026, 11, 14), tmp2 / "dist")
 dati = __import__("json").loads((dest / "dati.json").read_text(encoding="utf-8"))

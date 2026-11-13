@@ -15,7 +15,7 @@ import xml.etree.ElementTree as ET
 from datetime import date, datetime
 from email.utils import parsedate_to_datetime
 from pathlib import Path
-from urllib.parse import parse_qs, urljoin, urlparse, urlunparse
+from urllib.parse import parse_qs, urljoin, urlparse, urlunparse, unquote
 
 from bs4 import BeautifulSoup
 
@@ -114,7 +114,10 @@ _RE_PDF_INUTILE = re.compile(
     r"domanda|modulo|fac[\s_-]?simile|informativa|privacy|curriculum|autocertific|consenso|graduatoria|esito|"
     r"verbale|calendario|convocaz|diario|ammess|schema|carta[\s_-]dei[\s_-]servizi|organigramma|statuto|"
     r"regolamento|tariff|menu|bilancio", re.I)
-_RE_PDF_UTILE = re.compile(r"avviso|bando|selezion|incaric|ricerca|concorso|ausschreibung|stellen|annuncio", re.I)
+_RE_PDF_UTILE = re.compile(r"avviso|bando|selezion|incaric|ricerca|concorso|prorog|ausschreibung|stellen|annuncio", re.I)
+_RE_ETICHETTA_VUOTA = re.compile(r"^(?:scarica(?:\s+il)?(?:\s+pdf)?|download|apri|visualizza|pdf|clicca\s+qui|leggi|allegato|file)?\W*$", re.I)
+_RE_CONTORNO = re.compile(r"sidebar|widget|menu|footer|cookie|breadcrumb|navbar|related|correlat", re.I)
+_ATTRIBUTI_LINK = ("href", "src", "data", "data-src", "data-pdf", "data-pdf-url", "data-file", "data-url")
 
 _POSTA_PRIVATA = re.compile(
     r"@(?:gmail|googlemail|libero|hotmail|yahoo|outlook|live|virgilio|alice|tiscali|icloud|me|tim|email|"
@@ -152,24 +155,90 @@ def _ripulisci(nodo) -> None:
             continue
 
 
-def _link_pdf(nodo, base: str) -> list[dict]:
-    """PDF allegati all'annuncio, con prima quelli che sembrano l'avviso o il bando."""
+def _url_pdf(url: str) -> str | None:
+    """L'indirizzo del PDF, se il link porta a un PDF (anche dentro un visualizzatore o un plugin di download)."""
+    p = urlparse(url)
+    if p.scheme not in ("http", "https"):
+        return None
+    percorso = p.path.lower()
+    if percorso.endswith(".pdf") or "/content/download/" in percorso:
+        return url
+    parametri = parse_qs(p.query)
+    for nome in ("file", "url", "src", "pdf"):
+        for valore in parametri.get(nome, []):
+            if ".pdf" in valore.lower():
+                return urljoin(url, valore)
+    if "wpdmdl" in parametri or "download_id" in parametri:
+        return url
+    return None
+
+
+def _etichetta(tag) -> str:
+    """Testo del link; se è solo «scarica» o «download», il titolo del blocco che lo contiene."""
+    testo = pulisci(tag.get_text(" ") or "")
+    if tag.name != "a":
+        return pulisci(tag.get("title") or "")  # visualizzatori incorporati: conta il nome del file
+    genitore = tag
+    for _ in range(3):
+        if not _RE_ETICHETTA_VUOTA.match(testo):
+            break
+        genitore = genitore.parent
+        if genitore is None or genitore.name in ("body", "html", "main", "article"):
+            break
+        intorno = pulisci(genitore.get_text(" ") or "")
+        if len(intorno) <= 160:
+            testo = re.sub(r"\b(?:scarica(?:\s+il)?(?:\s+pdf)?|download)\b", " ", intorno, flags=re.I).strip()
+    return pulisci(testo)
+
+
+def _nel_contorno(tag) -> bool:
+    for su in tag.parents:
+        if su.name in ("nav", "header", "footer", "aside"):
+            return True
+        if _RE_CONTORNO.search(" ".join(su.get("class") or []) + " " + (su.get("id") or "")):
+            return True
+    return False
+
+
+def _link_pdf(nodo, base: str, solo_sicuri: bool = False) -> list[dict]:
+    """PDF allegati all'annuncio, con prima quelli che sembrano l'avviso o il bando.
+    Con solo_sicuri si cerca in tutta la pagina e si tengono solo quelli che dal nome sembrano un avviso."""
     visti: dict[str, dict] = {}
-    for a in nodo.find_all("a", href=True):
-        url = urljoin(base, a["href"].strip())
-        p = urlparse(url)
-        if p.scheme not in ("http", "https"):
-            continue
-        percorso = p.path.lower()
-        if not (percorso.endswith(".pdf") or "/content/download/" in percorso):
-            continue
-        testo = pulisci(a.get_text(" ") or "")
-        nome = testo + " " + percorso.rsplit("/", 1)[-1]
-        if _RE_PDF_INUTILE.search(nome):
-            continue
-        visti.setdefault(normalizza_url(url), {"url": url, "testo": testo[:120],
-                                               "peso": 0 if _RE_PDF_UTILE.search(nome) else 1})
+    for tag in nodo.find_all(True):
+        for attributo in _ATTRIBUTI_LINK:
+            valore = tag.get(attributo)
+            if not isinstance(valore, str) or not valore.strip():
+                continue
+            url = _url_pdf(urljoin(base, valore.strip()))
+            if not url:
+                continue
+            testo = _etichetta(tag)
+            nome = testo + " " + unquote(urlparse(url).path.rsplit("/", 1)[-1])
+            if _RE_PDF_INUTILE.search(nome):
+                continue
+            utile = bool(_RE_PDF_UTILE.search(nome))
+            if solo_sicuri and (not utile or _nel_contorno(tag)):
+                continue
+            visti.setdefault(normalizza_url(url), {"url": url, "testo": testo[:120], "peso": 0 if utile else 1})
     return sorted(visti.values(), key=lambda x: x["peso"])
+
+
+def allegati_dubbi(html: str, base: str, massimo: int = 8) -> list[list[str]]:
+    """Messa a punto: link che parlano di PDF o download ma che non sono stati riconosciuti."""
+    soup = BeautifulSoup(html, "html.parser")
+    trovati, visti = [], set()
+    for tag in soup.find_all(True):
+        if _nel_contorno(tag):
+            continue
+        for attributo in _ATTRIBUTI_LINK:
+            valore = tag.get(attributo)
+            if not isinstance(valore, str) or not valore.strip() or valore.startswith(("#", "javascript:", "mailto:")):
+                continue
+            testo = pulisci(tag.get_text(" ") or "")[:60]
+            if re.search(r"pdf|download|scarica|allegat|wp-content/uploads", valore + " " + testo, re.I) and valore not in visti:
+                visti.add(valore)
+                trovati.append([tag.name, testo, urljoin(base, valore)[:200]])
+    return trovati[:massimo]
 
 
 def trova_email(testo: str, escludi_domini: set[str] | None = None) -> dict:
@@ -212,6 +281,9 @@ def leggi_pagina(html: str, base: str = "", intera_se_vuota: bool = False) -> di
 
     nodo = _nodo_principale(soup, per_elenco=False)
     pdf = _link_pdf(nodo, base) if base else []
+    if base and not pdf and soup.body is not None and nodo is not soup.body:
+        # Alcuni temi mettono gli allegati fuori dal testo dell'articolo.
+        pdf = _link_pdf(soup.body, base, solo_sicuri=True)
     _ripulisci(nodo)
     testo = pulisci(nodo.get_text(" "))
     if intera_se_vuota and len(testo) < 200 and soup.body is not None and nodo is not soup.body:
@@ -477,12 +549,12 @@ RE_SOLO_PUBBLICI = re.compile(r"\(dipendente\s+pubblico\)|in\s+comando\s+ai\s+(?
 
 _NUM = r"(\d{1,3}(?:[.,]\d{1,2})?)"
 _EURO = r"(?:€|euro|eur)"
-_AGG = r"(?:(?:lord\w+|nett\w+|omnicomprensiv\w+)\s*)*"
+_AGG = r"(?:(?:lord\w+|nett\w+|o[mn]nicomprensiv\w+|orari\w+)\s*)*"
 _UNITA = r"(?:/|all['’]\s*|l['’]\s*|a\s+|per\s+(?:ogni\s+|ciascuna\s+)?|pro\s+)?\s*(?:h\b|ora\b|orari\w*|stunde)"
 RE_EURO_ORA = [
     re.compile(_NUM + r"\s*" + _EURO + r"\s*" + _AGG + _UNITA, re.I),
     re.compile(_EURO + r"\s*" + _NUM + r"\s*(?:\([^)]{0,40}\)\s*)?" + _AGG + _UNITA, re.I),
-    re.compile(r"(?:compenso|tariffa|corrispettivo|importo|retribuzione)\s+(?:lord\w+\s+)?orari\w+\D{0,60}?"
+    re.compile(r"(?:compenso|tariffa|corrispettivo|importo|retribuzione)\s+(?:\w+\s+){0,3}?orari\w+\D{0,60}?"
                r"(?:" + _EURO + r"\s*" + _NUM + r"|" + _NUM + r"\s*" + _EURO + r")", re.I),
     re.compile(r"stunden(?:lohn|satz|honorar)\D{0,30}?(?:" + _EURO + r"\s*" + _NUM + r"|" + _NUM + r"\s*" + _EURO + r")", re.I),
 ]
@@ -541,8 +613,13 @@ def estrai_contratto(testo: str) -> str | None:
     return None
 
 
+_RE_INFERMIERE_VICINO = re.compile(r"infermier|krankenpfleg|pflegefach", re.I)
+
+
 def estrai_compenso(testo: str) -> tuple[str | None, float | None]:
-    """(testo da mostrare, euro all'ora se indicati)."""
+    """(testo da mostrare, euro all'ora se indicati).
+    Se un avviso riporta più tariffe (es. medici e infermieri) vale quella più vicina alla parola «infermiere»."""
+    trovati: list[tuple[int, float]] = []
     for rx in RE_EURO_ORA:
         for m in rx.finditer(testo):
             grezzo = next((g for g in m.groups() if g), None)
@@ -553,7 +630,15 @@ def estrai_compenso(testo: str) -> tuple[str | None, float | None]:
             except ValueError:
                 continue
             if 8 <= valore <= 150:
-                return f"{valore:g} €/h".replace(".", ","), valore
+                trovati.append((m.start(), valore))
+    if trovati:
+        trovati.sort()
+        valore = trovati[0][1]
+        if len({v for _, v in trovati}) > 1:
+            citazioni = [m.start() for m in _RE_INFERMIERE_VICINO.finditer(testo)]
+            if citazioni:
+                valore = min(trovati, key=lambda t: min(abs(t[0] - c) for c in citazioni))[1]
+        return f"{valore:g} €/h".replace(".", ","), valore
     for rx in (RE_EURO_TURNO, RE_EURO_MESE):
         m = rx.search(testo)
         if m:
@@ -561,24 +646,46 @@ def estrai_compenso(testo: str) -> tuple[str | None, float | None]:
     return None, None
 
 
-def estrai_scadenza(testo: str, oggi: date) -> date | None:
-    def candidati(rx: re.Pattern) -> list[date]:
+def indizi_compenso(testo: str, massimo: int = 3) -> list[str]:
+    """Messa a punto: le frasi dove si parla di soldi, quando il compenso non è stato riconosciuto."""
+    frasi, ultimo = [], -200
+    for m in re.finditer(r"€|\beuro\b", testo, re.I):
+        if m.start() - ultimo < 150:
+            continue
+        ultimo = m.start()
+        frasi.append(pulisci(testo[max(0, m.start() - 80): m.end() + 60]))
+        if len(frasi) >= massimo:
+            break
+    return frasi
+
+
+def estrai_scadenza_frase(testo: str, oggi: date) -> tuple[date | None, str | None]:
+    """La scadenza e la frase da cui è stata presa (così si può controllare a colpo d'occhio)."""
+    def candidati(rx: re.Pattern) -> list[tuple[date, str]]:
         trovati = []
         for m in rx.finditer(testo):
             finestra = testo[m.end(): m.end() + 110]
             for d in RE_DATA.finditer(finestra):
                 giorno = _data_da_match(d)
                 if giorno and abs((giorno - oggi).days) < 730:
-                    trovati.append(giorno)
+                    inizio = max(0, m.start() - 25)
+                    if inizio:
+                        inizio = testo.find(" ", inizio) + 1
+                    frase = pulisci(testo[inizio: m.end() + d.end() + 12])
+                    trovati.append((giorno, frase[:170]))
                     break
         return trovati
 
-    date_trovate = candidati(RE_SCADENZA_FORTE) or candidati(RE_SCADENZA_DEBOLE)
-    if not date_trovate:
-        return None
+    trovate = candidati(RE_SCADENZA_FORTE) or candidati(RE_SCADENZA_DEBOLE)
+    if not trovate:
+        return None, None
     if re.search(r"prorog|verl[äa]nger", testo, re.I):
-        return max(date_trovate)
-    return date_trovate[0]
+        return max(trovate, key=lambda t: t[0])
+    return trovate[0]
+
+
+def estrai_scadenza(testo: str, oggi: date) -> date | None:
+    return estrai_scadenza_frase(testo, oggi)[0]
 
 
 def estrai_turni(testo: str) -> tuple[str | None, dict]:
@@ -613,6 +720,25 @@ _RE_ENTE = (r"(?:A\.?\s?P\.?\s?S\.?\s?P\.?|RSA|Casa di (?:Cura|riposo)|(?:Societ
 _RE_TAGLIO = re.compile(r"\s+(?:cerca|cercasi|ricerca|ricerchiamo|sucht|assume|seleziona|selezione|bando|concorso|avviso)\b.*$", re.I)
 
 
+_ALIAS_DATORE = [
+    (re.compile(r"azienda\s+provinciale\s+per\s+i\s+servizi\s+sanitari|\bAPSS\b|\bASUIT\b|"
+                r"azienda\s+sanitaria\s+universitaria\s+integrata\s+del\s+trentino", re.I), "ASUIT (Trentino)"),
+    (re.compile(r"azienda\s+sanitaria\s+dell['’]\s*alto\s+adige|s[üu]dtiroler\s+sanit[äa]tsbetrieb|\bSABES\b|\bASDAA\b", re.I),
+     "ASDAA / SABES"),
+]
+_RE_ENTE_TESTO = (r"(?:A\.?\s?P\.?\s?S\.?\s?P\.?|RSA|Casa di (?:Cura|riposo)|(?:Società )?Cooperativa(?: Sociale)?|Fondazione|"
+                  r"Seniorenwohnheim|Stiftung|Sozialgenossenschaft|Clinica|Altenheim|Altersheim|Pflegeheim|Wohn- und Pflegeheim)")
+_RE_FINE_NOME = re.compile(r"\s+(?:via|viale|piazza|corso|tel|con sede|è|sono|ha|in|per|che|ist|sucht|cerca|ricerca|"
+                           r"azienda pubblica|und|wir|unser\w*|la nostra|il nostro)\b.*$|\s*\d.*$|\.\s.*$", re.I)
+
+
+def datore_noto(testo: str) -> str | None:
+    for rx, nome in _ALIAS_DATORE:
+        if rx.search(testo):
+            return nome
+    return None
+
+
 def estrai_datore(titolo: str) -> str | None:
     """Nei titoli tipo 'APSP Vannetti – Rovereto – Selezione…' il datore è il primo pezzo.
     Se non si capisce con sicurezza, meglio None (nell'app compare il titolo)."""
@@ -621,14 +747,29 @@ def estrai_datore(titolo: str) -> str | None:
     if len(pezzi) >= 2 and re.match(_RE_ENTE, pezzi[0], re.I):
         candidato = pezzi[0]
     else:
-        m = re.search("(" + _RE_ENTE + r"\s+[^,;:()–—|]{3,60})", titolo)
+        m = re.search("(" + _RE_ENTE + r"\s+[^,;:()–—|]{3,60})", titolo, re.I)
         candidato = m.group(1) if m else None
     if not candidato:
         return None
     candidato = pulisci(_RE_TAGLIO.sub("", candidato)).strip(" -–")
     if len(candidato) < 4 or candidato.lower() == titolo.lower().strip():
         return None
-    return candidato[:80]
+    if re.match(r"\S+\s+(?:a|ad|in|per|presso|con|e|che|da)\s", candidato, re.I):
+        return None  # "residenza a Trento": è una frase, non un nome
+    return (candidato[0].upper() + candidato[1:])[:80]
+
+
+def estrai_datore_da_testo(testo: str) -> str | None:
+    """Quando il titolo non nomina la struttura: la si cerca nelle prime righe dell'annuncio."""
+    inizio = testo[:500]
+    m = re.search("(" + _RE_ENTE_TESTO + r"\s+[^,;:()–—|\n]{3,70})", inizio)
+    if not m:
+        return None
+    candidato = pulisci(_RE_FINE_NOME.sub("", _RE_TAGLIO.sub("", m.group(1)))).strip(" -–.")
+    parole = candidato.split()
+    if len(parole) < 2 or len(candidato) < 8:
+        return None
+    return " ".join(parole[:8])[:70]
 
 
 def estrai_struttura(titolo: str, testo: str) -> str | None:
@@ -668,9 +809,9 @@ def estrai_campi(titolo: str, testo: str, comuni: list[dict], oggi: date,
     compenso, euro_ora = estrai_compenso(tutto)
     turni, segnali = estrai_turni(tutto)
     comune = trova_comune(titolo, testo, comuni)
-    scadenza = estrai_scadenza(tutto, oggi)
+    scadenza, frase_scadenza = estrai_scadenza_frase(tutto, oggi)
     return {
-        "datore": estrai_datore(titolo),
+        "datore": estrai_datore(titolo) or estrai_datore_da_testo(testo),
         "contratto": estrai_contratto(tutto),
         "compenso": compenso,
         "euro_ora": euro_ora,
@@ -680,6 +821,7 @@ def estrai_campi(titolo: str, testo: str, comuni: list[dict], oggi: date,
         "km": comune["km"] if comune else None,
         "minuti": comune["minuti"] if comune else None,
         "scadenza": scadenza.isoformat() if scadenza else None,
+        "scadenza_frase": frase_scadenza,
         "cita_tedesco": bool(RE_LINGUA.search(tutto)),
         "in_tedesco": lingua_tedesca(testo),
         "struttura": estrai_struttura(titolo, testo),

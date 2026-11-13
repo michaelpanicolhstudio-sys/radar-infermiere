@@ -221,7 +221,7 @@ def evento_ics(a: dict, adesso: datetime) -> str:
 CAMPI_APP = ["id", "url", "titolo", "datore", "contratto", "compenso", "euro_ora", "turni", "zona", "km",
              "minuti", "scadenza", "pubblicato", "fonte", "affidabilita", "punteggio", "dettaglio_punteggio",
              "avvisi", "estratto", "primo_visto", "ultimo_visto", "novita", "data_novita", "cambi",
-             "sparito_dal", "origine", "nota_manuale", "struttura", "email", "pec", "in_tedesco"]
+             "sparito_dal", "origine", "nota_manuale", "struttura", "email", "pec", "in_tedesco", "scadenza_frase", "pdf_letti"]
 
 
 def costruisci_sito(cfg: dict, oggi: date, destinazione: Path | None = None) -> Path:
@@ -236,6 +236,9 @@ def costruisci_sito(cfg: dict, oggi: date, destinazione: Path | None = None) -> 
     (dest / "ics").mkdir(exist_ok=True)
     for a in memoria.values():
         if not motore.visibile(a, cfg):
+            continue
+        # Le scadenze passate da tempo non servono più: restano in memoria ma non nell'app.
+        if a.get("scadenza") and (oggi - date.fromisoformat(a["scadenza"])).days > int(cfg.get("giorni_scaduti_visibili", 60)):
             continue
         o = {k: a.get(k) for k in CAMPI_APP}
         o["datato"] = motore.e_datato(a, oggi, cfg)

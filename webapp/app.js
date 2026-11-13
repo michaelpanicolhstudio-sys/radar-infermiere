@@ -516,6 +516,7 @@
     var azioni = el("div", { class: "azioni" });
     azioni.appendChild(el("a", { class: "azione principale", href: linkSicuro(o.url), target: "_blank", rel: "noopener noreferrer", text: "Apri l'annuncio originale" }));
     if (o.zona) azioni.appendChild(el("a", { class: "azione", href: "https://maps.apple.com/?dirflg=d&daddr=" + encodeURIComponent(o.zona + ", Trentino-Alto Adige, Italia"), target: "_blank", rel: "noopener noreferrer", text: "Indicazioni stradali" }));
+    if (o.pdf_letti && o.pdf_letti.length && o.pdf_letti[0] !== o.url) azioni.appendChild(el("a", { class: "azione", href: linkSicuro(o.pdf_letti[0]), target: "_blank", rel: "noopener noreferrer", text: "Apri l'avviso in PDF" }));
     if (o.calendario) azioni.appendChild(el("a", { class: "azione", href: "ics/" + o.id + ".ics", text: "Scadenza nel calendario" }));
     var posta = testoEmail(o);
     if (o.email) azioni.appendChild(el("a", { class: "azione", href: "mailto:" + encodeURIComponent(o.email) + "?subject=" + encodeURIComponent(posta.oggetto) + "&body=" + encodeURIComponent(posta.testo), text: "Scrivi alla struttura" }));
@@ -528,7 +529,7 @@
     corpo.appendChild(el("div", { class: "dati" },
       dato("Contratto", o.contratto), dato("Compenso", o.compenso), dato("Ore e turni", o.turni),
       dato("Zona", o.zona ? o.zona + ", circa " + o.minuti + " min e " + o.km + " km da " + DATI.casa : null),
-      dato("Scadenza", o.scadenza ? giorno(o.scadenza) : null), dato("Pubblicato", o.pubblicato ? giorno(o.pubblicato) : null),
+      dato("Scadenza", o.scadenza ? giorno(o.scadenza) + (o.scadenza_frase ? " («" + o.scadenza_frase + "»)" : "") : null), dato("Pubblicato", o.pubblicato ? giorno(o.pubblicato) : null),
       dato("Struttura", o.struttura), dato("Contatti", [o.email, o.pec ? o.pec + " (PEC)" : null].filter(Boolean).join(", ") || null),
       dato("Fonte", o.fonte), dato("Visto dal", giorno(o.primo_visto) + (o.ultimo_visto ? ", ultimo controllo il " + giornoBreve(o.ultimo_visto) : ""))));
 
