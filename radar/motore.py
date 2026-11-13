@@ -12,11 +12,16 @@ from . import estrai, punteggio
 RADICE = Path(__file__).resolve().parent.parent
 FILE_ANNUNCI = RADICE / "data" / "annunci.json"
 FILE_FONTI = RADICE / "data" / "fonti_stato.json"
+FILE_DIAGNOSTICA = RADICE / "data" / "diagnostica.json"
 CARTELLA_REPORT = RADICE / "data" / "report"
 
 CAMPI_CONFRONTO = ["titolo", "contratto", "compenso", "scadenza", "turni"]
 NOMI_CAMPI = {"titolo": "titolo", "contratto": "contratto", "compenso": "compenso",
               "scadenza": "scadenza", "turni": "ore e turni"}
+# Si aumenta quando cambiano le regole di pertinenza: le pagine già scartate vengono riaperte una volta.
+VERSIONE_REGOLE = 2
+# Siti-bacheca: i loro indirizzi email non sono il contatto della struttura che cerca personale.
+DOMINI_BACHECA = {"opi.tn.it", "opibz.it", "upipa.tn.it", "suedtirolerjobs.it", "fnopi.it", "google.com"}
 
 
 # --------------------------------------------------------------------------
@@ -38,143 +43,22 @@ def scrivi_json(percorso: Path, dati) -> None:
 def tutte_le_fonti(cfg: dict) -> list[dict]:
     fonti = [f for f in cfg.get("fonti", []) if f.get("attiva", True) and f.get("url")]
     for i, url in enumerate(cfg.get("feed_google_alerts") or [], start=1):
-        fonti.append({"nome": f"Google Alerts {i}", "tipo": "rss", "url": url,
-                      "affidabilita": "aggregatore", "solo_regione": True})
+        fonti.append({"nome": f"Google Alerts {i}", "tipo": "rss", "url": url, "affidabilita": "aggregatore",
+                      "solo_regione": True, "puo_essere_vuota": True})
     return fonti
 
 
 # --------------------------------------------------------------------------
-# Raccolta
-# --------------------------------------------------------------------------
-
-def _impronta(a: dict) -> str:
-    return hashlib.sha1(json.dumps([a.get(c) for c in CAMPI_CONFRONTO],
-                                   ensure_ascii=False).encode()).hexdigest()[:12]
-
-
-def _costruisci(cand: dict, testo: str, pubblicato, fonte: dict, cfg: dict,
-                comuni: list[dict], oggi: date, avvisi: list[str]) -> dict | None:
-    parole = cfg["parole"]
-    titolo = cand["titolo"]
-    tutto = f"{titolo} {cand.get('sommario', '')} {testo}"
-    # Pertinenza: deve parlare di infermieri. Nelle bacheche dedicate (tutti_i_link) basta esserci.
-    if not fonte.get("tutti_i_link") and not estrai.contiene(tutto, parole["infermiere"]):
-        return None
-    if estrai.contiene(titolo, parole["escludi_titolo"]) and not estrai.contiene(titolo, parole["infermiere"]):
-        return None
-    campi = estrai.estrai_campi(titolo, testo or cand.get("sommario", ""), comuni, oggi,
-                                parole["infermiere"])
-    if fonte.get("solo_regione") and not campi["zona"] and not estrai.RE_REGIONE.search(tutto):
-        return None  # avviso di ricerca fuori dal Trentino-Alto Adige
-    if fonte.get("datore"):
-        campi["datore"] = fonte["datore"]
-    if fonte.get("zona") and not campi["zona"]:
-        c = next((c for c in comuni if c["nome"] == fonte["zona"]), None)
-        if c:
-            campi.update(zona=c["nome"], km=c["km"], minuti=c["minuti"])
-    if campi["cita_tedesco"]:
-        avvisi.append("Cita tedesco o bilinguismo")
-    if not campi["zona"]:
-        avvisi.append("Zona non riconosciuta")
-    a = {
-        "id": estrai.id_annuncio(cand["url"]),
-        "url": cand["url"],
-        "titolo": titolo,
-        "fonte": fonte["nome"],
-        "affidabilita": fonte.get("affidabilita", "aggregatore"),
-        "pubblicato": pubblicato.isoformat() if pubblicato else None,
-        "avvisi": avvisi,
-        **campi,
-    }
-    a["punteggio"], a["dettaglio_punteggio"] = punteggio.calcola(a, cfg)
-    a["impronta"] = _impronta(a)
-    return a
-
-
-def _dettaglio(cand: dict, fonte: dict, rete, cfg, comuni, oggi) -> dict | None:
-    avvisi: list[str] = []
-    testo, pubblicato = "", cand.get("pubblicato")
-    if cand.get("pdf"):
-        avvisi.append("Annuncio in PDF: dati non letti, apri il link")
-    else:
-        html, errore = rete.get(cand["url"])
-        if errore:
-            avvisi.append(f"Pagina non letta: {errore}")
-        else:
-            pagina = estrai.leggi_pagina(html)
-            testo = pagina["testo"]
-            pubblicato = pubblicato or pagina["pubblicato"]
-            if len(cand["titolo"]) < 15 and pagina["titolo"]:
-                cand = {**cand, "titolo": pagina["titolo"]}
-            if len(testo) < 200:
-                avvisi.append("Pagina quasi vuota (forse caricata in modo dinamico)")
-    return _costruisci(cand, testo, pubblicato, fonte, cfg, comuni, oggi, avvisi)
-
-
-def raccogli_fonte(fonte: dict, rete, cfg: dict, comuni: list[dict], oggi: date) -> dict:
-    """Ritorna {annunci, candidati, errore}. 'candidati' = voci viste prima del filtro."""
-    tipo = fonte.get("tipo", "elenco")
-    massimo = int(cfg["rete"].get("max_annunci_per_fonte", 25))
-    esito = {"annunci": [], "candidati": 0, "errore": None}
-
-    if tipo == "pagina":
-        html, errore = rete.get(fonte["url"])
-        if errore:
-            esito["errore"] = errore
-            return esito
-        pagina = estrai.leggi_pagina(html)
-        esito["candidati"] = 1
-        if len(pagina["testo"]) < 200:
-            esito["errore"] = "pagina quasi vuota: forse è cambiata o è caricata in modo dinamico"
-            return esito
-        cand = {"url": fonte["url"], "titolo": pagina["titolo"] or fonte["nome"]}
-        a = _costruisci(cand, pagina["testo"], pagina["pubblicato"], fonte, cfg, comuni, oggi, [])
-        if a:
-            esito["annunci"].append(a)
-        return esito
-
-    if tipo == "rss":
-        xml, errore = rete.get(fonte["url"], robots=False)  # i feed sono fatti per essere letti da programmi
-        if errore:
-            esito["errore"] = errore
-            return esito
-        try:
-            candidati = estrai.leggi_feed(xml)
-        except ET.ParseError:
-            esito["errore"] = "il feed non è leggibile (formato non valido): controlla il link"
-            return esito
-    else:  # elenco
-        candidati, visti = [], set()
-        for i, url in enumerate([fonte["url"]] + list(fonte.get("altre_pagine") or [])):
-            html, errore = rete.get(url)
-            if errore:
-                if i == 0:
-                    esito["errore"] = errore
-                    return esito
-                continue
-            for c in estrai.link_da_elenco(html, url, cfg["parole"]["link"],
-                                           bool(fonte.get("tutti_i_link"))):
-                chiave = estrai.normalizza_url(c["url"])
-                if chiave not in visti:
-                    visti.add(chiave)
-                    candidati.append(c)
-
-    esito["candidati"] = len(candidati)
-    for cand in candidati[:massimo]:
-        if not cand.get("titolo"):
-            continue
-        a = _dettaglio(cand, fonte, rete, cfg, comuni, oggi)
-        if a:
-            esito["annunci"].append(a)
-    return esito
-
-
-# --------------------------------------------------------------------------
-# Memoria e confronto con ieri
+# Stato di un annuncio
 # --------------------------------------------------------------------------
 
 def e_dipendente(a: dict) -> bool:
     return (a.get("contratto") or "").startswith(("Dipendente", "Concorso"))
+
+
+def e_piva(a: dict) -> bool:
+    c = a.get("contratto") or ""
+    return "P.IVA" in c or c == "Collaborazione"
 
 
 def e_scaduto(a: dict, oggi: date) -> bool:
@@ -189,22 +73,6 @@ def e_datato(a: dict, oggi: date, cfg: dict) -> bool:
     return (oggi - date.fromisoformat(a["pubblicato"])).days > giorni
 
 
-def segna_doppioni(memoria: dict, oggi: date) -> None:
-    """Lo stesso bando visto su due siti (stessa zona, stessa scadenza, stesso tipo): ne resta uno."""
-    gruppi: dict[tuple, list[dict]] = {}
-    for a in memoria.values():
-        a.pop("doppione_di", None)
-        if a.get("scadenza") and a.get("zona") and not e_scaduto(a, oggi):
-            famiglia = "piva" if "P.IVA" in (a.get("contratto") or "") else "altro"
-            gruppi.setdefault((a["zona"], a["scadenza"], famiglia), []).append(a)
-    for gruppo in gruppi.values():
-        if len(gruppo) < 2:
-            continue
-        gruppo.sort(key=lambda a: (a.get("origine") != "manuale", -a["punteggio"], a["primo_visto"]))
-        for altro in gruppo[1:]:
-            altro["doppione_di"] = gruppo[0]["id"]
-
-
 def visibile(a: dict, cfg: dict) -> bool:
     profilo = cfg.get("profilo", {})
     if a.get("doppione_di"):
@@ -217,8 +85,271 @@ def visibile(a: dict, cfg: dict) -> bool:
     return True
 
 
-def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str],
-                     oggi: date, cfg: dict) -> dict:
+def aperto(a: dict, oggi: date, cfg: dict) -> bool:
+    return visibile(a, cfg) and not e_scaduto(a, oggi) and not e_datato(a, oggi, cfg)
+
+
+def _impronta(a: dict) -> str:
+    return hashlib.sha1(json.dumps([a.get(c) for c in CAMPI_CONFRONTO],
+                                   ensure_ascii=False).encode()).hexdigest()[:12]
+
+
+# --------------------------------------------------------------------------
+# Lettura di un annuncio
+# --------------------------------------------------------------------------
+
+def _leggi_pdf(link_pdf: list[dict], titolo: str, rete, cfg: dict, comuni: list[dict], oggi: date,
+               vecchio: dict | None) -> tuple[dict | None, list[str]]:
+    """Legge i PDF allegati (avviso, bando). Ritorna (dati ricavati, indirizzi letti)."""
+    opzioni = cfg.get("pdf") or {}
+    if not opzioni.get("leggi", True) or not link_pdf:
+        return None, []
+    indirizzi = [p["url"] for p in link_pdf[: int(opzioni.get("massimo_per_annuncio", 2))]]
+    if vecchio and vecchio.get("pdf_letti") == indirizzi and vecchio.get("da_pdf") is not None:
+        return vecchio["da_pdf"], indirizzi  # già letti in un giro precedente: non si riscaricano
+    testi, errori = [], 0
+    for indirizzo in indirizzi:
+        dati, errore = rete.get_pdf(indirizzo, float(opzioni.get("massimo_mb", 8)))
+        if errore:
+            errori += 1
+            continue
+        testi.append(estrai.testo_pdf(dati, int(opzioni.get("massimo_pagine", 12))))
+    if errori == len(indirizzi):
+        return None, []  # nessun PDF scaricato: si riprova al prossimo giro
+    testo = " ".join(t for t in testi if t)
+    if len(testo) < 100:
+        return {"caratteri": len(testo)}, indirizzi
+    campi = estrai.estrai_campi(titolo, testo, comuni, oggi, cfg["parole"]["infermiere"])
+    da_pdf = {k: campi[k] for k in ("compenso", "euro_ora", "scadenza", "turni", "segnali_turni",
+                                    "zona", "km", "minuti", "cita_tedesco", "estratto")}
+    # Il tipo di rapporto si legge solo dall'intestazione: più avanti i bandi citano la
+    # "libera professione" tra le incompatibilità, e sarebbe un falso segnale.
+    da_pdf["contratto"] = estrai.estrai_contratto(testo[:1500])
+    da_pdf["caratteri"] = len(testo)
+    da_pdf["infermiere"] = estrai.contiene(testo, cfg["parole"]["infermiere"])
+    da_pdf.update(estrai.trova_email(testo, DOMINI_BACHECA))
+    return da_pdf, indirizzi
+
+
+def _costruisci(cand: dict, testo: str, pubblicato, fonte: dict, cfg: dict, comuni: list[dict], oggi: date,
+                avvisi: list[str], da_pdf: dict | None = None, pdf_letti: list[str] | None = None,
+                controlla_ruolo: bool = True) -> tuple[dict | None, str | None]:
+    """Ritorna (annuncio, None) oppure (None, motivo dello scarto)."""
+    parole = cfg["parole"]
+    titolo = cand["titolo"]
+    corpo = testo or cand.get("sommario", "")
+    tutto = f"{titolo} {cand.get('sommario', '')} {testo}"
+    pdf_utile = bool(da_pdf) and da_pdf.get("caratteri", 0) >= 100
+
+    if estrai.contiene(titolo, parole["escludi_titolo"]) and not estrai.contiene(titolo, parole["infermiere"]):
+        return None, "ruolo diverso (dal titolo)"
+    if controlla_ruolo and estrai.ruolo_diverso(titolo, corpo):
+        return None, "ruolo diverso (coordinamento, direzione o comando)"
+    ha_infermiere = estrai.contiene(tutto, parole["infermiere"]) or (pdf_utile and da_pdf.get("infermiere"))
+    # Nelle bacheche dedicate agli infermieri (tutti_i_link) la parola può mancare: basta esserci.
+    if not fonte.get("tutti_i_link") and not ha_infermiere:
+        return None, "non riguarda infermieri"
+
+    campi = estrai.estrai_campi(titolo, corpo, comuni, oggi, parole["infermiere"])
+    contatti = estrai.trova_email(corpo, DOMINI_BACHECA)
+    if pdf_utile:
+        presi = []
+        for campo in ("contratto", "scadenza", "turni"):
+            if campi.get(campo) is None and da_pdf.get(campo) is not None:
+                campi[campo] = da_pdf[campo]
+                presi.append(NOMI_CAMPI[campo])
+                if campo == "turni":
+                    campi["segnali_turni"] = da_pdf.get("segnali_turni") or {}
+        if campi.get("euro_ora") is None and (da_pdf.get("euro_ora") is not None
+                                              or (campi.get("compenso") is None and da_pdf.get("compenso"))):
+            campi["compenso"], campi["euro_ora"] = da_pdf.get("compenso"), da_pdf.get("euro_ora")
+            presi.append("compenso")
+        if campi.get("zona") is None and da_pdf.get("zona"):
+            campi.update(zona=da_pdf["zona"], km=da_pdf.get("km"), minuti=da_pdf.get("minuti"))
+        campi["cita_tedesco"] = campi["cita_tedesco"] or bool(da_pdf.get("cita_tedesco"))
+        if len(corpo) < 120 and da_pdf.get("estratto"):
+            campi["estratto"] = da_pdf["estratto"]
+        contatti = {"email": contatti["email"] or da_pdf.get("email"), "pec": contatti["pec"] or da_pdf.get("pec")}
+        if presi:
+            avvisi.append("Dal PDF allegato: " + ", ".join(presi))
+    elif da_pdf is not None and pdf_letti:
+        avvisi.append("PDF allegato non leggibile (forse è una scansione): apri l'annuncio")
+
+    if not campi["zona"] and estrai.fuori_regione(titolo, parole.get("fuori_regione", [])):
+        return None, "fuori regione"
+    if fonte.get("solo_regione") and not campi["zona"] and not estrai.RE_REGIONE.search(tutto):
+        return None, "fuori regione"
+
+    if fonte.get("datore"):
+        campi["datore"] = fonte["datore"]
+    if fonte.get("zona") and not campi["zona"]:
+        c = next((c for c in comuni if c["nome"] == fonte["zona"]), None)
+        if c:
+            campi.update(zona=c["nome"], km=c["km"], minuti=c["minuti"])
+    if campi["in_tedesco"]:
+        avvisi.append("Annuncio in tedesco")
+    elif campi["cita_tedesco"]:
+        avvisi.append("Cita tedesco o bilinguismo")
+    if not campi["zona"]:
+        avvisi.append("Zona non riconosciuta")
+
+    tipo = fonte.get("tipo", "elenco")
+    a = {
+        "id": estrai.id_annuncio(cand["url"]),
+        "url": cand["url"],
+        "titolo": titolo,
+        "fonte": fonte["nome"],
+        "tipo_fonte": tipo,
+        "affidabilita": fonte.get("affidabilita", "aggregatore"),
+        # La data di una pagina fissa "lavora con noi" non è la data dell'annuncio.
+        "pubblicato": pubblicato.isoformat() if (pubblicato and tipo != "pagina") else None,
+        "avvisi": avvisi,
+        "letto_il": oggi.isoformat(),
+        "pdf_letti": pdf_letti or [],
+        "da_pdf": da_pdf if pdf_letti else None,
+        **campi,
+        **contatti,
+    }
+    a["punteggio"], a["dettaglio_punteggio"] = punteggio.calcola(a, cfg)
+    a["impronta"] = _impronta(a)
+    return a, None
+
+
+def _dettaglio(cand: dict, fonte: dict, rete, cfg: dict, comuni: list[dict], oggi: date,
+               vecchio: dict | None) -> tuple[dict | None, str | None]:
+    avvisi: list[str] = []
+    testo, pubblicato, link_pdf = "", cand.get("pubblicato"), []
+    if cand.get("pdf"):
+        link_pdf = [{"url": cand["url"], "testo": cand["titolo"]}]
+    else:
+        html, errore = rete.get(cand["url"])
+        if errore == "è un PDF":
+            link_pdf = [{"url": cand["url"], "testo": cand["titolo"]}]
+        elif errore:
+            avvisi.append(f"Pagina non letta: {errore}")
+        else:
+            pagina = estrai.leggi_pagina(html, cand["url"])
+            testo = pagina["testo"]
+            pubblicato = pubblicato or pagina["pubblicato"]
+            link_pdf = pagina["pdf"]
+            if len(cand["titolo"]) < 15 and pagina["titolo"]:
+                cand = {**cand, "titolo": pagina["titolo"]}
+            if len(testo) < 200 and not link_pdf:
+                avvisi.append("Testo molto breve: l'annuncio potrebbe essere un'immagine. Apri il link")
+    da_pdf, pdf_letti = _leggi_pdf(link_pdf, cand["titolo"], rete, cfg, comuni, oggi, vecchio)
+    return _costruisci(cand, testo, pubblicato, fonte, cfg, comuni, oggi, avvisi, da_pdf, pdf_letti)
+
+
+def _riusabile(vecchio: dict, oggi: date, cfg: dict) -> bool:
+    """Annunci datati o scaduti da tempo: non serve riaprirli ogni giorno."""
+    letto = vecchio.get("letto_il")
+    if not letto or (oggi - date.fromisoformat(letto)).days >= int(cfg.get("giorni_rilettura_datati", 30)):
+        return False
+    scaduto_da_tempo = e_scaduto(vecchio, oggi) and (oggi - date.fromisoformat(vecchio["scadenza"])).days > 14
+    return e_datato(vecchio, oggi, cfg) or scaduto_da_tempo
+
+
+def raccogli_fonte(fonte: dict, rete, cfg: dict, comuni: list[dict], oggi: date, memoria: dict,
+                   stato: dict, diagnostica: dict | None = None) -> dict:
+    """Ritorna {annunci, candidati, errore, scartati, riusati, letti}."""
+    tipo = fonte.get("tipo", "elenco")
+    massimo = int(cfg["rete"].get("max_annunci_per_fonte", 25))
+    esito = {"annunci": [], "candidati": 0, "errore": None, "scartati": 0, "riusati": 0, "letti": 0}
+    nota = {"pagine": [], "accettati": [], "scartati": []}
+    if diagnostica is not None:
+        diagnostica[fonte["nome"]] = nota
+
+    if tipo == "pagina":
+        html, errore = rete.get(fonte["url"])
+        if errore:
+            esito["errore"] = errore
+            return esito
+        pagina = estrai.leggi_pagina(html, fonte["url"], intera_se_vuota=True)
+        esito["candidati"] = esito["letti"] = 1
+        nota["pagine"].append({"url": fonte["url"], "caratteri": len(pagina["testo"])})
+        if len(pagina["testo"]) < 200:
+            esito["errore"] = "pagina quasi vuota: forse è cambiata o è caricata in modo dinamico"
+            return esito
+        cand = {"url": fonte["url"], "titolo": fonte.get("titolo") or pagina["titolo"] or fonte["nome"]}
+        a, motivo = _costruisci(cand, pagina["testo"], None, fonte, cfg, comuni, oggi, [], controlla_ruolo=False)
+        if a:
+            esito["annunci"].append(a)
+            nota["accettati"].append(a["titolo"][:90])
+        else:
+            nota["scartati"].append([cand["titolo"][:90], motivo])
+        return esito
+
+    if tipo == "rss":
+        xml, errore = rete.get(fonte["url"], robots=False)  # i feed sono fatti per essere letti da programmi
+        if errore:
+            esito["errore"] = errore
+            return esito
+        try:
+            candidati = estrai.leggi_feed(xml)
+        except ET.ParseError:
+            esito["errore"] = "il feed non è leggibile (formato non valido): controlla il link"
+            return esito
+        nota["pagine"].append({"url": "feed", "candidati": len(candidati)})
+    else:  # elenco
+        candidati, visti = [], set()
+        parole_link = fonte.get("parole_link") or cfg["parole"]["link"]
+        for i, url in enumerate([fonte["url"]] + list(fonte.get("altre_pagine") or [])):
+            html, errore = rete.get(url)
+            if errore:
+                nota["pagine"].append({"url": url, "errore": errore})
+                if i == 0:
+                    esito["errore"] = errore
+                    return esito
+                continue
+            trovati = estrai.link_da_elenco(html, url, parole_link, bool(fonte.get("tutti_i_link")))
+            pagina_nota = {"url": url, "candidati": len(trovati)}
+            if not trovati and i == 0:
+                pagina_nota["link_in_pagina"] = estrai.tutti_i_link(html, url, 40)
+            nota["pagine"].append(pagina_nota)
+            for c in trovati:
+                chiave = estrai.normalizza_url(c["url"])
+                if chiave not in visti:
+                    visti.add(chiave)
+                    candidati.append(c)
+
+    esito["candidati"] = len(candidati)
+    scarti = stato.setdefault("scarti", {})
+    giorni_scarti = int(cfg.get("giorni_memoria_scarti", 14))
+    for cand in candidati[:massimo]:
+        if not cand.get("titolo"):
+            continue
+        ident = estrai.id_annuncio(cand["url"])
+        vecchio = memoria.get(ident)
+        scarto = scarti.get(ident)
+        if scarto and (oggi - date.fromisoformat(scarto["d"])).days < giorni_scarti and scarto.get("t") == cand["titolo"][:90]:
+            esito["scartati"] += 1  # già aperto e scartato di recente: non si riapre
+            continue
+        if vecchio and _riusabile(vecchio, oggi, cfg):
+            esito["annunci"].append({**vecchio, "_riusato": True})
+            esito["riusati"] += 1
+            continue
+        a, motivo = _dettaglio(cand, fonte, rete, cfg, comuni, oggi, vecchio)
+        esito["letti"] += 1
+        if a:
+            esito["annunci"].append(a)
+            scarti.pop(ident, None)
+            nota["accettati"].append(a["titolo"][:90])
+        else:
+            scarti[ident] = {"d": oggi.isoformat(), "m": motivo, "t": cand["titolo"][:90]}
+            esito["scartati"] += 1
+            nota["scartati"].append([cand["titolo"][:90], motivo])
+    for ident, scarto in list(scarti.items()):
+        if (oggi - date.fromisoformat(scarto["d"])).days > 45:
+            del scarti[ident]
+    return esito
+
+
+# --------------------------------------------------------------------------
+# Memoria e confronto con ieri
+# --------------------------------------------------------------------------
+
+def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str], fonti_attive: set[str],
+                     scartati: set[str], oggi: date, cfg: dict) -> dict:
     """Unisce gli annunci di oggi alla memoria. Ritorna {nuovi, aggiornati}."""
     oggi_s = oggi.isoformat()
     nuovi, aggiornati = [], []
@@ -226,6 +357,9 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str],
     for a in trovati:
         visti_oggi.add(a["id"])
         vecchio = memoria.get(a["id"])
+        if a.pop("_riusato", False) and vecchio is not None:
+            vecchio["ultimo_visto"] = oggi_s  # ancora in elenco, non riletto
+            continue
         if vecchio is None:
             a.update(primo_visto=oggi_s, ultimo_visto=oggi_s, novita="nuovo", data_novita=oggi_s, cambi=[])
             memoria[a["id"]] = a
@@ -249,7 +383,6 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str],
                 a["scadenza"] = vecchio.get("scadenza")
             a["origine"] = "manuale"
             a["nota_manuale"] = vecchio.get("nota_manuale")
-            a["punteggio"], a["dettaglio_punteggio"] = punteggio.calcola(a, cfg)
             a["impronta"] = _impronta(a)
             cambi = ([f"scadenza: {vecchio.get('scadenza') or 'n.d.'} → {a['scadenza']}"]
                      if a.get("scadenza") != vecchio.get("scadenza") else [])
@@ -263,6 +396,8 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str],
 
     giorni = int(cfg.get("giorni_prima_di_togliere", 30))
     for ident, a in list(memoria.items()):
+        # I pesi possono essere cambiati in config: il punteggio si ricalcola sempre.
+        a["punteggio"], a["dettaglio_punteggio"] = punteggio.calcola(a, cfg)
         if ident in visti_oggi:
             a.pop("sparito_dal", None)
             continue
@@ -273,7 +408,15 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str],
             if oggi > limite:
                 del memoria[ident]
             continue
-        if a.get("fonte") not in fonti_lette:
+        if ident in scartati:
+            del memoria[ident]  # riletto e giudicato non pertinente
+            continue
+        if a.get("tipo_fonte") == "rss":
+            # Gli avvisi di ricerca scorrono via dal feed: non vuol dire che l'annuncio sia chiuso.
+            if (oggi - date.fromisoformat(a.get("ultimo_visto", oggi_s))).days > giorni:
+                del memoria[ident]
+            continue
+        if a.get("fonte") in fonti_attive and a.get("fonte") not in fonti_lette:
             continue  # la fonte oggi non rispondeva: non si può dire che l'annuncio sia sparito
         a.setdefault("sparito_dal", oggi_s)
         if (oggi - date.fromisoformat(a["sparito_dal"])).days > giorni:
@@ -281,23 +424,62 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str],
     return {"nuovi": nuovi, "aggiornati": aggiornati}
 
 
-def aggiorna_stato_fonti(stato: dict, nome: str, esito: dict, oggi: date) -> str | None:
+def segna_doppioni(memoria: dict, oggi: date) -> None:
+    """Lo stesso annuncio visto su due siti, o ripubblicato: ne resta uno (a mano, poi il più recente)."""
+    for a in memoria.values():
+        a.pop("doppione_di", None)
+
+    def preferenza(a: dict):
+        return (a.get("origine") != "manuale", -(date.fromisoformat(a["pubblicato"]).toordinal() if a.get("pubblicato") else 0),
+                -a.get("punteggio", 0), a.get("primo_visto", ""))
+
+    def risolvi(gruppi: dict) -> None:
+        for gruppo in gruppi.values():
+            if len(gruppo) > 1:
+                gruppo.sort(key=preferenza)
+                for altro in gruppo[1:]:
+                    altro["doppione_di"] = gruppo[0]["id"]
+
+    # 1) Stesso bando: stessa zona, stessa scadenza, stesso tipo di rapporto.
+    gruppi: dict[tuple, list[dict]] = {}
+    for a in memoria.values():
+        if a.get("scadenza") and a.get("zona") and not e_scaduto(a, oggi):
+            gruppi.setdefault((a["zona"], a["scadenza"], e_piva(a)), []).append(a)
+    risolvi(gruppi)
+    # 2) Stesso annuncio ripubblicato: stesso datore, stesso titolo, stessa zona.
+    gruppi = {}
+    for a in memoria.values():
+        if a.get("doppione_di") or not a.get("zona"):
+            continue
+        datore, titolo = estrai.chiave(a.get("datore")), estrai.chiave(a.get("titolo"))
+        if len(titolo) >= (8 if datore else 15):
+            gruppi.setdefault((datore, titolo, a["zona"], e_piva(a)), []).append(a)
+    risolvi(gruppi)
+
+
+def aggiorna_stato_fonti(stato: dict, fonte: dict, esito: dict, oggi: date) -> str | None:
     """Tiene la storia di ogni fonte e ritorna un eventuale problema da segnalare."""
-    s = stato.setdefault(nome, {"massimo_candidati": 0, "ultimo_ok": None, "giorni_a_zero": 0})
+    nome = fonte["nome"]
+    stato.setdefault("massimo_candidati", 0)
+    stato.update(ultimo_giro=oggi.isoformat(), letti=esito["letti"], riusati=esito["riusati"],
+                 scartati=esito["scartati"], pertinenti=len(esito["annunci"]))
     if esito["errore"]:
-        s["ultimo_errore"] = esito["errore"]
+        stato["ultimo_errore"] = esito["errore"]
         return f"{nome}: {esito['errore']}"
-    s.pop("ultimo_errore", None)
+    stato.pop("ultimo_errore", None)
+    stato["ultimi_candidati"] = esito["candidati"]
     if esito["candidati"] == 0:
-        s["giorni_a_zero"] = s.get("giorni_a_zero", 0) + 1
-        if s.get("massimo_candidati", 0) > 0:
+        stato["giorni_a_zero"] = stato.get("giorni_a_zero", 0) + 1
+        if fonte.get("puo_essere_vuota"):
+            stato["ultimo_ok"] = oggi.isoformat()
+            return None
+        if stato.get("massimo_candidati", 0) > 0:
             return (f"{nome}: oggi nessun annuncio nell'elenco, mentre prima ce n'erano "
-                    f"(ultima lettura buona: {s.get('ultimo_ok')}). Il sito potrebbe aver cambiato struttura.")
+                    f"(ultima lettura buona: {stato.get('ultimo_ok')}). Il sito potrebbe aver cambiato struttura.")
         return f"{nome}: nessun link ad annunci trovato. Controlla l'indirizzo in config.yaml."
-    s["giorni_a_zero"] = 0
-    s["ultimo_ok"] = oggi.isoformat()
-    s["massimo_candidati"] = max(s.get("massimo_candidati", 0), esito["candidati"])
-    s["ultimi_candidati"] = esito["candidati"]
+    stato["giorni_a_zero"] = 0
+    stato["ultimo_ok"] = oggi.isoformat()
+    stato["massimo_candidati"] = max(stato.get("massimo_candidati", 0), esito["candidati"])
     return None
 
 
@@ -306,60 +488,104 @@ def aggiorna_stato_fonti(stato: dict, nome: str, esito: dict, oggi: date) -> str
 # --------------------------------------------------------------------------
 
 def _riga(a: dict) -> dict:
-    return {k: a.get(k) for k in ("id", "titolo", "datore", "contratto", "compenso", "zona", "minuti",
+    riga = {k: a.get(k) for k in ("id", "titolo", "datore", "contratto", "compenso", "zona", "minuti",
                                   "scadenza", "punteggio", "url", "cambi")}
+    riga["piva"] = e_piva(a)
+    return riga
 
 
-def giro(cfg: dict, rete, oggi: date, registra=print) -> dict:
+def _esplora(cfg: dict, rete, registra) -> list[dict]:
+    """Messa a punto: elenca i link di alcune pagine, per capire dove pubblicano concorsi e avvisi."""
+    risultati = []
+    for url in cfg.get("esplora") or []:
+        registra(f"• esploro {url}")
+        html, errore = rete.get(url)
+        if errore:
+            risultati.append({"url": url, "errore": errore})
+            continue
+        pagina = estrai.leggi_pagina(html, url, intera_se_vuota=True)
+        risultati.append({"url": url, "titolo": pagina["titolo"], "caratteri": len(pagina["testo"]),
+                          "inizio": pagina["testo"][:300], "link": estrai.tutti_i_link(html, url, 60)})
+    return risultati
+
+
+def giro(cfg: dict, rete, oggi: date, registra=print, diagnostica: bool = True) -> dict:
     comuni = estrai.carica_comuni(RADICE / "data" / "comuni.csv")
     memoria = leggi_json(FILE_ANNUNCI, {})
     stato_fonti = leggi_json(FILE_FONTI, {})
+    fonti = tutte_le_fonti(cfg)
+    fonti_attive = {f["nome"] for f in fonti}
+    diag = {"data": oggi.isoformat(), "fonti": {}, "esplora": []}
 
-    trovati, problemi, fonti_lette = {}, [], set()
-    for fonte in tutte_le_fonti(cfg):
+    trovati, problemi, fonti_lette, scartati = {}, [], set(), set()
+    for fonte in fonti:
         registra(f"• {fonte['nome']}")
+        stato = stato_fonti.setdefault(fonte["nome"], {})
+        if stato.get("regole") != VERSIONE_REGOLE:
+            stato["scarti"], stato["regole"] = {}, VERSIONE_REGOLE
         try:
-            esito = raccogli_fonte(fonte, rete, cfg, comuni, oggi)
+            esito = raccogli_fonte(fonte, rete, cfg, comuni, oggi, memoria, stato, diag["fonti"])
         except Exception as e:  # una fonte rotta non deve fermare le altre
-            esito = {"annunci": [], "candidati": 0, "errore": f"errore imprevisto ({type(e).__name__}: {e})"}
-        problema = aggiorna_stato_fonti(stato_fonti, fonte["nome"], esito, oggi)
+            esito = {"annunci": [], "candidati": 0, "scartati": 0, "riusati": 0, "letti": 0,
+                     "errore": f"errore imprevisto ({type(e).__name__}: {e})"}
+        scartati |= set(stato.get("scarti", {}))
+        problema = aggiorna_stato_fonti(stato, fonte, esito, oggi)
         if problema:
             problemi.append(problema)
             registra(f"   ⚠ {problema}")
-        if not esito["errore"] and esito["candidati"] > 0:
-            fonti_lette.add(fonte["nome"])  # un elenco vuoto non prova che gli annunci siano spariti
+        if not esito["errore"] and (esito["candidati"] > 0 or fonte.get("puo_essere_vuota")):
+            fonti_lette.add(fonte["nome"])  # un elenco vuoto imprevisto non prova che gli annunci siano spariti
         for a in esito["annunci"]:
-            # Stesso annuncio da due fonti: vince la più affidabile.
-            vecchio = trovati.get(a["id"])
-            if not vecchio or a["punteggio"] > vecchio["punteggio"]:
+            vecchio = trovati.get(a["id"])  # stesso annuncio da due fonti: vince la più affidabile
+            if not vecchio or a.get("punteggio", 0) > vecchio.get("punteggio", 0):
                 trovati[a["id"]] = a
-        registra(f"   {esito['candidati']} voci, {len(esito['annunci'])} annunci pertinenti")
+        registra(f"   {esito['candidati']} voci: {len(esito['annunci'])} pertinenti "
+                 f"({esito['letti']} lette, {esito['riusati']} già note, {esito['scartati']} scartate)")
+    for nome in list(stato_fonti):
+        if nome not in fonti_attive:
+            del stato_fonti[nome]  # fonte tolta o spenta in config
 
-    novita = aggiorna_memoria(memoria, list(trovati.values()), fonti_lette, oggi, cfg)
+    if diagnostica:
+        diag["esplora"] = _esplora(cfg, rete, registra)
+
+    novita = aggiorna_memoria(memoria, list(trovati.values()), fonti_lette, fonti_attive, scartati, oggi, cfg)
     segna_doppioni(memoria, oggi)
 
-    def aperto(a: dict) -> bool:
-        return visibile(a, cfg) and not e_scaduto(a, oggi) and not e_datato(a, oggi, cfg)
-
-    attivi = [a for a in memoria.values() if aperto(a) and not a.get("sparito_dal")]
+    attivi = [a for a in memoria.values() if aperto(a, oggi, cfg) and not a.get("sparito_dal")]
     attivi.sort(key=lambda a: -a["punteggio"])
     tra7 = (oggi + timedelta(days=7)).isoformat()
     scadenze = sorted((a for a in attivi if a.get("scadenza") and a["scadenza"] <= tra7),
                       key=lambda a: a["scadenza"])
+    nuovi = sorted((_riga(a) for a in novita["nuovi"] if aperto(a, oggi, cfg)), key=lambda r: -r["punteggio"])
+    aggiornati = [_riga(a) for a in novita["aggiornati"] if aperto(a, oggi, cfg)]
     report = {
         "data": oggi.isoformat(),
         "attivi": len(attivi),
-        "nuovi": [_riga(a) for a in novita["nuovi"] if aperto(a)],
-        "aggiornati": [_riga(a) for a in novita["aggiornati"] if aperto(a)],
+        "attivi_piva": sum(1 for a in attivi if e_piva(a)),
+        "nuovi": nuovi,
+        "aggiornati": aggiornati,
         "top5": [_riga(a) for a in attivi[:5]],
         "scadenze7": [_riga(a) for a in scadenze],
         "problemi": problemi,
         "fonti_lette": len(fonti_lette),
-        "fonti_totali": len(tutte_le_fonti(cfg)),
+        "fonti_totali": len(fonti),
+        "giri": 1,
     }
-    report["nuovi"].sort(key=lambda r: -r["punteggio"])
+    # Più giri nello stesso giorno: nell'archivio le novità si sommano, non si sovrascrivono.
+    del_giorno = dict(report)
+    precedente = leggi_json(CARTELLA_REPORT / f"{oggi.isoformat()}.json", None)
+    if precedente and precedente.get("data") == oggi.isoformat():
+        for voce in ("nuovi", "aggiornati"):
+            presenti = {r["id"] for r in report[voce]}
+            ancora = [r for r in precedente.get(voce, [])
+                      if r["id"] not in presenti and r["id"] in memoria and aperto(memoria[r["id"]], oggi, cfg)]
+            del_giorno[voce] = report[voce] + ancora
+        del_giorno["giri"] = int(precedente.get("giri", 1)) + 1
 
     scrivi_json(FILE_ANNUNCI, memoria)
     scrivi_json(FILE_FONTI, stato_fonti)
-    scrivi_json(CARTELLA_REPORT / f"{oggi.isoformat()}.json", report)
+    scrivi_json(CARTELLA_REPORT / f"{oggi.isoformat()}.json", del_giorno)
+    if diagnostica:
+        diag["richieste"] = getattr(rete, "richieste", None)
+        scrivi_json(FILE_DIAGNOSTICA, diag)
     return report

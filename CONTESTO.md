@@ -1,7 +1,7 @@
 # CONTESTO – Radar Infermiere P.IVA
 
 Questo file raccoglie tutto il contesto del progetto, ricavato dalle conversazioni con Claude
-fino al 12/11/2026. Serve a chiunque (persona o AI) riprenda il lavoro senza la chat originale.
+fino al 13/11/2026. Serve a chiunque (persona o AI) riprenda il lavoro senza la chat originale.
 **Il repository deve restare privato: contiene dati personali.**
 
 ## 1. Chi sono
@@ -87,8 +87,21 @@ I pesi sono in `config.yaml`. Se un dato manca si scrive «n.d.», non si invent
 | LinkedIn con accesso, Facebook, Telegram, WhatsApp | Non coperte | Richiedono login: il Radar non le legge |
 | Bollettino/concorsi Provincia BZ, Comuni e Comunità di valle, Brixsana, Villa Melitta, Villa Bianca, Martinsbrunn, hospice/ADI | Non coperte | Da aggiungere se si trova una pagina leggibile |
 
-Per coprire il resto del web ci sono 4 avvisi di **Google Alerts** consegnati via feed RSS
-(da incollare in `config.yaml`).
+Per coprire il resto del web ci sono 3 avvisi di **Google Alerts** consegnati via feed RSS, già in `config.yaml`
+(manca, facoltativo, quello in tedesco).
+
+### Aggiornamento del 13/11/2026 (versione 2 del Radar)
+
+- **ASUIT:** funziona solo l'indirizzo con `www` (`www.asuit.tn.it/bandi-concorsi?page=N`); 4 bandi per pagina,
+  dal più nuovo. Il Radar legge le prime 10 pagine e apre solo i bandi per infermieri o di libera professione.
+  Le «ricognizioni interne» per prestazioni aggiuntive riguardano i dipendenti ASUIT.
+- **UPIPA:** concorsi su due pagine (`…/Bacheca/Concorsi/(offset)/10`); la bacheca «Avvisi» esiste ma è spesso vuota.
+  I bandi sono PDF: ora vengono letti.
+- **SABES onboard e Cooperazione trentina:** spente, non leggibili in automatico.
+- **OPI Bolzano:** molti annunci sono immagini o PDF con poco testo.
+- **suedtirolerjobs:** gli elenchi sono dinamici; si segue il singolo annuncio di Schloss Moos.
+- Siti delle APSP sulla piattaforma comune (es. `mezzolombardo.upipa.opencontent.it`): in esplorazione,
+  vedi `esplora:` in `config.yaml` e `data/diagnostica.json`.
 
 ## 7. Offerte già trovate (controllo manuale del 12/11/2026)
 
@@ -161,5 +174,17 @@ Manpower Arco, Medical Rovereto.
 - Legge solo pagine pubbliche: niente login, niente social, rispetto di robots.txt.
 - L'estrazione di contratto, compenso, scadenza e zona è automatica (parole chiave):
   può sbagliare. Prima di muoversi va sempre aperto l'annuncio originale.
-- Gli annunci in PDF non vengono letti: compare solo il titolo, con i dati «n.d.».
+- I PDF allegati vengono letti (al massimo 2 per annuncio, 12 pagine). I PDF fatti di sole immagini
+  (scansioni) restano illeggibili: compare il titolo, con i dati «n.d.».
 - La tabella delle distanze contiene stime, non misure.
+- L'email proposta dall'app è una richiesta di informazioni: parte solo se la invio io dal telefono.
+
+## 12. Come funziona la versione 2 (13/11/2026)
+
+- Giro alle 7 circa (ora di Roma) con email; giro di prova senza email a ogni modifica caricata su GitHub.
+- Scarti automatici: ruoli diversi dall'infermiere (OSS, medici, coordinatori, fisioterapisti…),
+  annunci fuori regione, mobilità e comandi riservati a dipendenti pubblici, doppioni tra fonti.
+- Un annuncio senza scadenza più vecchio di 120 giorni è «datato»: resta in elenco ma non tra le novità.
+- I dati inseriti a mano vincono su quelli letti in automatico (tranne la scadenza, che si aggiorna).
+- App: schede Oggi, Offerte, Scadenze, Zone, Report. Stati e appunti restano solo sul telefono.
+- Indirizzo dell'app: https://radar-infermiere.pages.dev (protetta da Cloudflare Access).

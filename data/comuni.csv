@@ -1,46 +1,130 @@
 nome,km,minuti,lat,lon,altri_nomi
 Mezzolombardo,0,0,46.212,11.093,
-Mezzocorona,3,6,46.213,11.120,
+Mezzocorona,3,6,46.213,11.120,Kronmetz
 San Michele all'Adige,5,8,46.190,11.133,
+Terre d'Adige,8,10,46.160,11.085,Zambana|Nave San Rocco
+Ton,10,14,46.265,11.085,Vigo di Ton
 Lavis,12,15,46.140,11.112,
-Trento,20,25,46.067,11.121,Cognola|Povo|Gardolo|Mattarello
-Pergine Valsugana,32,35,46.063,11.238,Pergine
-Levico Terme,42,42,46.011,11.304,Levico
-Borgo Valsugana,55,50,46.052,11.457,
-Calliano,36,35,45.934,11.094,
-Nomi,40,38,45.930,11.073,
-Rovereto,45,40,45.890,11.040,
-Mori,50,45,45.851,10.981,
-Avio,65,50,45.735,10.938,
-Arco,55,55,45.918,10.886,
-Riva del Garda,60,60,45.886,10.841,
+Denno,12,15,46.274,11.049,
+Spormaggiore,12,16,46.219,11.048,
+Giovo,14,20,46.157,11.153,Verla
+Predaia,16,20,46.321,11.066,Taio|Coredo
+Ville d'Anaunia,18,24,46.330,11.023,Tuenno|Tassullo
+Trento,20,25,46.067,11.121,Cognola|Povo|Gardolo|Mattarello|Villazzano
 Cles,22,28,46.365,11.033,
-Predaia,16,20,46.321,11.066,Taio
-Borgo d'Anaunia,38,45,46.438,11.138,Fondo
+Cembra Lisignago,22,28,46.175,11.221,Cembra|Lisignago
+Andalo,22,28,46.166,11.004,
+Molveno,27,35,46.142,10.963,
+Civezzano,28,32,46.090,11.185,
+Novella,30,36,46.392,11.060,Revò|Cloz
+Vallelaghi,30,33,46.079,10.999,Vezzano|Padergnone
+Pergine Valsugana,32,35,46.063,11.238,Pergine
+Aldeno,32,32,45.977,11.092,
+Romeno,32,38,46.394,11.119,Cavareno|Sanzeno
+Besenello,34,33,45.943,11.109,
+Altopiano della Vigolana,34,38,45.983,11.190,Vigolo Vattaro
+Calliano,36,35,45.934,11.094,
 Malè,37,42,46.353,10.912,Malé
-Tione di Trento,60,65,46.035,10.726,Tione
-Comano Terme,45,50,46.030,10.870,Comano
-Pinzolo,62,72,46.160,10.765,
-Madonna di Campiglio,65,75,46.229,10.826,Campiglio
+Borgo d'Anaunia,38,45,46.438,11.138,Fondo|Malosco
+Baselga di Piné,38,42,46.133,11.248,Baselga di Pinè
+Nomi,40,38,45.930,11.073,
+Volano,40,38,45.917,11.063,
+San Lorenzo Dorsino,40,48,46.077,10.908,
+Levico Terme,42,42,46.011,11.304,Levico
+Villa Lagarina,42,38,45.918,11.032,Nogaredo|Pomarolo
+Cavedine,42,48,45.995,10.974,Valle dei Laghi
+Dimaro Folgarida,42,46,46.326,10.873,Dimaro|Folgarida
+Rovereto,45,40,45.890,11.040,
+Comano Terme,45,50,46.030,10.870,Comano|Ponte Arche
+Roncegno Terme,48,45,46.050,11.408,Roncegno
+Dro,48,48,45.962,10.911,
+Folgaria,48,55,45.916,11.171,
+Pellizzano,48,52,46.310,10.758,
+Mori,50,45,45.851,10.981,
 Cavalese,50,55,46.291,11.460,
+Bleggio Superiore,50,55,46.025,10.840,Bleggio
+Arco,55,55,45.918,10.886,
+Borgo Valsugana,55,50,46.052,11.457,
+Lavarone,55,60,45.940,11.273,
+Tesero,58,60,46.290,11.510,
+Brentonico,58,55,45.818,10.955,
+Nago-Torbole,58,58,45.872,10.877,Torbole
+Peio,58,62,46.363,10.673,Pejo|Cogolo
+Riva del Garda,60,60,45.886,10.841,Riva
+Ala,60,45,45.758,11.003,
+Tione di Trento,60,65,46.035,10.726,Tione
+Castel Ivano,62,55,46.068,11.523,Strigno
+Vallarsa,62,65,45.783,11.117,
+Spiazzo,62,68,46.104,10.739,
+Pinzolo,62,72,46.160,10.765,
 Predazzo,62,65,46.311,11.602,
-Sèn Jan di Fassa,75,85,46.430,11.685,San Giovanni di Fassa|Pozza di Fassa|Vigo di Fassa
-Primiero San Martino di Castrozza,105,120,46.176,11.830,Primiero|Fiera di Primiero|Tonadico
+Avio,65,50,45.735,10.938,
+Madonna di Campiglio,65,75,46.229,10.826,Campiglio
+Moena,70,78,46.376,11.659,
+Grigno,72,60,46.016,11.633,
+Ledro,72,75,45.889,10.732,
+Sèn Jan di Fassa,75,85,46.430,11.685,San Giovanni di Fassa|Pozza di Fassa|Vigo di Fassa|Sen Jan
+Pieve di Bono-Prezzo,75,78,45.942,10.640,Pieve di Bono
+Castello Tesino,80,80,46.064,11.633,
+Borgo Chiese,80,85,45.889,10.603,Condino
+Storo,88,92,45.849,10.578,
+Canazei,88,100,46.477,11.770,
+Canal San Bovo,100,110,46.155,11.732,
+Primiero San Martino di Castrozza,105,120,46.176,11.830,Primiero|Fiera di Primiero|Tonadico|Transacqua
+Salorno,12,14,46.240,11.212,Salurn
 Egna,20,22,46.317,11.273,Neumarkt
+Cortaccia,22,25,46.313,11.224,Kurtatsch
+Ora,24,25,46.347,11.297,Auer
+Termeno,25,27,46.341,11.242,Tramin
+Bronzolo,30,30,46.404,11.320,Branzoll
 Caldaro,32,35,46.413,11.246,Kaltern
-Appiano,40,40,46.455,11.259,Eppan|Cornaiano|Girlan
 Laives,35,32,46.427,11.338,Leifers
+Appiano,40,40,46.455,11.259,Eppan|Cornaiano|Girlan
 Bolzano,42,35,46.498,11.354,Bozen
+Terlano,50,42,46.531,11.247,Terlan
 Nalles,55,48,46.541,11.205,Nals
-Lana,62,50,46.612,11.157,
-Merano,70,55,46.671,11.160,Meran
-Parcines,78,65,46.684,11.073,Partschins
-Laces,95,82,46.617,10.859,Latsch
-Silandro,105,90,46.628,10.773,Schlanders
+Renon,58,55,46.540,11.457,Ritten|Collalbo|Klobenstein
+Gargazzone,60,48,46.584,11.202,Gargazon
 Fiè allo Sciliar,60,50,46.517,11.502,Fiè|Völs
+Nova Ponente,60,55,46.414,11.425,Deutschnofen
+Lana,62,50,46.612,11.157,
+Postal,62,50,46.609,11.193,Burgstall
+Sarentino,62,60,46.641,11.355,Sarntal|Sarnthein
+Nova Levante,62,55,46.430,11.538,Welschnofen
+Cermes,64,52,46.633,11.146,Tscherms
+Castelrotto,66,55,46.567,11.561,Kastelruth|Siusi
+Marlengo,68,54,46.655,11.142,Marling
+Merano,70,55,46.671,11.160,Meran
 Chiusa,72,52,46.640,11.566,Klausen
+Lagundo,74,58,46.682,11.123,Algund
 Laion,75,60,46.608,11.565,Lajen
+Tirolo,76,62,46.690,11.154,Dorf Tirol
+Scena,76,62,46.689,11.187,Schenna
+Parcines,78,65,46.684,11.073,Partschins
+Ortisei,78,62,46.574,11.672,St. Ulrich|Urtijëi
 Bressanone,82,60,46.716,11.657,Brixen
+Naturno,85,70,46.650,11.004,Naturns
+Varna,85,62,46.740,11.636,Vahrn
+Funes,85,65,46.643,11.679,Villnöss
+Selva di Val Gardena,85,72,46.555,11.756,Wolkenstein
+San Martino in Passiria,88,76,46.784,11.227,St. Martin in Passeier
+Castelbello-Ciardes,90,76,46.628,10.906,Castelbello|Kastelbell
+San Leonardo in Passiria,92,80,46.812,11.246,St. Leonhard in Passeier
+Rio di Pusteria,92,68,46.797,11.668,Mühlbach
+Laces,95,82,46.617,10.859,Latsch
+Vandoies,98,75,46.815,11.722,Vintl
+Silandro,105,90,46.628,10.773,Schlanders
+Campo di Trens,105,75,46.873,11.487,Freienfeld
+Chienes,108,84,46.807,11.838,Kiens
 Vipiteno,110,80,46.897,11.433,Sterzing|Wiesen|Pfitsch|Val di Vizze
 Brunico,115,90,46.796,11.936,Bruneck
-Val Badia,125,105,46.683,11.900,Badia|San Martino in Badia|Gadertal
+Racines,115,88,46.883,11.378,Ratschings
+Prato allo Stelvio,120,105,46.619,10.592,Prad
+Val Badia,125,105,46.683,11.900,Badia|San Martino in Badia|Gadertal|La Villa|Corvara|Marebbe
+Malles Venosta,125,110,46.688,10.545,Malles|Mals
+Valdaora,125,100,46.762,12.030,Olang
+Brennero,125,90,47.002,11.505,Brenner|Colle Isarco
+Campo Tures,130,105,46.920,11.955,Sand in Taufers
+Monguelfo-Tesido,133,105,46.757,12.105,Monguelfo|Welsberg
+Dobbiaco,143,115,46.735,12.222,Toblach
+San Candido,148,120,46.733,12.282,Innichen

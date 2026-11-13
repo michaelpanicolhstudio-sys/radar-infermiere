@@ -2,10 +2,10 @@
 
 Ogni mattina alle 7 circa questo programma:
 
-1. legge le fonti elencate in `config.yaml` (OPI Trento e Bolzano, UPIPA, ASUIT, SABES, cliniche, i tuoi Google Alerts);
-2. estrae da ogni annuncio datore, contratto, compenso, ore e turni, zona, scadenza;
+1. legge le fonti elencate in `config.yaml` (OPI Trento e Bolzano, UPIPA, ASUIT, cliniche, i tuoi Google Alerts);
+2. apre ogni annuncio e i **PDF allegati** (bandi e avvisi) ed estrae datore, contratto, compenso, ore e turni, zona, scadenza, email di contatto;
 3. dà un punteggio da 0 a 100 (contratto, compenso, distanza da Mezzolombardo, turni, fonte);
-4. confronta con il giorno prima e ti manda **un'email** con novità, scadenze e le 5 offerte migliori;
+4. scarta i ruoli che non sono da infermiere, gli annunci fuori regione e i doppioni, confronta con il giorno prima e ti manda **un'email** con novità, scadenze e le 5 offerte migliori;
 5. aggiorna la **web app** da tenere sulla schermata Home dell'iPhone.
 
 Gira da solo su GitHub, gratis. Non serve tenere acceso niente.
@@ -59,7 +59,8 @@ Il primo report elenca anche le fonti che non si riescono a leggere: è normale,
 4. Avvia di nuovo il workflow (**Run workflow**). Crea il progetto `radar-infermiere` e pubblica l'app.
 5. In Cloudflare, **Workers & Pages → radar-infermiere**: lì trovi l'indirizzo dell'app
    (di solito `https://radar-infermiere.pages.dev`; se il nome era già preso avrà qualche lettera in più).
-6. Su GitHub aggiungi il segreto `APP_URL` con quell'indirizzo: comparirà nelle email.
+6. Se l'indirizzo è diverso da `https://radar-infermiere.pages.dev`, scrivilo in `config.yaml` alla voce `app_url`:
+   è il collegamento che compare nelle email.
 
 ### 5. Proteggi l'app con Cloudflare Access (subito dopo il passo 4)
 
@@ -74,6 +75,7 @@ Finché non fai questo passo, chi conosce l'indirizzo può vedere l'elenco delle
    (protegge anche le anteprime).
 5. Nella regola (policy) controlla che sia ammessa solo la tua email.
    All'apertura dell'app Cloudflare ti manderà un codice via email.
+6. Nella stessa applicazione imposta **Session duration** su **1 month**: così il codice ti viene chiesto una volta al mese e non ogni giorno.
 
 Cloudflare cambia spesso i menu: la guida ufficiale aggiornata è
 https://developers.cloudflare.com/pages/platform/known-issues/ (sezione «Enable Access on your *.pages.dev domain»).
@@ -94,11 +96,18 @@ funzione di Pages protetta da Access): si può aggiungere in seguito.
 ## Uso quotidiano
 
 - **Email:** arriva dopo le 7. GitHub può ritardare l'avvio anche di 15–30 minuti. Se non c'è nulla di nuovo è una riga sola.
-- **App → Offerte:** ordinate per punteggio; filtri per stato, contratto, distanza e fonte.
-- **App → Scadenze:** prossimi 7 e 30 giorni (solo gli annunci che dichiarano una scadenza).
-- **App → Report:** archivio degli ultimi 60 giorni.
-- **App → Mappa:** dove sono le offerte rispetto a casa.
-- **Avvio a mano:** GitHub → **Actions → Radar giornaliero → Run workflow**.
+  Ogni offerta nell'email apre direttamente la sua scheda nell'app.
+- **App → Oggi:** il riepilogo del giorno, il radar delle zone, le novità, le scadenze entro 7 giorni
+  e le offerte in libera professione più adatte.
+- **App → Offerte:** ricerca per parola; filtri per stato, contratto, distanza, struttura e fonte;
+  ordinamento per punteggio, più recenti, scadenza o distanza.
+- **App → Scadenze:** tutte le scadenze dichiarate, dalla più vicina.
+- **App → Zone:** dove sono le offerte rispetto a casa (il centro del radar è Mezzolombardo, più lontano dal centro = più minuti d'auto).
+- **App → Report:** quante offerte per tipo di contratto, novità giorno per giorno e archivio degli ultimi 60 giorni.
+- **Scheda di un'offerta:** annuncio originale, indicazioni stradali, scadenza da aggiungere al calendario,
+  email di richiesta informazioni già scritta (parte dal tuo telefono solo se la invii tu), stato e appunti.
+- **Avvio a mano:** GitHub → **Actions → Radar giornaliero → Run workflow** (manda anche l'email).
+- **Dopo una modifica** a `config.yaml` o al programma parte da solo un giro di prova, senza email, e l'app si aggiorna.
 
 Le prime 21 offerte in elenco sono quelle trovate a mano il 12/11/2026 (hanno la nota «Inserito a mano»).
 Restano finché non scadono, o per 45 giorni.
@@ -110,8 +119,8 @@ Rispetta gli spazi a inizio riga.
 
 ### Aggiungere i feed di Google Alerts
 
-1. Su google.com/alerts, accanto a ogni avviso con consegna «Feed RSS» c'è l'icona arancione: copia il link.
-2. In `config.yaml` sostituisci `feed_google_alerts: []` con:
+1. Su google.com/alerts, accanto a ogni avviso con consegna «Feed RSS» c'è la piccola icona RSS (grigia): tieni premuto e copia il link.
+2. In `config.yaml` aggiungi il link all'elenco `feed_google_alerts` (tre sono già inseriti):
 
 ```yaml
 feed_google_alerts:
@@ -135,7 +144,15 @@ Copia un blocco sotto `fonti:` e cambia i valori:
     attiva: true
 ```
 
-Eremo e KOS sono già in elenco ma spenti: manca l'indirizzo della loro pagina «lavora con noi».
+Con `tipo: elenco` puoi aggiungere `parole_link:` (un elenco di parole) per aprire solo i link che le contengono,
+come fa la fonte ASUIT.
+
+### Cercare la pagina giusta di un sito
+
+Sotto `esplora:` puoi mettere l'indirizzo di un sito (una APSP, una clinica). A ogni giro il Radar lo apre e
+scrive in `data/diagnostica.json` i link che parlano di lavoro, concorsi e avvisi: da lì si sceglie la pagina
+da aggiungere alle fonti. Lo stesso file dice, fonte per fonte, quante pagine sono state lette e perché
+un annuncio è stato scartato.
 
 ### Cambiare i pesi del punteggio
 
@@ -146,7 +163,11 @@ Sezione `pesi:` (la somma dovrebbe restare 100). I punteggi si aggiornano al gir
 - `profilo.tedesco`: `no`, `base` oppure `b2`. Con `no` gli annunci che citano il tedesco perdono punti.
 - `profilo.includi_dipendenti`: `false` per vedere solo P.IVA e collaborazioni.
 - `profilo.minuti_massimi`: ad esempio `90` per nascondere le offerte più lontane.
-- Distanze: `data/comuni.csv` (km e minuti da Mezzolombardo). **Sono stime**: correggile se vuoi.
+- `pdf.leggi`: `false` per non aprire i PDF allegati (il giro è più veloce, ma bandi e avvisi restano con molti «n.d.»).
+- `email_contatto`: oggetto e testo dell'email di richiesta informazioni proposta dall'app.
+- `giorni_annuncio_datato`: dopo quanti giorni un annuncio senza scadenza è considerato vecchio (ora 120).
+- `parole.escludi_titolo` e `parole.fuori_regione`: ruoli e luoghi da scartare.
+- Distanze: `data/comuni.csv` (km e minuti da Mezzolombardo, 129 comuni). **Sono stime**: correggile se vuoi.
 
 ## Se una fonte non funziona
 
@@ -163,9 +184,8 @@ Il report ha la sezione «Fonti non lette o da controllare». I casi tipici:
 Un annuncio che sparisce dall'elenco della fonte resta visibile 30 giorni con un avviso.
 Se il workflow fallisce del tutto, GitHub ti manda un'email.
 
-**Nota onesta:** il programma è stato provato con pagine finte (`python tests/prova.py`), non sui siti veri,
-perché l'ambiente in cui è stato scritto non poteva collegarsi. I primi giri servono a capire
-quali fonti rispondono bene: aspettati qualche giorno di aggiustamenti.
+**Nota onesta:** le regole sono verificate con circa 60 prove su pagine finte (`python tests/prova.py`) e con i giri
+veri su GitHub. I siti però cambiano: quando una fonte smette di rendere lo vedi nel report e in `data/diagnostica.json`.
 
 ## Com'è fatto
 
@@ -173,12 +193,12 @@ quali fonti rispondono bene: aspettati qualche giorno di aggiustamenti.
 config.yaml              impostazioni, fonti, pesi
 CONTESTO.md              contesto del progetto
 radar/rete.py            scaricamento educato (robots.txt, pause, niente login)
-radar/estrai.py          lettura di pagine e feed, estrazione dei dati
+radar/estrai.py          lettura di pagine, feed e PDF, estrazione dei dati
 radar/punteggio.py       punteggio 0–100
 radar/motore.py          giro quotidiano e memoria (data/annunci.json)
 radar/uscite.py          email e costruzione della web app
 webapp/                  la web app (HTML, CSS, JavaScript, senza librerie esterne)
-data/                    memoria: annunci, stato delle fonti, report, distanze
+data/                    memoria: annunci, stato delle fonti, report, diagnostica, distanze
 tests/prova.py           prove offline
 .github/workflows/       automazione giornaliera
 ```

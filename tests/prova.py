@@ -1,17 +1,21 @@
 """Prove offline: nessuna connessione, pagine finte.  Avvio:  python tests/prova.py"""
-import sys, tempfile
-from datetime import date
+import sys
+import tempfile
+from datetime import date, datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import yaml
+
 from radar import estrai, motore, punteggio, uscite
 
 OGGI = date(2026, 11, 12)
 RADICE = Path(__file__).resolve().parent.parent
 CFG = yaml.safe_load((RADICE / "config.yaml").read_text(encoding="utf-8"))
 COMUNI = estrai.carica_comuni(RADICE / "data" / "comuni.csv")
+INF = CFG["parole"]["infermiere"]
 errori = []
+
 
 def verifica(nome, ottenuto, atteso):
     ok = ottenuto == atteso
@@ -19,36 +23,67 @@ def verifica(nome, ottenuto, atteso):
     if not ok:
         errori.append(nome)
 
+
+def campi(titolo, testo):
+    return estrai.estrai_campi(titolo, testo, COMUNI, OGGI, INF)
+
+
+# ------------------------------------------------------------------ estrazione
 print("Estrazione dei campi")
-t = ("L'APSP indice un avviso pubblico di selezione per il conferimento di incarichi libero-professionali "
-     "di infermiere. Scadenza originaria 06/11/2026, PROROGATA al 27 novembre 2026 ore 12:00. "
-     "Compenso orario lordo omnicomprensivo di € 40,00. Turni anche notturni e festivi.")
-c = estrai.estrai_campi("A.P.S.P. C. Vannetti – Rovereto – Selezione per liberi professionisti", t, COMUNI, OGGI, CFG["parole"]["infermiere"])
+c = campi("A.P.S.P. C. Vannetti – Rovereto – Selezione per liberi professionisti",
+          "L'APSP indice un avviso pubblico di selezione per il conferimento di incarichi libero-professionali "
+          "di infermiere. Scadenza originaria 06/11/2026, PROROGATA al 27 novembre 2026 ore 12:00. "
+          "Compenso orario lordo omnicomprensivo di € 40,00. Turni anche notturni e festivi.")
 verifica("contratto P.IVA", c["contratto"], "P.IVA / libera professione")
 verifica("scadenza prorogata", c["scadenza"], "2026-11-27")
 verifica("compenso orario", (c["compenso"], c["euro_ora"]), ("40 €/h", 40.0))
 verifica("zona dal titolo", (c["zona"], c["minuti"]), ("Rovereto", 40))
 verifica("datore dal titolo", c["datore"], "A.P.S.P. C. Vannetti")
 verifica("turni", c["turni"], "notti, weekend/festivi")
+verifica("tipo di struttura", c["struttura"], "RSA o casa di riposo")
 
-c = estrai.estrai_campi("Freiberufliche Tätigkeit in der Pflege",
-    "Wir suchen Krankenpfleger für Nachtdienste und Wochenenden in Wiesen. Zweisprachigkeit erwünscht. 35 Euro pro Stunde.",
-    COMUNI, OGGI, CFG["parole"]["infermiere"])
+c = campi("Freiberufliche Tätigkeit in der Pflege",
+          "Wir suchen Krankenpfleger für Nachtdienste und Wochenenden in Sterzing und Wiesen. Die Arbeit ist "
+          "abwechslungsreich und wir bieten ein gutes Team mit flexiblen Zeiten. Zweisprachigkeit erwünscht. 35 Euro pro Stunde.")
 verifica("tedesco: contratto", c["contratto"], "P.IVA / libera professione")
-verifica("tedesco: zona con alias", c["zona"], "Vipiteno")
+verifica("tedesco: zona con nome tedesco", c["zona"], "Vipiteno")
 verifica("tedesco: compenso", c["euro_ora"], 35.0)
-verifica("tedesco: bilinguismo citato", c["cita_tedesco"], True)
+verifica("tedesco: bilinguismo citato e lingua riconosciuta", (c["cita_tedesco"], c["in_tedesco"]), (True, True))
 
-c = estrai.estrai_campi("Concorso pubblico per infermieri", "Bando di concorso per 10 posti a tempo indeterminato. Domande entro il 13/11/2026. Stipendio 1.900 € netti al mese.", COMUNI, OGGI, CFG["parole"]["infermiere"])
+c = campi("Concorso pubblico per infermieri", "Bando di concorso per 10 posti a tempo indeterminato. Domande entro il 13/11/2026. Stipendio 1.900 € netti al mese.")
 verifica("concorso", c["contratto"], "Concorso / graduatoria")
 verifica("scadenza 'entro il'", c["scadenza"], "2026-11-13")
 verifica("compenso mensile senza €/h", (c["compenso"], c["euro_ora"]), ("1.900 € netti al mese", None))
 verifica("zona non trovata resta vuota", c["zona"], None)
 
-c = estrai.estrai_campi("Cercasi infermiere", "Cerchiamo un infermiere.", COMUNI, OGGI, CFG["parole"]["infermiere"])
+c = campi("Cercasi infermiere", "Cerchiamo un infermiere.")
 verifica("niente inventato", (c["contratto"], c["compenso"], c["scadenza"], c["turni"], c["zona"]), (None,) * 5)
 verifica("'ora' non è un compenso", estrai.estrai_compenso("Per ora servono 2 infermieri, 36 ore a settimana")[1], None)
-verifica("nome ambiguo ignorato", estrai.trova_comune("Infermiere", "Selezione chiusa. Chiusa la graduatoria.", COMUNI), None)
+verifica("compenso: 'pari a € 40,00' dopo 'compenso orario'", estrai.estrai_compenso("compenso orario lordo omnicomprensivo pari a € 40,00 per l'attività")[1], 40.0)
+verifica("compenso: tariffa oraria in lettere", estrai.estrai_compenso("tariffa oraria di Euro 30,00 (trenta/00)")[1], 30.0)
+verifica("compenso: a turno resta testo", estrai.estrai_compenso("€ 180,00 lordi a turno notturno"), ("€ 180,00 lordi a turno", None))
+verifica("scadenza: ora prima della data", str(estrai.estrai_scadenza("Le domande devono pervenire entro le ore 12.00 del 27/11/2026.", OGGI)), "2026-11-27")
+
+print("Falsi segnali da evitare")
+verifica("la partita IVA dell'ente non è un contratto",
+         estrai.estrai_contratto("Posto a tempo indeterminato. Fondazione X, via Mendola 21. Codice IPA: UFMPXZ Partita IVA 00123456789 – C.F. e P.IVA: 00123456789"),
+         "Dipendente a tempo indeterminato")
+verifica("'collaborazione' generica non è un contratto", estrai.estrai_contratto("Cerchiamo persone con spirito di collaborazione con l'équipe."), None)
+verifica("contratto di collaborazione", estrai.estrai_contratto("È previsto un contratto di collaborazione."), "Collaborazione")
+verifica("ruolo: coordinatore nel testo", estrai.ruolo_diverso("Cooperativa Stella Montis – ricerca di personale", "Cerchiamo un/una Coordinatore/Coordinatrice Infermieristico/a per la nostra RSA."), True)
+verifica("ruolo: infermiere che lavora col coordinatore", estrai.ruolo_diverso("Cercasi infermiere", "L'infermiere lavora in collaborazione con il coordinatore infermieristico."), False)
+verifica("ruolo: comando di dipendenti pubblici", estrai.ruolo_diverso("INPS – Ricerca infermiere/a", "La sede cerca un infermiere in forza presso la ASL (Dipendente Pubblico) in comando ai termini dell'art. 30."), True)
+verifica("fuori regione", (estrai.fuori_regione("Infermiere a Caorle", CFG["parole"]["fuori_regione"]), estrai.fuori_regione("Infermiere a Cles", CFG["parole"]["fuori_regione"])), (True, False))
+
+print("Comuni")
+def zona(titolo, testo=""):
+    c = estrai.trova_comune(titolo, testo, COMUNI)
+    return c["nome"] if c else None
+verifica("nome ambiguo ignorato", zona("Infermiere", "Selezione chiusa. Chiusa la graduatoria."), None)
+verifica("'Fondo' non batte LACES", zona("Fondo Ospedale della S.S. Trinità RESIDENZA PER ANZIANI ANNENBERG LACES", "Fondo Ospedale, via Centrale 57, 39021 Laces. Fondo Ospedale."), "Laces")
+verifica("nome ambiguo con provincia", zona("Casa di cura Eremo – Arco TN"), "Arco")
+verifica("comune piccolo", zona("A.P.S.P. Padre Odone Nicolini – Pieve di Bono – Prezzo TN"), "Pieve di Bono-Prezzo")
+verifica("comune dal testo", zona("APSP Suor Agnese – Concorso", "APSP “SUOR AGNESE” – Castello Tesino TN. Bando di concorso."), "Castello Tesino")
 
 print("Punteggio")
 a = {"contratto": "P.IVA / libera professione", "euro_ora": 40.0, "minuti": 15, "segnali_turni": {"dodici": True, "notti": True, "weekend": True}, "affidabilita": "ufficiale"}
@@ -56,7 +91,8 @@ verifica("massimo = 100", punteggio.calcola(a, CFG)[0], 100)
 a = {"contratto": "Dipendente a tempo determinato", "euro_ora": None, "minuti": 120, "segnali_turni": {}, "affidabilita": "aggregatore"}
 verifica("dipendente lontano = basso", punteggio.calcola(a, CFG)[0], 5 + 5 + 0 + 5 + 3)
 
-print("Feed e link")
+# ------------------------------------------------------------------ pagine, feed, PDF
+print("Pagine, feed e PDF")
 feed = """<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"><entry>
 <title type="html">&lt;b&gt;Infermiere&lt;/b&gt; partita IVA Trento</title>
 <link href="https://www.google.com/url?rct=j&amp;sa=t&amp;url=https://esempio.it/annuncio-1&amp;ct=ga"/>
@@ -65,82 +101,176 @@ v = estrai.leggi_feed(feed)
 verifica("feed Google Alerts", (v[0]["url"], v[0]["titolo"], str(v[0]["pubblicato"])), ("https://esempio.it/annuncio-1", "Infermiere partita IVA Trento", "2026-11-11"))
 
 ELENCO = """<html><body><nav><a href="/chi-siamo/">Chi siamo e contatti dell'ente</a></nav><main>
-<a href="/apsp-vannetti-lp/">A.P.S.P. C. Vannetti – Rovereto – Selezione per liberi professionisti</a>
-<a href="/casa-cura-eremo/">Casa di cura Eremo – Arco – ricerca personale</a>
+<a href="/segreteria/">Torna alla pagina precedente Segreteria</a>
+<a href="/apsp-vannetti-lp/">A.P.S.P. C. Vannetti – Rovereto – Selezione per liberi professionisti 16 ottobre 2026 – A.P.S.P. Clementino Vannetti</a>
+<a href="/casa-cura-eremo/">Casa di cura Eremo – Arco TN – ricerca personale</a>
+<a href="/stella-montis/">Cooperativa Sociale Stella Montis – ricerca di personale</a>
 <a href="/bando.pdf">Bando di concorso per infermieri in formato PDF</a>
 <a href="/privacy/">Informativa sulla privacy del sito</a></main></body></html>"""
-l = estrai.link_da_elenco(ELENCO, "https://ente.it/annunci/", CFG["parole"]["link"], tutti=True)
-verifica("link dell'elenco (menu e privacy esclusi)", [x["url"] for x in l], ["https://ente.it/apsp-vannetti-lp/", "https://ente.it/casa-cura-eremo/", "https://ente.it/bando.pdf"])
+l = estrai.link_da_elenco(ELENCO, "https://ente.it/segreteria/annunci-di-lavoro/", CFG["parole"]["link"], tutti=True)
+verifica("link dell'elenco: niente menu, privacy e 'torna indietro'", [x["url"].rsplit("/", 2)[-2] if x["url"].endswith("/") else x["url"].rsplit("/", 1)[-1] for x in l],
+         ["apsp-vannetti-lp", "casa-cura-eremo", "stella-montis", "bando.pdf"])
+verifica("titolo senza data e riassunto", l[0]["titolo"], "A.P.S.P. C. Vannetti – Rovereto – Selezione per liberi professionisti")
 
-l = estrai.link_da_elenco('<main><a href="/segreteria/">Torna alla pagina precedente Segreteria</a>'
-    '<a href="/coop-doc/">Cooperativa D.O.C. Ricerca personale infermieristico 12 gennaio 2026 – Cooperativa D.O.C. ricerca</a></main>',
-    "https://ente.it/segreteria/annunci-di-lavoro/", CFG["parole"]["link"], tutti=True)
-verifica("titolo senza data e riassunto, niente 'torna indietro'", [x["titolo"] for x in l], ["Cooperativa D.O.C. Ricerca personale infermieristico"])
+PAGINA = """<html><head><meta property="article:published_time" content="2026-10-16T09:00:00+02:00"></head><body>
+<header>Ordine delle professioni infermieristiche</header><article><h1>A.P.S.P. C. Vannetti</h1>
+<div class="fusion-meta-info">admin 2026-10-16 | JOB</div>
+<p>Avviso pubblico per incarichi di infermiere. L'avviso è in calce alla pagina. Scrivere a personale@apsp-prova.it oppure a mario.rossi@gmail.com.</p>
+<a href="/files/Avviso_LP_infermieri.pdf">Avviso</a> <a href="/files/Domanda_ammissione.pdf">Domanda</a>
+<div class="fusion-sharing-box">Share This Story, Choose Your Platform! Facebook X Reddit</div>
+<div class="related-posts">Altri annunci: OSS a Trento</div></article><footer>Ordine di Trento, P.IVA 01234567890</footer></body></html>"""
+p = estrai.leggi_pagina(PAGINA, "https://ente.it/apsp-vannetti-lp/")
+verifica("pagina: senza condivisione, autore e annunci simili", ("Share" in p["testo"], "admin" in p["testo"], "OSS" in p["testo"], "incarichi di infermiere" in p["testo"]), (False, False, False, True))
+verifica("pagina: PDF dell'avviso sì, modulo di domanda no", [x["url"] for x in p["pdf"]], ["https://ente.it/files/Avviso_LP_infermieri.pdf"])
+verifica("pagina: data di pubblicazione", str(p["pubblicato"]), "2026-10-16")
+verifica("email: solo quella della struttura", estrai.trova_email(p["testo"] + " info@opi.tn.it apsp@pec.it", motore.DOMINI_BACHECA), {"email": "personale@apsp-prova.it", "pec": "apsp@pec.it"})
+
+PDF = (RADICE / "tests" / "avviso_prova.pdf").read_bytes()
+testo_pdf = estrai.testo_pdf(PDF)
+verifica("PDF: testo letto", ("INCARICHI LIBERO PROFESSIONALI" in testo_pdf, "40,00" in testo_pdf), (True, True))
+verifica("PDF rovinato non blocca", estrai.testo_pdf(b"%PDF-1.4 rotto"), "")
+
 verifica("datore: taglia 'cerca…'", estrai.estrai_datore("Fondazione Pitsch cerca infermieri/e"), "Fondazione Pitsch")
 verifica("datore: titolo generico = nessuno", estrai.estrai_datore("Avviso – Collegio tecnico – Dirigenza"), None)
-vecchio = {"pubblicato": "2026-03-05", "scadenza": None}
-verifica("annuncio datato", (motore.e_datato(vecchio, OGGI, CFG), motore.e_datato({"pubblicato": "2026-03-05", "scadenza": "2026-12-01"}, OGGI, CFG)), (True, False))
-mem = {"a": {"id": "a", "zona": "Rovereto", "scadenza": "2026-11-20", "contratto": "Concorso / graduatoria", "punteggio": 30, "primo_visto": "2026-11-12", "origine": "manuale"},
-       "b": {"id": "b", "zona": "Rovereto", "scadenza": "2026-11-20", "contratto": "Concorso / graduatoria", "punteggio": 39, "primo_visto": "2026-11-13"},
-       "c": {"id": "c", "zona": "Rovereto", "scadenza": "2026-11-20", "contratto": "P.IVA / libera professione", "punteggio": 60, "primo_visto": "2026-11-13"}}
-motore.segna_doppioni(mem, OGGI)
-verifica("doppioni: stesso bando su due siti", [mem[k].get("doppione_di") for k in "abc"], [None, "a", None])
 
-print("Giro completo su due giorni (rete finta)")
+# ------------------------------------------------------------------ giro completo
+print("Giro completo su più giorni (rete finta)")
+
+
 class ReteFinta:
-    def __init__(self, pagine): self.pagine = pagine
+    def __init__(self, pagine):
+        self.pagine, self.richieste, self.aperte = pagine, 0, []
+
     def get(self, url, robots=True):
+        self.richieste += 1
+        self.aperte.append(url)
+        if url.endswith(".pdf"):
+            return None, "è un PDF"
         return (self.pagine[url], None) if url in self.pagine else (None, "risposta HTTP 404")
 
-def art(t, corpo): return f"<html><head><title>x</title></head><body><article><h1>{t}</h1><p>{corpo}</p></article><footer>Ordine di Trento</footer></body></html>"
+    def get_pdf(self, url, massimo_mb=8, robots=True):
+        self.richieste += 1
+        self.aperte.append(url)
+        return (self.pagine[url], None) if url in self.pagine else (None, "risposta HTTP 404")
+
+
+def art(t, corpo, data="2026-10-16"):
+    return (f'<html><head><title>x</title><meta property="article:published_time" content="{data}T09:00:00+02:00"></head>'
+            f"<body><article><h1>{t}</h1><p>{corpo}</p></article><footer>Ordine di Trento – P.IVA 01234567890</footer></body></html>")
+
+
 RIEMP = " Requisiti: laurea in infermieristica e iscrizione all'albo. " * 4
+BASE = "https://ente.it/segreteria/annunci-di-lavoro/"
 pagine = {
-    "https://ente.it/annunci/": ELENCO,
-    "https://ente.it/apsp-vannetti-lp/": art("A.P.S.P. C. Vannetti – Rovereto – Selezione per liberi professionisti", "Incarichi libero-professionali di infermiere. Scadenza 06/11/2026 prorogata al 20/11/2026." + RIEMP),
-    "https://ente.it/casa-cura-eremo/": art("Casa di cura Eremo – Arco", "Cerchiamo personale infermieristico a tempo indeterminato, CCNL AIOP." + RIEMP),
-    "https://clinica.it/lavora/": art("Lavora con noi", "Infermiere/a per assunzione o libera professione, turni da 12 ore." + RIEMP),
+    BASE: ELENCO,
+    "https://ente.it/apsp-vannetti-lp/": art("A.P.S.P. C. Vannetti", "Avviso pubblico di selezione per infermieri: i dettagli sono nell'avviso allegato. "
+                                             '<a href="/files/Avviso_LP_infermieri.pdf">Avviso</a>' + RIEMP),
+    "https://ente.it/files/Avviso_LP_infermieri.pdf": PDF,
+    "https://ente.it/casa-cura-eremo/": art("Casa di cura Eremo – Arco", "Cerchiamo personale infermieristico a tempo indeterminato, CCNL AIOP. Arco (TN)." + RIEMP),
+    "https://ente.it/stella-montis/": art("Stella Montis", "Cerchiamo un/una Coordinatore/Coordinatrice Infermieristico/a per la nostra struttura." + RIEMP),
+    "https://ente.it/bando.pdf": PDF,
+    "https://clinica.it/lavora/": art("Lavora con noi", "Infermiere/a per assunzione o libera professione, turni da 12 ore." + RIEMP, data="2019-07-17"),
     "https://feed.it/a": feed,
 }
 cfg = dict(CFG)
 cfg["fonti"] = [
-    {"nome": "Ente", "tipo": "elenco", "url": "https://ente.it/annunci/", "affidabilita": "ufficiale", "tutti_i_link": True},
+    {"nome": "Ente", "tipo": "elenco", "url": BASE, "affidabilita": "ufficiale", "tutti_i_link": True},
     {"nome": "Clinica", "tipo": "pagina", "url": "https://clinica.it/lavora/", "affidabilita": "struttura", "datore": "Clinica X", "zona": "Merano"},
     {"nome": "Rotta", "tipo": "pagina", "url": "https://rotta.it/", "affidabilita": "struttura"},
+    {"nome": "Avvisi vuoti", "tipo": "elenco", "url": "https://vuota.it/avvisi/", "affidabilita": "ufficiale", "puo_essere_vuota": True},
 ]
+pagine["https://vuota.it/avvisi/"] = "<html><body><main><p>Nessun avviso in pubblicazione</p></main></body></html>"
 cfg["feed_google_alerts"] = ["https://feed.it/a"]
+cfg["esplora"] = ["https://clinica.it/lavora/"]
 tmp = Path(tempfile.mkdtemp())
 motore.FILE_ANNUNCI, motore.FILE_FONTI, motore.CARTELLA_REPORT = tmp / "annunci.json", tmp / "fonti.json", tmp / "report"
+motore.FILE_DIAGNOSTICA = tmp / "diagnostica.json"
 muto = lambda *_: None
-r1 = motore.giro(cfg, ReteFinta(pagine), OGGI, registra=muto)
-verifica("giorno 1: annunci nuovi", len(r1["nuovi"]), 5)
-verifica("giorno 1: primo in classifica", r1["top5"][0]["datore"], "A.P.S.P. C. Vannetti")
-verifica("giorno 1: fonte rotta segnalata", r1["problemi"], ["Rotta: risposta HTTP 404"])
-verifica("giorno 1: scadenza entro 7 giorni", [x["scadenza"] for x in r1["scadenze7"]], [])
-mem = motore.leggi_json(motore.FILE_ANNUNCI, {})
-pdf = next(a for a in mem.values() if a["url"].endswith(".pdf"))
-verifica("PDF: dati n.d. e avviso", (pdf["contratto"] is not None, pdf["avvisi"][0][:15]), (True, "Annuncio in PDF"))
 
+rete1 = ReteFinta(pagine)
+r1 = motore.giro(cfg, rete1, OGGI, registra=muto)
+mem = motore.leggi_json(motore.FILE_ANNUNCI, {})
+per_url = {a["url"].rstrip("/").rsplit("/", 1)[-1]: a for a in mem.values()}
+verifica("giorno 1: annunci nuovi (coordinatore scartato)", sorted(per_url), ["annuncio-1", "apsp-vannetti-lp", "bando.pdf", "casa-cura-eremo", "lavora"])
+lp = per_url["apsp-vannetti-lp"]
+verifica("dati presi dal PDF allegato", (lp["contratto"], lp["euro_ora"], lp["scadenza"], lp["email"]),
+         ("P.IVA / libera professione", 40.0, "2026-11-27", "personale@apsp-prova.it"))
+verifica("avviso sul PDF", lp["avvisi"][0][:16], "Dal PDF allegato")
+verifica("link a un PDF letto direttamente", (per_url["bando.pdf"]["euro_ora"], per_url["bando.pdf"]["zona"]), (40.0, "Rovereto"))
+verifica("pagina fissa: la data della pagina non conta", per_url["lavora"]["pubblicato"], None)
+verifica("giorno 1: primo in classifica", r1["top5"][0]["datore"], "A.P.S.P. C. Vannetti")
+verifica("giorno 1: solo la fonte rotta è segnalata (l'elenco vuoto previsto no)", r1["problemi"], ["Rotta: risposta HTTP 404"])
+diag = motore.leggi_json(motore.FILE_DIAGNOSTICA, {})
+verifica("diagnostica: scarti con motivo", diag["fonti"]["Ente"]["scartati"], [["Cooperativa Sociale Stella Montis – ricerca di personale", "ruolo diverso (coordinamento, direzione o comando)"]])
+verifica("diagnostica: esplorazione", diag["esplora"][0]["url"], "https://clinica.it/lavora/")
+
+# Giorno 2: elenco in manutenzione, niente deve sparire; il PDF non si riscarica; lo scarto non si riapre.
 pagine2 = dict(pagine)
-pagine2["https://ente.it/apsp-vannetti-lp/"] = pagine["https://ente.it/apsp-vannetti-lp/"].replace("20/11/2026", "18/11/2026")
-pagine2["https://ente.it/annunci/"] = "<html><body><main><p>Sito in manutenzione</p></main></body></html>"
+pagine2[BASE] = "<html><body><main><p>Sito in manutenzione</p></main></body></html>"
 r2 = motore.giro(cfg, ReteFinta(pagine2), date(2026, 11, 13), registra=muto)
 verifica("giorno 2: niente di nuovo", len(r2["nuovi"]), 0)
-verifica("giorno 2: struttura cambiata segnalata", "cambiato struttura" in r2["problemi"][0], True)
-pagine2["https://ente.it/annunci/"] = ELENCO
-r3 = motore.giro(cfg, ReteFinta(pagine2), date(2026, 11, 14), registra=muto)
-verifica("giorno 3: annuncio aggiornato", [x["cambi"] for x in r3["aggiornati"]], [["scadenza: 2026-11-20 → 2026-11-18"]])
+verifica("giorno 2: struttura cambiata segnalata", any("cambiato struttura" in x for x in r2["problemi"]), True)
+verifica("giorno 2: nessun annuncio dato per sparito", [a.get("sparito_dal") for a in motore.leggi_json(motore.FILE_ANNUNCI, {}).values()], [None] * 5)
+
+pagine3 = dict(pagine)
+pagine3["https://ente.it/casa-cura-eremo/"] = pagine["https://ente.it/casa-cura-eremo/"].replace("Arco (TN).", "Arco (TN). Candidature entro il 18/11/2026.")
+rete3 = ReteFinta(pagine3)
+r3 = motore.giro(cfg, rete3, date(2026, 11, 14), registra=muto)
+verifica("giorno 3: annuncio aggiornato", [x["cambi"] for x in r3["aggiornati"]], [["scadenza: n.d. → 2026-11-18"]])
 verifica("giorno 3: scadenza vicina", [x["scadenza"] for x in r3["scadenze7"]], ["2026-11-18"])
+verifica("giorno 3: PDF già letto non riscaricato, pagina scartata non riaperta",
+         ("https://ente.it/files/Avviso_LP_infermieri.pdf" in rete3.aperte, "https://ente.it/stella-montis/" in rete3.aperte), (False, False))
 
 ogg, testo, pag = uscite.componi_email(r3, "https://app.esempio")
-verifica("oggetto email", ogg, "Radar infermiere 14/11: 1 scadenza vicina, 1 aggiornata")
-r4 = motore.giro(cfg, ReteFinta({k: v for k, v in pagine2.items() if k != "x"}), date(2026, 11, 15), registra=muto)
-cfg4 = dict(cfg); cfg4["fonti"] = cfg["fonti"][:2]
-r5 = motore.giro(cfg4, ReteFinta(pagine2), date(2026, 11, 19), registra=muto)
-ogg, testo, _ = uscite.componi_email(r5, None)
-verifica("niente di nuovo = una riga", (ogg, "\n" in testo), ("Radar infermiere 19/11: niente di nuovo", False))
-dest = uscite.costruisci_sito(cfg, date(2026, 11, 14), tmp / "dist")
-verifica("web app costruita", (dest / "dati.json").exists() and (dest / "index.html").exists(), True)
+verifica("oggetto email", ogg, "Radar 14/11: 1 annuncio aggiornato, 1 scadenza vicina")
+verifica("email: link diretto all'app", "https://app.esempio/#o=" in pag, True)
 
-print("\nEmail di esempio (giorno 3):\n" + testo if False else "")
+# Stesso giorno, secondo giro: l'archivio somma le novità invece di sovrascriverle.
+pagine3b = dict(pagine3)
+pagine3b[BASE] = ELENCO.replace("</main>", '<a href="/nuovo-rsa/">RSA di Cles cerca infermieri liberi professionisti</a></main>')
+pagine3b["https://ente.it/nuovo-rsa/"] = art("RSA di Cles", "Cerchiamo infermieri in libera professione per turni notturni a Cles (TN)." + RIEMP, data="2026-11-14")
+r3b = motore.giro(cfg, ReteFinta(pagine3b), date(2026, 11, 14), registra=muto)
+archivio = motore.leggi_json(motore.CARTELLA_REPORT / "2026-11-14.json", {})
+verifica("secondo giro del giorno: novità del giro e archivio del giorno", (len(r3b["nuovi"]), len(archivio["aggiornati"]), archivio["giri"]), (1, 1, 2))
+
+cfg5 = dict(cfg)
+cfg5["fonti"] = [f for f in cfg["fonti"] if f["nome"] != "Rotta"]
+r5 = motore.giro(cfg5, ReteFinta(pagine3b), date(2026, 11, 19), registra=muto)
+ogg, testo, _ = uscite.componi_email(r5, None)
+verifica("niente di nuovo = una riga", (ogg, "\n" in testo), ("Radar 19/11: niente di nuovo", False))
+
+print("Memoria: datati, doppioni, dati a mano")
+verifica("annuncio datato", (motore.e_datato({"pubblicato": "2026-03-05", "scadenza": None}, OGGI, CFG), motore.e_datato({"pubblicato": "2026-03-05", "scadenza": "2026-12-01"}, OGGI, CFG)), (True, False))
+m2 = {"a": {"id": "a", "titolo": "Concorso per infermieri", "datore": "APSP Vannetti", "zona": "Rovereto", "scadenza": "2026-11-20", "contratto": "Concorso / graduatoria", "punteggio": 30, "primo_visto": "2026-11-12", "origine": "manuale"},
+      "b": {"id": "b", "titolo": "APSP Vannetti Rovereto - Infermiere", "datore": None, "zona": "Rovereto", "scadenza": "2026-11-20", "contratto": "Concorso / graduatoria", "punteggio": 39, "primo_visto": "2026-11-13"},
+      "c": {"id": "c", "titolo": "Incarichi libero-professionali", "datore": "APSP Vannetti", "zona": "Rovereto", "scadenza": "2026-11-20", "contratto": "P.IVA / libera professione", "punteggio": 60, "primo_visto": "2026-11-13"},
+      "d": {"id": "d", "titolo": "Infermiere/a a tempo pieno o part time", "datore": None, "zona": "Caldaro", "scadenza": None, "contratto": None, "punteggio": 42, "primo_visto": "2026-11-13", "pubblicato": "2023-09-13"},
+      "e": {"id": "e", "titolo": "Infermiere/a a tempo pieno o part time", "datore": None, "zona": "Caldaro", "scadenza": None, "contratto": None, "punteggio": 42, "primo_visto": "2026-11-13", "pubblicato": "2024-07-29"}}
+motore.segna_doppioni(m2, OGGI)
+verifica("doppioni: stesso bando su due siti e annuncio ripubblicato", [m2[k].get("doppione_di") for k in "abcde"], [None, "a", None, "e", None])
+
+# Dati letti a mano: una lettura automatica peggiore non li sovrascrive, ma una proroga sì.
+manuale = {"id": estrai.id_annuncio("https://ente.it/casa-cura-eremo/"), "url": "https://ente.it/casa-cura-eremo/", "titolo": "Personale infermieristico (CCNL AIOP)",
+           "datore": "Casa di Cura Eremo", "contratto": "Dipendente a tempo indeterminato", "compenso": None, "euro_ora": None, "turni": "turni da 12 h",
+           "segnali_turni": {"dodici": True}, "zona": "Arco", "km": 55, "minuti": 55, "scadenza": None, "pubblicato": "2026-10-19", "fonte": "Ente",
+           "affidabilita": "ufficiale", "origine": "manuale", "nota_manuale": "Inserito a mano", "primo_visto": "2026-11-12", "ultimo_visto": "2026-11-12",
+           "impronta": "x", "punteggio": 30, "avvisi": [], "cambi": []}
+tmp2 = Path(tempfile.mkdtemp())
+motore.FILE_ANNUNCI, motore.FILE_FONTI, motore.CARTELLA_REPORT, motore.FILE_DIAGNOSTICA = tmp2 / "a.json", tmp2 / "f.json", tmp2 / "report", tmp2 / "d.json"
+motore.scrivi_json(motore.FILE_ANNUNCI, {manuale["id"]: manuale})
+r = motore.giro(cfg5, ReteFinta(pagine3), date(2026, 11, 14), registra=muto)
+dopo = motore.leggi_json(motore.FILE_ANNUNCI, {})[manuale["id"]]
+verifica("dati a mano conservati, scadenza aggiornata", (dopo["titolo"], dopo["turni"], dopo["scadenza"], dopo["origine"]), ("Personale infermieristico (CCNL AIOP)", "turni da 12 h", "2026-11-18", "manuale"))
+verifica("la proroga compare tra gli aggiornati", [x["cambi"] for x in r["aggiornati"]], [["scadenza: n.d. → 2026-11-18"]])
+
+print("Web app e calendario")
+dest = uscite.costruisci_sito(cfg, date(2026, 11, 14), tmp2 / "dist")
+dati = __import__("json").loads((dest / "dati.json").read_text(encoding="utf-8"))
+verifica("web app costruita", ((dest / "index.html").exists(), dati["oggi_lungo"], len(dati["offerte"]) >= 4), (True, "sabato 14 novembre", True))
+ics = sorted((dest / "ics").glob("*.ics"))
+verifica("calendario: un file per ogni scadenza futura", (len(ics) >= 2, "BEGIN:VEVENT" in ics[0].read_text(encoding="utf-8"), "DTSTART;VALUE=DATE:2026" in ics[0].read_text(encoding="utf-8")), (True, True, True))
+riga_lunga = uscite._ics_piega("SUMMARY:" + "à" * 100)
+verifica("calendario: righe piegate a 75 byte", max(len(x.encode("utf-8")) for x in riga_lunga.split("\r\n")) <= 75, True)
+
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

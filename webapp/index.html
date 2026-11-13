@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Radar Infermiere</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#141917" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F3F5F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F151B" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Radar">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="manifest" href="manifest.webmanifest">
@@ -17,22 +18,21 @@
 </head>
 <body>
 <header class="testata">
-  <div>
-    <h1>Radar <span>infermiere P.IVA</span></h1>
-    <p id="aggiornato" class="sotto">Carico i dati…</p>
-  </div>
+  <span class="marchio">Radar</span>
+  <span id="aggiornato" class="stato-dati">Carico i dati…</span>
 </header>
 
 <main id="vista" tabindex="-1"></main>
 
 <nav class="schede" aria-label="Sezioni">
-  <button data-vista="offerte" class="attiva"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Offerte</button>
-  <button data-vista="scadenze"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg>Scadenze</button>
-  <button data-vista="report"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7"/></svg>Report</button>
-  <button data-vista="mappa"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg>Mappa</button>
+  <button data-vista="oggi" class="attiva"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.500"/><path d="M12 12l6-6"/></svg><span>Oggi</span></button>
+  <button data-vista="offerte"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h11"/></svg><span>Offerte</span></button>
+  <button data-vista="scadenze"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span>Scadenze</span></button>
+  <button data-vista="zone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.200 7-11.500a7 7 0 0 0-14 0C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg><span>Zone</span></button>
+  <button data-vista="report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7"/></svg><span>Report</span></button>
 </nav>
 
-<div id="scheda" class="scheda" hidden role="dialog" aria-modal="true" aria-label="Scheda offerta"></div>
+<div id="scheda" class="scheda" hidden role="dialog" aria-modal="true" aria-label="Scheda dell'offerta"></div>
 
 <script src="app.js"></script>
 </body>

@@ -2,6 +2,7 @@
 #  RADAR INFERMIERE P.IVA – configurazione
 #  Puoi modificare questo file direttamente su GitHub (icona
 #  della matita). Attenzione agli spazi a inizio riga: contano.
+#  Ogni modifica salvata fa partire subito un giro di prova.
 # ============================================================
 
 profilo:
@@ -12,6 +13,9 @@ profilo:
   includi_dipendenti: true
   # Minuti d'auto massimi da casa. Scrivi un numero (es. 90) oppure null per nessun limite.
   minuti_massimi: null
+
+# Indirizzo della web app (compare nelle email).
+app_url: "https://radar-infermiere.pages.dev"
 
 # ---- Pesi del punteggio (la somma dovrebbe fare 100) ----
 pesi:
@@ -24,9 +28,7 @@ pesi:
 # Punti tolti se l'annuncio cita tedesco/bilinguismo e tu hai "tedesco: no".
 penalita_bilinguismo: 10
 
-# ---- Feed RSS di Google Alerts ----
-# Incolla qui i link dei tuoi feed, uno per riga, così:
-#   - "https://www.google.com/alerts/feeds/1234567890/1234567890"
+# ---- Feed RSS di Google Alerts (uno per riga) ----
 feed_google_alerts:
   - "https://www.google.com/alerts/feeds/15325904899053201770/17973737193246577484"
   - "https://www.google.com/alerts/feeds/15325904899053201770/12962960680803267172"
@@ -39,12 +41,18 @@ feed_google_alerts:
 #   rss    = feed RSS/Atom
 # affidabilita: ufficiale | struttura | aggregatore
 # attiva: false per spegnere una fonte senza cancellarla
+# Opzioni facoltative:
+#   tutti_i_link: true      nella pagina ci sono solo annunci: li apre tutti
+#   parole_link: [...]      apre solo i link il cui titolo contiene una di queste parole
+#   altre_pagine: [...]     pagine successive dello stesso elenco
+#   puo_essere_vuota: true  nessun avviso se l'elenco è vuoto
+#   datore / zona           valori fissi, se la pagina è di una sola struttura
 fonti:
   - nome: OPI Trento – annunci di lavoro
     tipo: elenco
     url: https://opi.tn.it/segreteria/annunci-di-lavoro/
     affidabilita: ufficiale
-    tutti_i_link: true      # nella pagina ci sono solo annunci: li apre tutti
+    tutti_i_link: true
     attiva: true
 
   - nome: OPI Bolzano – offerte di lavoro
@@ -57,42 +65,38 @@ fonti:
   - nome: UPIPA – concorsi delle APSP
     tipo: elenco
     url: https://www.upipa.tn.it/Bacheca/Concorsi
+    altre_pagine:
+      - https://www.upipa.tn.it/Bacheca/Concorsi/(offset)/10
+    parole_link: [infermier, libero profession, libero-profession]
     affidabilita: ufficiale
     attiva: true
 
+  - nome: UPIPA – avvisi delle APSP
+    tipo: elenco
+    url: https://www.upipa.tn.it/Bacheca/Avvisi
+    parole_link: [infermier, libero profession, libero-profession, incaric, sanitari]
+    affidabilita: ufficiale
+    puo_essere_vuota: true
+    attiva: true
+
+  # L'elenco ASUIT mostra 4 bandi per pagina, i più nuovi per primi: si leggono 10 pagine.
   - nome: ASUIT – bandi e concorsi
     tipo: elenco
     url: https://www.asuit.tn.it/bandi-concorsi
     altre_pagine:
       - https://www.asuit.tn.it/bandi-concorsi?page=1
       - https://www.asuit.tn.it/bandi-concorsi?page=2
+      - https://www.asuit.tn.it/bandi-concorsi?page=3
+      - https://www.asuit.tn.it/bandi-concorsi?page=4
+      - https://www.asuit.tn.it/bandi-concorsi?page=5
+      - https://www.asuit.tn.it/bandi-concorsi?page=6
+      - https://www.asuit.tn.it/bandi-concorsi?page=7
+      - https://www.asuit.tn.it/bandi-concorsi?page=8
+      - https://www.asuit.tn.it/bandi-concorsi?page=9
+    parole_link: [infermier, libero professional, libero-professional, incarichi lp]
     affidabilita: ufficiale
     datore: ASUIT (Trentino)
     attiva: true
-
-  - nome: SABES – graduatoria infermieri Bolzano
-    tipo: pagina
-    url: https://sabes.onboard.org/it/jobs/byekMD4w
-    affidabilita: ufficiale
-    datore: ASDAA / SABES
-    zona: Bolzano
-    attiva: false   # 13/11/2026: pagina caricata in modo dinamico, non leggibile. Scadenze graduatorie: 31/01, 31/05, 30/09
-
-  - nome: SABES – graduatoria infermieri Merano
-    tipo: pagina
-    url: https://sabes.onboard.org/it/jobs/dGXzrPmg
-    affidabilita: ufficiale
-    datore: ASDAA / SABES
-    zona: Merano
-    attiva: false   # 13/11/2026: pagina caricata in modo dinamico, non leggibile. Scadenze graduatorie: 31/01, 31/05, 30/09
-
-  - nome: SABES – graduatoria infermieri Brunico
-    tipo: pagina
-    url: https://sabes.onboard.org/it/jobs/QgeyM2eJ
-    affidabilita: ufficiale
-    datore: ASDAA / SABES
-    zona: Brunico
-    attiva: false   # 13/11/2026: la pagina risponde 404 (annuncio rimosso)
 
   - nome: Villa Sant'Anna Merano – lavora con noi
     tipo: pagina
@@ -118,50 +122,85 @@ fonti:
     zona: Vipiteno
     attiva: true
 
+  # --- Spente: pagine caricate in modo dinamico o rimosse (verifica del 13/11/2026) ---
+  - nome: SABES – graduatoria infermieri Bolzano
+    tipo: pagina
+    url: https://sabes.onboard.org/it/jobs/byekMD4w
+    affidabilita: ufficiale
+    datore: ASDAA / SABES
+    zona: Bolzano
+    attiva: false   # scadenze graduatorie: 31/01, 31/05, 30/09
+
   - nome: Cooperazione trentina – lavora con noi
     tipo: elenco
     url: https://www.cooperazionetrentina.it/lavoraconnoi
     affidabilita: struttura
-    attiva: false   # 13/11/2026: elenco caricato in modo dinamico, nessun link leggibile
-
-  # --- Da completare: non conosco l'indirizzo esatto della pagina "lavora con noi".
-  # --- Quando lo trovi, incollalo in "url" e metti "attiva: true".
-  - nome: Casa di Cura Eremo (Arco) – lavora con noi
-    tipo: pagina
-    url: ""
-    affidabilita: struttura
-    datore: Casa di Cura Eremo
-    zona: Arco
     attiva: false
 
-  - nome: Gruppo KOS (Arco) – lavora con noi
-    tipo: pagina
-    url: ""
-    affidabilita: struttura
-    datore: Gruppo KOS
-    zona: Arco
-    attiva: false
+# ---- Solo per la messa a punto: pagine di cui elencare i link nel file data/diagnostica.json ----
+esplora:
+  - https://mezzolombardo.upipa.opencontent.it/
+  - https://mezzocorona.upipa.opencontent.it/
+  - https://www.apspvannetti.it/
+  - https://lavis.upipa.opencontent.it/
+  - https://cles.upipa.opencontent.it/
+  - https://www.eremoarco.it/
+  - https://www.coopvillamaria.org/
+  - https://www.schlossmoos.it/
+  - https://www.vds-suedtirol.it/
+  - https://www.ah-kaltern.it/
+  - https://www.suedtirolerjobs.it/jobs/krankenpfleger
 
-# ---- Parole chiave (minuscole, senza accenti particolari) ----
+# ---- Lettura dei PDF allegati agli annunci (bandi, avvisi) ----
+pdf:
+  leggi: true
+  massimo_per_annuncio: 2
+  massimo_mb: 8
+  massimo_pagine: 12
+
+# ---- Email di primo contatto preparata dall'app (solo richiesta di informazioni) ----
+# {titolo}, {datore} e {fonte} vengono sostituiti con i dati dell'annuncio.
+email_contatto:
+  oggetto: "Richiesta di informazioni – {titolo}"
+  testo: |
+    Buongiorno,
+
+    ho letto il vostro annuncio «{titolo}» ({fonte}).
+    Sono un infermiere iscritto all'OPI e sto valutando collaborazioni in libera professione in Trentino-Alto Adige.
+    Vi chiedo gentilmente qualche informazione:
+    - tipo di rapporto previsto (libera professione, collaborazione o assunzione);
+    - impegno orario e turni;
+    - compenso orario;
+    - data di inizio.
+
+    Grazie e cordiali saluti
+    Michael Panico
+
+# ---- Parole chiave (minuscole) ----
 parole:
   # Almeno una deve comparire perché un annuncio sia considerato "per infermieri"
   infermiere: [infermier, krankenpfleg, pflegefach, pflegekraft, berufskrankenpfleg]
-  # Link da aprire nelle pagine "elenco" (quando tutti_i_link non è attivo)
+  # Link da aprire nelle pagine "elenco" quando la fonte non ha parole_link né tutti_i_link
   link: [infermier, krankenpfleg, pflege, libero profession, libero-profession,
          libera profession, incarichi lp, freiberuf, partita iva, p.iva,
          selezione, concorso, avviso, personale, sanitari]
   # Titoli da scartare se non nominano l'infermiere
-  escludi_titolo: [coordinat, dirigente medico, assistente sanitario, operatore socio,
+  escludi_titolo: [coordinat, dirigente medico, dirigenti medici, assistente sanitario, operatore socio,
                    fisioterap, medicina turistica, cuoco, amministrativ, responsabile,
-                   dirigenza, funzionario, in comando]
+                   dirigenza, funzionario, in comando, direttore, educatore, ausiliari, medici specialisti]
+  # Parole nel titolo che indicano un posto fuori dal Trentino-Alto Adige
+  fuori_regione: [caorle, jesolo, veneto, verona, vicenza, belluno, lombardia, milano, brescia,
+                  sicilia, sizilien, sardegna, innsbruck, österreich, austria, svizzera, schweiz, germania]
 
 # ---- Comportamento in rete (educato) ----
 rete:
-  user_agent: "RadarInfermierePIVA/1.0 (ricerca personale di offerte di lavoro, una visita al giorno)"
+  user_agent: "RadarInfermierePIVA/2.0 (ricerca personale di offerte di lavoro, una visita al giorno)"
   pausa_secondi: 3          # pausa tra due richieste allo stesso sito
   timeout_secondi: 25
   max_annunci_per_fonte: 25
 
-# ---- Pulizia ----
+# ---- Pulizia e memoria ----
 giorni_prima_di_togliere: 30   # un annuncio sparito dalla fonte resta visibile per questi giorni
 giorni_annuncio_datato: 120    # pubblicato da più giorni e senza scadenza valida = "datato" (fuori dalle attive)
+giorni_rilettura_datati: 30    # gli annunci datati o scaduti vengono riletti solo ogni tot giorni
+giorni_memoria_scarti: 14      # una pagina scartata (non per infermieri) non viene riaperta per tot giorni
