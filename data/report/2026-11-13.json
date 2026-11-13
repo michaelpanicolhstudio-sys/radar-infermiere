@@ -3,39 +3,9 @@
  "attivi": 21,
  "data": "2026-11-13",
  "fonti_lette": 7,
- "fonti_totali": 9,
- "nuovi": [
-  {
-   "cambi": [],
-   "compenso": null,
-   "contratto": "Collaborazione",
-   "datore": "Società Cooperativa Sociale Stella Montis Fondo",
-   "id": "3ca69f8fe699",
-   "minuti": 45,
-   "punteggio": 52,
-   "scadenza": null,
-   "titolo": "Società Cooperativa Sociale Stella Montis Fondo – Borgo d’Ananunia (TN) – ricerca di personale",
-   "url": "https://opi.tn.it/societa-cooperativa-sociale-stella-montis-fondo-borgo-dananunia-tn-ricerca-di-personale/",
-   "zona": "Borgo d'Anaunia"
-  },
-  {
-   "cambi": [],
-   "compenso": null,
-   "contratto": null,
-   "datore": null,
-   "id": "5e990d728c4c",
-   "minuti": 90,
-   "punteggio": 33,
-   "scadenza": null,
-   "titolo": "La casa di riposo di Silandro cerca nuovi collaboratori/trici",
-   "url": "https://www.opibz.it/la-casa-di-riposo-di-silandro-cerca-nuovi-collaboratori-trici/",
-   "zona": "Silandro"
-  }
- ],
- "problemi": [
-  "SABES – graduatoria infermieri Bolzano: pagina quasi vuota: forse è cambiata o è caricata in modo dinamico",
-  "SABES – graduatoria infermieri Merano: pagina quasi vuota: forse è cambiata o è caricata in modo dinamico"
- ],
+ "fonti_totali": 7,
+ "nuovi": [],
+ "problemi": [],
  "scadenze7": [
   {
    "cambi": [],
