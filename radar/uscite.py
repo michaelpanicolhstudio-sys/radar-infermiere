@@ -316,10 +316,12 @@ def aggiorna_posta(cfg: dict, oggi: date, registra=print) -> tuple[list[dict], d
     contatti = motore.leggi_json(FILE_CONTATTI, {})
     note = []
 
+    stampa = registra
+
     def annota(riga):
         note.append(riga)
-        registra(riga)
-    registra, registra_fuori = annota, registra
+        stampa(riga)
+    registra = annota
     nuove = posta.aggiorna_contatti(contatti, chiavi_rif(memoria, strutture), oggi, registra)
     motore.scrivi_json(FILE_CONTATTI, contatti)
     nomi = {s["chiave"]: s["nome"] for s in strutture}
