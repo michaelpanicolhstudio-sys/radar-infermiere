@@ -1,19 +1,45 @@
 {
  "ASUIT – bandi e concorsi": {
   "giorni_a_zero": 0,
-  "letti": 3,
+  "letti": 1,
   "massimo_candidati": 5,
   "pertinenti": 3,
   "regole": 2,
-  "riusati": 0,
+  "riusati": 2,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 3,
   "ultimo_giro": "2026-11-13",
   "ultimo_ok": "2026-11-13"
  },
+ "Altenheim Kaltern (Caldaro) – Karriere": {
+  "giorni_a_zero": 0,
+  "letti": 1,
+  "massimo_candidati": 1,
+  "pertinenti": 0,
+  "regole": 2,
+  "riusati": 0,
+  "scartati": 0,
+  "scarti": {},
+  "ultimi_candidati": 1,
+  "ultimo_giro": "2026-11-13",
+  "ultimo_ok": "2026-11-13"
+ },
+ "Case di riposo dell'Alto Adige (VdS) – offerte": {
+  "giorni_a_zero": 0,
+  "letti": 7,
+  "massimo_candidati": 7,
+  "pertinenti": 7,
+  "regole": 2,
+  "riusati": 0,
+  "scartati": 0,
+  "scarti": {},
+  "ultimi_candidati": 7,
+  "ultimo_giro": "2026-11-13",
+  "ultimo_ok": "2026-11-13"
+ },
  "Google Alerts 1": {
-  "giorni_a_zero": 1,
+  "giorni_a_zero": 2,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -26,7 +52,7 @@
   "ultimo_ok": "2026-11-13"
  },
  "Google Alerts 2": {
-  "giorni_a_zero": 1,
+  "giorni_a_zero": 2,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -39,7 +65,7 @@
   "ultimo_ok": "2026-11-13"
  },
  "Google Alerts 3": {
-  "giorni_a_zero": 1,
+  "giorni_a_zero": 2,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -66,11 +92,11 @@
  },
  "OPI Bolzano – offerte di lavoro": {
   "giorni_a_zero": 0,
-  "letti": 20,
+  "letti": 3,
   "massimo_candidati": 20,
   "pertinenti": 14,
   "regole": 2,
-  "riusati": 0,
+  "riusati": 11,
   "scartati": 6,
   "scarti": {
    "5bafa01d710d": {
@@ -110,11 +136,11 @@
  },
  "OPI Trento – annunci di lavoro": {
   "giorni_a_zero": 0,
-  "letti": 15,
+  "letti": 5,
   "massimo_candidati": 16,
   "pertinenti": 13,
   "regole": 2,
-  "riusati": 0,
+  "riusati": 8,
   "scartati": 2,
   "scarti": {
    "3ca69f8fe699": {
@@ -132,6 +158,19 @@
   "ultimo_giro": "2026-11-13",
   "ultimo_ok": "2026-11-13"
  },
+ "Schloss Moos – Jobs (sito della cooperativa)": {
+  "giorni_a_zero": 0,
+  "letti": 1,
+  "massimo_candidati": 1,
+  "pertinenti": 1,
+  "regole": 2,
+  "riusati": 0,
+  "scartati": 0,
+  "scarti": {},
+  "ultimi_candidati": 1,
+  "ultimo_giro": "2026-11-13",
+  "ultimo_ok": "2026-11-13"
+ },
  "Schloss Moos – libera professione (suedtirolerjobs)": {
   "giorni_a_zero": 0,
   "letti": 1,
@@ -146,7 +185,7 @@
   "ultimo_ok": "2026-11-13"
  },
  "UPIPA – avvisi delle APSP": {
-  "giorni_a_zero": 1,
+  "giorni_a_zero": 2,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -160,7 +199,7 @@
  },
  "UPIPA – concorsi delle APSP": {
   "giorni_a_zero": 0,
-  "letti": 4,
+  "letti": 3,
   "massimo_candidati": 6,
   "pertinenti": 3,
   "regole": 2,
@@ -178,6 +217,19 @@
   "ultimo_ok": "2026-11-13"
  },
  "Villa Sant'Anna Merano – lavora con noi": {
+  "giorni_a_zero": 0,
+  "letti": 1,
+  "massimo_candidati": 1,
+  "pertinenti": 1,
+  "regole": 2,
+  "riusati": 0,
+  "scartati": 0,
+  "scarti": {},
+  "ultimi_candidati": 1,
+  "ultimo_giro": "2026-11-13",
+  "ultimo_ok": "2026-11-13"
+ },
+ "Vinzenzhaus Bolzano – Jobs": {
   "giorni_a_zero": 0,
   "letti": 1,
   "massimo_candidati": 1,

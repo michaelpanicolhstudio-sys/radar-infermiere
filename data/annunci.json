@@ -195,6 +195,108 @@
   "url": "https://it.indeed.com/q-infermiere-l-trentino-alto-adige-offerte-lavoro.html?nis=5&ch=1",
   "zona": "Bolzano"
  },
+ "21790443e949": {
+  "affidabilita": "struttura",
+  "avvisi": [
+   "Dal PDF allegato: scadenza",
+   "Cita tedesco o bilinguismo"
+  ],
+  "cambi": [],
+  "cita_tedesco": true,
+  "compenso": null,
+  "contratto": "Concorso / graduatoria",
+  "da_pdf": {
+   "caratteri": 45488,
+   "cita_tedesco": true,
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "email": "info@sh-eggental.bz.it",
+   "estratto": "…provisorische Besetzung von Stellen als Berufskrankenpfleger/in (Berufsbild Nr. 64) in der VII.ter Funktionsebene in Teilzeit und in Vollzeit für die Seniorenwohnheime Eggental ausgeschrieben ist. che è indetta una proce…",
+   "euro_ora": null,
+   "indizi_compenso": [
+    ":  cittadino/a italiano/a;  cittadino/a del seguente Stato membro dell’Unione euro- pea: …………………………………………  cittadino/a di uno Stato non membr"
+   ],
+   "infermiere": true,
+   "km": 60,
+   "minuti": 55,
+   "pec": "peterpaulschrott@legalmail.it",
+   "scadenza": "2026-11-30",
+   "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
+   "segnali_turni": {
+    "parziale": true,
+    "pieno": true
+   },
+   "turni": "tempo pieno, part-time",
+   "v": 2,
+   "zona": "Nova Ponente"
+  },
+  "data_novita": "2026-11-13",
+  "datore": null,
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "posto da dipendente",
+    "punti": 5,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 55 min d'auto",
+    "punti": 5,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "tempo pieno, part-time",
+    "punti": 7,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "sito della struttura",
+    "punti": 8,
+    "voce": "Fonte"
+   }
+  ],
+  "email": "info@sh-eggental.bz.it",
+  "estratto": "…provisorische Besetzung von Stellen als Berufskrankenpfleger/in (Berufsbild Nr. 64) in der VII.ter Funktionsebene in Teilzeit und in Vollzeit für die Seniorenwohnheime Eggental Procedura di selezione per esami per la for…",
+  "euro_ora": null,
+  "fonte": "Case di riposo dell'Alto Adige (VdS) – offerte",
+  "id": "21790443e949",
+  "impronta": "793e651484a5",
+  "in_tedesco": false,
+  "km": 60,
+  "letto_il": "2026-11-13",
+  "minuti": 55,
+  "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.vds-suedtirol.it/sites/vds-suedtirol.it/files/job-documents/20261104_kundmachung_berufskrankenpfleger_0.pdf",
+   "https://www.vds-suedtirol.it/sites/vds-suedtirol.it/files/job-documents/20261104_teilnahmegesuch_berufskrankenpfleger_0.pdf"
+  ],
+  "pec": "peterpaulschrott@legalmail.it",
+  "primo_visto": "2026-11-13",
+  "pubblicato": null,
+  "punteggio": 30,
+  "scadenza": "2026-11-30",
+  "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
+  "segnali_turni": {
+   "parziale": true,
+   "pieno": true
+  },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
+  "titolo": "Seniorenwohnheim \"Claraheim\"",
+  "turni": "tempo pieno, part-time",
+  "ultimo_visto": "2026-11-13",
+  "url": "https://www.vds-suedtirol.it/de/swh/469/job/berufskrankenpflegerin-berufsbild-nr-64-der-viiter-funktionsebeneinfermierea-2",
+  "zona": "Nova Ponente"
+ },
  "2520bf34250f": {
   "affidabilita": "ufficiale",
   "avvisi": [
@@ -258,6 +360,7 @@
   "pubblicato": "2026-07-28",
   "punteggio": 61,
   "scadenza": null,
+  "scadenza_frase": null,
   "segnali_turni": {
    "ore_settimana": 16
   },
@@ -268,6 +371,107 @@
   "ultimo_visto": "2026-11-13",
   "url": "https://www.opibz.it/cercasi-infermiere-a-per-emodialisi-domiciliare-bolzano/",
   "zona": "Bolzano"
+ },
+ "2861dc2b4296": {
+  "affidabilita": "struttura",
+  "avvisi": [
+   "Dal PDF allegato: scadenza",
+   "Annuncio in tedesco"
+  ],
+  "cambi": [],
+  "cita_tedesco": true,
+  "compenso": null,
+  "contratto": "Concorso / graduatoria",
+  "da_pdf": {
+   "caratteri": 7217,
+   "cita_tedesco": true,
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "email": "info@algund.ah-cr.bz.it",
+   "estratto": "…ER L’ ASSUNZIONE A TEMPO DETERMINATO DI INFERMIERE/A PROFESSIONALE Das Seniorenheim Algund Mathias Ladurner ÖBPB sucht Berufskrankenpfleger/in in der 7ter. Funktionsebene Arbeitsbeginn: so bald wie möglich Vertragsdauer:…",
+   "euro_ora": null,
+   "indizi_compenso": [],
+   "infermiere": true,
+   "km": 74,
+   "minuti": 58,
+   "pec": "algund@pec.it",
+   "scadenza": "2026-11-20",
+   "scadenza_frase": "al presente avviso entro il 20/11 /2026 – ore 12.00",
+   "segnali_turni": {
+    "ore_settimana": 36,
+    "parziale": true,
+    "pieno": true
+   },
+   "turni": "36 h/settimana, tempo pieno, part-time",
+   "v": 2,
+   "zona": "Lagundo"
+  },
+  "data_novita": "2026-11-13",
+  "datore": null,
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "posto da dipendente",
+    "punti": 5,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 58 min d'auto",
+    "punti": 5,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "36 h/settimana, tempo pieno",
+    "punti": 7,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "sito della struttura",
+    "punti": 8,
+    "voce": "Fonte"
+   }
+  ],
+  "email": "info@algund.ah-cr.bz.it",
+  "estratto": "…ÜR DIE AUFNAHME AUF BEFRISTETE ZEIT FÜR BERUFSKRANKENPFLEGER/IN Das Seniorenheim Algund Mathias Ladurner ÖBPB sucht Berufskrankenpfleger/in in der 7ter. Funktionsebene Arbeitsbeginn: so bald wie möglich Vertragsdauer: Ja…",
+  "euro_ora": null,
+  "fonte": "Case di riposo dell'Alto Adige (VdS) – offerte",
+  "id": "2861dc2b4296",
+  "impronta": "dbf82deb2b3e",
+  "in_tedesco": true,
+  "km": 74,
+  "letto_il": "2026-11-13",
+  "minuti": 58,
+  "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.vds-suedtirol.it/sites/vds-suedtirol.it/files/job-documents/veroeffentlichung_krankenpfleger_-_bando_infermieri_signed_4.pdf",
+   "https://www.vds-suedtirol.it/sites/vds-suedtirol.it/files/job-documents/ansuchen_um_aufnahme_28.pdf"
+  ],
+  "pec": "algund@pec.it",
+  "primo_visto": "2026-11-13",
+  "pubblicato": null,
+  "punteggio": 30,
+  "scadenza": "2026-11-20",
+  "scadenza_frase": "al presente avviso entro il 20/11 /2026 – ore 12.00",
+  "segnali_turni": {
+   "ore_settimana": 36,
+   "pieno": true
+  },
+  "struttura": null,
+  "tipo_fonte": "elenco",
+  "titolo": "Seniorenheim Algund Mathias Ladurner ÖBPB",
+  "turni": "36 h/settimana, tempo pieno",
+  "ultimo_visto": "2026-11-13",
+  "url": "https://www.vds-suedtirol.it/de/swh/445/job/berufskrankenpflegerin-gesucht-4",
+  "zona": "Lagundo"
  },
  "289b1a76f5b5": {
   "affidabilita": "ufficiale",
@@ -330,6 +534,7 @@
   "pubblicato": "2026-10-15",
   "punteggio": 49,
   "scadenza": null,
+  "scadenza_frase": null,
   "segnali_turni": {
    "notti": true,
    "pieno": true,
@@ -342,6 +547,106 @@
   "ultimo_visto": "2026-11-13",
   "url": "https://opi.tn.it/cooperativa-sociale-villa-maria-onlus-ricerca-di-personale/",
   "zona": "Calliano"
+ },
+ "29e4149a9367": {
+  "affidabilita": "struttura",
+  "avvisi": [
+   "Dal PDF allegato: scadenza",
+   "Annuncio in tedesco"
+  ],
+  "cambi": [],
+  "cita_tedesco": true,
+  "compenso": null,
+  "contratto": null,
+  "da_pdf": {
+   "caratteri": 3472,
+   "cita_tedesco": true,
+   "compenso": null,
+   "contratto": null,
+   "email": null,
+   "estratto": "…tstelle oder Teilzeitstelle (80 %) als: Berufskrankenpfleger/in Berufsbild Nr. 64 - Abkommen vom 14.10.2013. Das entsprechende Gesuch auf stempelfreiem Papier (samt Beilagen) ist am Sitz des Senioren - wohnheimes Inniche…",
+   "euro_ora": null,
+   "indizi_compenso": [],
+   "infermiere": true,
+   "km": 148,
+   "minuti": 120,
+   "pec": null,
+   "scadenza": "2026-11-20",
+   "scadenza_frase": "allegati) va presentato entro le ore 12 del 20.11.2026 presso la s",
+   "segnali_turni": {
+    "parziale": true,
+    "pieno": true
+   },
+   "turni": "tempo pieno, part-time",
+   "v": 2,
+   "zona": "San Candido"
+  },
+  "data_novita": "2026-11-13",
+  "datore": "Stiftung Hans Messerschmied ÖBPB",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "contratto non indicato",
+    "punti": 8,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 120 min d'auto: lontano",
+    "punti": 0,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "tempo pieno, part-time",
+    "punti": 7,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "sito della struttura",
+    "punti": 8,
+    "voce": "Fonte"
+   }
+  ],
+  "email": null,
+  "estratto": "…itstelle oder Teilzeitstelle (80%) als: Berufskrankenpfleger/in - Berufsbild Nr. 64 des Abkommens vom 14.10.2013. ----------------------------------------------------------------------------------------------------------…",
+  "euro_ora": null,
+  "fonte": "Case di riposo dell'Alto Adige (VdS) – offerte",
+  "id": "29e4149a9367",
+  "impronta": "619f8f3aadf1",
+  "in_tedesco": true,
+  "km": 148,
+  "letto_il": "2026-11-13",
+  "minuti": 120,
+  "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.vds-suedtirol.it/sites/vds-suedtirol.it/files/job-documents/26-13-krankenpfleger-kundmachung_signed.pdf",
+   "https://www.vds-suedtirol.it/sites/vds-suedtirol.it/files/job-documents/26-13-krankenpfleger-bewerbung-deutsch.pdf"
+  ],
+  "pec": null,
+  "primo_visto": "2026-11-13",
+  "pubblicato": null,
+  "punteggio": 28,
+  "scadenza": "2026-11-20",
+  "scadenza_frase": "allegati) va presentato entro le ore 12 del 20.11.2026 presso la s",
+  "segnali_turni": {
+   "parziale": true,
+   "pieno": true
+  },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
+  "titolo": "Stiftung \"Hans Messerschmied\" Ö.B.P.B",
+  "turni": "tempo pieno, part-time",
+  "ultimo_visto": "2026-11-13",
+  "url": "https://www.vds-suedtirol.it/de/swh/467/job/vollzeitstelle-als-berufskrankenpflegerin-provisorisch-fuer-12-monate-posto-tempo-pieno",
+  "zona": "San Candido"
  },
  "2bce154a28cb": {
   "affidabilita": "ufficiale",
@@ -410,6 +715,108 @@
   "ultimo_visto": "2026-11-13",
   "url": "https://opi.tn.it/a-p-s-p-odone-nicolini/",
   "zona": "Pieve di Bono-Prezzo"
+ },
+ "2c2e9b9cf537": {
+  "affidabilita": "struttura",
+  "avvisi": [
+   "Dal PDF allegato: scadenza",
+   "Cita tedesco o bilinguismo"
+  ],
+  "cambi": [],
+  "cita_tedesco": true,
+  "compenso": null,
+  "contratto": "Concorso / graduatoria",
+  "da_pdf": {
+   "caratteri": 45488,
+   "cita_tedesco": true,
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "email": "info@sh-eggental.bz.it",
+   "estratto": "…provisorische Besetzung von Stellen als Berufskrankenpfleger/in (Berufsbild Nr. 64) in der VII.ter Funktionsebene in Teilzeit und in Vollzeit für die Seniorenwohnheime Eggental ausgeschrieben ist. che è indetta una proce…",
+   "euro_ora": null,
+   "indizi_compenso": [
+    ":  cittadino/a italiano/a;  cittadino/a del seguente Stato membro dell’Unione euro- pea: …………………………………………  cittadino/a di uno Stato non membr"
+   ],
+   "infermiere": true,
+   "km": 60,
+   "minuti": 55,
+   "pec": "peterpaulschrott@legalmail.it",
+   "scadenza": "2026-11-30",
+   "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
+   "segnali_turni": {
+    "parziale": true,
+    "pieno": true
+   },
+   "turni": "tempo pieno, part-time",
+   "v": 2,
+   "zona": "Nova Ponente"
+  },
+  "data_novita": "2026-11-13",
+  "datore": null,
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "posto da dipendente",
+    "punti": 5,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 55 min d'auto",
+    "punti": 5,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "tempo pieno, part-time",
+    "punti": 7,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "sito della struttura",
+    "punti": 8,
+    "voce": "Fonte"
+   }
+  ],
+  "email": "info@sh-eggental.bz.it",
+  "estratto": "…provisorische Besetzung von Stellen als Berufskrankenpfleger/in (Berufsbild Nr. 64) in der VII.ter Funktionsebene in Teilzeit und in Vollzeit für die Seniorenwohnheime Eggental Procedura di selezione per esami per la for…",
+  "euro_ora": null,
+  "fonte": "Case di riposo dell'Alto Adige (VdS) – offerte",
+  "id": "2c2e9b9cf537",
+  "impronta": "a1b41848b69b",
+  "in_tedesco": false,
+  "km": 62,
+  "letto_il": "2026-11-13",
+  "minuti": 55,
+  "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.vds-suedtirol.it/sites/vds-suedtirol.it/files/job-documents/20261104_kundmachung_berufskrankenpfleger_1.pdf",
+   "https://www.vds-suedtirol.it/sites/vds-suedtirol.it/files/job-documents/20261104_teilnahmegesuch_berufskrankenpfleger_1.pdf"
+  ],
+  "pec": "peterpaulschrott@legalmail.it",
+  "primo_visto": "2026-11-13",
+  "pubblicato": null,
+  "punteggio": 30,
+  "scadenza": "2026-11-30",
+  "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
+  "segnali_turni": {
+   "parziale": true,
+   "pieno": true
+  },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
+  "titolo": "Seniorenwohnheim \"Leoheim\"",
+  "turni": "tempo pieno, part-time",
+  "ultimo_visto": "2026-11-13",
+  "url": "https://www.vds-suedtirol.it/de/swh/521/job/berufskrankenpflegerin-berufsbild-nr-64-der-viiter-funktionsebeneinfermierea-1",
+  "zona": "Nova Levante"
  },
  "2ca01aeef33f": {
   "affidabilita": "ufficiale",
@@ -545,6 +952,7 @@
   "pubblicato": "2026-10-16",
   "punteggio": 62,
   "scadenza": "2026-11-27",
+  "scadenza_frase": "Personale dell’Azienda. Proroga termini di scadenza: 27/11/2026 ore 12.00 A",
   "segnali_turni": {},
   "struttura": "RSA o casa di riposo",
   "tipo_fonte": "elenco",
@@ -553,6 +961,108 @@
   "ultimo_visto": "2026-11-13",
   "url": "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/",
   "zona": "Rovereto"
+ },
+ "47168b48e2bf": {
+  "affidabilita": "struttura",
+  "avvisi": [
+   "Dal PDF allegato: scadenza, ore e turni",
+   "Cita tedesco o bilinguismo"
+  ],
+  "cambi": [],
+  "cita_tedesco": true,
+  "compenso": null,
+  "contratto": "Concorso / graduatoria",
+  "da_pdf": {
+   "caratteri": 42101,
+   "cita_tedesco": true,
+   "compenso": null,
+   "contratto": null,
+   "email": "info@altenheim-stpankraz.it",
+   "estratto": "….)  19 Wochenstun- den/ore settimanali Krankenpfleger/in (7./ter FE) / infermiere/a (VII°/ter qual.funz.)  18  20  22 Wochenstunden/ore set- timanali Erzieher/in (7. FE) / educatore/trice (VII° qual.funz.)  36 Woche…",
+   "euro_ora": null,
+   "indizi_compenso": [],
+   "infermiere": true,
+   "km": 42,
+   "minuti": 35,
+   "pec": "altenheim.stpankraz@pec.rolmail.net",
+   "scadenza": "2026-11-20",
+   "scadenza_frase": "20.11.2026 11:00 Uhr Scadenza: 20/11/2026 ore 11.00 T",
+   "segnali_turni": {
+    "ore_settimana": 5,
+    "parziale": true,
+    "pieno": true
+   },
+   "turni": "5 h/settimana, tempo pieno, part-time",
+   "v": 2,
+   "zona": "Bolzano"
+  },
+  "data_novita": "2026-11-13",
+  "datore": null,
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "posto da dipendente",
+    "punti": 5,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 35 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "5 h/settimana, tempo pieno, part-time",
+    "punti": 7,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "sito della struttura",
+    "punti": 8,
+    "voce": "Fonte"
+   }
+  ],
+  "email": "info@altenheim-stpankraz.it",
+  "estratto": "…rangordnung_sozialbetreuer_pflegehelfer_krankenpfleger_heimgehilfen_verwaltungsassistent_fuer_2027_termin_20.11.2026-signed.pdf",
+  "euro_ora": null,
+  "fonte": "Case di riposo dell'Alto Adige (VdS) – offerte",
+  "id": "47168b48e2bf",
+  "impronta": "243cb4675d24",
+  "in_tedesco": false,
+  "km": 42,
+  "letto_il": "2026-11-13",
+  "minuti": 35,
+  "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.vds-suedtirol.it/sites/vds-suedtirol.it/files/job-documents/neu_gesuch_befristete_aufnahme_verschiedene_rangordnungen_20.11.2026p600072405_3.pdf",
+   "https://www.vds-suedtirol.it/sites/vds-suedtirol.it/files/job-documents/kundmachung_befristete_rangordnung_sozialbetreuer_pflegehelfer_krankenpfleger_heimgehilfen_verwaltungsassistent_fuer_2027_termin_20.11.2026-signed_3.pdf"
+  ],
+  "pec": "altenheim.stpankraz@pec.rolmail.net",
+  "primo_visto": "2026-11-13",
+  "pubblicato": null,
+  "punteggio": 37,
+  "scadenza": "2026-11-20",
+  "scadenza_frase": "20.11.2026 11:00 Uhr Scadenza: 20/11/2026 ore 11.00 T",
+  "segnali_turni": {
+   "ore_settimana": 5,
+   "parziale": true,
+   "pieno": true
+  },
+  "struttura": null,
+  "tipo_fonte": "elenco",
+  "titolo": "Altenheim St. Pankraz ÖBPB",
+  "turni": "5 h/settimana, tempo pieno, part-time",
+  "ultimo_visto": "2026-11-13",
+  "url": "https://www.vds-suedtirol.it/de/swh/507/job/krankenpflegerinnen-7ter-fe-mit-18-20-und-22-wochenstunden",
+  "zona": "Bolzano"
  },
  "4f1d5c684f83": {
   "affidabilita": "ufficiale",
@@ -615,6 +1125,7 @@
     "voce": "Fonte"
    }
   ],
+  "doppione_di": "903c6d8db71c",
   "email": "info@ah-kaltern.it",
   "estratto": "Infermiere/a a tempo pieno o part time Fondazione Casa di Riposo Heinrich von Rottenburg Kaltern – Caldaro Azienda pubblica di servizi alla persona Via Mendola 21 I-39052 Caldaro (BZ) Tel. 0471 96 32 69 – Fax 0471 96 32…",
   "euro_ora": null,
@@ -769,6 +1280,7 @@
     "voce": "Fonte"
    }
   ],
+  "doppione_di": "903c6d8db71c",
   "email": "info@ah-kaltern.it",
   "estratto": "…Riposo Heinrich von Rottenburg Caldaro Infermiere/a a tempo pieno o part time La nostra casa di riposo a Caldaro è conosciuta per la sua ottima atmosfera lavorativa, il personale con anni di esperienza, orari flessibili…",
   "euro_ora": null,
@@ -815,17 +1327,24 @@
    "email": null,
    "estratto": "…TIMANALI) nella figura professionale di INFERMIERE Area 3 (Funzionari) – Livello Base – 1^posizione retributiva di cui n. 3 (tre) posti riservati ai volontari delle forze armate Il Direttore visto il Regolamento del Pers…",
    "euro_ora": null,
+   "indizi_compenso": [
+    "5000 www.apspvannetti.it. - pec: apspvannetti@pec.it • stipendio base iniziale: euro 23.001,72.=; • indennità integrativa speciale: euro 6.545,0",
+    "assegno annuo: euro 3.360,00.=; • indennità figura professionale di Infermiere: euro 3.000,00.=; • tredicesima mensilità; • ogni altra competenz",
+    "gati i seguenti documenti: 1. ricevuta del pagamento della tassa di concorso di euro 25,00 =. Il pagamento dovrà essere effettuato unicamente tr"
+   ],
    "infermiere": true,
    "km": 45,
    "minuti": 40,
    "pec": "apspvannetti@pec.it",
    "scadenza": "2026-11-13",
+   "scadenza_frase": "Umane dell’Azienda entro e non oltre le ore 12:00 del giorno venerdì 13 novembre 2026 Il termine",
    "segnali_turni": {
     "ore_settimana": 36,
     "parziale": true,
     "pieno": true
    },
    "turni": "36 h/settimana, tempo pieno, part-time",
+   "v": 2,
    "zona": "Rovereto"
   },
   "data_novita": "2026-11-13",
@@ -882,6 +1401,7 @@
   "pubblicato": "2026-10-16",
   "punteggio": 39,
   "scadenza": "2026-11-13",
+  "scadenza_frase": "216,01 kB) Termine di presentazione Venerdì, 13 Novembre 2026 ore 12:00 I",
   "segnali_turni": {
    "ore_settimana": 36,
    "pieno": true
@@ -955,6 +1475,7 @@
   "pubblicato": null,
   "punteggio": 40,
   "scadenza": null,
+  "scadenza_frase": null,
   "segnali_turni": {
    "ore_settimana": 36
   },
@@ -1029,6 +1550,7 @@
   "pubblicato": null,
   "punteggio": 52,
   "scadenza": null,
+  "scadenza_frase": null,
   "segnali_turni": {
    "dodici": true
   },
@@ -1123,7 +1645,7 @@
   "contratto": null,
   "da_pdf": null,
   "data_novita": "2026-11-13",
-  "datore": null,
+  "datore": "Casa di riposo di Silandro",
   "dettaglio_punteggio": [
    {
     "max": 30,
@@ -1173,6 +1695,7 @@
   "pubblicato": "2026-09-25",
   "punteggio": 33,
   "scadenza": null,
+  "scadenza_frase": null,
   "segnali_turni": {},
   "struttura": "RSA o casa di riposo",
   "tipo_fonte": "elenco",
@@ -1289,11 +1812,16 @@
    "email": "info@apsplavis.it",
    "estratto": "…PER LA COPERTURA DI N. 3 (TRE) POSTI DI INFERMIERE A TEMPO PIENO (36 ORE SETTIMANALI), CON CONTRATTO A TEMPO INDETERMINATO, AREA 3 FUNZIONARI LIVELLO BASE, 1^ POSIZIONE RETRIBUTIVA DEI QUALI N. 1 A TEMPO PIENO RISERVATO…",
    "euro_ora": null,
+   "indizi_compenso": [
+    "so di assunzione a tempo parziale, è il seguente: - stipendio annuo iniziale di € 23.001,72; - assegno annuo di € 3.360,00; - indennità integ",
+    "ione al concorso è previsto il pagament o di un contributo di partecipazione di € 25,00 da effettuarsi esclusivamente tramite il sistema Pago"
+   ],
    "infermiere": true,
    "km": 12,
    "minuti": 15,
    "pec": "amministrazione@pec.apsplavis.it",
    "scadenza": "2026-11-19",
+   "scadenza_frase": "Orti n 50, Lavis (TN), entro e non oltre le Ore 12:00 del giorno 19/11/2026 Si rende no",
    "segnali_turni": {
     "notti": true,
     "ore_settimana": 36,
@@ -1302,6 +1830,7 @@
     "weekend": true
    },
    "turni": "36 h/settimana, notti, weekend/festivi, tempo pieno, part-time",
+   "v": 2,
    "zona": "Lavis"
   },
   "data_novita": null,
@@ -1359,6 +1888,7 @@
   "pubblicato": "2026-10-23",
   "punteggio": 54,
   "scadenza": "2026-11-19",
+  "scadenza_frase": "178,71 kB) Termine di presentazione Giovedì, 19 Novembre 2026 ore 12:00 I",
   "segnali_turni": {
    "notti": true,
    "ore_settimana": 36,
@@ -1435,6 +1965,7 @@
   "pubblicato": "2026-10-18",
   "punteggio": 55,
   "scadenza": null,
+  "scadenza_frase": null,
   "segnali_turni": {
    "notti": true,
    "weekend": true
@@ -1570,6 +2101,7 @@
   "pubblicato": "2026-10-27",
   "punteggio": 27,
   "scadenza": null,
+  "scadenza_frase": null,
   "segnali_turni": {
    "ore_settimana": 36,
    "pieno": true
@@ -1792,16 +2324,23 @@
    "email": "segreteria@apsp-primiero.net",
    "estratto": "…e sett.) nella figura professionale di: INFERMIERE Area 3 Funzionari, livello Base – 1^ posizione retributiva la graduatoria sarà utilizzata anche per la copertura di ev entuali posti che dovessero rendersi vacanti nel p…",
    "euro_ora": null,
+   "indizi_compenso": [
+    "o a tempo pieno annesso a detto posto è il seguente: - Stipendio annuo iniziale € 23.001,72 - Assegno annuo di € 3.360,00 - Indennità integra",
+    ". Per l’ammissione al Concorso Pubblico è previsto il pagamento di una tassa di € 25,00. Il pagamento dovrà essere effettuato unicamente tram",
+    "enti documenti: 1. ricevuta comprovante il pagamento della tassa di concorso di € 25,00 effettuata con le modalità su indicate; 2. Documento"
+   ],
    "infermiere": true,
    "km": 105,
    "minuti": 120,
    "pec": "segreteria@pec.apsp-primiero.net",
    "scadenza": "2026-12-04",
+   "scadenza_frase": "di Castrozza (TN) ENTRO E NON OLTRE LE ORE 12:00 DEL GIORNO VENERDÌ 04.12.2026 La domanda",
    "segnali_turni": {
     "parziale": true,
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
+   "v": 2,
    "zona": "Primiero San Martino di Castrozza"
   },
   "data_novita": "2026-11-13",
@@ -1858,6 +2397,7 @@
   "pubblicato": "2026-11-03",
   "punteggio": 27,
   "scadenza": "2026-12-04",
+  "scadenza_frase": "505,54 kB) Termine di presentazione Venerdì, 04 Dicembre 2026 ore 12:00 I",
   "segnali_turni": {
    "ore_settimana": 36,
    "pieno": true
@@ -1931,6 +2471,7 @@
   "pubblicato": "2026-10-19",
   "punteggio": 30,
   "scadenza": null,
+  "scadenza_frase": null,
   "segnali_turni": {},
   "struttura": "Clinica o ambulatorio",
   "tipo_fonte": "elenco",
@@ -2096,6 +2637,109 @@
   "url": "https://opi.tn.it/fondazione-casa-di-riposo-heinrich-von-rottenburg-apsp-caldaro-bz/",
   "zona": "Caldaro"
  },
+ "97a3270008d0": {
+  "affidabilita": "struttura",
+  "avvisi": [
+   "Dal PDF allegato: scadenza",
+   "Cita tedesco o bilinguismo"
+  ],
+  "cambi": [],
+  "cita_tedesco": true,
+  "compenso": null,
+  "contratto": "Concorso / graduatoria",
+  "da_pdf": {
+   "caratteri": 45488,
+   "cita_tedesco": true,
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "email": "info@sh-eggental.bz.it",
+   "estratto": "…provisorische Besetzung von Stellen als Berufskrankenpfleger/in (Berufsbild Nr. 64) in der VII.ter Funktionsebene in Teilzeit und in Vollzeit für die Seniorenwohnheime Eggental ausgeschrieben ist. che è indetta una proce…",
+   "euro_ora": null,
+   "indizi_compenso": [
+    ":  cittadino/a italiano/a;  cittadino/a del seguente Stato membro dell’Unione euro- pea: …………………………………………  cittadino/a di uno Stato non membr"
+   ],
+   "infermiere": true,
+   "km": 60,
+   "minuti": 55,
+   "pec": "peterpaulschrott@legalmail.it",
+   "scadenza": "2026-11-30",
+   "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
+   "segnali_turni": {
+    "parziale": true,
+    "pieno": true
+   },
+   "turni": "tempo pieno, part-time",
+   "v": 2,
+   "zona": "Nova Ponente"
+  },
+  "data_novita": "2026-11-13",
+  "datore": null,
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "posto da dipendente",
+    "punti": 5,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 55 min d'auto",
+    "punti": 5,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "tempo pieno, part-time",
+    "punti": 7,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "sito della struttura",
+    "punti": 8,
+    "voce": "Fonte"
+   }
+  ],
+  "doppione_di": "21790443e949",
+  "email": "info@sh-eggental.bz.it",
+  "estratto": "…provisorische Besetzung von Stellen als Berufskrankenpfleger/in (Berufsbild Nr. 64) in der VII.ter Funktionsebene in Teilzeit und in Vollzeit für die Seniorenwohnheime Eggental Procedura di selezione per esami per la for…",
+  "euro_ora": null,
+  "fonte": "Case di riposo dell'Alto Adige (VdS) – offerte",
+  "id": "97a3270008d0",
+  "impronta": "e471f4f8722e",
+  "in_tedesco": false,
+  "km": 60,
+  "letto_il": "2026-11-13",
+  "minuti": 55,
+  "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.vds-suedtirol.it/sites/vds-suedtirol.it/files/job-documents/20261104_kundmachung_berufskrankenpfleger.pdf",
+   "https://www.vds-suedtirol.it/sites/vds-suedtirol.it/files/job-documents/20261104_teilnahmegesuch_berufskrankenpfleger.pdf"
+  ],
+  "pec": "peterpaulschrott@legalmail.it",
+  "primo_visto": "2026-11-13",
+  "pubblicato": null,
+  "punteggio": 30,
+  "scadenza": "2026-11-30",
+  "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
+  "segnali_turni": {
+   "parziale": true,
+   "pieno": true
+  },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
+  "titolo": "Seniorenwohnheim \"Peter Paul Schrott\"",
+  "turni": "tempo pieno, part-time",
+  "ultimo_visto": "2026-11-13",
+  "url": "https://www.vds-suedtirol.it/de/swh/462/job/berufskrankenpflegerin-berufsbild-nr-64-der-viiter-funktionsebene-infermierea-0",
+  "zona": "Nova Ponente"
+ },
  "9d74be023dc2": {
   "affidabilita": "ufficiale",
   "avvisi": [
@@ -2250,6 +2894,7 @@
     "voce": "Fonte"
    }
   ],
+  "doppione_di": "8ac4e9fdd77c",
   "email": "info@bzgbga.it",
   "estratto": "…peratore/operatrice socio-assistenziale Infermiere/Infermiera professionale Download: Avviso pubblico Domanda di ammissione",
   "euro_ora": null,
@@ -2339,6 +2984,7 @@
   "pubblicato": "2026-10-15",
   "punteggio": 39,
   "scadenza": "2026-11-13",
+  "scadenza_frase": "apspvannetti@pec.it entro e non oltre le ore 12.00 del giorno 13/11/2026 all’U.O. de",
   "segnali_turni": {
    "ore_settimana": 36,
    "pieno": true
@@ -2637,6 +3283,80 @@
   "ultimo_visto": "2026-11-13",
   "url": "https://www.asuit.tn.it/bandi-concorsi/selezione-pubblica-titoli-la-formazione-di-graduatorie-assunzioni-tempo-determinato",
   "zona": "Cavalese"
+ },
+ "c756aaab1eb7": {
+  "affidabilita": "struttura",
+  "avvisi": [
+   "Annuncio in tedesco"
+  ],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": null,
+  "da_pdf": null,
+  "data_novita": "2026-11-13",
+  "datore": "Seniorenwohnheim Vinzenzhaus",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "contratto non indicato",
+    "punti": 8,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 35 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "tempo pieno, part-time",
+    "punti": 7,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "sito della struttura",
+    "punti": 8,
+    "voce": "Fonte"
+   }
+  ],
+  "email": null,
+  "estratto": "…tag. Ihr Profil Berufsqualifikation als Krankenpfleger:in oder Sozialbetreuer:in Strukturierte, eigenverantwortliche und proaktive Arbeitsweise Verständnis für organisatorische Abläufe und Zusammenhänge Fähigkeit ein Tea…",
+  "euro_ora": null,
+  "fonte": "Vinzenzhaus Bolzano – Jobs",
+  "id": "c756aaab1eb7",
+  "impronta": "a2c586b36a2b",
+  "in_tedesco": true,
+  "km": 42,
+  "letto_il": "2026-11-13",
+  "minuti": 35,
+  "novita": "nuovo",
+  "pdf_letti": [],
+  "pec": null,
+  "primo_visto": "2026-11-13",
+  "pubblicato": null,
+  "punteggio": 40,
+  "scadenza": null,
+  "scadenza_frase": null,
+  "segnali_turni": {
+   "parziale": true,
+   "pieno": true
+  },
+  "struttura": "Disabilità o sociale",
+  "tipo_fonte": "pagina",
+  "titolo": "Vinzenzhaus – Jobs - Sozialgenossenschaft zum HL Vinzenz",
+  "turni": "tempo pieno, part-time",
+  "ultimo_visto": "2026-11-13",
+  "url": "https://sozialgenossenschaft-vinzenz.it/vinzenzhaus/vinzenzhaus-jobs/",
+  "zona": "Bolzano"
  },
  "c833b99cef99": {
   "affidabilita": "ufficiale",
@@ -3186,6 +3906,7 @@
   "pubblicato": "2026-07-03",
   "punteggio": 25,
   "scadenza": "2026-12-04",
+  "scadenza_frase": null,
   "segnali_turni": {},
   "struttura": "RSA o casa di riposo",
   "tipo_fonte": "elenco",
@@ -3194,6 +3915,106 @@
   "ultimo_visto": "2026-11-13",
   "url": "https://opi.tn.it/apsp-san-giuseppe-di-primiero-tn-ricerca-di-personale/",
   "zona": "Primiero San Martino di Castrozza"
+ },
+ "f4d1cabf121e": {
+  "affidabilita": "struttura",
+  "avvisi": [
+   "Annuncio in tedesco"
+  ],
+  "cambi": [],
+  "cita_tedesco": true,
+  "compenso": null,
+  "contratto": "Concorso / graduatoria",
+  "da_pdf": {
+   "caratteri": 42101,
+   "cita_tedesco": true,
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "email": "info@altenheim-stpankraz.it",
+   "estratto": "…stent/in (6. FE) mit 19 Wochenstunden • Krankenpfleger/innen (7/ter. F E) mit 18, 20 und 22 Wochenstunden • Erzieher/in (7. FE) mit 36 Wochenstunden Avviso pubblico La C asa di riposo San Pancrazio forma graduatorie per…",
+   "euro_ora": null,
+   "indizi_compenso": [],
+   "infermiere": true,
+   "km": 42,
+   "minuti": 35,
+   "pec": "altenheim.stpankraz@pec.rolmail.net",
+   "scadenza": "2026-11-20",
+   "scadenza_frase": "20.11.2026 11:00 Uhr Scadenza: 20/11/2026 ore 11.00 T",
+   "segnali_turni": {
+    "ore_settimana": 5,
+    "parziale": true,
+    "pieno": true
+   },
+   "turni": "5 h/settimana, tempo pieno, part-time",
+   "v": 2,
+   "zona": "Bolzano"
+  },
+  "data_novita": "2026-11-13",
+  "datore": "Altenheim St",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "posto da dipendente",
+    "punti": 5,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 35 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "5 h/settimana",
+    "punti": 4,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "sito della struttura",
+    "punti": 8,
+    "voce": "Fonte"
+   }
+  ],
+  "doppione_di": "47168b48e2bf",
+  "email": "info@altenheim-stpankraz.it",
+  "estratto": "…stent/in (6. FE) mit 19 Wochenstunden • Krankenpfleger/innen (7/ter. FE) mit 18, 20 und 22 Wochenstunden • Erzieher/in (7. FE) mit 36 Wochenstunden La Casa di riposo San Pancrazio forma graduatorie per assunzioni a tempo…",
+  "euro_ora": null,
+  "fonte": "Case di riposo dell'Alto Adige (VdS) – offerte",
+  "id": "f4d1cabf121e",
+  "impronta": "22efca9b61ee",
+  "in_tedesco": true,
+  "km": 42,
+  "letto_il": "2026-11-13",
+  "minuti": 35,
+  "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.vds-suedtirol.it/sites/vds-suedtirol.it/files/job-documents/kundmachung_befristete_rangordnung_sozialbetreuer_pflegehelfer_krankenpfleger_heimgehilfen_verwaltungsassistent_fuer_2027_termin_20.11.2026-signed_5.pdf",
+   "https://www.vds-suedtirol.it/sites/vds-suedtirol.it/files/job-documents/neu_gesuch_befristete_aufnahme_verschiedene_rangordnungen_20.11.2026p600072405_5.pdf"
+  ],
+  "pec": "altenheim.stpankraz@pec.rolmail.net",
+  "primo_visto": "2026-11-13",
+  "pubblicato": null,
+  "punteggio": 34,
+  "scadenza": "2026-11-20",
+  "scadenza_frase": "kundmachung_befristete_rangordnung_sozialbetreuer_pflegehelfer_krankenpfleger_heimgehilfen_verwaltungsassistent_fuer_2027_termin_20.11.2026-signed.pdf neu_gesuch_befriste",
+  "segnali_turni": {
+   "ore_settimana": 5
+  },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
+  "titolo": "Seniorenwohnheim Stiftung Lorenzerhof",
+  "turni": "5 h/settimana",
+  "ultimo_visto": "2026-11-13",
+  "url": "https://www.vds-suedtirol.it/de/swh/475/job/kundmachung-befristete-rangordnung-sozialbetreuer-pflegehelfer-krankenpfleger",
+  "zona": "Bolzano"
  },
  "f789e905e74a": {
   "affidabilita": "ufficiale",
@@ -3283,16 +4104,23 @@
    "email": "concorsi@asuit.tn.it",
    "estratto": "…COLLABORATORE PROFESSIONALE SANITARIO – INFERMIERE PRESSO LA SEDE DI CAVALESE In esecuzione della determinazione della sostituta Dirigente del Servizio Acquisizione e sviluppo n. 1593/2026 del 21 settembre 2026 è emesso…",
    "euro_ora": null,
+   "indizi_compenso": [
+    "voro, è quello sotto riportato: VOCE STIPENDIALE IMPORTO ANNUALE stipendio base € 29.742,57 indennità sanitaria provinciale € 1.752,79 armoni",
+    "tribuzione aggiuntiva CCPL 13/08/2020 € 88,40 indennità professionale specifica € 434,04 indennità di specificità infermieristica € 3.120,00",
+    "presente procedura richiede il pagamento di un’unica tassa di concorso pari a 5 Euro. Il pagamento potrà essere effettuato secondo due modalità"
+   ],
    "infermiere": true,
    "km": 50,
    "minuti": 55,
    "pec": null,
    "scadenza": "2026-12-31",
+   "scadenza_frase": "procedura telematica entro le ore 23.59 del giorno 31 dicembre 2026. Detto term",
    "segnali_turni": {
     "parziale": true,
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
+   "v": 2,
    "zona": "Cavalese"
   },
   "data_novita": "2026-11-13",
@@ -3348,6 +4176,7 @@
   "pubblicato": null,
   "punteggio": 32,
   "scadenza": "2026-12-31",
+  "scadenza_frase": "procedura telematica entro le ore 23.59 del giorno 31 dicembre 2026. Detto term",
   "segnali_turni": {
    "parziale": true,
    "pieno": true
@@ -3359,6 +4188,80 @@
   "ultimo_visto": "2026-11-13",
   "url": "https://www.asuit.tn.it/system/files/paragrafi/elemento_protonterapia/54121/p_allegati/64966/SC%2003%2026%20AVVISO%20APERTO%20INFERMIERE%20per%20Cavalese%20con%20valutaz%20titoli.pdf",
   "zona": "Cavalese"
+ },
+ "fd44f0fa05f6": {
+  "affidabilita": "struttura",
+  "avvisi": [
+   "Annuncio in tedesco"
+  ],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": "P.IVA / libera professione",
+  "da_pdf": null,
+  "data_novita": "2026-11-13",
+  "datore": "Seniorenwohnheim Schloss Moos",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "libera professione / P.IVA",
+    "punti": 30,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 35 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "weekend/festivi, part-time",
+    "punti": 8,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "sito della struttura",
+    "punti": 8,
+    "voce": "Fonte"
+   }
+  ],
+  "email": null,
+  "estratto": "…Sozialbetreuer:in , Pflegehelfer:in und Krankenpfleger:in Ein kompetentes Pflegeteam freut sich auf Sie! Wir sind Profis in der Begleitung und Unterstützung älterer Menschen in komplexen und herausfordernden Lebenssituat…",
+  "euro_ora": null,
+  "fonte": "Schloss Moos – Jobs (sito della cooperativa)",
+  "id": "fd44f0fa05f6",
+  "impronta": "c570ba6b9bd5",
+  "in_tedesco": true,
+  "km": 42,
+  "letto_il": "2026-11-13",
+  "minuti": 35,
+  "novita": "nuovo",
+  "pdf_letti": [],
+  "pec": null,
+  "primo_visto": "2026-11-13",
+  "pubblicato": null,
+  "punteggio": 63,
+  "scadenza": null,
+  "scadenza_frase": null,
+  "segnali_turni": {
+   "parziale": true,
+   "weekend": true
+  },
+  "struttura": "Disabilità o sociale",
+  "tipo_fonte": "pagina",
+  "titolo": "Schloss Moos – Jobs - Sozialgenossenschaft zum HL Vinzenz",
+  "turni": "weekend/festivi, part-time",
+  "ultimo_visto": "2026-11-13",
+  "url": "https://sozialgenossenschaft-vinzenz.it/schloss-moos/schloss-moos-jobs/",
+  "zona": "Bolzano"
  },
  "fe748243f94c": {
   "affidabilita": "ufficiale",

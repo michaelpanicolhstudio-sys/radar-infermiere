@@ -2,16 +2,164 @@
  "data": "2026-11-13",
  "esplora": [
   {
-   "errore": "bloccata da robots.txt (il sito non vuole essere letto da programmi)",
-   "url": "https://mezzolombardo.upipa.opencontent.it/"
+   "caratteri": 2987,
+   "inizio": "Stellenangebote der Seniorenwohnheime Südtirols Hier finden Sie die Stellenangebote unserer Mitgliedsheime. Die Einträge werden von den einzelnen Seniorenwohnheimen bekanntgegeben und sind auch auf der entsprechenden Seite des Heimes zu finden. Auf der Homepage https://career.bz.it finden Sie ausfüh",
+   "link": [
+    [
+     "Deutsch",
+     "https://www.vds-suedtirol.it/de/jobs"
+    ],
+    [
+     "Italiano",
+     "https://www.vds-suedtirol.it/it/jobs"
+    ],
+    [
+     "https://career.bz.it",
+     "https://career.bz.it"
+    ],
+    [
+     "https://career.bz.it/it/",
+     "https://career.bz.it/it/"
+    ],
+    [
+     "Seniorenheim Algund Mathias Ladurner ÖBPB",
+     "https://www.vds-suedtirol.it/de/swh/445/job/berufskrankenpflegerin-gesucht-4"
+    ],
+    [
+     "Seniorenheim Algund Mathias Ladurner ÖBPB",
+     "https://www.vds-suedtirol.it/de/swh/445/job/sozialbetreuerin-gesucht-0"
+    ],
+    [
+     "Ö.B.P.B. “Josefsheim”",
+     "https://www.vds-suedtirol.it/de/swh/518/job/befristete-anstellung-als-physiotherapeutin-bzw-ergotherapeutin"
+    ],
+    [
+     "Ö.B.P.B. “Josefsheim”",
+     "https://www.vds-suedtirol.it/de/swh/518/job/befristete-anstellung-als-sozialbetreuerin"
+    ],
+    [
+     "Stiftung Altenheim St. Walburg - ÖBPB",
+     "https://www.vds-suedtirol.it/de/swh/509/job/auswahlverfahren-fuer-die-beauftragung-als-pflegedienstleitung-altenheim-st-walburg"
+    ],
+    [
+     "Seniorenwohnheim \"Leoheim\"",
+     "https://www.vds-suedtirol.it/de/swh/521/job/sozialbetreuerin-berufsbild-nr-38-der-v-funktionsebene-operatore-operatrice-socio-2"
+    ],
+    [
+     "Seniorenwohnheim \"Claraheim\"",
+     "https://www.vds-suedtirol.it/de/swh/469/job/sozialbetreuerin-berufsbild-nr-38-der-v-funktionsebene-operatore-operatrice-socio-2"
+    ],
+    [
+     "Seniorenwohnheim \"Peter Paul Schrott\"",
+     "https://www.vds-suedtirol.it/de/swh/462/job/sozialbetreuerin-berufsbild-nr-38-der-v-funktionsebene-operatore-operatrice-socio-2"
+    ],
+    [
+     "Seniorenwohnheim \"Peter Paul Schrott\"",
+     "https://www.vds-suedtirol.it/de/swh/462/job/pflegehelferin-berufsbild-nr-20-der-iv-funktionsebene-operatore-trice-socio-sanitarioa-2"
+    ],
+    [
+     "Seniorenwohnheim \"Claraheim\"",
+     "https://www.vds-suedtirol.it/de/swh/469/job/pflegehelferin-berufsbild-nr-20-der-iv-funktionsebene-operatore-trice-socio-sanitarioa-2"
+    ],
+    [
+     "2",
+     "https://www.vds-suedtirol.it/de/jobs?page=1"
+    ],
+    [
+     "3",
+     "https://www.vds-suedtirol.it/de/jobs?page=2"
+    ],
+    [
+     "4",
+     "https://www.vds-suedtirol.it/de/jobs?page=3"
+    ],
+    [
+     "Request new password",
+     "https://www.vds-suedtirol.it/de/user/password"
+    ],
+    [
+     "Login",
+     "https://www.vds-suedtirol.it/de/user/login"
+    ],
+    [
+     "Mitgliederbereich",
+     "https://www.vds-suedtirol.it/de/member-area-info"
+    ],
+    [
+     "",
+     "https://www.vds-suedtirol.it/de"
+    ],
+    [
+     "Über uns",
+     "https://www.vds-suedtirol.it/de/der-verband-der-seniorenwohnheime-suedtirols"
+    ],
+    [
+     "Der Verband",
+     "https://www.vds-suedtirol.it/de/der-verband"
+    ],
+    [
+     "Der Verbandsausschuss",
+     "https://www.vds-suedtirol.it/de/der-verbandsausschuss"
+    ],
+    [
+     "Das Verbandsbüro",
+     "https://www.vds-suedtirol.it/de/buero-verband-der-seniorenwohnheime"
+    ],
+    [
+     "Pressemitteilungen des Verbandes",
+     "https://www.vds-suedtirol.it/de/pressemitteilungen-comunicati-stampa"
+    ],
+    [
+     "Veranstaltungen",
+     "https://www.vds-suedtirol.it/de/veranstaltungen-des-verbandes"
+    ],
+    [
+     "Transparente Verwaltung",
+     "https://www.vds-suedtirol.it/de/transparente-gesellschaft"
+    ],
+    [
+     "Leistungen",
+     "https://www.vds-suedtirol.it/de/unsere%20leistungen"
+    ],
+    [
+     "Publikationen",
+     "https://www.vds-suedtirol.it/de/publications"
+    ],
+    [
+     "Mitgliedsheime",
+     "https://www.vds-suedtirol.it/de/swh"
+    ],
+    [
+     "Aktuelles aus den Heimen",
+     "https://www.vds-suedtirol.it/de/aktuelles-aus-den-mitgliedsheimen"
+    ],
+    [
+     "Inhalte Transparenz",
+     "https://www.vds-suedtirol.it/de/bla"
+    ],
+    [
+     "Seniorenbetreuung",
+     "https://www.vds-suedtirol.it/de/seniorenbetreuung"
+    ],
+    [
+     "Nützliche Dokumente",
+     "https://www.vds-suedtirol.it/de/nuetzliche%20dokumente"
+    ],
+    [
+     "le residenze per anziani presenti sul territorio",
+     "https://www.vds-suedtirol.it/it/swh"
+    ],
+    [
+     "Impressum",
+     "https://www.vds-suedtirol.it/de/impressum"
+    ]
+   ],
+   "titolo": "Verband der Seniorenwohnheime Südtirols",
+   "url": "https://www.vds-suedtirol.it/de/jobs"
   },
   {
-   "errore": "bloccata da robots.txt (il sito non vuole essere letto da programmi)",
-   "url": "https://mezzocorona.upipa.opencontent.it/"
-  },
-  {
-   "caratteri": 1304,
-   "inizio": "Servizi erogati Vedi tutti Ultime notizie Programma mese di novembre Centro Servizi di Via Fedrigotti In allegato si riporta il programma del mese di novembre del Centro Servizi di Via Fedrigotti. Vi aspettiamo!!! Leggi di più Programma mese di novembre Centro Servizi di Via Portici In allegato si r",
+   "caratteri": 205,
+   "inizio": "Albo pretorio Altri Enti Leggi di più Avvisi Leggi di più Bandi di gara Leggi di più Concorsi Leggi di più Decreti del Presidente Leggi di più Delibere di Consiglio Leggi di più Determinazioni Leggi di più",
    "link": [
     [
      "Amministrazione Trasparente",
@@ -32,6 +180,62 @@
     [
      "Lavoratore socialmente utile",
      "https://www.apspvannetti.it/Opera-con-noi/Lavoratore-socialmente-utile2"
+    ],
+    [
+     "Altri Enti",
+     "https://www.apspvannetti.it/Albo-pretorio/Altri-Enti"
+    ],
+    [
+     "Leggi di più",
+     "https://www.apspvannetti.it/Albo-pretorio/Altri-Enti#page-content"
+    ],
+    [
+     "Avvisi",
+     "https://www.apspvannetti.it/Albo-pretorio/Avvisi"
+    ],
+    [
+     "Leggi di più",
+     "https://www.apspvannetti.it/Albo-pretorio/Avvisi#page-content"
+    ],
+    [
+     "Bandi di gara",
+     "https://www.apspvannetti.it/Albo-pretorio/Bandi-di-gara"
+    ],
+    [
+     "Leggi di più",
+     "https://www.apspvannetti.it/Albo-pretorio/Bandi-di-gara#page-content"
+    ],
+    [
+     "Concorsi",
+     "https://www.apspvannetti.it/Albo-pretorio/Concorsi"
+    ],
+    [
+     "Leggi di più",
+     "https://www.apspvannetti.it/Albo-pretorio/Concorsi#page-content"
+    ],
+    [
+     "Decreti del Presidente",
+     "https://www.apspvannetti.it/Albo-pretorio/Decreti-del-Presidente"
+    ],
+    [
+     "Leggi di più",
+     "https://www.apspvannetti.it/Albo-pretorio/Decreti-del-Presidente#page-content"
+    ],
+    [
+     "Delibere di Consiglio",
+     "https://www.apspvannetti.it/Albo-pretorio/Delibere-di-Consiglio"
+    ],
+    [
+     "Leggi di più",
+     "https://www.apspvannetti.it/Albo-pretorio/Delibere-di-Consiglio#page-content"
+    ],
+    [
+     "Determinazioni",
+     "https://www.apspvannetti.it/Albo-pretorio/Determinazioni"
+    ],
+    [
+     "Leggi di più",
+     "https://www.apspvannetti.it/Albo-pretorio/Determinazioni#page-content"
     ],
     [
      "Angolo del personale",
@@ -118,536 +322,606 @@
      "https://www.apspvannetti.it/I-nostri-servizi/08.-Casa-Amalia-Alberti"
     ]
    ],
-   "titolo": "Cerca",
-   "url": "https://www.apspvannetti.it/"
+   "titolo": "Albo pretorio",
+   "url": "https://www.apspvannetti.it/Albo-pretorio"
   },
   {
-   "errore": "errore di rete (ConnectionError)",
-   "url": "https://lavis.upipa.opencontent.it/"
+   "caratteri": 272,
+   "inizio": "Vai al contenuto principale Vai al menu di sezione Vai al footer Lavoratore/Dipendente Assumiamo mediante procedimenti selettivi basati su avvisi pubblici che indicano i termini entro i quali presentare la propria domanda di ammissione. Concorsi Leggi di più gallery ‹ › ×",
+   "link": [
+    [
+     "Amministrazione Trasparente",
+     "https://www.apspvannetti.it/Amministrazione-Trasparente"
+    ],
+    [
+     "Albo pretorio",
+     "https://www.apspvannetti.it/Albo-pretorio"
+    ],
+    [
+     "Albo pretorio e Amministrazione Trasparente",
+     "https://www.apspvannetti.it/Azienda/Albo-pretorio-e-Amministrazione-Trasparente"
+    ],
+    [
+     "Lavoratore/Dipendente",
+     "https://www.apspvannetti.it/Opera-con-noi/Lavoratore-Dipendente"
+    ],
+    [
+     "Lavoratore socialmente utile",
+     "https://www.apspvannetti.it/Opera-con-noi/Lavoratore-socialmente-utile2"
+    ],
+    [
+     "Concorsi",
+     "https://www.apspvannetti.it/Albo-pretorio/Concorsi"
+    ],
+    [
+     "Leggi di più",
+     "https://www.apspvannetti.it/Albo-pretorio/Concorsi#page-content"
+    ],
+    [
+     "Angolo del personale",
+     "https://www.apspvannetti.it/Angolo-del-personale"
+    ],
+    [
+     "U.P.I.P.A. (Unione Provinciale Istituzioni Per l'Assistenza)",
+     "http://www.upipa.tn.it/"
+    ],
+    [
+     "A.P.S.P. Clementino Vannetti di Rovereto",
+     "https://www.apspvannetti.it/"
+    ],
+    [
+     "",
+     "https://www.facebook.com/apspvannettirovereto/?locale=it_IT"
+    ],
+    [
+     "",
+     "https://www.instagram.com/fa.cebook.apspvannetti/"
+    ],
+    [
+     "",
+     "https://www.apspvannetti.it/content/search"
+    ],
+    [
+     "Azienda",
+     "https://www.apspvannetti.it/Azienda"
+    ],
+    [
+     "Chi siamo",
+     "https://www.apspvannetti.it/Azienda/Chi-siamo"
+    ],
+    [
+     "Storia e Missione",
+     "https://www.apspvannetti.it/Azienda/Storia-e-Missione"
+    ],
+    [
+     "Uffici amministrativi e Organigramma",
+     "https://www.apspvannetti.it/Azienda/Uffici-amministrativi-e-Organigramma"
+    ],
+    [
+     "Contatti e URP",
+     "https://www.apspvannetti.it/Azienda/Contatti-e-URP"
+    ],
+    [
+     "Rendicontazione sociale",
+     "https://www.apspvannetti.it/Azienda/Rendicontazione-sociale"
+    ],
+    [
+     "I nostri servizi",
+     "https://www.apspvannetti.it/I-nostri-servizi"
+    ],
+    [
+     "01. RSA Clementino Vannetti - Via Vannetti",
+     "https://www.apspvannetti.it/I-nostri-servizi/01.-RSA-Clementino-Vannetti-Via-Vannetti"
+    ],
+    [
+     "02. RSA San M. Kolbe - Borgo Sacco",
+     "https://www.apspvannetti.it/I-nostri-servizi/02.-RSA-San-M.-Kolbe-Borgo-Sacco"
+    ],
+    [
+     "03. RSA \"Lucia Fontana\"",
+     "https://www.apspvannetti.it/I-nostri-servizi/03.-RSA-Lucia-Fontana"
+    ],
+    [
+     "04. RSA Vinotti di Nomi",
+     "https://www.apspvannetti.it/I-nostri-servizi/04.-RSA-Vinotti-di-Nomi"
+    ],
+    [
+     "05. Centro Diurno per anziani",
+     "https://www.apspvannetti.it/I-nostri-servizi/05.-Centro-Diurno-per-anziani"
+    ],
+    [
+     "06. P.I.C. (Presa In carica diurna Continuativa)",
+     "https://www.apspvannetti.it/I-nostri-servizi/06.-P.I.C.-Presa-In-carica-diurna-Continuativa"
+    ],
+    [
+     "07. Alloggi protetti Borgo Sacco - Ex Tacchi",
+     "https://www.apspvannetti.it/I-nostri-servizi/07.-Alloggi-protetti-Borgo-Sacco-Ex-Tacchi"
+    ],
+    [
+     "08. Casa Amalia Alberti",
+     "https://www.apspvannetti.it/I-nostri-servizi/08.-Casa-Amalia-Alberti"
+    ]
+   ],
+   "titolo": "Lavoratore/Dipendente",
+   "url": "https://www.apspvannetti.it/Opera-con-noi/Lavoratore-Dipendente"
   },
   {
    "errore": "bloccata da robots.txt (il sito non vuole essere letto da programmi)",
-   "url": "https://cles.upipa.opencontent.it/"
+   "url": "https://bollettino.regione.taa.it/it/Concorsi.aspx"
   },
   {
-   "caratteri": 914,
-   "inizio": "La cittá di arco Entra BLOG Entra Entra nel blog eventi, notizie e nuove tecnologie sanitarie CHI SIAMO Entra Per prenotare tamponi antigenici o molecolari, inviare le richieste al seguente indirizzo: cup@eremoarco.it Clicca qui per scaricare i referti di laboratorio Riabilitazione cardiologica Riab",
+   "caratteri": 2621,
+   "inizio": "Close Search Melittaklinik: la salute a Bolzano Eccellenza medica, tecnologie d’avanguardia e una clinica costruita pensando alle persone e alla sostenibilità Melittaklinik: la salute a Bolzano Eccellenza medica, tecnologie d’avanguardia e una clinica costruita pensando alla sostenibilità e alle per",
    "link": [
     [
-     "",
-     "http://www.eremoarco.it/de/"
+     "Lavora con noi",
+     "https://melittaklinik.com/lavora-con-noi/"
+    ],
+    [
+     "Incidenti sul lavoro in agricoltura: prevenzione, formazione e cure te",
+     "https://melittaklinik.com/incidenti-sul-lavoro-in-agricoltura-prevenzione-formazione-e-cure-tempestive-fanno-la-differenza/"
+    ],
+    [
+     "Melittaklinik tra le eccellenze nazionali della telemedicina: selezion",
+     "https://melittaklinik.com/melittaklinik-tra-le-eccellenze-nazionali-della-telemedicina-selezionato-da-agenas-il-progetto-per-il-supporto-ai-pazienti-cronici/"
+    ],
+    [
+     "Trasparenza",
+     "https://melittaklinik.com/trasparenza/"
+    ],
+    [
+     "facebook",
+     "https://www.facebook.com/melittaklinik.suedtirol"
+    ],
+    [
+     "linkedin",
+     "https://www.linkedin.com/company/melittaklinik-privatklinik-in-s%C3%BCdtirol/"
+    ],
+    [
+     "youtube",
+     "https://www.youtube.com/channel/UCey5XV5RjqnrY63lklNV92Q"
+    ],
+    [
+     "instagram",
+     "https://www.instagram.com/melittaklinik/"
+    ],
+    [
+     "Video",
+     "https://melittaklinik.com/video-area/"
+    ],
+    [
+     "Referti",
+     "https://radiologie.melittaklinik.com/Account/Login?ReturnUrl=%2F"
     ],
     [
      "",
-     "http://www.eremoarco.it/en/"
-    ],
-    [
-     "Entra",
-     "https://www.eremoarco.it/citta-di-arco/come-raggiungerci"
-    ],
-    [
-     "Entra",
-     "https://www.eremoarco.it/blog"
-    ],
-    [
-     "Entra",
-     "https://www.eremoarco.it/casa-di-cura/la-nostra-storia"
-    ],
-    [
-     "Clicca qui per scaricare i referti di laboratorio",
-     "https://urlsand.esvalabs.com/?u=https%3A%2F%2Freferti.eremoarco.it%2FAccount%2FPin&e=3a5aeb08&h=886f3ca7&f=n&p=y"
-    ],
-    [
-     "Riabilitazione cardiologica",
-     "http://www.eremoarco.it/?page_id=47"
-    ],
-    [
-     "Riabilitazione motoria e neurologica",
-     "http://www.eremoarco.it/?page_id=53"
-    ],
-    [
-     "Servizi specialistici ed ambulatoriali",
-     "https://www.eremoarco.it/servizi-specialistici-ed-ambulatoriali"
-    ],
-    [
-     "Servizi alberghieri",
-     "http://www.eremoarco.it/?page_id=69"
-    ],
-    [
-     "Prenotazioni ricoveri",
-     "http://www.eremoarco.it/?page_id=77"
-    ],
-    [
-     "Prenotazioni attività ambulatoriali",
-     "http://www.eremoarco.it/?page_id=95"
-    ],
-    [
-     "Per i visitatori",
-     "http://www.eremoarco.it/?page_id=87"
-    ],
-    [
-     "Contattaci – Esprimi un giudizio",
-     "http://www.eremoarco.it/?page_id=243"
+     "https://melittaklinik.com/de/"
     ],
     [
      "",
-     "https://www.eremoarco.it/riabilitazione-cardiologica/patologie-coinvolte"
+     "https://melittaklinik.com/en/"
     ],
     [
      "",
-     "https://www.eremoarco.it/riabilitazione-motoria-e-neurologica/patologie-coinvolte"
+     "https://melittaklinik.com"
     ],
     [
-     "Esprimi un giudizio",
-     "https://www.eremoarco.it/contatti/esprimi-un-giudizio"
+     "Chi siamo",
+     "https://melittaklinik.com/chi-siamo/"
     ],
     [
-     "Leggi i commenti",
-     "https://www.eremoarco.it/contatti/leggi-i-commenti"
+     "La nostra storia",
+     "https://melittaklinik.com/la-nostra-storia/"
     ],
     [
-     "Prenotazioni",
-     "https://www.eremoarco.it/prenotazioni-attivita-ambulatoriali/prenotazioni"
+     "La clinica",
+     "https://melittaklinik.com/la-clinica/"
     ],
     [
-     "Ritiro referti",
-     "https://www.eremoarco.it/prenotazioni-attivita-ambulatoriali/ritiro-referti"
+     "Metodo Melittaklinik",
+     "https://melittaklinik.com/metodo-melittaklinik/"
+    ],
+    [
+     "Il team",
+     "https://melittaklinik.com/il-team/"
+    ],
+    [
+     "Ricerca e innovazione",
+     "https://melittaklinik.com/ricerca-e-innovazione/"
+    ],
+    [
+     "Sostenibiltà",
+     "https://melittaklinik.com/sostenibilta/"
+    ],
+    [
+     "Servizi",
+     "https://www.villamelitta.it/servizi/"
+    ],
+    [
+     "Servizi privati",
+     "https://www.villamelitta.it/servizi/#private"
+    ],
+    [
+     "Chirurgia ortopedica",
+     "https://melittaklinik.com/chirurgia-ortopedica/"
+    ],
+    [
+     "Chirurgia robotica",
+     "https://melittaklinik.com/chirurgia-robotica/"
     ]
    ],
-   "titolo": "CASA DI CURA EREMO",
-   "url": "https://www.eremoarco.it/"
+   "titolo": "Melittaklinik: la salute a Bolzano",
+   "url": "https://www.villamelitta.it/"
   },
   {
-   "errore": "errore di rete (SSLError)",
-   "url": "https://www.coopvillamaria.org/"
-  },
-  {
-   "caratteri": 2306,
-   "inizio": "Seniorenwohnheime VinzenzHaus SchlossMoos waldemarker 2025-09-22T18:45:31+02:00 Selbstbestimmt, geborgen und begleitet Jede Lebensphase hat ihre Herausforderungen und Stärken. Ihren eigenen Rhythmus. Ihre besonderen Bedürfnisse. Wenn ältere Menschen ihren Lebensalltag nicht mehr allein bewältigen kö",
+   "caratteri": 5879,
+   "inizio": "Privatklinik Brixsana In besten Händen Spitzenmedizin mit persönlicher Betreuung. Ihre Gesundheit in besten Händen. Über uns X Y Fachbereiche Unsere Kompetenz für Ihre Gesundheit Breit gefächert, hoch spezialisiert: die Fachabteilungen der Brixsana. Zum Behandlungsangebot X Y FachärzteInnen und medi",
    "link": [
     [
-     "Jobs",
-     "https://sozialgenossenschaft-vinzenz.it/vinzenzhaus/vinzenzhaus-jobs/"
+     "Karriere",
+     "https://www.brixsana.it/de/karriere"
     ],
     [
-     "Jobs",
-     "https://sozialgenossenschaft-vinzenz.it/schloss-moos/schloss-moos-jobs/"
+     "it",
+     "https://www.brixsana.it/it/"
     ],
     [
-     "Jobs Vinzenzhaus",
-     "https://sozialgenossenschaft-vinzenz.it/vinzenzhaus/vinzenzhaus-jobs/#hlv_aktuelle_jobs"
+     "en",
+     "https://www.brixsana.it/en/"
     ],
     [
-     "Jobs Schloss Moos",
-     "https://sozialgenossenschaft-vinzenz.it/schloss-moos/schloss-moos-jobs/#hlv_aktuelle_jobs"
+     "Augenheilkunde",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/augenheilkunde"
     ],
     [
-     "Vinzenzhaus",
-     "https://sozialgenossenschaft-vinzenz.it/vinzenzhaus/"
+     "Akupunktur",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/akupunktur"
     ],
     [
-     "Leistungen",
-     "https://sozialgenossenschaft-vinzenz.it/vinzenzhaus/vinzenzhaus-leistungen/"
+     "Endoskopie (Gastroskopie, Koloskopie)",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/kolo-gastro-endoskopie"
     ],
     [
-     "Team",
-     "https://sozialgenossenschaft-vinzenz.it/vinzenzhaus/vinzenzhaus-team/"
+     "Dermatologie",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/dermatologie"
     ],
     [
-     "Kontakt",
-     "https://sozialgenossenschaft-vinzenz.it/vinzenzhaus/vinzenzhaus-kontakt/"
+     "Ernährungsberatung & Ernährungstherapie",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/ernaehrungsberatung-ernaehrungstherapie"
     ],
     [
-     "Schloss Moos",
-     "https://sozialgenossenschaft-vinzenz.it/schloss-moos/"
+     "Gynäkologie",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/gynaekologie"
     ],
     [
-     "Leistungen",
-     "https://sozialgenossenschaft-vinzenz.it/schloss-moos/schloss-moos-leistungen/"
+     "Gefäßchirurgie – Phlebologie",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/gefaesschirurgie-phlebologie"
     ],
     [
-     "Team",
-     "https://sozialgenossenschaft-vinzenz.it/schloss-moos/schloss-moos-team/"
+     "HNO ‒ Hals-, Nasen- & Ohrenheilkunde",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/hno-hals-nasen-ohrenheilkunde"
     ],
     [
-     "Kontakt",
-     "https://sozialgenossenschaft-vinzenz.it/schloss-moos/schloss-moos-kontakt/"
+     "Handchirurgie",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/handchirurgie"
     ],
     [
-     "waldemarker",
-     "https://sozialgenossenschaft-vinzenz.it/author/waldemarker/"
+     "Innere Medizin",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/innere-medizin"
     ],
     [
-     "Über die Sozialgenossenschaft zum Hl. Vinzenz",
-     "https://sozialgenossenschaft-vinzenz.it/die-sozialgenossenschaft/"
+     "Kardiologie",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/kardiologie"
     ],
     [
-     "Herz zeigen – jetzt spenden",
-     "https://sozialgenossenschaft-vinzenz.it/die-sozialgenossenschaft/#spenden"
+     "Labor & Blutentnahme",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/labor-blutentnahme"
     ],
     [
-     "Impressum",
-     "https://sozialgenossenschaft-vinzenz.it/impressum/"
+     "Neurochirurgie",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/neurochirurgie"
     ],
     [
-     "Sozialbilanz",
-     "https://sozialgenossenschaft-vinzenz.it/die-sozialgenossenschaft/#sozialbilanzen"
+     "Neurologie",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/neurologie"
     ],
     [
-     "Datenschutz",
-     "https://sozialgenossenschaft-vinzenz.it/datenschutz/"
+     "Orthopädie & Unfallchirurgie",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/orthopaedie-unfallchirurgie"
     ],
     [
-     "Whistleblowing",
-     "https://sozialgenossenschaft-vinzenz.it/whistleblowing/"
+     "Plastische, Ästhetische & Wiederherstellungschirurgie",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/plastische-aesthetische-wiederherstellungschirurgie"
     ],
     [
-     "Formulare",
-     "https://sozialgenossenschaft-vinzenz.it/formulare/"
+     "Radiologie",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/radiologie"
     ],
     [
-     "deutsch",
-     "https://sozialgenossenschaft-vinzenz.it/"
-    ],
-    [
-     "italiano",
-     "https://sozialgenossenschaft-vinzenz.it/it/"
-    ],
-    [
-     "No I am not No I am not",
-     "http://www.avada.com"
+     "Schmerzterapie",
+     "https://www.brixsana.it/de/behandlungsfelder/detail/terapia-del-dolore"
     ]
    ],
-   "titolo": "Selbstbestimmt, geborgen und begleitet",
-   "url": "https://www.schlossmoos.it/"
+   "titolo": "In besten Händen",
+   "url": "https://www.brixsana.it/"
   },
   {
-   "caratteri": 1108,
-   "inizio": "PFLEGE NÖTIG? WIE GEHT ES WEITER? SENIORENBETREUUNG IN SÜDTIROL MITGLIEDSHEIME News 14.10.2026 verbandsnachrichten Neue Homepage 19.01.2026 verbandsnachrichten Melde dich zum Sommerpraktikum im Seniorenwohnheim - Initiative \"Sommer einmal anders“ 2026 22.05.2025 verbandsnachrichten Lange Nacht der K",
+   "caratteri": 42702,
+   "inizio": "Zurück Weiter 1 2 3 4 Wir begleiten Menschen In den Facharztambulatorien der Martinsbrunn ParkClinic bieten wir Ihnen, mit Hilfe modernster Untersuchungsmethoden, die Möglichkeit einer umfassenden, individuellen und effizienten Gesundheitsvorsorge. Unsere Einrichtung wird von der Stiftung St. Elisab",
    "link": [
     [
-     "PFLEGE NÖTIG? WIE GEHT ES WEITER?",
-     "http://www.vds-suedtirol.it/de/anlaufstelle-fuer-pflege-und-betreuung"
+     "Senioren- und Pflegeresidenz",
+     "https://www.martinsbrunn.it/stiftung-st-elisabeth/senioren-und-pflegeresidenz/"
     ],
     [
-     "23.03.2026 Austausch zwischen VdS und Rentnergewerkschaften: Sorge um ",
-     "https://www.vds-suedtirol.it/de/austausch-zwischen-vds-und-rentnergewerkschaften-sorge-um-steigende-pflegekosten"
+     "Seniorenwohnungen",
+     "https://www.martinsbrunn.it/stiftung-st-elisabeth/senioren-und-pflegeresidenz/#seniorenwohnungen"
     ],
     [
-     "12.05.2025",
-     "https://www.vds-suedtirol.it/de/internationaler-tag-der-pflegenden-der-vds-kaempft-fuer-die-anerkennung-der-pflegeberufe-den"
+     "Job & Karriere",
+     "https://jobs.stiftung-st-elisabeth.it/#1140"
     ],
     [
-     "BERUFSKRANKENPFLEGER/IN gesucht",
-     "https://www.vds-suedtirol.it/de/swh/445/job/berufskrankenpflegerin-gesucht-4"
+     "Job & Karriere",
+     "https://www.martinsbrunn.it/job-karriere/"
     ],
     [
-     "SOZIALBETREUER/IN gesucht",
-     "https://www.vds-suedtirol.it/de/swh/445/job/sozialbetreuerin-gesucht-0"
+     "Link zu Facebook",
+     "https://www.facebook.com/martinsbrunn.parkclinic"
     ],
     [
-     "Befristete Anstellung als Physiotherapeut/in bzw. Ergotherapeut/in",
-     "https://www.vds-suedtirol.it/de/swh/518/job/befristete-anstellung-als-physiotherapeutin-bzw-ergotherapeutin"
-    ],
-    [
-     "Alle Arbeitsangebote",
-     "https://www.vds-suedtirol.it/de/jobs"
+     "Link zu Instagram",
+     "https://www.instagram.com/martinsbrunn.parkclinic/"
     ],
     [
      "Deutsch",
-     "https://www.vds-suedtirol.it/de"
+     "https://www.martinsbrunn.it"
     ],
     [
      "Italiano",
-     "https://www.vds-suedtirol.it/it"
+     "https://www.martinsbrunn.it/it/"
     ],
     [
-     "Request new password",
-     "https://www.vds-suedtirol.it/de/user/password"
+     "martinsbrunn_logo-header-2025",
+     "https://www.martinsbrunn.it/"
     ],
     [
-     "Login",
-     "https://www.vds-suedtirol.it/de/user/login"
+     "Blutabnahme",
+     "https://www.martinsbrunn.it/#blutuntersuchungen"
     ],
     [
-     "Mitgliederbereich",
-     "https://www.vds-suedtirol.it/de/member-area-info"
+     "Radiologie",
+     "https://www.martinsbrunn.it/#radiologie"
     ],
     [
-     "Über uns",
-     "https://www.vds-suedtirol.it/de/der-verband-der-seniorenwohnheime-suedtirols"
+     "Checkup",
+     "https://www.martinsbrunn.it/#checkup"
     ],
     [
-     "Der Verband",
-     "https://www.vds-suedtirol.it/de/der-verband"
+     "Augenheilkunde",
+     "https://www.martinsbrunn.it/#augenheilkunde"
     ],
     [
-     "Der Verbandsausschuss",
-     "https://www.vds-suedtirol.it/de/der-verbandsausschuss"
+     "Dermatologie",
+     "https://www.martinsbrunn.it/#dermatologie"
     ],
     [
-     "Das Verbandsbüro",
-     "https://www.vds-suedtirol.it/de/buero-verband-der-seniorenwohnheime"
+     "Kardiologie & Innere Medizin",
+     "https://www.martinsbrunn.it/#kardiologie--innere-medizin"
     ],
     [
-     "Pressemitteilungen des Verbandes",
-     "https://www.vds-suedtirol.it/de/pressemitteilungen-comunicati-stampa"
+     "Ernährungsmedizin",
+     "https://martinsbrunn.it/#ernaehrungsmedizin"
     ],
     [
-     "Veranstaltungen",
-     "https://www.vds-suedtirol.it/de/veranstaltungen-des-verbandes"
+     "Pneumologie & Allergologie",
+     "https://www.martinsbrunn.it/#pneumologie--allergologie"
     ],
     [
-     "Transparente Verwaltung",
-     "https://www.vds-suedtirol.it/de/transparente-gesellschaft"
+     "Pädiatrie",
+     "https://www.martinsbrunn.it/#paediatrie"
     ],
     [
-     "Leistungen",
-     "https://www.vds-suedtirol.it/de/unsere%20leistungen"
+     "Kinderpneumologie",
+     "https://www.martinsbrunn.it/#kinderpneumologie"
     ],
     [
-     "Publikationen",
-     "https://www.vds-suedtirol.it/de/publications"
+     "Gastroenterologie",
+     "https://www.martinsbrunn.it/#gastroenterologie"
     ],
     [
-     "Mitgliedsheime",
-     "https://www.vds-suedtirol.it/de/swh"
+     "Endoskopie",
+     "https://martinsbrunn.it/#endoskopie"
     ],
     [
-     "Aktuelles aus den Heimen",
-     "https://www.vds-suedtirol.it/de/aktuelles-aus-den-mitgliedsheimen"
+     "Allgemeinchirurgie",
+     "https://www.martinsbrunn.it/#allgemeinchirurgie"
     ],
     [
-     "Inhalte Transparenz",
-     "https://www.vds-suedtirol.it/de/bla"
+     "Phlebologie",
+     "https://www.martinsbrunn.it/#phlebologie"
     ],
     [
-     "Seniorenbetreuung",
-     "https://www.vds-suedtirol.it/de/seniorenbetreuung"
-    ],
-    [
-     "Nützliche Dokumente",
-     "https://www.vds-suedtirol.it/de/nuetzliche%20dokumente"
-    ],
-    [
-     "SENIORENBETREUUNG IN SÜDTIROL",
-     "https://www.vds-suedtirol.it/de//Seniorenbetreuung"
+     "Komplementärmedizin",
+     "https://www.martinsbrunn.it/#komplementaermedizin"
     ]
    ],
-   "titolo": "Verband der Seniorenwohnheime Südtirols",
-   "url": "https://www.vds-suedtirol.it/"
+   "titolo": "Willkommen in Martinsbrunn!",
+   "url": "https://www.martinsbrunn.it/"
   },
   {
-   "caratteri": 1786,
-   "inizio": "Herzlich willkommen in unserem Altenheim „Ein Heim in Ihrer Mitte“ sehen wir uns fest verwurzelt in der Dorfgemeinschaft von Kaltern und den benachbarten Ortschaften. Hier steht das Wohl unserer Bewohnerinnen und Bewohner im Zentrum aller Bemühungen. Unser Ziel ist es, älteren Menschen, die Unterstü",
-   "link": [
-    [
-     "Leistungen",
-     "https://www.ah-kaltern.it/leistungen/alten-und-pflegeheim"
-    ],
-    [
-     "Kurzzeitpflege",
-     "https://www.ah-kaltern.it/leistungen/kurzzeitpflege"
-    ],
-    [
-     "Tagespflege",
-     "https://www.ah-kaltern.it/leistungen/tagespflege"
-    ],
-    [
-     "Karriere",
-     "https://www.ah-kaltern.it/karriere"
-    ],
-    [
-     "de Deutsch",
-     "https://www.ah-kaltern.it/"
-    ],
-    [
-     "it Italiano",
-     "https://www.ah-kaltern.it/it/"
-    ],
-    [
-     "",
-     "https://www.instagram.com/altenheim_kaltern"
-    ],
-    [
-     "Über uns",
-     "https://www.ah-kaltern.it/ueber-uns"
-    ],
-    [
-     "Leitbild",
-     "https://www.ah-kaltern.it/ueber-uns#c259"
-    ],
-    [
-     "Präsentation",
-     "https://www.ah-kaltern.it/ueber-uns#c261"
-    ],
-    [
-     "Geschichte",
-     "https://www.ah-kaltern.it/ueber-uns#c262"
-    ],
-    [
-     "Organisation",
-     "https://www.ah-kaltern.it/ueber-uns#c263"
-    ],
-    [
-     "Impressionen",
-     "https://www.ah-kaltern.it/ueber-uns/impressionen"
-    ],
-    [
-     "Essen auf Rädern",
-     "https://www.ah-kaltern.it/leistungen/essen-auf-raedern"
-    ],
-    [
-     "Tarife & Aufnahme",
-     "https://www.ah-kaltern.it/tarife-aufnahme/tarife"
-    ],
-    [
-     "Aufnahme",
-     "https://www.ah-kaltern.it/tarife-aufnahme/aufnahme"
-    ],
-    [
-     "Formulare",
-     "https://www.ah-kaltern.it/tarife-aufnahme/formulare"
-    ],
-    [
-     "Aktuelles",
-     "https://www.ah-kaltern.it/aktuelles/heimzeitung-s-fensterle"
-    ],
-    [
-     "Social wall",
-     "https://www.ah-kaltern.it/aktuelles/social-wall"
-    ],
-    [
-     "Kontakte",
-     "https://www.ah-kaltern.it/kontakte"
-    ],
-    [
-     "",
-     "https://www.ah-kaltern.it/fileadmin/fotos-okis-2024/Altersheim-Kaltern-42.jpg"
-    ],
-    [
-     "",
-     "https://www.ah-kaltern.it/fileadmin/fotos-okis-2024/Altersheim-Kaltern-71.jpg"
-    ],
-    [
-     "",
-     "https://www.ah-kaltern.it/fileadmin/fotos-okis-2024/Altersheim-Kaltern-109.jpg"
-    ],
-    [
-     "",
-     "https://www.ah-kaltern.it/fileadmin/fotos-okis-2024/Altersheim-Kaltern-134.jpg"
-    ]
-   ],
-   "titolo": "Herzlich willkommen",
-   "url": "https://www.ah-kaltern.it/"
+   "errore": "risposta HTTP 403",
+   "url": "https://www.sancamillo.org/"
   },
   {
-   "caratteri": 373,
-   "inizio": "Welchen Job möchtest du finden Ort, Region +20 km 0 km +10 km +20 km +30 km +50 km Berufsfeld Anstellungsart Wie viel Netto bleibt vom Bruttogehalt? Jetzt berechnen No regions available Wähle links ein Job-Angebot aus oder lege dir einen Jobfinder an . Hallo! 👋 Überlasse uns deine Suche. Wir informi",
+   "errore": "errore di rete (SSLError)",
+   "url": "https://www.solatrix.it/"
+  },
+  {
+   "errore": "errore di rete (ConnectionError)",
+   "url": "https://www.civicatrento.it/"
+  },
+  {
+   "caratteri": 6495,
+   "inizio": "Uffici Servizi Albo online Albo telematico - Gare e appalti Modulistica Ultime notizie Due appuntamenti aperti alla comunità – progetto Respiri di cura Come gestire i cambiamenti comportamentali e riconoscere i primi segnali di decadimento: due incontri aperti alla cittadinanza per conoscere meglio ",
    "link": [
     [
-     "",
-     "https://www.suedtirolerjobs.it/"
+     "Amministrazione Trasparente",
+     "https://www.apspgrazioli.it/Amministrazione-Trasparente"
     ],
     [
-     "Jobs",
-     "https://www.suedtirolerjobs.it/jobs"
+     "Lavora con noi",
+     "https://www.apspgrazioli.it/Argomenti/Risorse-umane-e-formazione"
     ],
     [
-     "Firmensuche",
-     "https://www.suedtirolerjobs.it/firmen"
+     "Personale",
+     "https://www.apspgrazioli.it/Azienda/Personale"
     ],
     [
-     "Für Arbeitgeber",
-     "https://www.suedtirolerjobs.it/hr"
+     "Conciliazione vita-lavoro",
+     "https://www.apspgrazioli.it/Argomenti/Conciliazione-vita-lavoro"
     ],
     [
-     "Blog",
-     "https://www.suedtirolerjobs.it/blog"
+     "Albo online",
+     "https://www.apspgrazioli.it/Albo-online"
     ],
     [
-     "Merkliste",
-     "https://www.suedtirolerjobs.it/publikum/favorite/jobs"
-    ],
-    [
-     "Login",
-     "https://www.suedtirolerjobs.it/login"
+     "Albo telematico - Gare e appalti",
+     "https://www.apspgrazioli.it/Servizi/Albo-telematico-Gare-e-appalti"
     ],
     [
      "",
-     "https://www.facebook.com/suedtirolerjobs/"
+     "https://www.apspgrazioli.it/Novita/Notizie/Selezione-pubblica-per-Coordinatore-dei-Servizi-Sanitari-Assistenziali-indizione-procedura-di-selezione-e-parziale-rettifica-requisiti"
+    ],
+    [
+     "Leggi di più",
+     "https://www.apspgrazioli.it/Novita/Notizie/Selezione-pubblica-per-Coordinatore-dei-Servizi-Sanitari-Assistenziali-indizione-procedura-di-selezione-e-parziale-rettifica-requisiti#page-content"
     ],
     [
      "",
-     "https://www.instagram.com/suedtirolerjobs/"
+     "https://www.apspgrazioli.it/Novita/Notizie/Concorso-pubblico-OSS-approvazione-della-graduatoria-finale"
+    ],
+    [
+     "Leggi di più",
+     "https://www.apspgrazioli.it/Novita/Notizie/Concorso-pubblico-OSS-approvazione-della-graduatoria-finale#page-content"
+    ],
+    [
+     "Determinazione n°229 del Giovedì, 12 Novembre 2026",
+     "https://www.apspgrazioli.it/Albo-online/Determinazioni-del-Direttore/Determinazione-n-229-del-Giovedi-12-Novembre-2026"
+    ],
+    [
+     "Leggi di più",
+     "https://www.apspgrazioli.it/Albo-online/Determinazioni-del-Direttore/Determinazione-n-229-del-Giovedi-12-Novembre-2026#page-content"
+    ],
+    [
+     "Delibera di Consiglio di Amministrazione n.28 del 2026",
+     "https://www.apspgrazioli.it/Albo-online/Deliberazioni-del-Consiglio-di-Amministrazione/Delibera-di-Consiglio-di-Amministrazione-n.28-del-2026"
+    ],
+    [
+     "Leggi di più",
+     "https://www.apspgrazioli.it/Albo-online/Deliberazioni-del-Consiglio-di-Amministrazione/Delibera-di-Consiglio-di-Amministrazione-n.28-del-2026#page-content"
+    ],
+    [
+     "Delibera di Consiglio di Amministrazione n.27 del 2026",
+     "https://www.apspgrazioli.it/Albo-online/Deliberazioni-del-Consiglio-di-Amministrazione/Delibera-di-Consiglio-di-Amministrazione-n.27-del-2026"
+    ],
+    [
+     "Leggi di più",
+     "https://www.apspgrazioli.it/Albo-online/Deliberazioni-del-Consiglio-di-Amministrazione/Delibera-di-Consiglio-di-Amministrazione-n.27-del-2026#page-content"
+    ],
+    [
+     "Portale dipendenti CBA",
+     "https://portalepersonale.zucchettihc.it/zhc/"
+    ],
+    [
+     "Provincia autonoma di Trento",
+     "https://www.provincia.tn.it/"
+    ],
+    [
+     "A.P.S.P. Margherita Grazioli Azienda Pubblica di Servizi alla Persona",
+     "https://www.apspgrazioli.it/"
     ],
     [
      "",
-     "https://www.linkedin.com/company/suedtirolerjobs/"
+     "https://www.apspgrazioli.it/content/search"
     ],
     [
-     "Jetzt berechnen",
-     "https://www.suedtirolerjobs.it/brutto-netto-rechner"
+     "Azienda",
+     "https://www.apspgrazioli.it/Azienda"
     ],
     [
-     "Beliebte Jobs",
-     "https://www.suedtirolerjobs.it/beliebte-jobs"
+     "La nostra storia",
+     "https://www.apspgrazioli.it/Azienda/La-nostra-storia"
     ],
     [
-     "Jobfinder einrichten",
-     "https://www.suedtirolerjobs.it/jobfinder"
+     "Certificazioni",
+     "https://www.apspgrazioli.it/Azienda/Certificazioni"
     ],
     [
-     "Mein Profil",
-     "https://www.suedtirolerjobs.it/login-bewerber"
+     "Organi",
+     "https://www.apspgrazioli.it/Azienda/Organi"
     ],
     [
-     "Jahreslösung buchen",
-     "https://www.suedtirolerjobs.it/flatrate"
+     "Uffici",
+     "https://www.apspgrazioli.it/Azienda/Uffici"
     ],
     [
-     "Newsletter",
-     "https://www.suedtirolerjobs.it/company_newsletter"
+     "Enti e fondazioni",
+     "https://www.apspgrazioli.it/Azienda/Enti-e-fondazioni"
     ],
     [
-     "Mein Unternehmen",
-     "https://www.suedtirolerjobs.it/login-unternehmen"
+     "Documenti e dati",
+     "https://www.apspgrazioli.it/Azienda/Documenti-e-dati"
     ],
     [
-     "Kontakt",
-     "https://www.suedtirolerjobs.it/kontakt"
+     "Spazi",
+     "https://www.apspgrazioli.it/Spazi"
     ],
     [
-     "Team",
-     "https://www.suedtirolerjobs.it/team"
+     "Residenza Sanitaria Assistenziale",
+     "https://www.apspgrazioli.it/Spazi/Residenza-Sanitaria-Assistenziale"
     ],
     [
-     "AGB",
-     "https://www.suedtirolerjobs.it/agb"
+     "Centro Diurno \"La Margherita\"",
+     "https://www.apspgrazioli.it/Spazi/Centro-Diurno-La-Margherita"
     ],
     [
-     "Datenschutz",
-     "https://www.suedtirolerjobs.it/datenschutz"
+     "Alloggi Protetti",
+     "https://www.apspgrazioli.it/Spazi/Alloggi-Protetti"
     ],
     [
-     "Impressum",
-     "https://www.suedtirolerjobs.it/impressum"
+     "Centro Servizi",
+     "https://www.apspgrazioli.it/Spazi/Centro-Servizi"
     ],
     [
-     "",
-     "https://www.youtube.com/channel/UCP1vnQ_zLCPn-8FLJWd9hVw/featured"
+     "Casa Melograno",
+     "https://www.apspgrazioli.it/Spazi/Casa-Melograno"
+    ],
+    [
+     "Punto Riabilitativo",
+     "https://www.apspgrazioli.it/Spazi/Punto-Riabilitativo"
+    ],
+    [
+     "Punto Prelievi",
+     "https://www.apspgrazioli.it/Spazi/Punto-Prelievi"
+    ],
+    [
+     "Servizi",
+     "https://www.apspgrazioli.it/Servizi"
+    ],
+    [
+     "Iscrizione e accesso alle strutture",
+     "https://www.apspgrazioli.it/Servizi/(view)/Iscrizione e accesso alle strutture"
     ]
    ],
-   "titolo": "20 Krankenpfleger Jobs in Südtirol | südtirolerjobs.it",
-   "url": "https://www.suedtirolerjobs.it/jobs/krankenpfleger"
+   "titolo": "Diventare volontario",
+   "url": "https://www.apspgrazioli.it/"
   }
  ],
  "fonti": {
   "ASUIT – bandi e concorsi": {
    "accettati": [
-    "Selezione pubblica, per titoli, per la formazione di graduatorie per assunzioni a tempo de",
-    "SC 03/26 AVVISO APERTO INFERMIERE CAVALESE",
-    "AVVISO DI SELEZIONE PUBBLICA PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONALI A MEDIC"
+    "SC 03/26 AVVISO APERTO INFERMIERE CAVALESE"
    ],
    "pagine": [
     {
@@ -855,6 +1129,51 @@
    ],
    "scartati": []
   },
+  "Altenheim Kaltern (Caldaro) – Karriere": {
+   "accettati": [],
+   "pagine": [
+    {
+     "caratteri": 631,
+     "inizio": "Karriere im Altenheim Die Einstellung erfolgt auf der Grundlage eines schriftlichen Antrages. Das Formular ist im Büro des Altenheimes erhältlich oder kann hier heruntergeladen werden. Dabei wird zwischen der provisorischen Aufnahme in den Dienst und der Aufnahme in die Stammrolle unterschieden. Anstellungsgesuch befristete Aufnahme Aktuelle Stellenangebote Karriere Transparente Verwaltung Digital",
+     "pdf": [
+      "https://www.ah-kaltern.it/fileadmin/dokumente/altenheim-kaltern-2016-dt.pdf"
+     ],
+     "url": "https://www.ah-kaltern.it/karriere"
+    }
+   ],
+   "scartati": [
+    [
+     "Aktuelle Stellenangebote",
+     "non riguarda infermieri"
+    ]
+   ]
+  },
+  "Case di riposo dell'Alto Adige (VdS) – offerte": {
+   "accettati": [
+    "Seniorenheim Algund Mathias Ladurner ÖBPB",
+    "Seniorenwohnheim \"Leoheim\"",
+    "Seniorenwohnheim \"Claraheim\"",
+    "Seniorenwohnheim \"Peter Paul Schrott\"",
+    "Seniorenwohnheim Stiftung Lorenzerhof",
+    "Altenheim St. Pankraz ÖBPB",
+    "Stiftung \"Hans Messerschmied\" Ö.B.P.B"
+   ],
+   "pagine": [
+    {
+     "candidati": 1,
+     "url": "https://www.vds-suedtirol.it/de/jobs"
+    },
+    {
+     "candidati": 5,
+     "url": "https://www.vds-suedtirol.it/de/jobs?page=1"
+    },
+    {
+     "candidati": 1,
+     "url": "https://www.vds-suedtirol.it/de/jobs?page=2"
+    }
+   ],
+   "scartati": []
+  },
   "Google Alerts 1": {
    "accettati": [],
    "pagine": [
@@ -892,6 +1211,8 @@
    "pagine": [
     {
      "caratteri": 828,
+     "inizio": "Lavora con noi Posizioni aperte Vuoi entrare a far parte del nostro team? Qui trovi tutte le figure professionali che cerchiamo in questo momento. Consulta gli annunci, compila il form e inviaci la tua candidatura. Farmacista a tempo pieno Farmacie Bonvicini Tempo pieno Candidati Fisioterapista per pazienti interni Casa di Cura Bonvicini Tempo pieno: terapie manuali, terapie strumentali, idrokines",
+     "pdf": [],
      "url": "https://www.gruppobonvicini.it/lavora-con-noi/"
     }
    ],
@@ -901,18 +1222,7 @@
    "accettati": [
     "CERCHIAMO INFERMIERE:I (m/f/d) per la nostra RSA Ciasa de Palsa Ojöp Frëinademetz",
     "La casa di riposo di Silandro cerca nuovi collaboratori/trici",
-    "CERCASI INFERMIERE/A PER EMODIALISI DOMICILIARE – BOLZANO",
-    "Hotel Palace Merano cerca infermiere",
-    "Fondo Ospedale della S.S. Trinità RESIDENZA PER ANZIANI ANNENBERG LACES – Formazione di un",
-    "INPS – Ricerca infermiere/a",
-    "Fondazione Pitsch cerca infermieri/e",
-    "Fondazione Casa di Riposo Heinrich von Rottenburg Caldaro",
-    "Fondazione Pitsch cerca personale",
-    "Infermiere/a a tempo pieno o part time",
-    "Study nurse @Bolzano @Istituto per la Medicina di Emergenza in Montagna – EURAC RESEARCH",
-    "Comunità comprensoriale Burgraviato – Avviso pubblico",
-    "Comunità Comprensoriale Burgraviato – Assunzioni a tempo determinato",
-    "Infermiere/a a tempo pieno o part time"
+    "CERCASI INFERMIERE/A PER EMODIALISI DOMICILIARE – BOLZANO"
    ],
    "pagine": [
     {
@@ -920,31 +1230,38 @@
      "url": "https://www.opibz.it/?page_id=5109"
     }
    ],
-   "scartati": [
-    [
-     "Ricerca di funzionario sanitario in comando presso l’INPS di Bolzano",
-     "ruolo diverso (dal titolo)"
-    ],
-    [
-     "Infermiere a Caorle",
-     "fuori regione"
-    ],
-    [
-     "Cerchiamo un RESPONSABILE TECNICO-ASSISTENZIALE",
-     "ruolo diverso (dal titolo)"
-    ],
-    [
-     "CERCHIAMO UN/UNA RESPONSABILE DI PIANO",
-     "ruolo diverso (dal titolo)"
-    ],
-    [
-     "INPS – Ricerca infermiere/a",
-     "ruolo diverso (coordinamento, direzione o comando)"
-    ],
-    [
-     "Avviso – Collegio tecnico – Dirigenza tecnico-assistenziale",
-     "ruolo diverso (dal titolo)"
-    ]
+   "scartati": [],
+   "senza_pdf": [
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://www.opibz.it/wp-content/uploads/fusion-styles/d3238dab3fc2f97dc3f15ff9853f0650.min.css?ver=3.16.4"
+      ]
+     ],
+     "url": "https://www.opibz.it/cerchiamo-infermierei-m-f-d-per-la-nostra-rsa-ciasa-de-palsa-ojop-freinademetz/"
+    },
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://www.opibz.it/wp-content/uploads/fusion-styles/d3238dab3fc2f97dc3f15ff9853f0650.min.css?ver=3.16.4"
+      ]
+     ],
+     "url": "https://www.opibz.it/la-casa-di-riposo-di-silandro-cerca-nuovi-collaboratori-trici/"
+    },
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://www.opibz.it/wp-content/uploads/fusion-styles/d3238dab3fc2f97dc3f15ff9853f0650.min.css?ver=3.16.4"
+      ]
+     ],
+     "url": "https://www.opibz.it/cercasi-infermiere-a-per-emodialisi-domiciliare-bolzano/"
+    }
    ]
   },
   "OPI Trento – annunci di lavoro": {
@@ -953,15 +1270,7 @@
     "A.P.S.P. C. Vannetti – Rovereto – Selezione per liberi professionisti – PROROGA TERMINI",
     "A.P.S.P. C. Vannetti – Rovereto – bando di concorso",
     "Cooperativa Sociale Villa Maria Onlus – ricerca di personale",
-    "A.P.S.P. Suor Agnese – Concorso per infermieri",
-    "APSP “San Giuseppe” di Primiero (TN) – ricerca di personale",
-    "Fondazione Casa di Riposo Heinrich von Rottenburg (APSP) – Caldaro BZ – ricerca personale",
-    "A.P.S.P. Padre Odone Nicolini – Pieve di Bono – Prezzo TN – ricerca personale",
-    "A.P.S.P. Centro Residenziale A. Collini – Ricerca personale tempo determinato",
-    "A.P.S.P. “OPERA ROMANI” – Nomi TN – bando di concorso",
-    "A.P.S.P. “Levico CURAE” – Levico Terme (TN) – selezione",
-    "Cooperativa D.O.C. Ricerca personale infermieristico",
-    "Avviso di selezione pubblica per il conferimento di incarichi libero professionali a infer"
+    "APSP “San Giuseppe” di Primiero (TN) – ricerca di personale"
    ],
    "pagine": [
     {
@@ -969,16 +1278,98 @@
      "url": "https://opi.tn.it/segreteria/annunci-di-lavoro/"
     }
    ],
-   "scartati": [
-    [
-     "A.P.S.P. Margherita Grazioli – Trento – pubblica selezione per coordinatore",
-     "ruolo diverso (dal titolo)"
-    ],
-    [
-     "Società Cooperativa Sociale Stella Montis Fondo – Borgo d’Ananunia (TN) – ricerca di perso",
-     "ruolo diverso (coordinamento, direzione o comando)"
-    ]
+   "scartati": [],
+   "senza_pdf": [
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon-150x150.jpg?x30900"
+      ],
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon.jpg?x30900"
+      ]
+     ],
+     "url": "https://opi.tn.it/casa-cura-eremo-arco-tn/"
+    },
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon-150x150.jpg?x30900"
+      ],
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon.jpg?x30900"
+      ]
+     ],
+     "url": "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/"
+    },
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon-150x150.jpg?x30900"
+      ],
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon.jpg?x30900"
+      ]
+     ],
+     "url": "https://opi.tn.it/a-p-s-p-c-vannetti-bando/"
+    },
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon-150x150.jpg?x30900"
+      ],
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon.jpg?x30900"
+      ]
+     ],
+     "url": "https://opi.tn.it/cooperativa-sociale-villa-maria-onlus-ricerca-di-personale/"
+    },
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon-150x150.jpg?x30900"
+      ],
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon.jpg?x30900"
+      ]
+     ],
+     "url": "https://opi.tn.it/apsp-san-giuseppe-di-primiero-tn-ricerca-di-personale/"
+    }
    ]
+  },
+  "Schloss Moos – Jobs (sito della cooperativa)": {
+   "accettati": [
+    "Schloss Moos – Jobs - Sozialgenossenschaft zum HL Vinzenz"
+   ],
+   "pagine": [
+    {
+     "caratteri": 4161,
+     "inizio": "Schloss Moos – Jobs waldemarker 2026-10-15T11:46:46+02:00 Zu den aktuellen Jobs Jobs am Puls der Zeit. Finde deinen Platz im Leben. Bei uns findest du Aufgaben, die Sinn machen, Kolleg*innen, die mitdenken, und ein Umfeld, in dem du dich entfalten kannst. Ob Berufseinstieg, Umstieg oder Neustart. Bring deine fachliche Kompetenz und deine menschlichen Qualitäten in unser aufgeschlossenes, motiviert",
+     "pdf": [],
+     "url": "https://sozialgenossenschaft-vinzenz.it/schloss-moos/schloss-moos-jobs/"
+    }
+   ],
+   "scartati": []
   },
   "Schloss Moos – libera professione (suedtirolerjobs)": {
    "accettati": [
@@ -987,6 +1378,8 @@
    "pagine": [
     {
      "caratteri": 710,
+     "inizio": "Freiberufliche Tätigkeit in der Pflege Sozialgenossenschaft Zum Heiligen Vinzenz Wiesen, Pfitsch Vollzeit Teilzeit Freelancer Projektarbeit 18.10.2026 Sozialgenossenschaft Zum Heiligen Vinzenz Traustonstr. 190 , 39049 Wiesen-Pfitsch Personalabteilung +39 0472 765179 info@schlossmoos.it +39 0472 765179 info@schlossmoos.it Zum Arbeitgeber Profil Ähnliche Jobs Sozialbetreuer*in Vollzeit / Teilzeit La",
+     "pdf": [],
      "url": "https://www.suedtirolerjobs.it/jobs/freiberufliche-taetigkeit-in-der-pflege,115073"
     }
    ],
@@ -1156,12 +1549,7 @@
      "url": "https://www.upipa.tn.it/Bacheca/Concorsi/(offset)/10"
     }
    ],
-   "scartati": [
-    [
-     "Selezione pubblica per il conferimento di un incarico libero professionale per Psicologo -",
-     "non riguarda infermieri"
-    ]
-   ]
+   "scartati": []
   },
   "Villa Sant'Anna Merano – lavora con noi": {
    "accettati": [
@@ -1170,11 +1558,27 @@
    "pagine": [
     {
      "caratteri": 4227,
+     "inizio": "Close Search Lavora nella Casa di Cura Sant’Anna di Merano Navigate to the next section La Casa di Cura Sant’Anna cerca medici, chirurghi e professionisti (m/f) Vuoi lavorare in Alto Adige presso la Casa di Cura Sant’Anna e le sue strutture sanitarie? Siamo sempre alla ricerca di personale preparato, capace di arricchire l’offerta della casa di cura. Candidature spontanee Se di seguito non individ",
+     "pdf": [],
      "url": "https://villa-santanna.eu/lavora-con-noi/"
+    }
+   ],
+   "scartati": []
+  },
+  "Vinzenzhaus Bolzano – Jobs": {
+   "accettati": [
+    "Vinzenzhaus – Jobs - Sozialgenossenschaft zum HL Vinzenz"
+   ],
+   "pagine": [
+    {
+     "caratteri": 6500,
+     "inizio": "Vinzenzhaus – Jobs waldemarker 2026-09-23T08:40:08+02:00 Zu den aktuellen Jobs Jobs fürs Leben. Pflege deine Talente. Beruflich und persönlich wachsen. Genau das kannst du bei uns. Denn die modernen Pflegeansätze, die wir im Vinzenzhaus verfolgen, sind nicht nur für unsere Senior*innen attraktiv, sondern auch für unser Mitarbeitenden. Bring deine fachliche Kompetenz und deine menschlichen Qualität",
+     "pdf": [],
+     "url": "https://sozialgenossenschaft-vinzenz.it/vinzenzhaus/vinzenzhaus-jobs/"
     }
    ],
    "scartati": []
   }
  },
- "richieste": 108
+ "richieste": 94
 }
