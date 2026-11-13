@@ -18,22 +18,6 @@
   },
   {
    "cambi": [
-    "titolo: Seniorenwohnheim \"Leoheim\" → Berufskrankenpflegerin berufsbild nr 64 der viiter funktionsebeneinfermierea"
-   ],
-   "compenso": null,
-   "contratto": "Concorso / graduatoria",
-   "datore": "Seniorenwohnheim \"Leoheim\"",
-   "id": "2c2e9b9cf537",
-   "minuti": 55,
-   "piva": false,
-   "punteggio": 30,
-   "scadenza": "2026-11-30",
-   "titolo": "Berufskrankenpflegerin berufsbild nr 64 der viiter funktionsebeneinfermierea",
-   "url": "https://www.vds-suedtirol.it/de/swh/521/job/berufskrankenpflegerin-berufsbild-nr-64-der-viiter-funktionsebeneinfermierea-1",
-   "zona": "Nova Levante"
-  },
-  {
-   "cambi": [
     "titolo: Seniorenwohnheim \"Claraheim\" → Berufskrankenpflegerin berufsbild nr 64 der viiter funktionsebeneinfermierea"
    ],
    "compenso": null,
@@ -47,22 +31,6 @@
    "titolo": "Berufskrankenpflegerin berufsbild nr 64 der viiter funktionsebeneinfermierea",
    "url": "https://www.vds-suedtirol.it/de/swh/469/job/berufskrankenpflegerin-berufsbild-nr-64-der-viiter-funktionsebeneinfermierea-2",
    "zona": "Cornedo all'Isarco"
-  },
-  {
-   "cambi": [
-    "titolo: Seniorenwohnheim \"Peter Paul Schrott\" → Berufskrankenpflegerin berufsbild nr 64 der viiter funktionsebene infermierea"
-   ],
-   "compenso": null,
-   "contratto": "Concorso / graduatoria",
-   "datore": "Seniorenwohnheim \"Peter Paul Schrott\"",
-   "id": "97a3270008d0",
-   "minuti": 55,
-   "piva": false,
-   "punteggio": 30,
-   "scadenza": "2026-11-30",
-   "titolo": "Berufskrankenpflegerin berufsbild nr 64 der viiter funktionsebene infermierea",
-   "url": "https://www.vds-suedtirol.it/de/swh/462/job/berufskrankenpflegerin-berufsbild-nr-64-der-viiter-funktionsebene-infermierea-0",
-   "zona": "Nova Ponente"
   },
   {
    "cambi": [
@@ -114,12 +82,12 @@
    "zona": "Bolzano"
   }
  ],
- "attivi": 32,
+ "attivi": 30,
  "attivi_piva": 11,
  "data": "2026-11-13",
  "fonti_lette": 24,
  "fonti_totali": 24,
- "giri": 9,
+ "giri": 10,
  "nuovi": [
   {
    "cambi": [],
@@ -210,20 +178,6 @@
    "compenso": null,
    "contratto": "Concorso / graduatoria",
    "datore": null,
-   "id": "2c2e9b9cf537",
-   "minuti": 55,
-   "piva": false,
-   "punteggio": 30,
-   "scadenza": "2026-11-30",
-   "titolo": "Seniorenwohnheim \"Leoheim\"",
-   "url": "https://www.vds-suedtirol.it/de/swh/521/job/berufskrankenpflegerin-berufsbild-nr-64-der-viiter-funktionsebeneinfermierea-1",
-   "zona": "Nova Levante"
-  },
-  {
-   "cambi": [],
-   "compenso": null,
-   "contratto": "Concorso / graduatoria",
-   "datore": null,
    "id": "21790443e949",
    "minuti": 55,
    "piva": false,
@@ -294,7 +248,7 @@
   },
   {
    "cambi": [],
-   "compenso": null,
+   "compenso": "stipendio base 23.001,72 € l'anno, più indennità",
    "contratto": "Concorso / graduatoria",
    "datore": "APSP «Giovanni Endrizzi»",
    "id": "66454cb15985",

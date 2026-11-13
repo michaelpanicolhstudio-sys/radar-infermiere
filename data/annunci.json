@@ -58,7 +58,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-06-12",
   "punteggio": 30,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -128,7 +128,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 37,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -272,7 +272,8 @@
   "affidabilita": "struttura",
   "avvisi": [
    "Dal PDF allegato: scadenza",
-   "Cita tedesco o bilinguismo"
+   "Cita tedesco o bilinguismo",
+   "Stesso bando anche per: Seniorenwohnheim \"Leoheim\" (Nova Levante), Seniorenwohnheim \"Peter Paul Schrott\" (Nova Ponente)"
   ],
   "cambi": [
    "titolo: Seniorenwohnheim \"Claraheim\" → Berufskrankenpflegerin berufsbild nr 64 der viiter funktionsebeneinfermierea"
@@ -281,16 +282,14 @@
   "compenso": null,
   "contratto": "Concorso / graduatoria",
   "da_pdf": {
-   "caratteri": 45488,
+   "caratteri": 45485,
    "cita_tedesco": true,
    "compenso": null,
    "contratto": "Concorso / graduatoria",
    "email": "info@sh-eggental.bz.it",
    "estratto": "…provisorische Besetzung von Stellen als Berufskrankenpfleger/in (Berufsbild Nr. 64) in der VII.ter Funktionsebene in Teilzeit und in Vollzeit für die Seniorenwohnheime Eggental ausgeschrieben ist. che è indetta una proce…",
    "euro_ora": null,
-   "indizi_compenso": [
-    ":  cittadino/a italiano/a;  cittadino/a del seguente Stato membro dell’Unione euro- pea: …………………………………………  cittadino/a di uno Stato non membr"
-   ],
+   "indizi_compenso": [],
    "infermiere": true,
    "km": 60,
    "minuti": 55,
@@ -302,7 +301,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 2,
+   "v": 3,
    "zona": "Nova Ponente"
   },
   "data_novita": "2026-11-13",
@@ -358,7 +357,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 37,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-11-30",
   "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
   "segnali_turni": {
@@ -435,7 +434,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-07-28",
   "punteggio": 61,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -475,7 +474,7 @@
    "scadenza_frase": null,
    "segnali_turni": {},
    "turni": null,
-   "v": 2,
+   "v": 3,
    "zona": "Meltina"
   },
   "data_novita": "2026-11-13",
@@ -531,7 +530,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 28,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -556,7 +555,7 @@
   "compenso": null,
   "contratto": "Concorso / graduatoria",
   "da_pdf": {
-   "caratteri": 7217,
+   "caratteri": 7216,
    "cita_tedesco": true,
    "compenso": null,
    "contratto": "Concorso / graduatoria",
@@ -576,7 +575,7 @@
     "pieno": true
    },
    "turni": "36 h/settimana, tempo pieno, part-time",
-   "v": 2,
+   "v": 3,
    "zona": "Lagundo"
   },
   "data_novita": "2026-11-13",
@@ -632,7 +631,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 30,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-11-20",
   "scadenza_frase": "al presente avviso entro il 20/11 /2026 – ore 12.00",
   "segnali_turni": {
@@ -707,7 +706,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-15",
   "punteggio": 49,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -736,12 +735,12 @@
   "compenso": null,
   "contratto": "Dipendente a tempo determinato",
   "da_pdf": {
-   "caratteri": 3472,
+   "caratteri": 3464,
    "cita_tedesco": true,
    "compenso": null,
    "contratto": null,
    "email": null,
-   "estratto": "…tstelle oder Teilzeitstelle (80 %) als: Berufskrankenpfleger/in Berufsbild Nr. 64 - Abkommen vom 14.10.2013. Das entsprechende Gesuch auf stempelfreiem Papier (samt Beilagen) ist am Sitz des Senioren - wohnheimes Inniche…",
+   "estratto": "…tstelle oder Teilzeitstelle (80 %) als: Berufskrankenpfleger/in Berufsbild Nr. 64 - Abkommen vom 14.10.2013. Das entsprechende Gesuch auf stempelfreiem Papier (samt Beilagen) ist am Sitz des Senioren- wohnheimes Innichen…",
    "euro_ora": null,
    "indizi_compenso": [],
    "infermiere": true,
@@ -755,7 +754,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 2,
+   "v": 3,
    "zona": "San Candido"
   },
   "data_novita": "2026-11-13",
@@ -811,7 +810,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 25,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-11-20",
   "scadenza_frase": "allegati) va presentato entro le ore 12 del 20.11.2026 presso la s",
   "segnali_turni": {
@@ -884,7 +883,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-06-01",
   "punteggio": 33,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -909,16 +908,14 @@
   "compenso": null,
   "contratto": "Concorso / graduatoria",
   "da_pdf": {
-   "caratteri": 45488,
+   "caratteri": 45485,
    "cita_tedesco": true,
    "compenso": null,
    "contratto": "Concorso / graduatoria",
    "email": "info@sh-eggental.bz.it",
    "estratto": "…provisorische Besetzung von Stellen als Berufskrankenpfleger/in (Berufsbild Nr. 64) in der VII.ter Funktionsebene in Teilzeit und in Vollzeit für die Seniorenwohnheime Eggental ausgeschrieben ist. che è indetta una proce…",
    "euro_ora": null,
-   "indizi_compenso": [
-    ":  cittadino/a italiano/a;  cittadino/a del seguente Stato membro dell’Unione euro- pea: …………………………………………  cittadino/a di uno Stato non membr"
-   ],
+   "indizi_compenso": [],
    "infermiere": true,
    "km": 60,
    "minuti": 55,
@@ -930,7 +927,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 2,
+   "v": 3,
    "zona": "Nova Ponente"
   },
   "data_novita": "2026-11-13",
@@ -967,6 +964,7 @@
     "voce": "Fonte"
    }
   ],
+  "doppione_di": "21790443e949",
   "email": "info@sh-eggental.bz.it",
   "estratto": "…provisorische Besetzung von Stellen als Berufskrankenpfleger/in (Berufsbild Nr. 64) in der VII.ter Funktionsebene in Teilzeit und in Vollzeit für die Seniorenwohnheime Eggental Procedura di selezione per esami per la for…",
   "euro_ora": null,
@@ -986,7 +984,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 30,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-11-30",
   "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
   "segnali_turni": {
@@ -1061,7 +1059,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2024-07-17",
   "punteggio": 39,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1136,7 +1134,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-16",
   "punteggio": 62,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-11-27",
   "scadenza_frase": "Personale dell’Azienda. Proroga termini di scadenza: 27/11/2026 ore 12.00 A",
   "segnali_turni": {},
@@ -1162,7 +1160,7 @@
   "compenso": null,
   "contratto": "Concorso / graduatoria",
   "da_pdf": {
-   "caratteri": 42101,
+   "caratteri": 42089,
    "cita_tedesco": true,
    "compenso": null,
    "contratto": null,
@@ -1171,19 +1169,19 @@
    "euro_ora": null,
    "indizi_compenso": [],
    "infermiere": true,
-   "km": 42,
-   "minuti": 35,
+   "km": 72,
+   "minuti": 65,
    "pec": "altenheim.stpankraz@pec.rolmail.net",
    "scadenza": "2026-11-20",
    "scadenza_frase": "20.11.2026 11:00 Uhr Scadenza: 20/11/2026 ore 11.00 T",
    "segnali_turni": {
-    "ore_settimana": 5,
+    "ore_settimana": 22,
     "parziale": true,
     "pieno": true
    },
-   "turni": "5 h/settimana, tempo pieno, part-time",
-   "v": 2,
-   "zona": "Bolzano"
+   "turni": "22 h/settimana, tempo pieno, part-time",
+   "v": 3,
+   "zona": "San Pancrazio"
   },
   "data_novita": "2026-11-13",
   "datore": "Altenheim St. Pankraz ÖBPB",
@@ -1238,7 +1236,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 30,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-11-20",
   "scadenza_frase": "20.11.2026 11:00 Uhr Scadenza: 20/11/2026 ore 11.00 T",
   "segnali_turni": {
@@ -1261,7 +1259,7 @@
   "compenso": null,
   "contratto": null,
   "da_pdf": {
-   "caratteri": 2253,
+   "caratteri": 2251,
    "cita_tedesco": false,
    "compenso": null,
    "contratto": null,
@@ -1280,7 +1278,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 2,
+   "v": 3,
    "zona": "Caldaro"
   },
   "data_novita": "2026-11-13",
@@ -1336,7 +1334,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2024-07-29",
   "punteggio": 42,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1421,7 +1419,7 @@
   "compenso": null,
   "contratto": null,
   "da_pdf": {
-   "caratteri": 2253,
+   "caratteri": 2251,
    "cita_tedesco": false,
    "compenso": null,
    "contratto": null,
@@ -1440,7 +1438,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 2,
+   "v": 3,
    "zona": "Caldaro"
   },
   "data_novita": "2026-11-13",
@@ -1496,7 +1494,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-06-25",
   "punteggio": 42,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1527,9 +1525,9 @@
    "estratto": "…TIMANALI) nella figura professionale di INFERMIERE Area 3 (Funzionari) – Livello Base – 1^posizione retributiva di cui n. 3 (tre) posti riservati ai volontari delle forze armate Il Direttore visto il Regolamento del Pers…",
    "euro_ora": null,
    "indizi_compenso": [
-    "5000 www.apspvannetti.it. - pec: apspvannetti@pec.it • stipendio base iniziale: euro 23.001,72.=; • indennità integrativa speciale: euro 6.545,0",
-    "assegno annuo: euro 3.360,00.=; • indennità figura professionale di Infermiere: euro 3.000,00.=; • tredicesima mensilità; • ogni altra competenz",
-    "gati i seguenti documenti: 1. ricevuta del pagamento della tassa di concorso di euro 25,00 =. Il pagamento dovrà essere effettuato unicamente tr"
+    "5000 www.apspvannetti.it. - pec: apspvannetti@pec.it • stipendio base iniziale: euro 23.001,72.=; • indennità integrativa speciale: euro 6.545,06.",
+    "assegno annuo: euro 3.360,00.=; • indennità figura professionale di Infermiere: euro 3.000,00.=; • tredicesima mensilità; • ogni altra competenza",
+    "gati i seguenti documenti: 1. ricevuta del pagamento della tassa di concorso di euro 25,00=. Il pagamento dovrà essere effettuato unicamente trami"
    ],
    "infermiere": true,
    "km": 45,
@@ -1543,7 +1541,7 @@
     "pieno": true
    },
    "turni": "36 h/settimana, tempo pieno, part-time",
-   "v": 2,
+   "v": 3,
    "zona": "Rovereto"
   },
   "data_novita": "2026-11-13",
@@ -1599,7 +1597,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-10-16",
   "punteggio": 39,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-11-13",
   "scadenza_frase": "216,01 kB) Termine di presentazione Venerdì, 13 Novembre 2026 ore 12:00 I",
   "segnali_turni": {
@@ -1674,7 +1672,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": null,
   "punteggio": 40,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1750,7 +1748,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": null,
   "punteggio": 52,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1824,7 +1822,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-04-28",
   "punteggio": 39,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-05-22",
   "scadenza_frase": "21 – 38060 Nomi (TN), entro e non oltre le ore 12.00 del giorno 22 maggio 2026 A.P.S.P. “O",
   "segnali_turni": {
@@ -1898,7 +1896,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-09-25",
   "punteggio": 33,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -1918,7 +1916,7 @@
   "compenso": null,
   "contratto": "P.IVA / libera professione",
   "da_pdf": {
-   "caratteri": 19305,
+   "caratteri": 19205,
    "cita_tedesco": false,
    "compenso": null,
    "contratto": "P.IVA / libera professione",
@@ -1926,7 +1924,7 @@
    "estratto": "…LISTI IN ORTOPEDIA E TRAUMATOLOGIA E AD INFERMIERI PER LO SVOLGIMENTO DI PRESTAZIONI DI PRONTO SOCCORSO ORTOPEDICO-TRAUMATOLOGICO NELLE UU.OO. DI PRONTO SOCCORSO DEGLI OSPEDALI DI CLES E CAVALESE, NONCHÉ PRESSO GLI AMBUL…",
    "euro_ora": null,
    "indizi_compenso": [
-    "penso orario lordo omnicomprensivo da corrispondere ai professionisti, è pari a € 85,00 per i medici specialisti in ortopedia e traumatologia"
+    "penso orario lordo omnicomprensivo da corrispondere ai professionisti, è pari a € 85,00 per i medici specialisti in ortopedia e traumatologia e"
    ],
    "infermiere": true,
    "km": 65,
@@ -1938,7 +1936,7 @@
     "dodici": true
    },
    "turni": "turni da 12 h, alloggio",
-   "v": 2,
+   "v": 3,
    "zona": "Madonna di Campiglio"
   },
   "data_novita": "2026-11-13",
@@ -1994,7 +1992,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 60,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-08-13",
   "scadenza_frase": "Tipo Argomenti Date e scadenze Cos'è In esecuzione della deliberazione del Direttore Generale n. 634 di data 13 agosto 2026 è indetto a",
   "segnali_turni": {
@@ -2011,24 +2009,20 @@
  "66454cb15985": {
   "affidabilita": "ufficiale",
   "avvisi": [
-   "Dal PDF allegato: ore e turni"
+   "Dal PDF allegato: ore e turni, compenso"
   ],
   "cambi": [],
   "cita_tedesco": false,
-  "compenso": null,
+  "compenso": "stipendio base 23.001,72 € l'anno, più indennità",
   "contratto": "Concorso / graduatoria",
   "da_pdf": {
    "caratteri": 40000,
    "cita_tedesco": false,
-   "compenso": null,
+   "compenso": "stipendio base 23.001,72 € l'anno, più indennità",
    "contratto": "Concorso / graduatoria",
    "email": "info@apsplavis.it",
    "estratto": "…PER LA COPERTURA DI N. 3 (TRE) POSTI DI INFERMIERE A TEMPO PIENO (36 ORE SETTIMANALI), CON CONTRATTO A TEMPO INDETERMINATO, AREA 3 FUNZIONARI LIVELLO BASE, 1^ POSIZIONE RETRIBUTIVA DEI QUALI N. 1 A TEMPO PIENO RISERVATO…",
    "euro_ora": null,
-   "indizi_compenso": [
-    "so di assunzione a tempo parziale, è il seguente: - stipendio annuo iniziale di € 23.001,72; - assegno annuo di € 3.360,00; - indennità integ",
-    "ione al concorso è previsto il pagament o di un contributo di partecipazione di € 25,00 da effettuarsi esclusivamente tramite il sistema Pago"
-   ],
    "infermiere": true,
    "km": 12,
    "minuti": 15,
@@ -2043,7 +2037,7 @@
     "weekend": true
    },
    "turni": "36 h/settimana, notti, weekend/festivi, tempo pieno, part-time",
-   "v": 2,
+   "v": 3,
    "zona": "Lavis"
   },
   "data_novita": null,
@@ -2057,7 +2051,7 @@
    },
    {
     "max": 25,
-    "motivo": "compenso orario non indicato",
+    "motivo": "compenso orario non indicato (stipendio base 23.001,72 € l'anno, più indennità)",
     "punti": 5,
     "voce": "Compenso"
    },
@@ -2085,7 +2079,7 @@
   "euro_ora": null,
   "fonte": "UPIPA – concorsi delle APSP",
   "id": "66454cb15985",
-  "impronta": "8d0be3dc47ec",
+  "impronta": "a3ce6b1f93f9",
   "in_tedesco": false,
   "km": 12,
   "letto_il": "2026-11-13",
@@ -2100,7 +2094,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-23",
   "punteggio": 54,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-11-19",
   "scadenza_frase": "178,71 kB) Termine di presentazione Giovedì, 19 Novembre 2026 ore 12:00 I",
   "segnali_turni": {
@@ -2161,7 +2155,7 @@
    }
   ],
   "email": "info@schlossmoos.it",
-  "estratto": "…egehelfer/in (Vollzeit) Leifers Caritas Krankenpfleger*in Lana ST. JOSEF Krankenpfleger:in (w/m/d) Siculiana, Sizilien ADLER Spa Resorts & Retreats",
+  "estratto": "…egehelfer/in (Vollzeit) Leifers Caritas Krankenpfleger*in Lana ST. JOSEF Freiberufler / Freelancer (m/w) Bozen, südtirolweit PEGASUS",
   "euro_ora": null,
   "fonte": "Schloss Moos – libera professione (suedtirolerjobs)",
   "id": "670aca98057e",
@@ -2178,7 +2172,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-18",
   "punteggio": 55,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -2315,7 +2309,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-27",
   "punteggio": 27,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -2515,7 +2509,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-04-22",
   "punteggio": 37,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-05-22",
   "scadenza_frase": "e selezioni ”. Il termine di presentazione della domanda scade il giorno 22 maggio 2026 alle ore 12",
   "segnali_turni": {},
@@ -2529,24 +2523,21 @@
  },
  "878da88d62f1": {
   "affidabilita": "ufficiale",
-  "avvisi": [],
+  "avvisi": [
+   "Dal PDF allegato: compenso"
+  ],
   "cambi": [],
   "cita_tedesco": false,
-  "compenso": null,
+  "compenso": "stipendio base 23.001,72 € l'anno, più indennità",
   "contratto": "Concorso / graduatoria",
   "da_pdf": {
    "caratteri": 40000,
    "cita_tedesco": false,
-   "compenso": null,
+   "compenso": "stipendio base 23.001,72 € l'anno, più indennità",
    "contratto": "Concorso / graduatoria",
    "email": "segreteria@apsp-primiero.net",
-   "estratto": "…e sett.) nella figura professionale di: INFERMIERE Area 3 Funzionari, livello Base – 1^ posizione retributiva la graduatoria sarà utilizzata anche per la copertura di ev entuali posti che dovessero rendersi vacanti nel p…",
+   "estratto": "…e sett.) nella figura professionale di: INFERMIERE Area 3 Funzionari, livello Base – 1^ posizione retributiva la graduatoria sarà utilizzata anche per la copertura di eventuali posti che dovessero rendersi vacanti nel pe…",
    "euro_ora": null,
-   "indizi_compenso": [
-    "o a tempo pieno annesso a detto posto è il seguente: - Stipendio annuo iniziale € 23.001,72 - Assegno annuo di € 3.360,00 - Indennità integra",
-    ". Per l’ammissione al Concorso Pubblico è previsto il pagamento di una tassa di € 25,00. Il pagamento dovrà essere effettuato unicamente tram",
-    "enti documenti: 1. ricevuta comprovante il pagamento della tassa di concorso di € 25,00 effettuata con le modalità su indicate; 2. Documento"
-   ],
    "infermiere": true,
    "km": 105,
    "minuti": 120,
@@ -2558,7 +2549,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 2,
+   "v": 3,
    "zona": "Primiero San Martino di Castrozza"
   },
   "data_novita": "2026-11-13",
@@ -2572,7 +2563,7 @@
    },
    {
     "max": 25,
-    "motivo": "compenso orario non indicato",
+    "motivo": "compenso orario non indicato (stipendio base 23.001,72 € l'anno, più indennità)",
     "punti": 5,
     "voce": "Compenso"
    },
@@ -2601,7 +2592,7 @@
   "euro_ora": null,
   "fonte": "UPIPA – concorsi delle APSP",
   "id": "878da88d62f1",
-  "impronta": "bcc769c37d96",
+  "impronta": "a7639f52eda8",
   "in_tedesco": false,
   "km": 105,
   "letto_il": "2026-11-13",
@@ -2614,7 +2605,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-11-03",
   "punteggio": 27,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-12-04",
   "scadenza_frase": "505,54 kB) Termine di presentazione Venerdì, 04 Dicembre 2026 ore 12:00 I",
   "segnali_turni": {
@@ -2689,7 +2680,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-19",
   "punteggio": 30,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -2711,7 +2702,7 @@
   "compenso": null,
   "contratto": "Concorso / graduatoria",
   "da_pdf": {
-   "caratteri": 7287,
+   "caratteri": 7282,
    "cita_tedesco": true,
    "compenso": null,
    "contratto": "Concorso / graduatoria",
@@ -2727,7 +2718,7 @@
    "scadenza_frase": null,
    "segnali_turni": {},
    "turni": null,
-   "v": 2,
+   "v": 3,
    "zona": "Merano"
   },
   "data_novita": "2026-11-13",
@@ -2782,7 +2773,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2024-07-17",
   "punteggio": 30,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -2852,7 +2843,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-06-23",
   "punteggio": 40,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -2877,16 +2868,14 @@
   "compenso": null,
   "contratto": "Concorso / graduatoria",
   "da_pdf": {
-   "caratteri": 45488,
+   "caratteri": 45485,
    "cita_tedesco": true,
    "compenso": null,
    "contratto": "Concorso / graduatoria",
    "email": "info@sh-eggental.bz.it",
    "estratto": "…provisorische Besetzung von Stellen als Berufskrankenpfleger/in (Berufsbild Nr. 64) in der VII.ter Funktionsebene in Teilzeit und in Vollzeit für die Seniorenwohnheime Eggental ausgeschrieben ist. che è indetta una proce…",
    "euro_ora": null,
-   "indizi_compenso": [
-    ":  cittadino/a italiano/a;  cittadino/a del seguente Stato membro dell’Unione euro- pea: …………………………………………  cittadino/a di uno Stato non membr"
-   ],
+   "indizi_compenso": [],
    "infermiere": true,
    "km": 60,
    "minuti": 55,
@@ -2898,7 +2887,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 2,
+   "v": 3,
    "zona": "Nova Ponente"
   },
   "data_novita": "2026-11-13",
@@ -2935,6 +2924,7 @@
     "voce": "Fonte"
    }
   ],
+  "doppione_di": "21790443e949",
   "email": "info@sh-eggental.bz.it",
   "estratto": "…provisorische Besetzung von Stellen als Berufskrankenpfleger/in (Berufsbild Nr. 64) in der VII.ter Funktionsebene in Teilzeit und in Vollzeit für die Seniorenwohnheime Eggental Procedura di selezione per esami per la for…",
   "euro_ora": null,
@@ -2954,7 +2944,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 30,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-11-30",
   "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
   "segnali_turni": {
@@ -2979,7 +2969,7 @@
   "compenso": null,
   "contratto": "Concorso / graduatoria",
   "da_pdf": {
-   "caratteri": 3000,
+   "caratteri": 2997,
    "cita_tedesco": true,
    "compenso": null,
    "contratto": "Concorso / graduatoria",
@@ -2998,7 +2988,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 2,
+   "v": 3,
    "zona": "Laces"
   },
   "data_novita": "2026-11-13",
@@ -3053,7 +3043,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-02-27",
   "punteggio": 32,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-03-06",
   "scadenza_frase": "essere pre­sentate entro le ore 12.00 del 06.03.2026 in Segreter",
   "segnali_turni": {
@@ -3078,7 +3068,7 @@
   "compenso": null,
   "contratto": "Concorso / graduatoria",
   "da_pdf": {
-   "caratteri": 9039,
+   "caratteri": 9031,
    "cita_tedesco": true,
    "compenso": null,
    "contratto": "Concorso / graduatoria",
@@ -3094,7 +3084,7 @@
    "scadenza_frase": null,
    "segnali_turni": {},
    "turni": null,
-   "v": 2,
+   "v": 3,
    "zona": "Merano"
   },
   "data_novita": "2026-11-13",
@@ -3150,7 +3140,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2023-09-24",
   "punteggio": 30,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -3222,7 +3212,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-15",
   "punteggio": 39,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-11-13",
   "scadenza_frase": "apspvannetti@pec.it entro e non oltre le ore 12.00 del giorno 13/11/2026 all’U.O. de",
   "segnali_turni": {
@@ -3250,7 +3240,7 @@
   "compenso": null,
   "contratto": "Concorso / graduatoria",
   "da_pdf": {
-   "caratteri": 42398,
+   "caratteri": 42392,
    "cita_tedesco": true,
    "compenso": null,
    "contratto": "Concorso / graduatoria",
@@ -3268,7 +3258,7 @@
     "weekend": true
    },
    "turni": "weekend/festivi",
-   "v": 2,
+   "v": 3,
    "zona": "Bolzano"
   },
   "data_novita": "2026-11-13",
@@ -3324,7 +3314,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-12-19",
   "punteggio": 40,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2025-12-26",
   "scadenza_frase": "postacert.inps.gov.it entro il termine perentorio di venerdì 26/12/2025. Il bando i",
   "segnali_turni": {
@@ -3352,7 +3342,7 @@
   "compenso": null,
   "contratto": "Dipendente a tempo determinato",
   "da_pdf": {
-   "caratteri": 1784,
+   "caratteri": 1783,
    "cita_tedesco": false,
    "compenso": null,
    "contratto": "Dipendente a tempo determinato",
@@ -3360,7 +3350,7 @@
    "estratto": "COOPERATIVA D.O.C. RICERCA PERSONALE INFERMIERISTICO PER SOGGIORNI-VACANZA ESTIVI PER MINORI D.O.C. s.c.s.: oltre 35 anni di esperienza nella progettazione educativa, nella gestione alberghiera e nell’erogazione di perco…",
    "euro_ora": null,
    "indizi_compenso": [
-    ": - contratto a tempo determinato full-time; - retribuzione mensile di 2.229,40 euro lordi (comprensivi di 13esima, 14esima, ore supplementari,"
+    "previsti: - contratto a tempo determinato full-time; - retribuzione mensile di 2.229,40 euro lordi (comprensivi di 13esima, 14esima, ore supplementari,"
    ],
    "infermiere": true,
    "km": null,
@@ -3372,7 +3362,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, alloggio",
-   "v": 2,
+   "v": 3,
    "zona": null
   },
   "data_novita": "2026-11-13",
@@ -3427,7 +3417,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-01-12",
   "punteggio": 32,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -3447,13 +3437,13 @@
    "Dal PDF allegato: ore e turni, compenso"
   ],
   "cambi": [
-   "compenso: n.d. → stipendio base 29.742,57 € l'anno, più indennità"
+   "scadenza: 2026-10-22 → 2026-10-26"
   ],
   "cita_tedesco": false,
   "compenso": "stipendio base 29.742,57 € l'anno, più indennità",
   "contratto": "Concorso / graduatoria",
   "da_pdf": {
-   "caratteri": 30171,
+   "caratteri": 30139,
    "cita_tedesco": false,
    "compenso": "stipendio base 29.742,57 € l'anno, più indennità",
    "contratto": "Concorso / graduatoria",
@@ -3471,7 +3461,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 2,
+   "v": 3,
    "zona": "Trento"
   },
   "data_novita": "2026-11-13",
@@ -3513,7 +3503,7 @@
   "euro_ora": null,
   "fonte": "ASUIT – bandi e concorsi",
   "id": "b6439eafe514",
-  "impronta": "36cbddd11ac9",
+  "impronta": "d5420c665ff2",
   "in_tedesco": false,
   "km": 50,
   "letto_il": "2026-11-13",
@@ -3527,9 +3517,9 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 32,
-  "regole": 4,
-  "scadenza": "2026-10-22",
-  "scadenza_frase": "candidature pervenute entro il giorno 2 ottobre. AGGIORNAMENTO DI DATA 22/10/2026! Si comunic",
+  "regole": 5,
+  "scadenza": "2026-10-26",
+  "scadenza_frase": "che perverranno entro il giorno lunedì 26 ottobre 2026 . L’Azienda",
   "segnali_turni": {
    "parziale": true,
    "pieno": true
@@ -3604,7 +3594,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 40,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -3679,7 +3669,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-03-05",
   "punteggio": 49,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -3875,7 +3865,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 33,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -4011,7 +4001,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-01-07",
   "punteggio": 55,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -4083,7 +4073,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-05-22",
   "punteggio": 30,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -4103,7 +4093,7 @@
   "compenso": null,
   "contratto": null,
   "da_pdf": {
-   "caratteri": 2253,
+   "caratteri": 2251,
    "cita_tedesco": false,
    "compenso": null,
    "contratto": null,
@@ -4122,7 +4112,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 2,
+   "v": 3,
    "zona": "Caldaro"
   },
   "data_novita": "2026-11-13",
@@ -4178,7 +4168,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2023-09-13",
   "punteggio": 42,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -4253,7 +4243,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-07-03",
   "punteggio": 25,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-12-04",
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -4278,28 +4268,28 @@
   "compenso": null,
   "contratto": "Concorso / graduatoria",
   "da_pdf": {
-   "caratteri": 42101,
+   "caratteri": 42089,
    "cita_tedesco": true,
    "compenso": null,
    "contratto": "Concorso / graduatoria",
    "email": "info@altenheim-stpankraz.it",
-   "estratto": "…stent/in (6. FE) mit 19 Wochenstunden • Krankenpfleger/innen (7/ter. F E) mit 18, 20 und 22 Wochenstunden • Erzieher/in (7. FE) mit 36 Wochenstunden Avviso pubblico La C asa di riposo San Pancrazio forma graduatorie per…",
+   "estratto": "…stent/in (6. FE) mit 19 Wochenstunden • Krankenpfleger/innen (7/ter. FE) mit 18, 20 und 22 Wochenstunden • Erzieher/in (7. FE) mit 36 Wochenstunden Avviso pubblico La Casa di riposo San Pancrazio forma graduatorie per as…",
    "euro_ora": null,
    "indizi_compenso": [],
    "infermiere": true,
-   "km": 42,
-   "minuti": 35,
+   "km": 72,
+   "minuti": 65,
    "pec": "altenheim.stpankraz@pec.rolmail.net",
    "scadenza": "2026-11-20",
    "scadenza_frase": "20.11.2026 11:00 Uhr Scadenza: 20/11/2026 ore 11.00 T",
    "segnali_turni": {
-    "ore_settimana": 5,
+    "ore_settimana": 28,
     "parziale": true,
     "pieno": true
    },
-   "turni": "5 h/settimana, tempo pieno, part-time",
-   "v": 2,
-   "zona": "Bolzano"
+   "turni": "28 h/settimana, tempo pieno, part-time",
+   "v": 3,
+   "zona": "San Pancrazio"
   },
   "data_novita": "2026-11-13",
   "datore": "Seniorenwohnheim Stiftung Lorenzerhof",
@@ -4355,7 +4345,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 30,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-11-20",
   "scadenza_frase": "kundmachung_befristete_rangordnung_sozialbetreuer_pflegehelfer_krankenpfleger_heimgehilfen_verwaltungsassistent_fuer_2027_termin_20.11.2026-signed.pdf neu_gesuch_befriste",
   "segnali_turni": {
@@ -4429,7 +4419,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-08-08",
   "punteggio": 30,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -4444,25 +4434,20 @@
  "fcf952f9b681": {
   "affidabilita": "ufficiale",
   "avvisi": [
-   "Dal PDF allegato: contratto, scadenza, ore e turni"
+   "Dal PDF allegato: contratto, scadenza, ore e turni, compenso"
   ],
   "cambi": [],
   "cita_tedesco": false,
-  "compenso": null,
+  "compenso": "stipendio base 29.742,57 € l'anno, più indennità",
   "contratto": "Concorso / graduatoria",
   "da_pdf": {
-   "caratteri": 22882,
+   "caratteri": 22850,
    "cita_tedesco": false,
-   "compenso": null,
+   "compenso": "stipendio base 29.742,57 € l'anno, più indennità",
    "contratto": "Concorso / graduatoria",
    "email": "concorsi@asuit.tn.it",
    "estratto": "…COLLABORATORE PROFESSIONALE SANITARIO – INFERMIERE PRESSO LA SEDE DI CAVALESE In esecuzione della determinazione della sostituta Dirigente del Servizio Acquisizione e sviluppo n. 1593/2026 del 21 settembre 2026 è emesso…",
    "euro_ora": null,
-   "indizi_compenso": [
-    "voro, è quello sotto riportato: VOCE STIPENDIALE IMPORTO ANNUALE stipendio base € 29.742,57 indennità sanitaria provinciale € 1.752,79 armoni",
-    "tribuzione aggiuntiva CCPL 13/08/2020 € 88,40 indennità professionale specifica € 434,04 indennità di specificità infermieristica € 3.120,00",
-    "presente procedura richiede il pagamento di un’unica tassa di concorso pari a 5 Euro. Il pagamento potrà essere effettuato secondo due modalità"
-   ],
    "infermiere": true,
    "km": 50,
    "minuti": 55,
@@ -4474,7 +4459,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 2,
+   "v": 3,
    "zona": "Cavalese"
   },
   "data_novita": "2026-11-13",
@@ -4488,7 +4473,7 @@
    },
    {
     "max": 25,
-    "motivo": "compenso orario non indicato",
+    "motivo": "compenso orario non indicato (stipendio base 29.742,57 € l'anno, più indennità)",
     "punti": 5,
     "voce": "Compenso"
    },
@@ -4516,7 +4501,7 @@
   "euro_ora": null,
   "fonte": "ASUIT – bandi e concorsi",
   "id": "fcf952f9b681",
-  "impronta": "b0eb39fbcfea",
+  "impronta": "bc5cd2947d10",
   "in_tedesco": false,
   "km": 50,
   "letto_il": "2026-11-13",
@@ -4529,7 +4514,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 32,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-12-31",
   "scadenza_frase": "procedura telematica entro le ore 23.59 del giorno 31 dicembre 2026. Detto term",
   "segnali_turni": {
@@ -4607,7 +4592,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 56,
-  "regole": 4,
+  "regole": 5,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -4680,7 +4665,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-07-15",
   "punteggio": 32,
-  "regole": 4,
+  "regole": 5,
   "scadenza": "2026-08-14",
   "scadenza_frase": "dell’APSP “Suor Agnese” entro le ore 12.00 del giorno 14.08.2026. A.P.S.P. S",
   "segnali_turni": {
