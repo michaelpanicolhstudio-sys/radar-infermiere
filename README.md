@@ -184,6 +184,23 @@ Il report ha la sezione «Fonti non lette o da controllare». I casi tipici:
 Un annuncio che sparisce dall'elenco della fonte resta visibile 30 giorni con un avviso.
 Se il workflow fallisce del tutto, GitHub ti manda un'email.
 
+## Novità: contatti, conti e agenda
+
+- **Da contattare oggi:** ogni giorno l'app propone fino a 5 offerte a cui scrivere (mai concorsi, mai due volte la stessa
+  struttura). Apri l'offerta e tocca **Prepara l'email**: si apre Mail con il testo pronto, e la invii tu.
+  Se la struttura ha una PEC c'è anche **Scrivi alla PEC**: in Mail scegli la tua casella PEC come mittente.
+- **Risposte:** il Radar riconosce le tue email dal codice «Rif. R-…» nell'oggetto (non toglierlo) e legge in Gmail
+  solo le risposte di quegli indirizzi. Serve che in Gmail sia attivo IMAP (Impostazioni → Inoltro e POP/IMAP).
+  A ogni risposta ricevi il **foglio Excel costi-benefici** e, se propongono un incontro con una data, l'invito
+  da aggiungere al calendario con un tocco. Per leggere anche le risposte sulla PEC aggiungi su GitHub i segreti
+  `PEC_USER`, `PEC_PASSWORD` e `PEC_IMAP_HOST` (facoltativi).
+- **Indeed, LinkedIn e simili:** non si lasciano leggere dai programmi. Attiva sul loro sito un avviso email
+  («infermiere partita IVA Trento», «infermiere Bolzano»…) verso la tua Gmail: il Radar legge quegli avvisi.
+- **Strutture** (Altro → Strutture): i posti che cercano quasi sempre. Si modificano in `data/strutture.csv`.
+- **Conti:** quanti turni servono per l'obiettivo netto; i numeri di partenza sono in `config.yaml` alla voce `conti`.
+- **Agenda:** segni i turni; l'app tiene due giorni liberi a settimana e li sposta da sola, preferendo il weekend.
+  Turni, stati e appunti restano sul telefono: fanne una copia da Altro → I miei dati.
+
 **Nota onesta:** le regole sono verificate con circa 60 prove su pagine finte (`python tests/prova.py`) e con i giri
 veri su GitHub. I siti però cambiano: quando una fonte smette di rendere lo vedi nel report e in `data/diagnostica.json`.
 

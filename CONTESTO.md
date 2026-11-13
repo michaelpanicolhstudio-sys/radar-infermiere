@@ -188,3 +188,11 @@ Manpower Arco, Medical Rovereto.
 - I dati inseriti a mano vincono su quelli letti in automatico (tranne la scadenza, che si aggiorna).
 - App: schede Oggi, Offerte, Scadenze, Zone, Report. Stati e appunti restano solo sul telefono.
 - Indirizzo dell'app: https://radar-infermiere.pages.dev (protetta da Cloudflare Access).
+
+## 13. Scelte del 13/11/2026 (contatti, conti, agenda)
+
+- Email di primo contatto: le prepara l'app, le invio io con un tocco (non partono da sole). Mai due volte allo stesso indirizzo.
+- Mittente: Gmail; PEC solo verso indirizzi PEC, scelta a mano in Mail.
+- Il Radar può leggere in Gmail solo le risposte delle strutture contattate e gli avvisi di lavoro dei portali.
+- Obiettivo: 3.000 € netti al mese dopo tasse, contributi ENPAPI, spese e fondo pensione da 6.000 € l'anno.
+- Agenda: sempre due giorni liberi a settimana, con priorità al weekend.

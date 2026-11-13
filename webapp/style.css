@@ -201,3 +201,38 @@ details.rep summary small { font-weight: 400; color: var(--pietra); text-align: 
 .rep .voce b { font: 700 16px/1.3 var(--din); color: var(--genziana); }
 .rep p.prob { font-size: 14px; color: var(--ambra); padding: 6px 0; }
 .rep > :last-child { margin-bottom: 14px; }
+
+/* Agenda: il mese, i turni e i giorni liberi */
+.mese-nav { display: flex; align-items: center; justify-content: space-between; margin: 18px 0 8px; }
+.mese-nav b { font: 700 22px/1 var(--din); }
+.mese-nav button { width: 44px; height: 44px; border: 1px solid var(--filo); background: var(--carta); border-radius: 10px; font-size: 22px; line-height: 1; }
+.calendario { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.capo-giorno { text-align: center; font-size: 12px; color: var(--pietra); padding: 4px 0; }
+.giorno-cal { position: relative; min-height: 52px; border: 1px solid var(--filo); border-radius: 8px; background: var(--carta); padding: 6px 0 4px; display: grid; justify-items: center; align-content: start; gap: 3px; }
+.giorno-cal b { font: 700 17px/1 var(--din); }
+.giorno-cal small { font-size: 11px; line-height: 1; color: var(--pietra); min-height: 11px; }
+.giorno-cal.fuori { opacity: .4; }
+.giorno-cal.turno { background: var(--genziana); border-color: var(--genziana); color: var(--su-genziana); }
+.giorno-cal.turno small { color: var(--su-genziana); font-weight: 700; }
+.giorno-cal.riposo { background: var(--velo); border-style: dashed; border-color: var(--grigio-dato); }
+.giorno-cal.smonto small { color: var(--ambra); }
+.giorno-cal.oggi b { text-decoration: underline; text-underline-offset: 3px; }
+.giorno-cal.scelto { outline: 2px solid var(--ardesia); outline-offset: 1px; }
+.giorno-cal .punto { position: absolute; top: 5px; right: 5px; width: 6px; height: 6px; border-radius: 50%; background: var(--segnale); }
+.giorno-cal .punto.incontro { background: var(--ambra); }
+.legenda i.lib { background: var(--velo); border: 1px dashed var(--grigio-dato); }
+.pannello { border: 1px solid var(--filo); background: var(--carta); border-radius: 12px; padding: 14px; margin-top: 14px; }
+.pannello h3 { font: 700 19px/1.2 var(--din); }
+.modulo { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.campo { display: grid; gap: 4px; font-size: 13px; color: var(--pietra); min-width: 0; }
+.campo.largo { grid-column: 1 / -1; }
+.campo input, .campo select { width: 100%; min-height: 44px; padding: 8px 12px; border: 1px solid var(--filo); border-radius: 10px; background: var(--carta); color: var(--ardesia); font-size: 16px; }
+.cifra { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center; margin: 18px 0 6px; }
+.cifra b { font: 700 64px/0.9 var(--din); color: var(--genziana); }
+.cifra span { font-size: 15px; color: var(--pietra); }
+.avviso.neutro { background: var(--genziana-chiara); color: var(--genziana); }
+.pastiglia.spenta { border-color: var(--filo); background: var(--carta); color: var(--ardesia); font-weight: 400; }
+.dentro > .titolo:first-child { display: none; }
+details.rep .azioni { margin-top: 8px; }
+.zona-riga.conto { grid-template-columns: 52px minmax(0, 1fr); }
+.zona-riga.conto small { grid-column: 2; }

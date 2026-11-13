@@ -270,7 +270,7 @@ pdf:
 # ---- Email di primo contatto preparata dall'app (solo richiesta di informazioni) ----
 # {titolo}, {datore} e {fonte} vengono sostituiti con i dati dell'annuncio.
 email_contatto:
-  oggetto: "Richiesta di informazioni – {titolo}"
+  oggetto: "Richiesta di informazioni – {titolo} (Rif. {rif})"
   testo: |
     Buongiorno,
 
@@ -284,6 +284,35 @@ email_contatto:
 
     Grazie e cordiali saluti
     Michael Panico
+
+# ---- Primo contatto: ogni giorno l'app propone le migliori offerte a cui scrivere (invii tu, con un tocco) ----
+contatti:
+  al_giorno: 5
+  solo_piva_o_private: true     # niente concorsi pubblici: lì una richiesta di informazioni non serve
+
+# ---- Posta: risposte delle strutture contattate e avvisi di lavoro dei portali ----
+posta:
+  leggi: true
+  giorni_avvisi: 3
+  # nome del portale: pezzo dell'indirizzo da cui arrivano gli avvisi di lavoro
+  avvisi_da:
+    Indeed: indeed.com
+    LinkedIn: linkedin.com
+    InfoJobs: infojobs.it
+    Jobrapido: jobrapido.com
+
+# ---- Conti della libera professione (stime: falle controllare al commercialista) ----
+conti:
+  obiettivo_netto_mese: 3000
+  fondo_pensione_mese: 500      # 6.000 euro l'anno
+  spese_fisse_mese: 250         # assicurazione, OPI, commercialista, formazione
+  costo_km: 0.25
+  coefficiente: 0.78            # regime forfettario, professioni sanitarie
+  enpapi: 0.16                  # contributo soggettivo sul reddito
+  imposta: 0.05                 # 5% nei primi 5 anni, poi 0.15
+  ore_turno: 8
+  turni_mese: 16
+  tariffa_predefinita: 35       # usata quando l'annuncio non dice il compenso
 
 # ---- Parole chiave (minuscole) ----
 parole:

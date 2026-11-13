@@ -217,7 +217,7 @@ def _costruisci(cand: dict, testo: str, pubblicato, fonte: dict, cfg: dict, comu
 
     tipo = fonte.get("tipo", "elenco")
     a = {
-        "id": estrai.id_annuncio(cand["url"]),
+        "id": cand.get("id") or estrai.id_annuncio(cand["url"]),
         "url": cand["url"],
         "titolo": titolo,
         "fonte": fonte["nome"],
@@ -565,7 +565,8 @@ def _esplora(cfg: dict, rete, registra) -> list[dict]:
     return risultati
 
 
-def giro(cfg: dict, rete, oggi: date, registra=print, diagnostica: bool = True) -> dict:
+def giro(cfg: dict, rete, oggi: date, registra=print, diagnostica: bool = True,
+         avvisi: dict[str, list[dict]] | None = None) -> dict:
     comuni = estrai.carica_comuni(RADICE / "data" / "comuni.csv")
     memoria = leggi_json(FILE_ANNUNCI, {})
     stato_fonti = leggi_json(FILE_FONTI, {})
@@ -604,6 +605,22 @@ def giro(cfg: dict, rete, oggi: date, registra=print, diagnostica: bool = True) 
     if diagnostica:
         diag["esplora"] = _esplora(cfg, rete, registra)
 
+    # Avvisi di lavoro arrivati per email dai portali (Indeed, LinkedIn…): si usa solo ciò che dice l'email.
+    for nome, candidati in (avvisi or {}).items():
+        fonte = {"nome": f"Avvisi email – {nome}", "tipo": "rss", "affidabilita": "aggregatore", "solo_regione": True}
+        fonti_attive.add(fonte["nome"])
+        fonti_lette.add(fonte["nome"])
+        presi = 0
+        for cand in candidati:
+            a, _ = _costruisci(cand, cand.get("sommario", ""), cand.get("pubblicato"), fonte, cfg, comuni, oggi,
+                               ["Dall'avviso email del portale: apri il link per i dettagli"])
+            if a and a["id"] not in trovati:
+                trovati[a["id"]] = a
+                presi += 1
+        registra(f"• {fonte['nome']}: {presi} annunci")
+        if diagnostica:
+            diag["fonti"][fonte["nome"]] = {"candidati": len(candidati), "accettati": presi}
+
     novita = aggiorna_memoria(memoria, list(trovati.values()), fonti_lette, fonti_attive, scartati, oggi, cfg)
     segna_doppioni(memoria, oggi)
 
@@ -624,7 +641,7 @@ def giro(cfg: dict, rete, oggi: date, registra=print, diagnostica: bool = True) 
         "scadenze7": [_riga(a) for a in scadenze],
         "problemi": problemi,
         "fonti_lette": len(fonti_lette),
-        "fonti_totali": len(fonti),
+        "fonti_totali": len(fonti_attive),
         "giri": 1,
     }
     # Più giri nello stesso giorno: nell'archivio le novità si sommano, non si sovrascrivono.

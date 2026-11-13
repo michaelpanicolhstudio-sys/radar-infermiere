@@ -290,6 +290,25 @@ vecchi = {str(i): {"id": str(i), "titolo": t, "datore": None, "zona": "Caldaro",
 motore.segna_doppioni(vecchi, OGGI)
 verifica("doppioni: stessa struttura (stessa email), resta il più recente", [a.get("doppione_di") for a in vecchi.values()], ["2", "2", None])
 
+print("Conti, posta e contatti")
+from radar import conti, posta
+par = conti.parametri({})
+verifica("conti: di ogni euro restano 84 centesimi", round(conti.quota_netta(par), 4), 0.8424)
+co = conti.conto_offerta({"euro_ora": 35, "km": 40, "minuti": 40}, par)
+verifica("conti: turni al mese per 3.000 netti a 35 €/h da Rovereto", (co["turni_per_obiettivo"], co["netto_ora"]), (18, 26.99))
+foglio = conti.scrivi_excel({"datore": "APSP Prova", "titolo": "Infermiere", "euro_ora": 35, "km": 40, "minuti": 40}, par, Path(tempfile.mkdtemp()) / "p.xlsx", [])
+verifica("conti: foglio Excel creato", foglio.exists() and foglio.stat().st_size > 4000, True)
+verifica("posta: incontro con data e ora", posta.trova_incontro("Possiamo fissare un colloquio martedì 24/11/2026 alle ore 10.30 in struttura.", OGGI), {"data": "2026-11-24", "ora": "10:30", "frase": "Possiamo fissare un colloquio martedì 24/11/2026 alle ore 10.30 in struttura."})
+verifica("posta: una data senza invito non è un incontro", posta.trova_incontro("Il bando scade il 24/11/2026.", OGGI), None)
+verifica("posta: la parte citata si toglie", posta.taglia_citazione("Il compenso è 38 euro l'ora.\n\nIl giorno 13 nov 2026 Michael ha scritto:\n> ciao"), "Il compenso è 38 euro l'ora.")
+verifica("posta: annunci dall'avviso di un portale", [x["titolo"] for x in posta.annunci_da_avviso('<a href="https://it.indeed.com/x">Infermiere libero professionista</a><a href="https://it.indeed.com/y">Cuoco</a>', ["infermier"])], ["Infermiere libero professionista"])
+mem = {"a1": {"id": "a1", "titolo": "LP", "email": "x@rsa.it", "punteggio": 60, "contratto": "P.IVA / libera professione"},
+       "a2": {"id": "a2", "titolo": "LP bis", "email": "x@rsa.it", "punteggio": 55, "contratto": "P.IVA / libera professione"},
+       "a3": {"id": "a3", "titolo": "Concorso", "email": "y@ente.it", "punteggio": 70, "contratto": "Concorso / graduatoria"},
+       "a4": {"id": "a4", "titolo": "Già scritto", "email": "z@rsa.it", "punteggio": 65, "contratto": "P.IVA o dipendente"}}
+scelte = uscite.scegli_da_contattare(mem, {"a4": {"inviata_il": "2026-11-10", "a": ["z@rsa.it"]}}, cfg, OGGI)
+verifica("contatti: mai due volte, niente concorsi, un solo messaggio per indirizzo", [a["id"] for a in scelte], ["a1"])
+
 print("Web app e calendario")
 dest = uscite.costruisci_sito(cfg, date(2026, 11, 14), tmp2 / "dist")
 dati = __import__("json").loads((dest / "dati.json").read_text(encoding="utf-8"))

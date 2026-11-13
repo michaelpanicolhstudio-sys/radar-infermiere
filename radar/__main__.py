@@ -53,17 +53,31 @@ def main() -> int:
             return 0
 
     print(f"Radar Infermiere P.IVA – giro del {oggi:%d/%m/%Y}")
-    report = motore.giro(cfg, Rete(cfg["rete"]), oggi)
+    try:
+        risposte_nuove, avvisi = uscite.aggiorna_posta(cfg, oggi)
+    except Exception as e:  # la posta non deve far fallire il giro
+        print(f"⚠ Posta non letta: {type(e).__name__}: {e}", file=sys.stderr)
+        risposte_nuove, avvisi = [], {}
+    report = motore.giro(cfg, Rete(cfg["rete"]), oggi, avvisi=avvisi)
     if args.pianificato:
         FILE_ULTIMO.write_text(oggi.isoformat() + "\n")
-    uscite.costruisci_sito(cfg, oggi)
+    dest = uscite.costruisci_sito(cfg, oggi)
+    memoria = motore.leggi_json(motore.FILE_ANNUNCI, {})
+    contatti = motore.leggi_json(uscite.FILE_CONTATTI, {})
+    report["risposte_nuove"] = risposte_nuove
+    report["da_contattare"] = [{"id": a["id"], "titolo": a["titolo"], "datore": a.get("datore")}
+                               for a in uscite.scegli_da_contattare(memoria, contatti, cfg, oggi)]
+    allegati = []
+    for r in risposte_nuove:
+        sid = r["chiave"].split(":")[-1]
+        allegati += [f for f in (dest / "report" / f"{sid}.xlsx", dest / "ics" / f"incontro-{sid}.ics") if f.exists() and f not in allegati]
 
     url_app = os.environ.get("APP_URL", "").strip() or (cfg.get("app_url") or "").strip() or None
     oggetto, testo, pagina = uscite.componi_email(report, url_app)
     print("\n" + "=" * 60 + f"\n{oggetto}\n" + "=" * 60 + f"\n{testo}\n")
     if not args.senza_email:
         try:
-            uscite.invia_email(oggetto, testo, pagina)
+            uscite.invia_email(oggetto, testo, pagina, allegati=allegati)
         except Exception as e:  # l'email non deve far fallire il giro: i dati sono già salvati
             print(f"⚠ Email non inviata: {type(e).__name__}: {e}", file=sys.stderr)
     _segnala_a_github(True)

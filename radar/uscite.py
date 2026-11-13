@@ -11,9 +11,13 @@ from email.message import EmailMessage
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from . import estrai, motore
+import csv
+
+from . import conti, estrai, motore, posta
 
 RADICE = motore.RADICE
+FILE_CONTATTI = RADICE / "data" / "contatti.json"
+FILE_STRUTTURE = RADICE / "data" / "strutture.csv"
 ROMA = ZoneInfo("Europe/Rome")
 GIORNI = ["lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato", "domenica"]
 MESI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto",
@@ -91,7 +95,8 @@ def componi_email(report: dict, url_app: str | None) -> tuple[str, str, str]:
     n, s, p = len(nuovi), len(report["scadenze7"]), len(report["problemi"])
     stato = f"{_conta(report['attivi'], 'offerta attiva', 'offerte attive')}, {report['fonti_lette']} fonti lette su {report['fonti_totali']}"
 
-    if not (n or s or p or aggiornati):
+    risposte, proposte = report.get("risposte_nuove") or [], report.get("da_contattare") or []
+    if not (n or s or p or aggiornati or risposte):
         oggetto = f"Radar {breve}: niente di nuovo"
         riga = f"Niente di nuovo oggi. {stato[0].upper() + stato[1:]}."
         if url_app:
@@ -99,6 +104,8 @@ def componi_email(report: dict, url_app: str | None) -> tuple[str, str, str]:
         return oggetto, riga, f"<p style=\"font:15px/1.5 -apple-system,'Segoe UI',Arial,sans-serif;color:#18222B\">{html.escape(riga)}</p>"
 
     parti = []
+    if risposte:
+        parti.append(_conta(len(risposte), "risposta arrivata", "risposte arrivate"))
     if n:
         parti.append(_conta(n, "novità", "novità") + (f" ({len(nuovi_piva)} in libera professione)" if nuovi_piva else ""))
     if aggiornati:
@@ -134,6 +141,25 @@ def componi_email(report: dict, url_app: str | None) -> tuple[str, str, str]:
     if url_app:
         corpo.append(f"<p style='margin:0 0 22px'><a href='{_sicuro(url_app)}' style='display:inline-block;background:#2F47C2;"
                      "color:#ffffff;font-weight:600;font-size:15px;text-decoration:none;padding:11px 20px;border-radius:10px'>Apri l'app</a></p>")
+    if risposte:
+        testo += ["", "RISPOSTE ARRIVATE"]
+        corpo.append("<h2 style='margin:22px 0 12px;padding-top:14px;border-top:1px solid #DCE2E7;font-size:16px;font-weight:700'>Risposte arrivate</h2>")
+        for r in risposte:
+            fatti = [x for x in [r.get("compenso"), r.get("turni"),
+                                 ("incontro proposto il " + _giorno(r["incontro"]["data"]) + (" alle " + r["incontro"]["ora"] if r["incontro"].get("ora") else "")) if r.get("incontro") else None] if x]
+            riga = f"{r.get('nome') or r.get('da')}: " + (", ".join(fatti) if fatti else "leggi la risposta nell'app")
+            testo.append("- " + riga)
+            corpo.append(f"<p style='margin:0 0 10px;font-size:14px'><b>{html.escape(r.get('nome') or r.get('da') or '')}</b><br>"
+                         f"<span style='color:#5B6873'>{html.escape(', '.join(fatti) if fatti else 'Leggi la risposta nella scheda dell’app')}</span></p>")
+        nota_allegati = "In allegato: il foglio Excel costi-benefici" + (" e l'invito da aggiungere al calendario." if any(r.get("incontro") for r in risposte) else ".")
+        testo.append(nota_allegati)
+        corpo.append(f"<p style='margin:0 0 6px;font-size:13px;color:#5B6873'>{nota_allegati}</p>")
+    if proposte:
+        riga = f"Da contattare oggi: {_conta(len(proposte), 'email pronta', 'email pronte')} nell'app (le invii tu con un tocco)."
+        testo += ["", riga] + [f"- {r.get('datore') or r['titolo']}" for r in proposte]
+        corpo.append(f"<h2 style='margin:22px 0 8px;padding-top:14px;border-top:1px solid #DCE2E7;font-size:16px;font-weight:700'>Da contattare oggi</h2>"
+                     f"<p style='margin:0 0 8px;font-size:14px;color:#5B6873'>{html.escape(riga)}</p>"
+                     + "".join(f"<p style='margin:0 0 4px;font-size:14px'>{html.escape(r.get('datore') or r['titolo'])}</p>" for r in proposte))
     for nome, righe, con_cambi in sezioni:
         testo += ["", nome.upper()]
         corpo.append(f"<h2 style='margin:22px 0 12px;padding-top:14px;border-top:1px solid #DCE2E7;font-size:16px;font-weight:700'>{html.escape(nome)}</h2>")
@@ -152,7 +178,7 @@ def componi_email(report: dict, url_app: str | None) -> tuple[str, str, str]:
     return oggetto, "\n".join(testo), pagina
 
 
-def invia_email(oggetto: str, testo: str, pagina: str, registra=print) -> bool:
+def invia_email(oggetto: str, testo: str, pagina: str, registra=print, allegati: list[Path] | None = None) -> bool:
     """Invia con Gmail. Servono i segreti GMAIL_USER e GMAIL_APP_PASSWORD (EMAIL_TO è facoltativo)."""
     utente = os.environ.get("GMAIL_USER", "").strip()
     chiave = os.environ.get("GMAIL_APP_PASSWORD", "").replace(" ", "")
@@ -166,6 +192,9 @@ def invia_email(oggetto: str, testo: str, pagina: str, registra=print) -> bool:
     msg["To"] = destinatario
     msg.set_content(testo)
     msg.add_alternative(pagina, subtype="html")
+    for file in allegati or []:
+        tipo = ("text", "calendar") if file.suffix == ".ics" else ("application", "vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+        msg.add_attachment(file.read_bytes(), maintype=tipo[0], subtype=tipo[1], filename=file.name)
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=30) as smtp:
         smtp.login(utente, chiave)
         smtp.send_message(msg)
@@ -214,6 +243,105 @@ def evento_ics(a: dict, adesso: datetime) -> str:
     return "\r\n".join(_ics_piega(r) for r in righe) + "\r\n"
 
 
+def incontro_ics(nome: str, incontro: dict, uid: str, adesso: datetime) -> str:
+    giorno = date.fromisoformat(incontro["data"])
+    if incontro.get("ora"):
+        h, m = (int(x) for x in incontro["ora"].split(":"))
+        inizio = datetime(giorno.year, giorno.month, giorno.day, h, m)
+        quando = [f"DTSTART;TZID=Europe/Rome:{inizio:%Y%m%dT%H%M%S}", f"DTEND;TZID=Europe/Rome:{inizio + timedelta(hours=1):%Y%m%dT%H%M%S}"]
+    else:
+        quando = [f"DTSTART;VALUE=DATE:{giorno:%Y%m%d}", f"DTEND;VALUE=DATE:{giorno + timedelta(days=1):%Y%m%d}"]
+    righe = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Radar Infermiere//IT", "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
+             "BEGIN:VEVENT", f"UID:incontro-{uid}@radar-infermiere", f"DTSTAMP:{adesso.astimezone(timezone.utc):%Y%m%dT%H%M%SZ}",
+             *quando, f"SUMMARY:{_ics_testo('Incontro: ' + nome)}",
+             f"DESCRIPTION:{_ics_testo('Dalla risposta: ' + (incontro.get('frase') or '') + ' (data letta in automatico: controllala)')}",
+             "BEGIN:VALARM", "TRIGGER:-P1D", "ACTION:DISPLAY", "DESCRIPTION:Incontro domani", "END:VALARM",
+             "END:VEVENT", "END:VCALENDAR"]
+    return "\r\n".join(_ics_piega(r) for r in righe) + "\r\n"
+
+
+# --------------------------------------------------------------------------
+# Contatti: strutture sempreverdi, proposte del giorno, risposte
+# --------------------------------------------------------------------------
+
+def leggi_strutture(comuni: list[dict]) -> list[dict]:
+    if not FILE_STRUTTURE.exists():
+        return []
+    strutture = []
+    with FILE_STRUTTURE.open(encoding="utf-8", newline="") as f:
+        for r in csv.DictReader(f):
+            if not (r.get("nome") or "").strip():
+                continue
+            sid = estrai.id_annuncio("struttura:" + r["nome"].strip())
+            c = next((c for c in comuni if c["nome"] == (r.get("comune") or "").strip()), None)
+            strutture.append({"id": sid, "chiave": "s:" + sid, "rif": posta.rif(sid),
+                              **{k: (r.get(k) or "").strip() or None for k in ("nome", "tipo", "comune", "email", "pec", "sito", "note")},
+                              "km": c["km"] if c else None, "minuti": c["minuti"] if c else None})
+    return sorted(strutture, key=lambda x: (x["minuti"] is None, x["minuti"] or 0))
+
+
+def chiavi_rif(memoria: dict, strutture: list[dict]) -> dict[str, str]:
+    chiavi = {posta.rif(i).lower().replace("r-", "R-"): i for i in memoria}
+    chiavi.update({s["rif"]: s["chiave"] for s in strutture})
+    return chiavi
+
+
+def scegli_da_contattare(memoria: dict, contatti: dict, cfg: dict, oggi: date) -> list[dict]:
+    """Le offerte migliori a cui non si è ancora scritto. Mai due volte la stessa offerta o lo stesso indirizzo."""
+    regole = cfg.get("contatti") or {}
+    gia_scritti = {x for c in contatti.values() if c.get("inviata_il") for x in c.get("a", [])}
+    scelte, indirizzi = [], set()
+    for a in sorted(memoria.values(), key=lambda a: -a.get("punteggio", 0)):
+        indirizzo = (a.get("email") or a.get("pec") or "").lower()
+        if not indirizzo or indirizzo in gia_scritti or indirizzo in indirizzi or contatti.get(a["id"], {}).get("inviata_il"):
+            continue
+        if not motore.aperto(a, oggi, cfg) or a.get("sparito_dal"):
+            continue
+        if regole.get("solo_piva_o_private", True) and (a.get("contratto") or "").startswith("Concorso"):
+            continue
+        indirizzi.add(indirizzo)
+        scelte.append(a)
+        if len(scelte) >= int(regole.get("al_giorno", 5)):
+            break
+    return scelte
+
+
+def aggiorna_posta(cfg: dict, oggi: date, registra=print) -> tuple[list[dict], dict]:
+    """Legge posta inviata e risposte. Ritorna (risposte nuove con il nome, avvisi dei portali)."""
+    if not (cfg.get("posta") or {}).get("leggi", True) or not posta.conti_di_posta():
+        return [], {}
+    comuni = estrai.carica_comuni(RADICE / "data" / "comuni.csv")
+    memoria = motore.leggi_json(motore.FILE_ANNUNCI, {})
+    strutture = leggi_strutture(comuni)
+    contatti = motore.leggi_json(FILE_CONTATTI, {})
+    note = []
+
+    def annota(riga):
+        note.append(riga)
+        registra(riga)
+    registra, registra_fuori = annota, registra
+    nuove = posta.aggiorna_contatti(contatti, chiavi_rif(memoria, strutture), oggi, registra)
+    motore.scrivi_json(FILE_CONTATTI, contatti)
+    nomi = {s["chiave"]: s["nome"] for s in strutture}
+    for r in nuove:
+        a = memoria.get(r["chiave"])
+        r["nome"] = (a.get("datore") or a.get("titolo")) if a else nomi.get(r["chiave"], r["da"])
+    registra(f"• Posta: {sum(1 for c in contatti.values() if c.get('inviata_il'))} contatti inviati, {len(nuove)} risposte nuove")
+    avvisi = posta.avvisi_portali(cfg, oggi, registra)
+    for nome, candidati in avvisi.items():
+        registra(f"• Avvisi di {nome}: {len(candidati)} annunci per infermieri nelle email degli ultimi giorni")
+    motore.scrivi_json(RADICE / "data" / "posta_stato.json", {"data": oggi.isoformat(), "note": note})
+    return nuove, avvisi
+
+
+def _contatto_per_app(c: dict | None) -> dict | None:
+    if not c or not c.get("inviata_il"):
+        return None
+    return {"inviata_il": c["inviata_il"], "via": c.get("via"),
+            "risposte": [{k: r.get(k) for k in ("data", "da", "oggetto", "compenso", "turni", "incontro")} | {"testo": (r.get("testo") or "")[:1500]}
+                         for r in c.get("risposte", [])]}
+
+
 # --------------------------------------------------------------------------
 # Web app
 # --------------------------------------------------------------------------
@@ -232,6 +360,12 @@ def costruisci_sito(cfg: dict, oggi: date, destinazione: Path | None = None) -> 
     adesso = datetime.now(ROMA)
 
     memoria = motore.leggi_json(motore.FILE_ANNUNCI, {})
+    comuni_tutti = estrai.carica_comuni(RADICE / "data" / "comuni.csv")
+    contatti = motore.leggi_json(FILE_CONTATTI, {})
+    strutture = leggi_strutture(comuni_tutti)
+    parametri = conti.parametri(cfg)
+    proposte = {a["id"] for a in scegli_da_contattare(memoria, contatti, cfg, oggi)}
+    incontri = []
     offerte = []
     (dest / "ics").mkdir(exist_ok=True)
     for a in memoria.values():
@@ -249,8 +383,34 @@ def costruisci_sito(cfg: dict, oggi: date, destinazione: Path | None = None) -> 
         o["calendario"] = bool(a.get("scadenza")) and not o["scaduto"]
         if o["calendario"]:
             (dest / "ics" / f"{a['id']}.ics").write_text(evento_ics(a, adesso), encoding="utf-8", newline="")
+        o["rif"] = posta.rif(a["id"])
+        o["contatto"] = _contatto_per_app(contatti.get(a["id"]))
+        o["da_contattare"] = a["id"] in proposte
+        o["conti"] = conti.conto_offerta(a, parametri) if (o["piva"] or o["contatto"]) else None
+        risposte = (contatti.get(a["id"]) or {}).get("risposte", [])
+        tariffa = next((r["euro_ora"] for r in reversed(risposte) if r.get("euro_ora")), None)
+        if tariffa and not a.get("euro_ora"):
+            o["conti"] = conti.conto_offerta({**a, "euro_ora": tariffa}, parametri)
+        if o["conti"] and not o["scaduto"]:
+            try:
+                conti.scrivi_excel({**a, "euro_ora": a.get("euro_ora") or tariffa}, parametri, dest / "report" / f"{a['id']}.xlsx", risposte)
+                o["excel"] = f"report/{a['id']}.xlsx"
+            except Exception as e:  # il foglio non deve bloccare l'app
+                print(f"⚠ Excel non creato per {a['id']}: {type(e).__name__}: {e}")
+        for r in risposte:
+            if r.get("incontro") and r["incontro"]["data"] >= oggi.isoformat():
+                nome = a.get("datore") or a["titolo"]
+                (dest / "ics" / f"incontro-{a['id']}.ics").write_text(incontro_ics(nome, r["incontro"], a["id"], adesso), encoding="utf-8", newline="")
+                incontri.append({"id": a["id"], "nome": nome, **r["incontro"], "ics": f"ics/incontro-{a['id']}.ics"})
         offerte.append(o)
     offerte.sort(key=lambda o: -o["punteggio"])
+    for s in strutture:
+        c = contatti.get(s["chiave"])
+        s["contatto"] = _contatto_per_app(c)
+        for r in (c or {}).get("risposte", []):
+            if r.get("incontro") and r["incontro"]["data"] >= oggi.isoformat():
+                (dest / "ics" / f"incontro-{s['id']}.ics").write_text(incontro_ics(s["nome"], r["incontro"], s["id"], adesso), encoding="utf-8", newline="")
+                incontri.append({"id": None, "nome": s["nome"], **r["incontro"], "ics": f"ics/incontro-{s['id']}.ics"})
 
     report = []
     for f in sorted(motore.CARTELLA_REPORT.glob("*.json"), reverse=True)[:60]:
@@ -262,7 +422,9 @@ def costruisci_sito(cfg: dict, oggi: date, destinazione: Path | None = None) -> 
             "oggi": oggi.isoformat(), "oggi_lungo": data_lunga(oggi),
             "casa": cfg.get("profilo", {}).get("casa", "Mezzolombardo"),
             "email_contatto": cfg.get("email_contatto") or {},
-            "offerte": offerte, "report": report, "comuni": comuni}
+            "offerte": offerte, "report": report, "comuni": comuni,
+            "strutture": strutture, "incontri": sorted(incontri, key=lambda x: x["data"]),
+            "conti": {**parametri, "quota_netta": round(conti.quota_netta(parametri), 5)}}
     (dest / "dati.json").write_text(json.dumps(dati, ensure_ascii=False), encoding="utf-8")
 
     # Ogni pubblicazione ha una versione nuova: così il telefono scarica i file aggiornati.
