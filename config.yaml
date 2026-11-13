@@ -73,7 +73,7 @@ fonti:
     affidabilita: ufficiale
     datore: ASDAA / SABES
     zona: Bolzano
-    attiva: true
+    attiva: false   # 13/11/2026: pagina caricata in modo dinamico, non leggibile. Scadenze graduatorie: 31/01, 31/05, 30/09
 
   - nome: SABES – graduatoria infermieri Merano
     tipo: pagina
@@ -81,7 +81,7 @@ fonti:
     affidabilita: ufficiale
     datore: ASDAA / SABES
     zona: Merano
-    attiva: true
+    attiva: false   # 13/11/2026: pagina caricata in modo dinamico, non leggibile. Scadenze graduatorie: 31/01, 31/05, 30/09
 
   - nome: SABES – graduatoria infermieri Brunico
     tipo: pagina
