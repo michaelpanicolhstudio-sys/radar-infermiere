@@ -3,9 +3,11 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import xml.etree.ElementTree as ET
 from datetime import date, timedelta
 from pathlib import Path
+from urllib.parse import unquote, urlparse
 
 from . import estrai, punteggio
 
@@ -18,6 +20,7 @@ CARTELLA_REPORT = RADICE / "data" / "report"
 CAMPI_CONFRONTO = ["titolo", "contratto", "compenso", "scadenza", "turni"]
 NOMI_CAMPI = {"titolo": "titolo", "contratto": "contratto", "compenso": "compenso",
               "scadenza": "scadenza", "turni": "ore e turni"}
+AVVISO_BANDO_COMUNE = "Stesso bando anche per: "
 # Si aumenta quando cambiano le regole di pertinenza: le pagine già scartate vengono riaperte una volta.
 VERSIONE_REGOLE = 5
 VERSIONE_PDF = 3      # cambia quando migliorano le regole: i PDF già letti vengono riletti
@@ -474,6 +477,8 @@ def segna_doppioni(memoria: dict, oggi: date) -> None:
     """Lo stesso annuncio visto su due siti, o ripubblicato: ne resta uno (a mano, poi il più recente)."""
     for a in memoria.values():
         a.pop("doppione_di", None)
+        if a.get("avvisi"):
+            a["avvisi"] = [x for x in a["avvisi"] if not x.startswith(AVVISO_BANDO_COMUNE)]
 
     def preferenza(a: dict):
         return (a.get("origine") != "manuale", -(date.fromisoformat(a["pubblicato"]).toordinal() if a.get("pubblicato") else 0),
@@ -486,9 +491,39 @@ def segna_doppioni(memoria: dict, oggi: date) -> None:
                 for altro in gruppo[1:]:
                     altro["doppione_di"] = gruppo[0]["id"]
 
-    # 1) Stesso bando: stessa zona, stessa scadenza, stesso tipo di rapporto.
+    # 0) Il PDF di un bando letto anche come annuncio a sé: resta la pagina che lo allega.
+    allegati = {}
+    for a in memoria.values():
+        for pdf in a.get("pdf_letti") or []:
+            if pdf != a.get("url"):
+                allegati.setdefault(estrai.normalizza_url(pdf), a)
+    for a in memoria.values():
+        pagina = allegati.get(estrai.normalizza_url(a.get("url") or ""))
+        # Se la pagina risulta scaduta e il PDF no, la pagina è stata letta male: non si nasconde il PDF.
+        if pagina is not None and pagina is not a and not (e_scaduto(pagina, oggi) and not e_scaduto(a, oggi)):
+            a["doppione_di"] = pagina["id"]
+    # 0 bis) Un bando comune a più strutture, pubblicato da ognuna con lo stesso PDF
+    #    (sul sito diventa «bando.pdf», «bando_0.pdf», «bando_1.pdf») e la stessa scadenza.
     gruppi: dict[tuple, list[dict]] = {}
     for a in memoria.values():
+        if a.get("doppione_di") or not a.get("scadenza") or not a.get("pdf_letti"):
+            continue
+        p = urlparse(a["pdf_letti"][0])
+        nome = re.sub(r"_\d+$", "", unquote(p.path).rsplit("/", 1)[-1].lower().removesuffix(".pdf"))
+        if len(nome) >= 12:
+            gruppi.setdefault((p.netloc.lower(), nome, a["scadenza"], e_piva(a)), []).append(a)
+    for gruppo in gruppi.values():
+        if len(gruppo) > 1:
+            gruppo.sort(key=preferenza)
+            altri = [f"{x.get('datore') or 'n.d.'} ({x.get('zona') or 'n.d.'})" for x in gruppo[1:]]
+            gruppo[0].setdefault("avvisi", []).append(AVVISO_BANDO_COMUNE + ", ".join(altri))
+            for altro in gruppo[1:]:
+                altro["doppione_di"] = gruppo[0]["id"]
+    # 1) Stesso bando: stessa zona, stessa scadenza, stesso tipo di rapporto.
+    gruppi = {}
+    for a in memoria.values():
+        if a.get("doppione_di"):
+            continue
         if a.get("scadenza") and a.get("zona") and not e_scaduto(a, oggi):
             gruppi.setdefault((a["zona"], a["scadenza"], e_piva(a)), []).append(a)
     risolvi(gruppi)

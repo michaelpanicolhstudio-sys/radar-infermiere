@@ -249,6 +249,27 @@ m2 = {"a": {"id": "a", "titolo": "Concorso per infermieri", "datore": "APSP Vann
 motore.segna_doppioni(m2, OGGI)
 verifica("doppioni: stesso bando su due siti e annuncio ripubblicato", [m2[k].get("doppione_di") for k in "abcde"], [None, "a", None, "e", None])
 
+# Il PDF di un bando letto anche come annuncio a sé (ASUIT Cavalese) e un bando comune a più case (Eggental, VdS).
+PDF_C = "https://www.asuit.tn.it/files/SC%2003%2026%20AVVISO%20APERTO%20INFERMIERE.pdf"
+m3 = {"p": {"id": "p", "titolo": "Selezione pubblica Cavalese", "url": "https://www.asuit.tn.it/bandi-concorsi/selezione", "zona": "Cavalese", "scadenza": "2026-12-31", "pdf_letti": [PDF_C], "punteggio": 32, "primo_visto": "2026-11-13"},
+      "f": {"id": "f", "titolo": "SC 03/26 AVVISO APERTO", "url": PDF_C, "zona": "Cavalese", "scadenza": None, "pdf_letti": [PDF_C], "punteggio": 32, "primo_visto": "2026-11-13"},
+      "c": {"id": "c", "titolo": "Infermiere/a", "datore": "Claraheim", "zona": "Cornedo all'Isarco", "scadenza": "2026-11-30", "punteggio": 37, "primo_visto": "2026-11-13", "avvisi": [],
+            "pdf_letti": ["https://www.vds-suedtirol.it/files/job-documents/20261104_kundmachung_berufskrankenpfleger_0.pdf"]},
+      "l": {"id": "l", "titolo": "Infermiere/a", "datore": "Leoheim", "zona": "Nova Levante", "scadenza": "2026-11-30", "punteggio": 30, "primo_visto": "2026-11-13",
+            "pdf_letti": ["https://www.vds-suedtirol.it/files/job-documents/20261104_kundmachung_berufskrankenpfleger_1.pdf"]},
+      "s": {"id": "s", "titolo": "Infermiere/a", "datore": "Peter Paul Schrott", "zona": "Nova Ponente", "scadenza": "2026-11-30", "punteggio": 30, "primo_visto": "2026-11-13",
+            "pdf_letti": ["https://www.vds-suedtirol.it/files/job-documents/20261104_kundmachung_berufskrankenpfleger.pdf"]},
+      "x": {"id": "x", "titolo": "Infermiere/a", "datore": "Altra casa", "zona": "Lana", "scadenza": "2026-11-20", "punteggio": 30, "primo_visto": "2026-11-13",
+            "pdf_letti": ["https://www.vds-suedtirol.it/files/job-documents/20261104_kundmachung_berufskrankenpfleger_2.pdf"]}}
+motore.segna_doppioni(m3, OGGI)
+verifica("doppioni: il PDF già allegato a una pagina non è un annuncio a parte", m3["f"].get("doppione_di"), "p")
+verifica("doppioni: bando comune a più case con lo stesso PDF e la stessa scadenza", [m3[k].get("doppione_di") for k in "clsx"], [None, "c", "c", None])
+motore.segna_doppioni(m3, OGGI)
+verifica("doppioni: le altre case restano scritte (una volta sola)", m3["c"]["avvisi"], ["Stesso bando anche per: Leoheim (Nova Levante), Peter Paul Schrott (Nova Ponente)"])
+m3["p"]["scadenza"] = "2026-10-22"
+motore.segna_doppioni(m3, OGGI)
+verifica("doppioni: una pagina scaduta non nasconde il PDF ancora aperto", m3["f"].get("doppione_di"), None)
+
 # Dati letti a mano: una lettura automatica peggiore non li sovrascrive, ma una proroga sì.
 manuale = {"id": estrai.id_annuncio("https://ente.it/casa-cura-eremo/"), "url": "https://ente.it/casa-cura-eremo/", "titolo": "Personale infermieristico (CCNL AIOP)",
            "datore": "Casa di Cura Eremo", "contratto": "Dipendente a tempo indeterminato", "compenso": None, "euro_ora": None, "turni": "turni da 12 h",
