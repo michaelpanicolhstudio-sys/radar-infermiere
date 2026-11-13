@@ -407,8 +407,13 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str], 
             nuovi.append(a)
             continue
         cambi = []
+        # Se sono cambiate le regole di lettura, le differenze vengono dal Radar, non dall'annuncio:
+        # non sono novità per Michael. Fa eccezione la scadenza (una proroga non va persa).
+        regole_cambiate = vecchio.get("regole") != a.get("regole")
         if vecchio.get("impronta") != a["impronta"]:
             for campo in CAMPI_CONFRONTO:
+                if regole_cambiate and campo != "scadenza":
+                    continue
                 if vecchio.get(campo) != a.get(campo):
                     cambi.append(f"{NOMI_CAMPI[campo]}: {vecchio.get(campo) or 'n.d.'} → {a.get(campo) or 'n.d.'}")
         a["primo_visto"] = vecchio.get("primo_visto", oggi_s)

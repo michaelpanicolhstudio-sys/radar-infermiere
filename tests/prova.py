@@ -309,6 +309,14 @@ verifica("VdS: titolo leggibile dall'indirizzo (graduatoria con altri profili)",
          "Infermiere/a – graduatoria, a tempo determinato (con altri profili)")
 verifica("VdS: titolo senza dettagli", estrai.titolo_leggibile("Berufskrankenpflegerin berufsbild nr 64 der viiter funktionsebeneinfermierea"), "Infermiere/a")
 verifica("VdS: altri ruoli restano come sono", estrai.titolo_leggibile("Befristete anstellung als sozialbetreuerin"), "Befristete anstellung als sozialbetreuerin")
+# 13/11: cambiate le regole, 8 annunci risultavano «aggiornati» solo per il titolo riscritto dal Radar.
+vecchio = {"id": "v1", "titolo": "Altenheim X", "regole": motore.VERSIONE_REGOLE - 1, "impronta": "a", "scadenza": "2026-11-20",
+           "novita": "nuovo", "data_novita": "2026-11-12", "primo_visto": "2026-11-12", "punteggio": 30}
+nuovo = dict(vecchio, titolo="Infermiere/a", regole=motore.VERSIONE_REGOLE, impronta="b")
+esito_m = motore.aggiorna_memoria({"v1": dict(vecchio)}, [dict(nuovo)], set(), set(), set(), OGGI, CFG)
+verifica("regole cambiate: il titolo riscritto non è una novità", len(esito_m["aggiornati"]), 0)
+esito_m = motore.aggiorna_memoria({"v1": dict(vecchio)}, [dict(nuovo, scadenza="2026-11-30")], set(), set(), set(), OGGI, CFG)
+verifica("regole cambiate: una proroga resta una novità", [x["cambi"] for x in esito_m["aggiornati"]], [["scadenza: 2026-11-20 → 2026-11-30"]])
 
 print("Conti, posta e contatti")
 from radar import conti, posta
