@@ -37,7 +37,7 @@ e aggiornato **alla fine** di ogni revisione: cosa si è sbagliato, come lo si �
 - Bacheca VdS, Lorenzerhof (swh/475): chiarito in parte. Il testo è lo stesso bando di St. Pankraz (stessi profili, «18, 20 e 22 ore», stessa scadenza 20/11), quindi è giusto che sia un doppione di St. Pankraz. Resta da capire perché lo pubblichi il Lorenzerhof (forse gestione comune).
 - OPI Trento, PDF mancanti: dal cloud le pagine opi.tn.it non si aprono (proxy 403, anche con WebFetch): serve un giro vero con la diagnostica `senza_pdf` più ricca, o un controllo a mano di Michael su dove sta l'allegato (link esterno? visualizzatore?).
 - Bacheca VdS: la pagina in italiano (`/it/jobs`) ha titoli veri in italiano («cercasi-infermierea-professionale»): si potrebbe leggere quella al posto di `/de/jobs`.
-- Dopo il giro di prova del 13/11 (regole 5): controllare che Cavalese abbia scadenza 31/12 e che le tre case Eggental siano una voce sola.
+- Giro di prova del 13/11 (regole 5): le tre case Eggental ora sono una voce sola (verificato). ASUIT Cavalese: la pagina ora dà 26/10 («candidature che perverranno entro lunedì 26 ottobre»: è una data di valutazione periodica di un avviso aperto, non la chiusura); il PDF con chiusura 31/12 resta visibile come voce a parte. Da sistemare: negli «avvisi aperti» con valutazioni periodiche la scadenza è quella finale del PDF.
 - Melittaklinik («Lavora con noi») e Brixsana («Auch im Job: in besten Händen»): titoli poco chiari dalle pagine fisse; si può aggiungere `titolo:` in `config.yaml` come per Vinzenzhaus.
 - Claraheim risulta a Cornedo all'Isarco (Collepietra/Steinegg è frazione di Cornedo: probabilmente giusto, da confermare).
 - Ancora non provati dal vero: lettura delle risposte, Excel allegato, invito all'incontro.
