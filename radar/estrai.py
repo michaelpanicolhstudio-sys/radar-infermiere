@@ -116,7 +116,7 @@ _RE_PDF_INUTILE = re.compile(
     r"regolamento|tariff|menu|bilancio", re.I)
 _RE_PDF_UTILE = re.compile(r"avviso|bando|selezion|incaric|ricerca|concorso|prorog|ausschreibung|stellen|annuncio", re.I)
 _RE_ETICHETTA_VUOTA = re.compile(r"^(?:scarica(?:\s+il)?(?:\s+pdf)?|download|apri|visualizza|pdf|clicca\s+qui|leggi|allegato|file)?\W*$", re.I)
-_RE_CONTORNO = re.compile(r"sidebar|widget|menu|footer|cookie|breadcrumb|navbar|related|correlat", re.I)
+_RE_CONTORNO = re.compile(r"sidebar|^widget|footer|cookie|breadcrumb|navbar|^menu|-menu$|related|correlat", re.I)
 _ATTRIBUTI_LINK = ("href", "src", "data", "data-src", "data-pdf", "data-pdf-url", "data-file", "data-url")
 
 _POSTA_PRIVATA = re.compile(
@@ -195,8 +195,12 @@ def _nel_contorno(tag) -> bool:
     for su in tag.parents:
         if su.name in ("nav", "header", "footer", "aside"):
             return True
-        if _RE_CONTORNO.search(" ".join(su.get("class") or []) + " " + (su.get("id") or "")):
+        if su.get("data-elementor-type") in ("header", "footer"):
             return True
+        for nome in list(su.get("class") or []) + [su.get("id") or ""]:
+            # Elementor chiama "widget" ogni blocco del contenuto: quei nomi non contano.
+            if nome and not nome.lower().startswith("elementor") and _RE_CONTORNO.search(nome):
+                return True
     return False
 
 
@@ -468,6 +472,20 @@ def _con_provincia(nome: str, testo: str) -> bool:
     return bool(re.search(schema, testo))
 
 
+_CAPOLUOGHI = {"Bolzano", "Bozen", "Trento", "Trient"}
+_RE_ENTE_PROVINCIALE = re.compile(r"(?:provinc\w*|provinz|tribunal\w*|\w*gericht|\btar|trga|regione|region|bollettino|"
+                                  r"amtsblatt|agenzia|universit\w*|autonom\w*)\W+(?:\w+\W+){0,2}$", re.I)
+
+
+def _citazioni(nome: str, testo: str) -> int:
+    """Quante volte il testo nomina il comune come luogo (non come provincia, tribunale, ente…)."""
+    dove = _occorrenze(nome, testo)
+    if nome not in _CAPOLUOGHI:
+        return len(dove)
+    return sum(1 for p in dove if not _RE_ENTE_PROVINCIALE.search(testo[max(0, p - 45): p])
+               and not re.match(r"\w+\s*[-–]\s*(?:S[üu]dtirol|Alto Adige)", testo[p: p + 40]))
+
+
 def trova_comune(titolo: str, testo: str, comuni: list[dict]) -> dict | None:
     """Comune dell'annuncio: prima quello nel titolo, poi il più citato nel testo."""
     tutto = f"{titolo} {testo}"
@@ -495,7 +513,7 @@ def trova_comune(titolo: str, testo: str, comuni: list[dict]) -> dict | None:
             if nome in _NOMI_STRETTI:
                 voti += 2 if _con_provincia(nome, testo) else 0
                 continue
-            k = len(_occorrenze(nome, testo))
+            k = _citazioni(nome, testo)
             if nome in _NOMI_AMBIGUI and k < 2 and not _con_provincia(nome, testo):
                 k = 0
             voti += k
@@ -562,6 +580,9 @@ _IMPORTO = r"(?:" + _EURO + r"\s*\d[\d.]*(?:,\d{1,2})?|\d[\d.]*(?:,\d{1,2})?\s*"
 RE_EURO_TURNO = re.compile(_IMPORTO + r"\s*" + _AGG + r"(?:a|per|al|pro)\s+(?:turno|notte|accesso|prestazione|giornata|schicht|nacht)", re.I)
 RE_EURO_MESE = re.compile(
     _IMPORTO + r"\s*" + _AGG + r"(?:al\s+mese|mensil\w*|/\s*mese|monatlich|l['’]anno|annu\w+|/\s*anno|all['’]anno)", re.I)
+
+RE_STIPENDIO_ANNUO = re.compile(r"stipendio\s+(?:(?:tabellare|base|annuo|iniziale)\s+){1,3}(?:di\s+|pari\s+a\s+)?:?\s*"
+                                + _EURO + r"\s*(\d{2,3}\.\d{3}(?:,\d{2})?)", re.I)
 
 RE_SCADENZA_FORTE = re.compile(
     r"scadenz\w*|scade\b|termine\s+(?:di\s+)?(?:presentazione|ultimo|perentorio)|pervenire\s+entro|"
@@ -643,6 +664,9 @@ def estrai_compenso(testo: str) -> tuple[str | None, float | None]:
         m = rx.search(testo)
         if m:
             return pulisci(m.group(0))[:60], None
+    m = RE_STIPENDIO_ANNUO.search(testo)
+    if m:
+        return f"stipendio base {m.group(1)} € l'anno, più indennità", None
     return None, None
 
 
@@ -690,7 +714,7 @@ def estrai_scadenza(testo: str, oggi: date) -> date | None:
 
 def estrai_turni(testo: str) -> tuple[str | None, dict]:
     etichette, segnali = [], {}
-    m = re.search(r"(\d{1,2})\s*(?:h|ore|stunden)\s*(?:/|a|alla|pro|per)?\s*(?:settiman|woche)", testo, re.I)
+    m = re.search(r"(?<![\d.,])(\d{1,2})(?:[.,]\d)?\s*(?:(?:h|ore|stunden)\s*(?:/|a|alla|pro|per)?\s*(?:settiman|woche)|wochenstunden)", testo, re.I)
     if m and 4 <= int(m.group(1)) <= 48:
         ore = int(m.group(1))
         etichette.append(f"{ore} h/settimana")
@@ -729,7 +753,8 @@ _ALIAS_DATORE = [
 _RE_ENTE_TESTO = (r"(?:A\.?\s?P\.?\s?S\.?\s?P\.?|RSA|Casa di (?:Cura|riposo)|(?:Società )?Cooperativa(?: Sociale)?|Fondazione|"
                   r"Seniorenwohnheim|Stiftung|Sozialgenossenschaft|Clinica|Altenheim|Altersheim|Pflegeheim|Wohn- und Pflegeheim)")
 _RE_FINE_NOME = re.compile(r"\s+(?:via|viale|piazza|corso|tel|con sede|è|sono|ha|in|per|che|ist|sucht|cerca|ricerca|"
-                           r"azienda pubblica|und|wir|unser\w*|la nostra|il nostro)\b.*$|\s*\d.*$|\.\s.*$", re.I)
+                           r"azienda pubblica|und|wir|unser\w*|la nostra|il nostro)\b.*$|\s*\d.*$|"
+                           r"(?<!\bSt)(?<!\bS)(?<!\bDr)\.\s.*$", re.I)
 
 
 def datore_noto(testo: str) -> str | None:
@@ -770,6 +795,12 @@ def estrai_datore_da_testo(testo: str) -> str | None:
     if len(parole) < 2 or len(candidato) < 8:
         return None
     return " ".join(parole[:8])[:70]
+
+
+def titolo_da_indirizzo(url: str) -> str:
+    pezzo = unquote(urlparse(url).path.rstrip("/").rsplit("/", 1)[-1])
+    pezzo = re.sub(r"-\d+$", "", pezzo).replace("-", " ").replace("_", " ").strip()
+    return (pezzo[:1].upper() + pezzo[1:])[:120]
 
 
 def estrai_struttura(titolo: str, testo: str) -> str | None:

@@ -19,7 +19,7 @@ CAMPI_CONFRONTO = ["titolo", "contratto", "compenso", "scadenza", "turni"]
 NOMI_CAMPI = {"titolo": "titolo", "contratto": "contratto", "compenso": "compenso",
               "scadenza": "scadenza", "turni": "ore e turni"}
 # Si aumenta quando cambiano le regole di pertinenza: le pagine già scartate vengono riaperte una volta.
-VERSIONE_REGOLE = 2
+VERSIONE_REGOLE = 3
 VERSIONE_PDF = 2      # cambia quando migliorano le regole: i PDF già letti vengono riletti
 # Siti-bacheca: i loro indirizzi email non sono il contatto della struttura che cerca personale.
 DOMINI_BACHECA = {"opi.tn.it", "opibz.it", "upipa.tn.it", "suedtirolerjobs.it", "fnopi.it", "google.com"}
@@ -202,7 +202,9 @@ def _costruisci(cand: dict, testo: str, pubblicato, fonte: dict, cfg: dict, comu
             if c and str(parola).lower() in vicino:
                 campi.update(zona=c["nome"], km=c["km"], minuti=c["minuti"])
                 break
-    if fonte.get("zona") and not campi["zona"]:
+    if cand.get("datore") and not fonte.get("datore"):
+        campi["datore"] = cand["datore"]
+    if fonte.get("zona") and (not campi["zona"] or fonte.get("tipo") == "pagina"):
         c = next((c for c in comuni if c["nome"] == fonte["zona"]), None)
         if c:
             campi.update(zona=c["nome"], km=c["km"], minuti=c["minuti"])
@@ -225,6 +227,7 @@ def _costruisci(cand: dict, testo: str, pubblicato, fonte: dict, cfg: dict, comu
         "pubblicato": pubblicato.isoformat() if (pubblicato and tipo != "pagina") else None,
         "avvisi": avvisi,
         "letto_il": oggi.isoformat(),
+        "regole": VERSIONE_REGOLE,
         "pdf_letti": pdf_letti or [],
         "da_pdf": da_pdf if pdf_letti else None,
         **campi,
@@ -256,7 +259,12 @@ def _dettaglio(cand: dict, fonte: dict, rete, cfg: dict, comuni: list[dict], ogg
                 dubbi = estrai.allegati_dubbi(html, cand["url"])
                 if dubbi:
                     nota["senza_pdf"].append({"url": cand["url"], "link": dubbi})
-            if len(cand["titolo"]) < 15 and pagina["titolo"]:
+            if fonte.get("link_e_datore"):
+                # Nell'elenco il link porta il nome della struttura: il titolo vero è nella pagina.
+                vero = pagina["titolo"] if estrai.contiene(pagina["titolo"], cfg["parole"]["infermiere"]) \
+                    else estrai.titolo_da_indirizzo(cand["url"])
+                cand = {**cand, "datore": cand["titolo"], "titolo": vero or cand["titolo"]}
+            elif len(cand["titolo"]) < 15 and pagina["titolo"]:
                 cand = {**cand, "titolo": pagina["titolo"]}
             if len(testo) < 200 and not link_pdf:
                 avvisi.append("Testo molto breve: l'annuncio potrebbe essere un'immagine. Apri il link")
@@ -267,6 +275,8 @@ def _dettaglio(cand: dict, fonte: dict, rete, cfg: dict, comuni: list[dict], ogg
 def _riusabile(vecchio: dict, oggi: date, cfg: dict) -> bool:
     """Annunci datati o scaduti da tempo: non serve riaprirli ogni giorno."""
     letto = vecchio.get("letto_il")
+    if vecchio.get("regole") != VERSIONE_REGOLE:
+        return False  # le regole sono cambiate: si rilegge
     if not letto or (oggi - date.fromisoformat(letto)).days >= int(cfg.get("giorni_rilettura_datati", 30)):
         return False
     scaduto_da_tempo = e_scaduto(vecchio, oggi) and (oggi - date.fromisoformat(vecchio["scadenza"])).days > 14
@@ -490,6 +500,16 @@ def segna_doppioni(memoria: dict, oggi: date) -> None:
         if a.get("scadenza") and not e_scaduto(a, oggi):
             continue
         gruppi.setdefault((a["email"].lower(), a["zona"], e_piva(a)), []).append(a)
+    risolvi(gruppi)
+    # 4) Stesso datore nella stessa zona, stesso tipo di rapporto, nessuna scadenza aperta.
+    gruppi = {}
+    for a in memoria.values():
+        datore = estrai.chiave(a.get("datore"))
+        if a.get("doppione_di") or not a.get("zona") or len(datore) < 6:
+            continue
+        if a.get("scadenza") and not e_scaduto(a, oggi):
+            continue
+        gruppi.setdefault((datore, a["zona"], e_piva(a)), []).append(a)
     risolvi(gruppi)
 
 

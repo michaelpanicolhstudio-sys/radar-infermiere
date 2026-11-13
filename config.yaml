@@ -130,7 +130,10 @@ fonti:
     altre_pagine:
       - https://www.vds-suedtirol.it/de/jobs?page=1
       - https://www.vds-suedtirol.it/de/jobs?page=2
+      - https://www.vds-suedtirol.it/de/jobs?page=3
+      - https://www.vds-suedtirol.it/de/jobs?page=4
     parole_link: [krankenpfleg, pflegefach, infermier, freiberuf]
+    link_e_datore: true     # nell'elenco il link porta il nome della casa di riposo
     affidabilita: struttura
     puo_essere_vuota: true
     attiva: true
@@ -138,6 +141,7 @@ fonti:
   - nome: Schloss Moos – Jobs (sito della cooperativa)
     tipo: pagina
     url: https://sozialgenossenschaft-vinzenz.it/schloss-moos/schloss-moos-jobs/
+    titolo: Posizioni aperte a Schloss Moos (anche Krankenpfleger:in)
     affidabilita: struttura
     datore: Seniorenwohnheim Schloss Moos
     zona: Vipiteno
@@ -147,6 +151,7 @@ fonti:
   - nome: Vinzenzhaus Bolzano – Jobs
     tipo: pagina
     url: https://sozialgenossenschaft-vinzenz.it/vinzenzhaus/vinzenzhaus-jobs/
+    titolo: Posizioni aperte al Vinzenzhaus (anche Krankenpfleger:in)
     affidabilita: struttura
     datore: Seniorenwohnheim Vinzenzhaus
     zona: Bolzano
@@ -159,6 +164,55 @@ fonti:
     affidabilita: struttura
     datore: Fondazione Heinrich von Rottenburg (Altenheim Kaltern)
     zona: Caldaro
+    puo_essere_vuota: true
+    attiva: true
+
+  - nome: APSP Vannetti Rovereto – concorsi e avvisi
+    tipo: elenco
+    url: https://www.apspvannetti.it/Albo-pretorio/Concorsi
+    altre_pagine:
+      - https://www.apspvannetti.it/Albo-pretorio/Avvisi
+    parole_link: [infermier, libero profession, libero-profession, liberi profession]
+    affidabilita: ufficiale
+    datore: APSP «Clementino Vannetti»
+    zona: Rovereto
+    puo_essere_vuota: true
+    attiva: true
+
+  - nome: APSP Margherita Grazioli (Trento) – lavora con noi
+    tipo: elenco
+    url: https://www.apspgrazioli.it/Argomenti/Risorse-umane-e-formazione
+    parole_link: [infermier, libero profession, libero-profession, liberi profession]
+    affidabilita: ufficiale
+    datore: APSP Margherita Grazioli
+    zona: Trento
+    puo_essere_vuota: true
+    attiva: true
+
+  - nome: Melittaklinik Bolzano – lavora con noi
+    tipo: pagina
+    url: https://melittaklinik.com/lavora-con-noi/
+    affidabilita: struttura
+    datore: Melittaklinik (Villa Melitta)
+    zona: Bolzano
+    puo_essere_vuota: true
+    attiva: true
+
+  - nome: Brixsana Bressanone – Karriere
+    tipo: pagina
+    url: https://www.brixsana.it/de/karriere
+    affidabilita: struttura
+    datore: Brixsana
+    zona: Bressanone
+    puo_essere_vuota: true
+    attiva: true
+
+  - nome: Martinsbrunn Merano – Job & Karriere
+    tipo: pagina
+    url: https://www.martinsbrunn.it/job-karriere/
+    affidabilita: struttura
+    datore: Martinsbrunn (Stiftung St. Elisabeth)
+    zona: Merano
     puo_essere_vuota: true
     attiva: true
 
@@ -179,18 +233,16 @@ fonti:
 
 # ---- Solo per la messa a punto: pagine di cui elencare i link nel file data/diagnostica.json ----
 esplora:
-  - https://www.vds-suedtirol.it/de/jobs
-  - https://www.apspvannetti.it/Albo-pretorio
-  - https://www.apspvannetti.it/Opera-con-noi/Lavoratore-Dipendente
-  - https://bollettino.regione.taa.it/it/Concorsi.aspx
+  - https://www.vds-suedtirol.it/it/jobs
+  - https://jobs.stiftung-st-elisabeth.it/
+  - https://www.apspgrazioli.it/Albo-online
   # Indirizzi da verificare (ipotesi): se non esistono compare solo un errore nella diagnostica.
-  - https://www.villamelitta.it/
-  - https://www.brixsana.it/
-  - https://www.martinsbrunn.it/
-  - https://www.sancamillo.org/
-  - https://www.solatrix.it/
-  - https://www.civicatrento.it/
-  - https://www.apspgrazioli.it/
+  - https://www.apspsangiovanni.it/
+  - https://www.apspmezzocorona.it/
+  - https://www.apsplavis.it/
+  - https://www.apspcles.it/
+  - https://www.civicatnapsp.it/
+  - https://www.apsp-pergine.it/
 
 # ---- Strutture conosciute che negli annunci non scrivono il comune: parola nel testo -> comune ----
 zone_strutture:
