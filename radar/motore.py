@@ -21,6 +21,9 @@ CAMPI_CONFRONTO = ["titolo", "contratto", "compenso", "scadenza", "turni"]
 NOMI_CAMPI = {"titolo": "titolo", "contratto": "contratto", "compenso": "compenso",
               "scadenza": "scadenza", "turni": "ore e turni"}
 AVVISO_BANDO_COMUNE = "Stesso bando anche per: "
+AVVISO_DAL_DOPPIONE = "Preso dallo stesso bando su "
+# Dati che, se mancano nell'annuncio mostrato, si prendono da un suo doppione dello stesso bando.
+CAMPI_DAL_DOPPIONE = {"compenso": "compenso", "euro_ora": None, "email": "email", "pec": "PEC"}
 # Si aumenta quando cambiano le regole di pertinenza: le pagine già scartate vengono riaperte una volta.
 VERSIONE_REGOLE = 5
 VERSIONE_PDF = 3      # cambia quando migliorano le regole: i PDF già letti vengono riletti
@@ -409,6 +412,8 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str], 
     oggi_s = oggi.isoformat()
     nuovi, aggiornati = [], []
     visti_oggi = set()
+    for a in memoria.values():
+        togli_dal_doppione(a)  # i dati presi da un doppione non sono del sito: non contano nei confronti
     for a in trovati:
         visti_oggi.add(a["id"])
         vecchio = memoria.get(a["id"])
@@ -484,23 +489,48 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str], 
     return {"nuovi": nuovi, "aggiornati": aggiornati}
 
 
-def segna_doppioni(memoria: dict, oggi: date) -> None:
-    """Lo stesso annuncio visto su due siti, o ripubblicato: ne resta uno (a mano, poi il più recente)."""
+def togli_dal_doppione(a: dict) -> None:
+    """Toglie i dati presi in prestito da un doppione (si ricalcolano a ogni giro)."""
+    for campo in a.pop("dal_doppione", None) or []:
+        a[campo] = None
+    if a.get("avvisi"):
+        a["avvisi"] = [x for x in a["avvisi"] if not x.startswith((AVVISO_BANDO_COMUNE, AVVISO_DAL_DOPPIONE))]
+
+
+def _completa(principale: dict, altri: list[dict]) -> None:
+    """Lo stesso bando visto su più siti: i dati che mancano a quello mostrato si prendono dagli altri."""
+    for altro in altri:
+        presi = [c for c in CAMPI_DAL_DOPPIONE if not principale.get(c) and altro.get(c)]
+        if not presi:
+            continue
+        for c in presi:
+            principale[c] = altro[c]
+        principale.setdefault("dal_doppione", []).extend(presi)
+        nomi = [CAMPI_DAL_DOPPIONE[c] for c in presi if CAMPI_DAL_DOPPIONE[c]]
+        if nomi:
+            principale.setdefault("avvisi", []).append(
+                f"{AVVISO_DAL_DOPPIONE}{altro.get('fonte') or 'n.d.'}: {', '.join(nomi)}")
+
+
+def segna_doppioni(memoria: dict, oggi: date) -> list[dict]:
+    """Lo stesso annuncio visto su due siti, o ripubblicato: ne resta uno (a mano, poi il più recente).
+    Ritorna gli annunci completati con dati presi da un doppione (il punteggio va ricalcolato)."""
     for a in memoria.values():
         a.pop("doppione_di", None)
-        if a.get("avvisi"):
-            a["avvisi"] = [x for x in a["avvisi"] if not x.startswith(AVVISO_BANDO_COMUNE)]
+        togli_dal_doppione(a)
 
     def preferenza(a: dict):
         return (a.get("origine") != "manuale", -(date.fromisoformat(a["pubblicato"]).toordinal() if a.get("pubblicato") else 0),
                 -a.get("punteggio", 0), a.get("primo_visto", ""))
 
-    def risolvi(gruppi: dict) -> None:
+    def risolvi(gruppi: dict, stesso_bando: bool = False) -> None:
         for gruppo in gruppi.values():
             if len(gruppo) > 1:
                 gruppo.sort(key=preferenza)
                 for altro in gruppo[1:]:
                     altro["doppione_di"] = gruppo[0]["id"]
+                if stesso_bando:
+                    _completa(gruppo[0], gruppo[1:])
 
     # 0) Il PDF di un bando letto anche come annuncio a sé: resta la pagina che lo allega.
     allegati = {}
@@ -530,6 +560,7 @@ def segna_doppioni(memoria: dict, oggi: date) -> None:
             gruppo[0].setdefault("avvisi", []).append(AVVISO_BANDO_COMUNE + ", ".join(altri))
             for altro in gruppo[1:]:
                 altro["doppione_di"] = gruppo[0]["id"]
+            _completa(gruppo[0], gruppo[1:])
     # 1) Stesso bando: stessa zona, stessa scadenza, stesso tipo di rapporto.
     gruppi = {}
     for a in memoria.values():
@@ -537,7 +568,7 @@ def segna_doppioni(memoria: dict, oggi: date) -> None:
             continue
         if a.get("scadenza") and a.get("zona") and not e_scaduto(a, oggi):
             gruppi.setdefault((a["zona"], a["scadenza"], e_piva(a)), []).append(a)
-    risolvi(gruppi)
+    risolvi(gruppi, stesso_bando=True)
     # 2) Stesso annuncio ripubblicato: stesso datore, stesso titolo, stessa zona.
     gruppi = {}
     for a in memoria.values():
@@ -567,6 +598,7 @@ def segna_doppioni(memoria: dict, oggi: date) -> None:
             continue
         gruppi.setdefault((datore, a["zona"], e_piva(a)), []).append(a)
     risolvi(gruppi)
+    return [a for a in memoria.values() if a.get("dal_doppione")]
 
 
 def aggiorna_stato_fonti(stato: dict, fonte: dict, esito: dict, oggi: date) -> str | None:
@@ -678,7 +710,8 @@ def giro(cfg: dict, rete, oggi: date, registra=print, diagnostica: bool = True,
             diag["fonti"][fonte["nome"]] = {"candidati": len(candidati), "accettati": presi}
 
     novita = aggiorna_memoria(memoria, list(trovati.values()), fonti_lette, fonti_attive, scartati, oggi, cfg)
-    segna_doppioni(memoria, oggi)
+    for a in segna_doppioni(memoria, oggi):
+        a["punteggio"], a["dettaglio_punteggio"] = punteggio.calcola(a, cfg)
 
     attivi = [a for a in memoria.values() if aperto(a, oggi, cfg) and not a.get("sparito_dal")]
     attivi.sort(key=lambda a: -a["punteggio"])

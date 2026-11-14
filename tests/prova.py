@@ -339,6 +339,20 @@ class Rete404(ReteGuasta):
 a_g404, _ = motore._dettaglio(cand_g, fonte_g, Rete404(), CFG, COMUNI, OGGI, letto_ieri)
 verifica("pagina tolta (404): non si finge di averla letta", (a_g404 or {}).get("_riusato"), None)
 
+# 14/11: San Giuseppe (OPI, scritto a mano, senza compenso) nascondeva lo stesso bando UPIPA con compenso ed email.
+m4 = {"o": {"id": "o", "titolo": "Infermiere – ricerca di personale", "datore": "APSP San Giuseppe", "zona": "Primiero San Martino di Castrozza",
+            "scadenza": "2026-12-04", "contratto": "Concorso / graduatoria", "compenso": None, "email": None, "origine": "manuale",
+            "punteggio": 25, "primo_visto": "2026-11-12", "avvisi": []},
+      "u": {"id": "u", "titolo": "APSP di Primiero - Infermiere", "datore": "APSP di Primiero", "zona": "Primiero San Martino di Castrozza",
+            "scadenza": "2026-12-04", "contratto": "Concorso / graduatoria", "compenso": "stipendio base 23.001,72 € l'anno, più indennità",
+            "email": "segreteria@apsp-primiero.net", "punteggio": 27, "primo_visto": "2026-11-13", "fonte": "UPIPA"}}
+motore.segna_doppioni(m4, OGGI)
+verifica("doppioni: il dato mancante si prende dallo stesso bando", (m4["u"].get("doppione_di"), m4["o"]["compenso"], m4["o"]["email"]),
+         ("o", "stipendio base 23.001,72 € l'anno, più indennità", "segreteria@apsp-primiero.net"))
+verifica("doppioni: l'avviso dice da dove viene il dato", any("UPIPA" in x for x in m4["o"]["avvisi"]), True)
+motore.segna_doppioni(m4, OGGI)
+verifica("doppioni: l'avviso non si ripete a ogni giro", sum("UPIPA" in x for x in m4["o"]["avvisi"]), 1)
+
 print("Bacheca delle case di riposo (VdS)")
 # 13/11: «Altenheim St. Pankraz» finiva a Bolzano perché il testo nominava Bozen.
 fonte_vds = {"nome": "VdS", "tipo": "elenco", "affidabilita": "struttura", "link_e_datore": True}
