@@ -384,6 +384,20 @@ verifica("regole cambiate: il titolo riscritto non è una novità", len(esito_m[
 esito_m = motore.aggiorna_memoria({"v1": dict(vecchio)}, [dict(nuovo, scadenza="2026-11-30")], set(), set(), set(), OGGI, CFG)
 verifica("regole cambiate: una proroga resta una novità", [x["cambi"] for x in esito_m["aggiornati"]], [["scadenza: 2026-11-20 → 2026-11-30"]])
 
+# 14/11: ASUIT SC 04/26–13/26 ha due sessioni (15/11 e 11/12): dopo la prima risultava scaduto.
+man = {"id": "m1", "titolo": "Selezioni ASUIT", "origine": "manuale", "scadenza": "2026-11-15", "scadenze": ["2026-11-15", "2026-12-11"],
+       "primo_visto": "2026-11-12", "ultimo_visto": "2026-11-12", "punteggio": 45, "cambi": []}
+esito_m = motore.aggiorna_memoria({"m1": dict(man)}, [], set(), set(), set(), date(2026, 11, 15), CFG)
+verifica("più sessioni: il giorno della prima resta la prima", esito_m["aggiornati"], [])
+mem_s = {"m1": dict(man)}
+esito_m = motore.aggiorna_memoria(mem_s, [], set(), set(), set(), date(2026, 11, 16), CFG)
+verifica("più sessioni: passata la prima, vale la seconda (ed è un aggiornamento)",
+         (mem_s["m1"]["scadenza"], [x["cambi"] for x in esito_m["aggiornati"]]),
+         ("2026-12-11", [["scadenza: 2026-11-15 → 2026-12-11 (sessione successiva)"]]))
+mem_s = {"m1": dict(man)}
+motore.aggiorna_memoria(mem_s, [], set(), set(), set(), date(2026, 12, 15), CFG)
+verifica("più sessioni: passate tutte, resta l'ultima (poi si toglie)", mem_s.get("m1", {}).get("scadenza"), "2026-12-11")
+
 print("Conti, posta e contatti")
 from radar import conti, posta
 par = conti.parametri({})

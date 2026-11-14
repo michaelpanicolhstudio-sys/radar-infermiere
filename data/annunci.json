@@ -2243,6 +2243,10 @@
   "pubblicato": null,
   "punteggio": 45,
   "scadenza": "2026-11-15",
+  "scadenze": [
+   "2026-11-15",
+   "2026-12-11"
+  ],
   "segnali_turni": {},
   "titolo": "Selezioni per infermieri a tempo determinato (SC 04/26–13/26)",
   "turni": null,

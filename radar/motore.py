@@ -448,6 +448,8 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str], 
                 a["scadenza"] = vecchio.get("scadenza")
             a["origine"] = "manuale"
             a["nota_manuale"] = vecchio.get("nota_manuale")
+            if vecchio.get("scadenze"):
+                a["scadenze"] = vecchio["scadenze"]
             a["impronta"] = _impronta(a)
             cambi = ([f"scadenza: {vecchio.get('scadenza') or 'n.d.'} → {a['scadenza']}"]
                      if a.get("scadenza") != vecchio.get("scadenza") else [])
@@ -461,6 +463,11 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str], 
 
     giorni = int(cfg.get("giorni_prima_di_togliere", 30))
     for ident, a in list(memoria.items()):
+        cambio = passa_alla_prossima_scadenza(a, oggi)
+        if cambio:
+            a.update(novita="aggiornato", data_novita=oggi_s, cambi=[cambio])
+            if a not in aggiornati:
+                aggiornati.append(a)
         # I pesi possono essere cambiati in config: il punteggio si ricalcola sempre.
         a["punteggio"], a["dettaglio_punteggio"] = punteggio.calcola(a, cfg)
         if ident in visti_oggi:
@@ -487,6 +494,22 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str], 
         if (oggi - date.fromisoformat(a["sparito_dal"])).days > giorni:
             del memoria[ident]
     return {"nuovi": nuovi, "aggiornati": aggiornati}
+
+
+def passa_alla_prossima_scadenza(a: dict, oggi: date) -> str | None:
+    """Annunci a mano con più sessioni («scadenze»: [...]): la scadenza è la prima non ancora passata.
+    Ritorna la frase del cambio (per l'email) o None. Le date sono solo quelle scritte a mano."""
+    date_s = sorted(d for d in (a.get("scadenze") or []) if d)
+    if not date_s:
+        return None
+    prossima = next((d for d in date_s if date.fromisoformat(d) >= oggi), date_s[-1])
+    if prossima == a.get("scadenza"):
+        return None
+    vecchia = a.get("scadenza")
+    a["scadenza"] = prossima
+    if vecchia and date.fromisoformat(vecchia) < date.fromisoformat(prossima):
+        return f"scadenza: {vecchia} → {prossima} (sessione successiva)"
+    return None
 
 
 def togli_dal_doppione(a: dict) -> None:
