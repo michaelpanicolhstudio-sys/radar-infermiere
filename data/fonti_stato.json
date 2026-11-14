@@ -1,6 +1,6 @@
 {
  "APSP Margherita Grazioli (Trento) – lavora con noi": {
-  "giorni_a_zero": 7,
+  "giorni_a_zero": 8,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -13,7 +13,7 @@
   "ultimo_ok": "2026-11-14"
  },
  "APSP Vannetti Rovereto – concorsi e avvisi": {
-  "giorni_a_zero": 7,
+  "giorni_a_zero": 8,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -78,7 +78,7 @@
   "ultimo_ok": "2026-11-14"
  },
  "Google Alerts 1": {
-  "giorni_a_zero": 10,
+  "giorni_a_zero": 11,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -91,7 +91,7 @@
   "ultimo_ok": "2026-11-14"
  },
  "Google Alerts 2": {
-  "giorni_a_zero": 10,
+  "giorni_a_zero": 11,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -104,7 +104,7 @@
   "ultimo_ok": "2026-11-14"
  },
  "Google Alerts 3": {
-  "giorni_a_zero": 10,
+  "giorni_a_zero": 11,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -250,7 +250,7 @@
   "ultimo_ok": "2026-11-14"
  },
  "UPIPA – avvisi delle APSP": {
-  "giorni_a_zero": 10,
+  "giorni_a_zero": 11,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,

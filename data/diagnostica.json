@@ -1242,7 +1242,7 @@
   },
   "Brixsana Bressanone – Karriere": {
    "accettati": [
-    "Auch im Job: in besten Händen"
+    "Infermiere/a (KrankenpflegerIn) – tempo pieno, da subito"
    ],
    "pagine": [
     {
@@ -1352,7 +1352,7 @@
   },
   "Melittaklinik Bolzano – lavora con noi": {
    "accettati": [
-    "Lavora con noi"
+    "Lavora con noi (cerca anche personale infermieristico)"
    ],
    "pagine": [
     {
@@ -1470,6 +1470,36 @@
       ]
      ],
      "url": "https://opi.tn.it/a-p-s-p-c-vannetti-bando/"
+    },
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon-150x150.jpg?x30900"
+      ],
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon.jpg?x30900"
+      ]
+     ],
+     "url": "https://opi.tn.it/cooperativa-sociale-villa-maria-onlus-ricerca-di-personale/"
+    },
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon-150x150.jpg?x30900"
+      ],
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon.jpg?x30900"
+      ]
+     ],
+     "url": "https://opi.tn.it/apsp-san-giuseppe-di-primiero-tn-ricerca-di-personale/"
     }
    ]
   },
@@ -1696,5 +1726,5 @@
    "scartati": []
   }
  },
- "richieste": 90
+ "richieste": 88
 }

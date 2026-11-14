@@ -73,12 +73,14 @@
  "0b0cdabe8da0": {
   "affidabilita": "struttura",
   "avvisi": [],
-  "cambi": [],
+  "cambi": [
+   "titolo: Lavora con noi → Lavora con noi (cerca anche personale infermieristico)"
+  ],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "Dipendente a tempo indeterminato",
   "da_pdf": null,
-  "data_novita": "2026-11-13",
+  "data_novita": "2026-11-14",
   "datore": "Melittaklinik (Villa Melitta)",
   "dettaglio_punteggio": [
    {
@@ -117,12 +119,12 @@
   "euro_ora": null,
   "fonte": "Melittaklinik Bolzano – lavora con noi",
   "id": "0b0cdabe8da0",
-  "impronta": "93a04f2b40dc",
+  "impronta": "82c4dfee03a1",
   "in_tedesco": false,
   "km": 42,
   "letto_il": "2026-11-14",
   "minuti": 35,
-  "novita": "nuovo",
+  "novita": "aggiornato",
   "pdf_letti": [],
   "pec": null,
   "primo_visto": "2026-11-13",
@@ -136,7 +138,7 @@
   },
   "struttura": "Clinica o ambulatorio",
   "tipo_fonte": "pagina",
-  "titolo": "Lavora con noi",
+  "titolo": "Lavora con noi (cerca anche personale infermieristico)",
   "turni": "tempo pieno",
   "ultimo_visto": "2026-11-14",
   "url": "https://melittaklinik.com/lavora-con-noi/",
@@ -648,9 +650,7 @@
  },
  "289b1a76f5b5": {
   "affidabilita": "ufficiale",
-  "avvisi": [
-   "Pagina non letta: tempo scaduto"
-  ],
+  "avvisi": [],
   "cambi": [],
   "cita_tedesco": false,
   "compenso": null,
@@ -690,8 +690,8 @@
     "voce": "Fonte"
    }
   ],
-  "email": null,
-  "estratto": "",
+  "email": "ufficio.personale@coopvillamaria.org",
+  "estratto": "…Maria Onlus è alla ricerca di personale infermieristico da inserire all’interno del proprio organico. Siamo alla ricerca di persone motivate, orientate alla cura di persone con disabilità e desiderose di inserirsi in un…",
   "euro_ora": null,
   "fonte": "OPI Trento – annunci di lavoro",
   "id": "289b1a76f5b5",
@@ -704,7 +704,7 @@
   "novita": null,
   "origine": "manuale",
   "pdf_letti": [],
-  "pec": null,
+  "pec": "villamariasegreteria@pec.cooperazionetrentina.it",
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-15",
   "punteggio": 49,
@@ -3811,12 +3811,14 @@
   "avvisi": [
    "Annuncio in tedesco"
   ],
-  "cambi": [],
+  "cambi": [
+   "titolo: Auch im Job: in besten Händen → Infermiere/a (KrankenpflegerIn) – tempo pieno, da subito"
+  ],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": null,
   "da_pdf": null,
-  "data_novita": "2026-11-13",
+  "data_novita": "2026-11-14",
   "datore": "Brixsana",
   "dettaglio_punteggio": [
    {
@@ -3855,12 +3857,12 @@
   "euro_ora": null,
   "fonte": "Brixsana Bressanone – Karriere",
   "id": "d6f61e9c20d0",
-  "impronta": "2720f5368b05",
+  "impronta": "a5f24cb38b8e",
   "in_tedesco": true,
   "km": 82,
   "letto_il": "2026-11-14",
   "minuti": 60,
-  "novita": "nuovo",
+  "novita": "aggiornato",
   "pdf_letti": [],
   "pec": null,
   "primo_visto": "2026-11-13",
@@ -3874,7 +3876,7 @@
   },
   "struttura": "Clinica o ambulatorio",
   "tipo_fonte": "pagina",
-  "titolo": "Auch im Job: in besten Händen",
+  "titolo": "Infermiere/a (KrankenpflegerIn) – tempo pieno, da subito",
   "turni": "tempo pieno",
   "ultimo_visto": "2026-11-14",
   "url": "https://www.brixsana.it/de/karriere",
@@ -4187,13 +4189,16 @@
  "ed9ea67da326": {
   "affidabilita": "ufficiale",
   "avvisi": [
-   "Pagina non letta: errore di rete (ConnectionError)"
+   "Preso dallo stesso bando su UPIPA – concorsi delle APSP: compenso"
   ],
   "cambi": [],
   "cita_tedesco": false,
-  "compenso": null,
+  "compenso": "stipendio base 23.001,72 € l'anno, più indennità",
   "contratto": "Concorso / graduatoria",
   "da_pdf": null,
+  "dal_doppione": [
+   "compenso"
+  ],
   "data_novita": null,
   "datore": "APSP «San Giuseppe» di Primiero",
   "dettaglio_punteggio": [
@@ -4205,7 +4210,7 @@
    },
    {
     "max": 25,
-    "motivo": "compenso orario non indicato",
+    "motivo": "compenso orario non indicato (stipendio base 23.001,72 € l'anno, più indennità)",
     "punti": 5,
     "voce": "Compenso"
    },
@@ -4228,8 +4233,8 @@
     "voce": "Fonte"
    }
   ],
-  "email": null,
-  "estratto": "",
+  "email": "segreteria@apsp-primiero.net",
+  "estratto": "…di Primiero è alla ricerca di personale infermieristico da inserire all’interno del proprio organico. Siamo alla ricerca di persone motivate, orientate alla cura dell’anziano e desiderose di inserirsi in un contesto dina…",
   "euro_ora": null,
   "fonte": "OPI Trento – annunci di lavoro",
   "id": "ed9ea67da326",
@@ -4242,7 +4247,7 @@
   "novita": null,
   "origine": "manuale",
   "pdf_letti": [],
-  "pec": null,
+  "pec": "segreteria@pec.apsp-primiero.net",
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-07-03",
   "punteggio": 25,

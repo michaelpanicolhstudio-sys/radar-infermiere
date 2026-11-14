@@ -1,11 +1,44 @@
 {
- "aggiornati": [],
+ "aggiornati": [
+  {
+   "cambi": [
+    "titolo: Lavora con noi → Lavora con noi (cerca anche personale infermieristico)"
+   ],
+   "compenso": null,
+   "contratto": "Dipendente a tempo indeterminato",
+   "datore": "Melittaklinik (Villa Melitta)",
+   "id": "0b0cdabe8da0",
+   "minuti": 35,
+   "piva": false,
+   "punteggio": 37,
+   "scadenza": null,
+   "titolo": "Lavora con noi (cerca anche personale infermieristico)",
+   "url": "https://melittaklinik.com/lavora-con-noi/",
+   "zona": "Bolzano"
+  },
+  {
+   "cambi": [
+    "titolo: Auch im Job: in besten Händen → Infermiere/a (KrankenpflegerIn) – tempo pieno, da subito"
+   ],
+   "compenso": null,
+   "contratto": null,
+   "datore": "Brixsana",
+   "id": "d6f61e9c20d0",
+   "minuti": 60,
+   "piva": false,
+   "punteggio": 33,
+   "scadenza": null,
+   "titolo": "Infermiere/a (KrankenpflegerIn) – tempo pieno, da subito",
+   "url": "https://www.brixsana.it/de/karriere",
+   "zona": "Bressanone"
+  }
+ ],
  "attivi": 29,
  "attivi_piva": 11,
  "data": "2026-11-14",
  "fonti_lette": 24,
  "fonti_totali": 24,
- "giri": 1,
+ "giri": 2,
  "nuovi": [],
  "problemi": [],
  "scadenze7": [
