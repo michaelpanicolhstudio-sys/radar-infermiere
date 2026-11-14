@@ -1,6 +1,6 @@
 {
  "APSP Margherita Grazioli (Trento) – lavora con noi": {
-  "giorni_a_zero": 6,
+  "giorni_a_zero": 7,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -9,11 +9,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "APSP Vannetti Rovereto – concorsi e avvisi": {
-  "giorni_a_zero": 6,
+  "giorni_a_zero": 7,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -22,21 +22,21 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "ASUIT – bandi e concorsi": {
   "giorni_a_zero": 0,
-  "letti": 3,
+  "letti": 1,
   "massimo_candidati": 5,
   "pertinenti": 3,
   "regole": 5,
-  "riusati": 0,
+  "riusati": 2,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 3,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "Altenheim Kaltern (Caldaro) – Karriere": {
   "giorni_a_zero": 0,
@@ -48,8 +48,8 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "Brixsana Bressanone – Karriere": {
   "giorni_a_zero": 0,
@@ -61,8 +61,8 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "Case di riposo dell'Alto Adige (VdS) – offerte": {
   "giorni_a_zero": 0,
@@ -74,11 +74,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 8,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "Google Alerts 1": {
-  "giorni_a_zero": 9,
+  "giorni_a_zero": 10,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -87,11 +87,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "Google Alerts 2": {
-  "giorni_a_zero": 9,
+  "giorni_a_zero": 10,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -100,11 +100,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "Google Alerts 3": {
-  "giorni_a_zero": 9,
+  "giorni_a_zero": 10,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -113,8 +113,8 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "Gruppo Bonvicini – lavora con noi": {
   "giorni_a_zero": 0,
@@ -126,8 +126,8 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "Martinsbrunn Merano – Job & Karriere": {
   "giorni_a_zero": 0,
@@ -139,8 +139,8 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "Melittaklinik Bolzano – lavora con noi": {
   "giorni_a_zero": 0,
@@ -152,16 +152,16 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "OPI Bolzano – offerte di lavoro": {
   "giorni_a_zero": 0,
-  "letti": 20,
+  "letti": 3,
   "massimo_candidati": 20,
   "pertinenti": 14,
   "regole": 5,
-  "riusati": 0,
+  "riusati": 11,
   "scartati": 6,
   "scarti": {
    "5bafa01d710d": {
@@ -196,16 +196,16 @@
    }
   },
   "ultimi_candidati": 20,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "OPI Trento – annunci di lavoro": {
   "giorni_a_zero": 0,
-  "letti": 15,
+  "letti": 5,
   "massimo_candidati": 16,
   "pertinenti": 13,
   "regole": 5,
-  "riusati": 0,
+  "riusati": 8,
   "scartati": 2,
   "scarti": {
    "3ca69f8fe699": {
@@ -220,8 +220,8 @@
    }
   },
   "ultimi_candidati": 15,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "Schloss Moos – Jobs (sito della cooperativa)": {
   "giorni_a_zero": 0,
@@ -233,8 +233,8 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "Schloss Moos – libera professione (suedtirolerjobs)": {
   "giorni_a_zero": 0,
@@ -246,11 +246,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "UPIPA – avvisi delle APSP": {
-  "giorni_a_zero": 9,
+  "giorni_a_zero": 10,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -259,12 +259,12 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "UPIPA – concorsi delle APSP": {
   "giorni_a_zero": 0,
-  "letti": 4,
+  "letti": 3,
   "massimo_candidati": 6,
   "pertinenti": 3,
   "regole": 5,
@@ -278,8 +278,8 @@
    }
   },
   "ultimi_candidati": 4,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "Villa Sant'Anna Merano – lavora con noi": {
   "giorni_a_zero": 0,
@@ -291,8 +291,8 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  },
  "Vinzenzhaus Bolzano – Jobs": {
   "giorni_a_zero": 0,
@@ -304,7 +304,7 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-13",
-  "ultimo_ok": "2026-11-13"
+  "ultimo_giro": "2026-11-14",
+  "ultimo_ok": "2026-11-14"
  }
 }
