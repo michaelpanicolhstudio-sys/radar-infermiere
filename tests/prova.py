@@ -353,6 +353,10 @@ verifica("doppioni: l'avviso dice da dove viene il dato", any("UPIPA" in x for x
 motore.segna_doppioni(m4, OGGI)
 verifica("doppioni: l'avviso non si ripete a ogni giro", sum("UPIPA" in x for x in m4["o"]["avvisi"]), 1)
 
+# 14/11: Melittaklinik e Brixsana apparivano come «Lavora con noi» e «Auch im Job: in besten Händen».
+titoli_fissi = {f["nome"]: f.get("titolo") for f in CFG["fonti"] if f["nome"].startswith(("Melittaklinik", "Brixsana"))}
+verifica("pagine fisse: titolo chiaro in config", sorted(n for n, t in titoli_fissi.items() if t and "nfermier" in t), sorted(titoli_fissi))
+
 print("Bacheca delle case di riposo (VdS)")
 # 13/11: «Altenheim St. Pankraz» finiva a Bolzano perché il testo nominava Bozen.
 fonte_vds = {"nome": "VdS", "tipo": "elenco", "affidabilita": "struttura", "link_e_datore": True}

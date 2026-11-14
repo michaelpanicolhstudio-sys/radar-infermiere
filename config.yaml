@@ -195,6 +195,7 @@ fonti:
     affidabilita: struttura
     datore: Melittaklinik (Villa Melitta)
     zona: Bolzano
+    titolo: Lavora con noi (cerca anche personale infermieristico)
     puo_essere_vuota: true
     attiva: true
 
@@ -204,6 +205,7 @@ fonti:
     affidabilita: struttura
     datore: Brixsana
     zona: Bressanone
+    titolo: Infermiere/a (KrankenpflegerIn) – tempo pieno, da subito
     puo_essere_vuota: true
     attiva: true
 
