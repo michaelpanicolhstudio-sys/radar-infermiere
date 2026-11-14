@@ -1,10 +1,10 @@
 {
  "APSP Margherita Grazioli (Trento) – lavora con noi": {
-  "giorni_a_zero": 8,
+  "giorni_a_zero": 9,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 5,
+  "regole": 6,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -13,11 +13,11 @@
   "ultimo_ok": "2026-11-14"
  },
  "APSP Vannetti Rovereto – concorsi e avvisi": {
-  "giorni_a_zero": 8,
+  "giorni_a_zero": 9,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 5,
+  "regole": 6,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -27,11 +27,11 @@
  },
  "ASUIT – bandi e concorsi": {
   "giorni_a_zero": 0,
-  "letti": 1,
+  "letti": 3,
   "massimo_candidati": 5,
   "pertinenti": 3,
-  "regole": 5,
-  "riusati": 2,
+  "regole": 6,
+  "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 3,
@@ -43,7 +43,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 0,
-  "regole": 5,
+  "regole": 6,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -56,7 +56,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 5,
+  "regole": 6,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -66,23 +66,24 @@
  },
  "Case di riposo dell'Alto Adige (VdS) – offerte": {
   "giorni_a_zero": 0,
-  "letti": 8,
+  "letti": 0,
   "massimo_candidati": 8,
-  "pertinenti": 8,
-  "regole": 5,
+  "pertinenti": 0,
+  "regole": 6,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 8,
+  "ultimo_errore": "errore di rete (ConnectionError)",
   "ultimo_giro": "2026-11-14",
   "ultimo_ok": "2026-11-14"
  },
  "Google Alerts 1": {
-  "giorni_a_zero": 11,
+  "giorni_a_zero": 12,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 5,
+  "regole": 6,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -91,11 +92,11 @@
   "ultimo_ok": "2026-11-14"
  },
  "Google Alerts 2": {
-  "giorni_a_zero": 11,
+  "giorni_a_zero": 12,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 5,
+  "regole": 6,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -104,11 +105,11 @@
   "ultimo_ok": "2026-11-14"
  },
  "Google Alerts 3": {
-  "giorni_a_zero": 11,
+  "giorni_a_zero": 12,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 5,
+  "regole": 6,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -121,7 +122,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 5,
+  "regole": 6,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -134,7 +135,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 0,
-  "regole": 5,
+  "regole": 6,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -147,7 +148,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 5,
+  "regole": 6,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -157,40 +158,40 @@
  },
  "OPI Bolzano – offerte di lavoro": {
   "giorni_a_zero": 0,
-  "letti": 3,
+  "letti": 20,
   "massimo_candidati": 20,
   "pertinenti": 14,
-  "regole": 5,
-  "riusati": 11,
+  "regole": 6,
+  "riusati": 0,
   "scartati": 6,
   "scarti": {
    "5bafa01d710d": {
-    "d": "2026-11-13",
+    "d": "2026-11-14",
     "m": "ruolo diverso (dal titolo)",
     "t": "CERCHIAMO UN/UNA RESPONSABILE DI PIANO"
    },
    "7cf9e8beb729": {
-    "d": "2026-11-13",
+    "d": "2026-11-14",
     "m": "ruolo diverso (dal titolo)",
     "t": "Avviso – Collegio tecnico – Dirigenza tecnico-assistenziale"
    },
    "8cf6eedf9c7c": {
-    "d": "2026-11-13",
+    "d": "2026-11-14",
     "m": "ruolo diverso (coordinamento, direzione o comando)",
     "t": "INPS – Ricerca infermiere/a"
    },
    "8da56e6bf004": {
-    "d": "2026-11-13",
+    "d": "2026-11-14",
     "m": "ruolo diverso (dal titolo)",
     "t": "Ricerca di funzionario sanitario in comando presso l’INPS di Bolzano"
    },
    "8f03c58d63f6": {
-    "d": "2026-11-13",
+    "d": "2026-11-14",
     "m": "fuori regione",
     "t": "Infermiere a Caorle"
    },
    "9a4a2d3719fa": {
-    "d": "2026-11-13",
+    "d": "2026-11-14",
     "m": "ruolo diverso (dal titolo)",
     "t": "Cerchiamo un RESPONSABILE TECNICO-ASSISTENZIALE"
    }
@@ -201,20 +202,20 @@
  },
  "OPI Trento – annunci di lavoro": {
   "giorni_a_zero": 0,
-  "letti": 5,
+  "letti": 15,
   "massimo_candidati": 16,
   "pertinenti": 13,
-  "regole": 5,
-  "riusati": 8,
+  "regole": 6,
+  "riusati": 0,
   "scartati": 2,
   "scarti": {
    "3ca69f8fe699": {
-    "d": "2026-11-13",
+    "d": "2026-11-14",
     "m": "ruolo diverso (coordinamento, direzione o comando)",
     "t": "Società Cooperativa Sociale Stella Montis Fondo – Borgo d’Ananunia (TN) – ricerca di perso"
    },
    "e330f50b2d56": {
-    "d": "2026-11-13",
+    "d": "2026-11-14",
     "m": "ruolo diverso (dal titolo)",
     "t": "A.P.S.P. Margherita Grazioli – Trento – pubblica selezione per coordinatore"
    }
@@ -228,7 +229,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 5,
+  "regole": 6,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -241,7 +242,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 5,
+  "regole": 6,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -250,11 +251,11 @@
   "ultimo_ok": "2026-11-14"
  },
  "UPIPA – avvisi delle APSP": {
-  "giorni_a_zero": 11,
+  "giorni_a_zero": 12,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 5,
+  "regole": 6,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -264,15 +265,15 @@
  },
  "UPIPA – concorsi delle APSP": {
   "giorni_a_zero": 0,
-  "letti": 3,
+  "letti": 4,
   "massimo_candidati": 6,
   "pertinenti": 3,
-  "regole": 5,
+  "regole": 6,
   "riusati": 0,
   "scartati": 1,
   "scarti": {
    "f4b8a3261b0d": {
-    "d": "2026-11-13",
+    "d": "2026-11-14",
     "m": "non riguarda infermieri",
     "t": "Selezione pubblica per il conferimento di un incarico libero professionale per Psicologo -"
    }
@@ -286,7 +287,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 5,
+  "regole": 6,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -299,7 +300,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 5,
+  "regole": 6,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
