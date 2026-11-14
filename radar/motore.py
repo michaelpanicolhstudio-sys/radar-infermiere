@@ -246,6 +246,14 @@ def _costruisci(cand: dict, testo: str, pubblicato, fonte: dict, cfg: dict, comu
     return a, None
 
 
+def _passeggero(errore: str) -> bool:
+    """Errori che non dicono nulla sull'annuncio (rete lenta, server occupato), a differenza di un 404."""
+    if errore.startswith(("tempo scaduto", "errore di rete")):
+        return True
+    m = re.match(r"risposta HTTP (\d+)", errore)
+    return bool(m) and (m.group(1) == "429" or m.group(1).startswith("5"))
+
+
 def _dettaglio(cand: dict, fonte: dict, rete, cfg: dict, comuni: list[dict], oggi: date,
                vecchio: dict | None, nota: dict | None = None) -> tuple[dict | None, str | None]:
     avvisi: list[str] = []
@@ -256,6 +264,9 @@ def _dettaglio(cand: dict, fonte: dict, rete, cfg: dict, comuni: list[dict], ogg
         html, errore = rete.get(cand["url"])
         if errore == "è un PDF":
             link_pdf = [{"url": cand["url"], "testo": cand["titolo"]}]
+        elif errore and vecchio and vecchio.get("estratto") and _passeggero(errore):
+            # Il sito oggi non risponde: resta la lettura buona dell'ultima volta (si riprova domani).
+            return {**vecchio, "_riusato": True}, None
         elif errore:
             avvisi.append(f"Pagina non letta: {errore}")
         else:

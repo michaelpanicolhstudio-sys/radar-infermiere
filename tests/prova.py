@@ -318,6 +318,27 @@ vecchi = {str(i): {"id": str(i), "titolo": t, "datore": None, "zona": "Caldaro",
 motore.segna_doppioni(vecchi, OGGI)
 verifica("doppioni: stessa struttura (stessa email), resta il più recente", [a.get("doppione_di") for a in vecchi.values()], ["2", "2", None])
 
+print("Revisione del 14/11")
+# 14/11: la pagina OPI di San Giuseppe (Primiero) non ha risposto (errore di rete) e la lettura buona del giorno prima è andata persa.
+class ReteGuasta:
+    richieste = 0
+    def get(self, url, robots=True):
+        return None, "errore di rete (ConnectionError)"
+    def get_pdf(self, url, massimo_mb=8, robots=True):
+        return None, "errore di rete (ConnectionError)"
+letto_ieri = {"id": "x1", "url": "https://opi.tn.it/apsp-prova/", "titolo": "Infermiere – ricerca di personale", "datore": "APSP Prova",
+              "contratto": "Concorso / graduatoria", "scadenza": "2026-12-04", "zona": "Lavis", "estratto": "…testo letto ieri…",
+              "letto_il": "2026-11-13", "regole": motore.VERSIONE_REGOLE, "avvisi": [], "punteggio": 40}
+cand_g = {"url": "https://opi.tn.it/apsp-prova/", "titolo": "Infermiere – ricerca di personale"}
+fonte_g = {"nome": "OPI", "tipo": "elenco", "affidabilita": "ordine"}
+a_g, _ = motore._dettaglio(cand_g, fonte_g, ReteGuasta(), CFG, COMUNI, OGGI, letto_ieri)
+verifica("rete guasta: resta la lettura del giorno prima", (a_g.get("_riusato"), a_g["estratto"], a_g["contratto"]), (True, "…testo letto ieri…", "Concorso / graduatoria"))
+class Rete404(ReteGuasta):
+    def get(self, url, robots=True):
+        return None, "risposta HTTP 404"
+a_g404, _ = motore._dettaglio(cand_g, fonte_g, Rete404(), CFG, COMUNI, OGGI, letto_ieri)
+verifica("pagina tolta (404): non si finge di averla letta", (a_g404 or {}).get("_riusato"), None)
+
 print("Bacheca delle case di riposo (VdS)")
 # 13/11: «Altenheim St. Pankraz» finiva a Bolzano perché il testo nominava Bozen.
 fonte_vds = {"nome": "VdS", "tipo": "elenco", "affidabilita": "struttura", "link_e_datore": True}
