@@ -746,7 +746,7 @@ def estrai_turni(testo: str) -> tuple[str | None, dict]:
 
 
 _RE_ENTE = (r"(?:A\.?\s?P\.?\s?S\.?\s?P\.?|RSA|Casa di (?:Cura|riposo)|(?:Società )?Cooperativa|Fondazione|Residenza|"
-            r"Seniorenwohnheim|Stiftung|Sozialgenossenschaft|Clinica|Poliambulatorio|Comunità|Hotel|Azienda|INPS|INAIL)")
+            r"Seniorenwohnheim|Stiftung|Sozialgenossenschaft|Clinica|Poliambulatorio|Comunità|Hotel|Azienda|Istituto|INPS|INAIL)")
 _RE_TAGLIO = re.compile(r"\s+(?:cerca|cercasi|ricerca|ricerchiamo|sucht|assume|seleziona|selezione|bando|concorso|avviso)\b.*$", re.I)
 
 
@@ -785,9 +785,27 @@ def estrai_datore(titolo: str) -> str | None:
     candidato = pulisci(_RE_TAGLIO.sub("", candidato)).strip(" -–")
     if len(candidato) < 4 or candidato.lower() == titolo.lower().strip():
         return None
-    if re.match(r"\S+\s+(?:a|ad|in|per|presso|con|e|che|da)\s", candidato, re.I):
-        return None  # "residenza a Trento": è una frase, non un nome
+    if re.match(r"\S+\s+(?:a|ad|in|per|presso|con|e|che|da)\s", candidato, re.I) and \
+            not re.match(r"(?:Istituto|Residenza)\s+per\s+(?:la|il|l['’]|gli|anziani)\b", candidato, re.I):
+        return None  # "residenza a Trento": è una frase, non un nome ("Residenza per anziani X" invece sì)
+    if not re.search(r"[a-zà-ü]", candidato) and len(candidato.split()) >= 3:
+        candidato = _minuscole_nome(candidato)  # "RESIDENZA PER ANZIANI ANNENBERG" → "Residenza per anziani Annenberg"
     return (candidato[0].upper() + candidato[1:])[:80]
+
+
+_PAROLE_PICCOLE = {"per", "di", "del", "della", "dei", "delle", "e", "la", "il", "lo", "gli", "in", "anziani", "da"}
+
+
+def _minuscole_nome(nome: str) -> str:
+    parole = []
+    for p in nome.split():
+        if p.lower() in _PAROLE_PICCOLE:
+            parole.append(p.lower())
+        elif "." in p or p in ("RSA", "APSP", "ÖBPB"):
+            parole.append(p)  # sigle (S.S., A.P.S.P., RSA)
+        else:
+            parole.append(re.sub(r"^(\W*)(\w)", lambda m: m.group(1) + m.group(2).upper(), p.lower()))
+    return " ".join(parole)
 
 
 def estrai_datore_da_testo(testo: str) -> str | None:

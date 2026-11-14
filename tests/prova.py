@@ -398,6 +398,13 @@ mem_s = {"m1": dict(man)}
 motore.aggiorna_memoria(mem_s, [], set(), set(), set(), date(2026, 12, 15), CFG)
 verifica("più sessioni: passate tutte, resta l'ultima (poi si toglie)", mem_s.get("m1", {}).get("scadenza"), "2026-12-11")
 
+# 14/11: datore vuoto per Eurac («@Istituto per la Medicina…») e Annenberg («RESIDENZA PER ANZIANI…»).
+verifica("datore: istituto nel titolo", estrai.estrai_datore("Study nurse @Bolzano @Istituto per la Medicina di Emergenza in Montagna – EURAC RESEARCH"),
+         "Istituto per la Medicina di Emergenza in Montagna")
+verifica("datore: residenza per anziani in maiuscolo", estrai.estrai_datore("Fondo Ospedale della S.S. Trinità RESIDENZA PER ANZIANI ANNENBERG LACES – Formazione di una graduatoria"),
+         "Residenza per anziani Annenberg Laces")
+verifica("datore: «residenza a Trento» resta una frase", estrai.estrai_datore("Infermiere in residenza a Trento"), None)
+
 print("Conti, posta e contatti")
 from radar import conti, posta
 par = conti.parametri({})

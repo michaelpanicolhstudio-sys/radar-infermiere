@@ -25,7 +25,7 @@ AVVISO_DAL_DOPPIONE = "Preso dallo stesso bando su "
 # Dati che, se mancano nell'annuncio mostrato, si prendono da un suo doppione dello stesso bando.
 CAMPI_DAL_DOPPIONE = {"compenso": "compenso", "euro_ora": None, "email": "email", "pec": "PEC"}
 # Si aumenta quando cambiano le regole di pertinenza: le pagine già scartate vengono riaperte una volta.
-VERSIONE_REGOLE = 5
+VERSIONE_REGOLE = 6
 VERSIONE_PDF = 3      # cambia quando migliorano le regole: i PDF già letti vengono riletti
 # Siti-bacheca: i loro indirizzi email non sono il contatto della struttura che cerca personale.
 DOMINI_BACHECA = {"opi.tn.it", "opibz.it", "upipa.tn.it", "suedtirolerjobs.it", "fnopi.it", "google.com"}
