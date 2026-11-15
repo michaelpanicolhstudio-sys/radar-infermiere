@@ -50,7 +50,7 @@
   "impronta": "0c7a07b8f820",
   "in_tedesco": false,
   "km": 70,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 55,
   "novita": "nuovo",
   "pdf_letti": [],
@@ -58,7 +58,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-06-12",
   "punteggio": 30,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -130,7 +130,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 37,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -359,7 +359,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 37,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2026-11-30",
   "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
   "segnali_turni": {
@@ -436,7 +436,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-07-28",
   "punteggio": 61,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -532,7 +532,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 28,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -633,7 +633,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 30,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2026-11-20",
   "scadenza_frase": "al presente avviso entro il 20/11 /2026 – ore 12.00",
   "segnali_turni": {
@@ -708,7 +708,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-15",
   "punteggio": 49,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -812,7 +812,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 25,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2026-11-20",
   "scadenza_frase": "allegati) va presentato entro le ore 12 del 20.11.2026 presso la s",
   "segnali_turni": {
@@ -877,7 +877,7 @@
   "impronta": "be143774f29a",
   "in_tedesco": false,
   "km": 75,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 78,
   "novita": "nuovo",
   "pdf_letti": [],
@@ -885,7 +885,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-06-01",
   "punteggio": 33,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -986,7 +986,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 30,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2026-11-30",
   "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
   "segnali_turni": {
@@ -1053,7 +1053,7 @@
   "impronta": "5439509c60aa",
   "in_tedesco": false,
   "km": 42,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 35,
   "novita": "nuovo",
   "pdf_letti": [],
@@ -1061,7 +1061,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2024-07-17",
   "punteggio": 39,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1136,7 +1136,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-16",
   "punteggio": 62,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2026-11-27",
   "scadenza_frase": "Personale dell’Azienda. Proroga termini di scadenza: 27/11/2026 ore 12.00 A",
   "segnali_turni": {},
@@ -1238,7 +1238,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 30,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2026-11-20",
   "scadenza_frase": "20.11.2026 11:00 Uhr Scadenza: 20/11/2026 ore 11.00 T",
   "segnali_turni": {
@@ -1326,7 +1326,7 @@
   "impronta": "575a78bc82f5",
   "in_tedesco": false,
   "km": 32,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 35,
   "novita": "nuovo",
   "pdf_letti": [
@@ -1336,7 +1336,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2024-07-29",
   "punteggio": 42,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1486,7 +1486,7 @@
   "impronta": "246a2fc88b4c",
   "in_tedesco": false,
   "km": 32,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 35,
   "novita": "nuovo",
   "pdf_letti": [
@@ -1496,7 +1496,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-06-25",
   "punteggio": 42,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1674,7 +1674,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": null,
   "punteggio": 40,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1750,7 +1750,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": null,
   "punteggio": 52,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1816,7 +1816,7 @@
   "impronta": "5553df2ab731",
   "in_tedesco": false,
   "km": 40,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 38,
   "novita": "aggiornato",
   "pdf_letti": [],
@@ -1824,7 +1824,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-04-28",
   "punteggio": 39,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2026-05-22",
   "scadenza_frase": "21 – 38060 Nomi (TN), entro e non oltre le ore 12.00 del giorno 22 maggio 2026 A.P.S.P. “O",
   "segnali_turni": {
@@ -1898,7 +1898,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-09-25",
   "punteggio": 33,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -1912,8 +1912,12 @@
  },
  "6529422d89d3": {
   "affidabilita": "ufficiale",
-  "avvisi": [],
-  "cambi": [],
+  "avvisi": [
+   "Dal PDF allegato: scadenza"
+  ],
+  "cambi": [
+   "scadenza: 2026-08-13 → 2026-09-10"
+  ],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "P.IVA / libera professione",
@@ -1941,7 +1945,7 @@
    "v": 3,
    "zona": "Madonna di Campiglio"
   },
-  "data_novita": "2026-11-13",
+  "data_novita": "2026-11-15",
   "datore": "ASUIT (Trentino)",
   "dettaglio_punteggio": [
    {
@@ -1981,12 +1985,12 @@
   "euro_ora": null,
   "fonte": "ASUIT – bandi e concorsi",
   "id": "6529422d89d3",
-  "impronta": "5eebd26b79c4",
+  "impronta": "d2c7b95799d7",
   "in_tedesco": false,
   "km": 65,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 75,
-  "novita": "nuovo",
+  "novita": "aggiornato",
   "pdf_letti": [
    "https://www.asuit.tn.it/system/files/paragrafi/elemento_protonterapia/53625/p_allegati/64522/SLP%2015%2026%20%20Avviso.pdf"
   ],
@@ -1994,9 +1998,9 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 60,
-  "regole": 6,
-  "scadenza": "2026-08-13",
-  "scadenza_frase": "Tipo Argomenti Date e scadenze Cos'è In esecuzione della deliberazione del Direttore Generale n. 634 di data 13 agosto 2026 è indetto a",
+  "regole": 7,
+  "scadenza": "2026-09-10",
+  "scadenza_frase": "di partecipazione scade il giorno 10 settembre 2026 ad ore 23.5",
   "segnali_turni": {
    "dodici": true
   },
@@ -2096,7 +2100,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-23",
   "punteggio": 54,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2026-11-19",
   "scadenza_frase": "178,71 kB) Termine di presentazione Giovedì, 19 Novembre 2026 ore 12:00 I",
   "segnali_turni": {
@@ -2174,7 +2178,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-18",
   "punteggio": 55,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -2315,7 +2319,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-27",
   "punteggio": 27,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -2507,7 +2511,7 @@
   "impronta": "8e210ea50836",
   "in_tedesco": false,
   "km": 42,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 42,
   "novita": "nuovo",
   "pdf_letti": [],
@@ -2515,7 +2519,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-04-22",
   "punteggio": 37,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2026-05-22",
   "scadenza_frase": "e selezioni ”. Il termine di presentazione della domanda scade il giorno 22 maggio 2026 alle ore 12",
   "segnali_turni": {},
@@ -2611,7 +2615,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-11-03",
   "punteggio": 27,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2026-12-04",
   "scadenza_frase": "505,54 kB) Termine di presentazione Venerdì, 04 Dicembre 2026 ore 12:00 I",
   "segnali_turni": {
@@ -2686,7 +2690,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-19",
   "punteggio": 30,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -2769,7 +2773,7 @@
   "impronta": "7b0b5017feae",
   "in_tedesco": false,
   "km": 70,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 55,
   "novita": "nuovo",
   "pdf_letti": [
@@ -2779,7 +2783,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2024-07-17",
   "punteggio": 30,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -2841,7 +2845,7 @@
   "impronta": "84e717aa3553",
   "in_tedesco": false,
   "km": 32,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 35,
   "novita": "nuovo",
   "pdf_letti": [],
@@ -2849,7 +2853,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-06-23",
   "punteggio": 40,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -2950,7 +2954,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 30,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2026-11-30",
   "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
   "segnali_turni": {
@@ -3039,7 +3043,7 @@
   "impronta": "e3585d17c31d",
   "in_tedesco": false,
   "km": 95,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 82,
   "novita": "nuovo",
   "pdf_letti": [
@@ -3049,7 +3053,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-02-27",
   "punteggio": 32,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2026-03-06",
   "scadenza_frase": "essere pre­sentate entro le ore 12.00 del 06.03.2026 in Segreter",
   "segnali_turni": {
@@ -3136,7 +3140,7 @@
   "impronta": "9b32d89b83c5",
   "in_tedesco": false,
   "km": 70,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 55,
   "novita": "nuovo",
   "pdf_letti": [
@@ -3146,7 +3150,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2023-09-24",
   "punteggio": 30,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -3218,7 +3222,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-15",
   "punteggio": 39,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2026-11-13",
   "scadenza_frase": "apspvannetti@pec.it entro e non oltre le ore 12.00 del giorno 13/11/2026 all’U.O. de",
   "segnali_turni": {
@@ -3309,7 +3313,7 @@
   "impronta": "6ac3f97f38d5",
   "in_tedesco": false,
   "km": 42,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 35,
   "novita": "aggiornato",
   "pdf_letti": [
@@ -3320,7 +3324,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-12-19",
   "punteggio": 40,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2025-12-26",
   "scadenza_frase": "postacert.inps.gov.it entro il termine perentorio di venerdì 26/12/2025. Il bando i",
   "segnali_turni": {
@@ -3413,7 +3417,7 @@
   "impronta": "09fbe03f39ef",
   "in_tedesco": false,
   "km": null,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": null,
   "novita": "aggiornato",
   "pdf_letti": [
@@ -3423,7 +3427,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-01-12",
   "punteggio": 32,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -3440,10 +3444,11 @@
  "b6439eafe514": {
   "affidabilita": "ufficiale",
   "avvisi": [
+   "Scadenza dal bando PDF (la pagina indica anche il 26/10/2026: apri l'annuncio)",
    "Dal PDF allegato: ore e turni, compenso"
   ],
   "cambi": [
-   "scadenza: 2026-10-22 → 2026-10-26"
+   "scadenza: 2026-10-26 → 2026-12-31"
   ],
   "cita_tedesco": false,
   "compenso": "stipendio base 29.742,57 € l'anno, più indennità",
@@ -3470,7 +3475,7 @@
    "v": 3,
    "zona": "Trento"
   },
-  "data_novita": "2026-11-13",
+  "data_novita": "2026-11-15",
   "datore": "ASUIT (Trentino)",
   "dettaglio_punteggio": [
    {
@@ -3509,10 +3514,10 @@
   "euro_ora": null,
   "fonte": "ASUIT – bandi e concorsi",
   "id": "b6439eafe514",
-  "impronta": "d5420c665ff2",
+  "impronta": "a1396ace7de5",
   "in_tedesco": false,
   "km": 50,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 55,
   "novita": "aggiornato",
   "pdf_letti": [
@@ -3523,9 +3528,9 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 32,
-  "regole": 6,
-  "scadenza": "2026-10-26",
-  "scadenza_frase": "che perverranno entro il giorno lunedì 26 ottobre 2026 . L’Azienda",
+  "regole": 7,
+  "scadenza": "2026-12-31",
+  "scadenza_frase": "procedura telematica entro le ore 23.59 del giorno 31 dicembre 2026. Detto term",
   "segnali_turni": {
    "parziale": true,
    "pieno": true
@@ -3600,7 +3605,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 40,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -3665,7 +3670,7 @@
   "impronta": "e35986935a8a",
   "in_tedesco": false,
   "km": 70,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 55,
   "nota_manuale": "Inserito a mano il 12/11/2026. Annuncio di marzo 2026: verificare se è ancora aperto.",
   "novita": null,
@@ -3675,7 +3680,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-03-05",
   "punteggio": 49,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -3873,7 +3878,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 33,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -4001,7 +4006,7 @@
   "impronta": "8e6398b001f9",
   "in_tedesco": false,
   "km": 65,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 75,
   "novita": "nuovo",
   "pdf_letti": [],
@@ -4009,7 +4014,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-01-07",
   "punteggio": 55,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -4073,7 +4078,7 @@
   "impronta": "3e296c0146ef",
   "in_tedesco": false,
   "km": 62,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 72,
   "novita": "aggiornato",
   "pdf_letti": [],
@@ -4081,7 +4086,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-05-22",
   "punteggio": 30,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -4166,7 +4171,7 @@
   "impronta": "575a78bc82f5",
   "in_tedesco": false,
   "km": 32,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 35,
   "novita": "nuovo",
   "pdf_letti": [
@@ -4176,7 +4181,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2023-09-13",
   "punteggio": 42,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -4256,7 +4261,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-07-03",
   "punteggio": 25,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2026-12-04",
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -4358,7 +4363,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 30,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2026-11-20",
   "scadenza_frase": "kundmachung_befristete_rangordnung_sozialbetreuer_pflegehelfer_krankenpfleger_heimgehilfen_verwaltungsassistent_fuer_2027_termin_20.11.2026-signed.pdf neu_gesuch_befriste",
   "segnali_turni": {
@@ -4424,7 +4429,7 @@
   "impronta": "4efba8df41b6",
   "in_tedesco": false,
   "km": 70,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 55,
   "novita": "nuovo",
   "pdf_letti": [],
@@ -4432,7 +4437,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-08-08",
   "punteggio": 30,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -4509,6 +4514,7 @@
     "voce": "Fonte"
    }
   ],
+  "doppione_di": "b6439eafe514",
   "email": "concorsi@asuit.tn.it",
   "estratto": "…COLLABORATORE PROFESSIONALE SANITARIO – INFERMIERE PRESSO LA SEDE DI CAVALESE In esecuzione della determinazione della sostituta Dirigente del Servizio Acquisizione e sviluppo n. 1593/2026 del 21 settembre 2026 è emesso…",
   "euro_ora": null,
@@ -4527,7 +4533,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 32,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2026-12-31",
   "scadenza_frase": "procedura telematica entro le ore 23.59 del giorno 31 dicembre 2026. Detto term",
   "segnali_turni": {
@@ -4605,7 +4611,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 56,
-  "regole": 6,
+  "regole": 7,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -4670,7 +4676,7 @@
   "impronta": "fdd72c09b9d2",
   "in_tedesco": false,
   "km": 80,
-  "letto_il": "2026-11-14",
+  "letto_il": "2026-11-15",
   "minuti": 80,
   "novita": "nuovo",
   "pdf_letti": [],
@@ -4678,7 +4684,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-07-15",
   "punteggio": 32,
-  "regole": 6,
+  "regole": 7,
   "scadenza": "2026-08-14",
   "scadenza_frase": "dell’APSP “Suor Agnese” entro le ore 12.00 del giorno 14.08.2026. A.P.S.P. S",
   "segnali_turni": {

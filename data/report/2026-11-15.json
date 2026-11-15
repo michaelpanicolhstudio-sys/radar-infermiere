@@ -1,11 +1,28 @@
 {
- "aggiornati": [],
+ "aggiornati": [
+  {
+   "cambi": [
+    "scadenza: 2026-10-26 → 2026-12-31"
+   ],
+   "compenso": "stipendio base 29.742,57 € l'anno, più indennità",
+   "contratto": "Concorso / graduatoria",
+   "datore": "ASUIT (Trentino)",
+   "id": "b6439eafe514",
+   "minuti": 55,
+   "piva": false,
+   "punteggio": 32,
+   "scadenza": "2026-12-31",
+   "titolo": "Selezione pubblica, per titoli, per la formazione di graduatorie per assunzioni a tempo determinato nel profilo professionale di Collaboratore professionale sanitario - Infermiere presso la sede di Ca",
+   "url": "https://www.asuit.tn.it/bandi-concorsi/selezione-pubblica-titoli-la-formazione-di-graduatorie-assunzioni-tempo-determinato",
+   "zona": "Cavalese"
+  }
+ ],
  "attivi": 29,
  "attivi_piva": 11,
  "data": "2026-11-15",
  "fonti_lette": 24,
  "fonti_totali": 24,
- "giri": 2,
+ "giri": 3,
  "nuovi": [],
  "problemi": [],
  "scadenze7": [
