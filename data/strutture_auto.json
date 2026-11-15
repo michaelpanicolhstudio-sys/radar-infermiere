@@ -1,4 +1,5 @@
 {
+ "aggiornato_il": "2026-11-15",
  "da_completare": false,
  "strutture": [
   {
@@ -80,7 +81,6 @@
    "nome": "A.P.S.P. Levico Curae - Centro Unico Riabilitativo Assistenziale Educativo",
    "pec": "apsplevicocurae@pec.it",
    "sito": "https://www.apsplevicocurae.it",
-   "sito_controllato": "2026-11-15",
    "tipo": "RSA pubblica"
   },
   {
@@ -144,7 +144,6 @@
    "nome": "A.P.S.P.S. Spirito Fondazione Montel",
    "pec": "amministrazione@pec.apsp-pergine.it",
    "sito": "https://www.apsp-pergine.it",
-   "sito_controllato": "2026-11-15",
    "tipo": "RSA pubblica"
   },
   {
@@ -245,7 +244,6 @@
    "nome": "APSP San Gaetano",
    "pec": "apspsangaetano@legalmail.it",
    "sito": "https://www.apspsangaetano.it",
-   "sito_controllato": "2026-11-15",
    "tipo": "RSA pubblica"
   },
   {
@@ -303,7 +301,7 @@
    "tipo": "RSA pubblica"
   },
   {
-   "comune": "Fič allo Sciliar",
+   "comune": "Fiè allo Sciliar",
    "email": "altersheim@gemeinde.voels.bz.it",
    "fonte": "IPA",
    "nome": "Apsp Casa di Riposo Fie allo Sciliar",
@@ -511,7 +509,7 @@
   },
   {
    "comune": "Merano",
-   "email": null,
+   "email": "info@pitsch.it",
    "fonte": "IPA",
    "nome": "Fondazione Pitsch Apsp",
    "pec": "pitsch@pec.pitsch.it",
