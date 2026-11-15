@@ -296,8 +296,11 @@ contatti:
 invio:
   attivo: false        # true = ogni mattina il Radar invia le lettere in coda; false = solo bozze nell'app
   al_giorno: 12        # quante lettere al massimo per mattina (poche alla volta: niente aspetto da spam)
-  pausa_secondi: 20
+  pausa_secondi: 8
   mittente: "Michael Panico"
+  una_tantum: "2026-11-15"     # invio unico per «tastare il terreno» (deciso da Michael il 15/11/2026); non si ripete
+  una_tantum_massimo: 80
+  escludi: [Vannetti]          # a queste scrive Michael dalla PEC (avviso Vannetti)
 
 # ---- Posta: risposte delle strutture contattate e avvisi di lavoro dei portali ----
 # (casella di lavoro: quella indicata nel segreto GMAIL_USER)

@@ -82,6 +82,21 @@ def main() -> int:
             motore.scrivi_json(uscite.FILE_CONTATTI, contatti)
         except Exception as e:
             print(f"⚠ Lettere non inviate: {type(e).__name__}: {e}", file=sys.stderr)
+    # Invio una tantum («tastare il terreno»): una sola volta, nel giorno indicato in config.yaml (invio.una_tantum),
+    # anche nei giri di prova. Le strutture con sola PEC si saltano: le invia Michael dalla sua casella PEC.
+    una_tantum = str((cfg.get("invio") or {}).get("una_tantum") or "")
+    segno = motore.RADICE / "data" / "invio_una_tantum.txt"
+    if una_tantum == oggi.isoformat() and (not segno.exists() or segno.read_text().strip() != una_tantum):
+        try:
+            comuni = estrai.carica_comuni(motore.RADICE / "data" / "comuni.csv")
+            contatti = motore.leggi_json(uscite.FILE_CONTATTI, {})
+            voci = [v for v in invio.coda(uscite.leggi_strutture(comuni), motore.leggi_json(motore.FILE_ANNUNCI, {}), contatti, cfg, oggi)
+                    if not v["via_pec"] and not any(x.lower() in v["nome"].lower() for x in (cfg.get("invio") or {}).get("escludi", []))]
+            inviate += invio.invia(voci, contatti, cfg, oggi, forza=True, massimo=int((cfg.get("invio") or {}).get("una_tantum_massimo", 80)))
+            motore.scrivi_json(uscite.FILE_CONTATTI, contatti)
+            segno.write_text(una_tantum + "\n")
+        except Exception as e:
+            print(f"⚠ Lettere una tantum non inviate: {type(e).__name__}: {e}", file=sys.stderr)
     dest = uscite.costruisci_sito(cfg, oggi)
     memoria = motore.leggi_json(motore.FILE_ANNUNCI, {})
     contatti = motore.leggi_json(uscite.FILE_CONTATTI, {})

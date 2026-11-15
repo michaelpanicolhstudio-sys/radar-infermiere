@@ -62,11 +62,12 @@ def data_prevista(posizione: int, oggi: date, al_giorno: int, attivo: bool) -> s
     return (oggi + timedelta(days=1 + posizione // al_giorno)).isoformat()
 
 
-def invia(voci: list[dict], contatti: dict, cfg: dict, oggi: date, registra=print) -> list[dict]:
+def invia(voci: list[dict], contatti: dict, cfg: dict, oggi: date, registra=print,
+          forza: bool = False, massimo: int | None = None) -> list[dict]:
     regole = cfg.get("invio") or {}
     utente = os.environ.get("GMAIL_USER", "").strip()
     chiave = os.environ.get("GMAIL_APP_PASSWORD", "").replace(" ", "")
-    if not (regole.get("attivo") and utente and chiave):
+    if not ((regole.get("attivo") or forza) and utente and chiave):
         return []
     inviate = []
     try:
@@ -76,7 +77,7 @@ def invia(voci: list[dict], contatti: dict, cfg: dict, oggi: date, registra=prin
         registra(f"⚠ Lettere non inviate: accesso a Gmail non riuscito ({type(e).__name__})")
         return []
     try:
-        for v in voci[: int(regole.get("al_giorno", 12))]:
+        for v in voci[: massimo if massimo is not None else int(regole.get("al_giorno", 12))]:
             msg = EmailMessage()
             msg["Subject"] = v["oggetto"]
             msg["From"] = formataddr((regole.get("mittente") or "Michael Panico", utente))
