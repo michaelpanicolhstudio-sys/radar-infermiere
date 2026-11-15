@@ -1,4 +1,5 @@
 {
+ "aggiornato_il": "2026-11-15",
  "da_completare": false,
  "strutture": [
   {
@@ -7,6 +8,7 @@
    "fonte": "IPA",
    "nome": "A.P.S.P. Anaunia",
    "pec": "apsptaio@pec.it",
+   "provincia": "TN",
    "sito": "https://www.apsptaio.org",
    "tipo": "RSA pubblica"
   },
@@ -16,6 +18,7 @@
    "fonte": "IPA",
    "nome": "A.P.S.P. Beato De Tschiderer Gia' Istituto Arcivescovile per Sordi",
    "pec": "iaps.tn@pcert.it",
+   "provincia": "TN",
    "sito": "https://www.iaps.it",
    "tipo": "RSA pubblica"
   },
@@ -25,6 +28,7 @@
    "fonte": "IPA",
    "nome": "A.P.S.P. Casa Laner",
    "pec": "amministrazione@pec.casalaner.it",
+   "provincia": "TN",
    "sito": "https://www.casalaner.it",
    "tipo": "RSA pubblica"
   },
@@ -34,6 +38,7 @@
    "fonte": "IPA",
    "nome": "A.P.S.P. Casa di Riposo S.Vigilio - Fondazione Bonazza",
    "pec": "segreteria@pec.casariposospiazzo.it",
+   "provincia": "TN",
    "sito": "https://www.casariposospiazzo.it",
    "tipo": "RSA pubblica"
   },
@@ -43,6 +48,7 @@
    "fonte": "IPA",
    "nome": "A.P.S.P. Centro Residenziale 'Abelardo Collini' di Pinzolo",
    "pec": "segreteria@pec.apsp-pinzolo.it",
+   "provincia": "TN",
    "sito": "https://www.apsp-pinzolo.it",
    "tipo": "RSA pubblica"
   },
@@ -52,6 +58,7 @@
    "fonte": "IPA",
    "nome": "A.P.S.P. Cesare Benedetti",
    "pec": "amministrazione@pec.apsp-cesarebenedetti.it",
+   "provincia": "TN",
    "sito": "https://www.apsp-cesarebenedetti.it",
    "tipo": "RSA pubblica"
   },
@@ -61,6 +68,7 @@
    "fonte": "IPA",
    "nome": "A.P.S.P. Fondazione La Roggia",
    "pec": "fondazioneviaroggia@pec.it",
+   "provincia": "BZ",
    "sito": "https://www.fondazioneviaroggia.it",
    "tipo": "RSA pubblica"
   },
@@ -70,6 +78,7 @@
    "fonte": "IPA",
    "nome": "A.P.S.P. Giacomo Cis APSP",
    "pec": "amministrazione@pec.apspgiacomocis.it",
+   "provincia": "TN",
    "sito": "https://www.apspgiacomocis.it",
    "tipo": "RSA pubblica"
   },
@@ -79,6 +88,7 @@
    "fonte": "IPA",
    "nome": "A.P.S.P. Levico Curae - Centro Unico Riabilitativo Assistenziale Educativo",
    "pec": "apsplevicocurae@pec.it",
+   "provincia": "TN",
    "sito": "https://www.apsplevicocurae.it",
    "tipo": "RSA pubblica"
   },
@@ -88,6 +98,7 @@
    "fonte": "IPA",
    "nome": "A.P.S.P. Opera Romani",
    "pec": "operaromani@legalmail.it",
+   "provincia": "TN",
    "sito": "https://www.operaromani.it",
    "tipo": "RSA pubblica"
   },
@@ -97,6 +108,7 @@
    "fonte": "IPA",
    "nome": "A.P.S.P. Padre Odone Nicolini",
    "pec": "odone@pec.apsppievedibono.it",
+   "provincia": "TN",
    "sito": "https://www.apsppievedibono.it",
    "tipo": "RSA pubblica"
   },
@@ -106,6 +118,7 @@
    "fonte": "IPA",
    "nome": "A.P.S.P. Piccolo Spedale",
    "pec": "apsp.pievetesino@pec.it",
+   "provincia": "TN",
    "sito": "https://www.piccolospedale.it",
    "tipo": "RSA pubblica"
   },
@@ -115,6 +128,7 @@
    "fonte": "IPA",
    "nome": "A.P.S.P. Residenza Molino",
    "pec": "info@pec.residenzamolino.it",
+   "provincia": "TN",
    "sito": "https://www.residenzamolino.it",
    "tipo": "RSA pubblica"
   },
@@ -124,6 +138,7 @@
    "fonte": "IPA",
    "nome": "A.P.S.P. SUOR FILIPPINA Casa di Soggiorno",
    "pec": "apspgrigno@pec.it",
+   "provincia": "TN",
    "sito": "https://www.apspgrigno.it",
    "tipo": "RSA pubblica"
   },
@@ -133,6 +148,7 @@
    "fonte": "IPA",
    "nome": "A.P.S.P. Suor Agnese",
    "pec": "apspsuoragnese@pec.it",
+   "provincia": "TN",
    "sito": "https://www.apspsuoragnese.it",
    "tipo": "RSA pubblica"
   },
@@ -142,6 +158,7 @@
    "fonte": "IPA",
    "nome": "A.P.S.P.S. Spirito Fondazione Montel",
    "pec": "amministrazione@pec.apsp-pergine.it",
+   "provincia": "TN",
    "sito": "https://www.apsp-pergine.it",
    "tipo": "RSA pubblica"
   },
@@ -151,6 +168,7 @@
    "fonte": "IPA",
    "nome": "APSP 'San Giuseppe' di Primiero",
    "pec": "segreteria@pec.apsp-primiero.net",
+   "provincia": "TN",
    "sito": "https://www.apsp-primiero.net/",
    "tipo": "RSA pubblica"
   },
@@ -160,6 +178,7 @@
    "fonte": "IPA",
    "nome": "APSP Citta di Riva",
    "pec": "apsp.cittadiriva@registerpec.it",
+   "provincia": "TN",
    "sito": "https://www.csarivadelgarda.com",
    "tipo": "RSA pubblica"
   },
@@ -169,6 +188,7 @@
    "fonte": "IPA",
    "nome": "APSP Clementino Vannetti",
    "pec": "apspvannetti@pec.it",
+   "provincia": "TN",
    "sito": "https://www.apspvannetti.it",
    "tipo": "RSA pubblica"
   },
@@ -178,6 +198,7 @@
    "fonte": "IPA",
    "nome": "APSP Dott. Antonio Bontempelli",
    "pec": "apsp-pellizzano@pec.it",
+   "provincia": "TN",
    "sito": "https://www.apsp-pellizzano.it",
    "tipo": "RSA pubblica"
   },
@@ -187,6 +208,7 @@
    "fonte": "IPA",
    "nome": "APSP Fondazione San Nicolo",
    "pec": "fondazionesannicolo@pec.it",
+   "provincia": "BZ",
    "sito": "https://www.sannicolo.bz.it/it",
    "tipo": "RSA pubblica"
   },
@@ -196,6 +218,7 @@
    "fonte": "IPA",
    "nome": "APSP Fondo Ospedale della S.S.Trinita' di Laces",
    "pec": "altenheimlatsch@legalmail.it",
+   "provincia": "BZ",
    "sito": "https://www.altenheimlatsch.it",
    "sito_controllato": "2026-11-15",
    "tipo": "RSA pubblica"
@@ -206,6 +229,7 @@
    "fonte": "IPA",
    "nome": "APSP Giovanni Endrizzi",
    "pec": "amministrazione@pec.apsplavis.it",
+   "provincia": "TN",
    "sito": "https://www.apsplavis.it",
    "tipo": "RSA pubblica"
   },
@@ -215,6 +239,7 @@
    "fonte": "IPA",
    "nome": "APSP Giudicarie Esteriori",
    "pec": "amministrazione@pec.apspgiudicarieesteriori.it",
+   "provincia": "TN",
    "sito": "https://www.apspgiudicarieesteriori.it",
    "tipo": "RSA pubblica"
   },
@@ -224,6 +249,7 @@
    "fonte": "IPA",
    "nome": "APSP Margherita Grazioli",
    "pec": "apspgrazioli@pec.it",
+   "provincia": "TN",
    "sito": "https://www.apspgrazioli.it",
    "tipo": "RSA pubblica"
   },
@@ -233,6 +259,7 @@
    "fonte": "IPA",
    "nome": "APSP Martinsheim di Malles Venosta",
    "pec": "martinsheim@legalmail.it",
+   "provincia": "BZ",
    "sito": "https://www.martinsheim.it",
    "tipo": "RSA pubblica"
   },
@@ -242,6 +269,7 @@
    "fonte": "IPA",
    "nome": "APSP San Gaetano",
    "pec": "apspsangaetano@legalmail.it",
+   "provincia": "TN",
    "sito": "https://www.apspsangaetano.it",
    "tipo": "RSA pubblica"
   },
@@ -251,6 +279,7 @@
    "fonte": "IPA",
    "nome": "APSP San Giuseppe",
    "pec": "apsp.roncegno.amministrazione@pec.it",
+   "provincia": "TN",
    "sito": "https://www.apsp-roncegno.it",
    "tipo": "RSA pubblica"
   },
@@ -260,6 +289,7 @@
    "fonte": "IPA",
    "nome": "APSP Santa Maria",
    "pec": "raccomandata@pec.apspcles.it",
+   "provincia": "TN",
    "sito": "https://www.apspcles.it",
    "tipo": "RSA pubblica"
   },
@@ -269,6 +299,7 @@
    "fonte": "IPA",
    "nome": "APSP Valle del Vanoi",
    "pec": "apsp.vanoi@pec.it",
+   "provincia": "TN",
    "sito": "https://www.apspvalledelvanoi.it",
    "tipo": "RSA pubblica"
   },
@@ -278,6 +309,7 @@
    "fonte": "IPA",
    "nome": "APSP della Val di Fassa",
    "pec": "info@pec.apspfassa.it",
+   "provincia": "TN",
    "sito": "https://www.apspfassa.it",
    "tipo": "RSA pubblica"
   },
@@ -287,6 +319,7 @@
    "fonte": "IPA",
    "nome": "APSP di Brentonico",
    "pec": "apspbrentonico@postagarantita.eu",
+   "provincia": "TN",
    "sito": "https://www.apspbrentonico.it",
    "tipo": "RSA pubblica"
   },
@@ -296,6 +329,7 @@
    "fonte": "IPA",
    "nome": "Apsp \"Redenta Floriani\"",
    "pec": "apspstrigno@pec.it",
+   "provincia": "TN",
    "sito": "https://www.apspstrigno.it",
    "tipo": "RSA pubblica"
   },
@@ -305,6 +339,7 @@
    "fonte": "IPA",
    "nome": "Apsp Casa di Riposo Fie allo Sciliar",
    "pec": "seniorenzentrum@pec.rolmail.net",
+   "provincia": "BZ",
    "sito": "https://www.seniorenzentrum.it",
    "tipo": "RSA pubblica"
   },
@@ -314,6 +349,7 @@
    "fonte": "IPA",
    "nome": "Apsp Don Giuseppe Cumer",
    "pec": "apspvallarsa@pec.it",
+   "provincia": "TN",
    "sito": "https://www.apspvallarsa.it",
    "tipo": "RSA pubblica"
   },
@@ -323,6 +359,7 @@
    "fonte": "IPA",
    "nome": "Apsp Fondazione Casa di Riposo S. Valburga",
    "pec": "ah-walburg@pec.rolmail.net",
+   "provincia": "BZ",
    "sito": "https://www.altenheim-stwalburg.it",
    "tipo": "RSA pubblica"
   },
@@ -332,6 +369,7 @@
    "fonte": "IPA",
    "nome": "Apsp Josefsheim Villandro",
    "pec": "josefsheim@legalmail.it",
+   "provincia": "BZ",
    "sito": "http://www.josefsheim.eu/de",
    "tipo": "RSA pubblica"
   },
@@ -341,6 +379,7 @@
    "fonte": "IPA",
    "nome": "Apsp S.Lorenzo e S.Maria della Misericordia",
    "pec": "apspborgo@pec.it",
+   "provincia": "TN",
    "sito": "https://www.apspborgo.it",
    "tipo": "RSA pubblica"
   },
@@ -350,6 +389,7 @@
    "fonte": "IPA",
    "nome": "Apsp Santo Spirito",
    "pec": "apsp.santospirito@pec.brennercom.net",
+   "provincia": "BZ",
    "sito": "https://www.casadiriposo-bressanone.it",
    "tipo": "RSA pubblica"
   },
@@ -359,6 +399,7 @@
    "fonte": "IPA",
    "nome": "Apsp Ubaldo Campagnola",
    "pec": "apspavio@pec.it",
+   "provincia": "TN",
    "sito": "https://www.apspavio.it",
    "tipo": "RSA pubblica"
   },
@@ -368,6 +409,7 @@
    "fonte": "IPA",
    "nome": "Apsp Villa San Lorenzo",
    "pec": "rsastoro@pec.it",
+   "provincia": "TN",
    "sito": "https://www.apspstoro.it/",
    "tipo": "RSA pubblica"
   },
@@ -377,6 +419,7 @@
    "fonte": "IPA",
    "nome": "Azienda Pubblica Servizi alla Persona Cristani - De Luca",
    "pec": "casacristani@pec.it",
+   "provincia": "TN",
    "sito": "https://www.cristanideluca.it/",
    "tipo": "RSA pubblica"
   },
@@ -386,6 +429,7 @@
    "fonte": "IPA",
    "nome": "Azienda Pubblica Servizi alla Persona San Giovanni",
    "pec": "protocollo@pec.sangiovanni.tn.it",
+   "provincia": "TN",
    "sito": "https://www.sangiovanni.tn.it",
    "tipo": "RSA pubblica"
   },
@@ -395,6 +439,7 @@
    "fonte": "IPA",
    "nome": "Buergerheim St.Nikolaus Von Der Fluee - Apsp",
    "pec": "altersheim-schlanders@legalmail.it",
+   "provincia": "BZ",
    "sito": "https://www.altersheim-schlanders.it",
    "tipo": "RSA pubblica"
   },
@@ -404,6 +449,7 @@
    "fonte": "IPA",
    "nome": "Casa Mia APSP",
    "pec": "casamia.apsp@pec.casamiariva.it",
+   "provincia": "TN",
    "sito": "https://www.casamiariva.it",
    "tipo": "RSA pubblica"
   },
@@ -413,6 +459,7 @@
    "fonte": "IPA",
    "nome": "Casa di Riposo Giovanelli",
    "pec": "cdr.giovanelli@legalmail.it",
+   "provincia": "TN",
    "sito": "https://www.casadiriposogiovanelli.org",
    "tipo": "RSA pubblica"
   },
@@ -422,6 +469,7 @@
    "fonte": "IPA",
    "nome": "Casa di Riposo S. Anna Apsp",
    "pec": "st.anna.tramin@legalmail.it",
+   "provincia": "BZ",
    "sito": "https://www.ah-tramin.it",
    "tipo": "RSA pubblica"
   },
@@ -431,6 +479,7 @@
    "fonte": "IPA",
    "nome": "Casa di Riposo San Pancrazio Apsp",
    "pec": "altenheim.stpankraz@pec.rolmail.net",
+   "provincia": "BZ",
    "sito": "https://www.altenheim-stpankraz.it",
    "tipo": "RSA pubblica"
   },
@@ -440,6 +489,7 @@
    "fonte": "IPA",
    "nome": "Centro Assistenza Tschoegglberg APSP",
    "pec": "ah-moelten@pec.it",
+   "provincia": "BZ",
    "sito": "https://www.ahtschoegglberg.it",
    "tipo": "RSA pubblica"
   },
@@ -449,6 +499,7 @@
    "fonte": "IPA",
    "nome": "Centro Servizi Socio Sanitari e Residenziali Male' A.P.S.P.",
    "pec": "amministrazione@pec.centroservizimale.it",
+   "provincia": "TN",
    "sito": "https://www.centroservizimale.it",
    "tipo": "RSA pubblica"
   },
@@ -458,6 +509,7 @@
    "fonte": "IPA",
    "nome": "Consorzio Casa di Riposo e di Degenza S.Michael",
    "pec": "pflegeheimst.michaeltisens@legalmail.it",
+   "provincia": "BZ",
    "sito": "https://www.pflegeheim-tisens.bz.it",
    "tipo": "RSA pubblica"
   },
@@ -467,6 +519,7 @@
    "fonte": "IPA",
    "nome": "Fondazione Benjamin Kofler Apsp",
    "pec": "b.kofler@legalmail.it",
+   "provincia": "BZ",
    "sito": "https://www.benjamin-kofler.it",
    "tipo": "RSA pubblica"
   },
@@ -476,6 +529,7 @@
    "fonte": "IPA",
    "nome": "Fondazione Casa di Riposo Heinrich Von Rottenburg",
    "pec": "ah-kaltern@legalmail.it",
+   "provincia": "BZ",
    "sito": "https://www.ah-kaltern.it",
    "tipo": "RSA pubblica"
   },
@@ -485,6 +539,7 @@
    "fonte": "IPA",
    "nome": "Fondazione Lorenzerhof APSP",
    "pec": "lorenzerhof@pec.it",
+   "provincia": "BZ",
    "sito": "https://www.lorenzerhof.eu",
    "tipo": "RSA pubblica"
   },
@@ -494,6 +549,7 @@
    "fonte": "IPA",
    "nome": "Fondazione Peter Paul Schrott Apsp",
    "pec": "peterpaulschrott@legalmail.it",
+   "provincia": "BZ",
    "sito": "https://www.sh-eggental.bz.it",
    "tipo": "RSA pubblica"
   },
@@ -503,6 +559,7 @@
    "fonte": "IPA",
    "nome": "Fondazione Pilsenhof Apsp",
    "pec": "ah-terlan@pec.ah-terlan.it",
+   "provincia": "BZ",
    "sito": "https://www.pilsenhof.it",
    "tipo": "RSA pubblica"
   },
@@ -512,8 +569,8 @@
    "fonte": "IPA",
    "nome": "Fondazione Pitsch Apsp",
    "pec": "pitsch@pec.pitsch.it",
+   "provincia": "BZ",
    "sito": "https://www.pitsch.it",
-   "sito_controllato": "2026-11-15",
    "tipo": "RSA pubblica"
   },
   {
@@ -522,6 +579,7 @@
    "fonte": "IPA",
    "nome": "Fondazione Von-kurz Apsp - Casa di Riposo Villabassa",
    "pec": "von-kurz@legalmail.it",
+   "provincia": "BZ",
    "sito": "https://www.von-kurz-stiftung.com",
    "tipo": "RSA pubblica"
   },
@@ -531,6 +589,7 @@
    "fonte": "IPA",
    "nome": "Griesfeld Apsp",
    "pec": "griesfeld@legalmail.it",
+   "provincia": "BZ",
    "sito": "https://www.griesfeld.it",
    "tipo": "RSA pubblica"
   },
@@ -540,6 +599,7 @@
    "fonte": "IPA",
    "nome": "Residenza per Anziani Asps",
    "pec": "senioren.ritten@pec.it",
+   "provincia": "BZ",
    "sito": "https://www.seniorenritten.eu",
    "tipo": "RSA pubblica"
   },
@@ -549,6 +609,7 @@
    "fonte": "IPA",
    "nome": "Residenza per Anziani Lagundo Mathias Ladurner Apsp",
    "pec": "algund@pec.it",
+   "provincia": "BZ",
    "sito": "https://www.seniorenheimalgund.bz.it/de",
    "tipo": "RSA pubblica"
   },
@@ -558,6 +619,7 @@
    "fonte": "IPA",
    "nome": "Residenza per Anziani Ojoep Freinademetz",
    "pec": "ciasadepalsa@pec.rolmail.net",
+   "provincia": "BZ",
    "sito": "https://www.ciasadepalsa.it",
    "tipo": "RSA pubblica"
   },
@@ -567,6 +629,7 @@
    "fonte": "IPA",
    "nome": "Residenza per Anziani San Candido",
    "pec": "residenzaperanziani.sancandido@legalmail.it",
+   "provincia": "BZ",
    "sito": "https://www.residenzaperanziani-sancandido.it",
    "tipo": "RSA pubblica"
   },
@@ -576,6 +639,7 @@
    "fonte": "IPA",
    "nome": "Residenza per Anziani di Laion",
    "pec": "seniorenwohnheim.lajen@pec.it",
+   "provincia": "BZ",
    "sito": "https://www.seniorenwohnheim-lajen.eu",
    "tipo": "RSA pubblica"
   },
@@ -585,6 +649,7 @@
    "fonte": "IPA",
    "nome": "Rosa Dei Venti A.P.S.P.",
    "pec": "rosadeiventi.condino@pec.it",
+   "provincia": "TN",
    "sito": "https://www.rosadeiventi.tn.it",
    "tipo": "RSA pubblica"
   },
@@ -594,6 +659,7 @@
    "fonte": "IPA",
    "nome": "Seniorenheim Partschins Johann Nepomuk Schoepf - A.P.S.P.",
    "pec": "seniorenheim.partschins@pec.rolmail.net",
+   "provincia": "BZ",
    "sito": "https://seniorenheim-partschins.bz.it",
    "tipo": "RSA pubblica"
   }
