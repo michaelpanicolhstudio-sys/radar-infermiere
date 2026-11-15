@@ -1357,50 +1357,15 @@
    "scartati": []
   },
   "OPI Bolzano – offerte di lavoro": {
-   "accettati": [
-    "CERCHIAMO INFERMIERE:I (m/f/d) per la nostra RSA Ciasa de Palsa Ojöp Frëinademetz",
-    "La casa di riposo di Silandro cerca nuovi collaboratori/trici",
-    "CERCASI INFERMIERE/A PER EMODIALISI DOMICILIARE – BOLZANO"
-   ],
+   "accettati": [],
    "pagine": [
     {
-     "candidati": 20,
+     "candidati": 0,
+     "link_in_pagina": [],
      "url": "https://www.opibz.it/?page_id=5109"
     }
    ],
-   "scartati": [],
-   "senza_pdf": [
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://www.opibz.it/wp-content/uploads/fusion-styles/d3238dab3fc2f97dc3f15ff9853f0650.min.css?ver=3.16.4"
-      ]
-     ],
-     "url": "https://www.opibz.it/cerchiamo-infermierei-m-f-d-per-la-nostra-rsa-ciasa-de-palsa-ojop-freinademetz/"
-    },
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://www.opibz.it/wp-content/uploads/fusion-styles/d3238dab3fc2f97dc3f15ff9853f0650.min.css?ver=3.16.4"
-      ]
-     ],
-     "url": "https://www.opibz.it/la-casa-di-riposo-di-silandro-cerca-nuovi-collaboratori-trici/"
-    },
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://www.opibz.it/wp-content/uploads/fusion-styles/d3238dab3fc2f97dc3f15ff9853f0650.min.css?ver=3.16.4"
-      ]
-     ],
-     "url": "https://www.opibz.it/cercasi-infermiere-a-per-emodialisi-domiciliare-bolzano/"
-    }
-   ]
+   "scartati": []
   },
   "OPI Trento – annunci di lavoro": {
    "accettati": [
@@ -1717,5 +1682,9 @@
    "scartati": []
   }
  },
- "richieste": 88
+ "richieste": 85,
+ "strutture": {
+  "ipa_errore": "IPA: nessun file CSV nel dataset",
+  "siti_controllati": 0
+ }
 }
