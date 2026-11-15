@@ -25,7 +25,7 @@ AVVISO_DAL_DOPPIONE = "Preso dallo stesso bando su "
 # Dati che, se mancano nell'annuncio mostrato, si prendono da un suo doppione dello stesso bando.
 CAMPI_DAL_DOPPIONE = {"compenso": "compenso", "euro_ora": None, "email": "email", "pec": "PEC"}
 # Si aumenta quando cambiano le regole di pertinenza: le pagine già scartate vengono riaperte una volta.
-VERSIONE_REGOLE = 6
+VERSIONE_REGOLE = 7
 VERSIONE_PDF = 3      # cambia quando migliorano le regole: i PDF già letti vengono riletti
 # Siti-bacheca: i loro indirizzi email non sono il contatto della struttura che cerca personale.
 DOMINI_BACHECA = {"opi.tn.it", "opibz.it", "upipa.tn.it", "suedtirolerjobs.it", "fnopi.it", "google.com"}
@@ -173,6 +173,14 @@ def _costruisci(cand: dict, testo: str, pubblicato, fonte: dict, cfg: dict, comu
                     campi["scadenza_frase"] = da_pdf.get("scadenza_frase")
                 if campo == "turni":
                     campi["segnali_turni"] = da_pdf.get("segnali_turni") or {}
+        # Pagina e bando PDF con due scadenze diverse: vale la più lontana. Una proroga si scrive
+        # sulla pagina (più tardi del PDF); negli avvisi aperti la pagina dà le date di valutazione
+        # periodica («candidature che perverranno entro il 26 ottobre») e il PDF la chiusura vera.
+        if campi.get("scadenza") and da_pdf.get("scadenza") and da_pdf["scadenza"] > campi["scadenza"]:
+            vecchia = campi["scadenza"]
+            campi["scadenza"], campi["scadenza_frase"] = da_pdf["scadenza"], da_pdf.get("scadenza_frase")
+            avvisi.append(f"Scadenza dal bando PDF (la pagina indica anche il "
+                          f"{date.fromisoformat(vecchia).strftime('%d/%m/%Y')}: apri l'annuncio)")
         if campi.get("euro_ora") is None and (da_pdf.get("euro_ora") is not None
                                               or (campi.get("compenso") is None and da_pdf.get("compenso"))):
             campi["compenso"], campi["euro_ora"] = da_pdf.get("compenso"), da_pdf.get("euro_ora")

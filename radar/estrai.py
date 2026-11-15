@@ -589,6 +589,9 @@ RE_SCADENZA_FORTE = re.compile(
     r"entro\s+(?:e\s+non\s+oltre\s+)?(?:le\s+ore\s+[\d.:,]+\s+)?(?:del(?:\s+giorno)?|il(?:\s+giorno)?)\s|"
     r"entro\s+e\s+non\s+oltre|prorog\w*|bewerbungsfrist|einreichfrist|bis\s+(?:zum|spätestens)", re.I)
 RE_SCADENZA_DEBOLE = re.compile(r"entro\b|termine\b|frist\w*", re.I)
+_RE_DATA_ATTO = re.compile(
+    r"(?:deliber\w*|determin\w*|decret\w*|provvediment\w*|beschlu\w*|dekret\w*)\s+"
+    r"(?:\w+\s+){0,6}?(?:n\.?|nr\.?)\s*[\w/-]+\s*(?:di\s+data|in\s+data|del(?:l['’])?|dd\.?|vom)?\s*$", re.I)
 _RE_FINE_FRASE = re.compile(r"(?<![\d\s])\s*[.!?]\s+(?=[A-ZÀ-ÖØ-Ý])")
 
 RE_LINGUA = re.compile(
@@ -696,6 +699,10 @@ def estrai_scadenza_frase(testo: str, oggi: date) -> tuple[date | None, str | No
             if fine:
                 finestra = finestra[: fine.start()]
             for d in RE_DATA.finditer(finestra):
+                # «deliberazione n. 634 di data 13 agosto 2026» è la data di un atto, non una scadenza
+                # (ASUIT: sotto il titolo «Date e scadenze» la prima data è quella della delibera).
+                if _RE_DATA_ATTO.search(finestra[: d.start()]):
+                    continue
                 giorno = _data_da_match(d)
                 if giorno and abs((giorno - oggi).days) < 730:
                     inizio = max(0, m.start() - 25)

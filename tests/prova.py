@@ -405,6 +405,27 @@ verifica("datore: residenza per anziani in maiuscolo", estrai.estrai_datore("Fon
          "Residenza per anziani Annenberg Laces")
 verifica("datore: «residenza a Trento» resta una frase", estrai.estrai_datore("Infermiere in residenza a Trento"), None)
 
+# 15/11: ASUIT SLP 15/26 risultava scaduto il 13/08 (data della delibera sotto «Date e scadenze»); il PDF diceva 10/09.
+_ASUIT = "Tipo Argomenti Date e scadenze Cos'è In esecuzione della deliberazione del Direttore Generale n. 634 di data 13 agosto 2026 è indetto avviso"
+verifica("scadenza: la data della delibera non è la scadenza", estrai.estrai_scadenza_frase(_ASUIT, OGGI), (None, None))
+verifica("scadenza: dopo la delibera, la scadenza vera si trova",
+         estrai.estrai_scadenza(_ASUIT + ". La domanda scade il giorno 10 settembre 2026 ad ore 23.59.", OGGI), date(2026, 9, 10))
+verifica("scadenza: «entro il 20/11/2026» resta", estrai.estrai_scadenza("Domande entro il 20/11/2026 ore 12.", OGGI), date(2026, 11, 20))
+
+# 15/11: ASUIT Cavalese (avviso aperto) risultava scaduto il 26/10 (valutazione periodica sulla pagina), il PDF chiude il 31/12.
+_fonte_asuit = {"nome": "ASUIT", "tipo": "elenco", "affidabilita": "ufficiale", "datore": "ASUIT (Trentino)"}
+_pdf_cav = {"caratteri": 9000, "scadenza": "2026-12-31", "scadenza_frase": "entro le ore 23.59 del giorno 31 dicembre 2026",
+            "infermiere": True, "contratto": None, "compenso": None, "euro_ora": None, "turni": None, "zona": "Cavalese"}
+_cav, _ = motore._costruisci({"titolo": "Selezione pubblica per infermieri – Cavalese", "url": "https://www.asuit.tn.it/bandi-concorsi/cav"},
+                             "Avviso aperto per infermieri a Cavalese. Saranno valutate le candidature che perverranno entro il giorno lunedì 26 ottobre 2026. L'Azienda" + RIEMP,
+                             None, _fonte_asuit, CFG, COMUNI, OGGI, [], da_pdf=_pdf_cav, pdf_letti=["https://www.asuit.tn.it/x.pdf"])
+verifica("scadenza: pagina 26/10 e PDF 31/12 → vale il PDF, con avviso",
+         (_cav["scadenza"], any(x.startswith("Scadenza dal bando PDF") for x in _cav["avvisi"])), ("2026-12-31", True))
+_pro, _ = motore._costruisci({"titolo": "Incarichi libero-professionali infermieri", "url": "https://ente.it/lp"},
+                             "Avviso per infermieri. Proroga termini di scadenza: 27/11/2026 ore 12.00." + RIEMP,
+                             None, _fonte_asuit, CFG, COMUNI, OGGI, [], da_pdf=dict(_pdf_cav, scadenza="2026-11-13"), pdf_letti=["https://ente.it/x.pdf"])
+verifica("scadenza: la proroga sulla pagina vince sul PDF", _pro["scadenza"], "2026-11-27")
+
 print("Conti, posta e contatti")
 from radar import conti, posta
 par = conti.parametri({})
