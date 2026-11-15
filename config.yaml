@@ -293,6 +293,7 @@ contatti:
   solo_piva_o_private: true     # niente concorsi pubblici: lì una richiesta di informazioni non serve
 
 # ---- Posta: risposte delle strutture contattate e avvisi di lavoro dei portali ----
+# (casella di lavoro: quella indicata nel segreto GMAIL_USER)
 posta:
   leggi: true
   giorni_avvisi: 3
