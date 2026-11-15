@@ -319,12 +319,16 @@ def scegli_da_contattare(memoria: dict, contatti: dict, cfg: dict, oggi: date) -
     """Le offerte migliori a cui non si è ancora scritto. Mai due volte la stessa offerta o lo stesso indirizzo."""
     regole = cfg.get("contatti") or {}
     gia_scritti = {x for c in contatti.values() if c.get("inviata_il") for x in c.get("a", [])}
+    # Strutture a cui Michael scrive da sé (config: invio.escludi), come la Vannetti per il suo avviso.
+    escluse = [x.lower() for x in ((cfg.get("invio") or {}).get("escludi") or []) if x]
     scelte, indirizzi = [], set()
     for a in sorted(memoria.values(), key=lambda a: -a.get("punteggio", 0)):
         indirizzo = (a.get("email") or a.get("pec") or "").lower()
         if not indirizzo or indirizzo in gia_scritti or indirizzo in indirizzi or contatti.get(a["id"], {}).get("inviata_il"):
             continue
         if not motore.aperto(a, oggi, cfg) or a.get("sparito_dal"):
+            continue
+        if any(x in f"{a.get('datore') or ''} {a.get('titolo') or ''}".lower() for x in escluse):
             continue
         if regole.get("solo_libera_professione", True) and not motore.e_piva(a):
             continue  # si chiedono informazioni solo per le offerte in libera professione

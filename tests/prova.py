@@ -447,6 +447,13 @@ mem["a5"] = {"id": "a5", "titolo": "Assunzione", "email": "k@clinica.it", "punte
 mem["a6"] = {"id": "a6", "titolo": "Senza contratto", "email": "j@coop.it", "punteggio": 80, "contratto": None}
 scelte = uscite.scegli_da_contattare(mem, {"a4": {"inviata_il": "2026-11-10", "a": ["z@rsa.it"]}}, cfg, OGGI)
 verifica("contatti: mai due volte, solo libera professione, un solo messaggio per indirizzo", [a["id"] for a in scelte], ["a1"])
+# Giro del 15/11: «Da contattare oggi» proponeva l'APSP Vannetti, che Michael ha escluso (invio.escludi: risponde lui all'avviso via PEC).
+mem_v = {"v1": {"id": "v1", "titolo": "Incarichi libero-professionali", "datore": "APSP «Clementino Vannetti»", "pec": "apspvannetti@pec.it",
+                "punteggio": 62, "contratto": "P.IVA / libera professione"},
+         "v2": {"id": "v2", "titolo": "Freiberufliche Tätigkeit", "datore": "Schloss Moos", "email": "info@moos.it",
+                "punteggio": 55, "contratto": "P.IVA / libera professione"}}
+verifica("contatti: le strutture escluse in config non si propongono",
+         [a["id"] for a in uscite.scegli_da_contattare(mem_v, {}, dict(cfg, invio={"escludi": ["Vannetti"]}), OGGI)], ["v2"])
 
 print("Strutture dall'Indice della PA")
 from radar import strutture as st
