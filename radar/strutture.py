@@ -51,9 +51,14 @@ def _url_csv_ipa(rete) -> tuple[str | None, str | None]:
         risorse = json.loads(testo)["result"]["resources"]
     except Exception:
         return None, "IPA: risposta non riconosciuta"
-    buone = [r for r in risorse if (r.get("format") or "").lower() in ("csv", "txt") and r.get("url")]
-    buone.sort(key=lambda r: (0 if "csv" in (r.get("format") or "").lower() else 1))
-    return (buone[0]["url"], None) if buone else (None, "IPA: nessun file CSV nel dataset")
+    def tipo(r):
+        return f"{r.get('format') or ''} {r.get('mimetype') or ''} {r.get('url') or ''}".lower()
+    buone = [r for r in risorse if r.get("url") and re.search(r"csv|tsv|txt|text/plain|dump", tipo(r))]
+    buone.sort(key=lambda r: (0 if "csv" in tipo(r) else 1))
+    if buone:
+        return buone[0]["url"], None
+    elenco = "; ".join(f"{r.get('name')} [{r.get('format')}] {str(r.get('url'))[:90]}" for r in risorse[:8])
+    return None, f"IPA: nessun file CSV nel dataset (risorse: {elenco})"
 
 
 def leggi_istat(testo: str) -> dict[str, str]:
@@ -206,7 +211,8 @@ def aggiorna(rete, comuni: list[dict], oggi: date, cache: dict, registra=print, 
                 s["email"] = s["email"] or vecchia.get("email")  # tiene l'email trovata sul sito
                 strutture[s["nome"]] = s
             registra(f"• Strutture dall'IPA: {len(nuove)} enti pubblici per anziani in Trentino-Alto Adige")
-        cache["aggiornato_il"] = oggi.isoformat()
+            if nuove:
+                cache["aggiornato_il"] = oggi.isoformat()  # se fallisce, si riprova al giro dopo
     # Email dal sito, poche alla volta: il resto al giro successivo.
     da_cercare = [s for s in strutture.values() if s.get("sito") and not s.get("email") and not s.get("sito_controllato")]
     for s in da_cercare[:massimo_siti]:
