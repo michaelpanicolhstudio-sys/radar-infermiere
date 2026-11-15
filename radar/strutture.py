@@ -43,7 +43,8 @@ def _colonna(intestazioni: list[str], *pezzi: str) -> str | None:
     return None
 
 
-def _url_csv_ipa(rete) -> tuple[str | None, str | None]:
+def scarica_ipa(rete) -> tuple[str | None, str | None]:
+    """Il file degli enti dell'IPA come testo CSV. Prima la copia CSV del portale (datastore), poi il file Excel."""
     testo, errore = rete.get(IPA_API)
     if errore:
         return None, f"IPA non raggiungibile ({errore})"
@@ -51,14 +52,26 @@ def _url_csv_ipa(rete) -> tuple[str | None, str | None]:
         risorse = json.loads(testo)["result"]["resources"]
     except Exception:
         return None, "IPA: risposta non riconosciuta"
-    def tipo(r):
-        return f"{r.get('format') or ''} {r.get('mimetype') or ''} {r.get('url') or ''}".lower()
-    buone = [r for r in risorse if r.get("url") and re.search(r"csv|tsv|txt|text/plain|dump", tipo(r))]
-    buone.sort(key=lambda r: (0 if "csv" in tipo(r) else 1))
-    if buone:
-        return buone[0]["url"], None
-    elenco = "; ".join(f"{r.get('name')} [{r.get('format')}] {str(r.get('url'))[:90]}" for r in risorse[:8])
-    return None, f"IPA: nessun file CSV nel dataset (risorse: {elenco})"
+    risorsa = next((r for r in risorse if (r.get("name") or "").lower().startswith("enti") and "json" not in (r.get("format") or "").lower()), None)
+    if not risorsa:
+        return None, "IPA: risorsa «Enti» non trovata"
+    base = IPA_API.split("/api/")[0]
+    csv_testo, errore_csv = rete.get(f"{base}/datastore/dump/{risorsa['id']}?bom=True", robots=False)
+    if csv_testo and "denominazione" in csv_testo[:3000].lower():
+        return csv_testo, None
+    r, errore = rete._richiedi(risorsa["url"], robots=False)
+    if errore:
+        return None, f"IPA: download non riuscito (CSV: {errore_csv}; Excel: {errore})"
+    try:
+        from openpyxl import load_workbook
+        foglio = load_workbook(io.BytesIO(r.content), read_only=True).active
+        uscita = io.StringIO()
+        scrittore = csv.writer(uscita, delimiter=";")
+        for riga in foglio.iter_rows(values_only=True):
+            scrittore.writerow(["" if v is None else str(v) for v in riga])
+        return uscita.getvalue(), None
+    except Exception as e:
+        return None, f"IPA: file Excel non leggibile ({type(e).__name__})"
 
 
 def leggi_istat(testo: str) -> dict[str, str]:
@@ -192,9 +205,7 @@ def aggiorna(rete, comuni: list[dict], oggi: date, cache: dict, registra=print, 
         return cache, {"saltato": f"aggiornato il {ultimo}"}
     strutture = {s["nome"]: s for s in cache.get("strutture", [])}
     if not ultimo or (oggi - date.fromisoformat(ultimo)).days >= GIORNI_AGGIORNAMENTO:
-        url, errore = _url_csv_ipa(rete)
-        if url:
-            testo, errore = rete.get(url, robots=False)  # file di dati aperti scaricato una volta a settimana
+        testo, errore = scarica_ipa(rete)  # dati aperti ufficiali, scaricati una volta a settimana
         if errore:
             note["ipa_errore"] = errore
             registra(f"⚠ Strutture: {errore}")
