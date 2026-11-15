@@ -41,6 +41,7 @@ e aggiornato **alla fine** di ogni revisione: cosa si è sbagliato, come lo si �
 - 2026-11-13 — Un giro manuale di notte segnava come fatto il giro delle 7 e saltava l'email: solo i giri pianificati scrivono `data/ultimo_giro.txt`.
 
 ## Problemi aperti (da guardare nelle prossime revisioni)
+- Verificato nel giro di prova del 15/11 sera: «Da contattare oggi» propone solo Schloss Moos e Villa Sant'Anna (niente Vannetti); app pubblicata, prove TUTTO OK su GitHub (anche quelle del radar con node).
 - Radar dell'app (15/11 sera): con i nomi che ora evitano le tacche, «Cornedo» ha preso il posto dell'etichetta di «San Candido» (resta il punto, il nome è nell'elenco). Se dà fastidio: per i punti oltre i 90 minuti provare prima l'etichetta verso l'esterno.
 - Pubblicazione dell'app: il segreto `CLOUDFLARE_ACCOUNT_ID` arriva vuoto al workflow, quindi il controllo «il progetto esiste?» risponde 404 e il passo «Crea il progetto» fallisce a ogni giro (innocuo: la pubblicazione subito dopo riesce). Non toccato (segreti e workflow): Michael può ricontrollare il segreto su GitHub.
 - Google Alerts 1–3: da sempre 0 voci nel feed, senza errori. Forse gli avvisi non trovano nulla, forse il link è sbagliato: da controllare a mano aprendo un feed nel browser (dal cloud google.com non si apre).
