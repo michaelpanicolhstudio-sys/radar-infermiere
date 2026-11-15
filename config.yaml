@@ -290,7 +290,7 @@ email_contatto:
 # ---- Primo contatto: ogni giorno l'app propone le migliori offerte a cui scrivere (invii tu, con un tocco) ----
 contatti:
   al_giorno: 5
-  solo_piva_o_private: true     # niente concorsi pubblici: lì una richiesta di informazioni non serve
+  solo_libera_professione: true   # solo offerte in libera professione / P.IVA (niente concorsi né assunzioni)
 
 # ---- Posta: risposte delle strutture contattate e avvisi di lavoro dei portali ----
 # (casella di lavoro: quella indicata nel segreto GMAIL_USER)

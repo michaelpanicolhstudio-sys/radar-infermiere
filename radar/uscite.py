@@ -297,8 +297,8 @@ def scegli_da_contattare(memoria: dict, contatti: dict, cfg: dict, oggi: date) -
             continue
         if not motore.aperto(a, oggi, cfg) or a.get("sparito_dal"):
             continue
-        if regole.get("solo_piva_o_private", True) and (a.get("contratto") or "").startswith("Concorso"):
-            continue
+        if regole.get("solo_libera_professione", True) and not motore.e_piva(a):
+            continue  # si chiedono informazioni solo per le offerte in libera professione
         indirizzi.add(indirizzo)
         scelte.append(a)
         if len(scelte) >= int(regole.get("al_giorno", 5)):

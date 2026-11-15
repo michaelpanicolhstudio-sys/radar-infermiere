@@ -443,7 +443,10 @@ mem = {"a1": {"id": "a1", "titolo": "LP", "email": "x@rsa.it", "punteggio": 60, 
        "a3": {"id": "a3", "titolo": "Concorso", "email": "y@ente.it", "punteggio": 70, "contratto": "Concorso / graduatoria"},
        "a4": {"id": "a4", "titolo": "Già scritto", "email": "z@rsa.it", "punteggio": 65, "contratto": "P.IVA o dipendente"}}
 scelte = uscite.scegli_da_contattare(mem, {"a4": {"inviata_il": "2026-11-10", "a": ["z@rsa.it"]}}, cfg, OGGI)
-verifica("contatti: mai due volte, niente concorsi, un solo messaggio per indirizzo", [a["id"] for a in scelte], ["a1"])
+mem["a5"] = {"id": "a5", "titolo": "Assunzione", "email": "k@clinica.it", "punteggio": 90, "contratto": "Dipendente a tempo indeterminato"}
+mem["a6"] = {"id": "a6", "titolo": "Senza contratto", "email": "j@coop.it", "punteggio": 80, "contratto": None}
+scelte = uscite.scegli_da_contattare(mem, {"a4": {"inviata_il": "2026-11-10", "a": ["z@rsa.it"]}}, cfg, OGGI)
+verifica("contatti: mai due volte, solo libera professione, un solo messaggio per indirizzo", [a["id"] for a in scelte], ["a1"])
 
 print("Web app e calendario")
 dest = uscite.costruisci_sito(cfg, date(2026, 11, 14), tmp2 / "dist")
