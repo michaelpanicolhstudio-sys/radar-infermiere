@@ -139,6 +139,58 @@
     });
     return z;
   }
+  // <radar-etichette> (funzioni pure, provate da tests/prova.py con node)
+  // Nome breve per il radar: parole intere fino a 13 lettere, senza «San», «di», «in»… lasciati in fondo.
+  var NOMI_BREVI = { "Madonna di Campiglio": "Campiglio" };
+  function nomeCorto(nome) {
+    if (NOMI_BREVI[nome]) return NOMI_BREVI[nome];
+    if (nome.length <= 13) return nome;
+    var pezzi = nome.match(/[^ \-]+[ \-]?/g), parole = [pezzi[0]], i;  // «Pieve di Bono-Prezzo»: anche il trattino separa
+    for (i = 1; i < pezzi.length && (parole.join("") + pezzi[i]).replace(/[ \-]$/, "").length <= 13; i++) parole.push(pezzi[i]);
+    while (parole.length > 1 && /^(san|santa|sant'|di|de|del|della|in|al|all'|am|im|st\.?)$/i.test(parole[parole.length - 1].replace(/[ \-]$/, ""))) parole.pop();
+    return parole.join("").replace(/[ \-]$/, "");
+  }
+  // Etichette: si prova a destra, a sinistra, sotto e sopra il punto; vince la prima posizione
+  // che non copre altri punti, altre etichette o le scritte fisse (ostacoli) e resta dentro il disegno.
+  function etichetteRadar(punti, ostacoli, L) {
+    var C = L / 2;
+    punti.sort(function (p, q) { return p.c.minuti - q.c.minuti; });
+    var scatole = (ostacoli || []).slice();
+    function libera(s) {
+      if (s.x1 < 2 || s.x2 > L - 2 || s.y1 < 2 || s.y2 > L - 2) return false;
+      var k;
+      for (k = 0; k < punti.length; k++) {
+        var q = punti[k];
+        if (q.x + q.raggio > s.x1 && q.x - q.raggio < s.x2 && q.y + q.raggio > s.y1 && q.y - q.raggio < s.y2) return false;
+      }
+      for (k = 0; k < scatole.length; k++) {
+        var t = scatole[k];
+        if (t.x1 < s.x2 && t.x2 > s.x1 && t.y1 < s.y2 && t.y2 > s.y1) return false;
+      }
+      return true;
+    }
+    punti.forEach(function (p) {
+      p.testo = nomeCorto(p.nome);
+      var w = p.testo.length * 5.9 + 4, d = p.raggio + 4, destraPrima = p.x >= C;
+      var prove = [
+        { x: p.x + d, y: p.y + 4, ancora: "start" }, { x: p.x - d, y: p.y + 4, ancora: "end" },
+        { x: p.x, y: p.y + d + 9, ancora: "middle" }, { x: p.x, y: p.y - d - 2, ancora: "middle" },
+        { x: p.x + d, y: p.y + 15, ancora: "start" }, { x: p.x - d, y: p.y + 15, ancora: "end" },
+        { x: p.x + d, y: p.y - 8, ancora: "start" }, { x: p.x - d, y: p.y - 8, ancora: "end" }
+      ];
+      if (!destraPrima) prove = [prove[1], prove[0], prove[2], prove[3], prove[5], prove[4], prove[7], prove[6]];
+      var scelta = null;
+      prove.forEach(function (e) {
+        if (scelta) return;
+        var x1 = e.ancora === "start" ? e.x : e.ancora === "end" ? e.x - w : e.x - w / 2;
+        var s = { x1: x1, x2: x1 + w, y1: e.y - 10, y2: e.y + 3 };
+        if (libera(s)) { scelta = e; scatole.push(s); }
+      });
+      p.etichetta = scelta;  // se non c'è posto, il nome resta solo nell'elenco e nel titolo del punto
+    });
+    return punti;
+  }
+  // </radar-etichette>
   function radar(animato) {
     var L = 360, C = 180, R = 146;
     function raggio(min) { return R * Math.sqrt(Math.min(min, 90) / 90); }
@@ -167,42 +219,13 @@
       punti.push({ nome: nome, c: c, z: zone[nome], a: a, x: C + r * Math.sin(a), y: C - r * Math.cos(a),
         raggio: 7 + Math.min(7, 2.2 * Math.sqrt(zone[nome].n)) });
     });
-    // Etichette: si prova a destra, a sinistra, sotto e sopra il punto; vince la prima posizione
-    // che non copre altri punti né altre etichette e resta dentro il disegno.
-    punti.sort(function (p, q) { return p.c.minuti - q.c.minuti; });
-    var scatole = [];
-    function libera(s) {
-      if (s.x1 < 2 || s.x2 > L - 2 || s.y1 < 2 || s.y2 > L - 2) return false;
-      var k;
-      for (k = 0; k < punti.length; k++) {
-        var q = punti[k];
-        if (q.x + q.raggio > s.x1 && q.x - q.raggio < s.x2 && q.y + q.raggio > s.y1 && q.y - q.raggio < s.y2) return false;
-      }
-      for (k = 0; k < scatole.length; k++) {
-        var t = scatole[k];
-        if (t.x1 < s.x2 && t.x2 > s.x1 && t.y1 < s.y2 && t.y2 > s.y1) return false;
-      }
-      return true;
-    }
-    punti.forEach(function (p) {
-      p.testo = p.nome.length <= 13 ? p.nome : p.nome.split(" ").slice(0, 2).join(" ");
-      var w = p.testo.length * 5.9 + 4, d = p.raggio + 4, destraPrima = p.x >= C;
-      var prove = [
-        { x: p.x + d, y: p.y + 4, ancora: "start" }, { x: p.x - d, y: p.y + 4, ancora: "end" },
-        { x: p.x, y: p.y + d + 9, ancora: "middle" }, { x: p.x, y: p.y - d - 2, ancora: "middle" },
-        { x: p.x + d, y: p.y + 15, ancora: "start" }, { x: p.x - d, y: p.y + 15, ancora: "end" },
-        { x: p.x + d, y: p.y - 8, ancora: "start" }, { x: p.x - d, y: p.y - 8, ancora: "end" }
-      ];
-      if (!destraPrima) prove = [prove[1], prove[0], prove[2], prove[3], prove[5], prove[4], prove[7], prove[6]];
-      var scelta = null;
-      prove.forEach(function (e) {
-        if (scelta) return;
-        var x1 = e.ancora === "start" ? e.x : e.ancora === "end" ? e.x - w : e.x - w / 2;
-        var s = { x1: x1, x2: x1 + w, y1: e.y - 10, y2: e.y + 3 };
-        if (libera(s)) { scelta = e; scatole.push(s); }
-      });
-      p.etichetta = scelta;  // se non c'è posto, il nome resta solo nell'elenco e nel titolo del punto
+    // Le scritte fisse (N, 20′, 45′, 90′) sono ostacoli: un nome non ci va sopra.
+    var ostacoli = [{ x1: C - 22, x2: C - 12, y1: C - R - 14, y2: C - R - 1 }];
+    [20, 45, 90].forEach(function (min) {
+      var y = C - raggio(min) - 4;
+      ostacoli.push({ x1: C + 4, x2: C + 4 + String(min).length * 5.9 + 10, y1: y - 10, y2: y + 3 });
     });
+    etichetteRadar(punti, ostacoli, L);
     punti.forEach(function (p) {
       var gradi = ((p.a * 180 / Math.PI) + 360) % 360;
       var g = sv("g", { class: "eco" + (p.z.piva ? " piva" : ""), tabindex: "0", role: "button",

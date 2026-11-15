@@ -490,5 +490,30 @@ verifica("calendario: un file per ogni scadenza futura", (len(ics) >= 2, "BEGIN:
 riga_lunga = uscite._ics_piega("SUMMARY:" + "à" * 100)
 verifica("calendario: righe piegate a 75 byte", max(len(x.encode("utf-8")) for x in riga_lunga.split("\r\n")) <= 75, True)
 
+print("Radar dell'app (etichette)")
+import shutil, subprocess, json as _json
+if shutil.which("node"):
+    _js = (RADICE / "webapp" / "app.js").read_text(encoding="utf-8")
+    _pezzo = _js[_js.index("// <radar-etichette>"):_js.index("// </radar-etichette>")]
+    # Bolzano (35 min) con il nome a sinistra finirebbe sopra la tacca «20′» dell'anello (giro del 15/11).
+    _prova_js = _pezzo + """
+var C = 180, R = 146; function raggio(m) { return R * Math.sqrt(Math.min(m, 90) / 90); }
+var ost = [20, 45, 90].map(function (m) { var y = C - raggio(m) - 4; return { x1: C + 4, x2: C + 4 + String(m).length * 5.9 + 10, y1: y - 10, y2: y + 3 }; });
+var punti = [{ nome: "Bolzano", c: { minuti: 35 }, x: 228.6, y: 103.0, raggio: 12.4 },
+             { nome: "Cornedo all'Isarco", c: { minuti: 42 }, x: 240.6, y: 100.8, raggio: 9.2 },
+             { nome: "Merano", c: { minuti: 55 }, x: 191.5, y: 66.4, raggio: 9.2 }];
+etichetteRadar(punti, ost, 360);
+var b = punti[0], e = b.etichetta, w = b.testo.length * 5.9 + 4;
+var x1 = e ? (e.ancora === "start" ? e.x : e.ancora === "end" ? e.x - w : e.x - w / 2) : 0;
+var sopra = e ? ost.some(function (t) { return t.x1 < x1 + w && t.x2 > x1 && t.y1 < e.y + 3 && t.y2 > e.y - 10; }) : false;
+console.log(JSON.stringify({ sopra: sopra, nomi: ["Primiero San Martino di Castrozza", "Madonna di Campiglio", "Cornedo all'Isarco", "San Candido", "Pieve di Bono"].map(nomeCorto) }));
+"""
+    _ris = _json.loads(subprocess.run(["node", "-e", _prova_js], capture_output=True, text=True, check=True).stdout)
+    verifica("radar: il nome di Bolzano non copre la tacca dei 20 minuti", _ris["sopra"], False)
+    verifica("radar: nomi brevi senza «San» lasciato a metà", _ris["nomi"],
+             ["Primiero", "Campiglio", "Cornedo", "San Candido", "Pieve di Bono"])
+else:
+    print("  --  node non c'è: prove del radar saltate")
+
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)
