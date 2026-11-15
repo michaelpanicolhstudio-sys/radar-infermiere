@@ -298,7 +298,7 @@ invio:
   al_giorno: 12        # quante lettere al massimo per mattina (poche alla volta: niente aspetto da spam)
   pausa_secondi: 8
   mittente: "Michael Panico"
-  una_tantum: "2026-11-15"     # invio unico per «tastare il terreno» (deciso da Michael il 15/11/2026); non si ripete
+  una_tantum: ""               # data di un invio unico (AAAA-MM-GG); vuoto = nessun invio. Si imposta solo su richiesta di Michael
   una_tantum_massimo: 80
   escludi: [Vannetti]          # a queste scrive Michael dalla PEC (avviso Vannetti)
 
