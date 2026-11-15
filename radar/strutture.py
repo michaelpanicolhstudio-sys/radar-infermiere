@@ -116,7 +116,7 @@ def leggi_ipa(testo: str, comuni: list[dict], codici: dict[str, str] | None = No
     for r in lettore:
         info["righe"] += 1
         nome = (r.get(c_nome) or "").strip() if c_nome else ""
-        if not nome or not RE_PER_ANZIANI.search(nome):
+        if not nome or not RE_PER_ANZIANI.search(nome) or re.search(r"formazione|scuola|istituto\s+di\s+istruzione", nome, re.I):
             continue
         istat = (r.get(c_istat) or "").strip() if c_istat else ""
         provincia = (r.get(c_prov) or "").strip().upper() if c_prov else ""
@@ -211,9 +211,9 @@ def aggiorna(rete, comuni: list[dict], oggi: date, cache: dict, registra=print, 
             registra(f"⚠ Strutture: {errore}")
         else:
             istat = {}
-            elenco, errore_istat = rete.get(ISTAT_COMUNI, robots=False)
-            if elenco:
-                istat = leggi_istat(elenco)
+            r, errore_istat = rete._richiedi(ISTAT_COMUNI, robots=False)
+            if r is not None:
+                istat = leggi_istat(r.content.decode("cp1252", errors="replace"))  # il file ISTAT è in Windows-1252
             note["istat"] = errore_istat or f"{len(istat)} comuni"
             nuove, info = leggi_ipa(testo, comuni, istat)
             note["ipa"] = {**info, "trovate": len(nuove)}

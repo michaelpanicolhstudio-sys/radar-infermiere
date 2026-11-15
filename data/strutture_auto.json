@@ -1,5 +1,4 @@
 {
- "aggiornato_il": "2026-11-15",
  "da_completare": false,
  "strutture": [
   {
@@ -536,16 +535,6 @@
    "nome": "Griesfeld Apsp",
    "pec": "griesfeld@legalmail.it",
    "sito": "https://www.griesfeld.it",
-   "tipo": "RSA pubblica"
-  },
-  {
-   "comune": "Trento",
-   "email": "dirigente@ifpsandropertinitrento.it",
-   "fonte": "IPA",
-   "nome": "Istituto di Formazione Professionale Sandro Pertini Servizi alla Persona e del Legno",
-   "pec": "ifp.trento@pec.provincia.tn.it",
-   "sito": "https://www.ifpsandropertinitrento.it/",
-   "sito_controllato": "2026-11-15",
    "tipo": "RSA pubblica"
   },
   {

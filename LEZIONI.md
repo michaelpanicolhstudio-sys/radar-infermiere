@@ -13,6 +13,7 @@ e aggiornato **alla fine** di ogni revisione: cosa si è sbagliato, come lo si �
 - Se un cambio di regole deve rileggere annunci già in memoria: aumentare `VERSIONE_REGOLE` (o `VERSIONE_PDF`) in `radar/motore.py`.
 
 ## Lezioni (dalla più recente)
+- 2026-11-15 — L'IPA (Indice della PA) pubblica gli enti come Excel: il CSV si prende dalla copia del portale `/datastore/dump/<id>`. Il file ISTAT dei comuni è in Windows-1252 (con la decodifica automatica «Fiè» diventava «Fič»). Un download fallito non deve segnare l'elenco come aggiornato, altrimenti si aspetta una settimana.
 - 2026-11-15 — ASUIT SLP 15/26 (Campiglio e Sèn Jan) risultava scaduto il 13/08, ma il PDF dice 10/09 (visto confrontando `scadenza` e `da_pdf.scadenza` in `annunci.json`): sotto il titolo «Date e scadenze» la prima data era quella della delibera («n. 634 di data 13 agosto»). Regola: una data che segue «deliberazione/determinazione/decreto n. …» è la data di un atto, mai una scadenza.
 - 2026-11-15 — ASUIT Cavalese (avviso aperto) risultava scaduto dal 26/10 mentre il suo PDF chiude il 31/12, e il PDF restava una voce a parte (stesso confronto pagina/PDF). Regola: se pagina e bando PDF danno due scadenze diverse vale la più lontana (una proroga sta sulla pagina, la chiusura vera degli avvisi aperti sta nel PDF), con l'avviso «Scadenza dal bando PDF».
 - 2026-11-14 (sera) — Le selezioni ASUIT SC 04/26–13/26 hanno due sessioni (15/11 e 11/12), ma l'annuncio scritto a mano aveva solo la prima: dal 16/11 sarebbe risultato scaduto e poi tolto (visto confrontando `nota_manuale` con `scadenza` in `annunci.json`). Regola: un annuncio a mano con più date si scrive con `scadenze: [...]`; il Radar mostra la prima non passata e lo segnala come aggiornamento quando passa alla successiva.
@@ -38,6 +39,8 @@ e aggiornato **alla fine** di ogni revisione: cosa si è sbagliato, come lo si �
 - 2026-11-13 — Un giro manuale di notte segnava come fatto il giro delle 7 e saltava l'email: solo i giri pianificati scrivono `data/ultimo_giro.txt`.
 
 ## Problemi aperti (da guardare nelle prossime revisioni)
+- Strutture private in `data/strutture.csv` senza email o sito (cliniche, cooperative, agenzie): completarne al massimo 5 per revisione, solo da fonti ufficiali (sito della struttura, documenti dell'ente). Mai indirizzi inventati.
+- Alto Adige: molte case di riposo sono gestite da Comunità comprensoriali, Comuni o fondazioni private e non compaiono nell'IPA come enti a sé: aggiungerle a mano in `data/strutture.csv`.
 - OPI Trento: gli allegati PDF degli annunci non vengono trovati (la diagnostica `senza_pdf` mostra solo icone): capire dove sono.
 - ASUIT «conferimento incarichi»: il compenso degli infermieri nel PDF non viene letto (si vede solo quello dei medici).
 - Bacheca VdS: i titoli ora sono tradotti dall'indirizzo («Infermiere/a – part-time…»); resta da capire se la pagina ha un titolo vero (dal cloud il sito non si apre: proxy).

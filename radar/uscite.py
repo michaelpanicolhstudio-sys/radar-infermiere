@@ -285,6 +285,12 @@ def leggi_strutture(comuni: list[dict]) -> list[dict]:
         viste |= strutture_auto.chiavi(s)
     for r in motore.leggi_json(FILE_STRUTTURE_AUTO, {}).get("strutture", []):
         if strutture_auto.chiavi(r) & viste:
+            # Già scritta a mano: si completano solo i contatti mancanti.
+            for s in strutture:
+                if strutture_auto.chiavi(s) & strutture_auto.chiavi(r):
+                    for campo in ("email", "pec", "sito"):
+                        s[campo] = s.get(campo) or r.get(campo)
+                    break
             continue
         viste |= strutture_auto.chiavi(r)
         sid = estrai.id_annuncio("struttura:" + r["nome"])
