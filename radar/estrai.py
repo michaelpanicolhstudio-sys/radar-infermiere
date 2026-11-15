@@ -454,7 +454,7 @@ def carica_comuni(percorso: Path) -> list[dict]:
     with open(percorso, encoding="utf-8") as f:
         for r in csv.DictReader(f):
             nomi = [r["nome"]] + [n for n in (r.get("altri_nomi") or "").split("|") if n]
-            comuni.append({"nome": r["nome"], "km": int(r["km"]), "minuti": int(r["minuti"]),
+            comuni.append({"nome": r["nome"], "km": int(r["km"]), "minuti": int(r["minuti"]), "provincia": r.get("provincia") or None,
                            "lat": float(r["lat"]), "lon": float(r["lon"]), "nomi": nomi})
     return comuni
 

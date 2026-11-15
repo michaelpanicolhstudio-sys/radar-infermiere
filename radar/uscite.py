@@ -13,7 +13,7 @@ from zoneinfo import ZoneInfo
 
 import csv
 
-from . import conti, estrai, motore, posta
+from . import conti, estrai, invio, motore, posta
 from . import strutture as strutture_auto
 
 RADICE = motore.RADICE
@@ -156,6 +156,11 @@ def componi_email(report: dict, url_app: str | None) -> tuple[str, str, str]:
         nota_allegati = "In allegato: il foglio Excel costi-benefici" + (" e l'invito da aggiungere al calendario." if any(r.get("incontro") for r in risposte) else ".")
         testo.append(nota_allegati)
         corpo.append(f"<p style='margin:0 0 6px;font-size:13px;color:#5B6873'>{nota_allegati}</p>")
+    inviate_oggi = report.get("lettere_inviate") or []
+    if inviate_oggi:
+        riga_l = f"Lettere di primo contatto inviate stamattina: {len(inviate_oggi)} ({', '.join(inviate_oggi[:6])}{'…' if len(inviate_oggi) > 6 else ''})."
+        testo += ["", riga_l]
+        corpo.append(f"<p style='margin:18px 0 6px;font-size:14px;color:#5B6873'>{html.escape(riga_l)}</p>")
     if proposte:
         riga = f"Da contattare oggi: {_conta(len(proposte), 'email pronta', 'email pronte')} nell'app (le invii tu con un tocco)."
         testo += ["", riga] + [f"- {r.get('datore') or r['titolo']}" for r in proposte]
@@ -278,6 +283,7 @@ def leggi_strutture(comuni: list[dict]) -> list[dict]:
             c = next((c for c in comuni if c["nome"] == (r.get("comune") or "").strip()), None)
             strutture.append({"id": sid, "chiave": "s:" + sid, "rif": posta.rif(sid),
                               **{k: (r.get(k) or "").strip() or None for k in ("nome", "tipo", "comune", "email", "pec", "sito", "note")},
+                              "provincia": (r.get("provincia") or "").strip() or (c.get("provincia") if c else None),
                               "km": c["km"] if c else None, "minuti": c["minuti"] if c else None})
     # Si aggiungono le strutture trovate in automatico (IPA e siti), senza doppioni di quelle scritte a mano.
     viste = set()
@@ -297,6 +303,7 @@ def leggi_strutture(comuni: list[dict]) -> list[dict]:
         c = next((c for c in comuni if c["nome"] == r.get("comune")), None)
         strutture.append({"id": sid, "chiave": "s:" + sid, "rif": posta.rif(sid),
                           **{k: r.get(k) for k in ("nome", "tipo", "comune", "email", "pec", "sito")},
+                          "provincia": r.get("provincia") or (c.get("provincia") if c else None),
                           "note": "Dati dall'Indice della Pubblica Amministrazione" + (" e dal sito dell'ente" if r.get("email") and r.get("sito_controllato") else ""),
                           "km": c["km"] if c else None, "minuti": c["minuti"] if c else None})
     return sorted(strutture, key=lambda x: (x["minuti"] is None, x["minuti"] or 0, x["nome"]))
@@ -442,12 +449,29 @@ def costruisci_sito(cfg: dict, oggi: date, destinazione: Path | None = None) -> 
 
     comuni = [{k: c[k] for k in ("nome", "km", "minuti", "lat", "lon")}
               for c in estrai.carica_comuni(RADICE / "data" / "comuni.csv")]
+    # Lettere di primo contatto (coda e data prevista) e resoconto delle risposte.
+    regole_invio = cfg.get("invio") or {}
+    attivo, al_giorno = bool(regole_invio.get("attivo")), int(regole_invio.get("al_giorno", 12))
+    in_coda = invio.coda(strutture, memoria, contatti, cfg, oggi)
+    lettere_app = [{**{k: v[k] for k in ("chiave", "nome", "a", "via_pec", "minuti", "origine", "oggetto", "testo")},
+                    "prevista": invio.data_prevista(n, oggi, al_giorno, attivo)} for n, v in enumerate(in_coda)]
+    for s in strutture:
+        lettera_s = next((v for v in in_coda if v["chiave"] == s["chiave"]), None)
+        if lettera_s:
+            s["lettera"] = {"oggetto": lettera_s["oggetto"], "testo": lettera_s["testo"]}
+    righe_resoconto = invio.resoconto(strutture, memoria, contatti, cfg)
+    if righe_resoconto:
+        invio.scrivi_resoconto_excel(righe_resoconto, dest / "report" / "resoconto-contatti.xlsx")
+    invio_info = {"attivo": attivo, "al_giorno": al_giorno, "in_coda": len(in_coda),
+                  "inviate": sum(1 for c in contatti.values() if c.get("inviata_il")),
+                  "excel": "report/resoconto-contatti.xlsx" if righe_resoconto else None}
     dati = {"generato": adesso.strftime("%d/%m/%Y %H:%M"), "ora": adesso.strftime("%H:%M"),
             "oggi": oggi.isoformat(), "oggi_lungo": data_lunga(oggi),
             "casa": cfg.get("profilo", {}).get("casa", "Mezzolombardo"),
             "email_contatto": cfg.get("email_contatto") or {},
             "offerte": offerte, "report": report, "comuni": comuni,
             "strutture": strutture, "incontri": sorted(incontri, key=lambda x: x["data"]),
+            "lettere": lettere_app, "resoconto": righe_resoconto, "invio": invio_info,
             "conti": {**parametri, "quota_netta": round(conti.quota_netta(parametri), 5)}}
     (dest / "dati.json").write_text(json.dumps(dati, ensure_ascii=False), encoding="utf-8")
 

@@ -603,7 +603,7 @@
   function salvaChiave(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* memoria non disponibile */ } }
   var AGENDA = leggiChiave("radar-agenda", { giorni: {} });
   var CONTI_MIEI = leggiChiave("radar-conti", {});
-  var MESE_AGENDA = null, GIORNO_SCELTO = null, AVVISO_AGENDA = "", ALTRO = "strutture", CERCA_STR = "", TIPO_STR = "";
+  var MESE_AGENDA = null, GIORNO_SCELTO = null, AVVISO_AGENDA = "", ALTRO = "contatti", CERCA_STR = "", TIPO_STR = "";
   var GIORNI_SETT = ["lun", "mar", "mer", "gio", "ven", "sab", "dom"];
   var MESI_LUNGHI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"];
   var TIPI_TURNO = { M: ["Mattina", 7], P: ["Pomeriggio", 7], N: ["Notte", 10], G: ["Giornata", 12], X: ["Impegno personale", 0] };
@@ -824,6 +824,55 @@
     });
   }
 
+  // ---------- vista: contatti (lettere in coda e resoconto delle risposte) ----------
+  function vistaContatti(v) {
+    var info = DATI.invio || {}, righe = DATI.resoconto || [], coda = DATI.lettere || [];
+    var risposte = righe.filter(function (r) { return r.esito !== "in attesa"; });
+    var si = righe.filter(function (r) { return r.esito === "sì"; });
+    v.appendChild(el("p", { class: "sommario" },
+      el("b", { text: plurale(info.inviate || 0, "lettera inviata", "lettere inviate") }), document.createTextNode(", "),
+      el("b", { text: plurale(risposte.length, "risposta", "risposte") }), document.createTextNode(" (" + si.length + " interessate), "),
+      el("b", { text: coda.length + " in coda" }), document.createTextNode(".")));
+    v.appendChild(el("p", { class: info.attivo ? "avviso neutro" : "avviso", text: info.attivo
+      ? "Invio automatico attivo: ogni mattina partono fino a " + info.al_giorno + " lettere, dalla tua casella, mai due volte alla stessa struttura."
+      : "Invio automatico spento: le lettere sono pronte qui sotto, puoi inviarle tu una per una dalla scheda della struttura." }));
+    if (info.excel) v.appendChild(el("div", { class: "azioni" }, el("a", { class: "azione principale", href: info.excel, download: "", text: "Scarica il resoconto in Excel" })));
+
+    v.appendChild(titoloSezione("Resoconto", righe.length ? "dalle più interessanti" : null));
+    if (!righe.length) v.appendChild(el("p", { class: "vuoto", text: "Ancora nessuna lettera inviata. Le risposte compariranno qui con compenso, turni e disponibilità." }));
+    righe.forEach(function (r) {
+      var d = el("details", { class: "rep" });
+      var etichetta = { "sì": "Interessati", "no": "Non interessati", "da leggere": "Da leggere", "in attesa": "In attesa" }[r.esito] || r.esito;
+      d.appendChild(el("summary", {}, el("span", { text: r.nome }), el("small", { text: etichetta + (r.euro_ora ? ", " + r.euro_ora + " €/h" : "") })));
+      d.appendChild(el("div", { class: "dati" },
+        dato("Inviata", giorno(r.inviata_il)), dato("Risposta", r.risposta_il ? giorno(r.risposta_il) : null),
+        dato("Rapporto", r.rapporto), dato("Compenso", r.compenso), dato("Netto/ora", r.netto_ora ? r.netto_ora.toLocaleString("it-IT") + " € col viaggio" : null),
+        dato("Turni", r.turni), dato("Da quando", r.da_quando),
+        dato("Per l'obiettivo", r.turni_obiettivo ? r.turni_obiettivo + " turni al mese" : null),
+        dato("Incontro", r.incontro ? giorno(r.incontro.data) + (r.incontro.ora ? " alle " + r.incontro.ora : "") : null)));
+      var o = trova(r.chiave);
+      if (o) d.appendChild(el("button", { class: "collegamento", text: "Apri l'offerta e la risposta", onclick: function () { apriScheda(o.id); } }));
+      else {
+        var st = (DATI.strutture || []).filter(function (x) { return x.chiave === r.chiave; })[0];
+        if (st) bloccoRisposte(d, st.contatto);
+      }
+      v.appendChild(d);
+    });
+
+    v.appendChild(titoloSezione("Lettere in coda", coda.length ? String(coda.length) : null));
+    if (!coda.length) v.appendChild(el("p", { class: "vuoto", text: "Nessuna lettera in coda: tutte le strutture con un indirizzo sono già state contattate." }));
+    coda.forEach(function (x) {
+      var d = el("details", { class: "rep" });
+      d.appendChild(el("summary", {}, el("span", { text: x.nome }),
+        el("small", { text: (x.prevista ? "parte il " + giornoBreve(x.prevista) : (x.minuti !== null && x.minuti !== undefined ? x.minuti + " min" : "")) + (x.via_pec ? ", PEC" : "") })));
+      d.appendChild(el("p", { class: "nota", text: "A: " + x.a }));
+      d.appendChild(el("p", { class: "nota", text: x.oggetto }));
+      d.appendChild(el("p", { class: "estratto", style: "white-space: pre-line", text: x.testo }));
+      if (!info.attivo) bottoniPosta(d, x.chiave, x.via_pec ? null : x.a, x.via_pec ? x.a : null, { oggetto: x.oggetto, testo: x.testo }, null);
+      v.appendChild(d);
+    });
+  }
+
   // ---------- vista: altro (strutture, zone, report, dati) ----------
   function testoStruttura(s) {
     return { oggetto: "Disponibilità come infermiere in libera professione (Rif. " + s.rif + ")",
@@ -855,7 +904,7 @@
   function vistaAltro(v) {
     v.appendChild(el("h1", { class: "titolo", text: "Altro" }));
     var barra = el("div", { class: "filtri" });
-    [["strutture", "Strutture"], ["zone", "Zone"], ["report", "Report"], ["dati", "I miei dati"]].forEach(function (x) {
+    [["contatti", "Contatti"], ["strutture", "Strutture"], ["zone", "Zone"], ["report", "Report"], ["dati", "I miei dati"]].forEach(function (x) {
       barra.appendChild(el("button", { class: ALTRO === x[0] ? "pastiglia" : "pastiglia spenta", text: x[1], onclick: function () { ALTRO = x[0]; disegna(); } }));
     });
     v.appendChild(barra);
@@ -864,6 +913,7 @@
     if (ALTRO === "zone") return vistaZone(dentro);
     if (ALTRO === "report") return vistaReport(dentro);
     if (ALTRO === "dati") return vistaDati(dentro);
+    if (ALTRO === "contatti") return vistaContatti(dentro);
     var tutte = DATI.strutture || [];
     dentro.appendChild(el("p", { class: "sotto-titolo", text: tutte.length + " strutture che possono cercare infermieri anche senza un annuncio aperto, dalla più vicina." }));
     var cerca = el("input", { class: "cerca", type: "search", placeholder: "Cerca per nome o comune", value: CERCA_STR, "aria-label": "Cerca struttura" });
@@ -891,7 +941,7 @@
       var d = el("details", { class: "rep" });
       d.appendChild(el("summary", {}, el("span", { text: s.nome }), el("small", { text: [s.comune, s.minuti !== null ? s.minuti + " min" : null].filter(Boolean).join(", ") })));
       d.appendChild(el("p", { class: "nota", text: [s.tipo, s.note].filter(Boolean).join(". ") }));
-      if (s.email || s.pec) bottoniPosta(d, s.chiave, s.email, s.pec, testoStruttura(s), s.contatto);
+      if (s.email || s.pec) bottoniPosta(d, s.chiave, s.email, s.pec, s.lettera || testoStruttura(s), s.contatto);
       var az = el("div", { class: "azioni" });
       if (s.sito) az.appendChild(el("a", { class: "azione", href: linkSicuro(s.sito), target: "_blank", rel: "noopener noreferrer", text: "Apri il sito" }));
       if (!s.email && !s.pec) az.appendChild(el("a", { class: "azione", href: "https://www.google.com/search?q=" + encodeURIComponent(s.nome + " " + (s.comune || "") + " contatti email PEC"), target: "_blank", rel: "noopener noreferrer", text: "Cerca i contatti" }));

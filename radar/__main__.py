@@ -14,7 +14,7 @@ from datetime import datetime
 
 import yaml
 
-from . import estrai, motore, strutture, uscite
+from . import estrai, invio, motore, strutture, uscite
 from .rete import Rete
 
 # Data dell'ultimo giro del mattino (quello pianificato). I giri avviati a mano non contano:
@@ -71,13 +71,27 @@ def main() -> int:
         print(f"⚠ Strutture non aggiornate: {type(e).__name__}: {e}", file=sys.stderr)
     if args.pianificato:
         FILE_ULTIMO.write_text(oggi.isoformat() + "\n")
+    inviate = []
+    if args.pianificato and not args.senza_email:
+        # Lettere di primo contatto: solo nel giro del mattino e solo se attivate in config.yaml.
+        try:
+            comuni = estrai.carica_comuni(motore.RADICE / "data" / "comuni.csv")
+            contatti = motore.leggi_json(uscite.FILE_CONTATTI, {})
+            voci = invio.coda(uscite.leggi_strutture(comuni), motore.leggi_json(motore.FILE_ANNUNCI, {}), contatti, cfg, oggi)
+            inviate = invio.invia(voci, contatti, cfg, oggi)
+            motore.scrivi_json(uscite.FILE_CONTATTI, contatti)
+        except Exception as e:
+            print(f"⚠ Lettere non inviate: {type(e).__name__}: {e}", file=sys.stderr)
     dest = uscite.costruisci_sito(cfg, oggi)
     memoria = motore.leggi_json(motore.FILE_ANNUNCI, {})
     contatti = motore.leggi_json(uscite.FILE_CONTATTI, {})
     report["risposte_nuove"] = risposte_nuove
+    report["lettere_inviate"] = [v["nome"] for v in inviate]
     report["da_contattare"] = [{"id": a["id"], "titolo": a["titolo"], "datore": a.get("datore")}
                                for a in uscite.scegli_da_contattare(memoria, contatti, cfg, oggi)]
     allegati = []
+    if risposte_nuove and (dest / "report" / "resoconto-contatti.xlsx").exists():
+        allegati.append(dest / "report" / "resoconto-contatti.xlsx")
     for r in risposte_nuove:
         sid = r["chiave"].split(":")[-1]
         allegati += [f for f in (dest / "report" / f"{sid}.xlsx", dest / "ics" / f"incontro-{sid}.ics") if f.exists() and f not in allegati]

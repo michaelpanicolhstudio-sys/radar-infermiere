@@ -292,6 +292,13 @@ contatti:
   al_giorno: 5
   solo_libera_professione: true   # solo offerte in libera professione / P.IVA (niente concorsi né assunzioni)
 
+# ---- Lettere di primo contatto inviate dal Radar (a nome di Michael, dalla casella GMAIL_USER) ----
+invio:
+  attivo: false        # true = ogni mattina il Radar invia le lettere in coda; false = solo bozze nell'app
+  al_giorno: 12        # quante lettere al massimo per mattina (poche alla volta: niente aspetto da spam)
+  pausa_secondi: 20
+  mittente: "Michael Panico"
+
 # ---- Posta: risposte delle strutture contattate e avvisi di lavoro dei portali ----
 # (casella di lavoro: quella indicata nel segreto GMAIL_USER)
 posta:

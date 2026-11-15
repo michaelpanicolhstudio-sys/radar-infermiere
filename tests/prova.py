@@ -464,6 +464,23 @@ verifica("IPA: solo enti per anziani di Trento e Bolzano, con comune, PEC ed ema
 verifica("email dal sito: solo indirizzi dello stesso dominio", (st._stesso_dominio("info@rsa-sangiovanni.it", "https://www.rsa-sangiovanni.it"), st._stesso_dominio("mario@gmail.com", "https://www.rsa-sangiovanni.it")), (True, False))
 verifica("strutture: la stessa PEC è la stessa struttura", bool(st.chiavi({"nome": "APSP San Giovanni", "pec": "protocollo@pec.sangiovanni.tn.it"}) & st.chiavi(trovate[0])), True)
 
+print("Lettere e resoconto")
+from radar import lettere, invio
+it = lettere.lettera({"nome": "APSP Cristani - de Luca", "tipo": "RSA", "minuti": 6, "provincia": "TN"}, "R-1")
+de = lettere.lettera({"nome": "Fondazione Lorenzerhof APSP", "tipo": "RSA pubblica", "minuti": 35, "provincia": "BZ"}, "R-2")
+verifica("lettera: italiano per il Trentino, con distanza e codice", ("6 minuti" in it["testo"], "Rif. R-1" in it["oggetto"], "Sehr geehrte" in it["testo"]), (True, True, False))
+verifica("lettera: tedesco e italiano per l'Alto Adige", ("Sehr geehrte" in de["testo"], "Versione italiana" in de["testo"]), (True, True))
+str_prova = [{"chiave": "s:1", "nome": "RSA Uno", "email": "a@rsa.it", "pec": None, "tipo": "RSA", "minuti": 5, "rif": "R-1", "provincia": "TN"},
+             {"chiave": "s:2", "nome": "RSA Due", "email": "a@rsa.it", "pec": None, "tipo": "RSA", "minuti": 9, "rif": "R-2", "provincia": "TN"},
+             {"chiave": "s:3", "nome": "Carcere", "email": None, "pec": "x@pec.it", "tipo": "Sanità penitenziaria", "minuti": 20, "rif": "R-3"},
+             {"chiave": "s:4", "nome": "RSA Quattro", "email": "q@rsa.it", "pec": None, "tipo": "RSA", "minuti": 30, "rif": "R-4", "provincia": "TN"}]
+verifica("coda: un indirizzo una volta, niente carcere, niente già scritti",
+         [v["nome"] for v in invio.coda(str_prova, {}, {"s:4": {"inviata_il": "2026-11-10", "a": ["q@rsa.it"]}}, cfg, OGGI)], ["RSA Uno"])
+verifica("resoconto: interessati con compenso e da quando",
+         {k: invio.leggi_esito("Siamo interessati, compenso orario di 38 euro, da gennaio 2027.")[k] for k in ("esito", "euro_ora", "da_quando")},
+         {"esito": "sì", "euro_ora": 38.0, "da_quando": "da gennaio 2027"})
+verifica("resoconto: risposta negativa in tedesco", invio.leggi_esito("Leider haben wir derzeit keinen Bedarf.")["esito"], "no")
+
 print("Web app e calendario")
 dest = uscite.costruisci_sito(cfg, date(2026, 11, 14), tmp2 / "dist")
 dati = __import__("json").loads((dest / "dati.json").read_text(encoding="utf-8"))

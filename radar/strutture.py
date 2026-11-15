@@ -139,6 +139,7 @@ def leggi_ipa(testo: str, comuni: list[dict], codici: dict[str, str] | None = No
         c = estrai.trova_comune(nome, luogo, comuni)
         comune = dal_codice or (c["nome"] if c else None) or (((r.get(c_comune) or "").title() or None) if c_comune else None)
         trovate.append({"nome": _bel_nome(nome), "tipo": "RSA pubblica", "comune": comune,
+                        "provincia": "BZ" if istat.zfill(6).startswith("021") or provincia in ("BZ", "BOLZANO") else "TN",
                         "email": email, "pec": pec, "sito": sito or None, "fonte": "IPA"})
     return trovate, info
 
