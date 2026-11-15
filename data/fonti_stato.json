@@ -1,6 +1,6 @@
 {
  "APSP Margherita Grazioli (Trento) – lavora con noi": {
-  "giorni_a_zero": 15,
+  "giorni_a_zero": 16,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -13,7 +13,7 @@
   "ultimo_ok": "2026-11-15"
  },
  "APSP Vannetti Rovereto – concorsi e avvisi": {
-  "giorni_a_zero": 15,
+  "giorni_a_zero": 16,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -66,19 +66,20 @@
  },
  "Case di riposo dell'Alto Adige (VdS) – offerte": {
   "giorni_a_zero": 0,
-  "letti": 8,
+  "letti": 0,
   "massimo_candidati": 8,
-  "pertinenti": 8,
+  "pertinenti": 0,
   "regole": 7,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 8,
+  "ultimo_errore": "errore di rete (ConnectionError)",
   "ultimo_giro": "2026-11-15",
   "ultimo_ok": "2026-11-15"
  },
  "Google Alerts 1": {
-  "giorni_a_zero": 18,
+  "giorni_a_zero": 19,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -91,7 +92,7 @@
   "ultimo_ok": "2026-11-15"
  },
  "Google Alerts 2": {
-  "giorni_a_zero": 18,
+  "giorni_a_zero": 19,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -104,7 +105,7 @@
   "ultimo_ok": "2026-11-15"
  },
  "Google Alerts 3": {
-  "giorni_a_zero": 18,
+  "giorni_a_zero": 19,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -250,7 +251,7 @@
   "ultimo_ok": "2026-11-15"
  },
  "UPIPA – avvisi delle APSP": {
-  "giorni_a_zero": 18,
+  "giorni_a_zero": 19,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,

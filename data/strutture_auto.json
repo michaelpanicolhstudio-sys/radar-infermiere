@@ -1,4 +1,615 @@
 {
+ "aggiornato_il": "2026-11-15",
  "da_completare": false,
- "strutture": []
+ "strutture": [
+  {
+   "comune": "Predaia",
+   "email": "economo@apsptaio.org",
+   "fonte": "IPA",
+   "nome": "A.P.S.P. Anaunia",
+   "pec": "apsptaio@pec.it",
+   "sito": "https://www.apsptaio.org",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Trento",
+   "email": "info@iaps.it",
+   "fonte": "IPA",
+   "nome": "A.P.S.P. Beato De Tschiderer Gia' Istituto Arcivescovile per Sordi",
+   "pec": "iaps.tn@pcert.it",
+   "sito": "https://www.iaps.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Folgaria",
+   "email": "amministrazione@casalaner.it",
+   "fonte": "IPA",
+   "nome": "A.P.S.P. Casa Laner",
+   "pec": "amministrazione@pec.casalaner.it",
+   "sito": "https://www.casalaner.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Spiazzo",
+   "email": "segreteria@casariposospiazzo.it",
+   "fonte": "IPA",
+   "nome": "A.P.S.P. Casa di Riposo S.Vigilio - Fondazione Bonazza",
+   "pec": "segreteria@pec.casariposospiazzo.it",
+   "sito": "https://www.casariposospiazzo.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Pinzolo",
+   "email": "segreteria@apsp-pinzolo.it",
+   "fonte": "IPA",
+   "nome": "A.P.S.P. Centro Residenziale 'Abelardo Collini' di Pinzolo",
+   "pec": "segreteria@pec.apsp-pinzolo.it",
+   "sito": "https://www.apsp-pinzolo.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Mori",
+   "email": "segreteria@apsp-cesarebenedetti.it",
+   "fonte": "IPA",
+   "nome": "A.P.S.P. Cesare Benedetti",
+   "pec": "amministrazione@pec.apsp-cesarebenedetti.it",
+   "sito": "https://www.apsp-cesarebenedetti.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Bolzano",
+   "email": "info@fondazioneviaroggia.it",
+   "fonte": "IPA",
+   "nome": "A.P.S.P. Fondazione La Roggia",
+   "pec": "fondazioneviaroggia@pec.it",
+   "sito": "https://www.fondazioneviaroggia.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Ledro",
+   "email": "segreteria@apspgiacomocis.it",
+   "fonte": "IPA",
+   "nome": "A.P.S.P. Giacomo Cis APSP",
+   "pec": "amministrazione@pec.apspgiacomocis.it",
+   "sito": "https://www.apspgiacomocis.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Levico Terme",
+   "email": "info@apsplevicocurae.it",
+   "fonte": "IPA",
+   "nome": "A.P.S.P. Levico Curae - Centro Unico Riabilitativo Assistenziale Educativo",
+   "pec": "apsplevicocurae@pec.it",
+   "sito": "https://www.apsplevicocurae.it",
+   "sito_controllato": "2026-11-15",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Nomi",
+   "email": "info@operaromani.it",
+   "fonte": "IPA",
+   "nome": "A.P.S.P. Opera Romani",
+   "pec": "operaromani@legalmail.it",
+   "sito": "https://www.operaromani.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Pieve di Bono-Prezzo",
+   "email": "mail@rsapdb.it",
+   "fonte": "IPA",
+   "nome": "A.P.S.P. Padre Odone Nicolini",
+   "pec": "odone@pec.apsppievedibono.it",
+   "sito": "https://www.apsppievedibono.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Pieve Tesino",
+   "email": "info@piccolospedale.it",
+   "fonte": "IPA",
+   "nome": "A.P.S.P. Piccolo Spedale",
+   "pec": "apsp.pievetesino@pec.it",
+   "sito": "https://www.piccolospedale.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Dro",
+   "email": "info@residenzamolino.it",
+   "fonte": "IPA",
+   "nome": "A.P.S.P. Residenza Molino",
+   "pec": "info@pec.residenzamolino.it",
+   "sito": "https://www.residenzamolino.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Grigno",
+   "email": "info@apspgrigno.it",
+   "fonte": "IPA",
+   "nome": "A.P.S.P. SUOR FILIPPINA Casa di Soggiorno",
+   "pec": "apspgrigno@pec.it",
+   "sito": "https://www.apspgrigno.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Castello Tesino",
+   "email": "info@apspsuoragnese.it",
+   "fonte": "IPA",
+   "nome": "A.P.S.P. Suor Agnese",
+   "pec": "apspsuoragnese@pec.it",
+   "sito": "https://www.apspsuoragnese.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Pergine Valsugana",
+   "email": "urp@apsp-pergine.it",
+   "fonte": "IPA",
+   "nome": "A.P.S.P.S. Spirito Fondazione Montel",
+   "pec": "amministrazione@pec.apsp-pergine.it",
+   "sito": "https://www.apsp-pergine.it",
+   "sito_controllato": "2026-11-15",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Primiero San Martino di Castrozza",
+   "email": "segreteria@apsp-primiero.net",
+   "fonte": "IPA",
+   "nome": "APSP 'San Giuseppe' di Primiero",
+   "pec": "segreteria@pec.apsp-primiero.net",
+   "sito": "https://www.apsp-primiero.net/",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Riva del Garda",
+   "email": "info@csarivadelgarda.com",
+   "fonte": "IPA",
+   "nome": "APSP Citta di Riva",
+   "pec": "apsp.cittadiriva@registerpec.it",
+   "sito": "https://www.csarivadelgarda.com",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Rovereto",
+   "email": "info@apspvannetti.it",
+   "fonte": "IPA",
+   "nome": "APSP Clementino Vannetti",
+   "pec": "apspvannetti@pec.it",
+   "sito": "https://www.apspvannetti.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Pellizzano",
+   "email": "direttore@apsp-pellizzano.it",
+   "fonte": "IPA",
+   "nome": "APSP Dott. Antonio Bontempelli",
+   "pec": "apsp-pellizzano@pec.it",
+   "sito": "https://www.apsp-pellizzano.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Merano",
+   "email": "direzione@sannicolo.bz.it",
+   "fonte": "IPA",
+   "nome": "APSP Fondazione San Nicolo",
+   "pec": "fondazionesannicolo@pec.it",
+   "sito": "https://www.sannicolo.bz.it/it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Laces",
+   "email": null,
+   "fonte": "IPA",
+   "nome": "APSP Fondo Ospedale della S.S.Trinita' di Laces",
+   "pec": "altenheimlatsch@legalmail.it",
+   "sito": "https://www.altenheimlatsch.it",
+   "sito_controllato": "2026-11-15",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Lavis",
+   "email": "info@apsplavis.it",
+   "fonte": "IPA",
+   "nome": "APSP Giovanni Endrizzi",
+   "pec": "amministrazione@pec.apsplavis.it",
+   "sito": "https://www.apsplavis.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Bleggio Superiore",
+   "email": "segreteria@apspgiudicarieesteriori.it",
+   "fonte": "IPA",
+   "nome": "APSP Giudicarie Esteriori",
+   "pec": "amministrazione@pec.apspgiudicarieesteriori.it",
+   "sito": "https://www.apspgiudicarieesteriori.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Trento",
+   "email": "info@apspgrazioli.it",
+   "fonte": "IPA",
+   "nome": "APSP Margherita Grazioli",
+   "pec": "apspgrazioli@pec.it",
+   "sito": "https://www.apspgrazioli.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Malles Venosta",
+   "email": "info@martinsheim.it",
+   "fonte": "IPA",
+   "nome": "APSP Martinsheim di Malles Venosta",
+   "pec": "martinsheim@legalmail.it",
+   "sito": "https://www.martinsheim.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Predazzo",
+   "email": "info@apspsangaetano.it",
+   "fonte": "IPA",
+   "nome": "APSP San Gaetano",
+   "pec": "apspsangaetano@legalmail.it",
+   "sito": "https://www.apspsangaetano.it",
+   "sito_controllato": "2026-11-15",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Roncegno Terme",
+   "email": "amministrazione@apsp-roncegno.it",
+   "fonte": "IPA",
+   "nome": "APSP San Giuseppe",
+   "pec": "apsp.roncegno.amministrazione@pec.it",
+   "sito": "https://www.apsp-roncegno.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Cles",
+   "email": "info@apspcles.it",
+   "fonte": "IPA",
+   "nome": "APSP Santa Maria",
+   "pec": "raccomandata@pec.apspcles.it",
+   "sito": "https://www.apspcles.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Canal San Bovo",
+   "email": "segreteria@rsacanalsanbovo.com",
+   "fonte": "IPA",
+   "nome": "APSP Valle del Vanoi",
+   "pec": "apsp.vanoi@pec.it",
+   "sito": "https://www.apspvalledelvanoi.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Sèn Jan di Fassa",
+   "email": "info@apspfassa.it",
+   "fonte": "IPA",
+   "nome": "APSP della Val di Fassa",
+   "pec": "info@pec.apspfassa.it",
+   "sito": "https://www.apspfassa.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Brentonico",
+   "email": "info@apspbrentonico.it",
+   "fonte": "IPA",
+   "nome": "APSP di Brentonico",
+   "pec": "apspbrentonico@postagarantita.eu",
+   "sito": "https://www.apspbrentonico.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Castel Ivano",
+   "email": "direttore@apspstrigno.it",
+   "fonte": "IPA",
+   "nome": "Apsp \"Redenta Floriani\"",
+   "pec": "apspstrigno@pec.it",
+   "sito": "https://www.apspstrigno.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Fič allo Sciliar",
+   "email": "altersheim@gemeinde.voels.bz.it",
+   "fonte": "IPA",
+   "nome": "Apsp Casa di Riposo Fie allo Sciliar",
+   "pec": "seniorenzentrum@pec.rolmail.net",
+   "sito": "https://www.seniorenzentrum.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Vallarsa",
+   "email": "info@apspvallarsa.it",
+   "fonte": "IPA",
+   "nome": "Apsp Don Giuseppe Cumer",
+   "pec": "apspvallarsa@pec.it",
+   "sito": "https://www.apspvallarsa.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Ultimo",
+   "email": "info@st-walburg.ah-cr.bz.it",
+   "fonte": "IPA",
+   "nome": "Apsp Fondazione Casa di Riposo S. Valburga",
+   "pec": "ah-walburg@pec.rolmail.net",
+   "sito": "https://www.altenheim-stwalburg.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Villandro",
+   "email": "info@josefsheim.eu",
+   "fonte": "IPA",
+   "nome": "Apsp Josefsheim Villandro",
+   "pec": "josefsheim@legalmail.it",
+   "sito": "http://www.josefsheim.eu/de",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Borgo Valsugana",
+   "email": "info@apspborgo.it",
+   "fonte": "IPA",
+   "nome": "Apsp S.Lorenzo e S.Maria della Misericordia",
+   "pec": "apspborgo@pec.it",
+   "sito": "https://www.apspborgo.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Bressanone",
+   "email": "info@casadiriposo-bressanone.it",
+   "fonte": "IPA",
+   "nome": "Apsp Santo Spirito",
+   "pec": "apsp.santospirito@pec.brennercom.net",
+   "sito": "https://www.casadiriposo-bressanone.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Avio",
+   "email": "info@apspavio.it",
+   "fonte": "IPA",
+   "nome": "Apsp Ubaldo Campagnola",
+   "pec": "apspavio@pec.it",
+   "sito": "https://www.apspavio.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Storo",
+   "email": "info@apspstoro.it",
+   "fonte": "IPA",
+   "nome": "Apsp Villa San Lorenzo",
+   "pec": "rsastoro@pec.it",
+   "sito": "https://www.apspstoro.it/",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Mezzocorona",
+   "email": "rsa@casacristani.it",
+   "fonte": "IPA",
+   "nome": "Azienda Pubblica Servizi alla Persona Cristani - De Luca",
+   "pec": "casacristani@pec.it",
+   "sito": "https://www.cristanideluca.it/",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Mezzolombardo",
+   "email": "info@sangiovanni.tn.it",
+   "fonte": "IPA",
+   "nome": "Azienda Pubblica Servizi alla Persona San Giovanni",
+   "pec": "protocollo@pec.sangiovanni.tn.it",
+   "sito": "https://www.sangiovanni.tn.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Silandro",
+   "email": "info@altersheim-schlanders.it",
+   "fonte": "IPA",
+   "nome": "Buergerheim St.Nikolaus Von Der Fluee - Apsp",
+   "pec": "altersheim-schlanders@legalmail.it",
+   "sito": "https://www.altersheim-schlanders.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Riva del Garda",
+   "email": "info@casamiariva.it",
+   "fonte": "IPA",
+   "nome": "Casa Mia APSP",
+   "pec": "casamia.apsp@pec.casamiariva.it",
+   "sito": "https://www.casamiariva.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Tesero",
+   "email": "info@casadiriposogiovanelli.org",
+   "fonte": "IPA",
+   "nome": "Casa di Riposo Giovanelli",
+   "pec": "cdr.giovanelli@legalmail.it",
+   "sito": "https://www.casadiriposogiovanelli.org",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Termeno sulla strada del vino",
+   "email": "info@tramin.ah-cr.bz.it",
+   "fonte": "IPA",
+   "nome": "Casa di Riposo S. Anna Apsp",
+   "pec": "st.anna.tramin@legalmail.it",
+   "sito": "https://www.ah-tramin.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "San Pancrazio",
+   "email": "info@altenheim-stpankraz.it",
+   "fonte": "IPA",
+   "nome": "Casa di Riposo San Pancrazio Apsp",
+   "pec": "altenheim.stpankraz@pec.rolmail.net",
+   "sito": "https://www.altenheim-stpankraz.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Meltina",
+   "email": "info@ahtschoegglberg.it",
+   "fonte": "IPA",
+   "nome": "Centro Assistenza Tschoegglberg APSP",
+   "pec": "ah-moelten@pec.it",
+   "sito": "https://www.ahtschoegglberg.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Malè",
+   "email": "info@centroservizimale.it",
+   "fonte": "IPA",
+   "nome": "Centro Servizi Socio Sanitari e Residenziali Male' A.P.S.P.",
+   "pec": "amministrazione@pec.centroservizimale.it",
+   "sito": "https://www.centroservizimale.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Tesimo",
+   "email": "info@tisens.ah-cr.bz.it",
+   "fonte": "IPA",
+   "nome": "Consorzio Casa di Riposo e di Degenza S.Michael",
+   "pec": "pflegeheimst.michaeltisens@legalmail.it",
+   "sito": "https://www.pflegeheim-tisens.bz.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Salorno sulla strada del vino",
+   "email": "info@salurn.ah-cr.bz.it",
+   "fonte": "IPA",
+   "nome": "Fondazione Benjamin Kofler Apsp",
+   "pec": "b.kofler@legalmail.it",
+   "sito": "https://www.benjamin-kofler.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Caldaro sulla strada del vino",
+   "email": "info@ah-kaltern.it",
+   "fonte": "IPA",
+   "nome": "Fondazione Casa di Riposo Heinrich Von Rottenburg",
+   "pec": "ah-kaltern@legalmail.it",
+   "sito": "https://www.ah-kaltern.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Lana",
+   "email": "info@lana.ah-cr.bz.it",
+   "fonte": "IPA",
+   "nome": "Fondazione Lorenzerhof APSP",
+   "pec": "lorenzerhof@pec.it",
+   "sito": "https://www.lorenzerhof.eu",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Nova Ponente",
+   "email": "info@sh-eggental.bz.it",
+   "fonte": "IPA",
+   "nome": "Fondazione Peter Paul Schrott Apsp",
+   "pec": "peterpaulschrott@legalmail.it",
+   "sito": "https://www.sh-eggental.bz.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Terlano",
+   "email": "info@ah-terlan.it",
+   "fonte": "IPA",
+   "nome": "Fondazione Pilsenhof Apsp",
+   "pec": "ah-terlan@pec.ah-terlan.it",
+   "sito": "https://www.pilsenhof.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Merano",
+   "email": null,
+   "fonte": "IPA",
+   "nome": "Fondazione Pitsch Apsp",
+   "pec": "pitsch@pec.pitsch.it",
+   "sito": "https://www.pitsch.it",
+   "sito_controllato": "2026-11-15",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Villabassa",
+   "email": "info@niederdorf.ah-cr.bz.it",
+   "fonte": "IPA",
+   "nome": "Fondazione Von-kurz Apsp - Casa di Riposo Villabassa",
+   "pec": "von-kurz@legalmail.it",
+   "sito": "https://www.von-kurz-stiftung.com",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Egna",
+   "email": "info@griesfeld.it",
+   "fonte": "IPA",
+   "nome": "Griesfeld Apsp",
+   "pec": "griesfeld@legalmail.it",
+   "sito": "https://www.griesfeld.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Trento",
+   "email": "dirigente@ifpsandropertinitrento.it",
+   "fonte": "IPA",
+   "nome": "Istituto di Formazione Professionale Sandro Pertini Servizi alla Persona e del Legno",
+   "pec": "ifp.trento@pec.provincia.tn.it",
+   "sito": "https://www.ifpsandropertinitrento.it/",
+   "sito_controllato": "2026-11-15",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Renon",
+   "email": "info@ahritten.eu",
+   "fonte": "IPA",
+   "nome": "Residenza per Anziani Asps",
+   "pec": "senioren.ritten@pec.it",
+   "sito": "https://www.seniorenritten.eu",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Lagundo",
+   "email": "info@algund.ah-cr.bz.it",
+   "fonte": "IPA",
+   "nome": "Residenza per Anziani Lagundo Mathias Ladurner Apsp",
+   "pec": "algund@pec.it",
+   "sito": "https://www.seniorenheimalgund.bz.it/de",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Val Badia",
+   "email": "info@ciasadepalsa.it",
+   "fonte": "IPA",
+   "nome": "Residenza per Anziani Ojoep Freinademetz",
+   "pec": "ciasadepalsa@pec.rolmail.net",
+   "sito": "https://www.ciasadepalsa.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "San Candido",
+   "email": "info@seniorenwohnheim-innichen.it",
+   "fonte": "IPA",
+   "nome": "Residenza per Anziani San Candido",
+   "pec": "residenzaperanziani.sancandido@legalmail.it",
+   "sito": "https://www.residenzaperanziani-sancandido.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Laion",
+   "email": "info@seniorenwohnheim-lajen.eu",
+   "fonte": "IPA",
+   "nome": "Residenza per Anziani di Laion",
+   "pec": "seniorenwohnheim.lajen@pec.it",
+   "sito": "https://www.seniorenwohnheim-lajen.eu",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Borgo Chiese",
+   "email": "info@rosadeiventiapsp.it",
+   "fonte": "IPA",
+   "nome": "Rosa Dei Venti A.P.S.P.",
+   "pec": "rosadeiventi.condino@pec.it",
+   "sito": "https://www.rosadeiventi.tn.it",
+   "tipo": "RSA pubblica"
+  },
+  {
+   "comune": "Parcines",
+   "email": "info@seniorenheim-partschins.it",
+   "fonte": "IPA",
+   "nome": "Seniorenheim Partschins Johann Nepomuk Schoepf - A.P.S.P.",
+   "pec": "seniorenheim.partschins@pec.rolmail.net",
+   "sito": "https://seniorenheim-partschins.bz.it",
+   "tipo": "RSA pubblica"
+  }
+ ]
 }
