@@ -603,7 +603,7 @@
   function salvaChiave(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* memoria non disponibile */ } }
   var AGENDA = leggiChiave("radar-agenda", { giorni: {} });
   var CONTI_MIEI = leggiChiave("radar-conti", {});
-  var MESE_AGENDA = null, GIORNO_SCELTO = null, AVVISO_AGENDA = "", ALTRO = "strutture";
+  var MESE_AGENDA = null, GIORNO_SCELTO = null, AVVISO_AGENDA = "", ALTRO = "strutture", CERCA_STR = "", TIPO_STR = "";
   var GIORNI_SETT = ["lun", "mar", "mer", "gio", "ven", "sab", "dom"];
   var MESI_LUNGHI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"];
   var TIPI_TURNO = { M: ["Mattina", 7], P: ["Pomeriggio", 7], N: ["Notte", 10], G: ["Giornata", 12], X: ["Impegno personale", 0] };
@@ -864,8 +864,30 @@
     if (ALTRO === "zone") return vistaZone(dentro);
     if (ALTRO === "report") return vistaReport(dentro);
     if (ALTRO === "dati") return vistaDati(dentro);
-    dentro.appendChild(el("p", { class: "sotto-titolo", text: "Posti che cercano infermieri quasi sempre, anche senza un annuncio aperto. Dal più vicino." }));
-    (DATI.strutture || []).forEach(function (s) {
+    var tutte = DATI.strutture || [];
+    dentro.appendChild(el("p", { class: "sotto-titolo", text: tutte.length + " strutture che possono cercare infermieri anche senza un annuncio aperto, dalla più vicina." }));
+    var cerca = el("input", { class: "cerca", type: "search", placeholder: "Cerca per nome o comune", value: CERCA_STR, "aria-label": "Cerca struttura" });
+    var tipi = {};
+    tutte.forEach(function (s) { if (s.tipo) tipi[s.tipo] = (tipi[s.tipo] || 0) + 1; });
+    var sel = el("select", { "aria-label": "Tipo di struttura", class: TIPO_STR ? "scelto" : "" }, el("option", { value: "", text: "Tutti i tipi" }));
+    Object.keys(tipi).sort().forEach(function (t) { var o = el("option", { value: t, text: t + " (" + tipi[t] + ")" }); if (t === TIPO_STR) o.selected = true; sel.appendChild(o); });
+    sel.addEventListener("change", function () { TIPO_STR = sel.value; disegna(); });
+    dentro.appendChild(cerca);
+    dentro.appendChild(el("div", { class: "filtri" }, sel));
+    var lista = el("div", {});
+    dentro.appendChild(lista);
+    function riempi() {
+      lista.textContent = "";
+      var q = CERCA_STR.toLowerCase();
+      var scelte = tutte.filter(function (s) { return (!TIPO_STR || s.tipo === TIPO_STR) && (!q || ((s.nome || "") + " " + (s.comune || "")).toLowerCase().indexOf(q) >= 0); });
+      lista.appendChild(el("p", { class: "conta", text: plurale(scelte.length, "struttura", "strutture") + ", " + scelte.filter(function (s) { return s.email || s.pec; }).length + " con email o PEC" }));
+      scelte.forEach(function (s) { lista.appendChild(schedaStruttura(s)); });
+    }
+    cerca.addEventListener("input", function () { CERCA_STR = cerca.value; riempi(); });
+    riempi();
+    dentro.appendChild(el("p", { class: "nota", text: "Le strutture pubbliche arrivano dall'Indice ufficiale della Pubblica Amministrazione e si aggiornano ogni settimana. Le private sono nel file data/strutture.csv del progetto." }));
+  }
+  function schedaStruttura(s) {
       var d = el("details", { class: "rep" });
       d.appendChild(el("summary", {}, el("span", { text: s.nome }), el("small", { text: [s.comune, s.minuti !== null ? s.minuti + " min" : null].filter(Boolean).join(", ") })));
       d.appendChild(el("p", { class: "nota", text: [s.tipo, s.note].filter(Boolean).join(". ") }));
@@ -875,9 +897,7 @@
       if (!s.email && !s.pec) az.appendChild(el("a", { class: "azione", href: "https://www.google.com/search?q=" + encodeURIComponent(s.nome + " " + (s.comune || "") + " contatti email PEC"), target: "_blank", rel: "noopener noreferrer", text: "Cerca i contatti" }));
       d.appendChild(az);
       bloccoRisposte(d, s.contatto);
-      dentro.appendChild(d);
-    });
-    dentro.appendChild(el("p", { class: "nota", text: "L'elenco è nel file data/strutture.csv del progetto: lì si aggiungono strutture e indirizzi email." }));
+      return d;
   }
   function vistaDati(v) {
     v.appendChild(el("p", { class: "sotto-titolo", text: "Stati, appunti, turni e numeri dei conti vivono solo su questo telefono. Fanne una copia ogni tanto." }));

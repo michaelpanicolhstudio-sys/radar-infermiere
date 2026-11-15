@@ -448,6 +448,22 @@ mem["a6"] = {"id": "a6", "titolo": "Senza contratto", "email": "j@coop.it", "pun
 scelte = uscite.scegli_da_contattare(mem, {"a4": {"inviata_il": "2026-11-10", "a": ["z@rsa.it"]}}, cfg, OGGI)
 verifica("contatti: mai due volte, solo libera professione, un solo messaggio per indirizzo", [a["id"] for a in scelte], ["a1"])
 
+print("Strutture dall'Indice della PA")
+from radar import strutture as st
+codici = st.leggi_istat("Codice Comune formato alfanumerico;Denominazione in italiano\n022117;Mezzolombardo\n021037;Lana\n")
+ipa = ("Codice_IPA;Denominazione_ente;Codice_comune_ISTAT;Mail1;Tipo_Mail1;Mail2;Tipo_Mail2;Sito_istituzionale\n"
+       "a;AZIENDA PUBBLICA DI SERVIZI ALLA PERSONA SAN GIOVANNI;022117;protocollo@pec.sangiovanni.tn.it;Pec;info@sangiovanni.tn.it;Altro;www.rsa-sangiovanni.it\n"
+       "b;Seniorenwohnheim Lorenzerhof ÖBPB;21037;lorenzerhof@pec.it;Pec;;;\n"
+       "c;Comune di Lavis;022102;comune@pec.it;Pec;;;\n"
+       "d;APSP Casa di riposo di Brescia;017029;x@pec.it;Pec;;;\n")
+trovate = st.leggi_ipa(ipa, COMUNI, codici)[0]
+verifica("IPA: solo enti per anziani di Trento e Bolzano, con comune, PEC ed email",
+         [(x["nome"], x["comune"], x["pec"], x["email"]) for x in trovate],
+         [("APSP San Giovanni", "Mezzolombardo", "protocollo@pec.sangiovanni.tn.it", "info@sangiovanni.tn.it"),
+          ("Seniorenwohnheim Lorenzerhof ÖBPB", "Lana", "lorenzerhof@pec.it", None)])
+verifica("email dal sito: solo indirizzi dello stesso dominio", (st._stesso_dominio("info@rsa-sangiovanni.it", "https://www.rsa-sangiovanni.it"), st._stesso_dominio("mario@gmail.com", "https://www.rsa-sangiovanni.it")), (True, False))
+verifica("strutture: la stessa PEC è la stessa struttura", bool(st.chiavi({"nome": "APSP San Giovanni", "pec": "protocollo@pec.sangiovanni.tn.it"}) & st.chiavi(trovate[0])), True)
+
 print("Web app e calendario")
 dest = uscite.costruisci_sito(cfg, date(2026, 11, 14), tmp2 / "dist")
 dati = __import__("json").loads((dest / "dati.json").read_text(encoding="utf-8"))

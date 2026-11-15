@@ -14,7 +14,7 @@ from datetime import datetime
 
 import yaml
 
-from . import motore, uscite
+from . import estrai, motore, strutture, uscite
 from .rete import Rete
 
 # Data dell'ultimo giro del mattino (quello pianificato). I giri avviati a mano non contano:
@@ -59,6 +59,16 @@ def main() -> int:
         print(f"⚠ Posta non letta: {type(e).__name__}: {e}", file=sys.stderr)
         risposte_nuove, avvisi = [], {}
     report = motore.giro(cfg, Rete(cfg["rete"]), oggi, avvisi=avvisi)
+    try:
+        comuni = estrai.carica_comuni(motore.RADICE / "data" / "comuni.csv")
+        cache = motore.leggi_json(uscite.FILE_STRUTTURE_AUTO, {})
+        cache, note = strutture.aggiorna(Rete(cfg["rete"]), comuni, oggi, cache)
+        motore.scrivi_json(uscite.FILE_STRUTTURE_AUTO, cache)
+        diag = motore.leggi_json(motore.FILE_DIAGNOSTICA, {})
+        diag["strutture"] = note
+        motore.scrivi_json(motore.FILE_DIAGNOSTICA, diag)
+    except Exception as e:  # l'elenco delle strutture non deve far fallire il giro
+        print(f"⚠ Strutture non aggiornate: {type(e).__name__}: {e}", file=sys.stderr)
     if args.pianificato:
         FILE_ULTIMO.write_text(oggi.isoformat() + "\n")
     dest = uscite.costruisci_sito(cfg, oggi)

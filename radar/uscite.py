@@ -14,10 +14,12 @@ from zoneinfo import ZoneInfo
 import csv
 
 from . import conti, estrai, motore, posta
+from . import strutture as strutture_auto
 
 RADICE = motore.RADICE
 FILE_CONTATTI = RADICE / "data" / "contatti.json"
 FILE_STRUTTURE = RADICE / "data" / "strutture.csv"
+FILE_STRUTTURE_AUTO = RADICE / "data" / "strutture_auto.json"
 ROMA = ZoneInfo("Europe/Rome")
 GIORNI = ["lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato", "domenica"]
 MESI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto",
@@ -277,7 +279,21 @@ def leggi_strutture(comuni: list[dict]) -> list[dict]:
             strutture.append({"id": sid, "chiave": "s:" + sid, "rif": posta.rif(sid),
                               **{k: (r.get(k) or "").strip() or None for k in ("nome", "tipo", "comune", "email", "pec", "sito", "note")},
                               "km": c["km"] if c else None, "minuti": c["minuti"] if c else None})
-    return sorted(strutture, key=lambda x: (x["minuti"] is None, x["minuti"] or 0))
+    # Si aggiungono le strutture trovate in automatico (IPA e siti), senza doppioni di quelle scritte a mano.
+    viste = set()
+    for s in strutture:
+        viste |= strutture_auto.chiavi(s)
+    for r in motore.leggi_json(FILE_STRUTTURE_AUTO, {}).get("strutture", []):
+        if strutture_auto.chiavi(r) & viste:
+            continue
+        viste |= strutture_auto.chiavi(r)
+        sid = estrai.id_annuncio("struttura:" + r["nome"])
+        c = next((c for c in comuni if c["nome"] == r.get("comune")), None)
+        strutture.append({"id": sid, "chiave": "s:" + sid, "rif": posta.rif(sid),
+                          **{k: r.get(k) for k in ("nome", "tipo", "comune", "email", "pec", "sito")},
+                          "note": "Dati dall'Indice della Pubblica Amministrazione" + (" e dal sito dell'ente" if r.get("email") and r.get("sito_controllato") else ""),
+                          "km": c["km"] if c else None, "minuti": c["minuti"] if c else None})
+    return sorted(strutture, key=lambda x: (x["minuti"] is None, x["minuti"] or 0, x["nome"]))
 
 
 def chiavi_rif(memoria: dict, strutture: list[dict]) -> dict[str, str]:
