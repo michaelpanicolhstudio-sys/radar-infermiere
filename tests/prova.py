@@ -99,6 +99,11 @@ feed = """<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"><entry>
 <published>2026-11-11T08:00:00Z</published><content type="html">Cercasi infermiere a Trento con P.IVA</content></entry></feed>"""
 v = estrai.leggi_feed(feed)
 verifica("feed Google Alerts", (v[0]["url"], v[0]["titolo"], str(v[0]["pubblicato"])), ("https://esempio.it/annuncio-1", "Infermiere partita IVA Trento", "2026-11-11"))
+# 16/11: i 3 Google Alerts danno 0 voci da 26 giorni senza errori. Una pagina web ben formata
+# (consenso, accesso) letta come «feed vuoto» non deve sembrare un feed senza novità.
+verifica("feed: un feed vuoto è un feed", estrai.info_feed('<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Google Alert - infermiere</title></feed>'),
+         ("feed", "Google Alert - infermiere"))
+verifica("feed: una pagina web non è un feed", estrai.info_feed("<html><head><title>Accedi</title></head><body></body></html>")[0], "html")
 
 ELENCO = """<html><body><nav><a href="/chi-siamo/">Chi siamo e contatti dell'ente</a></nav><main>
 <a href="/segreteria/">Torna alla pagina precedente Segreteria</a>
@@ -238,6 +243,10 @@ cfg5["fonti"] = [f for f in cfg["fonti"] if f["nome"] != "Rotta"]
 r5 = motore.giro(cfg5, ReteFinta(pagine3b), date(2026, 11, 19), registra=muto)
 ogg, testo, _ = uscite.componi_email(r5, None)
 verifica("niente di nuovo = una riga", (ogg, "\n" in testo), ("Radar 19/11: niente di nuovo", False))
+
+_fa = {"nome": "Google Alerts 9", "tipo": "rss", "url": "https://www.google.com/alerts/feeds/1/2", "affidabilita": "aggregatore", "solo_regione": True}
+_es = motore.raccogli_fonte(_fa, ReteFinta({_fa["url"]: "<html><head><title>Prima di continuare</title></head><body></body></html>"}), CFG, COMUNI, OGGI, {}, {})
+verifica("feed: una pagina web al posto del feed è un errore da segnalare", "pagina web" in (_es["errore"] or ""), True)
 
 print("Memoria: datati, doppioni, dati a mano")
 verifica("annuncio datato", (motore.e_datato({"pubblicato": "2026-03-05", "scadenza": None}, OGGI, CFG), motore.e_datato({"pubblicato": "2026-03-05", "scadenza": "2026-12-01"}, OGGI, CFG)), (True, False))

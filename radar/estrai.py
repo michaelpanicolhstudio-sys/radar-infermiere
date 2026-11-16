@@ -405,6 +405,20 @@ def _url_vero(link: str) -> str:
     return link
 
 
+TAG_FEED = ("rss", "feed", "rdf")
+
+
+def info_feed(xml: str) -> tuple[str, str]:
+    """Che cosa è arrivato: il tipo di radice («rss», «feed»… o «html» se è una pagina) e il suo titolo."""
+    radice = ET.fromstring(xml.encode("utf-8") if isinstance(xml, str) else xml)
+    titolo = ""
+    for el in radice.iter():
+        if _tag(el) == "title":
+            titolo = senza_tag((el.text or "").strip())
+            break
+    return _tag(radice), titolo[:120]
+
+
 def leggi_feed(xml: str) -> list[dict]:
     radice = ET.fromstring(xml.encode("utf-8") if isinstance(xml, str) else xml)
     voci = []

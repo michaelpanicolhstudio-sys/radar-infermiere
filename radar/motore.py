@@ -351,11 +351,17 @@ def raccogli_fonte(fonte: dict, rete, cfg: dict, comuni: list[dict], oggi: date,
             esito["errore"] = errore
             return esito
         try:
+            radice, titolo_feed = estrai.info_feed(xml)
             candidati = estrai.leggi_feed(xml)
         except ET.ParseError:
             esito["errore"] = "il feed non è leggibile (formato non valido): controlla il link"
             return esito
-        nota["pagine"].append({"url": "feed", "candidati": len(candidati)})
+        if radice not in estrai.TAG_FEED:
+            # Una pagina web (accesso, consenso) non è «un feed senza novità».
+            esito["errore"] = f"il link non porta a un feed ma a una pagina web («{titolo_feed or radice}»): controlla il link"
+            return esito
+        nota["pagine"].append({"url": "feed", "candidati": len(candidati), "titolo_feed": titolo_feed,
+                               "caratteri": len(xml or "")})
     else:  # elenco
         candidati, visti = [], set()
         parole_link = fonte.get("parole_link") or cfg["parole"]["link"]
