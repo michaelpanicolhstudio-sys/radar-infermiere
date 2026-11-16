@@ -31,7 +31,20 @@ RE_DIP = re.compile(r"assunzion|tempo\s+(?:in)?determinato|dipendente|contratto\
 
 def coda(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict, oggi: date) -> list[dict]:
     """Chi deve ancora ricevere la lettera, nell'ordine di invio: prima chi ha un annuncio in libera professione,
-    poi le strutture dalla più vicina."""
+    poi le strutture dalla più vicina. Se in config c'è `invio.selezione`, solo quelle strutture e con la lettera breve."""
+    selezione = [x.lower() for x in (cfg.get("invio") or {}).get("selezione") or []]
+    voci = _coda(strutture, memoria, contatti, cfg, oggi)
+    if not selezione:
+        return voci
+    scelte = []
+    for v in voci:
+        if any(x in v["nome"].lower() for x in selezione):
+            scelte.append({**v, **lettere.lettera_breve({"nome": v["nome"], "minuti": v.get("minuti")},
+                                                        v["oggetto"].rsplit("Rif. ", 1)[-1].rstrip(")"))})
+    return scelte
+
+
+def _coda(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict, oggi: date) -> list[dict]:
     gia = {x.lower() for c in contatti.values() if c.get("inviata_il") for x in c.get("a", [])}
     voci, visti = [], set()
     modello = cfg.get("email_contatto") or {}

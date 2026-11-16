@@ -476,6 +476,8 @@ from radar import lettere, invio
 it = lettere.lettera({"nome": "APSP Cristani - de Luca", "tipo": "RSA", "minuti": 6, "provincia": "TN"}, "R-1")
 de = lettere.lettera({"nome": "Fondazione Lorenzerhof APSP", "tipo": "RSA pubblica", "minuti": 35, "provincia": "BZ"}, "R-2")
 verifica("lettera: italiano per il Trentino, con distanza e codice", ("6 minuti" in it["testo"], "Rif. R-1" in it["oggetto"], "Sehr geehrte" in it["testo"]), (True, True, False))
+breve = lettere.lettera_breve({"nome": "APSP Prova", "minuti": 15}, "R-5")
+verifica("lettera breve: distanza, riservatezza, niente «sto valutando»", ("15 minuti" in breve["testo"], "riservata" in breve["testo"], "valutando" in breve["testo"], "Rif. R-5" in breve["oggetto"]), (True, True, False, True))
 verifica("lettera: tedesco e italiano per l'Alto Adige", ("Sehr geehrte" in de["testo"], "Versione italiana" in de["testo"]), (True, True))
 str_prova = [{"chiave": "s:1", "nome": "RSA Uno", "email": "a@rsa.it", "pec": None, "tipo": "RSA", "minuti": 5, "rif": "R-1", "provincia": "TN"},
              {"chiave": "s:2", "nome": "RSA Due", "email": "a@rsa.it", "pec": None, "tipo": "RSA", "minuti": 9, "rif": "R-2", "provincia": "TN"},
