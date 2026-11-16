@@ -1,4 +1,26 @@
 {
+ "avvisi": {
+  "Indeed": {
+   "annunci": 0,
+   "email": 0,
+   "esempi": []
+  },
+  "InfoJobs": {
+   "annunci": 0,
+   "email": 0,
+   "esempi": []
+  },
+  "Jobrapido": {
+   "annunci": 0,
+   "email": 0,
+   "esempi": []
+  },
+  "LinkedIn": {
+   "annunci": 0,
+   "email": 0,
+   "esempi": []
+  }
+ },
  "data": "2026-11-16",
  "note": [
   "• Posta: 0 contatti inviati, 0 risposte nuove",

@@ -1210,8 +1210,8 @@
    "accettati": [],
    "pagine": [
     {
-     "caratteri": 631,
-     "inizio": "Karriere im Altenheim Die Einstellung erfolgt auf der Grundlage eines schriftlichen Antrages. Das Formular ist im Büro des Altenheimes erhältlich oder kann hier heruntergeladen werden. Dabei wird zwischen der provisorischen Aufnahme in den Dienst und der Aufnahme in die Stammrolle unterschieden. Anstellungsgesuch befristete Aufnahme Aktuelle Stellenangebote Karriere Transparente Verwaltung Digital",
+     "caratteri": 656,
+     "inizio": "Karriere im Altenheim Die Einstellung erfolgt auf der Grundlage eines schriftlichen Antrages. Das Formular ist im Büro des Altenheimes erhältlich oder kann hier heruntergeladen werden. Dabei wird zwischen der provisorischen Aufnahme in den Dienst und der Aufnahme in die Stammrolle unterschieden. Anstellungsgesuch befristete Aufnahme Aktuelle Stellenangebote Aktuelle Stellenangebote Karriere Transp",
      "pdf": [
       "https://www.ah-kaltern.it/fileadmin/dokumente/altenheim-kaltern-2016-dt.pdf"
      ],
@@ -1446,16 +1446,36 @@
    "scartati": []
   },
   "Google Alerts 4": {
-   "accettati": [],
+   "accettati": [
+    "Afferra per i polsi un infermiere , poi lo spintona: ancora violenza al pronto soccorso - ",
+    "Trento , infermiere aggredito al Santa Chiara: la Uil chiede più sicurezza - L'Adige"
+   ],
    "pagine": [
     {
-     "candidati": 0,
-     "caratteri": 414,
+     "candidati": 2,
+     "caratteri": 2175,
      "titolo_feed": "Google Alert - infermiere Trento OR Trentino lavoro",
      "url": "feed"
     }
    ],
-   "scartati": []
+   "scartati": [],
+   "senza_pdf": [
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "data:application/manifest+json;base64,eyJuYW1lIjoiVHJlbnRvVG9kYXkiLCJzaG9ydF9uYW1lIjoiVHJlbnRvIiwibGFuZyI6Iml0IiwiaWNvbnMiOlt7InNyYyI6Imh0dHBzOlwvXC9jaXR5bmV3cy5zdGd5Lm92aFwvfnNoYXJlZFwvaW1hZ2VzXC92Mj"
+      ],
+      [
+       "a",
+       "Scarica l'app",
+       "https://www.trentotoday.it/~shared/do/api/mobile-app/get/?campaign=unfair"
+      ]
+     ],
+     "url": "https://www.trentotoday.it/cronaca/infermiere-aggredito-polsi-ospedale-santa-chiara-trento.html"
+    }
+   ]
   },
   "Google Alerts 5": {
    "accettati": [],
@@ -1554,7 +1574,7 @@
    ],
    "pagine": [
     {
-     "caratteri": 8599,
+     "caratteri": 8639,
      "inizio": "Close Search Lavora con noi Crescere nella sanità d’eccellenza, nel cuore dell’Alto Adige Entrare in Melittaklinik significa far parte di un polo sanitario d’eccellenza in continua evoluzione, dove competenza medica, innovazione tecnologica e attenzione alla persona si incontrano in un ambiente moderno, sostenibile e multidisciplinare. La nostra clinica rappresenta un punto di riferimento per diag",
      "pdf": [],
      "url": "https://melittaklinik.com/lavora-con-noi/"
@@ -1721,8 +1741,8 @@
    ],
    "pagine": [
     {
-     "caratteri": 695,
-     "inizio": "Freiberufliche Tätigkeit in der Pflege Sozialgenossenschaft Zum Heiligen Vinzenz Wiesen, Pfitsch Vollzeit Teilzeit Freelancer Projektarbeit 18.10.2026 Sozialgenossenschaft Zum Heiligen Vinzenz Traustonstr. 190 , 39049 Wiesen-Pfitsch Personalabteilung +39 0472 765179 info@schlossmoos.it +39 0472 765179 info@schlossmoos.it Zum Arbeitgeber Profil Ähnliche Jobs Sozialbetreuer*in Vollzeit / Teilzeit La",
+     "caratteri": 702,
+     "inizio": "Freiberufliche Tätigkeit in der Pflege Sozialgenossenschaft Zum Heiligen Vinzenz Wiesen, Pfitsch Vollzeit Teilzeit Freelancer Projektarbeit 18.10.2026 Sozialgenossenschaft Zum Heiligen Vinzenz Traustonstr. 190 , 39049 Wiesen-Pfitsch Personalabteilung +39 0472 765179 info@schlossmoos.it +39 0472 765179 info@schlossmoos.it Al profilo aziendale Posti di lavoro simili Sozialbetreuer*in Vollzeit / Teil",
      "pdf": [],
      "url": "https://www.suedtirolerjobs.it/jobs/freiberufliche-taetigkeit-in-der-pflege,115073"
     }
@@ -1923,7 +1943,7 @@
    "scartati": []
   }
  },
- "richieste": 104,
+ "richieste": 107,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }

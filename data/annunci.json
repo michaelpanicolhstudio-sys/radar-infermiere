@@ -1511,6 +1511,78 @@
   "url": "https://www.opibz.it/fondazione-casa-di-riposo-heinrich-von-rottenburg-caldaro/",
   "zona": "Caldaro"
  },
+ "5556096db03e": {
+  "affidabilita": "aggregatore",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": null,
+  "da_pdf": null,
+  "data_novita": "2026-11-16",
+  "datore": null,
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "contratto non indicato",
+    "punti": 8,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 25 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "notti",
+    "punti": 9,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "aggregatore o avviso di ricerca",
+    "punti": 3,
+    "voce": "Fonte"
+   }
+  ],
+  "email": null,
+  "estratto": "…ioni in ospedale Afferra per i polsi un infermiere, poi lo spintona: ancora violenza al pronto soccorso Pochi giorni prima si era verificato un episodio simile. Uil Fp e Uil Trasporti del Trentino: “Non è accettabile che…",
+  "euro_ora": null,
+  "fonte": "Google Alerts 4",
+  "id": "5556096db03e",
+  "impronta": "a484c0453af2",
+  "in_tedesco": false,
+  "km": 20,
+  "letto_il": "2026-11-16",
+  "minuti": 25,
+  "novita": "nuovo",
+  "pdf_letti": [],
+  "pec": null,
+  "primo_visto": "2026-11-16",
+  "pubblicato": "2026-11-16",
+  "punteggio": 37,
+  "regole": 7,
+  "scadenza": null,
+  "scadenza_frase": null,
+  "segnali_turni": {
+   "notti": true
+  },
+  "struttura": "Ospedale o azienda sanitaria",
+  "tipo_fonte": "rss",
+  "titolo": "Afferra per i polsi un infermiere , poi lo spintona: ancora violenza al pronto soccorso - TrentoToday",
+  "turni": "notti",
+  "ultimo_visto": "2026-11-16",
+  "url": "https://www.trentotoday.it/cronaca/infermiere-aggredito-polsi-ospedale-santa-chiara-trento.html",
+  "zona": "Trento"
+ },
  "55e151b00b95": {
   "affidabilita": "ufficiale",
   "avvisi": [],
@@ -2969,6 +3041,78 @@
   "ultimo_visto": "2026-11-16",
   "url": "https://www.vds-suedtirol.it/de/swh/462/job/berufskrankenpflegerin-berufsbild-nr-64-der-viiter-funktionsebene-infermierea-0",
   "zona": "Nova Ponente"
+ },
+ "9b21bfb2d9b1": {
+  "affidabilita": "aggregatore",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": null,
+  "da_pdf": null,
+  "data_novita": "2026-11-16",
+  "datore": null,
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "contratto non indicato",
+    "punti": 8,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 25 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "notti",
+    "punti": 9,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "aggregatore o avviso di ricerca",
+    "punti": 3,
+    "voce": "Fonte"
+   }
+  ],
+  "email": null,
+  "estratto": "La denuncia Trento, infermiere aggredito al Santa Chiara: la Uil chiede più sicurezza Momenti di tensione sabato sera nel reparto di emergenza dell'ospedale. Secondo la ricostruzione dei sindacati, un uomo avrebbe afferr…",
+  "euro_ora": null,
+  "fonte": "Google Alerts 4",
+  "id": "9b21bfb2d9b1",
+  "impronta": "a652e6ada92e",
+  "in_tedesco": false,
+  "km": 20,
+  "letto_il": "2026-11-16",
+  "minuti": 25,
+  "novita": "nuovo",
+  "pdf_letti": [],
+  "pec": null,
+  "primo_visto": "2026-11-16",
+  "pubblicato": "2026-11-16",
+  "punteggio": 37,
+  "regole": 7,
+  "scadenza": null,
+  "scadenza_frase": null,
+  "segnali_turni": {
+   "notti": true
+  },
+  "struttura": "Ospedale o azienda sanitaria",
+  "tipo_fonte": "rss",
+  "titolo": "Trento , infermiere aggredito al Santa Chiara: la Uil chiede più sicurezza - L'Adige",
+  "turni": "notti",
+  "ultimo_visto": "2026-11-16",
+  "url": "https://www.ladige.it/territori/trento/trento-infermiere-aggredito-al-santa-chiara-la-uil-chiede-piu-sicurezza-oe6h45bk",
+  "zona": "Trento"
  },
  "9d74be023dc2": {
   "affidabilita": "ufficiale",
