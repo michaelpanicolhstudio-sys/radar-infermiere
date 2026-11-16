@@ -13,6 +13,7 @@ e aggiornato **alla fine** di ogni revisione: cosa si è sbagliato, come lo si �
 - Se un cambio di regole deve rileggere annunci già in memoria: aumentare `VERSIONE_REGOLE` (o `VERSIONE_PDF`) in `radar/motore.py`.
 
 ## Lezioni (dalla più recente)
+- 2026-11-16 — Commit fatto con una prova fallita (il comando dopo le prove non si fermava): workflow rosso ed email di errore a Michael. Prima di ogni commit: `python3 tests/prova.py | tail -1 | grep -q "TUTTO OK" &&` … Le modifiche ai soli test non facevano ripartire il giro: aggiunto `tests/**` ai percorsi del workflow.
 - 2026-11-15 (sera) — «Da contattare oggi» proponeva ogni giorno l'APSP Vannetti, che Michael aveva escluso (`invio.escludi`: all'avviso risponde lui via PEC); visto nel registro del giro su GitHub Actions. Regola: un'esclusione decisa da Michael vale per tutto ciò che propone un contatto, non solo per l'invio automatico.
 - 2026-11-15 (sera) — Nel radar dell'app «Bolzano» copriva la tacca «20′» (si leggeva «Bol20ano») e Primiero diventava «Primiero San»: visto solo guardando una schermata 390×844 dopo l'animazione (5 s; a 1,5 s metà dei punti non c'è ancora). Regola: nel disegno anche le scritte fisse sono ostacoli; un nome accorciato non finisce con «San/di/in».
 - 2026-11-15 — L'IPA (Indice della PA) pubblica gli enti come Excel: il CSV si prende dalla copia del portale `/datastore/dump/<id>`. Il file ISTAT dei comuni è in Windows-1252 (con la decodifica automatica «Fiè» diventava «Fič»). Un download fallito non deve segnare l'elenco come aggiornato, altrimenti si aspetta una settimana.

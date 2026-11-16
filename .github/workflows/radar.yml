@@ -16,6 +16,7 @@ on:
       - "data/comuni.csv"
       - "data/strutture.csv"
       - "requirements.txt"
+      - "tests/**"
       - ".github/workflows/radar.yml"
 
 permissions:
