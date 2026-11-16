@@ -1301,6 +1301,126 @@
    ],
    "scartati": []
   },
+  "Google Alerts 10": {
+   "accettati": [],
+   "pagine": [
+    {
+     "candidati": 0,
+     "caratteri": 454,
+     "titolo_feed": "Google Alert - infermiere \"casa di cura\" OR clinica Trento OR Rovereto OR Bolzano OR Merano",
+     "url": "feed"
+    }
+   ],
+   "scartati": []
+  },
+  "Google Alerts 11": {
+   "accettati": [],
+   "pagine": [
+    {
+     "candidati": 0,
+     "caratteri": 436,
+     "titolo_feed": "Google Alert - infermiere \"assistenza domiciliare\" OR ADI Trento OR Bolzano",
+     "url": "feed"
+    }
+   ],
+   "scartati": []
+  },
+  "Google Alerts 12": {
+   "accettati": [],
+   "pagine": [
+    {
+     "candidati": 0,
+     "caratteri": 454,
+     "titolo_feed": "Google Alert - infermiere prelievi OR ambulatorio OR poliambulatorio Trentino OR \"Alto Adige\"",
+     "url": "feed"
+    }
+   ],
+   "scartati": []
+  },
+  "Google Alerts 13": {
+   "accettati": [],
+   "pagine": [
+    {
+     "candidati": 0,
+     "caratteri": 479,
+     "titolo_feed": "Google Alert - infermiere eventi OR manifestazioni OR \"assistenza sanitaria\" gara OR concerto Trentino OR \"Alto Adige\"",
+     "url": "feed"
+    }
+   ],
+   "scartati": []
+  },
+  "Google Alerts 14": {
+   "accettati": [],
+   "pagine": [
+    {
+     "candidati": 0,
+     "caratteri": 459,
+     "titolo_feed": "Google Alert - infermiere \"a gettone\" OR \"a chiamata\" OR \"sostituzione\" Trentino OR \"Alto Adige\"",
+     "url": "feed"
+    }
+   ],
+   "scartati": []
+  },
+  "Google Alerts 15": {
+   "accettati": [],
+   "pagine": [
+    {
+     "candidati": 0,
+     "caratteri": 442,
+     "titolo_feed": "Google Alert - \"avviso\" \"infermieri\" \"libero professionale\" Trento OR Bolzano",
+     "url": "feed"
+    }
+   ],
+   "scartati": []
+  },
+  "Google Alerts 16": {
+   "accettati": [],
+   "pagine": [
+    {
+     "candidati": 0,
+     "caratteri": 439,
+     "titolo_feed": "Google Alert - infermiere lavoro Rovereto OR Riva OR Arco OR Pergine OR Cles",
+     "url": "feed"
+    }
+   ],
+   "scartati": []
+  },
+  "Google Alerts 17": {
+   "accettati": [],
+   "pagine": [
+    {
+     "candidati": 0,
+     "caratteri": 451,
+     "titolo_feed": "Google Alert - infermiere lavoro Merano OR Bressanone OR Brunico OR Vipiteno OR Laives",
+     "url": "feed"
+    }
+   ],
+   "scartati": []
+  },
+  "Google Alerts 18": {
+   "accettati": [],
+   "pagine": [
+    {
+     "candidati": 0,
+     "caratteri": 439,
+     "titolo_feed": "Google Alert - Pflegefachkraft OR Krankenpflegerin Südtirol Stellenangebot",
+     "url": "feed"
+    }
+   ],
+   "scartati": []
+  },
+  "Google Alerts 19": {
+   "accettati": [],
+   "pagine": [
+    {
+     "candidati": 0,
+     "caratteri": 428,
+     "titolo_feed": "Google Alert - Seniorenwohnheim Krankenpfleger gesucht Südtirol",
+     "url": "feed"
+    }
+   ],
+   "scartati": []
+  },
   "Google Alerts 2": {
    "accettati": [],
    "pagine": [
@@ -1325,9 +1445,90 @@
    ],
    "scartati": []
   },
-  "Gruppo Bonvicini – lavora con noi": {
+  "Google Alerts 4": {
    "accettati": [],
-   "pagine": [],
+   "pagine": [
+    {
+     "candidati": 0,
+     "caratteri": 414,
+     "titolo_feed": "Google Alert - infermiere Trento OR Trentino lavoro",
+     "url": "feed"
+    }
+   ],
+   "scartati": []
+  },
+  "Google Alerts 5": {
+   "accettati": [],
+   "pagine": [
+    {
+     "candidati": 0,
+     "caratteri": 421,
+     "titolo_feed": "Google Alert - infermiere Bolzano OR \"Alto Adige\" lavoro",
+     "url": "feed"
+    }
+   ],
+   "scartati": []
+  },
+  "Google Alerts 6": {
+   "accettati": [],
+   "pagine": [
+    {
+     "candidati": 0,
+     "caratteri": 432,
+     "titolo_feed": "Google Alert - infermieri \"libera professione\" OR \"partita IVA\" RSA",
+     "url": "feed"
+    }
+   ],
+   "scartati": []
+  },
+  "Google Alerts 7": {
+   "accettati": [],
+   "pagine": [
+    {
+     "candidati": 0,
+     "caratteri": 447,
+     "titolo_feed": "Google Alert - \"cercasi infermiere\" OR \"ricerca infermieri\" Trentino OR \"Alto Adige\"",
+     "url": "feed"
+    }
+   ],
+   "scartati": []
+  },
+  "Google Alerts 8": {
+   "accettati": [],
+   "pagine": [
+    {
+     "candidati": 0,
+     "caratteri": 427,
+     "titolo_feed": "Google Alert - Krankenpfleger Südtirol Stelle OR freiberuflich",
+     "url": "feed"
+    }
+   ],
+   "scartati": []
+  },
+  "Google Alerts 9": {
+   "accettati": [],
+   "pagine": [
+    {
+     "candidati": 0,
+     "caratteri": 447,
+     "titolo_feed": "Google Alert - infermiere APSP OR RSA OR \"casa di riposo\" Trentino OR \"Alto Adige\"",
+     "url": "feed"
+    }
+   ],
+   "scartati": []
+  },
+  "Gruppo Bonvicini – lavora con noi": {
+   "accettati": [
+    "Lavora con noi"
+   ],
+   "pagine": [
+    {
+     "caratteri": 828,
+     "inizio": "Lavora con noi Posizioni aperte Vuoi entrare a far parte del nostro team? Qui trovi tutte le figure professionali che cerchiamo in questo momento. Consulta gli annunci, compila il form e inviaci la tua candidatura. Farmacista a tempo pieno Farmacie Bonvicini Tempo pieno Candidati Fisioterapista per pazienti interni Casa di Cura Bonvicini Tempo pieno: terapie manuali, terapie strumentali, idrokines",
+     "pdf": [],
+     "url": "https://www.gruppobonvicini.it/lavora-con-noi/"
+    }
+   ],
    "scartati": []
   },
   "Martinsbrunn Merano – Job & Karriere": {
@@ -1722,7 +1923,7 @@
    "scartati": []
   }
  },
- "richieste": 87,
+ "richieste": 103,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }
