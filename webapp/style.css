@@ -236,3 +236,12 @@ details.rep summary small { font-weight: 400; color: var(--pietra); text-align: 
 details.rep .azioni { margin-top: 8px; }
 .zona-riga.conto { grid-template-columns: 52px minmax(0, 1fr); }
 .zona-riga.conto small { grid-column: 2; }
+
+/* Fatture, email pronte, avvio */
+.appunto.alto { min-height: 300px; }
+.avanzamento { height: 8px; border-radius: 4px; background: var(--velo); overflow: hidden; margin: 10px 0 4px; }
+.avanzamento i { display: block; height: 100%; background: var(--genziana); border-radius: 4px; }
+.spunta { display: grid; grid-template-columns: 28px 1fr; gap: 8px; align-items: start; padding: 10px 0; border-bottom: 1px solid var(--filo); font-size: 15px; }
+.spunta input { width: 22px; height: 22px; margin-top: 1px; accent-color: var(--genziana); }
+.spunta input:checked + span { color: var(--pietra); }
+button.avviso.tocco { display: block; width: 100%; text-align: left; border: 0; font: inherit; cursor: pointer; }

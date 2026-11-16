@@ -292,6 +292,12 @@
     RADAR_GIA_ANIMATO = true;
     v.appendChild(legendaRadar());
 
+    var promemoria = [];
+    var tardi = FATTURE.elenco.filter(inRitardo), bozze = daFatturare();
+    if (tardi.length) promemoria.push([plurale(tardi.length, "fattura in ritardo", "fatture in ritardo") + " di pagamento: prepara il sollecito.", "fatture"]);
+    if (bozze.length && Number(oggiIso().slice(8)) <= 7) promemoria.push(["Turni del mese scorso da fatturare: " + plurale(bozze.length, "fattura da preparare", "fatture da preparare") + ".", "fatture"]);
+    scadenzeDocumenti().forEach(function (d) { promemoria.push([d.nome + (d.scaduto ? ": scaduto il " : ": scade il ") + giorno(d.data) + ".", "avvio"]); });
+    promemoria.forEach(function (x) { v.appendChild(el("button", { class: "avviso tocco", text: x[0], onclick: function () { ALTRO = x[1]; cambiaVista("altro"); } })); });
     var incontri = (DATI.incontri || []).filter(function (x) { return x.data >= DATI.oggi; });
     if (incontri.length) {
       v.appendChild(titoloSezione("Incontri"));
@@ -817,6 +823,11 @@
       dato("Resta di ogni euro", Math.round(c.quota * 100) + " centesimi, prima di spese e fondo"),
       dato("Limite forfettario", fatturato * 12 > c.limite_forfettario ? "superato: " + euro(fatturato * 12) + " su " + euro(c.limite_forfettario) : "margine di " + euro(c.limite_forfettario - fatturato * 12))));
 
+    function turniCon(imposta) {
+      var q = 1 - c.coefficiente * c.enpapi - (c.coefficiente - c.coefficiente * c.enpapi) * imposta;
+      return Math.ceil(serve / (c.tariffa_predefinita * c.ore_turno * q));
+    }
+    v.appendChild(el("p", { class: "avviso", text: "Con l'imposta al 5% servono " + turniCon(0.05) + " turni, al 15% ne servono " + turniCon(0.15) + ". Chi passa da dipendente ad autonomo nello stesso lavoro può non avere diritto al 5%: chiedilo al commercialista e, nel dubbio, imposta 0,15 qui sotto." }));
     var cm = contoMese(mese);
     v.appendChild(titoloSezione("Questo mese in agenda"));
     if (cm.turni) {
@@ -896,6 +907,209 @@
     });
   }
 
+  // ---------- fatture, modelli di email, avvio, documenti (tutto sul telefono) ----------
+  var FATTURE = leggiChiave("radar-fatture", { elenco: [] });
+  var AVVIO = leggiChiave("radar-avvio", { fatti: {}, documenti: {} });
+  var MODELLO = "seguito", MODELLO_DEST = "";
+  function salvaFatture() { salvaChiave("radar-fatture", FATTURE); }
+  function salvaAvvio() { salvaChiave("radar-avvio", AVVIO); }
+  function euro2(n) { return (Math.round(n * 100) / 100).toLocaleString("it-IT", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €"; }
+  function contoFattura(f) {
+    var imponibile = f.imponibile || 0, enpapi = Math.round(imponibile * 4) / 100, bollo = imponibile + enpapi > 77.47 ? 2 : 0;
+    return { imponibile: imponibile, enpapi: enpapi, bollo: bollo, totale: imponibile + enpapi + bollo };
+  }
+  function oggiIso() { return DATI.oggi || isoDi(new Date()); }
+  function inRitardo(f) { return f.stato === "emessa" && f.scadenza && f.scadenza < oggiIso(); }
+  function prossimoNumero(anno) {
+    var n = 0;
+    FATTURE.elenco.forEach(function (f) { if (f.anno === anno && f.numero > n) n = f.numero; });
+    return n + 1;
+  }
+  // Turni dell'agenda non ancora fatturati, raggruppati per struttura e mese.
+  function daFatturare() {
+    var gia = {}, gruppi = {};
+    FATTURE.elenco.forEach(function (f) { (f.giorni || []).forEach(function (g) { gia[g] = 1; }); });
+    Object.keys(AGENDA.giorni).sort().forEach(function (g) {
+      var t = AGENDA.giorni[g];
+      if (t.tipo === "X" || !t.dove || gia[g] || g > oggiIso()) return;
+      var k = g.slice(0, 7) + "|" + t.dove;
+      if (!gruppi[k]) gruppi[k] = { mese: g.slice(0, 7), cliente: t.dove, giorni: [], ore: 0, imponibile: 0 };
+      gruppi[k].giorni.push(g); gruppi[k].ore += t.ore || 0; gruppi[k].imponibile += (t.ore || 0) * (t.tariffa || 0);
+    });
+    return Object.keys(gruppi).map(function (k) { return gruppi[k]; });
+  }
+  function testoFattura(f) {
+    var c = contoFattura(f);
+    return "Fattura n. " + f.numero + "/" + f.anno + " del " + giorno(f.data) + "\nCliente: " + f.cliente +
+      "\nDescrizione: " + f.descrizione + "\nCompenso: " + euro2(c.imponibile) + "\nContributo integrativo ENPAPI 4%: " + euro2(c.enpapi) +
+      (c.bollo ? "\nImposta di bollo: " + euro2(c.bollo) : "") + "\nTotale: " + euro2(c.totale) +
+      "\nOperazione in franchigia da IVA (regime forfettario, art. 1 commi 54-89 legge 190/2014), senza ritenuta d'acconto." +
+      (f.scadenza ? "\nPagamento entro il " + giorno(f.scadenza) : "");
+  }
+  function vistaFatture(v) {
+    var anno = Number(oggiIso().slice(0, 4)), c = conti();
+    var dellAnno = FATTURE.elenco.filter(function (f) { return f.anno === anno; });
+    var emesso = 0, incassato = 0, ritardo = 0, attesa = 0;
+    dellAnno.forEach(function (f) { var t = contoFattura(f); emesso += t.imponibile; if (f.stato === "pagata") incassato += t.imponibile; else { attesa += t.totale; if (inRitardo(f)) ritardo += t.totale; } });
+    v.appendChild(el("p", { class: "sotto-titolo", text: "Registro delle fatture: cosa hai emesso, cosa ti devono, quanto mettere da parte. La fattura vera si emette dal portale dell'Agenzia delle Entrate o dal programma del commercialista: qui prepari i dati e la segui." }));
+    v.appendChild(el("div", { class: "dati" },
+      dato("Fatturato " + anno, euro(emesso) + " su " + euro(c.limite_forfettario) + " di limite"),
+      dato("Incassato", euro(incassato)),
+      dato("Da incassare", attesa ? euro(attesa) + (ritardo ? ", di cui " + euro(ritardo) + " in ritardo" : "") : "niente"),
+      dato("Da accantonare", euro(incassato * (1 - c.quota)) + " per ENPAPI e imposta sugli incassi di quest'anno")));
+    if (emesso > c.limite_forfettario * 0.8) v.appendChild(el("p", { class: "avviso rosso", text: "Sei oltre l'80% del limite del regime forfettario: parlane con il commercialista prima di accettare altri incarichi quest'anno." }));
+
+    var pronti = daFatturare();
+    v.appendChild(titoloSezione("Da fatturare", pronti.length ? "dai turni in Agenda" : null));
+    if (!pronti.length) v.appendChild(el("p", { class: "vuoto", text: "Nessun turno passato da fatturare. I turni segnati in Agenda con la struttura compaiono qui a fine mese." }));
+    pronti.forEach(function (g) {
+      var bozza = { imponibile: g.imponibile };
+      v.appendChild(el("div", { class: "pannello" },
+        el("h3", { text: g.cliente }),
+        el("p", { class: "nota", text: MESI_LUNGHI[+g.mese.slice(5) - 1] + ": " + plurale(g.giorni.length, "turno", "turni") + ", " + g.ore + " ore, " + euro2(g.imponibile) + " + 4% ENPAPI = " + euro2(contoFattura(bozza).totale) }),
+        el("div", { class: "azioni" }, el("button", { class: "azione principale", text: "Crea la fattura", onclick: function () {
+          var scad = dataDi(oggiIso()); scad.setUTCDate(scad.getUTCDate() + 30);
+          FATTURE.elenco.push({ id: String(Date.now()), anno: anno, numero: prossimoNumero(anno), data: oggiIso(), cliente: g.cliente, giorni: g.giorni,
+            descrizione: "Prestazioni infermieristiche in libera professione, " + MESI_LUNGHI[+g.mese.slice(5) - 1] + " " + g.mese.slice(0, 4) + ": " + g.ore + " ore",
+            imponibile: g.imponibile, scadenza: isoDi(scad), stato: "da emettere" });
+          salvaFatture(); disegna();
+        } }))));
+    });
+
+    v.appendChild(titoloSezione("Registro", dellAnno.length ? String(dellAnno.length) : null));
+    var nuova = el("button", { class: "collegamento", text: "Aggiungi una fattura a mano", onclick: function () {
+      FATTURE.elenco.push({ id: String(Date.now()), anno: anno, numero: prossimoNumero(anno), data: oggiIso(), cliente: "", descrizione: "Prestazioni infermieristiche in libera professione", imponibile: 0, scadenza: "", stato: "da emettere", giorni: [] });
+      salvaFatture(); disegna();
+    } });
+    FATTURE.elenco.slice().sort(function (a, b) { return b.anno - a.anno || b.numero - a.numero; }).forEach(function (f) {
+      var t = contoFattura(f), d = el("details", { class: "rep" });
+      var stato = inRitardo(f) ? "in ritardo" : f.stato;
+      d.appendChild(el("summary", {}, el("span", { text: f.numero + "/" + f.anno + " " + (f.cliente || "cliente da indicare") }), el("small", { text: euro2(t.totale) + ", " + stato })));
+      function campo(etichetta, chiave, tipo) {
+        var i = el("input", { type: tipo || "text", value: f[chiave] === undefined || f[chiave] === null ? "" : String(f[chiave]), "aria-label": etichetta });
+        if (tipo === "number") i.setAttribute("inputmode", "decimal");
+        i.addEventListener("change", function () { f[chiave] = tipo === "number" ? Number(i.value) || 0 : i.value; salvaFatture(); disegna(); });
+        return el("label", { class: "campo" + (chiave === "cliente" || chiave === "descrizione" ? " largo" : "") }, el("span", { text: etichetta }), i);
+      }
+      d.appendChild(el("div", { class: "modulo" }, campo("Cliente", "cliente"), campo("Descrizione", "descrizione"), campo("Compenso €", "imponibile", "number"), campo("Data", "data", "date"), campo("Scadenza", "scadenza", "date")));
+      d.appendChild(el("p", { class: "nota", text: "Compenso " + euro2(t.imponibile) + " + ENPAPI 4% " + euro2(t.enpapi) + (t.bollo ? " + bollo " + euro2(t.bollo) : "") + " = " + euro2(t.totale) }));
+      var az = el("div", { class: "azioni" });
+      var bCopia = el("button", { class: "azione", text: "Copia i dati" });
+      bCopia.addEventListener("click", function () { copiaTesto(testoFattura(f), bCopia); });
+      if (f.stato === "da emettere") az.appendChild(el("button", { class: "azione principale", text: "Segna emessa", onclick: function () { f.stato = "emessa"; salvaFatture(); disegna(); } }));
+      if (f.stato === "emessa") az.appendChild(el("button", { class: "azione principale", text: "Segna pagata", onclick: function () { f.stato = "pagata"; f.pagata_il = oggiIso(); salvaFatture(); disegna(); } }));
+      az.appendChild(bCopia);
+      if (inRitardo(f)) az.appendChild(el("button", { class: "azione", text: "Prepara il sollecito", onclick: function () { MODELLO = "sollecito"; MODELLO_DEST = f.id; ALTRO = "modelli"; disegna(); } }));
+      az.appendChild(el("button", { class: "azione", text: "Elimina", onclick: function () { FATTURE.elenco = FATTURE.elenco.filter(function (x) { return x !== f; }); salvaFatture(); disegna(); } }));
+      d.appendChild(az);
+      v.appendChild(d);
+    });
+    v.appendChild(nuova);
+    if (FATTURE.elenco.length) {
+      var righe = ["numero;data;cliente;descrizione;compenso;enpapi_4;bollo;totale;scadenza;stato;pagata_il"];
+      FATTURE.elenco.forEach(function (f) { var t = contoFattura(f); righe.push([f.numero + "/" + f.anno, f.data, f.cliente, f.descrizione, t.imponibile, t.enpapi, t.bollo, t.totale, f.scadenza || "", f.stato, f.pagata_il || ""].map(function (x) { return String(x).replace(/;/g, ","); }).join(";")); });
+      v.appendChild(el("div", { class: "azioni" }, el("a", { class: "azione", href: "data:text/csv;charset=utf-8," + encodeURIComponent("﻿" + righe.join("\r\n")), download: "fatture-" + anno + ".csv", text: "Scarica per il commercialista" })));
+    }
+    v.appendChild(el("p", { class: "nota", text: "Il bollo da 2 € vale per le fatture oltre 77,47 €. Nel forfettario conta la data dell'incasso: segna «pagata» quando arriva il bonifico." }));
+  }
+
+  var MODELLI = {
+    seguito: ["Secondo contatto dopo 10 giorni senza risposta", "Richiesta di informazioni – infermiere libero professionista",
+      "Buongiorno,\n\nvi ho scritto il {data} per sapere se la vostra struttura collabora con infermieri in libera professione. Mi permetto di riproporvi la richiesta, nel caso il messaggio non fosse arrivato alla persona giusta.\n\nSe preferite, posso passare di persona o sentirci al telefono: bastano dieci minuti.\n\nCordiali saluti\nMichael Panico\nInfermiere"],
+    grazie: ["Risposta a chi è interessato", "Re: collaborazione in libera professione",
+      "Buongiorno,\n\nvi ringrazio per la risposta e per le informazioni.\n\nLe condizioni che indicate mi interessano. Per valutare al meglio vi chiedo:\n- il compenso orario per turni diurni, notturni e festivi;\n- quanti turni al mese prevedete e con quanto anticipo vengono concordati;\n- i tempi di pagamento delle fatture;\n- una bozza del contratto o della lettera d'incarico.\n\nSono disponibile per un incontro in struttura.\n\nCordiali saluti\nMichael Panico\nInfermiere"],
+    documenti: ["Invio di CV e documenti", "Curriculum e documenti – Michael Panico, infermiere",
+      "Buongiorno,\n\ncome d'accordo vi invio in allegato:\n- curriculum;\n- iscrizione all'OPI;\n- polizza di responsabilità civile professionale;\n- giudizio di idoneità alla mansione e certificato vaccinale;\n- attestato BLSD.\n\nResto a disposizione per altri documenti.\n\nCordiali saluti\nMichael Panico\nInfermiere"],
+    disponibilita: ["Disponibilità del mese (dai giorni liberi in Agenda)", "Disponibilità di {mese}",
+      "Buongiorno,\n\nvi comunico le mie disponibilità per {mese}:\n{giorni}\n\nVi chiedo di confermarmi i turni entro una settimana, così posso organizzare gli altri impegni.\n\nCordiali saluti\nMichael Panico"],
+    conferma: ["Conferma dei turni concordati", "Conferma turni",
+      "Buongiorno,\n\nconfermo i turni concordati:\n{turni}\n\nPer eventuali variazioni vi chiedo almeno 48 ore di preavviso.\n\nCordiali saluti\nMichael Panico"],
+    rifiuto: ["Rifiuto gentile di una proposta", "Re: proposta di collaborazione",
+      "Buongiorno,\n\nvi ringrazio per la proposta. In questo momento non riesco ad accettarla perché le condizioni non sono compatibili con i miei impegni.\n\nSe in futuro cambiassero compenso o organizzazione dei turni, sarò lieto di riparlarne.\n\nCordiali saluti\nMichael Panico"],
+    tariffa: ["Proposta di adeguamento del compenso", "Compenso per il prossimo anno",
+      "Buongiorno,\n\ncollaboro con voi da {data} e vi ringrazio per la fiducia.\n\nDal prossimo mese vi propongo di portare il compenso a [importo] € l'ora ([importo] € per notti e festivi), in linea con le condizioni che applico alle altre strutture. Resto disponibile a parlarne.\n\nCordiali saluti\nMichael Panico"],
+    sollecito: ["Sollecito di pagamento di una fattura", "Fattura n. {numero} – sollecito di pagamento",
+      "Buongiorno,\n\nda una verifica risulta ancora da saldare la fattura n. {numero} del {data}, di {totale}, scaduta il {scadenza}.\n\nVi chiedo cortesemente di provvedere o di indicarmi la data prevista per il bonifico. Se nel frattempo il pagamento è partito, considerate superato questo messaggio.\n\nCordiali saluti\nMichael Panico"],
+    medico: ["Presentazione a un medico di base o a una farmacia", "Infermiere a domicilio a Mezzolombardo e dintorni",
+      "Buongiorno,\n\nsono Michael Panico, infermiere libero professionista di Mezzolombardo. Offro prestazioni a domicilio nella Piana Rotaliana: terapie iniettive e infusionali, medicazioni, prelievi, gestione di cateteri e stomie, controlli dei parametri.\n\nSe tra i suoi assistiti qualcuno ne avesse bisogno, può indicare il mio contatto: [telefono]. Passo volentieri a presentarmi di persona.\n\nCordiali saluti\nMichael Panico\nInfermiere"]
+  };
+  function riempiModello(chiave) {
+    var m = MODELLI[chiave], oggetto = m[1], testo = m[2], mese = (MESE_AGENDA || oggiIso().slice(0, 7));
+    var nomeMese = MESI_LUNGHI[+mese.slice(5) - 1] + " " + mese.slice(0, 4), valori = { mese: nomeMese, data: "[data]" };
+    if (chiave === "disponibilita") {
+      var liberi = [], lun = lunedi(mese + "-01");
+      while (lun.slice(0, 7) <= mese) { settimana(lun).giorni.forEach(function (x) { if (x.offribile && x.iso.slice(0, 7) === mese && x.iso >= oggiIso()) liberi.push("- " + nomeGiorno(x.iso)); }); lun = piu(lun, 7); }
+      valori.giorni = liberi.join("\n") || "- [giorni]";
+    }
+    if (chiave === "conferma") valori.turni = turniDelMese(mese).filter(function (t) { return t.iso >= oggiIso(); }).map(function (t) { return "- " + nomeGiorno(t.iso) + ", " + TIPI_TURNO[t.tipo][0].toLowerCase() + (t.dove ? " (" + t.dove + ")" : ""); }).join("\n") || "- [turni]";
+    if (chiave === "sollecito") {
+      var f = FATTURE.elenco.filter(function (x) { return x.id === MODELLO_DEST; })[0] || FATTURE.elenco.filter(inRitardo)[0];
+      if (f) valori = { numero: f.numero + "/" + f.anno, data: giorno(f.data), totale: euro2(contoFattura(f).totale), scadenza: giorno(f.scadenza) };
+      else valori = { numero: "[numero]", data: "[data]", totale: "[importo]", scadenza: "[scadenza]" };
+    }
+    function metti(s) { return s.replace(/\{(\w+)\}/g, function (_, k) { return valori[k] !== undefined ? valori[k] : "[" + k + "]"; }); }
+    return { oggetto: metti(oggetto), testo: metti(testo) };
+  }
+  function vistaModelli(v) {
+    v.appendChild(el("p", { class: "sotto-titolo", text: "Email già scritte per le situazioni più comuni. Si riempiono da sole con turni, giorni liberi e fatture; le parti tra parentesi quadre le completi tu." }));
+    var sel = el("select", { class: "scelto", "aria-label": "Modello" });
+    Object.keys(MODELLI).forEach(function (k) { var o = el("option", { value: k, text: MODELLI[k][0] }); if (k === MODELLO) o.selected = true; sel.appendChild(o); });
+    sel.addEventListener("change", function () { MODELLO = sel.value; MODELLO_DEST = ""; disegna(); });
+    v.appendChild(el("div", { class: "filtri" }, sel));
+    var m = riempiModello(MODELLO);
+    var oggetto = el("input", { class: "cerca", type: "text", value: m.oggetto, "aria-label": "Oggetto" });
+    var testo = el("textarea", { class: "appunto alto", "aria-label": "Testo" });
+    testo.value = m.testo;
+    v.appendChild(oggetto); v.appendChild(testo);
+    var bCopia = el("button", { class: "azione", text: "Copia il testo" });
+    bCopia.addEventListener("click", function () { copiaTesto(oggetto.value + "\n\n" + testo.value, bCopia); });
+    var apri = el("a", { class: "azione principale", href: "#", text: "Apri in Mail" });
+    apri.addEventListener("click", function () { apri.href = "mailto:?subject=" + encodeURIComponent(oggetto.value) + "&body=" + encodeURIComponent(testo.value); });
+    v.appendChild(el("div", { class: "azioni" }, apri, bCopia));
+    v.appendChild(el("p", { class: "nota", text: "L'email parte dal tuo telefono solo quando premi Invia. Il destinatario lo scegli tu in Mail." }));
+  }
+
+  var PASSI_AVVIO = [
+    ["Prima di decidere", [["commercialista", "Colloquio con un commercialista che segue infermieri (imposta al 5% o al 15%? clienti legati ad ASDAA?)"], ["personale", "Chiesti al personale ASDAA: periodo di prova, preavviso, ferie e ore"], ["cuscinetto", "Messi da parte almeno 3 mesi di spese"], ["sondaggio", "Sondate le prime strutture (Altro, Contatti)"]]],
+    ["Uscita da ASDAA", [["dimissioni", "Lettera di dimissioni inviata via PEC"], ["carte", "Ritirati certificato di servizio, idoneità, vaccinazioni, attestati, crediti ECM"]]],
+    ["Apertura", [["piva", "Partita IVA aperta (ATECO 86.94.01, regime forfettario)"], ["enpapi", "Iscrizione a ENPAPI entro 60 giorni"], ["pec", "PEC personale attiva e comunicata all'OPI"], ["polizza", "Polizza RC professionale attiva"], ["conto", "Conto corrente dedicato"], ["fatturazione", "Programma di fatturazione elettronica scelto"]]],
+    ["Prima del primo turno", [["visita", "Visita dal medico competente e giudizio di idoneità"], ["fascicolo", "Fascicolo dei documenti in PDF sul telefono"], ["cv", "CV completato e aggiornato"], ["contratto", "Primo contratto o lettera d'incarico firmata"]]]
+  ];
+  var DOCUMENTI = [["blsd", "BLSD"], ["polizza", "Polizza RC professionale"], ["idoneita", "Idoneità alla mansione"], ["opi", "Quota OPI"], ["pec", "PEC"], ["ecm", "Triennio ECM"]];
+  function scadenzeDocumenti() {
+    var tra60 = piu(oggiIso(), 60);
+    return DOCUMENTI.filter(function (d) { var s = AVVIO.documenti[d[0]]; return s && s <= tra60; }).map(function (d) { return { nome: d[1], data: AVVIO.documenti[d[0]], scaduto: AVVIO.documenti[d[0]] < oggiIso() }; });
+  }
+  function vistaAvvio(v) {
+    var totale = 0, fatti = 0;
+    PASSI_AVVIO.forEach(function (g) { g[1].forEach(function (p) { totale++; if (AVVIO.fatti[p[0]]) fatti++; }); });
+    v.appendChild(el("p", { class: "sotto-titolo", text: "I passi per metterti in proprio, in ordine. " + fatti + " fatti su " + totale + "." }));
+    var barra = el("div", { class: "avanzamento" }, el("i", { style: "width:" + Math.round(fatti / totale * 100) + "%" }));
+    v.appendChild(barra);
+    PASSI_AVVIO.forEach(function (g) {
+      v.appendChild(titoloSezione(g[0]));
+      g[1].forEach(function (p) {
+        var c = el("input", { type: "checkbox" });
+        c.checked = !!AVVIO.fatti[p[0]];
+        c.addEventListener("change", function () { AVVIO.fatti[p[0]] = c.checked; salvaAvvio(); disegna(); });
+        v.appendChild(el("label", { class: "spunta" }, c, el("span", { text: p[1] })));
+      });
+    });
+    v.appendChild(titoloSezione("Scadenze dei documenti", "ti avviso 60 giorni prima"));
+    var modulo = el("div", { class: "modulo" });
+    DOCUMENTI.forEach(function (d) {
+      var i = el("input", { type: "date", value: AVVIO.documenti[d[0]] || "", "aria-label": "Scadenza " + d[1] });
+      i.addEventListener("change", function () { if (i.value) AVVIO.documenti[d[0]] = i.value; else delete AVVIO.documenti[d[0]]; salvaAvvio(); });
+      modulo.appendChild(el("label", { class: "campo" }, el("span", { text: d[1] }), i));
+    });
+    v.appendChild(modulo);
+    v.appendChild(titoloSezione("Documenti"));
+    v.appendChild(el("div", { class: "azioni" },
+      el("a", { class: "azione", href: "https://claude.ai/artifact/JvMTBQtkHApFKm9ehS97Ac", target: "_blank", rel: "noopener noreferrer", text: "Guida completa" }),
+      el("a", { class: "azione", href: "https://claude.ai/artifact/Bq5zi8sCdBYHCMzx8Fmq4R", target: "_blank", rel: "noopener noreferrer", text: "Il mio CV" })));
+    v.appendChild(el("p", { class: "nota", text: "Guida e CV si aprono con il tuo account Claude. Spunte e scadenze restano su questo telefono." }));
+  }
+
   // ---------- vista: altro (strutture, zone, report, dati) ----------
   function testoStruttura(s) {
     return { oggetto: "Disponibilità come infermiere in libera professione (Rif. " + s.rif + ")",
@@ -927,7 +1141,7 @@
   function vistaAltro(v) {
     v.appendChild(el("h1", { class: "titolo", text: "Altro" }));
     var barra = el("div", { class: "filtri" });
-    [["contatti", "Contatti"], ["strutture", "Strutture"], ["zone", "Zone"], ["report", "Report"], ["dati", "I miei dati"]].forEach(function (x) {
+    [["contatti", "Contatti"], ["strutture", "Strutture"], ["fatture", "Fatture"], ["modelli", "Email pronte"], ["avvio", "Avvio"], ["zone", "Zone"], ["report", "Report"], ["dati", "I miei dati"]].forEach(function (x) {
       barra.appendChild(el("button", { class: ALTRO === x[0] ? "pastiglia" : "pastiglia spenta", text: x[1], onclick: function () { ALTRO = x[0]; disegna(); } }));
     });
     v.appendChild(barra);
@@ -937,6 +1151,9 @@
     if (ALTRO === "report") return vistaReport(dentro);
     if (ALTRO === "dati") return vistaDati(dentro);
     if (ALTRO === "contatti") return vistaContatti(dentro);
+    if (ALTRO === "fatture") return vistaFatture(dentro);
+    if (ALTRO === "modelli") return vistaModelli(dentro);
+    if (ALTRO === "avvio") return vistaAvvio(dentro);
     var tutte = DATI.strutture || [];
     dentro.appendChild(el("p", { class: "sotto-titolo", text: tutte.length + " strutture che possono cercare infermieri anche senza un annuncio aperto, dalla più vicina." }));
     var cerca = el("input", { class: "cerca", type: "search", placeholder: "Cerca per nome o comune", value: CERCA_STR, "aria-label": "Cerca struttura" });
@@ -973,16 +1190,18 @@
       return d;
   }
   function vistaDati(v) {
-    v.appendChild(el("p", { class: "sotto-titolo", text: "Stati, appunti, turni e numeri dei conti vivono solo su questo telefono. Fanne una copia ogni tanto." }));
+    v.appendChild(el("p", { class: "sotto-titolo", text: "Stati, appunti, turni, fatture e numeri dei conti vivono solo su questo telefono. Fanne una copia ogni tanto." }));
     var area = el("textarea", { class: "appunto", "aria-label": "Copia dei dati", placeholder: "Per ripristinare, incolla qui la copia e tocca Ripristina" });
     var bCopia = el("button", { class: "azione", text: "Copia i miei dati" });
-    bCopia.addEventListener("click", function () { copiaTesto(JSON.stringify({ stati: MIEI, agenda: AGENDA, conti: CONTI_MIEI }), bCopia); });
+    bCopia.addEventListener("click", function () { copiaTesto(JSON.stringify({ stati: MIEI, agenda: AGENDA, conti: CONTI_MIEI, fatture: FATTURE, avvio: AVVIO }), bCopia); });
     var bRipristina = el("button", { class: "azione", text: "Ripristina", onclick: function () {
       try {
         var d = JSON.parse(area.value);
         if (d.stati) { MIEI = d.stati; salvaMiei(); }
         if (d.agenda && d.agenda.giorni) { AGENDA = d.agenda; salvaChiave("radar-agenda", AGENDA); }
         if (d.conti) { CONTI_MIEI = d.conti; salvaChiave("radar-conti", CONTI_MIEI); }
+        if (d.fatture && d.fatture.elenco) { FATTURE = d.fatture; salvaFatture(); }
+        if (d.avvio && d.avvio.fatti) { AVVIO = d.avvio; salvaAvvio(); }
         area.value = ""; area.placeholder = "Dati ripristinati.";
       } catch (e) { area.value = ""; area.placeholder = "La copia incollata non è valida: copiala di nuovo per intero."; }
     } });

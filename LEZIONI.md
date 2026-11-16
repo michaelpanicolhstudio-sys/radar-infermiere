@@ -71,3 +71,5 @@ e aggiornato **alla fine** di ogni revisione: cosa si è sbagliato, come lo si �
 - Regole a 6 (14/11 sera): verificato nel giro di prova, Eurac e Annenberg hanno il datore, nessun «aggiornato» dovuto al datore riscritto; ASUIT SC 04/26 ha `scadenze` e passerà all'11/12 dal 16/11 (da controllare quel giorno).
 - Dal cloud non si aprono né opi.tn.it/opibz.it né apspgrazioli.it né jobs.stiftung-st-elisabeth.it (proxy 403): APSP Grazioli è a zero da 8 giorni perché «Lavora con noi» linka solo una selezione OSS; forse va letta anche `Albo-online/Concorsi-e-selezioni` (da verificare in un giro vero).
 - Ancora non provati dal vero: lettura delle risposte, Excel allegato, invito all'incontro.
+
+- 16/11/2026: aggiunti Fatture, Email pronte, Avvio (webapp/app.js, chiavi `radar-fatture` e `radar-avvio`). Regole: l'app non emette fatture e non invia email da sola; i modelli non devono mai contenere compensi o dati inventati (solo parentesi quadre da completare).

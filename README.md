@@ -223,3 +223,12 @@ tests/prova.py           prove offline
 ```
 
 Sul computer: `pip install -r requirements.txt`, poi `python -m radar --senza-email`.
+
+## Fatture, email pronte, avvio (dal 16/11/2026)
+
+Nella scheda Altro dell'app, tutto salvato solo sul telefono (e nel backup di «I miei dati»):
+
+- **Fatture**: registro con numerazione, 4% ENPAPI e bollo calcolati, stati (da emettere, emessa, pagata), ritardi con sollecito pronto, bozze create dai turni in Agenda, file per il commercialista. Non emette fatture elettroniche: prepara i dati da copiare nel portale.
+- **Email pronte**: nove modelli che si riempiono con turni, giorni liberi e fatture. Partono solo dal telefono di Michael.
+- **Avvio**: lista dei passi per mettersi in proprio, scadenze dei documenti con avviso su Oggi 60 giorni prima, collegamenti a guida e CV.
+- **Conti**: confronto dei turni necessari con imposta al 5% e al 15%.
