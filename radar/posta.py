@@ -119,6 +119,16 @@ def leggi_risposta(msg, oggi: date) -> dict:
             "compenso": compenso, "euro_ora": euro_ora, "turni": turni, "incontro": trova_incontro(testo, oggi)}
 
 
+def _cartella_speciale(M, segno: str) -> str | None:
+    """Nome della cartella con un attributo speciale IMAP (\\Sent, \\All…), qualunque sia la lingua di Gmail."""
+    esito, righe = M.list()
+    for riga in righe or []:
+        s = riga.decode("utf-8", errors="replace")
+        if segno in s:
+            return s.rsplit(' "', 1)[-1].strip('"') if s.endswith('"') else s.rsplit(" ", 1)[-1]
+    return None
+
+
 def _cartella_inviati(M) -> str | None:
     esito, righe = M.list()
     for riga in righe or []:
@@ -235,7 +245,10 @@ def avvisi_portali(cfg: dict, oggi: date, registra=print) -> dict[str, list[dict
     try:
         M = imaplib.IMAP4_SSL(conto["host"], 993, timeout=40)
         M.login(conto["utente"], conto["chiave"])
-        M.select("INBOX", readonly=True)
+        # «Tutti i messaggi»: così gli avvisi si trovano anche se un filtro di Gmail li archivia o li etichetta.
+        tutti = _cartella_speciale(M, "\\All")
+        if not (tutti and M.select(f'"{tutti}"', readonly=True)[0] == "OK"):
+            M.select("INBOX", readonly=True)
         dal = _data_imap(oggi - timedelta(days=int((cfg.get("posta") or {}).get("giorni_avvisi", 3))))
         for nome, mittente in mittenti.items():
             candidati = []
