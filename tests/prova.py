@@ -536,6 +536,14 @@ verifica("avvisi dei portali: annunci per infermieri (anche «Nurse»), link pul
          ([x["titolo"] for x in presi], presi[0]["url"], "35 €" in presi[0]["sommario"], nota_avv["altri_link"]),
          (["Infermiere/a libero professionista", "Registered Nurse – Seniorenwohnheim"], "https://it.indeed.com/rc/clk?jk=abc", True, ["Cuoco di cucina"]))
 
+from email.message import EmailMessage as _Em
+_m = _Em(); _m["Subject"] = "Infermiere libero professionista - Clinica Esempio"; _m["Date"] = "Mon, 16 Nov 2026 17:20:00 +0100"
+_m.set_content("Guarda questo annuncio:\nInfermiere/a turni notturni, Clinica Esempio, Trento, 38 €/h\nhttps://it.indeed.com/viewjob?jk=123&from=share\n\nInviato da iPhone")
+seg = posta.annunci_segnalati(_m)
+verifica("segnalati: link, titolo dalla riga sopra, riassunto con il compenso",
+         [(x["url"], x["titolo"], "38 €/h" in x["sommario"]) for x in seg],
+         [("https://it.indeed.com/viewjob?jk=123", "Infermiere/a turni notturni, Clinica Esempio, Trento, 38 €/h", True)])
+
 print("Web app e calendario")
 dest = uscite.costruisci_sito(cfg, date(2026, 11, 14), tmp2 / "dist")
 dati = __import__("json").loads((dest / "dati.json").read_text(encoding="utf-8"))

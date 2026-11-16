@@ -742,13 +742,17 @@ def giro(cfg: dict, rete, oggi: date, registra=print, diagnostica: bool = True,
 
     # Avvisi di lavoro arrivati per email dai portali (Indeed, LinkedIn…): si usa solo ciò che dice l'email.
     for nome, candidati in (avvisi or {}).items():
-        fonte = {"nome": f"Avvisi email – {nome}", "tipo": "rss", "affidabilita": "aggregatore", "solo_regione": True}
+        segnalati = nome == "Segnalati da Michael"
+        fonte = ({"nome": "Segnalati da Michael", "tipo": "rss", "affidabilita": "struttura", "solo_regione": False} if segnalati else
+                 {"nome": f"Avvisi email – {nome}", "tipo": "rss", "affidabilita": "aggregatore", "solo_regione": True})
         fonti_attive.add(fonte["nome"])
         fonti_lette.add(fonte["nome"])
         presi = 0
         for cand in candidati:
             a, _ = _costruisci(cand, cand.get("sommario", ""), cand.get("pubblicato"), fonte, cfg, comuni, oggi,
-                               ["Dall'avviso email del portale: apri il link per i dettagli"])
+                               ["Segnalato da te via email: apri il link per i dettagli"] if segnalati else
+                               ["Dall'avviso email del portale: apri il link per i dettagli"],
+                               controlla_ruolo=not segnalati)
             if a and a["id"] not in trovati:
                 trovati[a["id"]] = a
                 presi += 1

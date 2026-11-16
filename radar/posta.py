@@ -260,6 +260,34 @@ def annunci_da_avviso(pagina: str, parole: list[str], note: dict | None = None) 
     return trovati
 
 
+RE_URL = re.compile(r"https?://[^\s<>\"')\]]+")
+_RE_URL_INUTILE = re.compile(r"apple\.com|icloud\.com|google\.com/maps|mailto:|\.(?:png|jpe?g|gif)(?:\?|$)", re.I)
+
+
+def annunci_segnalati(msg) -> list[dict]:
+    """Email mandata da Michael all'indirizzo «+radar»: ogni link è un annuncio da seguire.
+    Titolo dalla riga del link o dall'oggetto; il testo dell'email fa da riassunto (struttura, luogo, compenso)."""
+    testo, pagina = testo_messaggio(msg)
+    oggetto = _intestazione(msg.get("Subject")).strip()
+    if pagina and len(testo) < 30:
+        testo = BeautifulSoup(pagina, "html.parser").get_text("\n")
+    righe = [r.strip() for r in testo.replace("\r", "").split("\n")]
+    trovati, visti = [], set()
+    for i, riga in enumerate(righe):
+        for m in RE_URL.finditer(riga):
+            url = m.group(0).rstrip(".,;")
+            if _RE_URL_INUTILE.search(url) or url in visti:
+                continue
+            visti.add(url)
+            prima = riga[: m.start()].strip(" :-–") or next((r for r in reversed(righe[max(0, i - 3):i]) if r and not RE_URL.search(r)), "")
+            titolo = estrai.pulisci(prima) if 8 <= len(estrai.pulisci(prima)) <= 140 else ""
+            titolo = titolo or re.sub(r"^(?:fwd?|i|r|re|wg)\s*:\s*", "", oggetto, flags=re.I) or "Annuncio segnalato"
+            vicino = " ".join(r for r in righe[max(0, i - 4): i + 5] if r)
+            trovati.append({"titolo": titolo[:140], "url": _url_pulito(url),
+                            "sommario": estrai.pulisci(f"{oggetto} {vicino}")[:600]})
+    return trovati
+
+
 def avvisi_portali(cfg: dict, oggi: date, registra=print) -> dict[str, list[dict]]:
     """{nome del portale: [candidati]} dagli avvisi arrivati negli ultimi giorni."""
     mittenti = (cfg.get("posta") or {}).get("avvisi_da") or {}
@@ -288,6 +316,25 @@ def avvisi_portali(cfg: dict, oggi: date, registra=print) -> dict[str, list[dict
                     candidati.append({**c, "pubblicato": quando, "id": estrai.id_annuncio("avviso:" + estrai.chiave(c["sommario"][:120]))})
             risultati[nome] = candidati
             DIAGNOSTICA_AVVISI[nome] = {**note, "annunci": len(candidati), "esempi": [c["sommario"][:200] for c in candidati[:3]]}
+        # Annunci segnalati da Michael: email all'indirizzo «nome+radar@gmail.com» (arrivano nella stessa casella).
+        locale, dominio = conto["utente"].split("@", 1)
+        segnalati, gia = [], set()
+        for msg in _messaggi(M, ["SINCE", _data_imap(oggi - timedelta(days=int((cfg.get("posta") or {}).get("giorni_segnalati", 30)))),
+                                 "TO", f'"{locale}+radar@{dominio}"'], 60):
+            mid = (msg.get("Message-ID") or "").strip()
+            if mid in gia:
+                continue
+            gia.add(mid)
+            try:
+                quando = parsedate_to_datetime(msg.get("Date")).date()
+            except Exception:
+                quando = oggi
+            for c in annunci_segnalati(msg):
+                segnalati.append({**c, "pubblicato": quando, "id": estrai.id_annuncio("segnalato:" + c["url"])})
+        if segnalati:
+            risultati["Segnalati da Michael"] = segnalati
+        DIAGNOSTICA_AVVISI["Segnalati da Michael"] = {"email": len(gia), "annunci": len(segnalati),
+                                                       "esempi": [s_["titolo"] for s_ in segnalati[:5]]}
         M.logout()
     except Exception as e:
         registra(f"⚠ Avvisi dei portali: lettura non riuscita ({type(e).__name__})")

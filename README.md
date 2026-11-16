@@ -196,6 +196,8 @@ Se il workflow fallisce del tutto, GitHub ti manda un'email.
   `PEC_USER`, `PEC_PASSWORD` e `PEC_IMAP_HOST` (facoltativi).
 - **Indeed, LinkedIn e simili:** non si lasciano leggere dai programmi. Attiva sul loro sito un avviso email
   («infermiere partita IVA Trento», «infermiere Bolzano»…) verso la tua Gmail: il Radar legge quegli avvisi.
+- **Segnalare un annuncio:** manda il link (da Indeed, Facebook, ovunque) a `infermiere.michaelpanico+radar@gmail.com`,
+  anche con «Condividi → Mail». Arriva nella stessa casella; la mattina dopo il Radar lo inserisce tra le offerte.
 - **Strutture** (Altro → Strutture): i posti che cercano quasi sempre. Si modificano in `data/strutture.csv`.
 - **Conti:** quanti turni servono per l'obiettivo netto; i numeri di partenza sono in `config.yaml` alla voce `conti`.
 - **Agenda:** segni i turni; l'app tiene due giorni liberi a settimana e li sposta da sola, preferendo il weekend.
