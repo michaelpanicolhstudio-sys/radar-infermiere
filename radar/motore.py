@@ -637,6 +637,14 @@ def segna_doppioni(memoria: dict, oggi: date) -> list[dict]:
         # non a un annuncio generico senza data (ASUIT SLP 15/26 nascosto dalla pagina OPI di gennaio, 16/11).
         gruppi.setdefault((datore, a["zona"], e_piva(a), a.get("scadenza")), []).append(a)
     risolvi(gruppi)
+    # Niente catene (a → b → c): ogni doppione punta all'annuncio che si vede.
+    for a in memoria.values():
+        visti, capo = {a.get("id")}, a.get("doppione_di")
+        while capo in memoria and memoria[capo].get("doppione_di") and capo not in visti:
+            visti.add(capo)
+            capo = memoria[capo]["doppione_di"]
+        if capo:
+            a["doppione_di"] = capo
     return [a for a in memoria.values() if a.get("dal_doppione")]
 
 

@@ -339,6 +339,19 @@ motore.segna_doppioni(m6, OGGI)
 verifica("doppioni: un bando con la sua scadenza non è nascosto da un annuncio senza data", m6["s"].get("doppione_di"), None)
 verifica("doppioni: due annunci senza scadenza dello stesso datore restano uniti", m6["v"].get("doppione_di"), "o")
 
+# 16/11: Heinrich von Rottenburg (Caldaro): una voce era doppione di un'altra che era a sua volta doppione.
+m7 = {"a": {"id": "a", "titolo": "Infermiere/a a tempo pieno o part time", "datore": None, "zona": "Caldaro", "email": None, "scadenza": None,
+            "pubblicato": "2023-09-13", "punteggio": 40, "primo_visto": "2026-11-13"},
+      "b": {"id": "b", "titolo": "Infermiere/a a tempo pieno o part time", "datore": "Fondazione Heinrich von Rottenburg", "zona": "Caldaro", "email": None,
+            "scadenza": None, "pubblicato": "2024-07-29", "punteggio": 40, "primo_visto": "2026-11-13"},
+      "c": {"id": "c", "titolo": "Fondazione Heinrich von Rottenburg (APSP) ricerca", "datore": "Fondazione Heinrich von Rottenburg", "zona": "Caldaro", "email": None,
+            "scadenza": None, "pubblicato": "2026-06-23", "punteggio": 40, "primo_visto": "2026-11-13"}}
+m7["a"]["titolo"] = m7["b"]["titolo"]  # stesso titolo: regola 2 (a → b), poi regola 4 (b → c)
+m7["a"]["datore"] = m7["b"]["datore"]
+m7["c"]["titolo"] = "Ricerca personale infermieristico"
+motore.segna_doppioni(m7, OGGI)
+verifica("doppioni: niente catene, tutti puntano all'annuncio mostrato", [m7[k].get("doppione_di") for k in "abc"], ["c", "c", None])
+
 print("Revisione del 14/11")
 # 14/11: la pagina OPI di San Giuseppe (Primiero) non ha risposto (errore di rete) e la lettura buona del giorno prima è andata persa.
 class ReteGuasta:
