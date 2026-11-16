@@ -13,6 +13,7 @@ e aggiornato **alla fine** di ogni revisione: cosa si è sbagliato, come lo si �
 - Se un cambio di regole deve rileggere annunci già in memoria: aumentare `VERSIONE_REGOLE` (o `VERSIONE_PDF`) in `radar/motore.py`.
 
 ## Lezioni (dalla più recente)
+- 2026-11-16 — Avvisi email dei portali: risalendo nell'HTML per prendere il testo intorno a un annuncio, il blocco inglobava anche gli annunci successivi (stessa tabella) e il secondo spariva come «doppione». Regola: smettere di risalire quando il contenitore include un altro link da infermiere.
 - 2026-11-16 (revisione) — I 3 Google Alerts davano «0 voci» da 26 giorni senza errori: il Radar non distingueva un feed vuoto da una pagina web ben formata (accesso, consenso) arrivata al posto del feed (visto in `fonti_stato.json`, `giorni_a_zero: 26`, e in diagnostica: solo `candidati: 0`). Regola: prima di dire «niente di nuovo» controllare che sia arrivato davvero il tipo di contenuto atteso; ora la diagnostica del feed scrive anche titolo e lunghezza.
 - 2026-11-16 (revisione) — ASUIT SLP 15/26 (Campiglio, scadenza 10/09) era nascosto come doppione della pagina OPI di gennaio sul bando invernale, che non ha scadenza (regola 4, «stesso datore e zona»; visto confrontando `doppione_di` e `scadenza` in `annunci.json`). Regola: un bando con una sua scadenza, anche passata, è un bando a sé; si unisce solo a chi ha la stessa data.
 - 2026-11-16 (revisione) — Doppioni a catena (Caldaro: una voce puntava a un'altra che era a sua volta doppione). Regola: alla fine del calcolo ogni doppione punta all'annuncio che si vede.
@@ -45,6 +46,7 @@ e aggiornato **alla fine** di ogni revisione: cosa si è sbagliato, come lo si �
 - 2026-11-13 — Un giro manuale di notte segnava come fatto il giro delle 7 e saltava l'email: solo i giri pianificati scrivono `data/ultimo_giro.txt`.
 
 ## Problemi aperti (da guardare nelle prossime revisioni)
+- Avvisi email dei portali (Indeed, LinkedIn, InfoJobs, Jobrapido): Michael li sta attivando sulla Gmail di lavoro (16/11). Quando in `data/posta_stato.json` → `avvisi` compaiono email lette, controllare `esempi` e `altri_link`: titoli da infermiere scartati, struttura e comune estratti dal sommario, doppioni tra portali. Mettere a punto `annunci_da_avviso` sui casi veri.
 - Verificato nel giro di prova del 15/11 sera: «Da contattare oggi» propone solo Schloss Moos e Villa Sant'Anna (niente Vannetti); app pubblicata, prove TUTTO OK su GitHub (anche quelle del radar con node).
 - Radar dell'app (15/11 sera): con i nomi che ora evitano le tacche, «Cornedo» ha preso il posto dell'etichetta di «San Candido» (resta il punto, il nome è nell'elenco). Se dà fastidio: per i punti oltre i 90 minuti provare prima l'etichetta verso l'esterno.
 - Pubblicazione dell'app: il segreto `CLOUDFLARE_ACCOUNT_ID` arriva vuoto al workflow, quindi il controllo «il progetto esiste?» risponde 404 e il passo «Crea il progetto» fallisce a ogni giro (innocuo: la pubblicazione subito dopo riesce). Non toccato (segreti e workflow): Michael può ricontrollare il segreto su GitHub.

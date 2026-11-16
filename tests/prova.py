@@ -526,6 +526,16 @@ verifica("resoconto: interessati con compenso e da quando",
          {"esito": "sì", "euro_ora": 38.0, "da_quando": "da gennaio 2027"})
 verifica("resoconto: risposta negativa in tedesco", invio.leggi_esito("Leider haben wir derzeit keinen Bedarf.")["esito"], "no")
 
+avviso_html = ("<table><tr><td><a href='https://it.indeed.com/rc/clk?jk=abc&utm_source=x&from=mail'>Infermiere/a libero professionista</a>"
+               "<div>Cooperativa Sociale Esempio</div><div>Trento, Trentino-Alto Adige</div><div>35 € all'ora</div></td></tr>"
+               "<tr><td><a href='https://www.linkedin.com/jobs/view/123?trk=eml'>Registered Nurse – Seniorenwohnheim</a><div>Meran</div></td></tr>"
+               "<tr><td><a href='https://it.indeed.com/x'>Cuoco di cucina</a></td></tr><tr><td><a href='https://it.indeed.com/u'>Annulla l'iscrizione</a></td></tr></table>")
+nota_avv = {}
+presi = posta.annunci_da_avviso(avviso_html, ["infermier", "krankenpfleg"], nota_avv)
+verifica("avvisi dei portali: annunci per infermieri (anche «Nurse»), link puliti, il resto annotato",
+         ([x["titolo"] for x in presi], presi[0]["url"], "35 €" in presi[0]["sommario"], nota_avv["altri_link"]),
+         (["Infermiere/a libero professionista", "Registered Nurse – Seniorenwohnheim"], "https://it.indeed.com/rc/clk?jk=abc", True, ["Cuoco di cucina"]))
+
 print("Web app e calendario")
 dest = uscite.costruisci_sito(cfg, date(2026, 11, 14), tmp2 / "dist")
 dati = __import__("json").loads((dest / "dati.json").read_text(encoding="utf-8"))

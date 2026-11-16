@@ -16,11 +16,13 @@ import re
 from datetime import date, datetime, timedelta
 from email.header import decode_header, make_header
 from email.utils import getaddresses, parsedate_to_datetime
+from urllib.parse import parse_qsl, urlencode, urlparse
 
 from bs4 import BeautifulSoup
 
 from . import estrai
 
+DIAGNOSTICA_AVVISI: dict[str, dict] = {}   # per la messa a punto: email lette, link scartati, esempi
 RE_RIF = re.compile(r"R-([0-9a-f]{6,12})", re.I)
 _MESI_IMAP = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 _POSTA_COMUNE = ("gmail.com", "googlemail.com", "libero.it", "hotmail.", "outlook.", "yahoo.", "icloud.com", "live.",
@@ -213,25 +215,48 @@ def aggiorna_contatti(contatti: dict, chiavi: dict[str, str], oggi: date, regist
     return nuove
 
 
-def annunci_da_avviso(pagina: str, parole: list[str]) -> list[dict]:
-    """Dall'email di un portale (Indeed, LinkedIn…) prende i link agli annunci per infermieri."""
+PAROLE_PORTALI = ["nurse", "krankenschwester", "pflegerin", "pfleger/in", "pflegefachfrau", "pflegefachmann", "oss/infermier"]
+_RE_RUMORE_LINK = re.compile(r"annulla|unsubscribe|abmelden|impostazioni|settings|privacy|condizioni|termini|"
+                             r"vedi tutti|see all|alle anzeigen|scarica l'app|download|aiuto|help|accedi|log ?in", re.I)
+
+
+def _url_pulito(url: str) -> str:
+    """Toglie i parametri di tracciamento più comuni, tenendo quelli che identificano l'annuncio (jk, id…)."""
+    p = urlparse(url)
+    tieni = [(k, v) for k, v in parse_qsl(p.query) if not re.match(r"utm_|trk|refId|trackingId|from|tk$|alid|ref$", k, re.I)]
+    return p._replace(query=urlencode(tieni), fragment="").geturl()
+
+
+def annunci_da_avviso(pagina: str, parole: list[str], note: dict | None = None) -> list[dict]:
+    """Dall'email di un portale (Indeed, LinkedIn…) prende i link agli annunci per infermieri,
+    con il blocco di testo intorno (struttura, luogo, compenso) da cui il Radar estrae i dati."""
     soup = BeautifulSoup(pagina, "html.parser")
+    parole = list(parole) + PAROLE_PORTALI
     trovati, visti = [], set()
     for a in soup.find_all("a", href=True):
         titolo = estrai.pulisci(a.get_text(" "))
-        if not (8 <= len(titolo) <= 140) or not estrai.contiene(titolo, parole) or not a["href"].startswith("http"):
+        if not a["href"].startswith("http") or not (8 <= len(titolo) <= 140) or _RE_RUMORE_LINK.search(titolo):
+            continue
+        if not estrai.contiene(titolo, parole):
+            if note is not None and len(note.setdefault("altri_link", [])) < 12:
+                note["altri_link"].append(titolo[:80])
             continue
         blocco = a
-        for _ in range(4):
-            if blocco.parent is None or len(estrai.pulisci(blocco.parent.get_text(" "))) > 400:
+        for _ in range(5):
+            su = blocco.parent
+            if su is None or len(estrai.pulisci(su.get_text(" "))) > 450:
                 break
-            blocco = blocco.parent
+            # il blocco di un annuncio non deve inglobare gli altri annunci dell'email
+            altri = [x for x in su.find_all("a", href=True) if x is not a and estrai.contiene(estrai.pulisci(x.get_text(" ")), parole)]
+            if altri:
+                break
+            blocco = su
         intorno = estrai.pulisci(blocco.get_text(" "))
-        chiave = estrai.chiave(intorno[:120])
+        chiave = estrai.chiave(intorno[:160])
         if chiave in visti:
             continue
         visti.add(chiave)
-        trovati.append({"titolo": titolo, "url": a["href"], "sommario": intorno[:400]})
+        trovati.append({"titolo": titolo, "url": _url_pulito(a["href"]), "sommario": intorno[:450]})
     return trovati
 
 
@@ -251,16 +276,18 @@ def avvisi_portali(cfg: dict, oggi: date, registra=print) -> dict[str, list[dict
             M.select("INBOX", readonly=True)
         dal = _data_imap(oggi - timedelta(days=int((cfg.get("posta") or {}).get("giorni_avvisi", 3))))
         for nome, mittente in mittenti.items():
-            candidati = []
+            candidati, note = [], {"email": 0}
             for msg in _messaggi(M, ["SINCE", dal, "FROM", f'"{mittente}"'], 15):
+                note["email"] += 1
                 _, pagina = testo_messaggio(msg)
                 try:
                     quando = parsedate_to_datetime(msg.get("Date")).date()
                 except Exception:
                     quando = oggi
-                for c in annunci_da_avviso(pagina, cfg["parole"]["infermiere"]):
+                for c in annunci_da_avviso(pagina, cfg["parole"]["infermiere"], note):
                     candidati.append({**c, "pubblicato": quando, "id": estrai.id_annuncio("avviso:" + estrai.chiave(c["sommario"][:120]))})
             risultati[nome] = candidati
+            DIAGNOSTICA_AVVISI[nome] = {**note, "annunci": len(candidati), "esempi": [c["sommario"][:200] for c in candidati[:3]]}
         M.logout()
     except Exception as e:
         registra(f"⚠ Avvisi dei portali: lettura non riuscita ({type(e).__name__})")

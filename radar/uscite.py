@@ -365,7 +365,8 @@ def aggiorna_posta(cfg: dict, oggi: date, registra=print) -> tuple[list[dict], d
     avvisi = posta.avvisi_portali(cfg, oggi, registra)
     for nome, candidati in avvisi.items():
         registra(f"• Avvisi di {nome}: {len(candidati)} annunci per infermieri nelle email degli ultimi giorni")
-    motore.scrivi_json(RADICE / "data" / "posta_stato.json", {"data": oggi.isoformat(), "note": note})
+    motore.scrivi_json(RADICE / "data" / "posta_stato.json", {"data": oggi.isoformat(), "note": note,
+                                                             "avvisi": posta.DIAGNOSTICA_AVVISI})
     return nuove, avvisi
 
 
