@@ -484,7 +484,9 @@ str_prova = [{"chiave": "s:1", "nome": "RSA Uno", "email": "a@rsa.it", "pec": No
              {"chiave": "s:3", "nome": "Carcere", "email": None, "pec": "x@pec.it", "tipo": "Sanità penitenziaria", "minuti": 20, "rif": "R-3"},
              {"chiave": "s:4", "nome": "RSA Quattro", "email": "q@rsa.it", "pec": None, "tipo": "RSA", "minuti": 30, "rif": "R-4", "provincia": "TN"}]
 verifica("coda: un indirizzo una volta, niente carcere, niente già scritti",
-         [v["nome"] for v in invio.coda(str_prova, {}, {"s:4": {"inviata_il": "2026-11-10", "a": ["q@rsa.it"]}}, cfg, OGGI)], ["RSA Uno"])
+         [v["nome"] for v in invio.coda(str_prova, {}, {"s:4": {"inviata_il": "2026-11-10", "a": ["q@rsa.it"]}}, {**cfg, "invio": {}}, OGGI)], ["RSA Uno"])
+verifica("coda con selezione: solo le strutture scelte, con la lettera breve",
+         [(v["nome"], "riservata" in v["testo"]) for v in invio.coda(str_prova, {}, {}, {**cfg, "invio": {"selezione": ["Quattro"]}}, OGGI)], [("RSA Quattro", True)])
 verifica("resoconto: interessati con compenso e da quando",
          {k: invio.leggi_esito("Siamo interessati, compenso orario di 38 euro, da gennaio 2027.")[k] for k in ("esito", "euro_ora", "da_quando")},
          {"esito": "sì", "euro_ora": 38.0, "da_quando": "da gennaio 2027"})
