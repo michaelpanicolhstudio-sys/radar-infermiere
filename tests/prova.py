@@ -327,6 +327,18 @@ vecchi = {str(i): {"id": str(i), "titolo": t, "datore": None, "zona": "Caldaro",
 motore.segna_doppioni(vecchi, OGGI)
 verifica("doppioni: stessa struttura (stessa email), resta il più recente", [a.get("doppione_di") for a in vecchi.values()], ["2", "2", None])
 
+# 16/11: ASUIT SLP 15/26 (Campiglio, scadenza 10/09) era nascosto dalla pagina OPI di gennaio sul bando invernale
+# (senza scadenza): regola 4, «stesso datore e zona». Un bando con una sua scadenza è un bando a sé.
+m6 = {"s": {"id": "s", "titolo": "Avviso SLP 15/26 pronto soccorso ortopedico", "datore": "ASUIT (Trentino)", "zona": "Madonna di Campiglio",
+            "scadenza": "2026-09-10", "contratto": "P.IVA / libera professione", "punteggio": 55, "primo_visto": "2026-11-13"},
+      "o": {"id": "o", "titolo": "Avviso potenziamento invernale", "datore": "ASUIT (Trentino)", "zona": "Madonna di Campiglio",
+            "scadenza": None, "pubblicato": "2026-01-07", "contratto": "P.IVA / libera professione", "punteggio": 55, "primo_visto": "2026-11-13"},
+      "v": {"id": "v", "titolo": "Ricerca infermieri liberi professionisti", "datore": "ASUIT (Trentino)", "zona": "Madonna di Campiglio",
+            "scadenza": None, "pubblicato": "2025-01-10", "contratto": "P.IVA / libera professione", "punteggio": 55, "primo_visto": "2026-11-13"}}
+motore.segna_doppioni(m6, OGGI)
+verifica("doppioni: un bando con la sua scadenza non è nascosto da un annuncio senza data", m6["s"].get("doppione_di"), None)
+verifica("doppioni: due annunci senza scadenza dello stesso datore restano uniti", m6["v"].get("doppione_di"), "o")
+
 print("Revisione del 14/11")
 # 14/11: la pagina OPI di San Giuseppe (Primiero) non ha risposto (errore di rete) e la lettura buona del giorno prima è andata persa.
 class ReteGuasta:

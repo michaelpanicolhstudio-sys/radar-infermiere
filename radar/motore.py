@@ -633,7 +633,9 @@ def segna_doppioni(memoria: dict, oggi: date) -> list[dict]:
             continue
         if a.get("scadenza") and not e_scaduto(a, oggi):
             continue
-        gruppi.setdefault((datore, a["zona"], e_piva(a)), []).append(a)
+        # Un bando con una sua scadenza (anche passata) è un bando a sé: si unisce solo a chi ha la stessa data,
+        # non a un annuncio generico senza data (ASUIT SLP 15/26 nascosto dalla pagina OPI di gennaio, 16/11).
+        gruppi.setdefault((datore, a["zona"], e_piva(a), a.get("scadenza")), []).append(a)
     risolvi(gruppi)
     return [a for a in memoria.values() if a.get("dal_doppione")]
 
