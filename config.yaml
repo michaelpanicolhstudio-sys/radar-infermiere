@@ -29,7 +29,7 @@ pesi:
 penalita_bilinguismo: 10
 
 # ---- Feed RSS di Google Alerts (uno per riga) ----
-# Google Alerts (consegna «Feed RSS»): 19 avvisi, ultimo aggiornamento 16/11/2026
+# Google Alerts (consegna «Feed RSS»): 19 avvisi, ultimo aggiornamento 16/11/2026 sera
 feed_google_alerts:
   - https://www.google.com/alerts/feeds/15325904899053201770/17973737193246577484
   - https://www.google.com/alerts/feeds/15325904899053201770/12962960680803267172
