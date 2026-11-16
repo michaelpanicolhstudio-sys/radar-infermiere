@@ -121,6 +121,9 @@ fonti:
   - nome: Schloss Moos – libera professione (suedtirolerjobs)
     tipo: pagina
     url: https://www.suedtirolerjobs.it/jobs/freiberufliche-taetigkeit-in-der-pflege,115073
+    # Il testo dell'annuncio si carica in modo dinamico: la parola «Krankenpfleger» c'era solo negli
+    # «Ähnliche Jobs» di altri datori. Titolo dal controllo a mano del 12/11 (annuncio per Krankenpfleger/in).
+    titolo: Freiberufliche Tätigkeit in der Pflege (Krankenpfleger/in)
     affidabilita: aggregatore
     datore: Seniorenwohnheim Schloss Moos
     zona: Vipiteno

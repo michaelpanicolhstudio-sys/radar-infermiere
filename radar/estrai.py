@@ -261,6 +261,19 @@ def trova_email(testo: str, escludi_domini: set[str] | None = None) -> dict:
     return {"email": posta, "pec": pec}
 
 
+# Titoli dei riquadri con gli annunci di altri datori, in fondo alla pagina di un annuncio.
+_RE_CORRELATI = re.compile(
+    r"\b(?:ähnliche|weitere|passende)\s+(?:jobs|stellen(?:angebote)?|stellenanzeigen)\b|"
+    r"\b(?:annunci|offerte|lavori)\s+simili\b|\baltri\s+annunci\b|\bpotrebbero\s+interessarti\b|"
+    r"\bsimilar\s+jobs\b", re.I)
+
+
+def taglia_correlati(testo: str) -> str:
+    """Toglie dal testo la coda con gli annunci correlati (solo se prima c'è già un po' di testo)."""
+    m = next((m for m in _RE_CORRELATI.finditer(testo) if m.start() >= 150), None)
+    return testo[:m.start()].rstrip() if m else testo
+
+
 def leggi_pagina(html: str, base: str = "", intera_se_vuota: bool = False) -> dict:
     """Titolo, testo principale, data di pubblicazione (se dichiarata) e PDF allegati di una pagina."""
     soup = BeautifulSoup(html, "html.parser")
@@ -297,6 +310,7 @@ def leggi_pagina(html: str, base: str = "", intera_se_vuota: bool = False) -> di
         for tag in soup.body.find_all("header"):
             tag.decompose()
         testo = pulisci(soup.body.get_text(" "))
+    testo = taglia_correlati(testo)
     return {"titolo": titolo[:200], "testo": testo, "pubblicato": pubblicato, "pdf": pdf}
 
 

@@ -130,6 +130,20 @@ verifica("pagina: PDF dell'avviso sì, modulo di domanda no", [x["url"] for x in
 verifica("pagina: data di pubblicazione", str(p["pubblicato"]), "2026-10-16")
 verifica("email: solo quella della struttura", estrai.trova_email(p["testo"] + " info@opi.tn.it apsp@pec.it", motore.DOMINI_BACHECA), {"email": "personale@apsp-prova.it", "pec": "apsp@pec.it"})
 
+# suedtirolerjobs (Schloss Moos, giro del 16/11): l'annuncio è caricato in modo dinamico e nel testo restavano
+# solo i «Ähnliche Jobs» di altri datori (Caritas Leifers, St. Josef Lana, Pegasus Bozen), finiti nell'estratto.
+PAGINA_SJ = """<html><body><div class="content"><h1>Freiberufliche Tätigkeit in der Pflege</h1>
+<p>Sozialgenossenschaft Zum Heiligen Vinzenz Wiesen, Pfitsch Vollzeit Teilzeit Freelancer Projektarbeit 18.10.2026
+Sozialgenossenschaft Zum Heiligen Vinzenz Traustonstr. 190, 39049 Wiesen-Pfitsch Personalabteilung +39 0472 765179</p>
+<p>Zum Arbeitgeber Profil</p><h2>Ähnliche Jobs</h2>
+<p>Sozialbetreuer*in Vollzeit / Teilzeit Lana Pflegehelfer/in (Vollzeit) Leifers Caritas Krankenpfleger*in Lana ST. JOSEF
+Freiberufler / Freelancer (m/w) Bozen, südtirolweit PEGASUS</p></div></body></html>"""
+p_sj = estrai.leggi_pagina(PAGINA_SJ, "https://www.suedtirolerjobs.it/jobs/x,1", intera_se_vuota=True)
+verifica("pagina: gli annunci simili di altri datori non entrano nel testo",
+         ("Leifers" in p_sj["testo"], "PEGASUS" in p_sj["testo"], "Wiesen-Pfitsch" in p_sj["testo"]), (False, False, True))
+verifica("pagina: un «annunci simili» in apertura non svuota il testo",
+         "Krankenpfleger" in estrai.taglia_correlati("Annunci simili qui sotto. Cerchiamo Krankenpfleger in Lana. " * 3), True)
+
 PDF = (RADICE / "tests" / "avviso_prova.pdf").read_bytes()
 testo_pdf = estrai.testo_pdf(PDF)
 verifica("PDF: testo letto", ("INCARICHI LIBERO PROFESSIONALI" in testo_pdf, "40,00" in testo_pdf), (True, True))
@@ -272,6 +286,12 @@ _mem = {"n": {"id": "n", "titolo": "Trento , infermiere aggredito al Santa Chiar
               "estratto": "", "ultimo_visto": "2026-11-12", "primo_visto": "2026-11-12", "scadenza": None}}
 motore.aggiorna_memoria(_mem, [], set(), set(), set(), OGGI, CFG)
 verifica("memoria: le notizie già salvate dai feed vengono tolte", "n" in _mem, False)
+
+_f_sj = next(f for f in CFG["fonti"] if f["nome"].startswith("Schloss Moos – libera professione"))
+_es_sj = motore.raccogli_fonte(_f_sj, ReteFinta({_f_sj["url"]: PAGINA_SJ}), CFG, COMUNI, OGGI, {}, {})
+verifica("Schloss Moos: senza gli annunci simili resta un annuncio da infermiere a Vipiteno",
+         [(a["titolo"], a["zona"], a["contratto"]) for a in _es_sj["annunci"]],
+         [("Freiberufliche Tätigkeit in der Pflege (Krankenpfleger/in)", "Vipiteno", "P.IVA / libera professione")])
 
 print("Memoria: datati, doppioni, dati a mano")
 verifica("annuncio datato", (motore.e_datato({"pubblicato": "2026-03-05", "scadenza": None}, OGGI, CFG), motore.e_datato({"pubblicato": "2026-03-05", "scadenza": "2026-12-01"}, OGGI, CFG)), (True, False))
