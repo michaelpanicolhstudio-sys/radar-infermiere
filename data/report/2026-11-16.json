@@ -17,42 +17,13 @@
    "zona": "Mezzolombardo"
   }
  ],
- "attivi": 31,
+ "attivi": 29,
  "attivi_piva": 11,
  "data": "2026-11-16",
  "fonti_lette": 40,
  "fonti_totali": 40,
- "giri": 10,
- "nuovi": [
-  {
-   "cambi": [],
-   "compenso": null,
-   "contratto": null,
-   "datore": null,
-   "id": "5556096db03e",
-   "minuti": 25,
-   "piva": false,
-   "punteggio": 37,
-   "scadenza": null,
-   "titolo": "Afferra per i polsi un infermiere , poi lo spintona: ancora violenza al pronto soccorso - TrentoToday",
-   "url": "https://www.trentotoday.it/cronaca/infermiere-aggredito-polsi-ospedale-santa-chiara-trento.html",
-   "zona": "Trento"
-  },
-  {
-   "cambi": [],
-   "compenso": null,
-   "contratto": null,
-   "datore": null,
-   "id": "9b21bfb2d9b1",
-   "minuti": 25,
-   "piva": false,
-   "punteggio": 37,
-   "scadenza": null,
-   "titolo": "Trento , infermiere aggredito al Santa Chiara: la Uil chiede più sicurezza - L'Adige",
-   "url": "https://www.ladige.it/territori/trento/trento-infermiere-aggredito-al-santa-chiara-la-uil-chiede-piu-sicurezza-oe6h45bk",
-   "zona": "Trento"
-  }
- ],
+ "giri": 11,
+ "nuovi": [],
  "problemi": [],
  "scadenze7": [
   {
