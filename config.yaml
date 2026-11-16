@@ -30,23 +30,26 @@ penalita_bilinguismo: 10
 
 # ---- Feed RSS di Google Alerts (uno per riga) ----
 feed_google_alerts:
-  - "https://www.google.com/alerts/feeds/15325904899053201770/17973737193246577484"
-  - "https://www.google.com/alerts/feeds/15325904899053201770/12962960680803267172"
-  - "https://www.google.com/alerts/feeds/15325904899053201770/15453296471160879272"
+  - https://www.google.com/alerts/feeds/15325904899053201770/17973737193246577484
+  - https://www.google.com/alerts/feeds/15325904899053201770/12962960680803267172
+  - https://www.google.com/alerts/feeds/15325904899053201770/15453296471160879272
+  - https://www.google.com/alerts/feeds/15325904899053201770/5503768843499339674
+  - https://www.google.com/alerts/feeds/15325904899053201770/16477847084343046669
+  - https://www.google.com/alerts/feeds/15325904899053201770/16477847084343048374
+  - https://www.google.com/alerts/feeds/15325904899053201770/5503768843499339589
+  - https://www.google.com/alerts/feeds/15325904899053201770/10099624178017035648
+  - https://www.google.com/alerts/feeds/15325904899053201770/15931058046195586574
+  - https://www.google.com/alerts/feeds/15325904899053201770/7604436253927759279
+  - https://www.google.com/alerts/feeds/15325904899053201770/938647120976746940
+  - https://www.google.com/alerts/feeds/15325904899053201770/938647120976746727
+  - https://www.google.com/alerts/feeds/15325904899053201770/938647120976745182
+  - https://www.google.com/alerts/feeds/15325904899053201770/3967409794084432521
+  - https://www.google.com/alerts/feeds/15325904899053201770/18289117466805216876
+  - https://www.google.com/alerts/feeds/15325904899053201770/3771193921255085030
+  - https://www.google.com/alerts/feeds/15325904899053201770/14608708260752917900
+  - https://www.google.com/alerts/feeds/15325904899053201770/14608708260752918775
+  - https://www.google.com/alerts/feeds/15325904899053201770/14608708260752917818
 
-# ---- Fonti ----
-# tipo:
-#   elenco = pagina con una lista di annunci (il Radar apre ogni annuncio)
-#   pagina = singola pagina "lavora con noi" tenuta d'occhio
-#   rss    = feed RSS/Atom
-# affidabilita: ufficiale | struttura | aggregatore
-# attiva: false per spegnere una fonte senza cancellarla
-# Opzioni facoltative:
-#   tutti_i_link: true      nella pagina ci sono solo annunci: li apre tutti
-#   parole_link: [...]      apre solo i link il cui titolo contiene una di queste parole
-#   altre_pagine: [...]     pagine successive dello stesso elenco
-#   puo_essere_vuota: true  nessun avviso se l'elenco è vuoto
-#   datore / zona           valori fissi, se la pagina è di una sola struttura
 fonti:
   - nome: OPI Trento – annunci di lavoro
     tipo: elenco
