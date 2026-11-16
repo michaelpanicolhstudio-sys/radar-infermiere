@@ -248,6 +248,31 @@ _fa = {"nome": "Google Alerts 9", "tipo": "rss", "url": "https://www.google.com/
 _es = motore.raccogli_fonte(_fa, ReteFinta({_fa["url"]: "<html><head><title>Prima di continuare</title></head><body></body></html>"}), CFG, COMUNI, OGGI, {}, {})
 verifica("feed: una pagina web al posto del feed è un errore da segnalare", "pagina web" in (_es["errore"] or ""), True)
 
+# Giro del 16/11: Google Alerts 4 ha portato due articoli di cronaca («infermiere aggredito al Santa Chiara»)
+# finiti tra le «novità» dell'email come se fossero offerte di lavoro.
+_n1 = motore._costruisci({"titolo": "Afferra per i polsi un infermiere , poi lo spintona: ancora violenza al pronto soccorso - TrentoToday",
+                          "url": "https://www.trentotoday.it/cronaca/infermiere-aggredito-polsi-ospedale-santa-chiara-trento.html",
+                          "sommario": "Afferra per i polsi un infermiere, poi lo spintona: ancora violenza al pronto soccorso a Trento"},
+                         "Pochi giorni prima si era verificato un episodio simile all'ospedale Santa Chiara di Trento. Uil Fp: non è accettabile.",
+                         None, _fa, CFG, COMUNI, OGGI, [])
+_n2 = motore._costruisci({"titolo": "Trento , infermiere aggredito al Santa Chiara: la Uil chiede più sicurezza - L'Adige",
+                          "url": "https://www.ladige.it/territori/trento/trento-infermiere-aggredito-al-santa-chiara-la-uil-chiede-piu-sicurezza-oe6h45bk"},
+                         "La denuncia. Momenti di tensione sabato sera nel reparto di emergenza dell'ospedale di Trento.",
+                         None, _fa, CFG, COMUNI, OGGI, [])
+verifica("feed: un articolo di cronaca non è un'offerta", (_n1[0], _n1[1], _n2[0], _n2[1]),
+         (None, "notizia, non un'offerta di lavoro", None, "notizia, non un'offerta di lavoro"))
+_o1 = motore._costruisci({"titolo": "Infermieri RSA zona Rovereto", "url": "https://it.indeed.com/viewjob?jk=9",
+                          "sommario": "ParaMedica cerca infermieri con partita IVA per RSA a Rovereto"},
+                         "", None, _fa, CFG, COMUNI, OGGI, [])
+_o2 = motore._costruisci({"titolo": "Trento, l'ospedale cerca infermieri: aperto il bando", "url": "https://www.ladige.it/territori/trento/bando-infermieri-1"},
+                         "Il bando per infermieri a tempo determinato scade il 30 novembre 2026.", None, _fa, CFG, COMUNI, OGGI, [])
+verifica("feed: offerte vere (anche su un giornale) restano", (_o1[0] is not None, _o2[0] is not None), (True, True))
+_mem = {"n": {"id": "n", "titolo": "Trento , infermiere aggredito al Santa Chiara: la Uil chiede più sicurezza - L'Adige",
+              "url": "https://www.ladige.it/territori/trento/x", "tipo_fonte": "rss", "fonte": "Google Alerts 4",
+              "estratto": "", "ultimo_visto": "2026-11-12", "primo_visto": "2026-11-12", "scadenza": None}}
+motore.aggiorna_memoria(_mem, [], set(), set(), set(), OGGI, CFG)
+verifica("memoria: le notizie già salvate dai feed vengono tolte", "n" in _mem, False)
+
 print("Memoria: datati, doppioni, dati a mano")
 verifica("annuncio datato", (motore.e_datato({"pubblicato": "2026-03-05", "scadenza": None}, OGGI, CFG), motore.e_datato({"pubblicato": "2026-03-05", "scadenza": "2026-12-01"}, OGGI, CFG)), (True, False))
 m2 = {"a": {"id": "a", "titolo": "Concorso per infermieri", "datore": "APSP Vannetti", "zona": "Rovereto", "scadenza": "2026-11-20", "contratto": "Concorso / graduatoria", "punteggio": 30, "primo_visto": "2026-11-12", "origine": "manuale"},

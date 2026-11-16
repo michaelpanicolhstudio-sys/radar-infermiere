@@ -25,7 +25,7 @@ AVVISO_DAL_DOPPIONE = "Preso dallo stesso bando su "
 # Dati che, se mancano nell'annuncio mostrato, si prendono da un suo doppione dello stesso bando.
 CAMPI_DAL_DOPPIONE = {"compenso": "compenso", "euro_ora": None, "email": "email", "pec": "PEC"}
 # Si aumenta quando cambiano le regole di pertinenza: le pagine già scartate vengono riaperte una volta.
-VERSIONE_REGOLE = 7
+VERSIONE_REGOLE = 8
 VERSIONE_PDF = 3      # cambia quando migliorano le regole: i PDF già letti vengono riletti
 # Siti-bacheca: i loro indirizzi email non sono il contatto della struttura che cerca personale.
 DOMINI_BACHECA = {"opi.tn.it", "opibz.it", "upipa.tn.it", "suedtirolerjobs.it", "fnopi.it", "google.com"}
@@ -154,6 +154,8 @@ def _costruisci(cand: dict, testo: str, pubblicato, fonte: dict, cfg: dict, comu
 
     if estrai.contiene(titolo, parole["escludi_titolo"]) and not estrai.contiene(titolo, parole["infermiere"]):
         return None, "ruolo diverso (dal titolo)"
+    if fonte.get("tipo") == "rss" and estrai.e_notizia(titolo, cand.get("url", ""), cand.get("sommario", "")):
+        return None, "notizia, non un'offerta di lavoro"
     if controlla_ruolo and estrai.ruolo_diverso(titolo, corpo):
         return None, "ruolo diverso (coordinamento, direzione o comando)"
     ha_infermiere = estrai.contiene(tutto, parole["infermiere"]) or (pdf_utile and da_pdf.get("infermiere"))
@@ -498,6 +500,9 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str], 
             del memoria[ident]  # riletto e giudicato non pertinente
             continue
         if a.get("tipo_fonte") == "rss":
+            if a.get("origine") != "manuale" and estrai.e_notizia(a.get("titolo") or "", a.get("url") or ""):
+                del memoria[ident]  # articolo di giornale entrato con regole vecchie (giro del 16/11)
+                continue
             # Gli avvisi di ricerca scorrono via dal feed: non vuol dire che l'annuncio sia chiuso.
             if (oggi - date.fromisoformat(a.get("ultimo_visto", oggi_s))).days > giorni:
                 del memoria[ident]

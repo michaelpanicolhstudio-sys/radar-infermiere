@@ -907,6 +907,27 @@ def ruolo_diverso(titolo: str, testo: str) -> bool:
     return not titolo_da_infermiere and bool(RE_RUOLO_TESTO.search(testo[:600]))
 
 
+# Avvisi di ricerca (Google Alerts): accanto agli annunci arrivano articoli di giornale che parlano di
+# infermieri (aggressioni, sindacati, carenza di personale). Sono notizie, non offerte.
+_RE_SEZIONE_NOTIZIE = re.compile(r"/(cronaca|attualita|notizie|news|territori|politica|economia|salute|sanita)/", re.I)
+_RE_TITOLO_NOTIZIA = re.compile(
+    r"aggredit|aggression|violenz|spinton|picchiat|minacc|denunci|sindacat|\buil\b|\bcgil\b|\bcisl\b|nursind|"
+    r"sciopero|protesta|incidente|\bmort[oaie]\b|arrestat|indagat|condannat|processo|tribunale|"
+    r"carenza\s+di\s+(?:personale|infermieri)|mancano\s+(?:gli\s+)?infermieri|polemica", re.I)
+# Segnali di un'offerta vera: se ci sono, l'articolo (o l'annuncio sul giornale) resta.
+_RE_SEGNALE_OFFERTA = re.compile(
+    r"\bcerc[ahoi]|\bricerc[ah]|selezion|avviso\s+pubblico|\bbando|concors|assum|assunzion|incaric|"
+    r"offert[ae]\s+di\s+lavoro|posizion[ei]\s+apert|candidatur|candidars|libera\s+professione|partita\s+iva|"
+    r"p\.\s?iva|collaborazion|lavora\s+con\s+noi|gesucht|wir\s+suchen|stellenangebot|graduatori", re.I)
+
+
+def e_notizia(titolo: str, url: str, sommario: str = "") -> bool:
+    """Articolo di giornale su infermieri, senza nulla che lo faccia somigliare a un'offerta."""
+    if _RE_SEGNALE_OFFERTA.search(f"{titolo} {sommario}"):
+        return False
+    return bool(_RE_TITOLO_NOTIZIA.search(titolo) or _RE_SEZIONE_NOTIZIE.search(url or ""))
+
+
 def frammento(testo: str, parole: list[str], lunghezza: int = 220) -> str:
     """Breve estratto attorno alla prima parola chiave, per orientarsi nell'app."""
     basso = testo.lower()
