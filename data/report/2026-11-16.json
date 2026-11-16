@@ -20,9 +20,9 @@
  "attivi": 31,
  "attivi_piva": 11,
  "data": "2026-11-16",
- "fonti_lette": 40,
+ "fonti_lette": 39,
  "fonti_totali": 40,
- "giri": 8,
+ "giri": 9,
  "nuovi": [
   {
    "cambi": [],
@@ -53,7 +53,9 @@
    "zona": "Trento"
   }
  ],
- "problemi": [],
+ "problemi": [
+  "Gruppo Bonvicini – lavora con noi: risposta HTTP 202"
+ ],
  "scadenze7": [
   {
    "cambi": [],
