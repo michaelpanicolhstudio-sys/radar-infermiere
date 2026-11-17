@@ -1,8 +1,14 @@
 {
  "avvisi": {
   "Indeed": {
+   "altri_link": [
+    "Cerca lavoro",
+    "Continua la tua ricerca",
+    "Aggiungi preferenze di lavoro",
+    "Supporto"
+   ],
    "annunci": 0,
-   "email": 0,
+   "email": 1,
    "esempi": []
   },
   "InfoJobs": {
@@ -28,7 +34,7 @@
  },
  "data": "2026-11-17",
  "note": [
-  "• Posta: 11 contatti inviati, 0 risposte nuove",
+  "• Posta: 12 contatti inviati, 1 risposte nuove",
   "• Avvisi di Indeed: 0 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di LinkedIn: 0 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di InfoJobs: 0 annunci per infermieri nelle email degli ultimi giorni",
