@@ -253,7 +253,8 @@
  },
  "s:bb14f08c85a3": {
   "a": [
-   "info@iaps.it"
+   "info@iaps.it",
+   "personale@iaps.it"
   ],
   "automatica": true,
   "inviata_il": "2026-11-17",
@@ -338,7 +339,19 @@
   "automatica": true,
   "inviata_il": "2026-11-17",
   "rif": "R-ec0b6e4d",
-  "risposte": [],
+  "risposte": [
+   {
+    "compenso": null,
+    "da": "direttore@apspcles.it",
+    "data": "2026-11-17",
+    "euro_ora": null,
+    "incontro": null,
+    "mid": "<006401dd76b4$a921d320$fb657960$@apspcles.it>",
+    "oggetto": "disponibilità per un colloquio",
+    "testo": "Buon giorno.\n\nHo visto la sua mail.\n\nSe interessato ad un colloquio le chiedo di rispondere a questa mail.\n\nGrazie\n\nLuca Cattani\n\nDirettore\n\nTel. 0463/601300  cell. 3496424461\n\nAzienda Pubblica di Servizi alla Persona Santa Maria\n\n Via E. Chini, n. 37\n\n38023 CLES (TN)\n\nCod. Fisc. 83003520224  Part. IVA 01022420226\n\ne-mail info@apspcles.it - raccomandata@pec.apspcles.it - sito web\nwww.apspcles.it\n\n  <https://studio-ict.ilger.com/images/72/signatures/1602672587.png>\n\nLe informazioni contenute in questo messaggio sono strettamente\nconfidenziali e rivolte esclusivamente ai destinatari sopra indicati. Ogni\nsuccessivo inoltro, diffusione, copia e/o altro utilizzo, se non\nespressamente autorizzato, è vietato e costituisce violazione della\ndisciplina in materia di tutela dei dati personali (Reg. UE 16/679). Nel\ncaso aveste ricevuto questa comunicazione per errore vi chiediamo di\ninformaci immediatamente e di eliminare il messaggio, compresi eventuali\nfile allegati, senza trattenerne copia. Personale incaricato potrà\naccedere alla risposta fornita alla presente comunicazione. Grazie per\nlattenzione.",
+    "turni": null
+   }
+  ],
   "via": "gmail"
  },
  "s:f89c4707d5f4": {
