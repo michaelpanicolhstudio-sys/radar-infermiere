@@ -637,6 +637,20 @@ console.log(JSON.stringify({ sopra: sopra, nomi: ["Primiero San Martino di Castr
 else:
     print("  --  node non c'è: prove del radar saltate")
 
+print("\nRevisione del 17/11 (sera)")
+# 17/11: Schloss Moos («Seniorenwohnheim») risultava «Disabilità o sociale»: il testo nomina la
+# Sozialgenossenschaft che gestisce la casa, ma il posto di lavoro è una casa di riposo.
+fonte_moos = {"nome": "Moos", "tipo": "pagina", "affidabilita": "struttura", "datore": "Seniorenwohnheim Schloss Moos", "zona": "Vipiteno"}
+a_moos, _ = motore._costruisci({"url": "https://jobs.it/moos", "titolo": "Freiberufliche Tätigkeit in der Pflege (Krankenpfleger/in)"},
+                               "Sozialgenossenschaft Vinzenz sucht Krankenpfleger/in freiberuflich, auch Nachtdienste." + RIEMP,
+                               None, fonte_moos, CFG, COMUNI, OGGI, [])
+verifica("struttura: il nome «Seniorenwohnheim» vale più della cooperativa citata nel testo", a_moos["struttura"], "RSA o casa di riposo")
+fonte_camp = {"nome": "ASUIT", "tipo": "pagina", "affidabilita": "ente", "datore": "ASUIT (Trentino)", "zona": "Madonna di Campiglio"}
+a_camp, _ = motore._costruisci({"url": "https://asuit.it/slp", "titolo": "Incarichi libero-professionali infermieri – stagione invernale"},
+                               "Incarichi stagionali per il soccorso traumatologico di Campiglio." + RIEMP,
+                               None, fonte_camp, CFG, COMUNI, OGGI, [])
+verifica("struttura: «stagionale» detto dal testo resta (dice com'è il lavoro)", a_camp["struttura"], "Stagionale o turistico")
+
 print("\nSentinella (posta personale)")
 from datetime import date as _d
 from sentinella import regole as _sr

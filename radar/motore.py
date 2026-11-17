@@ -23,6 +23,7 @@ NOMI_CAMPI = {"titolo": "titolo", "contratto": "contratto", "compenso": "compens
 AVVISO_BANDO_COMUNE = "Stesso bando anche per: "
 AVVISO_DAL_DOPPIONE = "Preso dallo stesso bando su "
 # Dati che, se mancano nell'annuncio mostrato, si prendono da un suo doppione dello stesso bando.
+STRUTTURE_DAL_LAVORO = ("Stagionale o turistico", "Domiciliare")
 CAMPI_DAL_DOPPIONE = {"compenso": "compenso", "euro_ora": None, "email": "email", "pec": "PEC"}
 # Si aumenta quando cambiano le regole di pertinenza: le pagine già scartate vengono riaperte una volta.
 VERSIONE_REGOLE = 9
@@ -225,9 +226,13 @@ def _costruisci(cand: dict, testo: str, pubblicato, fonte: dict, cfg: dict, comu
         dal_nome = estrai.trova_comune(cand["datore"], "", comuni)
         if dal_nome:
             campi.update(zona=dal_nome["nome"], km=dal_nome["km"], minuti=dal_nome["minuti"])
-    if not campi.get("struttura") and campi.get("datore"):
-        # Il testo (spesso in tedesco) non dice che posto è, il nome sì: «Seniorenheim Algund», «… ÖBPB».
-        campi["struttura"] = estrai.estrai_struttura(campi["datore"], "")
+    if campi.get("datore"):
+        # Il nome dice che posto è («Seniorenheim Algund», «… ÖBPB»): vale anche quando il testo cita
+        # chi la gestisce (Schloss Moos «Sozialgenossenschaft», 17/11). Restano «stagionale» e
+        # «domiciliare» del testo, che dicono com'è il lavoro, non chi è il datore.
+        dal_nome = estrai.estrai_struttura(campi["datore"], "")
+        if dal_nome and campi.get("struttura") not in STRUTTURE_DAL_LAVORO:
+            campi["struttura"] = dal_nome
     if fonte.get("zona") and (not campi["zona"] or fonte.get("tipo") == "pagina"):
         c = next((c for c in comuni if c["nome"] == fonte["zona"]), None)
         if c:
