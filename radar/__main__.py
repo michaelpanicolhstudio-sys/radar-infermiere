@@ -90,7 +90,8 @@ def main() -> int:
 
     if args.rispondi:
         contatti = motore.leggi_json(uscite.FILE_CONTATTI, {})
-        fatto = invio.rispondi(contatti, args.rispondi, os.environ.get("RISPOSTA_TESTO", ""), oggi, cfg)
+        fatto = invio.rispondi(contatti, args.rispondi, os.environ.get("RISPOSTA_TESTO", ""), oggi, cfg,
+                               allegato=os.environ.get("RISPOSTA_ALLEGATO", ""))
         if fatto:
             motore.scrivi_json(uscite.FILE_CONTATTI, contatti)
             uscite.costruisci_sito(cfg, oggi)

@@ -124,7 +124,7 @@ def invia(voci: list[dict], contatti: dict, cfg: dict, oggi: date, registra=prin
     return inviate
 
 
-def rispondi(contatti: dict, rif: str, testo: str, oggi: date, cfg: dict, registra=print) -> bool:
+def rispondi(contatti: dict, rif: str, testo: str, oggi: date, cfg: dict, registra=print, allegato: str = "") -> bool:
     """Risponde una volta, su richiesta esplicita di Michael, all'ultima risposta ricevuta dal contatto con quel Rif.
     Stessa conversazione (Re: + In-Reply-To). Il testo arriva dall'avvio a mano del workflow, non sta nel repository."""
     utente = os.environ.get("GMAIL_USER", "").strip()
@@ -152,6 +152,14 @@ def rispondi(contatti: dict, rif: str, testo: str, oggi: date, cfg: dict, regist
         msg["In-Reply-To"] = ultima["mid"]
         msg["References"] = ultima["mid"]
     msg.set_content(testo.strip())
+    if allegato:
+        # Solo file della cartella data/allegati (es. il CV), mai altro.
+        percorso = (motore.RADICE / "data" / "allegati" / Path(allegato).name)
+        if not percorso.is_file():
+            registra(f"⚠ Risposta non inviata: allegato {Path(allegato).name} non trovato")
+            return False
+        tipo = "pdf" if percorso.suffix.lower() == ".pdf" else "octet-stream"
+        msg.add_attachment(percorso.read_bytes(), maintype="application", subtype=tipo, filename=percorso.name)
     try:
         smtp = smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=40)
         smtp.login(utente, chiave_gmail)
@@ -160,7 +168,8 @@ def rispondi(contatti: dict, rif: str, testo: str, oggi: date, cfg: dict, regist
     except Exception as e:
         registra(f"⚠ Risposta non inviata ({type(e).__name__})")
         return False
-    voce.setdefault("mie_risposte", []).append({"data": oggi.isoformat(), "a": ultima["da"], "impronta": impronta})
+    voce.setdefault("mie_risposte", []).append({"data": oggi.isoformat(), "a": ultima["da"], "impronta": impronta,
+                                               **({"allegato": Path(allegato).name} if allegato else {})})
     registra(f"Risposta inviata a {ultima['da']}")
     return True
 

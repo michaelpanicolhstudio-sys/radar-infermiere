@@ -22,6 +22,10 @@ on:
         description: "Testo della risposta"
         type: string
         default: ""
+      rispondi_allegato:
+        description: "Allegato dalla cartella data/allegati (es. il CV)"
+        type: string
+        default: ""
   push:                   # ogni modifica a programma o configurazione fa partire un giro di prova, senza email
     branches: [main]
     paths:
@@ -76,6 +80,7 @@ jobs:
         id: giro
         env:
           RISPOSTA_TESTO: ${{ inputs.rispondi_testo }}
+          RISPOSTA_ALLEGATO: ${{ inputs.rispondi_allegato }}
         run: python -m radar ${{ inputs.rispondi_rif && format('--rispondi {0}', inputs.rispondi_rif) || '' }} ${{ (github.event.schedule == '37 7-21/2 * * *' || inputs.solo_posta) && '--solo-posta' || (github.event_name == 'schedule' && '--pianificato' || '') }} ${{ github.event_name == 'push' && '--senza-email' || '' }}
 
       - name: Salva la memoria nel repository
