@@ -1,1 +1,112 @@
-{}
+{
+ "58b32002d315": {
+  "a": [
+   "clinica@villa-santanna.eu"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-58b32002",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:099585e79e12": {
+  "a": [
+   "info@apsplevicocurae.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-099585e7",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:5cd8388280d8": {
+  "a": [
+   "urp@apsp-pergine.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-5cd83882",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:69ea01f5ec8b": {
+  "a": [
+   "economo@apsptaio.org"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-69ea01f5",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:73ce6cbf7b20": {
+  "a": [
+   "rsa@casacristani.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-73ce6cbf",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:7b0c127537f2": {
+  "a": [
+   "info@apspgrazioli.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-7b0c1275",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:840fe5afffb8": {
+  "a": [
+   "info@apsplavis.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-840fe5af",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:ae492b93a78d": {
+  "a": [
+   "info@sangiovanni.tn.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-ae492b93",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:bb14f08c85a3": {
+  "a": [
+   "info@iaps.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-bb14f08c",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:bbe4aaaf13d6": {
+  "a": [
+   "info@operaromani.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-bbe4aaaf",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:ec0b6e4d03ed": {
+  "a": [
+   "info@apspcles.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-ec0b6e4d",
+  "risposte": [],
+  "via": "gmail"
+ }
+}

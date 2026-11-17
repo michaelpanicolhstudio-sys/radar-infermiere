@@ -77,3 +77,5 @@ e aggiornato **alla fine** di ogni revisione: cosa si è sbagliato, come lo si �
 - Ancora non provati dal vero: lettura delle risposte, Excel allegato, invito all'incontro.
 
 - 16/11/2026: aggiunti Fatture, Email pronte, Avvio (webapp/app.js, chiavi `radar-fatture` e `radar-avvio`). Regole: l'app non emette fatture e non invia email da sola; i modelli non devono mai contenere compensi o dati inventati (solo parentesi quadre da completare).
+
+- 17/11/2026: l'invio unico delle 11 lettere è partito (giro su push) ma il salvataggio è fallito per un conflitto con il giro delle 7 su data/report: contatti.json ricostruito a mano. Lezione: non lanciare un invio mentre è in corso un altro giro; dopo un invio controllare sempre che contatti.json sia stato salvato e svuotare subito `una_tantum`.
