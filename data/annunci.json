@@ -202,6 +202,7 @@
   "punteggio": 37,
   "scadenza": "2027-01-31",
   "segnali_turni": {},
+  "struttura": "Ospedale o azienda sanitaria",
   "titolo": "Graduatoria permanente infermieri – Bolzano",
   "turni": null,
   "ultimo_visto": "2026-11-12",
@@ -264,6 +265,7 @@
   "punteggio": 55,
   "scadenza": null,
   "segnali_turni": {},
+  "struttura": null,
   "titolo": "Infermiere/a con partita IVA – Bolzano e provincia",
   "turni": null,
   "ultimo_visto": "2026-11-12",
@@ -1407,6 +1409,7 @@
   "punteggio": 55,
   "scadenza": null,
   "segnali_turni": {},
+  "struttura": null,
   "titolo": "Infermiere P.IVA (TN)",
   "turni": null,
   "ultimo_visto": "2026-11-12",
@@ -2160,7 +2163,7 @@
    }
   ],
   "email": "info@schlossmoos.it",
-  "estratto": "…egehelfer/in (Vollzeit) Leifers Caritas Krankenpfleger*in Lana ST. JOSEF Freiberufler / Freelancer (m/w) Bozen, südtirolweit PEGASUS",
+  "estratto": "Freiberufliche Tätigkeit in der Pflege Sozialgenossenschaft Zum Heiligen Vinzenz Wiesen, Pfitsch Vollzeit Teilzeit Freelancer Projektarbeit 17.11.2026 Sozialgenossenschaft Zum Heiligen Vinzenz Traustonstr. 190 , 39049 Wi…",
   "euro_ora": null,
   "fonte": "Schloss Moos – libera professione (suedtirolerjobs)",
   "id": "670aca98057e",
@@ -2184,7 +2187,7 @@
    "notti": true,
    "weekend": true
   },
-  "struttura": "Disabilità o sociale",
+  "struttura": "RSA o casa di riposo",
   "tipo_fonte": "pagina",
   "titolo": "Freiberufliche Tätigkeit in der Pflege (Krankenpfleger/in)",
   "turni": "notti, weekend/festivi",
@@ -2254,6 +2257,7 @@
    "2026-12-11"
   ],
   "segnali_turni": {},
+  "struttura": "Ospedale o azienda sanitaria",
   "titolo": "Selezioni per infermieri a tempo determinato (SC 04/26–13/26)",
   "turni": null,
   "ultimo_visto": "2026-11-12",
@@ -2394,6 +2398,7 @@
    "notti": true,
    "pieno": true
   },
+  "struttura": null,
   "titolo": "Infermieri RSA zona Rovereto",
   "turni": "tempo pieno, notti, alloggio",
   "ultimo_visto": "2026-11-12",
@@ -2456,6 +2461,7 @@
   "punteggio": 45,
   "scadenza": null,
   "segnali_turni": {},
+  "struttura": null,
   "titolo": "Infermiere per attività domiciliari",
   "turni": null,
   "ultimo_visto": "2026-11-12",
@@ -3749,6 +3755,7 @@
   "punteggio": 55,
   "scadenza": null,
   "segnali_turni": {},
+  "struttura": null,
   "titolo": "Infermiere/a con partita IVA a Trento – assistenza domiciliare",
   "turni": null,
   "ultimo_visto": "2026-11-12",
@@ -3811,6 +3818,7 @@
   "punteggio": 55,
   "scadenza": null,
   "segnali_turni": {},
+  "struttura": null,
   "titolo": "Infermiere/a con partita IVA a Trento",
   "turni": null,
   "ultimo_visto": "2026-11-12",
@@ -3951,6 +3959,7 @@
   "segnali_turni": {
    "pieno": true
   },
+  "struttura": "Clinica o ambulatorio",
   "titolo": "Infermiere/a – indeterminato o P.IVA",
   "turni": "tempo pieno",
   "ultimo_visto": "2026-11-12",
@@ -4382,13 +4391,18 @@
  "f789e905e74a": {
   "affidabilita": "ufficiale",
   "avvisi": [
-   "Testo molto breve: l'annuncio potrebbe essere un'immagine. Apri il link"
+   "Testo molto breve: l'annuncio potrebbe essere un'immagine. Apri il link",
+   "Preso da un altro annuncio dello stesso datore su OPI Bolzano – offerte di lavoro: email"
   ],
   "cambi": [],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "Concorso / graduatoria",
   "da_pdf": null,
+  "dal_doppione": [
+   "email",
+   "struttura"
+  ],
   "data_novita": "2026-11-13",
   "datore": "Fondazione Pitsch",
   "dettaglio_punteggio": [
@@ -4423,7 +4437,7 @@
     "voce": "Fonte"
    }
   ],
-  "email": null,
+  "email": "personal@pitsch.it",
   "estratto": "Fondazione Pitsch cerca infermieri/e Richiesta inserimento in graduatoria ital_NEU 2025",
   "euro_ora": null,
   "fonte": "OPI Bolzano – offerte di lavoro",
@@ -4443,7 +4457,7 @@
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
-  "struttura": null,
+  "struttura": "RSA o casa di riposo",
   "tipo_fonte": "elenco",
   "titolo": "Fondazione Pitsch cerca infermieri/e",
   "turni": null,
