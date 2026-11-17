@@ -99,7 +99,8 @@ def main() -> int:
 
     print(f"Radar Infermiere P.IVA – giro del {oggi:%d/%m/%Y}")
     try:
-        risposte_nuove, avvisi = uscite.aggiorna_posta(cfg, oggi)
+        # Nei giri di prova (senza email) la posta non si legge: una risposta registrata lì non verrebbe mai segnalata.
+        risposte_nuove, avvisi = ([], {}) if args.senza_email else uscite.aggiorna_posta(cfg, oggi)
     except Exception as e:  # la posta non deve far fallire il giro
         print(f"⚠ Posta non letta: {type(e).__name__}: {e}", file=sys.stderr)
         risposte_nuove, avvisi = [], {}
