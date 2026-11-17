@@ -308,7 +308,22 @@ invio:
   una_tantum: ""                      # data di un invio unico (AAAA-MM-GG); vuoto = nessun invio. Si imposta solo su richiesta di Michael
   una_tantum_massimo: 80
   # Sondaggio prudente approvato da Michael il 16/11/2026: solo queste strutture (pezzo del nome), lettera breve.
-  selezione: [Endrizzi, Grazioli, Tschiderer, "APSP Santa Maria", Montel, Opera Romani, Levico Curae, "Villa Sant'Anna", Cristani, "APSP San Giovanni", Anaunia]
+  selezione: [Endrizzi, Grazioli, Tschiderer, "APSP Santa Maria", Montel, Opera Romani, Levico Curae, "Villa Sant'Anna", Cristani, "APSP San Giovanni", Anaunia, Cerba]
+  dedicate:   # lettere scritte apposta, approvate da Michael prima dell'invio
+    Cerba:
+      oggetto: "Infermiere libero professionista – disponibilità per i vostri centri in Trentino"
+      testo: |
+        Buongiorno,
+
+        mi chiamo Michael Panico e sono un infermiere iscritto all'OPI. Abito a Mezzolombardo, vicino ai vostri centri di Mezzolombardo e Mezzocorona e a circa 25 minuti da Trento.
+
+        Ho visto che cercate infermieri in libera professione: vorrei sapere se la ricerca è ancora aperta e per quali sedi.
+
+        Vi ringrazio e vi chiedo la cortesia di considerare riservata questa richiesta.
+
+        Cordiali saluti
+        Michael Panico
+        Infermiere
   gia_conosciute: [Cristani]   # lettera diversa: lì Michael ha fatto l'ultimo tirocinio e gli avevano proposto la partita IVA
   escludi: [Vannetti]          # a queste scrive Michael dalla PEC (avviso Vannetti)
 

@@ -63,6 +63,11 @@ def lettera_breve(s: dict, rif: str) -> dict:
     return {"oggetto": f"Infermiere libero professionista – richiesta di informazioni (Rif. {rif})", "testo": testo}
 
 
+def lettera_dedicata(testo: dict, rif: str) -> dict:
+    """Lettera scritta apposta per una struttura (config `invio.dedicate`), approvata da Michael."""
+    return {"oggetto": f"{testo['oggetto']} (Rif. {rif})", "testo": testo["testo"].strip()}
+
+
 def lettera_conosciuta(s: dict, rif: str) -> dict:
     """Per le strutture che conoscono già Michael (config `invio.gia_conosciute`), es. Cristani-de Luca di Mezzocorona:
     lì ha fatto l'ultimo tirocinio e dopo la laurea gli avevano proposto di collaborare a partita IVA."""

@@ -34,6 +34,7 @@ def coda(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict, oggi: 
     poi le strutture dalla più vicina. Se in config c'è `invio.selezione`, solo quelle strutture e con la lettera breve."""
     selezione = [x.lower() for x in (cfg.get("invio") or {}).get("selezione") or []]
     conosciute = [x.lower() for x in (cfg.get("invio") or {}).get("gia_conosciute") or []]
+    dedicate = (cfg.get("invio") or {}).get("dedicate") or {}
     voci = _coda(strutture, memoria, contatti, cfg, oggi)
     if not selezione:
         return voci
@@ -41,6 +42,10 @@ def coda(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict, oggi: 
     for v in voci:
         if any(x in v["nome"].lower() for x in selezione):
             rif = v["oggetto"].rsplit("Rif. ", 1)[-1].rstrip(")")
+            dedicata = next((t for k, t in dedicate.items() if k.lower() in v["nome"].lower()), None)
+            if dedicata:
+                scelte.append({**v, **lettere.lettera_dedicata(dedicata, rif)})
+                continue
             scrivi = lettere.lettera_conosciuta if any(x in v["nome"].lower() for x in conosciute) else lettere.lettera_breve
             scelte.append({**v, **scrivi({"nome": v["nome"], "minuti": v.get("minuti")}, rif)})
     return scelte
