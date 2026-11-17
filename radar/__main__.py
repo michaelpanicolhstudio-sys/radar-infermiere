@@ -76,6 +76,7 @@ def main() -> int:
     ap.add_argument("--senza-email", action="store_true")
     ap.add_argument("--solo-sito", action="store_true")
     ap.add_argument("--solo-posta", action="store_true")
+    ap.add_argument("--rispondi", default="", help="Rif. del contatto a cui rispondere (testo in RISPOSTA_TESTO)")
     args = ap.parse_args()
 
     cfg = yaml.safe_load((motore.RADICE / "config.yaml").read_text(encoding="utf-8"))
@@ -86,6 +87,14 @@ def main() -> int:
         print("Web app ricostruita in:", uscite.costruisci_sito(cfg, oggi))
         _segnala_a_github(True)
         return 0
+
+    if args.rispondi:
+        contatti = motore.leggi_json(uscite.FILE_CONTATTI, {})
+        fatto = invio.rispondi(contatti, args.rispondi, os.environ.get("RISPOSTA_TESTO", ""), oggi, cfg)
+        if fatto:
+            motore.scrivi_json(uscite.FILE_CONTATTI, contatti)
+        _segnala_a_github(fatto)
+        return 0 if fatto else 1
 
     if args.solo_posta:
         return controlla_risposte(cfg, oggi, adesso)

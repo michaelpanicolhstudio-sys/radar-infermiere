@@ -123,6 +123,47 @@ def invia(voci: list[dict], contatti: dict, cfg: dict, oggi: date, registra=prin
     return inviate
 
 
+def rispondi(contatti: dict, rif: str, testo: str, oggi: date, cfg: dict, registra=print) -> bool:
+    """Risponde una volta, su richiesta esplicita di Michael, all'ultima risposta ricevuta dal contatto con quel Rif.
+    Stessa conversazione (Re: + In-Reply-To). Il testo arriva dall'avvio a mano del workflow, non sta nel repository."""
+    utente = os.environ.get("GMAIL_USER", "").strip()
+    chiave_gmail = os.environ.get("GMAIL_APP_PASSWORD", "").replace(" ", "")
+    chiave = next((k for k, v in contatti.items() if v.get("rif") == rif.strip()), None)
+    if not (utente and chiave_gmail and chiave and testo.strip()):
+        registra(f"⚠ Risposta non inviata: contatto {rif} non trovato o testo vuoto")
+        return False
+    voce = contatti[chiave]
+    if not voce.get("risposte"):
+        registra(f"⚠ Risposta non inviata: {rif} non ha ancora risposto")
+        return False
+    ultima = sorted(voce["risposte"], key=lambda r: r.get("data") or "")[-1]
+    impronta = estrai.chiave(testo)[:200]
+    if any(m.get("impronta") == impronta for m in voce.get("mie_risposte", [])):
+        registra("⚠ Risposta già inviata: non la rimando")
+        return False
+    msg = EmailMessage()
+    oggetto = ultima.get("oggetto") or ""
+    msg["Subject"] = oggetto if oggetto.lower().startswith(("r:", "re:")) else "Re: " + oggetto
+    msg["From"] = formataddr(((cfg.get("invio") or {}).get("mittente") or "Michael Panico", utente))
+    msg["To"] = ultima["da"]
+    msg["Message-ID"] = make_msgid(domain=utente.split("@")[-1])
+    if ultima.get("mid"):
+        msg["In-Reply-To"] = ultima["mid"]
+        msg["References"] = ultima["mid"]
+    msg.set_content(testo.strip())
+    try:
+        smtp = smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=40)
+        smtp.login(utente, chiave_gmail)
+        smtp.send_message(msg)
+        smtp.quit()
+    except Exception as e:
+        registra(f"⚠ Risposta non inviata ({type(e).__name__})")
+        return False
+    voce.setdefault("mie_risposte", []).append({"data": oggi.isoformat(), "a": ultima["da"], "impronta": impronta})
+    registra(f"Risposta inviata a {ultima['da']}")
+    return True
+
+
 # --------------------------------------------------------------------------
 # Resoconto delle risposte
 # --------------------------------------------------------------------------

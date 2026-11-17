@@ -14,6 +14,14 @@ on:
         description: "Solo controllo delle risposte"
         type: boolean
         default: false
+      rispondi_rif:
+        description: "Rispondi a questo contatto (Rif. R-...), solo su richiesta di Michael"
+        type: string
+        default: ""
+      rispondi_testo:
+        description: "Testo della risposta"
+        type: string
+        default: ""
   push:                   # ogni modifica a programma o configurazione fa partire un giro di prova, senza email
     branches: [main]
     paths:
@@ -66,7 +74,9 @@ jobs:
 
       - name: Giro del Radar
         id: giro
-        run: python -m radar ${{ (github.event.schedule == '37 7-21/2 * * *' || inputs.solo_posta) && '--solo-posta' || (github.event_name == 'schedule' && '--pianificato' || '') }} ${{ github.event_name == 'push' && '--senza-email' || '' }}
+        env:
+          RISPOSTA_TESTO: ${{ inputs.rispondi_testo }}
+        run: python -m radar ${{ inputs.rispondi_rif && format('--rispondi {0}', inputs.rispondi_rif) || '' }} ${{ (github.event.schedule == '37 7-21/2 * * *' || inputs.solo_posta) && '--solo-posta' || (github.event_name == 'schedule' && '--pianificato' || '') }} ${{ github.event_name == 'push' && '--senza-email' || '' }}
 
       - name: Salva la memoria nel repository
         if: steps.giro.outputs.eseguito == 'true'
