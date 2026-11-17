@@ -184,13 +184,17 @@ def aggiorna_contatti(contatti: dict, chiavi: dict[str, str], oggi: date, regist
                     voce["via"] = conto["nome"]
                     voce["a"] = sorted(set(voce.get("a", [])) | set(indirizzi))
                     voce["rif"] = "R-" + m.group(1).lower()
-            if M.select("INBOX", readonly=True)[0] != "OK":
+            # Si cerca in «Tutti i messaggi» (Gmail): una risposta archiviata, finita in una scheda o con un'etichetta
+            # non sta più in Posta in arrivo. Se la cartella non c'è si usa la Posta in arrivo.
+            tutti = _cartella_speciale(M, "\\All")
+            if not (tutti and M.select(f'"{tutti}"', readonly=True)[0] == "OK") and M.select("INBOX", readonly=True)[0] != "OK":
                 continue
             for chiave, voce in contatti.items():
                 if not voce.get("inviata_il"):
                     continue
                 dopo = _data_imap(date.fromisoformat(voce["inviata_il"]))
-                ricerche = [["SINCE", dopo, "SUBJECT", f'"{voce["rif"]}"']] if voce.get("rif") else []
+                # Codice nell'oggetto o nel testo citato: così si trova anche chi risponde da un altro indirizzo.
+                ricerche = [["SINCE", dopo, "SUBJECT", f'"{voce["rif"]}"'], ["SINCE", dopo, "TEXT", f'"{voce["rif"]}"']] if voce.get("rif") else []
                 for indirizzo in voce.get("a", []):
                     ricerche.append(["SINCE", dopo, "FROM", f'"{indirizzo}"'])
                     dominio = indirizzo.split("@")[-1]
