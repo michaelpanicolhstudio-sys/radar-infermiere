@@ -8,7 +8,12 @@ on:
     - cron: "7 6 * * *"
     # Ogni 2 ore (8-22 di Roma) solo il controllo delle risposte delle strutture: email solo se ne arriva una.
     - cron: "37 7-21/2 * * *"
-  workflow_dispatch: {}   # avvio a mano dal pulsante "Run workflow" (manda anche l'email)
+  workflow_dispatch:      # avvio a mano dal pulsante "Run workflow" (manda anche l'email)
+    inputs:
+      solo_posta:
+        description: "Solo controllo delle risposte"
+        type: boolean
+        default: false
   push:                   # ogni modifica a programma o configurazione fa partire un giro di prova, senza email
     branches: [main]
     paths:
@@ -61,7 +66,7 @@ jobs:
 
       - name: Giro del Radar
         id: giro
-        run: python -m radar ${{ github.event.schedule == '37 7-21/2 * * *' && '--solo-posta' || (github.event_name == 'schedule' && '--pianificato' || '') }} ${{ github.event_name == 'push' && '--senza-email' || '' }}
+        run: python -m radar ${{ (github.event.schedule == '37 7-21/2 * * *' || inputs.solo_posta) && '--solo-posta' || (github.event_name == 'schedule' && '--pianificato' || '') }} ${{ github.event_name == 'push' && '--senza-email' || '' }}
 
       - name: Salva la memoria nel repository
         if: steps.giro.outputs.eseguito == 'true'
