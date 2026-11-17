@@ -447,6 +447,16 @@ verifica("VdS: la zona viene dal nome della casa di riposo", a_vds["zona"], "San
 cand_vds2 = dict(cand_vds, datore="Seniorenwohnheim \"Leoheim\"")
 a_vds2, _ = motore._costruisci(cand_vds2, "Wir suchen Krankenpfleger/innen in Welschnofen." + RIEMP, None, fonte_vds, CFG, COMUNI, OGGI, [])
 verifica("VdS: nome senza comune, resta la zona del testo", a_vds2["zona"], "Nova Levante")
+# 17/11: Algund «Seniorenheim», St. Pankraz «Altenheim» e Vinzenzhaus restavano senza tipo di struttura:
+# il testo tedesco non lo diceva, il nome del datore sì.
+verifica("struttura: dal nome del datore quando il testo non la dice", a_vds["struttura"], "RSA o casa di riposo")
+verifica("struttura: Seniorenheim e ÖBPB sono case di riposo",
+         [estrai.estrai_struttura(x, "") for x in ("Seniorenheim Algund Mathias Ladurner", "Stiftung Hans Messerschmied Ö.B.P.B", "Bürgerheim Brixen")],
+         ["RSA o casa di riposo"] * 3)
+# 17/11: «18, 20 und 22 Wochenstunden» diventava «22 h/settimana», come se il posto fosse solo da 22 ore.
+verifica("ore: più scelte di ore settimanali restano tutte", estrai.estrai_turni("Teilzeit mit 18, 20 und 22 Wochenstunden")[0],
+         "18, 20 o 22 h/settimana, part-time")
+verifica("ore: una sola cifra resta com'è", estrai.estrai_turni("Vollzeit 38 Stunden pro Woche")[0], "38 h/settimana, tempo pieno")
 verifica("VdS: titolo leggibile dall'indirizzo (ore)",
          estrai.titolo_leggibile("Krankenpflegerinnen 7ter fe mit 18 20 und 22 wochenstunden"), "Infermiere/a – part-time (18, 20 o 22 ore/settimana)")
 verifica("VdS: titolo leggibile dall'indirizzo (graduatoria con altri profili)",
@@ -582,6 +592,10 @@ verifica("avvisi dei portali: annunci per infermieri (anche «Nurse»), link pul
          (["Infermiere/a libero professionista", "Registered Nurse – Seniorenwohnheim"], "https://it.indeed.com/rc/clk?jk=abc", True, ["Cuoco di cucina"]))
 
 from email.message import EmailMessage as _Em
+# 17/11: un'email di Indeed letta con 0 annunci e solo «Cerca lavoro, Supporto…»: senza l'oggetto non si capisce
+# se era un avviso con annunci non riconosciuti o la sola conferma dell'iscrizione.
+_av = _Em(); _av["Subject"] = "=?utf-8?q?Il_tuo_avviso_=C3=A8_attivo?="
+verifica("avvisi dei portali: l'oggetto dell'email resta nella diagnostica", posta.oggetto_avviso(_av), "Il tuo avviso è attivo")
 _m = _Em(); _m["Subject"] = "Infermiere libero professionista - Clinica Esempio"; _m["Date"] = "Mon, 16 Nov 2026 17:20:00 +0100"
 _m.set_content("Guarda questo annuncio:\nInfermiere/a turni notturni, Clinica Esempio, Trento, 38 €/h\nhttps://it.indeed.com/viewjob?jk=123&from=share\n\nInviato da iPhone")
 seg = posta.annunci_segnalati(_m)

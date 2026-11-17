@@ -629,7 +629,8 @@ RE_LINGUA = re.compile(
 _STRUTTURE = [
     ("Stagionale o turistico", re.compile(r"stagional|soggiorn\w+[\s-]+vacanz|\bhotel\b|soccorso\s+traumatolog|saison", re.I)),
     ("Domiciliare", re.compile(r"domicil|hauspflege|hauskrankenpflege", re.I)),
-    ("RSA o casa di riposo", re.compile(r"\brsa\b|a\.?\s?p\.?\s?s\.?\s?p\b|casa\s+di\s+riposo|residenza\s+(?:per\s+)?anzian|seniorenwohnheim|altersheim|pflegeheim", re.I)),
+    ("RSA o casa di riposo", re.compile(r"\brsa\b|a\.?\s?p\.?\s?s\.?\s?p\b|casa\s+di\s+riposo|residenza\s+(?:per\s+)?anzian|senioren(?:wohn)?heim|alte[nr]s?heim|pflegeheim|bürgerheim|"
+                                         r"\bö\.?\s?b\.?\s?p\.?\s?b\b", re.I)),
     ("Clinica o ambulatorio", re.compile(r"casa\s+di\s+cura|clinic|klinik|riabilitaz|poliambulator|ambulator|emodialisi|centro\s+medico", re.I)),
     ("Ospedale o azienda sanitaria", re.compile(r"ospedal|azienda\s+(?:provinciale|sanitaria)|asuit|\bapss\b|sabes|krankenhaus|sanit[äa]tsbetrieb", re.I)),
     ("Disabilità o sociale", re.compile(r"disabilit|cooperativa\s+social|sozialgenossenschaft|centro\s+diurno|comunità\s+comprensoriale", re.I)),
@@ -755,7 +756,15 @@ def estrai_scadenza(testo: str, oggi: date) -> date | None:
 
 def estrai_turni(testo: str) -> tuple[str | None, dict]:
     etichette, segnali = [], {}
-    m = re.search(r"(?<![\d.,])(\d{1,2})(?:[.,]\d)?\s*(?:(?:h|ore|stunden)\s*(?:/|a|alla|pro|per)?\s*(?:settiman|woche)|wochenstunden)", testo, re.I)
+    # Più scelte («18, 20 und 22 Wochenstunden», «18, 24 o 30 ore settimanali»): si scrivono tutte.
+    scelte = re.search(r"(?<![\d.,])((?:\d{1,2}\s*,\s*)+\d{1,2}|\d{1,2})\s+(?:und|e|o|oder|bzw\.?)\s+(\d{1,2})\s*"
+                       r"(?:(?:h|ore|stunden)\s*(?:/|a|alla|pro|per)?\s*(?:settiman|woche)|wochenstunden)", testo, re.I)
+    if scelte:
+        numeri = [int(x) for x in re.findall(r"\d{1,2}", scelte.group(1))] + [int(scelte.group(2))]
+        if all(4 <= n <= 48 for n in numeri) and len(set(numeri)) > 1:
+            etichette.append(", ".join(map(str, numeri[:-1])) + f" o {numeri[-1]} h/settimana")
+            segnali["ore_settimana"] = max(numeri)
+    m = None if etichette else re.search(r"(?<![\d.,])(\d{1,2})(?:[.,]\d)?\s*(?:(?:h|ore|stunden)\s*(?:/|a|alla|pro|per)?\s*(?:settiman|woche)|wochenstunden)", testo, re.I)
     if m and 4 <= int(m.group(1)) <= 48:
         ore = int(m.group(1))
         etichette.append(f"{ore} h/settimana")

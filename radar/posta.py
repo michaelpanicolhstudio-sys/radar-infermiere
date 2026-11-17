@@ -292,6 +292,11 @@ def annunci_segnalati(msg) -> list[dict]:
     return trovati
 
 
+def oggetto_avviso(msg) -> str:
+    """Oggetto leggibile di un'email di un portale, per la diagnostica (avviso con annunci o sola conferma?)."""
+    return estrai.pulisci(_intestazione(msg.get("Subject")))[:100]
+
+
 def avvisi_portali(cfg: dict, oggi: date, registra=print) -> dict[str, list[dict]]:
     """{nome del portale: [candidati]} dagli avvisi arrivati negli ultimi giorni."""
     mittenti = (cfg.get("posta") or {}).get("avvisi_da") or {}
@@ -311,6 +316,8 @@ def avvisi_portali(cfg: dict, oggi: date, registra=print) -> dict[str, list[dict
             candidati, note = [], {"email": 0}
             for msg in _messaggi(M, ["SINCE", dal, "FROM", f'"{mittente}"'], 15):
                 note["email"] += 1
+                if len(note.setdefault("oggetti", [])) < 5:
+                    note["oggetti"].append(oggetto_avviso(msg))
                 _, pagina = testo_messaggio(msg)
                 try:
                     quando = parsedate_to_datetime(msg.get("Date")).date()
