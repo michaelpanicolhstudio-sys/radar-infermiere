@@ -76,7 +76,19 @@
   "automatica": true,
   "inviata_il": "2026-11-17",
   "rif": "R-2bec4e56",
-  "risposte": [],
+  "risposte": [
+   {
+    "compenso": null,
+    "da": "direttore@apspstrigno.it",
+    "data": "2026-11-17",
+    "euro_ora": null,
+    "incontro": null,
+    "mid": "<003901dd76ab$6ed6f7d0$4c84e770$@apspstrigno.it>",
+    "oggetto": "R: Infermiere libero professionista – richiesta di informazioni (Rif. R-2bec4e56)",
+    "testo": "Buongiorno Signor Michele,\nLa ringrazio per l'interessamento, ma al momento non vi è necessità di attivare collaborazioni in libera professione. Verrà mantenuta la Sua informativa per eventuali, future occasioni.\nCordialità.\n\nMarco Saggiorato\nDirettore A.P.S.P. \"REDENTA FLORIANI\" STRIGNO\ntel. 0461/781100\nfax 0461/781199\n \n\"Ai sensi del codice in materia di protezione dei dati personali (D.Lvo 196/03) il contenuto di questa e-mail e di eventuali allegati sono riservati ad uso esclusivo del destinatario. Chiunque riceva questo messaggio per errore è pregato di distruggerlo e contattarci immediatamente al numero telefonico 0461/781100 o all'indirizzo e-mail direttore@apspstrigno.it.\nSi informa, inoltre, che la risposta alla presente, compresi eventuali allegati, potrebbero essere visionati, ai fini del disbrigo delle competenze lavorative, anche da altro personale addetto\".",
+    "turni": null
+   }
+  ],
   "via": "gmail"
  },
  "s:5c4f5be5b691": {
@@ -203,6 +215,7 @@
  },
  "s:afdcfc298516": {
   "a": [
+   "francesca.girardi.ext@cerbahealthcare.it",
    "laboratorioadige@cerbahealthcare.it"
   ],
   "automatica": true,
