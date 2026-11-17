@@ -310,7 +310,8 @@ invio:
   # Sondaggio prudente approvato da Michael il 16/11/2026: solo queste strutture (pezzo del nome), lettera breve.
   selezione: [Endrizzi, Grazioli, Tschiderer, "APSP Santa Maria", Montel, Opera Romani, Levico Curae, "Villa Sant'Anna", Cristani, "APSP San Giovanni", Anaunia, Cerba,
               # Trentino, preparate il 17/11/2026 (partono solo con il «via» di Michael)
-              "Casa di Cura Solatrix", "Centro Servizi Socio Sanitari e Residenziali Male'", "A.P.S.P. Cesare Benedetti", "APSP San Giuseppe", "A.P.S.P. Residenza Molino", "Apsp S.Lorenzo e S.Maria della Misericordia", "Apsp Ubaldo Campagnola", "APSP Dott. Antonio Bontempelli", "A.P.S.P. Casa Laner", "APSP Giudicarie Esteriori", "APSP di Brentonico", "Redenta Floriani", "SUOR FILIPPINA", "APSP Citta di Riva", "Casa Mia APSP", "Casa di Riposo Giovanelli"]
+              "Casa di Cura Solatrix", "Centro Servizi Socio Sanitari e Residenziali Male'", "A.P.S.P. Cesare Benedetti", "APSP San Giuseppe", "A.P.S.P. Residenza Molino", "Apsp S.Lorenzo e S.Maria della Misericordia", "Apsp Ubaldo Campagnola", "APSP Dott. Antonio Bontempelli", "A.P.S.P. Casa Laner", "APSP Giudicarie Esteriori", "APSP di Brentonico", "Redenta Floriani", "SUOR FILIPPINA", "APSP Citta di Riva", "Casa Mia APSP", "Casa di Riposo Giovanelli",
+              "Stella Montis"]
   dedicate:   # lettere scritte apposta, approvate da Michael prima dell'invio
     Cerba:
       oggetto: "Infermiere libero professionista – disponibilità per i vostri centri in Trentino"
