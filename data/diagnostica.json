@@ -1002,7 +1002,8 @@
   "ASUIT – bandi e concorsi": {
    "accettati": [
     "Selezione pubblica, per titoli, per la formazione di graduatorie per assunzioni a tempo de",
-    "SC 03/26 AVVISO APERTO INFERMIERE CAVALESE"
+    "SC 03/26 AVVISO APERTO INFERMIERE CAVALESE",
+    "AVVISO DI SELEZIONE PUBBLICA PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONALI A MEDIC"
    ],
    "pagine": [
     {
@@ -1443,7 +1444,33 @@
      "url": "feed"
     }
    ],
-   "scartati": []
+   "scartati": [
+    [
+     "Afferra per i polsi un infermiere , poi lo spintona: ancora violenza al pronto soccorso - ",
+     "notizia, non un'offerta di lavoro"
+    ],
+    [
+     "Trento , infermiere aggredito al Santa Chiara: la Uil chiede più sicurezza - L'Adige",
+     "notizia, non un'offerta di lavoro"
+    ]
+   ],
+   "senza_pdf": [
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "data:application/manifest+json;base64,eyJuYW1lIjoiVHJlbnRvVG9kYXkiLCJzaG9ydF9uYW1lIjoiVHJlbnRvIiwibGFuZyI6Iml0IiwiaWNvbnMiOlt7InNyYyI6Imh0dHBzOlwvXC9jaXR5bmV3cy5zdGd5Lm92aFwvfnNoYXJlZFwvaW1hZ2VzXC92Mj"
+      ],
+      [
+       "a",
+       "Scarica l'app",
+       "https://www.trentotoday.it/~shared/do/api/mobile-app/get/?campaign=unfair"
+      ]
+     ],
+     "url": "https://www.trentotoday.it/cronaca/infermiere-aggredito-polsi-ospedale-santa-chiara-trento.html"
+    }
+   ]
   },
   "Google Alerts 5": {
    "accettati": [],
@@ -1506,17 +1533,8 @@
    "scartati": []
   },
   "Gruppo Bonvicini – lavora con noi": {
-   "accettati": [
-    "Lavora con noi"
-   ],
-   "pagine": [
-    {
-     "caratteri": 828,
-     "inizio": "Lavora con noi Posizioni aperte Vuoi entrare a far parte del nostro team? Qui trovi tutte le figure professionali che cerchiamo in questo momento. Consulta gli annunci, compila il form e inviaci la tua candidatura. Farmacista a tempo pieno Farmacie Bonvicini Tempo pieno Candidati Fisioterapista per pazienti interni Casa di Cura Bonvicini Tempo pieno: terapie manuali, terapie strumentali, idrokines",
-     "pdf": [],
-     "url": "https://www.gruppobonvicini.it/lavora-con-noi/"
-    }
-   ],
+   "accettati": [],
+   "pagine": [],
    "scartati": []
   },
   "Martinsbrunn Merano – Job & Karriere": {
@@ -1554,7 +1572,18 @@
    "accettati": [
     "CERCHIAMO INFERMIERE:I (m/f/d) per la nostra RSA Ciasa de Palsa Ojöp Frëinademetz",
     "La casa di riposo di Silandro cerca nuovi collaboratori/trici",
-    "CERCASI INFERMIERE/A PER EMODIALISI DOMICILIARE – BOLZANO"
+    "CERCASI INFERMIERE/A PER EMODIALISI DOMICILIARE – BOLZANO",
+    "Hotel Palace Merano cerca infermiere",
+    "Fondo Ospedale della S.S. Trinità RESIDENZA PER ANZIANI ANNENBERG LACES – Formazione di un",
+    "INPS – Ricerca infermiere/a",
+    "Fondazione Pitsch cerca infermieri/e",
+    "Fondazione Casa di Riposo Heinrich von Rottenburg Caldaro",
+    "Fondazione Pitsch cerca personale",
+    "Infermiere/a a tempo pieno o part time",
+    "Study nurse @Bolzano @Istituto per la Medicina di Emergenza in Montagna – EURAC RESEARCH",
+    "Comunità comprensoriale Burgraviato – Avviso pubblico",
+    "Comunità Comprensoriale Burgraviato – Assunzioni a tempo determinato",
+    "Infermiere/a a tempo pieno o part time"
    ],
    "pagine": [
     {
@@ -1562,7 +1591,32 @@
      "url": "https://www.opibz.it/?page_id=5109"
     }
    ],
-   "scartati": [],
+   "scartati": [
+    [
+     "Ricerca di funzionario sanitario in comando presso l’INPS di Bolzano",
+     "ruolo diverso (dal titolo)"
+    ],
+    [
+     "Infermiere a Caorle",
+     "fuori regione"
+    ],
+    [
+     "Cerchiamo un RESPONSABILE TECNICO-ASSISTENZIALE",
+     "ruolo diverso (dal titolo)"
+    ],
+    [
+     "CERCHIAMO UN/UNA RESPONSABILE DI PIANO",
+     "ruolo diverso (dal titolo)"
+    ],
+    [
+     "INPS – Ricerca infermiere/a",
+     "ruolo diverso (coordinamento, direzione o comando)"
+    ],
+    [
+     "Avviso – Collegio tecnico – Dirigenza tecnico-assistenziale",
+     "ruolo diverso (dal titolo)"
+    ]
+   ],
    "senza_pdf": [
     {
      "link": [
@@ -1573,6 +1627,16 @@
       ]
      ],
      "url": "https://www.opibz.it/cerchiamo-infermierei-m-f-d-per-la-nostra-rsa-ciasa-de-palsa-ojop-freinademetz/"
+    },
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://www.opibz.it/wp-content/uploads/fusion-styles/d3238dab3fc2f97dc3f15ff9853f0650.min.css?ver=3.16.4"
+      ]
+     ],
+     "url": "https://www.opibz.it/ricerca-di-funzionario-sanitario-in-comando-presso-linps-di-bolzano/"
     },
     {
      "link": [
@@ -1593,6 +1657,26 @@
       ]
      ],
      "url": "https://www.opibz.it/cercasi-infermiere-a-per-emodialisi-domiciliare-bolzano/"
+    },
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://www.opibz.it/wp-content/uploads/fusion-styles/d3238dab3fc2f97dc3f15ff9853f0650.min.css?ver=3.16.4"
+      ]
+     ],
+     "url": "https://www.opibz.it/infermiere-a-caorle/"
+    },
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://www.opibz.it/wp-content/uploads/fusion-styles/d3238dab3fc2f97dc3f15ff9853f0650.min.css?ver=3.16.4"
+      ]
+     ],
+     "url": "https://www.opibz.it/hotel-palace-merano-cerca-infermiere/"
     }
    ]
   },
@@ -1602,7 +1686,15 @@
     "A.P.S.P. C. Vannetti – Rovereto – Selezione per liberi professionisti – PROROGA TERMINI",
     "A.P.S.P. C. Vannetti – Rovereto – bando di concorso",
     "Cooperativa Sociale Villa Maria Onlus – ricerca di personale",
-    "APSP “San Giuseppe” di Primiero (TN) – ricerca di personale"
+    "A.P.S.P. Suor Agnese – Concorso per infermieri",
+    "APSP “San Giuseppe” di Primiero (TN) – ricerca di personale",
+    "Fondazione Casa di Riposo Heinrich von Rottenburg (APSP) – Caldaro BZ – ricerca personale",
+    "A.P.S.P. Padre Odone Nicolini – Pieve di Bono – Prezzo TN – ricerca personale",
+    "A.P.S.P. Centro Residenziale A. Collini – Ricerca personale tempo determinato",
+    "A.P.S.P. “OPERA ROMANI” – Nomi TN – bando di concorso",
+    "A.P.S.P. “Levico CURAE” – Levico Terme (TN) – selezione",
+    "Cooperativa D.O.C. Ricerca personale infermieristico",
+    "Avviso di selezione pubblica per il conferimento di incarichi libero professionali a infer"
    ],
    "pagine": [
     {
@@ -1610,8 +1702,32 @@
      "url": "https://opi.tn.it/segreteria/annunci-di-lavoro/"
     }
    ],
-   "scartati": [],
+   "scartati": [
+    [
+     "A.P.S.P. Margherita Grazioli – Trento – pubblica selezione per coordinatore",
+     "ruolo diverso (dal titolo)"
+    ],
+    [
+     "Società Cooperativa Sociale Stella Montis Fondo – Borgo d’Ananunia (TN) – ricerca di perso",
+     "ruolo diverso (coordinamento, direzione o comando)"
+    ]
+   ],
    "senza_pdf": [
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon-150x150.jpg?x30900"
+      ],
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon.jpg?x30900"
+      ]
+     ],
+     "url": "https://opi.tn.it/a-p-s-p-margherita-grazioli-trento-bando-di-concorso/"
+    },
     {
      "link": [
       [
@@ -1685,7 +1801,7 @@
        "https://opi.tn.it/wp-content/uploads/2019/05/favicon.jpg?x30900"
       ]
      ],
-     "url": "https://opi.tn.it/apsp-san-giuseppe-di-primiero-tn-ricerca-di-personale/"
+     "url": "https://opi.tn.it/societa-cooperativa-sociale-stella-montis-fondo-borgo-dananunia-tn-ricerca-di-personale/"
     }
    ]
   },
@@ -1880,7 +1996,12 @@
      "url": "https://www.upipa.tn.it/Bacheca/Concorsi/(offset)/10"
     }
    ],
-   "scartati": []
+   "scartati": [
+    [
+     "Selezione pubblica per il conferimento di un incarico libero professionale per Psicologo -",
+     "non riguarda infermieri"
+    ]
+   ]
   },
   "Villa Sant'Anna Merano – lavora con noi": {
    "accettati": [
@@ -1911,7 +2032,7 @@
    "scartati": []
   }
  },
- "richieste": 104,
+ "richieste": 139,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }

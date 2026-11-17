@@ -3,11 +3,13 @@
  "attivi": 28,
  "attivi_piva": 10,
  "data": "2026-11-17",
- "fonti_lette": 36,
+ "fonti_lette": 35,
  "fonti_totali": 36,
- "giri": 13,
+ "giri": 14,
  "nuovi": [],
- "problemi": [],
+ "problemi": [
+  "Gruppo Bonvicini – lavora con noi: risposta HTTP 202"
+ ],
  "scadenze7": [
   {
    "cambi": [],
