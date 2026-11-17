@@ -650,6 +650,16 @@ a_camp, _ = motore._costruisci({"url": "https://asuit.it/slp", "titolo": "Incari
                                "Incarichi stagionali per il soccorso traumatologico di Campiglio." + RIEMP,
                                None, fonte_camp, CFG, COMUNI, OGGI, [])
 verifica("struttura: «stagionale» detto dal testo resta (dice com'è il lavoro)", a_camp["struttura"], "Stagionale o turistico")
+# 17/11: gli annunci scritti a mano (graduatoria ASDAA/SABES, selezioni ASUIT, KOS «centro di riabilitazione»)
+# non vengono riletti e restavano senza tipo: sparivano dai filtri dell'app.
+mem_t = {"m": {"id": "m", "titolo": "Graduatoria permanente infermieri", "datore": "ASDAA / SABES", "origine": "manuale",
+               "struttura": None, "scadenza": "2027-01-31", "primo_visto": "2026-11-12", "ultimo_visto": "2026-11-12", "punteggio": 37, "cambi": []},
+         "k": {"id": "k", "titolo": "Infermiere/a", "datore": "Paziente privato", "origine": "manuale",
+               "struttura": None, "scadenza": None, "primo_visto": "2026-11-12", "ultimo_visto": "2026-11-12", "punteggio": 37, "cambi": []}}
+esito_t = motore.aggiorna_memoria(mem_t, [], set(), set(), set(), OGGI, CFG)
+verifica("struttura: anche agli annunci a mano la dice il nome del datore", (mem_t["m"]["struttura"], mem_t["k"]["struttura"]),
+         ("Ospedale o azienda sanitaria", None))
+verifica("struttura completata: non è un aggiornamento", esito_t["aggiornati"], [])
 
 print("\nSentinella (posta personale)")
 from datetime import date as _d

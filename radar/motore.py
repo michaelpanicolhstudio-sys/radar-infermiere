@@ -492,6 +492,9 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str], 
             a.update(novita="aggiornato", data_novita=oggi_s, cambi=[cambio])
             if a not in aggiornati:
                 aggiornati.append(a)
+        # Annunci a mano (non riletti): il tipo di struttura, se manca, lo dice il nome del datore.
+        if not a.get("struttura") and a.get("datore"):
+            a["struttura"] = estrai.estrai_struttura(a["datore"], "")
         # I pesi possono essere cambiati in config: il punteggio si ricalcola sempre.
         a["punteggio"], a["dettaglio_punteggio"] = punteggio.calcola(a, cfg)
         if ident in visti_oggi:
