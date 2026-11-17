@@ -410,8 +410,8 @@
      "https://www.apspcles.it/Lavora-con-noi"
     ],
     [
-     "Concorso addetto ai servizi ausiliari livello ingresso-ammissione cand",
-     "https://www.apspcles.it/Novita/Ultime-Novita/Concorso-addetto-ai-servizi-ausiliari-livello-ingresso-ammissione-candidati-e-nomina-commissione"
+     "Concorso addetto ai servizi ausiliari livello ingresso-comunicazione c",
+     "https://www.apspcles.it/Novita/Ultime-Novita/Concorso-addetto-ai-servizi-ausiliari-livello-ingresso-comunicazione-calendario-e-criteri-prove-di-esame-dd.-17-12-2026"
     ],
     [
      "Concorso Operatore dei servizi ausiliari base servizio lavanderia: cal",
@@ -638,7 +638,7 @@
    "url": "https://www.civicatnapsp.it/"
   },
   {
-   "caratteri": 2107,
+   "caratteri": 2142,
    "inizio": "S. Spirito - Fondazione Montel dal curare al prendersi cura Tutti i servizi Contatti Azienda Pubblica di Servizi alla Persona Orientiamo la nostra attività al rispetto della dignità della persona e alla garanzia del principio di riservatezza. Garantiamo adeguatezza, flessibilità e personalizzazione ",
    "link": [
     [
@@ -1038,7 +1038,7 @@
       ],
       [
        "Ricognizione interna al fine dell’acquisizione di disponibilità da par",
-       "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-2"
+       "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-1"
       ],
       [
        "Ricognizione interna al fine dell’acquisizione di disponibilità da par",
@@ -1046,7 +1046,7 @@
       ],
       [
        "Ricognizione interna al fine dell’acquisizione di disponibilità da par",
-       "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-1"
+       "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-2"
       ],
       [
        "Pagina 1",
@@ -1176,7 +1176,7 @@
      "url": "https://www.asuit.tn.it/bandi-concorsi?page=1"
     },
     {
-     "candidati": 0,
+     "candidati": 1,
      "url": "https://www.asuit.tn.it/bandi-concorsi?page=2"
     },
     {
@@ -1200,15 +1200,20 @@
      "url": "https://www.asuit.tn.it/bandi-concorsi?page=7"
     },
     {
-     "candidati": 1,
+     "candidati": 0,
      "url": "https://www.asuit.tn.it/bandi-concorsi?page=8"
     },
     {
-     "candidati": 0,
+     "candidati": 1,
      "url": "https://www.asuit.tn.it/bandi-concorsi?page=9"
     }
    ],
-   "scartati": []
+   "scartati": [
+    [
+     "AVVISO DI SELEZIONE PUBBLICA SELEZIONE PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONA",
+     "non riguarda infermieri"
+    ]
+   ]
   },
   "Altenheim Kaltern (Caldaro) – Karriere": {
    "accettati": [],
@@ -1437,8 +1442,8 @@
    "accettati": [],
    "pagine": [
     {
-     "candidati": 2,
-     "caratteri": 2175,
+     "candidati": 0,
+     "caratteri": 414,
      "titolo_feed": "Google Alert - infermiere Trento OR Trentino lavoro",
      "url": "feed"
     }
@@ -1911,7 +1916,7 @@
    "scartati": []
   }
  },
- "richieste": 103,
+ "richieste": 106,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }
