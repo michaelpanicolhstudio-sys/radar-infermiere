@@ -8,6 +8,7 @@ Regole:
 """
 from __future__ import annotations
 
+import hashlib
 import os
 import re
 import smtplib
@@ -137,7 +138,7 @@ def rispondi(contatti: dict, rif: str, testo: str, oggi: date, cfg: dict, regist
         registra(f"⚠ Risposta non inviata: {rif} non ha ancora risposto")
         return False
     ultima = sorted(voce["risposte"], key=lambda r: r.get("data") or "")[-1]
-    impronta = estrai.chiave(testo)[:200]
+    impronta = hashlib.sha256(estrai.chiave(testo).encode()).hexdigest()[:16]   # solo un'impronta: il testo non si salva
     if any(m.get("impronta") == impronta for m in voce.get("mie_risposte", [])):
         registra("⚠ Risposta già inviata: non la rimando")
         return False

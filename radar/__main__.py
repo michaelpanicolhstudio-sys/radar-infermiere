@@ -93,6 +93,7 @@ def main() -> int:
         fatto = invio.rispondi(contatti, args.rispondi, os.environ.get("RISPOSTA_TESTO", ""), oggi, cfg)
         if fatto:
             motore.scrivi_json(uscite.FILE_CONTATTI, contatti)
+            uscite.costruisci_sito(cfg, oggi)
         _segnala_a_github(fatto)
         return 0 if fatto else 1
 
