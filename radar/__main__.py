@@ -4,6 +4,7 @@ Opzioni utili:
   --pianificato   esegue solo se a Roma sono passate le 7 e il giro del mattino non è ancora stato fatto
   --senza-email   non invia l'email (stampa il report)
   --solo-sito     ricostruisce solo la web app dai dati già salvati
+  --solo-posta    controlla solo le risposte delle strutture (ogni 2 ore, 8-22); email solo se ce ne sono di nuove
 """
 from __future__ import annotations
 
@@ -29,11 +30,52 @@ def _segnala_a_github(eseguito: bool) -> None:
             f.write(f"eseguito={'true' if eseguito else 'false'}\n")
 
 
+def controlla_risposte(cfg: dict, oggi, adesso) -> int:
+    """Controllo leggero: solo le risposte alle lettere. Non legge i siti, non tocca i report.
+    Se non c'è niente di nuovo non salva e non pubblica nulla."""
+    if not 8 <= adesso.hour <= 22:
+        print(f"Salto: a Roma sono le {adesso:%H:%M}.")
+        _segnala_a_github(False)
+        return 0
+    try:
+        nuove, _ = uscite.aggiorna_posta(cfg, oggi)
+    except Exception as e:
+        print(f"⚠ Posta non letta: {type(e).__name__}: {e}", file=sys.stderr)
+        _segnala_a_github(False)
+        return 0
+    if not nuove:
+        print("Nessuna risposta nuova.")
+        _segnala_a_github(False)
+        return 0
+    uscite.costruisci_sito(cfg, oggi)
+    url_app = os.environ.get("APP_URL", "").strip() or (cfg.get("app_url") or "").strip() or ""
+    oggetto = f"Radar {oggi:%d/%m}: " + (f"{len(nuove)} risposte nuove" if len(nuove) > 1 else f"ha risposto {nuove[0].get('nome') or nuove[0]['da']}")
+    blocchi = []
+    for r in nuove:
+        pezzo = (r.get("testo") or "").strip()
+        if len(pezzo) > 700:
+            pezzo = pezzo[:700].rsplit(" ", 1)[0] + "…"
+        blocchi.append(f"{r.get('nome') or r['da']} ({r['da']})\n{pezzo}")
+    testo = "\n\n".join(blocchi) + ("\n\nTutte le risposte nell'app, in Altro > Contatti: " + url_app if url_app else "")
+    import html as _html
+    pagina = "<div style=\"font-family:sans-serif;font-size:15px;line-height:1.5\">" + "".join(
+        f"<p><b>{_html.escape(b.split(chr(10), 1)[0])}</b><br>{_html.escape(b.split(chr(10), 1)[1] if chr(10) in b else '').replace(chr(10), '<br>')}</p>"
+        for b in blocchi) + (f"<p><a href=\"{_html.escape(url_app)}\">Apri il Radar</a></p>" if url_app else "") + "</div>"
+    print(oggetto + "\n" + testo)
+    try:
+        uscite.invia_email(oggetto, testo, pagina)
+    except Exception as e:
+        print(f"⚠ Email non inviata: {type(e).__name__}: {e}", file=sys.stderr)
+    _segnala_a_github(True)
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Radar Infermiere P.IVA")
     ap.add_argument("--pianificato", action="store_true")
     ap.add_argument("--senza-email", action="store_true")
     ap.add_argument("--solo-sito", action="store_true")
+    ap.add_argument("--solo-posta", action="store_true")
     args = ap.parse_args()
 
     cfg = yaml.safe_load((motore.RADICE / "config.yaml").read_text(encoding="utf-8"))
@@ -44,6 +86,9 @@ def main() -> int:
         print("Web app ricostruita in:", uscite.costruisci_sito(cfg, oggi))
         _segnala_a_github(True)
         return 0
+
+    if args.solo_posta:
+        return controlla_risposte(cfg, oggi, adesso)
 
     if args.pianificato:
         gia_fatto = FILE_ULTIMO.exists() and FILE_ULTIMO.read_text().strip() == oggi.isoformat()

@@ -79,3 +79,5 @@ e aggiornato **alla fine** di ogni revisione: cosa si è sbagliato, come lo si �
 - 16/11/2026: aggiunti Fatture, Email pronte, Avvio (webapp/app.js, chiavi `radar-fatture` e `radar-avvio`). Regole: l'app non emette fatture e non invia email da sola; i modelli non devono mai contenere compensi o dati inventati (solo parentesi quadre da completare).
 
 - 17/11/2026: l'invio unico delle 11 lettere è partito (giro su push) ma il salvataggio è fallito per un conflitto con il giro delle 7 su data/report: contatti.json ricostruito a mano. Lezione: non lanciare un invio mentre è in corso un altro giro; dopo un invio controllare sempre che contatti.json sia stato salvato e svuotare subito `una_tantum`.
+
+- 17/11/2026: aggiunto `--solo-posta` (cron "37 7-21/2 * * *", 8:37-22:37 di Roma): legge solo le risposte, email solo se ce n'è una nuova, niente salvataggio se non c'è niente. Il salvataggio ora usa `git pull --rebase -X theirs` per non perdere i dati quando due giri si incrociano.

@@ -6,6 +6,8 @@ on:
     # il programma parte solo al primo passaggio dopo le 7:00 di Roma.
     - cron: "7 5 * * *"
     - cron: "7 6 * * *"
+    # Ogni 2 ore (8-22 di Roma) solo il controllo delle risposte delle strutture: email solo se ne arriva una.
+    - cron: "37 7-21/2 * * *"
   workflow_dispatch: {}   # avvio a mano dal pulsante "Run workflow" (manda anche l'email)
   push:                   # ogni modifica a programma o configurazione fa partire un giro di prova, senza email
     branches: [main]
@@ -59,7 +61,7 @@ jobs:
 
       - name: Giro del Radar
         id: giro
-        run: python -m radar ${{ github.event_name == 'schedule' && '--pianificato' || '' }} ${{ github.event_name == 'push' && '--senza-email' || '' }}
+        run: python -m radar ${{ github.event.schedule == '37 7-21/2 * * *' && '--solo-posta' || (github.event_name == 'schedule' && '--pianificato' || '') }} ${{ github.event_name == 'push' && '--senza-email' || '' }}
 
       - name: Salva la memoria nel repository
         if: steps.giro.outputs.eseguito == 'true'
@@ -68,7 +70,7 @@ jobs:
           git config user.email "radar@users.noreply.github.com"
           git add data
           git diff --cached --quiet || git commit -m "Radar: giro del $(TZ=Europe/Rome date +%d/%m/%Y)"
-          git pull --rebase origin main || true
+          git pull --rebase -X theirs origin main || true
           git push
 
       - name: Controlla se il progetto Cloudflare Pages esiste già
