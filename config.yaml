@@ -308,7 +308,7 @@ invio:
   una_tantum: ""               # data di un invio unico (AAAA-MM-GG); vuoto = nessun invio. Si imposta solo su richiesta di Michael
   una_tantum_massimo: 80
   # Sondaggio prudente approvato da Michael il 16/11/2026: solo queste strutture (pezzo del nome), lettera breve.
-  selezione: [Endrizzi, Grazioli, Tschiderer, "APSP Santa Maria", Montel, Opera Romani, Levico Curae, "Villa Sant'Anna", Cristani]
+  selezione: [Endrizzi, Grazioli, Tschiderer, "APSP Santa Maria", Montel, Opera Romani, Levico Curae, "Villa Sant'Anna", Cristani, "APSP San Giovanni", Anaunia]
   gia_conosciute: [Cristani]   # lettera diversa: lì Michael ha fatto l'ultimo tirocinio e gli avevano proposto la partita IVA
   escludi: [Vannetti]          # a queste scrive Michael dalla PEC (avviso Vannetti)
 
