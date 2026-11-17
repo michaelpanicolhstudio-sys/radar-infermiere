@@ -232,3 +232,7 @@ Nella scheda Altro dell'app, tutto salvato solo sul telefono (e nel backup di «
 - **Email pronte**: nove modelli che si riempiono con turni, giorni liberi e fatture. Partono solo dal telefono di Michael.
 - **Avvio**: lista dei passi per mettersi in proprio, scadenze dei documenti con avviso su Oggi 60 giorni prima, collegamenti a guida e CV.
 - **Conti**: confronto dei turni necessari con imposta al 5% e al 15%.
+
+## Sentinella: posta personale (dal 17/11/2026)
+
+`python -m sentinella`, workflow `sentinella.yml` (circa 7:20 e 19:20 di Roma). Legge la mail principale di Michael in sola lettura e manda un avviso a quella stessa casella solo se ci sono bollette e contratti di luce e gas, prenotazioni Airbnb e Booking, appuntamenti o scadenze. Allega un file .ics con le date. Secrets: `SENTINELLA_USER`, `SENTINELLA_APP_PASSWORD`. Nel repository salva solo impronte dei messaggi già visti.

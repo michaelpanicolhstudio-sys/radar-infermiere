@@ -89,3 +89,4 @@ e aggiornato **alla fine** di ogni revisione: cosa si è sbagliato, come lo si �
 
 - 17/11/2026: aggiunto `--solo-posta` (cron "37 7-21/2 * * *", 8:37-22:37 di Roma): legge solo le risposte, email solo se ce n'è una nuova, niente salvataggio se non c'è niente. Il salvataggio ora usa `git pull --rebase -X theirs` per non perdere i dati quando due giri si incrociano.
 - 17/11/2026: la risposta del Grazioli è stata registrata da un giro di prova (push, senza email) e Michael non è stato avvisato; poi ho detto che non c'era. Ora i giri senza email non leggono la posta. Lezione: per dire cosa è arrivato leggere sempre data/contatti.json, non solo «risposte nuove» del log.
+- 17/11/2026: nuova Sentinella (sentinella/, workflow sentinella.yml) per la mail principale. Regole in sentinella/regole.py, provate in tests/prova.py. Mai salvare mittenti, oggetti o testi nel repository; mai rispondere o cancellare.

@@ -1,0 +1,40 @@
+name: Sentinella posta personale
+
+on:
+  schedule:
+    # Ora UTC: circa 7:20 e 19:20 di Roma (8:20 e 20:20 con l'ora legale).
+    - cron: "20 6 * * *"
+    - cron: "20 18 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar
+  cancel-in-progress: false
+
+jobs:
+  sentinella:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SENTINELLA_USER: ${{ secrets.SENTINELLA_USER }}
+      SENTINELLA_APP_PASSWORD: ${{ secrets.SENTINELLA_APP_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Controlla la posta principale
+        id: giro
+        run: python -m sentinella
+      - name: Salva le impronte dei messaggi già visti
+        if: steps.giro.outputs.eseguito == 'true'
+        run: |
+          git config user.name "Sentinella"
+          git config user.email "sentinella@users.noreply.github.com"
+          git add data/sentinella_stato.json
+          git diff --cached --quiet || git commit -m "Sentinella: giro del $(TZ=Europe/Rome date +%d/%m/%Y)"
+          git pull --rebase -X theirs origin main || true
+          git push

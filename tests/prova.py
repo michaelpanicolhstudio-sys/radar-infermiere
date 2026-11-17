@@ -637,5 +637,20 @@ console.log(JSON.stringify({ sopra: sopra, nomi: ["Primiero San Martino di Castr
 else:
     print("  --  node non c'è: prove del radar saltate")
 
+print("\nSentinella (posta personale)")
+from datetime import date as _d
+from sentinella import regole as _sr
+_oggi = _d(2026, 11, 17)
+verifica("airbnb prenotazione", _sr.categoria("Airbnb <automated@airbnb.com>", "Prenotazione confermata - Luca arriva il 3 dic", ""), "airbnb")
+verifica("booking cancellazione", _sr.categoria("Booking.com <noreply@booking.com>", "Cancellazione prenotazione 123", "", True), "booking")
+verifica("bolletta dolomiti energia", _sr.categoria("Dolomiti Energia <info@dolomitienergia.it>", "La tua bolletta di novembre", "scadenza 05/12/2026 importo € 84,30", True), "energia")
+verifica("pubblicita luce scartata", _sr.categoria("Enel <promo@enel.it>", "Offerta speciale: 20% di sconto", "", True), None)
+verifica("newsletter qualsiasi scartata", _sr.categoria("Zalando <news@zalando.it>", "Novità della settimana", "", True), None)
+verifica("appuntamento", _sr.categoria("Studio dentistico <x@y.it>", "Promemoria appuntamento", ""), "appuntamento")
+verifica("scadenza bollo", _sr.categoria("ACI <a@aci.it>", "Bollo auto in scadenza", ""), "scadenza")
+verifica("date con etichetta", _sr.date_trovate("Check-in 3 dicembre 2026, check-out 06/12/2026", _oggi), [(_d(2026,12,3), "Check-in"), (_d(2026,12,6), "Check-out")])
+verifica("data passata ignorata", _sr.date_trovate("scadenza 01/10/2026", _oggi), [])
+verifica("importo", _sr.importo("Totale da pagare € 84,30 entro"), "84,30 €")
+
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)
