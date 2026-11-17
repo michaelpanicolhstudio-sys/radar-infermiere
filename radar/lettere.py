@@ -50,18 +50,14 @@ def _apertura_it(s: dict) -> str:
 
 
 def lettera_breve(s: dict, rif: str) -> dict:
-    """La lettera approvata da Michael il 16/11/2026: breve, riservata, senza dire che sta ancora valutando."""
+    """La lettera approvata da Michael il 16/11/2026: breve, riservata, senza dire che sta ancora valutando. Dal 17/11 senza domande su compensi e orari: solo se prendono partite IVA e se hanno bisogno."""
     minuti = s.get("minuti")
     dove = ("Abito qui a Mezzolombardo." if minuti == 0 else
             f"Abito a Mezzolombardo, a circa {minuti} minuti da voi." if minuti is not None and minuti <= 90 else "Abito a Mezzolombardo.")
     testo = ("Buongiorno,\n\n"
              f"mi chiamo Michael Panico e sono un infermiere iscritto all'OPI. {dove}\n\n"
-             "Vi scrivo per sapere se la vostra struttura collabora, o potrebbe collaborare, con infermieri in libera professione "
-             "per coprire turni, sostituzioni o periodi di maggiore bisogno.\n\n"
-             "Se è così, vi sarei grato se poteste indicarmi:\n"
-             "- il compenso orario o per turno previsto;\n"
-             "- i turni e gli orari da coprire e l'impegno minimo richiesto;\n"
-             "- i periodi in cui il bisogno è maggiore.\n\n"
+             "Vi scrivo per sapere se la vostra struttura collabora, o sarebbe disposta a collaborare, con infermieri in libera professione "
+             "(partita IVA) e se al momento avete bisogno di coprire turni o sostituzioni.\n\n"
              "Vi ringrazio fin d'ora e vi chiedo la cortesia di considerare riservata questa richiesta.\n\n"
              "Cordiali saluti\nMichael Panico\nInfermiere")
     return {"oggetto": f"Infermiere libero professionista – richiesta di informazioni (Rif. {rif})", "testo": testo}
