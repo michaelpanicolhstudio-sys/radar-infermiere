@@ -3,11 +3,13 @@
  "attivi": 28,
  "attivi_piva": 10,
  "data": "2026-11-17",
- "fonti_lette": 40,
+ "fonti_lette": 39,
  "fonti_totali": 40,
- "giri": 1,
+ "giri": 2,
  "nuovi": [],
- "problemi": [],
+ "problemi": [
+  "OPI Bolzano – offerte di lavoro: oggi nessun annuncio nell'elenco, mentre prima ce n'erano (ultima lettura buona: 2026-11-17). Il sito potrebbe aver cambiato struttura."
+ ],
  "scadenze7": [
   {
    "cambi": [],
