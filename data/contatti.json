@@ -9,6 +9,16 @@
   "risposte": [],
   "via": "gmail"
  },
+ "s:01c80ba8ac30": {
+  "a": [
+   "direttore@apsp-pellizzano.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-01c80ba8",
+  "risposte": [],
+  "via": "gmail"
+ },
  "s:099585e79e12": {
   "a": [
    "info@apsplevicocurae.it"
@@ -16,6 +26,66 @@
   "automatica": true,
   "inviata_il": "2026-11-17",
   "rif": "R-099585e7",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:0c4d0ee98ebe": {
+  "a": [
+   "info@cdcsolatrix.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-0c4d0ee9",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:0cb702e29723": {
+  "a": [
+   "info@apspgrigno.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-0cb702e2",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:15191c725b44": {
+  "a": [
+   "info@apspbrentonico.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-15191c72",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:245515de4ac6": {
+  "a": [
+   "info@casamiariva.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-245515de",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:2bec4e56c354": {
+  "a": [
+   "direttore@apspstrigno.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-2bec4e56",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:5c4f5be5b691": {
+  "a": [
+   "info@csarivadelgarda.com"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-5c4f5be5",
   "risposte": [],
   "via": "gmail"
  },
@@ -78,6 +148,46 @@
   "automatica": true,
   "inviata_il": "2026-11-17",
   "rif": "R-840fe5af",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:841dc7dad3f8": {
+  "a": [
+   "segreteria@apspgiudicarieesteriori.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-841dc7da",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:860b3891ff91": {
+  "a": [
+   "amministrazione@apsp-roncegno.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-860b3891",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:9cee32bc6a1e": {
+  "a": [
+   "info@centroservizimale.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-9cee32bc",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:abb9fae4a76a": {
+  "a": [
+   "info@apspborgo.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-abb9fae4",
   "risposte": [],
   "via": "gmail"
  },
@@ -152,6 +262,46 @@
   "risposte": [],
   "via": "gmail"
  },
+ "s:d9403e7295d6": {
+  "a": [
+   "info@residenzamolino.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-d9403e72",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:e264c57201a6": {
+  "a": [
+   "amministrazione@casalaner.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-e264c572",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:e30b4638aacc": {
+  "a": [
+   "info@casadiriposogiovanelli.org"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-e30b4638",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:e9415d518306": {
+  "a": [
+   "info@apspavio.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-e9415d51",
+  "risposte": [],
+  "via": "gmail"
+ },
  "s:ec0b6e4d03ed": {
   "a": [
    "info@apspcles.it"
@@ -159,6 +309,16 @@
   "automatica": true,
   "inviata_il": "2026-11-17",
   "rif": "R-ec0b6e4d",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:f89c4707d5f4": {
+  "a": [
+   "segreteria@apsp-cesarebenedetti.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-17",
+  "rif": "R-f89c4707",
   "risposte": [],
   "via": "gmail"
  }
