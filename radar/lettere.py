@@ -63,6 +63,19 @@ def lettera_breve(s: dict, rif: str) -> dict:
     return {"oggetto": f"Infermiere libero professionista – richiesta di informazioni (Rif. {rif})", "testo": testo}
 
 
+def lettera_conosciuta(s: dict, rif: str) -> dict:
+    """Per le strutture che conoscono già Michael (config `invio.gia_conosciute`), es. Cristani-de Luca di Mezzocorona:
+    lì ha fatto l'ultimo tirocinio e dopo la laurea gli avevano proposto di collaborare a partita IVA."""
+    testo = ("Buongiorno,\n\n"
+             "sono Michael Panico, infermiere. Ho svolto da voi l'ultimo tirocinio del corso di laurea e, dopo la laurea, "
+             "mi avevate proposto di collaborare in libera professione.\n\n"
+             "Vorrei sapere se l'interesse c'è ancora e se in questo periodo avete bisogno di coprire turni o sostituzioni. "
+             "Abito a Mezzolombardo, a pochi minuti da voi, e passo volentieri a parlarne di persona.\n\n"
+             "Vi ringrazio e vi chiedo la cortesia di considerare riservata questa richiesta.\n\n"
+             "Cordiali saluti\nMichael Panico\nInfermiere")
+    return {"oggetto": f"Michael Panico, infermiere – collaborazione in libera professione (Rif. {rif})", "testo": testo}
+
+
 def lettera(s: dict, rif: str) -> dict:
     """Oggetto e testo per la struttura s (servono: nome, tipo, minuti, provincia)."""
     nome = s["nome"]

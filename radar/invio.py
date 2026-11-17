@@ -33,14 +33,16 @@ def coda(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict, oggi: 
     """Chi deve ancora ricevere la lettera, nell'ordine di invio: prima chi ha un annuncio in libera professione,
     poi le strutture dalla più vicina. Se in config c'è `invio.selezione`, solo quelle strutture e con la lettera breve."""
     selezione = [x.lower() for x in (cfg.get("invio") or {}).get("selezione") or []]
+    conosciute = [x.lower() for x in (cfg.get("invio") or {}).get("gia_conosciute") or []]
     voci = _coda(strutture, memoria, contatti, cfg, oggi)
     if not selezione:
         return voci
     scelte = []
     for v in voci:
         if any(x in v["nome"].lower() for x in selezione):
-            scelte.append({**v, **lettere.lettera_breve({"nome": v["nome"], "minuti": v.get("minuti")},
-                                                        v["oggetto"].rsplit("Rif. ", 1)[-1].rstrip(")"))})
+            rif = v["oggetto"].rsplit("Rif. ", 1)[-1].rstrip(")")
+            scrivi = lettere.lettera_conosciuta if any(x in v["nome"].lower() for x in conosciute) else lettere.lettera_breve
+            scelte.append({**v, **scrivi({"nome": v["nome"], "minuti": v.get("minuti")}, rif)})
     return scelte
 
 
