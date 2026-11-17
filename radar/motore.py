@@ -22,9 +22,12 @@ NOMI_CAMPI = {"titolo": "titolo", "contratto": "contratto", "compenso": "compens
               "scadenza": "scadenza", "turni": "ore e turni"}
 AVVISO_BANDO_COMUNE = "Stesso bando anche per: "
 AVVISO_DAL_DOPPIONE = "Preso dallo stesso bando su "
+AVVISO_DAL_DATORE = "Preso da un altro annuncio dello stesso datore su "
 # Dati che, se mancano nell'annuncio mostrato, si prendono da un suo doppione dello stesso bando.
 STRUTTURE_DAL_LAVORO = ("Stagionale o turistico", "Domiciliare")
 CAMPI_DAL_DOPPIONE = {"compenso": "compenso", "euro_ora": None, "email": "email", "pec": "PEC"}
+# Tra annunci diversi dello stesso datore si prendono solo i dati del datore, mai compenso o date.
+CAMPI_DEL_DATORE = {"email": "email", "pec": "PEC", "struttura": None}
 # Si aumenta quando cambiano le regole di pertinenza: le pagine già scartate vengono riaperte una volta.
 VERSIONE_REGOLE = 9
 VERSIONE_PDF = 3      # cambia quando migliorano le regole: i PDF già letti vengono riletti
@@ -547,22 +550,22 @@ def togli_dal_doppione(a: dict) -> None:
     for campo in a.pop("dal_doppione", None) or []:
         a[campo] = None
     if a.get("avvisi"):
-        a["avvisi"] = [x for x in a["avvisi"] if not x.startswith((AVVISO_BANDO_COMUNE, AVVISO_DAL_DOPPIONE))]
+        a["avvisi"] = [x for x in a["avvisi"] if not x.startswith((AVVISO_BANDO_COMUNE, AVVISO_DAL_DOPPIONE, AVVISO_DAL_DATORE))]
 
 
-def _completa(principale: dict, altri: list[dict]) -> None:
+def _completa(principale: dict, altri: list[dict], campi: dict = CAMPI_DAL_DOPPIONE,
+              avviso: str = AVVISO_DAL_DOPPIONE) -> None:
     """Lo stesso bando visto su più siti: i dati che mancano a quello mostrato si prendono dagli altri."""
     for altro in altri:
-        presi = [c for c in CAMPI_DAL_DOPPIONE if not principale.get(c) and altro.get(c)]
+        presi = [c for c in campi if not principale.get(c) and altro.get(c)]
         if not presi:
             continue
         for c in presi:
             principale[c] = altro[c]
         principale.setdefault("dal_doppione", []).extend(presi)
-        nomi = [CAMPI_DAL_DOPPIONE[c] for c in presi if CAMPI_DAL_DOPPIONE[c]]
+        nomi = [campi[c] for c in presi if campi[c]]
         if nomi:
-            principale.setdefault("avvisi", []).append(
-                f"{AVVISO_DAL_DOPPIONE}{altro.get('fonte') or 'n.d.'}: {', '.join(nomi)}")
+            principale.setdefault("avvisi", []).append(f"{avviso}{altro.get('fonte') or 'n.d.'}: {', '.join(nomi)}")
 
 
 def segna_doppioni(memoria: dict, oggi: date) -> list[dict]:
@@ -584,6 +587,12 @@ def segna_doppioni(memoria: dict, oggi: date) -> list[dict]:
                     altro["doppione_di"] = gruppo[0]["id"]
                 if stesso_bando:
                     _completa(gruppo[0], gruppo[1:])
+                else:
+                    # Annunci diversi dello stesso datore (Fondazione Pitsch, 17/11): l'email del datore
+                    # e il tipo di struttura valgono per tutti; compenso e date no.
+                    datore = estrai.chiave(gruppo[0].get("datore"))
+                    simili = [x for x in gruppo[1:] if len(datore) >= 6 and estrai.chiave(x.get("datore")) == datore]
+                    _completa(gruppo[0], simili, CAMPI_DEL_DATORE, AVVISO_DAL_DATORE)
 
     # 0) Il PDF di un bando letto anche come annuncio a sé: resta la pagina che lo allega.
     allegati = {}

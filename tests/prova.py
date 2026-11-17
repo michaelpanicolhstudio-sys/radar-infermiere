@@ -660,6 +660,22 @@ esito_t = motore.aggiorna_memoria(mem_t, [], set(), set(), set(), OGGI, CFG)
 verifica("struttura: anche agli annunci a mano la dice il nome del datore", (mem_t["m"]["struttura"], mem_t["k"]["struttura"]),
          ("Ospedale o azienda sanitaria", None))
 verifica("struttura completata: non è un aggiornamento", esito_t["aggiornati"], [])
+# 17/11: Fondazione Pitsch, due annunci diversi (graduatoria 2025 e ricerca di personale): quello mostrato
+# non aveva né email né tipo di struttura, che il doppione nascosto aveva (personal@pitsch.it).
+m8 = {"g": {"id": "g", "titolo": "Fondazione Pitsch cerca infermieri/e", "datore": "Fondazione Pitsch", "zona": "Merano", "email": None,
+            "struttura": None, "compenso": None, "scadenza": None, "pubblicato": "2025-08-01", "punteggio": 30, "primo_visto": "2026-11-13",
+            "fonte": "OPI Bolzano", "avvisi": []},
+      "p": {"id": "p", "titolo": "Fondazione Pitsch cerca personale", "datore": "Fondazione Pitsch", "zona": "Merano", "email": "personal@pitsch.it",
+            "struttura": "RSA o casa di riposo", "compenso": "30 €/h", "scadenza": None, "pubblicato": "2025-06-01", "punteggio": 30,
+            "primo_visto": "2026-11-13", "fonte": "OPI Bolzano", "avvisi": []}}
+motore.segna_doppioni(m8, OGGI)
+verifica("stesso datore: email e struttura passano all'annuncio mostrato, il compenso no",
+         (m8["p"].get("doppione_di"), m8["g"]["email"], m8["g"]["struttura"], m8["g"]["compenso"]),
+         ("g", "personal@pitsch.it", "RSA o casa di riposo", None))
+verifica("stesso datore: l'avviso dice da dove viene l'email", any(x.startswith(motore.AVVISO_DAL_DATORE) for x in m8["g"]["avvisi"])
+         if hasattr(motore, "AVVISO_DAL_DATORE") else False, True)
+motore.segna_doppioni(m8, OGGI)
+verifica("stesso datore: l'avviso non si ripete a ogni giro", sum("stesso datore" in x for x in m8["g"]["avvisi"]), 1)
 
 print("\nSentinella (posta personale)")
 from datetime import date as _d
