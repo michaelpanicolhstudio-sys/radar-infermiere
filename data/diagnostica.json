@@ -1506,17 +1506,8 @@
    "scartati": []
   },
   "Gruppo Bonvicini – lavora con noi": {
-   "accettati": [
-    "Lavora con noi"
-   ],
-   "pagine": [
-    {
-     "caratteri": 828,
-     "inizio": "Lavora con noi Posizioni aperte Vuoi entrare a far parte del nostro team? Qui trovi tutte le figure professionali che cerchiamo in questo momento. Consulta gli annunci, compila il form e inviaci la tua candidatura. Farmacista a tempo pieno Farmacie Bonvicini Tempo pieno Candidati Fisioterapista per pazienti interni Casa di Cura Bonvicini Tempo pieno: terapie manuali, terapie strumentali, idrokines",
-     "pdf": [],
-     "url": "https://www.gruppobonvicini.it/lavora-con-noi/"
-    }
-   ],
+   "accettati": [],
+   "pagine": [],
    "scartati": []
   },
   "Martinsbrunn Merano – Job & Karriere": {
@@ -1551,50 +1542,15 @@
    "scartati": []
   },
   "OPI Bolzano – offerte di lavoro": {
-   "accettati": [
-    "CERCHIAMO INFERMIERE:I (m/f/d) per la nostra RSA Ciasa de Palsa Ojöp Frëinademetz",
-    "La casa di riposo di Silandro cerca nuovi collaboratori/trici",
-    "CERCASI INFERMIERE/A PER EMODIALISI DOMICILIARE – BOLZANO"
-   ],
+   "accettati": [],
    "pagine": [
     {
-     "candidati": 20,
+     "candidati": 0,
+     "link_in_pagina": [],
      "url": "https://www.opibz.it/?page_id=5109"
     }
    ],
-   "scartati": [],
-   "senza_pdf": [
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://www.opibz.it/wp-content/uploads/fusion-styles/d3238dab3fc2f97dc3f15ff9853f0650.min.css?ver=3.16.4"
-      ]
-     ],
-     "url": "https://www.opibz.it/cerchiamo-infermierei-m-f-d-per-la-nostra-rsa-ciasa-de-palsa-ojop-freinademetz/"
-    },
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://www.opibz.it/wp-content/uploads/fusion-styles/d3238dab3fc2f97dc3f15ff9853f0650.min.css?ver=3.16.4"
-      ]
-     ],
-     "url": "https://www.opibz.it/la-casa-di-riposo-di-silandro-cerca-nuovi-collaboratori-trici/"
-    },
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://www.opibz.it/wp-content/uploads/fusion-styles/d3238dab3fc2f97dc3f15ff9853f0650.min.css?ver=3.16.4"
-      ]
-     ],
-     "url": "https://www.opibz.it/cercasi-infermiere-a-per-emodialisi-domiciliare-bolzano/"
-    }
-   ]
+   "scartati": []
   },
   "OPI Trento – annunci di lavoro": {
    "accettati": [
@@ -1911,7 +1867,7 @@
    "scartati": []
   }
  },
- "richieste": 103,
+ "richieste": 100,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }

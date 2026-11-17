@@ -3,11 +3,14 @@
  "attivi": 28,
  "attivi_piva": 10,
  "data": "2026-11-17",
- "fonti_lette": 36,
+ "fonti_lette": 34,
  "fonti_totali": 36,
- "giri": 21,
+ "giri": 22,
  "nuovi": [],
- "problemi": [],
+ "problemi": [
+  "OPI Bolzano – offerte di lavoro: oggi nessun annuncio nell'elenco, mentre prima ce n'erano (ultima lettura buona: 2026-11-17). Il sito potrebbe aver cambiato struttura.",
+  "Gruppo Bonvicini – lavora con noi: risposta HTTP 202"
+ ],
  "scadenze7": [
   {
    "cambi": [],
