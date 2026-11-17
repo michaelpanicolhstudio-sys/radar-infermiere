@@ -53,7 +53,7 @@ def lettera_breve(s: dict, rif: str) -> dict:
     """La lettera approvata da Michael il 16/11/2026: breve, riservata, senza dire che sta ancora valutando. Dal 17/11 senza domande su compensi e orari: solo se prendono partite IVA e se hanno bisogno."""
     minuti = s.get("minuti")
     dove = ("Abito qui a Mezzolombardo." if minuti == 0 else
-            f"Abito a Mezzolombardo, a circa {minuti} minuti da voi." if minuti is not None and minuti <= 90 else "Abito a Mezzolombardo.")
+            f"Abito a Mezzolombardo, a circa {minuti} minuti da voi." if minuti is not None and minuti <= 50 else "Abito a Mezzolombardo.")
     testo = ("Buongiorno,\n\n"
              f"mi chiamo Michael Panico e sono un infermiere iscritto all'OPI. {dove}\n\n"
              "Vi scrivo per sapere se la vostra struttura collabora, o sarebbe disposta a collaborare, con infermieri in libera professione "
