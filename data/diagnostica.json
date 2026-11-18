@@ -1229,6 +1229,22 @@
     ]
    ]
   },
+  "Avvisi email – Indeed": {
+   "accettati": 0,
+   "candidati": 0
+  },
+  "Avvisi email – InfoJobs": {
+   "accettati": 0,
+   "candidati": 0
+  },
+  "Avvisi email – Jobrapido": {
+   "accettati": 0,
+   "candidati": 0
+  },
+  "Avvisi email – LinkedIn": {
+   "accettati": 0,
+   "candidati": 0
+  },
   "Brixsana Bressanone – Karriere": {
    "accettati": [
     "Infermiere/a (KrankenpflegerIn) – tempo pieno, da subito"
@@ -1911,7 +1927,7 @@
    "scartati": []
   }
  },
- "richieste": 103,
+ "richieste": 104,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }
