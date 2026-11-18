@@ -1,9 +1,9 @@
 {
  "aggiornati": [],
- "attivi": 31,
- "attivi_piva": 13,
+ "attivi": 30,
+ "attivi_piva": 12,
  "data": "2026-11-18",
- "fonti_lette": 34,
+ "fonti_lette": 36,
  "fonti_totali": 36,
  "giri": 9,
  "nuovi": [
@@ -33,20 +33,6 @@
    "scadenza": null,
    "titolo": "Bolzano , infermiere in prova licenziato per inedeguatezza: respinto il ricorso per mobbing",
    "url": "https://nursetimes.org/bolzano-infermiere-in-prova-licenziato-per-inedeguatezza-respinto-il-ricorso-per-mobbing",
-   "zona": "Bolzano"
-  },
-  {
-   "cambi": [],
-   "compenso": "500 euro al mese",
-   "contratto": "P.IVA o dipendente",
-   "datore": null,
-   "id": "015607408b80",
-   "minuti": 35,
-   "piva": true,
-   "punteggio": 53,
-   "scadenza": null,
-   "titolo": "Sanità privata: 10 giorni per aprire il tavolo. E in Parlamento spunta il rinnovo automatico ...",
-   "url": "https://nursetimes.org/sanita-privata-10-giorni-per-aprire-il-tavolo-e-in-parlamento-spunta-il-rinnovo-automatico-degli-accreditamenti",
    "zona": "Bolzano"
   }
  ],

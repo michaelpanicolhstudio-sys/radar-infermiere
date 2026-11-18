@@ -1002,7 +1002,8 @@
   "ASUIT – bandi e concorsi": {
    "accettati": [
     "Selezione pubblica, per titoli, per la formazione di graduatorie per assunzioni a tempo de",
-    "SC 03/26 AVVISO APERTO INFERMIERE CAVALESE"
+    "SC 03/26 AVVISO APERTO INFERMIERE CAVALESE",
+    "AVVISO DI SELEZIONE PUBBLICA PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONALI A MEDIC"
    ],
    "pagine": [
     {
@@ -1208,7 +1209,12 @@
      "url": "https://www.asuit.tn.it/bandi-concorsi?page=9"
     }
    ],
-   "scartati": []
+   "scartati": [
+    [
+     "AVVISO DI SELEZIONE PUBBLICA SELEZIONE PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONA",
+     "non riguarda infermieri"
+    ]
+   ]
   },
   "Altenheim Kaltern (Caldaro) – Karriere": {
    "accettati": [],
@@ -1431,7 +1437,44 @@
      "url": "feed"
     }
    ],
-   "scartati": []
+   "scartati": [
+    [
+     "L'ADIGE.IT : « TRENTO , INFERMIERE AGGREDITO AL SANTA CHIARA: LA UIL CHIEDE ...",
+     "notizia, non un'offerta di lavoro"
+    ]
+   ],
+   "senza_pdf": [
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://www.agenziagiornalisticaopinione.it/wp-content/uploads/2020/09/cropped-favicon-32x32.png"
+      ],
+      [
+       "link",
+       "",
+       "https://www.agenziagiornalisticaopinione.it/wp-content/uploads/2020/09/cropped-favicon-192x192.png"
+      ],
+      [
+       "link",
+       "",
+       "https://www.agenziagiornalisticaopinione.it/wp-content/uploads/2020/09/cropped-favicon-180x180.png"
+      ],
+      [
+       "img",
+       "",
+       "https://www.agenziagiornalisticaopinione.it/wp-content/uploads/2026/07/opinione-fonte-clic-long-scaled.png"
+      ],
+      [
+       "script",
+       "",
+       "data:text/javascript;base64,dmFyIGFkdmFkc190cmFja2luZ19hZHM9eyIxIjpbMTY2ODM5MSwxNjUwNzAwLDE2NTA3MDAsMTcwMDc0MSwxNjcyNzA4LDE2NzgzOTUsMTY1NTA1Ml19O3ZhciBhZHZhZHNfdHJhY2tpbmdfdXJscz17IjEiOiJodHRwczpcL1wv"
+      ]
+     ],
+     "url": "https://www.agenziagiornalisticaopinione.it/opinionews-tn-aa/ladige-it-trento-infermiere-aggredito-al-santa-chiara-la-uil-chiede-piu-sicurezza/"
+    }
+   ]
   },
   "Google Alerts 4": {
    "accettati": [],
@@ -1589,9 +1632,7 @@
    "scartati": []
   },
   "Google Alerts 9": {
-   "accettati": [
-    "Sanità privata: 10 giorni per aprire il tavolo. E in Parlamento spunta il rinnovo automati"
-   ],
+   "accettati": [],
    "pagine": [
     {
      "candidati": 1,
@@ -1600,7 +1641,12 @@
      "url": "feed"
     }
    ],
-   "scartati": [],
+   "scartati": [
+    [
+     "Sanità privata: 10 giorni per aprire il tavolo. E in Parlamento spunta il rinnovo automati",
+     "notizia, non un'offerta di lavoro"
+    ]
+   ],
    "senza_pdf": [
     {
      "link": [
@@ -1686,7 +1732,22 @@
    "scartati": []
   },
   "OPI Bolzano – offerte di lavoro": {
-   "accettati": [],
+   "accettati": [
+    "CERCHIAMO INFERMIERE:I (m/f/d) per la nostra RSA Ciasa de Palsa Ojöp Frëinademetz",
+    "La casa di riposo di Silandro cerca nuovi collaboratori/trici",
+    "CERCASI INFERMIERE/A PER EMODIALISI DOMICILIARE – BOLZANO",
+    "Hotel Palace Merano cerca infermiere",
+    "Fondo Ospedale della S.S. Trinità RESIDENZA PER ANZIANI ANNENBERG LACES – Formazione di un",
+    "INPS – Ricerca infermiere/a",
+    "Fondazione Pitsch cerca infermieri/e",
+    "Fondazione Casa di Riposo Heinrich von Rottenburg Caldaro",
+    "Fondazione Pitsch cerca personale",
+    "Infermiere/a a tempo pieno o part time",
+    "Study nurse @Bolzano @Istituto per la Medicina di Emergenza in Montagna – EURAC RESEARCH",
+    "Comunità comprensoriale Burgraviato – Avviso pubblico",
+    "Comunità Comprensoriale Burgraviato – Assunzioni a tempo determinato",
+    "Infermiere/a a tempo pieno o part time"
+   ],
    "pagine": [
     {
      "candidati": 0,
@@ -1694,7 +1755,94 @@
      "url": "https://www.opibz.it/?page_id=5109"
     }
    ],
-   "scartati": []
+   "scartati": [
+    [
+     "Ricerca di funzionario sanitario in comando presso l’INPS di Bolzano",
+     "ruolo diverso (dal titolo)"
+    ],
+    [
+     "Infermiere a Caorle",
+     "fuori regione"
+    ],
+    [
+     "Cerchiamo un RESPONSABILE TECNICO-ASSISTENZIALE",
+     "ruolo diverso (dal titolo)"
+    ],
+    [
+     "CERCHIAMO UN/UNA RESPONSABILE DI PIANO",
+     "ruolo diverso (dal titolo)"
+    ],
+    [
+     "INPS – Ricerca infermiere/a",
+     "ruolo diverso (coordinamento, direzione o comando)"
+    ],
+    [
+     "Avviso – Collegio tecnico – Dirigenza tecnico-assistenziale",
+     "ruolo diverso (dal titolo)"
+    ]
+   ],
+   "senza_pdf": [
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://www.opibz.it/wp-content/uploads/fusion-styles/175330e909f7312ffc638c988b91ff40.min.css?ver=3.17"
+      ]
+     ],
+     "url": "https://www.opibz.it/cerchiamo-infermierei-m-f-d-per-la-nostra-rsa-ciasa-de-palsa-ojop-freinademetz/"
+    },
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://www.opibz.it/wp-content/uploads/fusion-styles/175330e909f7312ffc638c988b91ff40.min.css?ver=3.17"
+      ]
+     ],
+     "url": "https://www.opibz.it/ricerca-di-funzionario-sanitario-in-comando-presso-linps-di-bolzano/"
+    },
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://www.opibz.it/wp-content/uploads/fusion-styles/175330e909f7312ffc638c988b91ff40.min.css?ver=3.17"
+      ]
+     ],
+     "url": "https://www.opibz.it/la-casa-di-riposo-di-silandro-cerca-nuovi-collaboratori-trici/"
+    },
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://www.opibz.it/wp-content/uploads/fusion-styles/175330e909f7312ffc638c988b91ff40.min.css?ver=3.17"
+      ]
+     ],
+     "url": "https://www.opibz.it/cercasi-infermiere-a-per-emodialisi-domiciliare-bolzano/"
+    },
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://www.opibz.it/wp-content/uploads/fusion-styles/175330e909f7312ffc638c988b91ff40.min.css?ver=3.17"
+      ]
+     ],
+     "url": "https://www.opibz.it/infermiere-a-caorle/"
+    },
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://www.opibz.it/wp-content/uploads/fusion-styles/175330e909f7312ffc638c988b91ff40.min.css?ver=3.17"
+      ]
+     ],
+     "url": "https://www.opibz.it/hotel-palace-merano-cerca-infermiere/"
+    }
+   ]
   },
   "OPI Trento – annunci di lavoro": {
    "accettati": [
@@ -1702,7 +1850,15 @@
     "A.P.S.P. C. Vannetti – Rovereto – Selezione per liberi professionisti – PROROGA TERMINI",
     "A.P.S.P. C. Vannetti – Rovereto – bando di concorso",
     "Cooperativa Sociale Villa Maria Onlus – ricerca di personale",
-    "APSP “San Giuseppe” di Primiero (TN) – ricerca di personale"
+    "A.P.S.P. Suor Agnese – Concorso per infermieri",
+    "APSP “San Giuseppe” di Primiero (TN) – ricerca di personale",
+    "Fondazione Casa di Riposo Heinrich von Rottenburg (APSP) – Caldaro BZ – ricerca personale",
+    "A.P.S.P. Padre Odone Nicolini – Pieve di Bono – Prezzo TN – ricerca personale",
+    "A.P.S.P. Centro Residenziale A. Collini – Ricerca personale tempo determinato",
+    "A.P.S.P. “OPERA ROMANI” – Nomi TN – bando di concorso",
+    "A.P.S.P. “Levico CURAE” – Levico Terme (TN) – selezione",
+    "Cooperativa D.O.C. Ricerca personale infermieristico",
+    "Avviso di selezione pubblica per il conferimento di incarichi libero professionali a infer"
    ],
    "pagine": [
     {
@@ -1710,8 +1866,32 @@
      "url": "https://opi.tn.it/segreteria/annunci-di-lavoro/"
     }
    ],
-   "scartati": [],
+   "scartati": [
+    [
+     "A.P.S.P. Margherita Grazioli – Trento – pubblica selezione per coordinatore",
+     "ruolo diverso (dal titolo)"
+    ],
+    [
+     "Società Cooperativa Sociale Stella Montis Fondo – Borgo d’Ananunia (TN) – ricerca di perso",
+     "ruolo diverso (coordinamento, direzione o comando)"
+    ]
+   ],
    "senza_pdf": [
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon-150x150.jpg?x30900"
+      ],
+      [
+       "link",
+       "",
+       "https://opi.tn.it/wp-content/uploads/2019/05/favicon.jpg?x30900"
+      ]
+     ],
+     "url": "https://opi.tn.it/a-p-s-p-margherita-grazioli-trento-bando-di-concorso/"
+    },
     {
      "link": [
       [
@@ -1785,7 +1965,7 @@
        "https://opi.tn.it/wp-content/uploads/2019/05/favicon.jpg?x30900"
       ]
      ],
-     "url": "https://opi.tn.it/apsp-san-giuseppe-di-primiero-tn-ricerca-di-personale/"
+     "url": "https://opi.tn.it/societa-cooperativa-sociale-stella-montis-fondo-borgo-dananunia-tn-ricerca-di-personale/"
     }
    ]
   },
@@ -1980,7 +2160,12 @@
      "url": "https://www.upipa.tn.it/Bacheca/Concorsi/(offset)/10"
     }
    ],
-   "scartati": []
+   "scartati": [
+    [
+     "Selezione pubblica per il conferimento di un incarico libero professionale per Psicologo -",
+     "non riguarda infermieri"
+    ]
+   ]
   },
   "Villa Sant'Anna Merano – lavora con noi": {
    "accettati": [
@@ -2011,7 +2196,7 @@
    "scartati": []
   }
  },
- "richieste": 104,
+ "richieste": 172,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }

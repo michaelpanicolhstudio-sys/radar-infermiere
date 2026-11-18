@@ -1,76 +1,4 @@
 {
- "015607408b80": {
-  "affidabilita": "aggregatore",
-  "avvisi": [],
-  "cambi": [],
-  "cita_tedesco": false,
-  "compenso": "500 euro al mese",
-  "contratto": "P.IVA o dipendente",
-  "da_pdf": null,
-  "data_novita": "2026-11-18",
-  "datore": null,
-  "dettaglio_punteggio": [
-   {
-    "max": 30,
-    "motivo": "P.IVA possibile (anche assunzione)",
-    "punti": 24,
-    "voce": "Contratto"
-   },
-   {
-    "max": 25,
-    "motivo": "compenso orario non indicato (500 euro al mese)",
-    "punti": 5,
-    "voce": "Compenso"
-   },
-   {
-    "max": 20,
-    "motivo": "circa 35 min d'auto",
-    "punti": 12,
-    "voce": "Distanza"
-   },
-   {
-    "max": 15,
-    "motivo": "notti",
-    "punti": 9,
-    "voce": "Ore e turni"
-   },
-   {
-    "max": 10,
-    "motivo": "aggregatore o avviso di ricerca",
-    "punti": 3,
-    "voce": "Fonte"
-   }
-  ],
-  "email": null,
-  "estratto": "Infermieri NT News Politica & Sindacato Sanità privata: 10 giorni per aprire il tavolo. E in Parlamento spunta il rinnovo automatico degli accreditamenti Condividi Condividi Fp Cgil, Cisl Fp e Uil Fp hanno diffidato Aiop…",
-  "euro_ora": null,
-  "fonte": "Google Alerts 9",
-  "id": "015607408b80",
-  "impronta": "7d4ca279e609",
-  "in_tedesco": false,
-  "km": 42,
-  "letto_il": "2026-11-18",
-  "minuti": 35,
-  "novita": "nuovo",
-  "pdf_letti": [],
-  "pec": null,
-  "primo_visto": "2026-11-18",
-  "pubblicato": "2026-11-17",
-  "punteggio": 53,
-  "regole": 9,
-  "scadenza": null,
-  "scadenza_frase": null,
-  "segnali_turni": {
-   "notti": true
-  },
-  "struttura": null,
-  "tipo_fonte": "rss",
-  "titolo": "Sanità privata: 10 giorni per aprire il tavolo. E in Parlamento spunta il rinnovo automatico ...",
-  "turni": "notti",
-  "ultimo_visto": "2026-11-18",
-  "url": "https://nursetimes.org/sanita-privata-10-giorni-per-aprire-il-tavolo-e-in-parlamento-spunta-il-rinnovo-automatico-degli-accreditamenti",
-  "zona": "Bolzano"
- },
  "054de6ae7326": {
   "affidabilita": "ufficiale",
   "avvisi": [],
@@ -122,7 +50,7 @@
   "impronta": "0c7a07b8f820",
   "in_tedesco": false,
   "km": 70,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 55,
   "novita": "nuovo",
   "pdf_letti": [],
@@ -130,7 +58,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-06-12",
   "punteggio": 30,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -202,7 +130,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 37,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -377,7 +305,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 3,
+   "v": 4,
    "zona": "Nova Ponente"
   },
   "data_novita": "2026-11-13",
@@ -433,7 +361,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 37,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2026-11-30",
   "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
   "segnali_turni": {
@@ -510,7 +438,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-07-28",
   "punteggio": 61,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -550,7 +478,7 @@
    "scadenza_frase": null,
    "segnali_turni": {},
    "turni": null,
-   "v": 3,
+   "v": 4,
    "zona": "Meltina"
   },
   "data_novita": "2026-11-13",
@@ -606,7 +534,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 28,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -651,7 +579,7 @@
     "pieno": true
    },
    "turni": "36 h/settimana, tempo pieno, part-time",
-   "v": 3,
+   "v": 4,
    "zona": "Lagundo"
   },
   "data_novita": "2026-11-13",
@@ -707,7 +635,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 30,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2026-11-20",
   "scadenza_frase": "al presente avviso entro il 20/11 /2026 – ore 12.00",
   "segnali_turni": {
@@ -782,7 +710,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-15",
   "punteggio": 49,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -830,7 +758,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 3,
+   "v": 4,
    "zona": "San Candido"
   },
   "data_novita": "2026-11-13",
@@ -886,7 +814,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 25,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2026-11-20",
   "scadenza_frase": "allegati) va presentato entro le ore 12 del 20.11.2026 presso la s",
   "segnali_turni": {
@@ -951,7 +879,7 @@
   "impronta": "be143774f29a",
   "in_tedesco": false,
   "km": 75,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 78,
   "novita": "nuovo",
   "pdf_letti": [],
@@ -959,7 +887,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-06-01",
   "punteggio": 33,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -1003,7 +931,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 3,
+   "v": 4,
    "zona": "Nova Ponente"
   },
   "data_novita": "2026-11-13",
@@ -1060,7 +988,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 30,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2026-11-30",
   "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
   "segnali_turni": {
@@ -1127,7 +1055,7 @@
   "impronta": "5439509c60aa",
   "in_tedesco": false,
   "km": 42,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 35,
   "novita": "nuovo",
   "pdf_letti": [],
@@ -1135,7 +1063,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2024-07-17",
   "punteggio": 39,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1208,7 +1136,7 @@
   "primo_visto": "2026-11-18",
   "pubblicato": "2026-11-18",
   "punteggio": 59,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1282,7 +1210,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-16",
   "punteggio": 62,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2026-11-27",
   "scadenza_frase": "Personale dell’Azienda. Proroga termini di scadenza: 27/11/2026 ore 12.00 A",
   "segnali_turni": {},
@@ -1327,8 +1255,8 @@
     "parziale": true,
     "pieno": true
    },
-   "turni": "22 h/settimana, tempo pieno, part-time",
-   "v": 3,
+   "turni": "18, 20 o 22 h/settimana, tempo pieno, part-time",
+   "v": 4,
    "zona": "San Pancrazio"
   },
   "data_novita": "2026-11-13",
@@ -1384,7 +1312,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 30,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2026-11-20",
   "scadenza_frase": "20.11.2026 11:00 Uhr Scadenza: 20/11/2026 ore 11.00 T",
   "segnali_turni": {
@@ -1426,7 +1354,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 3,
+   "v": 4,
    "zona": "Caldaro"
   },
   "data_novita": "2026-11-13",
@@ -1472,7 +1400,7 @@
   "impronta": "575a78bc82f5",
   "in_tedesco": false,
   "km": 32,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 35,
   "novita": "nuovo",
   "pdf_letti": [
@@ -1482,7 +1410,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2024-07-29",
   "punteggio": 42,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1587,7 +1515,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 3,
+   "v": 4,
    "zona": "Caldaro"
   },
   "data_novita": "2026-11-13",
@@ -1633,7 +1561,7 @@
   "impronta": "246a2fc88b4c",
   "in_tedesco": false,
   "km": 32,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 35,
   "novita": "nuovo",
   "pdf_letti": [
@@ -1643,7 +1571,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-06-25",
   "punteggio": 42,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1821,7 +1749,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": null,
   "punteggio": 40,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1897,7 +1825,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": null,
   "punteggio": 52,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1963,7 +1891,7 @@
   "impronta": "5553df2ab731",
   "in_tedesco": false,
   "km": 40,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 38,
   "novita": "aggiornato",
   "pdf_letti": [],
@@ -1971,7 +1899,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-04-28",
   "punteggio": 39,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2026-05-22",
   "scadenza_frase": "21 – 38060 Nomi (TN), entro e non oltre le ore 12.00 del giorno 22 maggio 2026 A.P.S.P. “O",
   "segnali_turni": {
@@ -2045,7 +1973,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-09-25",
   "punteggio": 33,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -2060,25 +1988,22 @@
  "6529422d89d3": {
   "affidabilita": "ufficiale",
   "avvisi": [
-   "Dal PDF allegato: scadenza"
+   "Dal PDF allegato: scadenza, compenso"
   ],
   "cambi": [
    "scadenza: 2026-08-13 → 2026-09-10"
   ],
   "cita_tedesco": false,
-  "compenso": null,
+  "compenso": "40 €/h",
   "contratto": "P.IVA / libera professione",
   "da_pdf": {
    "caratteri": 19205,
    "cita_tedesco": false,
-   "compenso": null,
+   "compenso": "40 €/h",
    "contratto": "P.IVA / libera professione",
    "email": "urp@asuit.tn.it",
    "estratto": "…LISTI IN ORTOPEDIA E TRAUMATOLOGIA E AD INFERMIERI PER LO SVOLGIMENTO DI PRESTAZIONI DI PRONTO SOCCORSO ORTOPEDICO-TRAUMATOLOGICO NELLE UU.OO. DI PRONTO SOCCORSO DEGLI OSPEDALI DI CLES E CAVALESE, NONCHÉ PRESSO GLI AMBUL…",
-   "euro_ora": null,
-   "indizi_compenso": [
-    "penso orario lordo omnicomprensivo da corrispondere ai professionisti, è pari a € 85,00 per i medici specialisti in ortopedia e traumatologia e"
-   ],
+   "euro_ora": 40.0,
    "infermiere": true,
    "km": 65,
    "minuti": 75,
@@ -2089,7 +2014,7 @@
     "dodici": true
    },
    "turni": "turni da 12 h, alloggio",
-   "v": 3,
+   "v": 4,
    "zona": "Madonna di Campiglio"
   },
   "data_novita": "2026-11-15",
@@ -2103,8 +2028,8 @@
    },
    {
     "max": 25,
-    "motivo": "compenso orario non indicato",
-    "punti": 5,
+    "motivo": "40 €/h: ottimo",
+    "punti": 25,
     "voce": "Compenso"
    },
    {
@@ -2128,13 +2053,13 @@
   ],
   "email": "incarichilp@asuit.tn.it",
   "estratto": "…LISTI IN ORTOPEDIA E TRAUMATOLOGIA E AD INFERMIERI PER LO SVOLGIMENTO DI PRESTAZIONI DI PRONTO SOCCORSO ORTOPEDICO-TRAUMATOLOGICO NELLE UU.OO. DI PRONTO SOCCORSO DEGLI OSPEDALI DI CLES E CAVALESE, NONCHÉ PRESSO GLI AMBUL…",
-  "euro_ora": null,
+  "euro_ora": 40.0,
   "fonte": "ASUIT – bandi e concorsi",
   "id": "6529422d89d3",
-  "impronta": "d2c7b95799d7",
+  "impronta": "08686cfbb54f",
   "in_tedesco": false,
   "km": 65,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 75,
   "novita": "aggiornato",
   "pdf_letti": [
@@ -2143,8 +2068,8 @@
   "pec": "asuit@pec.asuit.tn.it",
   "primo_visto": "2026-11-13",
   "pubblicato": null,
-  "punteggio": 60,
-  "regole": 9,
+  "punteggio": 80,
+  "regole": 10,
   "scadenza": "2026-09-10",
   "scadenza_frase": "di partecipazione scade il giorno 10 settembre 2026 ad ore 23.5",
   "segnali_turni": {
@@ -2189,7 +2114,7 @@
     "weekend": true
    },
    "turni": "36 h/settimana, notti, weekend/festivi, tempo pieno, part-time",
-   "v": 3,
+   "v": 4,
    "zona": "Lavis"
   },
   "data_novita": null,
@@ -2246,7 +2171,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-23",
   "punteggio": 54,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2026-11-19",
   "scadenza_frase": "178,71 kB) Termine di presentazione Giovedì, 19 Novembre 2026 ore 12:00 I",
   "segnali_turni": {
@@ -2324,7 +2249,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-18",
   "punteggio": 55,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -2468,7 +2393,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-27",
   "punteggio": 27,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -2662,7 +2587,7 @@
   "impronta": "8e210ea50836",
   "in_tedesco": false,
   "km": 42,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 42,
   "novita": "nuovo",
   "pdf_letti": [],
@@ -2670,7 +2595,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-04-22",
   "punteggio": 37,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2026-05-22",
   "scadenza_frase": "e selezioni ”. Il termine di presentazione della domanda scade il giorno 22 maggio 2026 alle ore 12",
   "segnali_turni": {},
@@ -2710,7 +2635,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 3,
+   "v": 4,
    "zona": "Primiero San Martino di Castrozza"
   },
   "data_novita": "2026-11-13",
@@ -2766,7 +2691,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-11-03",
   "punteggio": 27,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2026-12-04",
   "scadenza_frase": "505,54 kB) Termine di presentazione Venerdì, 04 Dicembre 2026 ore 12:00 I",
   "segnali_turni": {
@@ -2841,7 +2766,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-19",
   "punteggio": 30,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -2879,7 +2804,7 @@
    "scadenza_frase": null,
    "segnali_turni": {},
    "turni": null,
-   "v": 3,
+   "v": 4,
    "zona": "Merano"
   },
   "data_novita": "2026-11-13",
@@ -2924,7 +2849,7 @@
   "impronta": "7b0b5017feae",
   "in_tedesco": false,
   "km": 70,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 55,
   "novita": "nuovo",
   "pdf_letti": [
@@ -2934,7 +2859,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2024-07-17",
   "punteggio": 30,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -2996,7 +2921,7 @@
   "impronta": "84e717aa3553",
   "in_tedesco": false,
   "km": 32,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 35,
   "novita": "nuovo",
   "pdf_letti": [],
@@ -3004,7 +2929,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-06-23",
   "punteggio": 40,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -3048,7 +2973,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 3,
+   "v": 4,
    "zona": "Nova Ponente"
   },
   "data_novita": "2026-11-13",
@@ -3105,7 +3030,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 30,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2026-11-30",
   "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
   "segnali_turni": {
@@ -3149,7 +3074,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 3,
+   "v": 4,
    "zona": "Laces"
   },
   "data_novita": "2026-11-13",
@@ -3194,7 +3119,7 @@
   "impronta": "e3585d17c31d",
   "in_tedesco": false,
   "km": 95,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 82,
   "novita": "nuovo",
   "pdf_letti": [
@@ -3204,7 +3129,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-02-27",
   "punteggio": 32,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2026-03-06",
   "scadenza_frase": "essere pre­sentate entro le ore 12.00 del 06.03.2026 in Segreter",
   "segnali_turni": {
@@ -3245,7 +3170,7 @@
    "scadenza_frase": null,
    "segnali_turni": {},
    "turni": null,
-   "v": 3,
+   "v": 4,
    "zona": "Merano"
   },
   "data_novita": "2026-11-13",
@@ -3291,7 +3216,7 @@
   "impronta": "9b32d89b83c5",
   "in_tedesco": false,
   "km": 70,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 55,
   "novita": "nuovo",
   "pdf_letti": [
@@ -3301,7 +3226,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2023-09-24",
   "punteggio": 30,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -3373,7 +3298,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-15",
   "punteggio": 39,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2026-11-13",
   "scadenza_frase": "apspvannetti@pec.it entro e non oltre le ore 12.00 del giorno 13/11/2026 all’U.O. de",
   "segnali_turni": {
@@ -3419,7 +3344,7 @@
     "weekend": true
    },
    "turni": "weekend/festivi",
-   "v": 3,
+   "v": 4,
    "zona": "Bolzano"
   },
   "data_novita": "2026-11-13",
@@ -3464,7 +3389,7 @@
   "impronta": "6ac3f97f38d5",
   "in_tedesco": false,
   "km": 42,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 35,
   "novita": "aggiornato",
   "pdf_letti": [
@@ -3475,7 +3400,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-12-19",
   "punteggio": 40,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2025-12-26",
   "scadenza_frase": "postacert.inps.gov.it entro il termine perentorio di venerdì 26/12/2025. Il bando i",
   "segnali_turni": {
@@ -3523,7 +3448,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, alloggio",
-   "v": 3,
+   "v": 4,
    "zona": null
   },
   "data_novita": "2026-11-13",
@@ -3568,7 +3493,7 @@
   "impronta": "09fbe03f39ef",
   "in_tedesco": false,
   "km": null,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": null,
   "novita": "aggiornato",
   "pdf_letti": [
@@ -3578,7 +3503,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-01-12",
   "punteggio": 32,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -3623,7 +3548,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 3,
+   "v": 4,
    "zona": "Trento"
   },
   "data_novita": "2026-11-15",
@@ -3679,7 +3604,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 32,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2026-12-31",
   "scadenza_frase": "procedura telematica entro le ore 23.59 del giorno 31 dicembre 2026. Detto term",
   "segnali_turni": {
@@ -3756,7 +3681,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 40,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -3821,7 +3746,7 @@
   "impronta": "e35986935a8a",
   "in_tedesco": false,
   "km": 70,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 55,
   "nota_manuale": "Inserito a mano il 12/11/2026. Annuncio di marzo 2026: verificare se è ancora aperto.",
   "novita": null,
@@ -3831,7 +3756,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-03-05",
   "punteggio": 49,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -4031,7 +3956,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 33,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -4160,7 +4085,7 @@
   "impronta": "8e6398b001f9",
   "in_tedesco": false,
   "km": 65,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 75,
   "novita": "nuovo",
   "pdf_letti": [],
@@ -4168,7 +4093,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-01-07",
   "punteggio": 55,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -4232,7 +4157,7 @@
   "impronta": "3e296c0146ef",
   "in_tedesco": false,
   "km": 62,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 72,
   "novita": "aggiornato",
   "pdf_letti": [],
@@ -4240,7 +4165,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-05-22",
   "punteggio": 30,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -4279,7 +4204,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 3,
+   "v": 4,
    "zona": "Caldaro"
   },
   "data_novita": "2026-11-13",
@@ -4325,7 +4250,7 @@
   "impronta": "575a78bc82f5",
   "in_tedesco": false,
   "km": 32,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 35,
   "novita": "nuovo",
   "pdf_letti": [
@@ -4335,7 +4260,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2023-09-13",
   "punteggio": 42,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -4408,7 +4333,7 @@
   "primo_visto": "2026-11-18",
   "pubblicato": "2026-11-18",
   "punteggio": 49,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -4485,7 +4410,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-07-03",
   "punteggio": 25,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2026-12-04",
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -4659,7 +4584,7 @@
   "impronta": "4efba8df41b6",
   "in_tedesco": false,
   "km": 70,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 55,
   "novita": "nuovo",
   "pdf_letti": [],
@@ -4667,7 +4592,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-08-08",
   "punteggio": 30,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -4707,7 +4632,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 3,
+   "v": 4,
    "zona": "Cavalese"
   },
   "data_novita": "2026-11-13",
@@ -4763,7 +4688,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 32,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2026-12-31",
   "scadenza_frase": "procedura telematica entro le ore 23.59 del giorno 31 dicembre 2026. Detto term",
   "segnali_turni": {
@@ -4841,7 +4766,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 56,
-  "regole": 9,
+  "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -4906,7 +4831,7 @@
   "impronta": "fdd72c09b9d2",
   "in_tedesco": false,
   "km": 80,
-  "letto_il": "2026-11-17",
+  "letto_il": "2026-11-18",
   "minuti": 80,
   "novita": "nuovo",
   "pdf_letti": [],
@@ -4914,7 +4839,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-07-15",
   "punteggio": 32,
-  "regole": 9,
+  "regole": 10,
   "scadenza": "2026-08-14",
   "scadenza_frase": "dell’APSP “Suor Agnese” entro le ore 12.00 del giorno 14.08.2026. A.P.S.P. S",
   "segnali_turni": {
