@@ -1431,44 +1431,7 @@
      "url": "feed"
     }
    ],
-   "scartati": [
-    [
-     "L'ADIGE.IT : « TRENTO , INFERMIERE AGGREDITO AL SANTA CHIARA: LA UIL CHIEDE ...",
-     "notizia, non un'offerta di lavoro"
-    ]
-   ],
-   "senza_pdf": [
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://www.agenziagiornalisticaopinione.it/wp-content/uploads/2020/09/cropped-favicon-32x32.png"
-      ],
-      [
-       "link",
-       "",
-       "https://www.agenziagiornalisticaopinione.it/wp-content/uploads/2020/09/cropped-favicon-192x192.png"
-      ],
-      [
-       "link",
-       "",
-       "https://www.agenziagiornalisticaopinione.it/wp-content/uploads/2020/09/cropped-favicon-180x180.png"
-      ],
-      [
-       "img",
-       "",
-       "https://www.agenziagiornalisticaopinione.it/wp-content/uploads/2026/07/opinione-fonte-clic-long-scaled.png"
-      ],
-      [
-       "script",
-       "",
-       "data:text/javascript;base64,dmFyIGFkdmFkc190cmFja2luZ19hZHM9eyIxIjpbMTY2ODM5MSwxNjUwNzAwLDE2NTA3MDAsMTcwMDc0MSwxNjcyNzA4LDE2NzgzOTUsMTY1NTA1Ml19O3ZhciBhZHZhZHNfdHJhY2tpbmdfdXJscz17IjEiOiJodHRwczpcL1wv"
-      ]
-     ],
-     "url": "https://www.agenziagiornalisticaopinione.it/opinionews-tn-aa/ladige-it-trento-infermiere-aggredito-al-santa-chiara-la-uil-chiede-piu-sicurezza/"
-    }
-   ]
+   "scartati": []
   },
   "Google Alerts 4": {
    "accettati": [],
@@ -1948,7 +1911,7 @@
    "scartati": []
   }
  },
- "richieste": 105,
+ "richieste": 104,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }
