@@ -158,7 +158,7 @@ def _costruisci(cand: dict, testo: str, pubblicato, fonte: dict, cfg: dict, comu
 
     if estrai.contiene(titolo, parole["escludi_titolo"]) and not estrai.contiene(titolo, parole["infermiere"]):
         return None, "ruolo diverso (dal titolo)"
-    if fonte.get("tipo") == "rss" and estrai.e_notizia(titolo, cand.get("url", ""), cand.get("sommario", "")):
+    if fonte.get("tipo") == "rss" and estrai.e_notizia(titolo, cand.get("url", ""), cand.get("sommario", ""), testo):
         return None, "notizia, non un'offerta di lavoro"
     if controlla_ruolo and estrai.ruolo_diverso(titolo, corpo):
         return None, "ruolo diverso (coordinamento, direzione o comando)"

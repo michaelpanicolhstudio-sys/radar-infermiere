@@ -944,9 +944,22 @@ _RE_SEGNALE_OFFERTA = re.compile(
     r"p\.\s?iva|collaborazion|lavora\s+con\s+noi|gesucht|wir\s+suchen|stellenangebot|graduatori", re.I)
 
 
-def e_notizia(titolo: str, url: str, sommario: str = "") -> bool:
+# Notizie di politica sanitaria e sindacali (giro del 18/11, Nurse Times «Sanità privata: … tavolo … Parlamento»):
+# il sommario dell'avviso può contenere parole da offerta («assunzioni», «contratto»), ma resta una notizia.
+_RE_TITOLO_POLITICA = re.compile(
+    r"parlament|\bgoverno\b|ministr[oaie]|manovra|emendament|legge\s+di\s+bilancio|\btavolo\b|accreditament|"
+    r"diffid|vertenz|rinnovo\s+(?:del\s+)?contratt|interrogazion|mozion", re.I)
+_RE_SINDACATI = re.compile(
+    r"\b(?:fp\s+cgil|cisl\s+fp|uil\s+fp|nursind|nursing\s+up|fials)\b|politica\s*&\s*sindacat", re.I)
+
+
+def e_notizia(titolo: str, url: str, sommario: str = "", testo: str = "") -> bool:
     """Articolo di giornale su infermieri, senza nulla che lo faccia somigliare a un'offerta."""
-    if _RE_SEGNALE_OFFERTA.search(f"{titolo} {sommario}"):
+    if _RE_SEGNALE_OFFERTA.search(titolo):
+        return False
+    if _RE_TITOLO_POLITICA.search(titolo) or _RE_SINDACATI.search(f"{sommario} {(testo or '')[:400]}"):
+        return True
+    if _RE_SEGNALE_OFFERTA.search(sommario):
         return False
     return bool(_RE_TITOLO_NOTIZIA.search(titolo) or _RE_SEZIONE_NOTIZIE.search(url or ""))
 

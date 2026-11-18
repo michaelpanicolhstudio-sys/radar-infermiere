@@ -281,6 +281,15 @@ _o1 = motore._costruisci({"titolo": "Infermieri RSA zona Rovereto", "url": "http
 _o2 = motore._costruisci({"titolo": "Trento, l'ospedale cerca infermieri: aperto il bando", "url": "https://www.ladige.it/territori/trento/bando-infermieri-1"},
                          "Il bando per infermieri a tempo determinato scade il 30 novembre 2026.", None, _fa, CFG, COMUNI, OGGI, [])
 verifica("feed: offerte vere (anche su un giornale) restano", (_o1[0] is not None, _o2[0] is not None), (True, True))
+# Giro del 18/11: un articolo di Nurse Times sulla sanità privata (sindacati, Parlamento) era una «novità» P.IVA.
+_n3 = motore._costruisci({"titolo": "Sanità privata: 10 giorni per aprire il tavolo. E in Parlamento spunta il rinnovo automatico ...",
+                          "url": "https://nursetimes.org/sanita-privata-10-giorni-per-aprire-il-tavolo-e-in-parlamento-spunta-il-rinnovo-automatico-degli-accreditamenti",
+                          "sommario": "Fp Cgil, Cisl Fp e Uil Fp hanno diffidato Aiop: assunzioni e contratto degli infermieri delle RSA, anche in partita IVA"},
+                         "Infermieri NT News Politica & Sindacato Sanità privata: 10 giorni per aprire il tavolo. Fp Cgil, Cisl Fp e Uil Fp hanno diffidato Aiop… 500 euro al mese, notti, Bolzano",
+                         None, _fa, CFG, COMUNI, OGGI, [])
+verifica("feed: notizia sindacale o politica non è un'offerta", (_n3[0], _n3[1]), (None, "notizia, non un'offerta di lavoro"))
+verifica("feed: titolo con offerta vince anche se il testo cita i sindacati",
+         estrai.e_notizia("APSP di Mori cerca infermieri", "https://x.it/a", "Fp Cgil soddisfatta"), False)
 _mem = {"n": {"id": "n", "titolo": "Trento , infermiere aggredito al Santa Chiara: la Uil chiede più sicurezza - L'Adige",
               "url": "https://www.ladige.it/territori/trento/x", "tipo_fonte": "rss", "fonte": "Google Alerts 4",
               "estratto": "", "ultimo_visto": "2026-11-12", "primo_visto": "2026-11-12", "scadenza": None}}
