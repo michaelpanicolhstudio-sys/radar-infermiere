@@ -1489,10 +1489,7 @@
    "scartati": []
   },
   "Google Alerts 5": {
-   "accettati": [
-    "Il Contratto Aris Rsa è fermo al 2012, il diritto del lavoro no - Nurse Times",
-    "Bolzano , infermiere in prova licenziato per inedeguatezza: respinto il ricorso per mobbin"
-   ],
+   "accettati": [],
    "pagine": [
     {
      "candidati": 2,
@@ -1501,7 +1498,16 @@
      "url": "feed"
     }
    ],
-   "scartati": [],
+   "scartati": [
+    [
+     "Il Contratto Aris Rsa è fermo al 2012, il diritto del lavoro no - Nurse Times",
+     "notizia, non un'offerta di lavoro"
+    ],
+    [
+     "Bolzano , infermiere in prova licenziato per inedeguatezza: respinto il ricorso per mobbin",
+     "notizia, non un'offerta di lavoro"
+    ]
+   ],
    "senza_pdf": [
     {
      "link": [
@@ -1696,8 +1702,17 @@
    ]
   },
   "Gruppo Bonvicini – lavora con noi": {
-   "accettati": [],
-   "pagine": [],
+   "accettati": [
+    "Lavora con noi"
+   ],
+   "pagine": [
+    {
+     "caratteri": 828,
+     "inizio": "Lavora con noi Posizioni aperte Vuoi entrare a far parte del nostro team? Qui trovi tutte le figure professionali che cerchiamo in questo momento. Consulta gli annunci, compila il form e inviaci la tua candidatura. Farmacista a tempo pieno Farmacie Bonvicini Tempo pieno Candidati Fisioterapista per pazienti interni Casa di Cura Bonvicini Tempo pieno: terapie manuali, terapie strumentali, idrokines",
+     "pdf": [],
+     "url": "https://www.gruppobonvicini.it/lavora-con-noi/"
+    }
+   ],
    "scartati": []
   },
   "Martinsbrunn Merano – Job & Karriere": {
@@ -1750,8 +1765,7 @@
    ],
    "pagine": [
     {
-     "candidati": 0,
-     "link_in_pagina": [],
+     "candidati": 20,
      "url": "https://www.opibz.it/?page_id=5109"
     }
    ],

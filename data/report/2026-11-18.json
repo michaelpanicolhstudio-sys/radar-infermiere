@@ -1,45 +1,13 @@
 {
  "aggiornati": [],
- "attivi": 30,
- "attivi_piva": 12,
+ "attivi": 28,
+ "attivi_piva": 10,
  "data": "2026-11-18",
  "fonti_lette": 36,
  "fonti_totali": 36,
- "giri": 9,
- "nuovi": [
-  {
-   "cambi": [],
-   "compenso": null,
-   "contratto": "P.IVA / libera professione",
-   "datore": "Rsa è fermo al 2012",
-   "id": "30a490bf594d",
-   "minuti": 35,
-   "piva": true,
-   "punteggio": 59,
-   "scadenza": null,
-   "titolo": "Il Contratto Aris Rsa è fermo al 2012, il diritto del lavoro no - Nurse Times",
-   "url": "https://nursetimes.org/il-contratto-aris-rsa-e-fermo-al-2012-il-diritto-del-lavoro-no",
-   "zona": "Bolzano"
-  },
-  {
-   "cambi": [],
-   "compenso": null,
-   "contratto": "P.IVA o dipendente",
-   "datore": "ASDAA / SABES",
-   "id": "ed9a697ac1b5",
-   "minuti": 35,
-   "piva": true,
-   "punteggio": 49,
-   "scadenza": null,
-   "titolo": "Bolzano , infermiere in prova licenziato per inedeguatezza: respinto il ricorso per mobbing",
-   "url": "https://nursetimes.org/bolzano-infermiere-in-prova-licenziato-per-inedeguatezza-respinto-il-ricorso-per-mobbing",
-   "zona": "Bolzano"
-  }
- ],
- "problemi": [
-  "OPI Bolzano – offerte di lavoro: oggi nessun annuncio nell'elenco, mentre prima ce n'erano (ultima lettura buona: 2026-11-18). Il sito potrebbe aver cambiato struttura.",
-  "Gruppo Bonvicini – lavora con noi: risposta HTTP 202"
- ],
+ "giri": 10,
+ "nuovi": [],
+ "problemi": [],
  "scadenze7": [
   {
    "cambi": [],
@@ -152,20 +120,6 @@
    "cambi": [],
    "compenso": null,
    "contratto": "P.IVA / libera professione",
-   "datore": "Rsa è fermo al 2012",
-   "id": "30a490bf594d",
-   "minuti": 35,
-   "piva": true,
-   "punteggio": 59,
-   "scadenza": null,
-   "titolo": "Il Contratto Aris Rsa è fermo al 2012, il diritto del lavoro no - Nurse Times",
-   "url": "https://nursetimes.org/il-contratto-aris-rsa-e-fermo-al-2012-il-diritto-del-lavoro-no",
-   "zona": "Bolzano"
-  },
-  {
-   "cambi": [],
-   "compenso": null,
-   "contratto": "P.IVA / libera professione",
    "datore": "Italiassistenza spa",
    "id": "1a836b7c1e81",
    "minuti": 35,
@@ -175,6 +129,20 @@
    "titolo": "Infermiere/a con partita IVA – Bolzano e provincia",
    "url": "https://it.indeed.com/q-infermiere-l-trentino-alto-adige-offerte-lavoro.html?nis=5&ch=1",
    "zona": "Bolzano"
+  },
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": "P.IVA / libera professione",
+   "datore": "CHC Italy (Cerba HealthCare)",
+   "id": "507e1f139787",
+   "minuti": 25,
+   "piva": true,
+   "punteggio": 55,
+   "scadenza": null,
+   "titolo": "Infermiere P.IVA (TN)",
+   "url": "https://it.indeed.com/q-infermiere-professionale-l-rovereto,-trentino-alto-adige-offerte-lavoro.html",
+   "zona": "Trento"
   }
  ]
 }
