@@ -692,5 +692,20 @@ verifica("date con etichetta", _sr.date_trovate("Check-in 3 dicembre 2026, check
 verifica("data passata ignorata", _sr.date_trovate("scadenza 01/10/2026", _oggi), [])
 verifica("importo", _sr.importo("Totale da pagare € 84,30 entro"), "84,30 €")
 
+# Esiti scritti a mano: vincono sulla lettura automatica finché la struttura non scrive di nuovo.
+from radar import invio as _inv
+_tm = Path(tempfile.mkdtemp()) / "esiti.json"
+_tm.write_text('{"_nota": "x", "s:a": {"esito": "più avanti", "aggiornato": "2026-11-18", "prossimo": "CV inviato"}}', encoding="utf-8")
+verifica("esiti a mano: letti e senza le note", _inv.esiti_manuali(_tm), {"s:a": {"esito": "più avanti", "aggiornato": "2026-11-18", "prossimo": "CV inviato"}})
+_orig = _inv.esiti_manuali
+_inv.esiti_manuali = lambda percorso=None: _orig(_tm)
+_c = {"s:a": {"inviata_il": "2026-11-17", "risposte": [{"data": "2026-11-18", "testo": "Al momento non abbiamo bisogno"}], "mie_risposte": [{"data": "2026-11-18"}]}}
+_r = _inv.resoconto([{"chiave": "s:a", "nome": "A", "comune": "Mori", "minuti": 45}], {}, _c, CFG)[0]
+verifica("esiti a mano: esito, prossimo passo e mia risposta", (_r["esito"], _r["prossimo"], _r["mia_risposta_il"]), ("più avanti", "CV inviato", "2026-11-18"))
+_c["s:a"]["risposte"].append({"data": "2026-11-20", "testo": "Siamo interessati"})
+_r = _inv.resoconto([{"chiave": "s:a", "nome": "A", "comune": "Mori", "minuti": 45}], {}, _c, CFG)[0]
+verifica("esiti a mano: nuova risposta dopo l'aggiornamento li sospende", (_r["esito"] != "più avanti", _r["prossimo"]), (True, None))
+_inv.esiti_manuali = _orig
+
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

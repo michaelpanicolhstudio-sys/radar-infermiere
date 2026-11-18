@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import hashlib
 import os
+import json
 import re
 import smtplib
 import time
@@ -201,9 +202,20 @@ def leggi_esito(testo: str) -> dict:
             "da_quando": m.group(0) if m else None}
 
 
+def esiti_manuali(percorso: Path | None = None) -> dict:
+    """Esiti e prossimi passi scritti a mano in data/esiti.json (chiave della struttura → esito, prossimo, aggiornato)."""
+    percorso = percorso or motore.RADICE / "data" / "esiti.json"
+    try:
+        dati = json.loads(percorso.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    return {k: v for k, v in dati.items() if not k.startswith("_") and isinstance(v, dict)}
+
+
 def resoconto(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict) -> list[dict]:
     nomi = {s["chiave"]: s for s in strutture}
     par = conti.parametri(cfg)
+    manuali = esiti_manuali()
     righe = []
     for chiave, c in contatti.items():
         if not c.get("inviata_il"):
@@ -214,17 +226,24 @@ def resoconto(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict) -
         ultima = risposte[-1] if risposte else None
         esito = leggi_esito(" ".join(r.get("testo") or "" for r in risposte)) if risposte else {}
         incontro = next((r["incontro"] for r in reversed(risposte) if r.get("incontro")), None)
+        mano = manuali.get(chiave) or {}
+        if mano and ultima and ultima.get("data", "") > mano.get("aggiornato", ""):
+            mano = {}  # la struttura ha scritto di nuovo: l'esito scritto a mano va riletto
+        mie = c.get("mie_risposte") or []
         riga = {"chiave": chiave, "nome": s.get("nome") or a.get("datore") or a.get("titolo") or chiave,
                 "comune": s.get("comune") or a.get("zona"), "minuti": s.get("minuti", a.get("minuti")), "km": s.get("km", a.get("km")),
                 "inviata_il": c["inviata_il"], "risposta_il": ultima.get("data") if ultima else None,
                 "esito": esito.get("esito") or "in attesa", "rapporto": esito.get("rapporto"),
                 "compenso": esito.get("compenso"), "euro_ora": esito.get("euro_ora"), "turni": esito.get("turni"),
-                "da_quando": esito.get("da_quando"), "incontro": incontro, "netto_ora": None, "turni_obiettivo": None}
+                "da_quando": esito.get("da_quando"), "incontro": incontro, "netto_ora": None, "turni_obiettivo": None,
+                "mia_risposta_il": mie[-1].get("data") if mie else None, "prossimo": mano.get("prossimo")}
+        if mano.get("esito"):
+            riga["esito"] = mano["esito"]
         if riga["euro_ora"]:
             calcolo = conti.conto_offerta({"euro_ora": riga["euro_ora"], "km": riga["km"] or 0, "minuti": riga["minuti"] or 0}, par)
             riga["netto_ora"], riga["turni_obiettivo"] = calcolo["netto_ora_porta_a_porta"], calcolo["turni_per_obiettivo"]
         righe.append(riga)
-    ordine = {"sì": 0, "da leggere": 1, "in attesa": 2, "no": 3}
+    ordine = {"da fare": 0, "sì": 1, "da leggere": 2, "più avanti": 3, "in attesa": 4, "no": 5}
     return sorted(righe, key=lambda r: (ordine.get(r["esito"], 9), -(r["euro_ora"] or 0), r["minuti"] if r["minuti"] is not None else 999))
 
 
@@ -234,14 +253,14 @@ def scrivi_resoconto_excel(righe: list[dict], percorso: Path) -> Path:
     wb = Workbook()
     ws = wb.active
     ws.title = "Resoconto contatti"
-    intestazione = ["Struttura", "Comune", "Minuti", "Inviata il", "Risposta il", "Esito", "Rapporto", "Compenso",
+    intestazione = ["Struttura", "Comune", "Minuti", "Inviata il", "Risposta il", "Esito", "Prossimo passo", "Rapporto", "Compenso",
                     "€/h", "Netto €/h col viaggio", "Turni/mese per l'obiettivo", "Turni e orari", "Da quando", "Incontro"]
     ws.append(intestazione)
     for cella in ws[1]:
         cella.font = Font(bold=True)
-    colori = {"sì": "E3F1E3", "no": "F6E1E1", "da leggere": "FFF4CC"}
+    colori = {"sì": "E3F1E3", "no": "F6E1E1", "da leggere": "FFF4CC", "da fare": "FFE2C2", "più avanti": "E6EEF7"}
     for r in righe:
-        ws.append([r["nome"], r["comune"], r["minuti"], r["inviata_il"], r["risposta_il"], r["esito"], r["rapporto"],
+        ws.append([r["nome"], r["comune"], r["minuti"], r["inviata_il"], r["risposta_il"], r["esito"], r.get("prossimo"), r["rapporto"],
                    r["compenso"], r["euro_ora"], r["netto_ora"], r["turni_obiettivo"], r["turni"], r["da_quando"],
                    (r["incontro"]["data"] + (" " + r["incontro"]["ora"] if r["incontro"].get("ora") else "")) if r["incontro"] else None])
         if r["esito"] in colori:

@@ -12,6 +12,7 @@
   var RADAR_GIA_ANIMATO = false;
   var MESI = ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"];
   var ETICHETTE = { interessante: "Interessante", contattato: "Contattato", scartato: "Scartato" };
+  var ETICHETTE_ESITO = { "da fare": "Tocca a te", "sì": "Interessati", "più avanti": "Più avanti", "no": "Non ora", "da leggere": "Da leggere", "in attesa": "In attesa" };
   var NS = "http://www.w3.org/2000/svg";
 
   // ---------- memoria sul telefono (stati e note) ----------
@@ -307,7 +308,17 @@
       });
     }
     var conRisposta = DATI.offerte.filter(function (o) { return o.contatto && o.contatto.risposte.length; });
-    if (conRisposta.length) { v.appendChild(titoloSezione("Hanno risposto")); elenco(v, conRisposta, {}, ""); }
+    var strutRisp = (DATI.resoconto || []).filter(function (r) { return r.esito !== "in attesa" && !trova(r.chiave); });
+    if (conRisposta.length || strutRisp.length) {
+      v.appendChild(titoloSezione("Hanno risposto", strutRisp.length ? plurale(strutRisp.length, "struttura", "strutture") : null));
+      strutRisp.forEach(function (r) {
+        var dove = r.comune ? r.comune + (r.minuti !== null && r.minuti !== undefined ? ", " + r.minuti + " min" : "") : "";
+        v.appendChild(el("button", { class: "avviso tocco" + (r.esito === "da fare" ? "" : " neutro"), onclick: function () { ALTRO = "contatti"; cambiaVista("altro"); } },
+          el("b", { text: r.nome }), document.createTextNode(" · " + (ETICHETTE_ESITO[r.esito] || r.esito) + (dove ? " · " + dove : "")),
+          r.prossimo ? el("small", { style: "display:block", text: r.prossimo }) : null));
+      });
+      if (conRisposta.length) elenco(v, conRisposta, {}, "");
+    }
     var daScrivere = attive.filter(function (o) { return o.da_contattare && !mio(o.id).inviata; });
     if (daScrivere.length) {
       v.appendChild(titoloSezione("Da contattare oggi", plurale(daScrivere.length, "email pronta", "email pronte")));
@@ -862,7 +873,7 @@
   function vistaContatti(v) {
     var info = DATI.invio || {}, righe = DATI.resoconto || [], coda = DATI.lettere || [];
     var risposte = righe.filter(function (r) { return r.esito !== "in attesa"; });
-    var si = righe.filter(function (r) { return r.esito === "sì"; });
+    var si = righe.filter(function (r) { return r.esito === "sì" || r.esito === "da fare"; });
     v.appendChild(el("p", { class: "sommario" },
       el("b", { text: plurale(info.inviate || 0, "lettera inviata", "lettere inviate") }), document.createTextNode(", "),
       el("b", { text: plurale(risposte.length, "risposta", "risposte") }), document.createTextNode(" (" + si.length + " interessate), "),
@@ -876,9 +887,11 @@
     if (!righe.length) v.appendChild(el("p", { class: "vuoto", text: "Ancora nessuna lettera inviata. Le risposte compariranno qui con compenso, turni e disponibilità." }));
     righe.forEach(function (r) {
       var d = el("details", { class: "rep" });
-      var etichetta = { "sì": "Interessati", "no": "Non interessati", "da leggere": "Da leggere", "in attesa": "In attesa" }[r.esito] || r.esito;
-      d.appendChild(el("summary", {}, el("span", { text: r.nome }), el("small", { text: etichetta + (r.euro_ora ? ", " + r.euro_ora + " €/h" : "") })));
-      d.appendChild(el("div", { class: "dati" },
+      var etichetta = ETICHETTE_ESITO[r.esito] || r.esito;
+      var dove = r.comune ? r.comune + (r.minuti !== null && r.minuti !== undefined ? " (" + r.minuti + " min)" : "") : "";
+      d.appendChild(el("summary", {}, el("span", { text: r.nome }), el("small", { text: etichetta + (dove ? ", " + dove : "") + (r.euro_ora ? ", " + r.euro_ora + " €/h" : "") })));
+      if (r.prossimo) d.appendChild(el("p", { class: "nota", text: "Prossimo passo: " + r.prossimo }));
+      d.appendChild(el("div", { class: "dati" }, dato("Dove", dove || null), dato("Hai risposto", r.mia_risposta_il ? giorno(r.mia_risposta_il) : null),
         dato("Inviata", giorno(r.inviata_il)), dato("Risposta", r.risposta_il ? giorno(r.risposta_il) : null),
         dato("Rapporto", r.rapporto), dato("Compenso", r.compenso), dato("Netto/ora", r.netto_ora ? r.netto_ora.toLocaleString("it-IT") + " € col viaggio" : null),
         dato("Turni", r.turni), dato("Da quando", r.da_quando),
