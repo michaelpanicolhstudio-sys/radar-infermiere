@@ -1229,50 +1229,6 @@
     ]
    ]
   },
-  "Avvisi email – Adecco": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Etjca": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Gi Group": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Indeed": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – InfoJobs": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Jobrapido": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – LinkedIn": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Manpower": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Openjobmetis": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Randstad": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Umana": {
-   "accettati": 0,
-   "candidati": 0
-  },
   "Brixsana Bressanone – Karriere": {
    "accettati": [
     "Infermiere/a (KrankenpflegerIn) – tempo pieno, da subito"
@@ -1753,8 +1709,8 @@
    ],
    "pagine": [
     {
-     "caratteri": 345,
-     "inizio": "Freiberufliche Tätigkeit in der Pflege Sozialgenossenschaft Zum Heiligen Vinzenz Wiesen, Pfitsch Vollzeit Teilzeit Freelancer Projektarbeit 17.11.2026 Sozialgenossenschaft Zum Heiligen Vinzenz Traustonstr. 190 , 39049 Wiesen-Pfitsch Personalabteilung +39 0472 765179 info@schlossmoos.it +39 0472 765179 info@schlossmoos.it Zum Arbeitgeber Profil",
+     "caratteri": 702,
+     "inizio": "Freiberufliche Tätigkeit in der Pflege Sozialgenossenschaft Zum Heiligen Vinzenz Wiesen, Pfitsch Vollzeit Teilzeit Freelancer Projektarbeit 17.11.2026 Sozialgenossenschaft Zum Heiligen Vinzenz Traustonstr. 190 , 39049 Wiesen-Pfitsch Personalabteilung +39 0472 765179 info@schlossmoos.it +39 0472 765179 info@schlossmoos.it Al profilo aziendale Posti di lavoro simili Sozialbetreuer*in Vollzeit / Teil",
      "pdf": [],
      "url": "https://www.suedtirolerjobs.it/jobs/freiberufliche-taetigkeit-in-der-pflege,115073"
     }
@@ -1955,7 +1911,7 @@
    "scartati": []
   }
  },
- "richieste": 104,
+ "richieste": 103,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }
