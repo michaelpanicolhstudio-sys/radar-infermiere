@@ -1229,50 +1229,6 @@
     ]
    ]
   },
-  "Avvisi email – Adecco": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Etjca": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Gi Group": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Indeed": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – InfoJobs": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Jobrapido": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – LinkedIn": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Manpower": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Openjobmetis": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Randstad": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Umana": {
-   "accettati": 0,
-   "candidati": 0
-  },
   "Brixsana Bressanone – Karriere": {
    "accettati": [
     "Infermiere/a (KrankenpflegerIn) – tempo pieno, da subito"
@@ -1490,16 +1446,111 @@
    "scartati": []
   },
   "Google Alerts 5": {
-   "accettati": [],
+   "accettati": [
+    "Il Contratto Aris Rsa è fermo al 2012, il diritto del lavoro no - Nurse Times",
+    "Bolzano , infermiere in prova licenziato per inedeguatezza: respinto il ricorso per mobbin"
+   ],
    "pagine": [
     {
-     "candidati": 0,
-     "caratteri": 421,
+     "candidati": 2,
+     "caratteri": 2182,
      "titolo_feed": "Google Alert - infermiere Bolzano OR \"Alto Adige\" lavoro",
      "url": "feed"
     }
    ],
-   "scartati": []
+   "scartati": [],
+   "senza_pdf": [
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30649.css?ver=1794960938"
+      ],
+      [
+       "link",
+       "",
+       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30648.css?ver=1794960938"
+      ],
+      [
+       "link",
+       "",
+       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30646.css?ver=1794960938"
+      ],
+      [
+       "link",
+       "",
+       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30644.css?ver=1794960938"
+      ],
+      [
+       "link",
+       "",
+       "https://nursetimes.org/wp-content/uploads/complianz/css/banner-1-optin.css?ver=1793837751"
+      ],
+      [
+       "link",
+       "",
+       "https://nursetimes.org/wp-content/uploads/2024/11/cropped-favicon3-32x32.jpg"
+      ],
+      [
+       "link",
+       "",
+       "https://nursetimes.org/wp-content/uploads/2024/11/cropped-favicon3-192x192.jpg"
+      ],
+      [
+       "link",
+       "",
+       "https://nursetimes.org/wp-content/uploads/2024/11/cropped-favicon3-180x180.jpg"
+      ]
+     ],
+     "url": "https://nursetimes.org/il-contratto-aris-rsa-e-fermo-al-2012-il-diritto-del-lavoro-no"
+    },
+    {
+     "link": [
+      [
+       "link",
+       "",
+       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30649.css?ver=1794960938"
+      ],
+      [
+       "link",
+       "",
+       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30648.css?ver=1794960938"
+      ],
+      [
+       "link",
+       "",
+       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30646.css?ver=1794960938"
+      ],
+      [
+       "link",
+       "",
+       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30644.css?ver=1794960938"
+      ],
+      [
+       "link",
+       "",
+       "https://nursetimes.org/wp-content/uploads/complianz/css/banner-1-optin.css?ver=1793837751"
+      ],
+      [
+       "link",
+       "",
+       "https://nursetimes.org/wp-content/uploads/2024/11/cropped-favicon3-32x32.jpg"
+      ],
+      [
+       "link",
+       "",
+       "https://nursetimes.org/wp-content/uploads/2024/11/cropped-favicon3-192x192.jpg"
+      ],
+      [
+       "link",
+       "",
+       "https://nursetimes.org/wp-content/uploads/2024/11/cropped-favicon3-180x180.jpg"
+      ]
+     ],
+     "url": "https://nursetimes.org/bolzano-infermiere-in-prova-licenziato-per-inedeguatezza-respinto-il-ricorso-per-mobbing"
+    }
+   ]
   },
   "Google Alerts 6": {
    "accettati": [],
@@ -1599,17 +1650,8 @@
    ]
   },
   "Gruppo Bonvicini – lavora con noi": {
-   "accettati": [
-    "Lavora con noi"
-   ],
-   "pagine": [
-    {
-     "caratteri": 828,
-     "inizio": "Lavora con noi Posizioni aperte Vuoi entrare a far parte del nostro team? Qui trovi tutte le figure professionali che cerchiamo in questo momento. Consulta gli annunci, compila il form e inviaci la tua candidatura. Farmacista a tempo pieno Farmacie Bonvicini Tempo pieno Candidati Fisioterapista per pazienti interni Casa di Cura Bonvicini Tempo pieno: terapie manuali, terapie strumentali, idrokines",
-     "pdf": [],
-     "url": "https://www.gruppobonvicini.it/lavora-con-noi/"
-    }
-   ],
+   "accettati": [],
+   "pagine": [],
    "scartati": []
   },
   "Martinsbrunn Merano – Job & Karriere": {
@@ -1644,50 +1686,15 @@
    "scartati": []
   },
   "OPI Bolzano – offerte di lavoro": {
-   "accettati": [
-    "CERCHIAMO INFERMIERE:I (m/f/d) per la nostra RSA Ciasa de Palsa Ojöp Frëinademetz",
-    "La casa di riposo di Silandro cerca nuovi collaboratori/trici",
-    "CERCASI INFERMIERE/A PER EMODIALISI DOMICILIARE – BOLZANO"
-   ],
+   "accettati": [],
    "pagine": [
     {
-     "candidati": 20,
+     "candidati": 0,
+     "link_in_pagina": [],
      "url": "https://www.opibz.it/?page_id=5109"
     }
    ],
-   "scartati": [],
-   "senza_pdf": [
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://www.opibz.it/wp-content/uploads/fusion-styles/175330e909f7312ffc638c988b91ff40.min.css?ver=3.17"
-      ]
-     ],
-     "url": "https://www.opibz.it/cerchiamo-infermierei-m-f-d-per-la-nostra-rsa-ciasa-de-palsa-ojop-freinademetz/"
-    },
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://www.opibz.it/wp-content/uploads/fusion-styles/175330e909f7312ffc638c988b91ff40.min.css?ver=3.17"
-      ]
-     ],
-     "url": "https://www.opibz.it/la-casa-di-riposo-di-silandro-cerca-nuovi-collaboratori-trici/"
-    },
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://www.opibz.it/wp-content/uploads/fusion-styles/175330e909f7312ffc638c988b91ff40.min.css?ver=3.17"
-      ]
-     ],
-     "url": "https://www.opibz.it/cercasi-infermiere-a-per-emodialisi-domiciliare-bolzano/"
-    }
-   ]
+   "scartati": []
   },
   "OPI Trento – annunci di lavoro": {
    "accettati": [
@@ -2004,7 +2011,7 @@
    "scartati": []
   }
  },
- "richieste": 105,
+ "richieste": 104,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }
