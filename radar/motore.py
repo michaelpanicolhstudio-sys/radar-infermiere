@@ -406,8 +406,12 @@ def raccogli_fonte(fonte: dict, rete, cfg: dict, comuni: list[dict], oggi: date,
         ident = estrai.id_annuncio(cand["url"])
         vecchio = memoria.get(ident)
         scarto = scarti.get(ident)
-        if scarto and (oggi - date.fromisoformat(scarto["d"])).days < giorni_scarti and scarto.get("t") == cand["titolo"][:90]:
+        if scarto and (oggi - date.fromisoformat(scarto["d"])).days < giorni_scarti and scarto.get("t") == cand["titolo"][:90] \
+                and scarto.get("u"):  # gli scarti di prima del 18/11 senza indirizzo si riaprono una volta
             esito["scartati"] += 1  # già aperto e scartato di recente: non si riapre
+            # ...ma resta visibile in diagnostica, con titolo intero e indirizzo, per un controllo a mano.
+            nota.setdefault("gia_scartati", []).append(
+                [cand["titolo"][:200], scarto.get("m"), cand["url"], scarto["d"]])
             continue
         if vecchio and _riusabile(vecchio, oggi, cfg):
             esito["annunci"].append({**vecchio, "_riusato": True})
@@ -420,9 +424,11 @@ def raccogli_fonte(fonte: dict, rete, cfg: dict, comuni: list[dict], oggi: date,
             scarti.pop(ident, None)
             nota["accettati"].append(a["titolo"][:90])
         else:
-            scarti[ident] = {"d": oggi.isoformat(), "m": motivo, "t": cand["titolo"][:90]}
+            scarti[ident] = {"d": oggi.isoformat(), "m": motivo, "t": cand["titolo"][:90], "u": cand["url"]}
+            if len(cand["titolo"]) > 90:
+                scarti[ident]["tl"] = cand["titolo"][:200]  # «t» resta a 90 lettere: serve al confronto
             esito["scartati"] += 1
-            nota["scartati"].append([cand["titolo"][:90], motivo])
+            nota["scartati"].append([cand["titolo"][:200], motivo, cand["url"]])
     for ident, scarto in list(scarti.items()):
         if (oggi - date.fromisoformat(scarto["d"])).days > 45:
             del scarti[ident]

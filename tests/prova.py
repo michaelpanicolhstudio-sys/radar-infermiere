@@ -220,7 +220,7 @@ verifica("pagina fissa: la data della pagina non conta", per_url["lavora"]["pubb
 verifica("giorno 1: primo in classifica", r1["top5"][0]["datore"], "A.P.S.P. C. Vannetti")
 verifica("giorno 1: solo la fonte rotta è segnalata (l'elenco vuoto previsto no)", r1["problemi"], ["Rotta: risposta HTTP 404"])
 diag = motore.leggi_json(motore.FILE_DIAGNOSTICA, {})
-verifica("diagnostica: scarti con motivo", diag["fonti"]["Ente"]["scartati"], [["Cooperativa Sociale Stella Montis – ricerca di personale", "ruolo diverso (coordinamento, direzione o comando)"]])
+verifica("diagnostica: scarti con motivo e indirizzo", diag["fonti"]["Ente"]["scartati"], [["Cooperativa Sociale Stella Montis – ricerca di personale", "ruolo diverso (coordinamento, direzione o comando)", "https://ente.it/stella-montis/"]])
 verifica("diagnostica: esplorazione", diag["esplora"][0]["url"], "https://clinica.it/lavora/")
 
 # Giorno 2: elenco in manutenzione, niente deve sparire; il PDF non si riscarica; lo scarto non si riapre.
@@ -701,6 +701,27 @@ verifica("stesso datore: l'avviso dice da dove viene l'email", any(x.startswith(
          if hasattr(motore, "AVVISO_DAL_DATORE") else False, True)
 motore.segna_doppioni(m8, OGGI)
 verifica("stesso datore: l'avviso non si ripete a ogni giro", sum("stesso datore" in x for x in m8["g"]["avvisi"]), 1)
+
+print("Revisione del 18/11 sera")
+# 18/11: ASUIT ha scartato «AVVISO DI SELEZIONE PUBBLICA … INCARICHI LIBERO PROFESSIONA…» come «non riguarda infermieri»,
+# ma lo scarto teneva solo 90 lettere e nessun indirizzo, e nei giri dopo non compariva più in diagnostica:
+# impossibile capire se era un avviso per medici o un errore del Radar.
+_tit_lp = ("AVVISO DI SELEZIONE PUBBLICA SELEZIONE PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONALI "
+           "A MEDICI SPECIALISTI IN ANESTESIA PER LE ESIGENZE DELL'OSPEDALE DI CLES")
+_el_lp = f'<html><body><ul><li><a href="https://asl.it/bandi/lp-medici">{_tit_lp}</a></li></ul></body></html>'
+_f_lp = {"nome": "ASL", "tipo": "elenco", "url": "https://asl.it/bandi", "affidabilita": "ufficiale",
+         "parole_link": ["libero profession", "infermier"]}
+_rete_lp = ReteFinta({"https://asl.it/bandi": _el_lp,
+                      "https://asl.it/bandi/lp-medici": art(_tit_lp, "Incarichi a medici anestesisti. " + "Requisiti: specializzazione. " * 20)})
+_st_lp, _di_lp = {}, {}
+motore.raccogli_fonte(_f_lp, _rete_lp, CFG, COMUNI, OGGI, {}, _st_lp, _di_lp)
+_sc_lp = next(iter(_st_lp.get("scarti", {}).values()), {})
+verifica("scarto: si ricorda l'indirizzo", _sc_lp.get("u"), "https://asl.it/bandi/lp-medici")
+verifica("scarto: si ricorda il titolo intero", "MEDICI" in (_sc_lp.get("tl") or ""), True)
+_di_lp2 = {}
+motore.raccogli_fonte(_f_lp, _rete_lp, CFG, COMUNI, OGGI, {}, _st_lp, _di_lp2)
+verifica("scarto ricordato: resta visibile in diagnostica con indirizzo",
+         [(x[1], x[2]) for x in _di_lp2["ASL"].get("gia_scartati", [])], [(_sc_lp.get("m"), "https://asl.it/bandi/lp-medici")])
 
 print("\nSentinella (posta personale)")
 from datetime import date as _d
