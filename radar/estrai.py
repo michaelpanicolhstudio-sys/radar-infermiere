@@ -952,7 +952,8 @@ _RE_SEZIONE_NOTIZIE = re.compile(r"/(cronaca|attualita|notizie|news|territori|po
 _RE_TITOLO_NOTIZIA = re.compile(
     r"aggredit|aggression|violenz|spinton|picchiat|minacc|denunci|sindacat|\buil\b|\bcgil\b|\bcisl\b|nursind|"
     r"sciopero|protesta|incidente|\bmort[oaie]\b|arrestat|indagat|condannat|processo|tribunale|"
-    r"carenza\s+di\s+(?:personale|infermieri)|mancano\s+(?:gli\s+)?infermieri|polemica", re.I)
+    r"carenza\s+di\s+(?:personale|infermieri)|mancano\s+(?:gli\s+)?infermieri|polemica|"
+    r"licenziat|mobbing|ricors[oi]\b|sentenz|cassazione|\btar\b|giudice|diritto\s+del\s+lavoro", re.I)
 # Segnali di un'offerta vera: se ci sono, l'articolo (o l'annuncio sul giornale) resta.
 _RE_SEGNALE_OFFERTA = re.compile(
     r"\bcerc[ahoi]|\bricerc[ah]|selezion|avviso\s+pubblico|\bbando|concors|assum|assunzion|incaric|"
@@ -966,7 +967,8 @@ _RE_TITOLO_POLITICA = re.compile(
     r"parlament|\bgoverno\b|ministr[oaie]|manovra|emendament|legge\s+di\s+bilancio|\btavolo\b|accreditament|"
     r"diffid|vertenz|rinnovo\s+(?:del\s+)?contratt|interrogazion|mozion", re.I)
 _RE_SINDACATI = re.compile(
-    r"\b(?:fp\s+cgil|cisl\s+fp|uil\s+fp|nursind|nursing\s+up|fials)\b|politica\s*&\s*sindacat", re.I)
+    r"\b(?:fp\s+cgil|cisl\s+fp|uil\s+fp|nursind|nursing\s+up|fials)\b|politica\s*&\s*sindacat|"
+    r"\bNT\s+News\b|egregio\s+direttore|lettera\s+al\s+direttore", re.I)
 
 
 def e_notizia(titolo: str, url: str, sommario: str = "", testo: str = "") -> bool:

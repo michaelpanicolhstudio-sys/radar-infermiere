@@ -514,7 +514,7 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str], 
             del memoria[ident]  # riletto e giudicato non pertinente
             continue
         if a.get("tipo_fonte") == "rss":
-            if a.get("origine") != "manuale" and estrai.e_notizia(a.get("titolo") or "", a.get("url") or ""):
+            if a.get("origine") != "manuale" and estrai.e_notizia(a.get("titolo") or "", a.get("url") or "", "", a.get("estratto") or ""):
                 del memoria[ident]  # articolo di giornale entrato con regole vecchie (giro del 16/11)
                 continue
             # Gli avvisi di ricerca scorrono via dal feed: non vuol dire che l'annuncio sia chiuso.

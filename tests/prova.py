@@ -288,6 +288,14 @@ _n3 = motore._costruisci({"titolo": "Sanità privata: 10 giorni per aprire il ta
                          "Infermieri NT News Politica & Sindacato Sanità privata: 10 giorni per aprire il tavolo. Fp Cgil, Cisl Fp e Uil Fp hanno diffidato Aiop… 500 euro al mese, notti, Bolzano",
                          None, _fa, CFG, COMUNI, OGGI, [])
 verifica("feed: notizia sindacale o politica non è un'offerta", (_n3[0], _n3[1]), (None, "notizia, non un'offerta di lavoro"))
+verifica("feed: altre notizie Nurse Times del 18/11 (lettera al direttore, ricorso per mobbing)",
+         (estrai.e_notizia("Il Contratto Aris Rsa è fermo al 2012, il diritto del lavoro no - Nurse Times",
+                           "https://nursetimes.org/il-contratto-aris-rsa-e-fermo-al-2012-il-diritto-del-lavoro-no", ""),
+          estrai.e_notizia("Bolzano , infermiere in prova licenziato per inedeguatezza: respinto il ricorso per mobbing",
+                           "https://nursetimes.org/bolzano-infermiere-in-prova-licenziato", "assunto come infermiere"),
+          estrai.e_notizia("Contratto RSA: cosa cambia", "https://nursetimes.org/x", "",
+                           "Il Direttore Infermieri NT News Profilo professionale Egregio direttore, giorni fa…")),
+         (True, True, True))
 verifica("feed: titolo con offerta vince anche se il testo cita i sindacati",
          estrai.e_notizia("APSP di Mori cerca infermieri", "https://x.it/a", "Fp Cgil soddisfatta"), False)
 _mem = {"n": {"id": "n", "titolo": "Trento , infermiere aggredito al Santa Chiara: la Uil chiede più sicurezza - L'Adige",
