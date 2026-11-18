@@ -1,5 +1,20 @@
 {
  "avvisi": {
+  "Adecco": {
+   "annunci": 0,
+   "email": 0,
+   "esempi": []
+  },
+  "Etjca": {
+   "annunci": 0,
+   "email": 0,
+   "esempi": []
+  },
+  "Gi Group": {
+   "annunci": 0,
+   "email": 0,
+   "esempi": []
+  },
   "Indeed": {
    "altri_link": [
     "Cerca lavoro",
@@ -29,7 +44,27 @@
    "email": 0,
    "esempi": []
   },
+  "Manpower": {
+   "annunci": 0,
+   "email": 0,
+   "esempi": []
+  },
+  "Openjobmetis": {
+   "annunci": 0,
+   "email": 0,
+   "esempi": []
+  },
+  "Randstad": {
+   "annunci": 0,
+   "email": 0,
+   "esempi": []
+  },
   "Segnalati da Michael": {
+   "annunci": 0,
+   "email": 0,
+   "esempi": []
+  },
+  "Umana": {
    "annunci": 0,
    "email": 0,
    "esempi": []
@@ -37,10 +72,17 @@
  },
  "data": "2026-11-18",
  "note": [
-  "• Posta: 30 contatti inviati, 3 risposte nuove",
+  "• Posta: 30 contatti inviati, 0 risposte nuove",
   "• Avvisi di Indeed: 0 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di LinkedIn: 0 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di InfoJobs: 0 annunci per infermieri nelle email degli ultimi giorni",
-  "• Avvisi di Jobrapido: 0 annunci per infermieri nelle email degli ultimi giorni"
+  "• Avvisi di Jobrapido: 0 annunci per infermieri nelle email degli ultimi giorni",
+  "• Avvisi di Adecco: 0 annunci per infermieri nelle email degli ultimi giorni",
+  "• Avvisi di Randstad: 0 annunci per infermieri nelle email degli ultimi giorni",
+  "• Avvisi di Gi Group: 0 annunci per infermieri nelle email degli ultimi giorni",
+  "• Avvisi di Openjobmetis: 0 annunci per infermieri nelle email degli ultimi giorni",
+  "• Avvisi di Manpower: 0 annunci per infermieri nelle email degli ultimi giorni",
+  "• Avvisi di Etjca: 0 annunci per infermieri nelle email degli ultimi giorni",
+  "• Avvisi di Umana: 0 annunci per infermieri nelle email degli ultimi giorni"
  ]
 }
