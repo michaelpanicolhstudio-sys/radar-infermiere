@@ -638,7 +638,7 @@
    "url": "https://www.civicatnapsp.it/"
   },
   {
-   "caratteri": 2142,
+   "caratteri": 2107,
    "inizio": "S. Spirito - Fondazione Montel dal curare al prendersi cura Tutti i servizi Contatti Azienda Pubblica di Servizi alla Persona Orientiamo la nostra attività al rispetto della dignità della persona e alla garanzia del principio di riservatezza. Garantiamo adeguatezza, flessibilità e personalizzazione ",
    "link": [
     [
@@ -1002,8 +1002,7 @@
   "ASUIT – bandi e concorsi": {
    "accettati": [
     "Selezione pubblica, per titoli, per la formazione di graduatorie per assunzioni a tempo de",
-    "SC 03/26 AVVISO APERTO INFERMIERE CAVALESE",
-    "AVVISO DI SELEZIONE PUBBLICA PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONALI A MEDIC"
+    "SC 03/26 AVVISO APERTO INFERMIERE CAVALESE"
    ],
    "pagine": [
     {
@@ -1209,12 +1208,7 @@
      "url": "https://www.asuit.tn.it/bandi-concorsi?page=9"
     }
    ],
-   "scartati": [
-    [
-     "AVVISO DI SELEZIONE PUBBLICA SELEZIONE PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONA",
-     "non riguarda infermieri"
-    ]
-   ]
+   "scartati": []
   },
   "Altenheim Kaltern (Caldaro) – Karriere": {
    "accettati": [],
@@ -1437,44 +1431,7 @@
      "url": "feed"
     }
    ],
-   "scartati": [
-    [
-     "L'ADIGE.IT : « TRENTO , INFERMIERE AGGREDITO AL SANTA CHIARA: LA UIL CHIEDE ...",
-     "notizia, non un'offerta di lavoro"
-    ]
-   ],
-   "senza_pdf": [
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://www.agenziagiornalisticaopinione.it/wp-content/uploads/2020/09/cropped-favicon-32x32.png"
-      ],
-      [
-       "link",
-       "",
-       "https://www.agenziagiornalisticaopinione.it/wp-content/uploads/2020/09/cropped-favicon-192x192.png"
-      ],
-      [
-       "link",
-       "",
-       "https://www.agenziagiornalisticaopinione.it/wp-content/uploads/2020/09/cropped-favicon-180x180.png"
-      ],
-      [
-       "img",
-       "",
-       "https://www.agenziagiornalisticaopinione.it/wp-content/uploads/2026/07/opinione-fonte-clic-long-scaled.png"
-      ],
-      [
-       "script",
-       "",
-       "data:text/javascript;base64,dmFyIGFkdmFkc190cmFja2luZ19hZHM9eyIxIjpbMTY2ODM5MSwxNjUwNzAwLDE2NTA3MDAsMTcwMDc0MSwxNjcyNzA4LDE2NzgzOTUsMTY1NTA1Ml19O3ZhciBhZHZhZHNfdHJhY2tpbmdfdXJscz17IjEiOiJodHRwczpcL1wv"
-      ]
-     ],
-     "url": "https://www.agenziagiornalisticaopinione.it/opinionews-tn-aa/ladige-it-trento-infermiere-aggredito-al-santa-chiara-la-uil-chiede-piu-sicurezza/"
-    }
-   ]
+   "scartati": []
   },
   "Google Alerts 4": {
    "accettati": [],
@@ -1498,108 +1455,7 @@
      "url": "feed"
     }
    ],
-   "scartati": [
-    [
-     "Il Contratto Aris Rsa è fermo al 2012, il diritto del lavoro no - Nurse Times",
-     "notizia, non un'offerta di lavoro"
-    ],
-    [
-     "Bolzano , infermiere in prova licenziato per inedeguatezza: respinto il ricorso per mobbin",
-     "notizia, non un'offerta di lavoro"
-    ]
-   ],
-   "senza_pdf": [
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30649.css?ver=1794960938"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30648.css?ver=1794960938"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30646.css?ver=1794960938"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30644.css?ver=1794960938"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/complianz/css/banner-1-optin.css?ver=1793837751"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/2024/11/cropped-favicon3-32x32.jpg"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/2024/11/cropped-favicon3-192x192.jpg"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/2024/11/cropped-favicon3-180x180.jpg"
-      ]
-     ],
-     "url": "https://nursetimes.org/il-contratto-aris-rsa-e-fermo-al-2012-il-diritto-del-lavoro-no"
-    },
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30649.css?ver=1794960938"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30648.css?ver=1794960938"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30646.css?ver=1794960938"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30644.css?ver=1794960938"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/complianz/css/banner-1-optin.css?ver=1793837751"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/2024/11/cropped-favicon3-32x32.jpg"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/2024/11/cropped-favicon3-192x192.jpg"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/2024/11/cropped-favicon3-180x180.jpg"
-      ]
-     ],
-     "url": "https://nursetimes.org/bolzano-infermiere-in-prova-licenziato-per-inedeguatezza-respinto-il-ricorso-per-mobbing"
-    }
-   ]
+   "scartati": []
   },
   "Google Alerts 6": {
    "accettati": [],
@@ -1647,59 +1503,7 @@
      "url": "feed"
     }
    ],
-   "scartati": [
-    [
-     "Sanità privata: 10 giorni per aprire il tavolo. E in Parlamento spunta il rinnovo automati",
-     "notizia, non un'offerta di lavoro"
-    ]
-   ],
-   "senza_pdf": [
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30649.css?ver=1794960938"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30648.css?ver=1794960938"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30646.css?ver=1794960938"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/elementor/css/post-30644.css?ver=1794960938"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/complianz/css/banner-1-optin.css?ver=1793837751"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/2024/11/cropped-favicon3-32x32.jpg"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/2024/11/cropped-favicon3-192x192.jpg"
-      ],
-      [
-       "link",
-       "",
-       "https://nursetimes.org/wp-content/uploads/2024/11/cropped-favicon3-180x180.jpg"
-      ]
-     ],
-     "url": "https://nursetimes.org/sanita-privata-10-giorni-per-aprire-il-tavolo-e-in-parlamento-spunta-il-rinnovo-automatico-degli-accreditamenti"
-    }
-   ]
+   "scartati": []
   },
   "Gruppo Bonvicini – lavora con noi": {
    "accettati": [
@@ -1750,18 +1554,7 @@
    "accettati": [
     "CERCHIAMO INFERMIERE:I (m/f/d) per la nostra RSA Ciasa de Palsa Ojöp Frëinademetz",
     "La casa di riposo di Silandro cerca nuovi collaboratori/trici",
-    "CERCASI INFERMIERE/A PER EMODIALISI DOMICILIARE – BOLZANO",
-    "Hotel Palace Merano cerca infermiere",
-    "Fondo Ospedale della S.S. Trinità RESIDENZA PER ANZIANI ANNENBERG LACES – Formazione di un",
-    "INPS – Ricerca infermiere/a",
-    "Fondazione Pitsch cerca infermieri/e",
-    "Fondazione Casa di Riposo Heinrich von Rottenburg Caldaro",
-    "Fondazione Pitsch cerca personale",
-    "Infermiere/a a tempo pieno o part time",
-    "Study nurse @Bolzano @Istituto per la Medicina di Emergenza in Montagna – EURAC RESEARCH",
-    "Comunità comprensoriale Burgraviato – Avviso pubblico",
-    "Comunità Comprensoriale Burgraviato – Assunzioni a tempo determinato",
-    "Infermiere/a a tempo pieno o part time"
+    "CERCASI INFERMIERE/A PER EMODIALISI DOMICILIARE – BOLZANO"
    ],
    "pagine": [
     {
@@ -1769,32 +1562,7 @@
      "url": "https://www.opibz.it/?page_id=5109"
     }
    ],
-   "scartati": [
-    [
-     "Ricerca di funzionario sanitario in comando presso l’INPS di Bolzano",
-     "ruolo diverso (dal titolo)"
-    ],
-    [
-     "Infermiere a Caorle",
-     "fuori regione"
-    ],
-    [
-     "Cerchiamo un RESPONSABILE TECNICO-ASSISTENZIALE",
-     "ruolo diverso (dal titolo)"
-    ],
-    [
-     "CERCHIAMO UN/UNA RESPONSABILE DI PIANO",
-     "ruolo diverso (dal titolo)"
-    ],
-    [
-     "INPS – Ricerca infermiere/a",
-     "ruolo diverso (coordinamento, direzione o comando)"
-    ],
-    [
-     "Avviso – Collegio tecnico – Dirigenza tecnico-assistenziale",
-     "ruolo diverso (dal titolo)"
-    ]
-   ],
+   "scartati": [],
    "senza_pdf": [
     {
      "link": [
@@ -1805,16 +1573,6 @@
       ]
      ],
      "url": "https://www.opibz.it/cerchiamo-infermierei-m-f-d-per-la-nostra-rsa-ciasa-de-palsa-ojop-freinademetz/"
-    },
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://www.opibz.it/wp-content/uploads/fusion-styles/175330e909f7312ffc638c988b91ff40.min.css?ver=3.17"
-      ]
-     ],
-     "url": "https://www.opibz.it/ricerca-di-funzionario-sanitario-in-comando-presso-linps-di-bolzano/"
     },
     {
      "link": [
@@ -1835,26 +1593,6 @@
       ]
      ],
      "url": "https://www.opibz.it/cercasi-infermiere-a-per-emodialisi-domiciliare-bolzano/"
-    },
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://www.opibz.it/wp-content/uploads/fusion-styles/175330e909f7312ffc638c988b91ff40.min.css?ver=3.17"
-      ]
-     ],
-     "url": "https://www.opibz.it/infermiere-a-caorle/"
-    },
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://www.opibz.it/wp-content/uploads/fusion-styles/175330e909f7312ffc638c988b91ff40.min.css?ver=3.17"
-      ]
-     ],
-     "url": "https://www.opibz.it/hotel-palace-merano-cerca-infermiere/"
     }
    ]
   },
@@ -1864,15 +1602,7 @@
     "A.P.S.P. C. Vannetti – Rovereto – Selezione per liberi professionisti – PROROGA TERMINI",
     "A.P.S.P. C. Vannetti – Rovereto – bando di concorso",
     "Cooperativa Sociale Villa Maria Onlus – ricerca di personale",
-    "A.P.S.P. Suor Agnese – Concorso per infermieri",
-    "APSP “San Giuseppe” di Primiero (TN) – ricerca di personale",
-    "Fondazione Casa di Riposo Heinrich von Rottenburg (APSP) – Caldaro BZ – ricerca personale",
-    "A.P.S.P. Padre Odone Nicolini – Pieve di Bono – Prezzo TN – ricerca personale",
-    "A.P.S.P. Centro Residenziale A. Collini – Ricerca personale tempo determinato",
-    "A.P.S.P. “OPERA ROMANI” – Nomi TN – bando di concorso",
-    "A.P.S.P. “Levico CURAE” – Levico Terme (TN) – selezione",
-    "Cooperativa D.O.C. Ricerca personale infermieristico",
-    "Avviso di selezione pubblica per il conferimento di incarichi libero professionali a infer"
+    "APSP “San Giuseppe” di Primiero (TN) – ricerca di personale"
    ],
    "pagine": [
     {
@@ -1880,32 +1610,8 @@
      "url": "https://opi.tn.it/segreteria/annunci-di-lavoro/"
     }
    ],
-   "scartati": [
-    [
-     "A.P.S.P. Margherita Grazioli – Trento – pubblica selezione per coordinatore",
-     "ruolo diverso (dal titolo)"
-    ],
-    [
-     "Società Cooperativa Sociale Stella Montis Fondo – Borgo d’Ananunia (TN) – ricerca di perso",
-     "ruolo diverso (coordinamento, direzione o comando)"
-    ]
-   ],
+   "scartati": [],
    "senza_pdf": [
-    {
-     "link": [
-      [
-       "link",
-       "",
-       "https://opi.tn.it/wp-content/uploads/2019/05/favicon-150x150.jpg?x30900"
-      ],
-      [
-       "link",
-       "",
-       "https://opi.tn.it/wp-content/uploads/2019/05/favicon.jpg?x30900"
-      ]
-     ],
-     "url": "https://opi.tn.it/a-p-s-p-margherita-grazioli-trento-bando-di-concorso/"
-    },
     {
      "link": [
       [
@@ -1979,7 +1685,7 @@
        "https://opi.tn.it/wp-content/uploads/2019/05/favicon.jpg?x30900"
       ]
      ],
-     "url": "https://opi.tn.it/societa-cooperativa-sociale-stella-montis-fondo-borgo-dananunia-tn-ricerca-di-personale/"
+     "url": "https://opi.tn.it/apsp-san-giuseppe-di-primiero-tn-ricerca-di-personale/"
     }
    ]
   },
@@ -2174,12 +1880,7 @@
      "url": "https://www.upipa.tn.it/Bacheca/Concorsi/(offset)/10"
     }
    ],
-   "scartati": [
-    [
-     "Selezione pubblica per il conferimento di un incarico libero professionale per Psicologo -",
-     "non riguarda infermieri"
-    ]
-   ]
+   "scartati": []
   },
   "Villa Sant'Anna Merano – lavora con noi": {
    "accettati": [
@@ -2210,7 +1911,7 @@
    "scartati": []
   }
  },
- "richieste": 172,
+ "richieste": 103,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }
