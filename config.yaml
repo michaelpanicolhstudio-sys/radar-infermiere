@@ -313,6 +313,20 @@ invio:
               "Casa di Cura Solatrix", "Centro Servizi Socio Sanitari e Residenziali Male'", "A.P.S.P. Cesare Benedetti", "APSP San Giuseppe", "A.P.S.P. Residenza Molino", "Apsp S.Lorenzo e S.Maria della Misericordia", "Apsp Ubaldo Campagnola", "APSP Dott. Antonio Bontempelli", "A.P.S.P. Casa Laner", "APSP Giudicarie Esteriori", "APSP di Brentonico", "Redenta Floriani", "SUOR FILIPPINA", "APSP Citta di Riva", "Casa Mia APSP", "Casa di Riposo Giovanelli",
               "Stella Montis"]
   dedicate:   # lettere scritte apposta, approvate da Michael prima dell'invio
+    CityClinic:
+      oggetto: "Infermiere libero professionista – richiesta di informazioni"
+      testo: |
+        Buongiorno,
+
+        mi chiamo Michael Panico e sono un infermiere iscritto all'OPI di Trento. Abito a Mezzolombardo, a circa 35 minuti da voi.
+
+        Vi scrivo per sapere se la vostra clinica collabora, o sarebbe disposta a collaborare, con infermieri in libera professione (partita IVA), in reparto, in day surgery o in sala operatoria, e se al momento avete bisogno di coprire turni o giornate di attività.
+
+        Vi ringrazio fin d'ora e vi chiedo la cortesia di considerare riservata questa richiesta.
+
+        Cordiali saluti
+        Michael Panico
+        Infermiere – 346 5787395
     IQVIA:
       oggetto: "Infermiere libero professionista in Trentino – collaborazione per studi clinici"
       testo: |
