@@ -351,6 +351,14 @@ print("Regole della seconda messa a punto")
 verifica("compenso: tra medici e infermieri vale quello degli infermieri",
          estrai.estrai_compenso("ai medici un compenso orario lordo pari a € 80,00; agli infermieri un compenso orario lordo onnicomprensivo di Euro 40,00")[1], 40.0)
 verifica("compenso: 'lordo omnicomprensivo orario'", estrai.estrai_compenso("compenso lordo omnicomprensivo orario di euro 40,00")[1], 40.0)
+# ASUIT SLP 15/26 (18/11): «compenso orario lordo omnicomprensivo da corrispondere ai professionisti, è pari a € 85,00
+# per i medici specialisti … e a € 40,00 per gli infermieri»: il compenso dell'infermiere non veniva letto.
+verifica("compenso: seconda tariffa nella stessa frase (infermieri)",
+         estrai.estrai_compenso("Il compenso orario lordo omnicomprensivo da corrispondere ai professionisti, è pari a € 85,00 "
+                                "per i medici specialisti in ortopedia e traumatologia e a € 40,00 per gli infermieri.")[1], 40.0)
+verifica("compenso: la sola tariffa dei medici non è dell'infermiere",
+         estrai.estrai_compenso("Il compenso orario lordo omnicomprensivo da corrispondere ai professionisti, è pari a € 85,00 per i medici specialisti."),
+         (None, None))
 verifica("compenso: 'euro-pea' non è un indizio", estrai.indizi_compenso("cittadino di uno Stato membro dell'Unione euro- pea"), [])
 verifica("compenso: indizi quando non si riconosce", len(estrai.indizi_compenso("Il budget complessivo è di € 12.000 annui.")), 1)
 sc = estrai.estrai_scadenza_frase("Le domande dovranno pervenire entro e non oltre le ore 12.00 del giorno 06/11/2026. Proroga termini di scadenza: 27/11/2026 ore 12.00", OGGI)

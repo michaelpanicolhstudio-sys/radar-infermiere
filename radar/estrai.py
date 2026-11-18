@@ -600,7 +600,7 @@ _UNITA = r"(?:/|all['’]\s*|l['’]\s*|a\s+|per\s+(?:ogni\s+|ciascuna\s+)?|pro\
 RE_EURO_ORA = [
     re.compile(_NUM + r"\s*" + _EURO + r"\s*" + _AGG + _UNITA, re.I),
     re.compile(_EURO + r"\s*" + _NUM + r"\s*(?:\([^)]{0,40}\)\s*)?" + _AGG + _UNITA, re.I),
-    re.compile(r"(?:compenso|tariffa|corrispettivo|importo|retribuzione)\s+(?:\w+\s+){0,3}?orari\w+\D{0,60}?"
+    re.compile(r"(?:compenso|tariffa|corrispettivo|importo|retribuzione)\s+(?:\w+\s+){0,3}?orari\w+\D{0,90}?"
                r"(?:" + _EURO + r"\s*" + _NUM + r"|" + _NUM + r"\s*" + _EURO + r")", re.I),
     re.compile(r"stunden(?:lohn|satz|honorar)\D{0,30}?(?:" + _EURO + r"\s*" + _NUM + r"|" + _NUM + r"\s*" + _EURO + r")", re.I),
 ]
@@ -667,6 +667,8 @@ def estrai_contratto(testo: str) -> str | None:
     return None
 
 
+_RE_ALTRO_IMPORTO = re.compile(r"(?:" + _EURO + r"\s*" + _NUM + r"|" + _NUM + r"\s*" + _EURO + r")(?![\d.])", re.I)
+_RE_PER_MEDICI = re.compile(r"\s*(?:(?:lord|nett|orari|o[mn]nicomprensiv)\w*\s*)*(?:per\s+(?:i|ciascun)\s+|ai\s+)(?:medic|dirigent)", re.I)
 _RE_INFERMIERE_VICINO = re.compile(r"infermier|krankenpfleg|pflegefach", re.I)
 
 
@@ -683,8 +685,22 @@ def estrai_compenso(testo: str) -> tuple[str | None, float | None]:
                 valore = _numero(grezzo)
             except ValueError:
                 continue
-            if 8 <= valore <= 150:
+            # «€ 85,00 per i medici specialisti»: la tariffa dei medici non è quella dell'infermiere.
+            if 8 <= valore <= 150 and not _RE_PER_MEDICI.match(testo, m.end()):
                 trovati.append((m.start(), valore))
+            if rx is RE_EURO_ORA[2]:
+                # «compenso orario … pari a € 85,00 per i medici … e a € 40,00 per gli infermieri» (ASUIT SLP 15/26):
+                # gli importi che seguono nella stessa frase sono anch'essi orari.
+                resto = testo[m.end(): m.end() + 300]
+                fine = _RE_FINE_FRASE.search(resto)
+                resto = resto[: fine.start()] if fine else resto
+                for altro in _RE_ALTRO_IMPORTO.finditer(resto):
+                    try:
+                        v = _numero(next(g for g in altro.groups() if g))
+                    except (ValueError, StopIteration):
+                        continue
+                    if 8 <= v <= 150 and not _RE_PER_MEDICI.match(resto, altro.end()):
+                        trovati.append((m.end() + altro.start(), v))
     if trovati:
         trovati.sort()
         valore = trovati[0][1]

@@ -29,8 +29,8 @@ CAMPI_DAL_DOPPIONE = {"compenso": "compenso", "euro_ora": None, "email": "email"
 # Tra annunci diversi dello stesso datore si prendono solo i dati del datore, mai compenso o date.
 CAMPI_DEL_DATORE = {"email": "email", "pec": "PEC", "struttura": None}
 # Si aumenta quando cambiano le regole di pertinenza: le pagine già scartate vengono riaperte una volta.
-VERSIONE_REGOLE = 9
-VERSIONE_PDF = 3      # cambia quando migliorano le regole: i PDF già letti vengono riletti
+VERSIONE_REGOLE = 10
+VERSIONE_PDF = 4      # cambia quando migliorano le regole: i PDF già letti vengono riletti
 # Siti-bacheca: i loro indirizzi email non sono il contatto della struttura che cerca personale.
 DOMINI_BACHECA = {"opi.tn.it", "opibz.it", "upipa.tn.it", "suedtirolerjobs.it", "fnopi.it", "google.com"}
 
