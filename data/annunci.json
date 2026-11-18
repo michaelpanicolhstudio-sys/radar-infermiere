@@ -1,4 +1,76 @@
 {
+ "015607408b80": {
+  "affidabilita": "aggregatore",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": "500 euro al mese",
+  "contratto": "P.IVA o dipendente",
+  "da_pdf": null,
+  "data_novita": "2026-11-18",
+  "datore": null,
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "P.IVA possibile (anche assunzione)",
+    "punti": 24,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato (500 euro al mese)",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 35 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "notti",
+    "punti": 9,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "aggregatore o avviso di ricerca",
+    "punti": 3,
+    "voce": "Fonte"
+   }
+  ],
+  "email": null,
+  "estratto": "Infermieri NT News Politica & Sindacato Sanità privata: 10 giorni per aprire il tavolo. E in Parlamento spunta il rinnovo automatico degli accreditamenti Condividi Condividi Fp Cgil, Cisl Fp e Uil Fp hanno diffidato Aiop…",
+  "euro_ora": null,
+  "fonte": "Google Alerts 9",
+  "id": "015607408b80",
+  "impronta": "7d4ca279e609",
+  "in_tedesco": false,
+  "km": 42,
+  "letto_il": "2026-11-18",
+  "minuti": 35,
+  "novita": "nuovo",
+  "pdf_letti": [],
+  "pec": null,
+  "primo_visto": "2026-11-18",
+  "pubblicato": "2026-11-17",
+  "punteggio": 53,
+  "regole": 9,
+  "scadenza": null,
+  "scadenza_frase": null,
+  "segnali_turni": {
+   "notti": true
+  },
+  "struttura": null,
+  "tipo_fonte": "rss",
+  "titolo": "Sanità privata: 10 giorni per aprire il tavolo. E in Parlamento spunta il rinnovo automatico ...",
+  "turni": "notti",
+  "ultimo_visto": "2026-11-18",
+  "url": "https://nursetimes.org/sanita-privata-10-giorni-per-aprire-il-tavolo-e-in-parlamento-spunta-il-rinnovo-automatico-degli-accreditamenti",
+  "zona": "Bolzano"
+ },
  "054de6ae7326": {
   "affidabilita": "ufficiale",
   "avvisi": [],
@@ -2163,7 +2235,7 @@
    }
   ],
   "email": "info@schlossmoos.it",
-  "estratto": "…egehelfer/in (Vollzeit) Leifers Caritas Krankenpfleger*in Lana ST. JOSEF Freiberufler / Freelancer (m/w) Bozen, südtirolweit PEGASUS",
+  "estratto": "Freiberufliche Tätigkeit in der Pflege Sozialgenossenschaft Zum Heiligen Vinzenz Wiesen, Pfitsch Vollzeit Teilzeit Freelancer Projektarbeit 17.11.2026 Sozialgenossenschaft Zum Heiligen Vinzenz Traustonstr. 190 , 39049 Wi…",
   "euro_ora": null,
   "fonte": "Schloss Moos – libera professione (suedtirolerjobs)",
   "id": "670aca98057e",
