@@ -51,6 +51,7 @@
  },
  "s:0c4d0ee98ebe": {
   "a": [
+   "chiesaserena@cdcsolatrix.it",
    "info@cdcsolatrix.it"
   ],
   "automatica": true,
@@ -73,6 +74,17 @@
     "mid": "<PAXPR01MB83022A8718896F31BAAA87C3B07A2@PAXPR01MB8302.eurprd01.prod.exchangelabs.com>",
     "oggetto": "Re: Infermiere libero professionista – richiesta di informazioni (Rif. R-0c4d0ee9)",
     "testo": "Buongiorno possiamo vederci già oggi pomeriggio alle 14.30\nAvrei una certa urgenza\n\nGrazie\n\nInviato da Outlook per Android<https://aka.ms/AAb9ysg>\n________________________________\nFrom: Gladis Prezzi <ufficiopersonale@cdcsolatrix.it>\nSent: Wednesday, 18 November 2026 11:36:00\nTo: Roberta Ipocoana <ipocoanaroberta@cdcsolatrix.it>; Serena Chiesa <chiesaserena@cdcsolatrix.it>\nSubject: I: Infermiere libero professionista – richiesta di informazioni (Rif. R-0c4d0ee9)\n\nRag. Gladys Prezzi\n\nAmministrazione del Personale\n\nTEL. 0464-491313\n\n[cid:image001.png@01DD7750.FB6CE650]",
+    "turni": null
+   },
+   {
+    "compenso": null,
+    "da": "chiesaserena@cdcsolatrix.it",
+    "data": "2026-11-18",
+    "euro_ora": null,
+    "incontro": null,
+    "mid": "<PAXPR01MB83024A34C825251DF371D23DB07A2@PAXPR01MB8302.eurprd01.prod.exchangelabs.com>",
+    "oggetto": "Re: Infermiere libero professionista – richiesta di informazioni (Rif. R-0c4d0ee9)",
+    "testo": "Domani alle 10?\n\nInviato da Outlook per Android<https://aka.ms/AAb9ysg>\n________________________________\nFrom: Michael Panico <infermiere.michaelpanico@gmail.com>\nSent: Wednesday, 18 November 2026 14:00:06\nTo: Serena Chiesa <chiesaserena@cdcsolatrix.it>\nSubject: Re: Infermiere libero professionista – richiesta di informazioni (Rif. R-0c4d0ee9)\n\nBuongiorno,\n\ngrazie per la disponibilità. Oggi purtroppo non posso perché sono al lavoro.\n\nPossiamo concordare un altro appuntamento? Mi indichi pure lei giorno e orario che le sono più comodi, oppure può chiamarmi al 346 5787395.\n\nCordiali saluti\nMichael Panico",
     "turni": null
    }
   ],
@@ -132,7 +144,8 @@
  },
  "s:5c4f5be5b691": {
   "a": [
-   "info@csarivadelgarda.com"
+   "info@csarivadelgarda.com",
+   "laura.zanuso@csarivadelgarda.com"
   ],
   "automatica": true,
   "inviata_il": "2026-11-17",
@@ -242,7 +255,8 @@
  },
  "s:860b3891ff91": {
   "a": [
-   "amministrazione@apsp-roncegno.it"
+   "amministrazione@apsp-roncegno.it",
+   "valentina.brusamolin@apsp-roncegno.it"
   ],
   "automatica": true,
   "inviata_il": "2026-11-17",
@@ -430,6 +444,7 @@
  },
  "s:e30b4638aacc": {
   "a": [
+   "direttore@casadiriposogiovanelli.org",
    "info@casadiriposogiovanelli.org"
   ],
   "automatica": true,
