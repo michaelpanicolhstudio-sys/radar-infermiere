@@ -16,7 +16,19 @@
   "automatica": true,
   "inviata_il": "2026-11-17",
   "rif": "R-01c80ba8",
-  "risposte": [],
+  "risposte": [
+   {
+    "compenso": null,
+    "da": "direttore@apsp-pellizzano.it",
+    "data": "2026-11-18",
+    "euro_ora": null,
+    "incontro": null,
+    "mid": "<003101dd7724$8860b4b0$99221e10$@apsp-pellizzano.it>",
+    "oggetto": "R: Infermiere libero professionista – richiesta di informazioni (Rif. R-01c80ba8)",
+    "testo": "Buongiorno in questo momento non abbiamo bisogno, in ogni caso sarebbero \nsarebbero assai gradite una sua offerta per l'anno 2027 e curriculum vitae\n\n  Dott. Lorenzo Holler\n\n  Direttore\n\n <https://studio-ict.ilger.com/images/72/signatures/1669809602.png>",
+    "turni": null
+   }
+  ],
   "via": "gmail"
  },
  "s:099585e79e12": {
@@ -354,7 +366,19 @@
   "automatica": true,
   "inviata_il": "2026-11-17",
   "rif": "R-e9415d51",
-  "risposte": [],
+  "risposte": [
+   {
+    "compenso": null,
+    "da": "info@apspavio.it",
+    "data": "2026-11-18",
+    "euro_ora": null,
+    "incontro": null,
+    "mid": "<004f01dd7732$5c5b4b60$1511e220$@apspavio.it>",
+    "oggetto": "R: Infermiere libero professionista – richiesta di informazioni (Rif. R-e9415d51)",
+    "testo": "Buongiorno,\ncollaboriamo anche con infermieri libero professionisti e pertanto può inviare il curriculum nel caso ci fossero esigenze.\nGrazie\nCordiali saluti.\n\nUffici Amministrativi\nTel. 0464 688026\nVia U. Campagnola, 5 - 38063 Avio (TN)\nwww.apspavio.it\n \n\nAvvertenze ai sensi del Dlgs. 196/2003 e del DPRG 2016/679\nLe informazioni contenute in questo messaggio sono strettamente confidenziali e rivolte esclusiva-mente ai destinatari sopra indicati. Ogni successivo inoltro, diffusione, copia e/o altro utilizzo, se non espressamente autorizzato, è vietato e costituisce violazione della disciplina in materia di tutela dei dati personali (Reg. UE 16/679). Nel caso aveste ricevuto questa comunicazione per errore vi chiediamo di informaci immediatamente e di eliminare il messaggio, compresi eventuali file allegati, senza trattenerne copia. Personale incaricato potrà accedere alla risposta fornita alla presente comunicazione. Grazie per l’attenzione.",
+    "turni": null
+   }
+  ],
   "via": "gmail"
  },
  "s:ec0b6e4d03ed": {
@@ -393,7 +417,19 @@
   "automatica": true,
   "inviata_il": "2026-11-17",
   "rif": "R-f89c4707",
-  "risposte": [],
+  "risposte": [
+   {
+    "compenso": null,
+    "da": "segreteria@apsp-cesarebenedetti.it",
+    "data": "2026-11-18",
+    "euro_ora": null,
+    "incontro": null,
+    "mid": "<002901dd772f$e2e50110$a8af0330$@apsp-cesarebenedetti.it>",
+    "oggetto": "R: Infermiere libero professionista – richiesta di informazioni (Rif. R-f89c4707)",
+    "testo": "Buongiorno,\nla nostra struttura collabora con infermieri in libera professione.\nPer il momento siamo al completo, però se ci gira il suo curriculum in caso di future assunzioni consideremo anche la sua candidatura.\nDistinti saluti",
+    "turni": null
+   }
+  ],
   "via": "gmail"
  }
 }
