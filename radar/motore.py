@@ -501,9 +501,10 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str], 
             a.update(novita="aggiornato", data_novita=oggi_s, cambi=[cambio])
             if a not in aggiornati:
                 aggiornati.append(a)
-        # Annunci a mano (non riletti): il tipo di struttura, se manca, lo dice il nome del datore.
-        if not a.get("struttura") and a.get("datore"):
-            a["struttura"] = estrai.estrai_struttura(a["datore"], "")
+        # Annunci a mano (non riletti): il tipo di struttura, se manca, lo dicono il nome del datore,
+        # l'elenco Strutture di Michael o il titolo scritto a mano.
+        if not a.get("struttura"):
+            a["struttura"] = struttura_senza_lettura(a)
         # I pesi possono essere cambiati in config: il punteggio si ricalcola sempre.
         a["punteggio"], a["dettaglio_punteggio"] = punteggio.calcola(a, cfg)
         if ident in visti_oggi:
@@ -533,6 +534,58 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str], 
         if (oggi - date.fromisoformat(a["sparito_dal"])).days > giorni:
             del memoria[ident]
     return {"nuovi": nuovi, "aggiornati": aggiornati}
+
+
+def _norm_nome(s: str, senza_parentesi: bool = True) -> str:
+    s = (s or "").lower()
+    if senza_parentesi:  # «Italiassistenza (sede di Bolzano)» nell'elenco; nel datore la parentesi è un nome
+        s = re.sub(r"\([^)]*\)", " ", s)
+    s = re.sub(r"\b(?:s\.?p\.?a|s\.?r\.?l|srl|spa|onlus|soc\.?\s*coop)\b\.?", " ", s)
+    return " ".join(re.findall(r"[0-9a-zà-ÿ]+", s))
+
+
+_TIPI_ELENCO: list[tuple[str, str]] | None = None
+
+
+def tipi_dall_elenco(percorso: Path | None = None) -> list[tuple[str, str]]:
+    """(nome normalizzato, tipo) delle strutture scritte a mano in data/strutture.csv."""
+    global _TIPI_ELENCO
+    if percorso is None and _TIPI_ELENCO is not None:
+        return _TIPI_ELENCO
+    import csv
+    righe = []
+    try:
+        with open(percorso or RADICE / "data" / "strutture.csv", encoding="utf-8", newline="") as f:
+            for r in csv.DictReader(f):
+                nome, tipo = _norm_nome(r.get("nome") or ""), (r.get("tipo") or "").strip()
+                if len(nome) >= 6 and tipo:
+                    righe.append((nome, tipo))
+    except OSError:
+        pass
+    if percorso is None:
+        _TIPI_ELENCO = righe
+    return righe
+
+
+def struttura_senza_lettura(a: dict, elenco: list[tuple[str, str]] | None = None) -> str | None:
+    """Tipo di struttura per un annuncio che non passa dalla lettura (scritto a mano, 19/11):
+    il titolo se dice com'è il lavoro (domiciliare, stagionale), poi il nome del datore,
+    poi il tipo che l'elenco Strutture dà a quel datore, infine il resto del titolo."""
+    titolo, datore = a.get("titolo") or "", a.get("datore") or ""
+    dal_titolo = estrai.estrai_struttura(titolo, "")
+    if dal_titolo in STRUTTURE_DAL_LAVORO:
+        return dal_titolo
+    if datore:
+        dal_nome = estrai.estrai_struttura(datore, "")
+        if dal_nome:
+            return dal_nome
+        d = " " + _norm_nome(datore, senza_parentesi=False) + " "
+        for nome, tipo in (tipi_dall_elenco() if elenco is None else elenco):
+            if " " + nome + " " in d:
+                dal_tipo = estrai.estrai_struttura(tipo, "")
+                if dal_tipo:
+                    return dal_tipo
+    return dal_titolo
 
 
 def passa_alla_prossima_scadenza(a: dict, oggi: date) -> str | None:

@@ -685,6 +685,19 @@ esito_t = motore.aggiorna_memoria(mem_t, [], set(), set(), set(), OGGI, CFG)
 verifica("struttura: anche agli annunci a mano la dice il nome del datore", (mem_t["m"]["struttura"], mem_t["k"]["struttura"]),
          ("Ospedale o azienda sanitaria", None))
 verifica("struttura completata: non è un aggiornamento", esito_t["aggiornati"], [])
+# 19/11: sei offerte in P.IVA scritte a mano (Italiassistenza ×2, Cerba, ParaMedica, IQVIA, Privatassistenza)
+# erano senza tipo: il nome non lo dice, ma lo dicono il titolo («assistenza domiciliare», «RSA»)
+# o l'elenco Strutture di Michael («Italiassistenza – Assistenza domiciliare»). Sparivano dal filtro «Domiciliare».
+_el = [("italiassistenza", "Assistenza domiciliare"), ("cerba healthcare", "Prelievi e ambulatori"), ("paramedica", "Agenzia per RSA")]
+_ss = lambda t, d: motore.struttura_senza_lettura({"titolo": t, "datore": d}, _el)
+verifica("struttura a mano: dall'elenco Strutture (nome con spa)", _ss("Infermiere/a con partita IVA a Trento", "Italiassistenza spa"), "Domiciliare")
+verifica("struttura a mano: dall'elenco Strutture (nome tra parentesi)", _ss("Infermiere P.IVA (TN)", "CHC Italy (Cerba HealthCare)"), "Clinica o ambulatorio")
+verifica("struttura a mano: dal titolo (domiciliare)", _ss("Infermiere per attività domiciliari", "IQVIA Solutions Italy"), "Domiciliare")
+verifica("struttura a mano: dal titolo (RSA)", _ss("Infermieri RSA zona Rovereto", "Ditta X"), "RSA o casa di riposo")
+verifica("struttura a mano: nome simile ma diverso non conta", _ss("Infermiere/a", "Italia Servizi"), None)
+verifica("struttura a mano: il nome del datore vince sull'elenco", _ss("Infermiere/a", "APSP Italiassistenza"), "RSA o casa di riposo")
+verifica("elenco Strutture vero: Italiassistenza è domiciliare",
+         dict(motore.tipi_dall_elenco(motore.RADICE / "data" / "strutture.csv")).get("italiassistenza"), "Assistenza domiciliare")
 # 17/11: Fondazione Pitsch, due annunci diversi (graduatoria 2025 e ricerca di personale): quello mostrato
 # non aveva né email né tipo di struttura, che il doppione nascosto aveva (personal@pitsch.it).
 m8 = {"g": {"id": "g", "titolo": "Fondazione Pitsch cerca infermieri/e", "datore": "Fondazione Pitsch", "zona": "Merano", "email": None,
