@@ -227,21 +227,33 @@ def _link_pdf(nodo, base: str, solo_sicuri: bool = False) -> list[dict]:
     return sorted(visti.values(), key=lambda x: x["peso"])
 
 
+_RE_SOCIAL = re.compile(r"facebook|twitter|(?:^|\.)x\.com$|linkedin|whatsapp|instagram|youtube|telegram|t\.me$|pinterest|google|wordpress\.org", re.I)
+
+
 def allegati_dubbi(html: str, base: str, massimo: int = 8) -> list[list[str]]:
     """Messa a punto: link che parlano di PDF o download ma che non sono stati riconosciuti."""
     soup = BeautifulSoup(html, "html.parser")
     trovati, visti = [], set()
+    casa = urlparse(base).netloc.lower().removeprefix("www.")
+    # 19/11: per OPI Trento comparivano solo le icone del sito (<link rel="icon"> nell'intestazione):
+    # quelle non sono allegati. Contano anche i link del testo verso un altro sito o che parlano
+    # di avviso/bando/albo (Vannetti: «l'avviso è… in calce alla pagina», ma nessun PDF trovato).
     for tag in soup.find_all(True):
-        if _nel_contorno(tag):
+        if tag.name in ("link", "meta", "script", "style") or _nel_contorno(tag):
             continue
         for attributo in _ATTRIBUTI_LINK:
             valore = tag.get(attributo)
-            if not isinstance(valore, str) or not valore.strip() or valore.startswith(("#", "javascript:", "mailto:")):
+            if not isinstance(valore, str) or not valore.strip() or valore.startswith(("#", "javascript:", "mailto:", "tel:")):
                 continue
             testo = pulisci(tag.get_text(" ") or "")[:60]
-            if re.search(r"pdf|download|scarica|allegat|wp-content/uploads", valore + " " + testo, re.I) and valore not in visti:
+            indirizzo = urljoin(base, valore)
+            host = urlparse(indirizzo).netloc.lower().removeprefix("www.")
+            altro_sito = (tag.name == "a" and bool(casa) and host not in ("", casa)
+                          and not _RE_SOCIAL.search(host))
+            if (re.search(r"pdf|download|scarica|allegat|wp-content/uploads|avvis|bando|albo|document", valore + " " + testo, re.I)
+                    or altro_sito) and valore not in visti:
                 visti.add(valore)
-                trovati.append([tag.name, testo, urljoin(base, valore)[:200]])
+                trovati.append([tag.name, testo, indirizzo[:200]])
     return trovati[:massimo]
 
 

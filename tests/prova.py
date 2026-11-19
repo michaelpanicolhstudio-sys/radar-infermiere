@@ -685,6 +685,15 @@ esito_t = motore.aggiorna_memoria(mem_t, [], set(), set(), set(), OGGI, CFG)
 verifica("struttura: anche agli annunci a mano la dice il nome del datore", (mem_t["m"]["struttura"], mem_t["k"]["struttura"]),
          ("Ospedale o azienda sanitaria", None))
 verifica("struttura completata: non è un aggiornamento", esito_t["aggiornati"], [])
+# 19/11: OPI Trento, Vannetti «l'avviso è… in calce alla pagina»: la diagnostica dei PDF mancanti
+# mostrava solo le icone del sito (<link rel="icon">), quindi non diceva dove sta l'avviso.
+_html_d = ("<html><head><link rel='icon' href='https://opi.tn.it/wp-content/uploads/2019/05/favicon.jpg'></head><body>"
+           "<article><p>L'avviso è pubblicato sul sito e in calce alla pagina.</p>"
+           "<a href='https://www.apspvannetti.it/Albo-pretorio/Avvisi/Incarichi-infermieri'>Incarichi infermieri</a>"
+           "<a href='https://www.facebook.com/sharer.php?u=x'>Condividi</a><a href='/chi-siamo/'>Chi siamo</a></article></body></html>")
+verifica("PDF mancanti: niente icone, sì al link dell'avviso su un altro sito",
+         [x[2] for x in estrai.allegati_dubbi(_html_d, "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/")],
+         ["https://www.apspvannetti.it/Albo-pretorio/Avvisi/Incarichi-infermieri"])
 # 19/11: sei offerte in P.IVA scritte a mano (Italiassistenza ×2, Cerba, ParaMedica, IQVIA, Privatassistenza)
 # erano senza tipo: il nome non lo dice, ma lo dicono il titolo («assistenza domiciliare», «RSA»)
 # o l'elenco Strutture di Michael («Italiassistenza – Assistenza domiciliare»). Sparivano dal filtro «Domiciliare».
