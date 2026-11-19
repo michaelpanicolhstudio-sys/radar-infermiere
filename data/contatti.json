@@ -367,7 +367,19 @@
   "automatica": true,
   "inviata_il": "2026-11-17",
   "rif": "R-9cee32bc",
-  "risposte": [],
+  "risposte": [
+   {
+    "compenso": null,
+    "da": "direttore@centroservizimale.it",
+    "data": "2026-11-19",
+    "euro_ora": null,
+    "incontro": null,
+    "mid": "<095301dd782e$699ba660$3cd2f320$@centroservizimale.it>",
+    "oggetto": "R: Infermiere libero professionista – richiesta di informazioni (Rif. R-9cee32bc)",
+    "testo": "Salve Michel.\nSiamo sempre in difficoltà a reperire infermieri, quindi la Sua candidatura \nnon è certamente fuori luogo.\nAl momento attuale dovremmo (uso il condizionale!) essere a posto.\nSe passerà di qui, può passare a visitarci, La conoscerò molto volentieri.\n\nGrazie\nGianni Delpero",
+    "turni": null
+   }
+  ],
   "via": "gmail"
  },
  "s:abb9fae4a76a": {
@@ -494,7 +506,8 @@
  },
  "s:e230d5086f2b": {
   "a": [
-   "coop@stellamontisfondo.it"
+   "coop@stellamontisfondo.it",
+   "direttore@stellamontisfondo.it"
   ],
   "automatica": true,
   "inviata_il": "2026-11-17",
