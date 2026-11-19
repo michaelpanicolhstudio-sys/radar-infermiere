@@ -905,7 +905,8 @@ def giro(cfg: dict, rete, oggi: date, registra=print, diagnostica: bool = True,
         for voce in ("nuovi", "aggiornati"):
             presenti = {r["id"] for r in report[voce]}
             ancora = [r for r in precedente.get(voce, [])
-                      if r["id"] not in presenti and r["id"] in memoria and aperto(memoria[r["id"]], oggi, cfg)]
+                      if r["id"] not in presenti and r["id"] in memoria and aperto(memoria[r["id"]], oggi, cfg)
+                      and memoria[r["id"]].get("data_novita") == oggi.isoformat()]  # un cambio annullato non resta
             del_giorno[voce] = report[voce] + ancora
         del_giorno["giri"] = int(precedente.get("giri", 1)) + 1
 
