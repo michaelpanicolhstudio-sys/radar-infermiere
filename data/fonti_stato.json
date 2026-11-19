@@ -1,10 +1,10 @@
 {
  "APSP Margherita Grazioli (Trento) – lavora con noi": {
-  "giorni_a_zero": 88,
+  "giorni_a_zero": 89,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -13,11 +13,11 @@
   "ultimo_ok": "2026-11-19"
  },
  "APSP Vannetti Rovereto – concorsi e avvisi": {
-  "giorni_a_zero": 88,
+  "giorni_a_zero": 89,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -27,11 +27,11 @@
  },
  "ASUIT – bandi e concorsi": {
   "giorni_a_zero": 0,
-  "letti": 2,
+  "letti": 5,
   "massimo_candidati": 5,
   "pertinenti": 3,
-  "regole": 10,
-  "riusati": 1,
+  "regole": 11,
+  "riusati": 0,
   "scartati": 2,
   "scarti": {
    "7842efa7904b": {
@@ -42,7 +42,7 @@
     "u": "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-1"
    },
    "b5a61d84e016": {
-    "d": "2026-11-18",
+    "d": "2026-11-19",
     "m": "non riguarda infermieri",
     "t": "AVVISO DI SELEZIONE PUBBLICA SELEZIONE PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONA",
     "tl": "AVVISO DI SELEZIONE PUBBLICA SELEZIONE PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONALI A LAUREATI IN MEDICINA E CHIRURGIA PER LO SVOLGIMENTO DI ATTIVITÀ SANITARIA PRESSO L’OSPEDALE DI COMUNITÀ D",
@@ -58,7 +58,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -71,7 +71,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -84,7 +84,7 @@
   "letti": 7,
   "massimo_candidati": 8,
   "pertinenti": 7,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -93,11 +93,11 @@
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 1": {
-  "giorni_a_zero": 91,
+  "giorni_a_zero": 92,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -106,11 +106,11 @@
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 10": {
-  "giorni_a_zero": 64,
+  "giorni_a_zero": 65,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -119,11 +119,11 @@
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 11": {
-  "giorni_a_zero": 64,
+  "giorni_a_zero": 65,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -132,11 +132,11 @@
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 12": {
-  "giorni_a_zero": 64,
+  "giorni_a_zero": 65,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -145,11 +145,11 @@
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 13": {
-  "giorni_a_zero": 64,
+  "giorni_a_zero": 65,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -158,11 +158,11 @@
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 14": {
-  "giorni_a_zero": 64,
+  "giorni_a_zero": 65,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -171,11 +171,11 @@
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 15": {
-  "giorni_a_zero": 64,
+  "giorni_a_zero": 65,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -185,10 +185,10 @@
  },
  "Google Alerts 16": {
   "giorni_a_zero": 0,
-  "letti": 0,
+  "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 1,
   "scarti": {
@@ -204,11 +204,11 @@
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 17": {
-  "giorni_a_zero": 64,
+  "giorni_a_zero": 65,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -217,11 +217,11 @@
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 18": {
-  "giorni_a_zero": 64,
+  "giorni_a_zero": 65,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -230,11 +230,11 @@
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 19": {
-  "giorni_a_zero": 64,
+  "giorni_a_zero": 65,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -243,11 +243,11 @@
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 2": {
-  "giorni_a_zero": 91,
+  "giorni_a_zero": 92,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -256,31 +256,24 @@
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 3": {
-  "giorni_a_zero": 8,
+  "giorni_a_zero": 9,
   "letti": 0,
   "massimo_candidati": 1,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
-  "scarti": {
-   "35cf26964d1e": {
-    "d": "2026-11-18",
-    "m": "notizia, non un'offerta di lavoro",
-    "t": "L'ADIGE.IT : « TRENTO , INFERMIERE AGGREDITO AL SANTA CHIARA: LA UIL CHIEDE ...",
-    "u": "https://www.agenziagiornalisticaopinione.it/opinionews-tn-aa/ladige-it-trento-infermiere-aggredito-al-santa-chiara-la-uil-chiede-piu-sicurezza/"
-   }
-  },
+  "scarti": {},
   "ultimi_candidati": 0,
   "ultimo_giro": "2026-11-19",
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 4": {
-  "giorni_a_zero": 40,
+  "giorni_a_zero": 41,
   "letti": 0,
   "massimo_candidati": 2,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -289,38 +282,24 @@
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 5": {
-  "giorni_a_zero": 8,
+  "giorni_a_zero": 9,
   "letti": 0,
   "massimo_candidati": 2,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
-  "scarti": {
-   "30a490bf594d": {
-    "d": "2026-11-18",
-    "m": "notizia, non un'offerta di lavoro",
-    "t": "Il Contratto Aris Rsa è fermo al 2012, il diritto del lavoro no - Nurse Times",
-    "u": "https://nursetimes.org/il-contratto-aris-rsa-e-fermo-al-2012-il-diritto-del-lavoro-no"
-   },
-   "ed9a697ac1b5": {
-    "d": "2026-11-18",
-    "m": "notizia, non un'offerta di lavoro",
-    "t": "Bolzano , infermiere in prova licenziato per inedeguatezza: respinto il ricorso per mobbin",
-    "tl": "Bolzano , infermiere in prova licenziato per inedeguatezza: respinto il ricorso per mobbing",
-    "u": "https://nursetimes.org/bolzano-infermiere-in-prova-licenziato-per-inedeguatezza-respinto-il-ricorso-per-mobbing"
-   }
-  },
+  "scarti": {},
   "ultimi_candidati": 0,
   "ultimo_giro": "2026-11-19",
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 6": {
-  "giorni_a_zero": 64,
+  "giorni_a_zero": 65,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -329,11 +308,11 @@
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 7": {
-  "giorni_a_zero": 64,
+  "giorni_a_zero": 65,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -342,11 +321,11 @@
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 8": {
-  "giorni_a_zero": 64,
+  "giorni_a_zero": 65,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -355,22 +334,14 @@
   "ultimo_ok": "2026-11-19"
  },
  "Google Alerts 9": {
-  "giorni_a_zero": 8,
+  "giorni_a_zero": 9,
   "letti": 0,
   "massimo_candidati": 1,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
-  "scarti": {
-   "015607408b80": {
-    "d": "2026-11-18",
-    "m": "notizia, non un'offerta di lavoro",
-    "t": "Sanità privata: 10 giorni per aprire il tavolo. E in Parlamento spunta il rinnovo automati",
-    "tl": "Sanità privata: 10 giorni per aprire il tavolo. E in Parlamento spunta il rinnovo automatico ...",
-    "u": "https://nursetimes.org/sanita-privata-10-giorni-per-aprire-il-tavolo-e-in-parlamento-spunta-il-rinnovo-automatico-degli-accreditamenti"
-   }
-  },
+  "scarti": {},
   "ultimi_candidati": 0,
   "ultimo_giro": "2026-11-19",
   "ultimo_ok": "2026-11-19"
@@ -380,7 +351,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -393,7 +364,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -406,7 +377,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -416,11 +387,11 @@
  },
  "OPI Bolzano – offerte di lavoro": {
   "giorni_a_zero": 0,
-  "letti": 3,
+  "letti": 20,
   "massimo_candidati": 20,
   "pertinenti": 14,
-  "regole": 10,
-  "riusati": 11,
+  "regole": 11,
+  "riusati": 0,
   "scartati": 6,
   "scarti": {
    "5bafa01d710d": {
@@ -466,22 +437,22 @@
  },
  "OPI Trento – annunci di lavoro": {
   "giorni_a_zero": 0,
-  "letti": 5,
+  "letti": 15,
   "massimo_candidati": 16,
   "pertinenti": 13,
-  "regole": 10,
-  "riusati": 8,
+  "regole": 11,
+  "riusati": 0,
   "scartati": 2,
   "scarti": {
    "3ca69f8fe699": {
-    "d": "2026-11-18",
+    "d": "2026-11-19",
     "m": "ruolo diverso (coordinamento, direzione o comando)",
     "t": "Società Cooperativa Sociale Stella Montis Fondo – Borgo d’Ananunia (TN) – ricerca di perso",
     "tl": "Società Cooperativa Sociale Stella Montis Fondo – Borgo d’Ananunia (TN) – ricerca di personale",
     "u": "https://opi.tn.it/societa-cooperativa-sociale-stella-montis-fondo-borgo-dananunia-tn-ricerca-di-personale/"
    },
    "e330f50b2d56": {
-    "d": "2026-11-18",
+    "d": "2026-11-19",
     "m": "ruolo diverso (dal titolo)",
     "t": "A.P.S.P. Margherita Grazioli – Trento – pubblica selezione per coordinatore",
     "u": "https://opi.tn.it/a-p-s-p-margherita-grazioli-trento-bando-di-concorso/"
@@ -496,7 +467,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -509,7 +480,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -518,11 +489,11 @@
   "ultimo_ok": "2026-11-19"
  },
  "UPIPA – avvisi delle APSP": {
-  "giorni_a_zero": 91,
+  "giorni_a_zero": 92,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -532,15 +503,15 @@
  },
  "UPIPA – concorsi delle APSP": {
   "giorni_a_zero": 0,
-  "letti": 2,
+  "letti": 3,
   "massimo_candidati": 6,
   "pertinenti": 2,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 1,
   "scarti": {
    "f4b8a3261b0d": {
-    "d": "2026-11-18",
+    "d": "2026-11-19",
     "m": "non riguarda infermieri",
     "t": "Selezione pubblica per il conferimento di un incarico libero professionale per Psicologo -",
     "tl": "Selezione pubblica per il conferimento di un incarico libero professionale per Psicologo - APSP di Folgaria",
@@ -556,7 +527,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
@@ -569,7 +540,7 @@
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 10,
+  "regole": 11,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
