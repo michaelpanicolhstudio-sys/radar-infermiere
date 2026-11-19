@@ -1010,6 +1010,12 @@
    ],
    "gia_scartati": [
     [
+     "Ricognizione interna al fine dell’acquisizione di disponibilità da parte di dirigenti medici per lo svolgimento di prestazioni orarie aggiuntive nelle attività di ortopedia e traumatologia presso tutt",
+     "ruolo diverso (dal titolo)",
+     "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-1",
+     "2026-11-19"
+    ],
+    [
      "AVVISO DI SELEZIONE PUBBLICA SELEZIONE PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONALI A LAUREATI IN MEDICINA E CHIRURGIA PER LO SVOLGIMENTO DI ATTIVITÀ SANITARIA PRESSO L’OSPEDALE DI COMUNITÀ D",
      "non riguarda infermieri",
      "https://www.asuit.tn.it/bandi-concorsi/avviso-di-selezione-pubblica-selezione-il-conferimento-di-incarichi-libero-1",
@@ -1058,13 +1064,7 @@
      "url": "https://www.asuit.tn.it/bandi-concorsi?page=9"
     }
    ],
-   "scartati": [
-    [
-     "Ricognizione interna al fine dell’acquisizione di disponibilità da parte di dirigenti medici per lo svolgimento di prestazioni orarie aggiuntive nelle attività di ortopedia e traumatologia presso tutt",
-     "ruolo diverso (dal titolo)",
-     "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-1"
-    ]
-   ]
+   "scartati": []
   },
   "Altenheim Kaltern (Caldaro) – Karriere": {
    "accettati": [],
@@ -1814,7 +1814,7 @@
    "scartati": []
   }
  },
- "richieste": 105,
+ "richieste": 103,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }
