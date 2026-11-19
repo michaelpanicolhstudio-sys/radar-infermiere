@@ -439,6 +439,26 @@ def raccogli_fonte(fonte: dict, rete, cfg: dict, comuni: list[dict], oggi: date,
 # Memoria e confronto con ieri
 # --------------------------------------------------------------------------
 
+GIORNI_VA_E_TORNA = 2  # un dato che torna com'era entro questi giorni era un'oscillazione della pagina
+
+
+def _inverso(cambio: str) -> str:
+    nome, _, resto = cambio.partition(": ")
+    prima, _, dopo = resto.partition(" → ")
+    return f"{nome}: {dopo} → {prima}"
+
+
+def _torna_come_prima(cambi: list[str], vecchio: dict, oggi: date) -> bool:
+    """Vero se i cambi di oggi annullano esattamente l'ultimo aggiornamento, arrivato da poco."""
+    if not vecchio.get("prima_del_cambio") or vecchio.get("novita") != "aggiornato":
+        return False
+    try:
+        giorni = (oggi - date.fromisoformat(vecchio.get("data_novita") or "")).days
+    except ValueError:
+        return False
+    return 0 <= giorni <= GIORNI_VA_E_TORNA and sorted(cambi) == sorted(_inverso(c) for c in vecchio.get("cambi") or [])
+
+
 def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str], fonti_attive: set[str],
                      scartati: set[str], oggi: date, cfg: dict) -> dict:
     """Unisce gli annunci di oggi alla memoria. Ritorna {nuovi, aggiornati}."""
@@ -486,12 +506,22 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str], 
             a["impronta"] = _impronta(a)
             cambi = ([f"scadenza: {vecchio.get('scadenza') or 'n.d.'} → {a['scadenza']}"]
                      if a.get("scadenza") != vecchio.get("scadenza") else [])
-        if cambi:
-            a.update(novita="aggiornato", data_novita=oggi_s, cambi=cambi)
+        prima = vecchio.get("prima_del_cambio")
+        if cambi and _torna_come_prima(cambi, vecchio, oggi):
+            # La pagina è tornata com'era (Vinzenzhaus 19/11, «part-time» per 10 minuti): niente novità,
+            # si rimette lo stato di prima del cambio annullato.
+            a.update(novita=prima.get("novita"), data_novita=prima.get("data_novita"), cambi=prima.get("cambi") or [])
+            a.pop("prima_del_cambio", None)
+        elif cambi:
+            a.update(novita="aggiornato", data_novita=oggi_s, cambi=cambi,
+                     prima_del_cambio={"novita": vecchio.get("novita"), "data_novita": vecchio.get("data_novita"),
+                                       "cambi": vecchio.get("cambi", [])})
             aggiornati.append(a)
         else:
             a.update(novita=vecchio.get("novita"), data_novita=vecchio.get("data_novita"),
                      cambi=vecchio.get("cambi", []))
+            if prima:
+                a["prima_del_cambio"] = prima
         memoria[a["id"]] = a
 
     giorni = int(cfg.get("giorni_prima_di_togliere", 30))

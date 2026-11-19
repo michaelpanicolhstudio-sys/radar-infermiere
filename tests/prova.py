@@ -497,6 +497,23 @@ esito_m = motore.aggiorna_memoria({"v1": dict(vecchio)}, [dict(nuovo)], set(), s
 verifica("regole cambiate: il titolo riscritto non è una novità", len(esito_m["aggiornati"]), 0)
 esito_m = motore.aggiorna_memoria({"v1": dict(vecchio)}, [dict(nuovo, scadenza="2026-11-30")], set(), set(), set(), OGGI, CFG)
 verifica("regole cambiate: una proroga resta una novità", [x["cambi"] for x in esito_m["aggiornati"]], [["scadenza: 2026-11-20 → 2026-11-30"]])
+# 19/11: Vinzenzhaus «tempo pieno, part-time» → «part-time» alle 14:24 e di nuovo «tempo pieno, part-time» alle 14:34
+# (pagina che cambia da sola): risultava «aggiornato» oggi anche se era tornato tutto com'era.
+_vz = {"id": "vz", "titolo": "Posizioni aperte", "regole": motore.VERSIONE_REGOLE, "turni": "tempo pieno, part-time",
+       "novita": "aggiornato", "data_novita": "2026-11-10", "cambi": ["titolo: Jobs → Posizioni aperte"], "primo_visto": "2026-11-10"}
+_vz["impronta"] = motore._impronta(_vz)
+_mem_vz = {"vz": dict(_vz)}
+_giro1 = dict(_vz, turni="part-time"); _giro1["impronta"] = motore._impronta(_giro1)
+motore.aggiorna_memoria(_mem_vz, [dict(_giro1)], set(), set(), set(), OGGI, CFG)
+verifica("va e torna: il primo cambio è un aggiornamento", _mem_vz["vz"]["cambi"], ["ore e turni: tempo pieno, part-time → part-time"])
+esito_vz = motore.aggiorna_memoria(_mem_vz, [dict(_vz)], set(), set(), set(), OGGI, CFG)
+verifica("va e torna: il ritorno com'era prima non è una novità",
+         (len(esito_vz["aggiornati"]), _mem_vz["vz"]["novita"], _mem_vz["vz"]["data_novita"], _mem_vz["vz"]["cambi"]),
+         (0, "aggiornato", "2026-11-10", ["titolo: Jobs → Posizioni aperte"]))
+_giro3 = dict(_vz, turni="part-time"); _giro3["impronta"] = motore._impronta(_giro3)
+_mem_vz2 = {"vz": dict(_vz, cambi=["ore e turni: part-time → tempo pieno, part-time"], data_novita="2026-11-01")}
+verifica("va e torna: dopo più giorni un ritorno è un cambio vero",
+         len(motore.aggiorna_memoria(_mem_vz2, [dict(_giro3)], set(), set(), set(), OGGI, CFG)["aggiornati"]), 1)
 
 # 14/11: ASUIT SC 04/26–13/26 ha due sessioni (15/11 e 11/12): dopo la prima risultava scaduto.
 man = {"id": "m1", "titolo": "Selezioni ASUIT", "origine": "manuale", "scadenza": "2026-11-15", "scadenze": ["2026-11-15", "2026-12-11"],
