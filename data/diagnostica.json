@@ -1018,173 +1018,11 @@
    ],
    "pagine": [
     {
-     "candidati": 0,
-     "link_in_pagina": [
-      [
-       "Amministrazione Trasparente",
-       "https://www.asuit.tn.it/amministrazione-trasparente"
-      ],
-      [
-       "Lavora con noi",
-       "https://www.asuit.tn.it/lavora-con-noi"
-      ],
-      [
-       "Personale convenzionato",
-       "https://www.asuit.tn.it/servizio-acquisizione-e-gestione-personale-convenzionato"
-      ],
-      [
-       "Personale dipendente",
-       "https://www.asuit.tn.it/bandi-concorsi?combine=&field_data_apertura_value_1=&field_data_apertura_value=&field_data_scadenza_value=&field_data_scadenza_value_1=&field_stato_bando_value=All&field_tipologia_bando_target_id%5B429%5D=429"
-      ],
-      [
-       "Bandi e concorsi",
-       "https://www.asuit.tn.it/bandi-concorsi"
-      ],
-      [
-       "Prevenzione e sicurezza ambienti di vita e lavoro",
-       "https://www.asuit.tn.it/servizi?combine=&field_tipologia_target_id%5B43%5D=43"
-      ],
-      [
-       "Ricognizione interna al fine dell’acquisizione di disponibilità da par",
-       "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-4"
-      ],
-      [
-       "Ricognizione interna al fine dell’acquisizione di disponibilità da par",
-       "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-1"
-      ],
-      [
-       "Ricognizione interna al fine dell’acquisizione di disponibilità da par",
-       "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-3"
-      ],
-      [
-       "Ricognizione interna al fine dell’acquisizione di disponibilità da par",
-       "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-2"
-      ],
-      [
-       "Pagina 1",
-       "https://www.asuit.tn.it/bandi-concorsi?page=0"
-      ],
-      [
-       "Pagina 2",
-       "https://www.asuit.tn.it/bandi-concorsi?page=1"
-      ],
-      [
-       "Pagina 3",
-       "https://www.asuit.tn.it/bandi-concorsi?page=2"
-      ],
-      [
-       "Pagina 4",
-       "https://www.asuit.tn.it/bandi-concorsi?page=3"
-      ],
-      [
-       "Pagina 5",
-       "https://www.asuit.tn.it/bandi-concorsi?page=4"
-      ],
-      [
-       "Pagina 6",
-       "https://www.asuit.tn.it/bandi-concorsi?page=5"
-      ],
-      [
-       "Pagina 7",
-       "https://www.asuit.tn.it/bandi-concorsi?page=6"
-      ],
-      [
-       "Ultima pagina Ultima »",
-       "https://www.asuit.tn.it/bandi-concorsi?page=233"
-      ],
-      [
-       "Albo online - Pubblicità legale",
-       "https://www.asuit.tn.it/documenti?combine=&field_categoria_target_id%5B143%5D=143&field_data_value=&field_data_value_1=&field_protocollo_value=&field_unita_organizzativa_target_id_verf=All"
-      ],
-      [
-       "Amministrazione Trasparente",
-       "https://www.asuit.tn.it/amministrazione-trasparente/amministrazione-trasparente"
-      ],
-      [
-       "Operatori e partner",
-       "https://www.asuit.tn.it/operatori-e-partner"
-      ],
-      [
-       "Stanza del cittadino",
-       "https://www2.stanzadelcittadino.it/apss/it/?path=/apss/it/&permanent=1&httpPort=80&httpsPort=443"
-      ],
-      [
-       "",
-       "https://www.asuit.tn.it/"
-      ],
-      [
-       "Chi siamo",
-       "https://www.asuit.tn.it/chi-siamo-0"
-      ],
-      [
-       "Entità organizzative",
-       "https://www.asuit.tn.it/entita-organizzative"
-      ],
-      [
-       "Persone",
-       "https://www.asuit.tn.it/persone"
-      ],
-      [
-       "Organigramma",
-       "https://www.asuit.tn.it/organigramma"
-      ],
-      [
-       "Documenti e dati",
-       "https://www.asuit.tn.it/documenti-e-dati"
-      ],
-      [
-       "Le certificazioni",
-       "https://www.asuit.tn.it/le-certificazioni"
-      ],
-      [
-       "Comitati",
-       "https://www.asuit.tn.it/comitati"
-      ],
-      [
-       "",
-       "https://www.asuit.tn.it/azienda-sanitaria-universitaria-integrata-del-trentino"
-      ],
-      [
-       "Servizi in evidenza",
-       "https://www.asuit.tn.it/servizi-evidenza"
-      ],
-      [
-       "Canali digitali",
-       "https://www.asuit.tn.it/canali-digitali"
-      ],
-      [
-       "Assistenza ospedaliera e territoriale",
-       "https://www.asuit.tn.it/servizi?combine=&field_tipologia_target_id%5B1%5D=1"
-      ],
-      [
-       "Certificati, patenti, vaccinazioni, autorizzazioni, rimborsi",
-       "https://www.asuit.tn.it/servizi?combine=&field_tipologia_target_id%5B2%5D=2"
-      ],
-      [
-       "Consultorio per il singolo, la coppia, la famiglia",
-       "https://www.asuit.tn.it/servizi?combine=&field_tipologia_target_id%5B36%5D=36"
-      ],
-      [
-       "Cure domiciliari ed assegno di cura",
-       "https://www.asuit.tn.it/servizi?combine=&field_tipologia_target_id%5B37%5D=37"
-      ],
-      [
-       "Dipendenze e salute mentale",
-       "https://www.asuit.tn.it/servizi?combine=&field_tipologia_target_id%5B38%5D=38"
-      ],
-      [
-       "Farmaci - ticket - esenzioni",
-       "https://www.asuit.tn.it/servizi?combine=&field_tipologia_target_id%5B39%5D=39"
-      ],
-      [
-       "Invalidità e prestazioni collegate",
-       "https://www.asuit.tn.it/servizi?combine=&field_tipologia_target_id%5B40%5D=40"
-      ]
-     ],
+     "candidati": 1,
      "url": "https://www.asuit.tn.it/bandi-concorsi"
     },
     {
-     "candidati": 0,
+     "candidati": 1,
      "url": "https://www.asuit.tn.it/bandi-concorsi?page=1"
     },
     {
@@ -1220,7 +1058,13 @@
      "url": "https://www.asuit.tn.it/bandi-concorsi?page=9"
     }
    ],
-   "scartati": []
+   "scartati": [
+    [
+     "Ricognizione interna al fine dell’acquisizione di disponibilità da parte di dirigenti medici per lo svolgimento di prestazioni orarie aggiuntive nelle attività di ortopedia e traumatologia presso tutt",
+     "ruolo diverso (dal titolo)",
+     "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-1"
+    ]
+   ]
   },
   "Altenheim Kaltern (Caldaro) – Karriere": {
    "accettati": [],
@@ -1760,8 +1604,8 @@
    ],
    "pagine": [
     {
-     "caratteri": 702,
-     "inizio": "Freiberufliche Tätigkeit in der Pflege Sozialgenossenschaft Zum Heiligen Vinzenz Wiesen, Pfitsch Vollzeit Teilzeit Freelancer Projektarbeit 17.11.2026 Sozialgenossenschaft Zum Heiligen Vinzenz Traustonstr. 190 , 39049 Wiesen-Pfitsch Personalabteilung +39 0472 765179 info@schlossmoos.it +39 0472 765179 info@schlossmoos.it Al profilo aziendale Posti di lavoro simili Sozialbetreuer*in Vollzeit / Teil",
+     "caratteri": 345,
+     "inizio": "Freiberufliche Tätigkeit in der Pflege Sozialgenossenschaft Zum Heiligen Vinzenz Wiesen, Pfitsch Vollzeit Teilzeit Freelancer Projektarbeit 17.11.2026 Sozialgenossenschaft Zum Heiligen Vinzenz Traustonstr. 190 , 39049 Wiesen-Pfitsch Personalabteilung +39 0472 765179 info@schlossmoos.it +39 0472 765179 info@schlossmoos.it Zum Arbeitgeber Profil",
      "pdf": [],
      "url": "https://www.suedtirolerjobs.it/jobs/freiberufliche-taetigkeit-in-der-pflege,115073"
     }
@@ -1962,7 +1806,7 @@
    "pagine": [
     {
      "caratteri": 5584,
-     "inizio": "Vinzenzhaus – Jobs waldemarker 2026-11-19T15:24:20+01:00 Zu den aktuellen Jobs Jobs fürs Leben. Pflege deine Talente. Beruflich und persönlich wachsen. Genau das kannst du bei uns. Denn die modernen Pflegeansätze, die wir im Vinzenzhaus verfolgen, sind nicht nur für unsere Senior*innen attraktiv, sondern auch für unser Mitarbeitenden. Bring deine fachliche Kompetenz und deine menschlichen Qualität",
+     "inizio": "Vinzenzhaus – Jobs waldemarker 2026-11-19T15:51:33+01:00 Zu den aktuellen Jobs Jobs fürs Leben. Pflege deine Talente. Beruflich und persönlich wachsen. Genau das kannst du bei uns. Denn die modernen Pflegeansätze, die wir im Vinzenzhaus verfolgen, sind nicht nur für unsere Senior*innen attraktiv, sondern auch für unser Mitarbeitenden. Bring deine fachliche Kompetenz und deine menschlichen Qualität",
      "pdf": [],
      "url": "https://sozialgenossenschaft-vinzenz.it/vinzenzhaus/vinzenzhaus-jobs/"
     }
@@ -1970,7 +1814,7 @@
    "scartati": []
   }
  },
- "richieste": 103,
+ "richieste": 105,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }
