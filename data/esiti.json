@@ -53,7 +53,7 @@
   "s:0c4d0ee98ebe": {
     "esito": "sì",
     "aggiornato": "2026-11-19",
-    "prossimo": "Colloquio del 19/11: 35 €/h + 4% ENPAPI, turni da 8 ore, libero di farne da 1 al mese in su. Decidere quanti turni e da quando (dopo autorizzazione ASDAA o dimissioni)."
+    "prossimo": "Colloquio del 19/11 fatto: 35 €/h + 4% ENPAPI, turni da 8 ore, libero di farne da 1 al mese in su. Riserva principale nel piano."
   },
   "s:5c4f5be5b691": {
     "esito": "sì",
@@ -74,5 +74,20 @@
     "esito": "in attesa",
     "aggiornato": "2026-11-19",
     "prossimo": "Tariffa per liberi professionisti 33 €/h (riferita da Michael il 19/11). Non hanno ancora risposto per mail: passare di persona o telefonare e chiedere quanti turni al mese."
+  },
+  "s:15191c725b44": {
+    "esito": "no",
+    "aggiornato": "2026-11-19",
+    "prossimo": "Servizio infermieristico coperto da dipendenti; vi ricontattano in caso di future opportunità."
+  },
+  "s:245515de4ac6": {
+    "esito": "no",
+    "aggiornato": "2026-11-19",
+    "prossimo": "Struttura residenziale per minori, non sanitaria: non fa al caso nostro."
+  },
+  "s:e230d5086f2b": {
+    "esito": "sì",
+    "aggiornato": "2026-11-19",
+    "prossimo": "Il direttore Stefano Canestrini conferma che collaborano con infermieri liberi professionisti e chiede il CV."
   }
 }
