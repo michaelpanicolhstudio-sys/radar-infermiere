@@ -803,6 +803,13 @@ def estrai_turni(testo: str) -> tuple[str | None, dict]:
     if re.search(r"\bnott[ei]\b|notturn|nachtdienst|nachtschicht|\bnächte", testo, re.I):
         etichette.append("notti")
         segnali["notti"] = True
+    # «3 Schicht System», «Dreischichtbetrieb», «su tre turni»: mattina, pomeriggio e notte.
+    if re.search(r"\b(?:3|drei)[\s-]*schicht|\bdreischicht|\b(?:su\s+)?(?:3|tre)\s+turni\b|\bturni\s+h\s?24\b", testo, re.I):
+        if segnali.get("notti"):
+            etichette.append("3 turni")
+        else:
+            etichette.append("3 turni (anche notti)")
+            segnali["notti"] = True
     if re.search(r"week\s?-?end|fine\s+settimana|festiv|wochenend", testo, re.I):
         etichette.append("weekend/festivi")
         segnali["weekend"] = True

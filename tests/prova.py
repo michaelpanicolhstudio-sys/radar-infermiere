@@ -482,6 +482,12 @@ verifica("struttura: Seniorenheim e ÖBPB sono case di riposo",
 verifica("ore: più scelte di ore settimanali restano tutte", estrai.estrai_turni("Teilzeit mit 18, 20 und 22 Wochenstunden")[0],
          "18, 20 o 22 h/settimana, part-time")
 verifica("ore: una sola cifra resta com'è", estrai.estrai_turni("Vollzeit 38 Stunden pro Woche")[0], "38 h/settimana, tempo pieno")
+# 19/11: Altershilfe Tschögglberg «Bereitschaft zur Arbeit im 3 Schicht System» restava «n.d.»: tre turni vuol dire anche notti.
+verifica("turni: sistema a 3 turni (tedesco)", estrai.estrai_turni("Ihr Profil: Bereitschaft zur Arbeit im 3 Schicht System")[0], "3 turni (anche notti)")
+verifica("turni: tre turni (italiano) segnala le notti", estrai.estrai_turni("disponibilità a lavorare su tre turni")[1].get("notti"), True)
+verifica("turni: «3 Schichten» con le notti già scritte non si ripete",
+         estrai.estrai_turni("Dreischichtbetrieb inklusive Nachtdienst")[0], "notti, 3 turni")
+verifica("turni: 3 posti non sono 3 turni", estrai.estrai_turni("3 posti per infermieri, turni da concordare")[0], None)
 verifica("VdS: titolo leggibile dall'indirizzo (ore)",
          estrai.titolo_leggibile("Krankenpflegerinnen 7ter fe mit 18 20 und 22 wochenstunden"), "Infermiere/a – part-time (18, 20 o 22 ore/settimana)")
 verifica("VdS: titolo leggibile dall'indirizzo (graduatoria con altri profili)",
