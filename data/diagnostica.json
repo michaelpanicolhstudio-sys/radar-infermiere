@@ -1006,8 +1006,21 @@
   "ASUIT – bandi e concorsi": {
    "accettati": [
     "Selezione pubblica, per titoli, per la formazione di graduatorie per assunzioni a tempo de",
-    "SC 03/26 AVVISO APERTO INFERMIERE CAVALESE",
-    "AVVISO DI SELEZIONE PUBBLICA PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONALI A MEDIC"
+    "SC 03/26 AVVISO APERTO INFERMIERE CAVALESE"
+   ],
+   "gia_scartati": [
+    [
+     "Ricognizione interna al fine dell’acquisizione di disponibilità da parte di dirigenti medici per lo svolgimento di prestazioni orarie aggiuntive nelle attività di ortopedia e traumatologia presso tutt",
+     "ruolo diverso (dal titolo)",
+     "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-1",
+     "2026-11-19"
+    ],
+    [
+     "AVVISO DI SELEZIONE PUBBLICA SELEZIONE PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONALI A LAUREATI IN MEDICINA E CHIRURGIA PER LO SVOLGIMENTO DI ATTIVITÀ SANITARIA PRESSO L’OSPEDALE DI COMUNITÀ D",
+     "non riguarda infermieri",
+     "https://www.asuit.tn.it/bandi-concorsi/avviso-di-selezione-pubblica-selezione-il-conferimento-di-incarichi-libero-1",
+     "2026-11-19"
+    ]
    ],
    "pagine": [
     {
@@ -1051,18 +1064,7 @@
      "url": "https://www.asuit.tn.it/bandi-concorsi?page=9"
     }
    ],
-   "scartati": [
-    [
-     "Ricognizione interna al fine dell’acquisizione di disponibilità da parte di dirigenti medici per lo svolgimento di prestazioni orarie aggiuntive nelle attività di ortopedia e traumatologia presso tutt",
-     "ruolo diverso (dal titolo)",
-     "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-1"
-    ],
-    [
-     "AVVISO DI SELEZIONE PUBBLICA SELEZIONE PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONALI A LAUREATI IN MEDICINA E CHIRURGIA PER LO SVOLGIMENTO DI ATTIVITÀ SANITARIA PRESSO L’OSPEDALE DI COMUNITÀ D",
-     "non riguarda infermieri",
-     "https://www.asuit.tn.it/bandi-concorsi/avviso-di-selezione-pubblica-selezione-il-conferimento-di-incarichi-libero-1"
-    ]
-   ]
+   "scartati": []
   },
   "Altenheim Kaltern (Caldaro) – Karriere": {
    "accettati": [],
@@ -1217,6 +1219,14 @@
   },
   "Google Alerts 16": {
    "accettati": [],
+   "gia_scartati": [
+    [
+     "Dalla Carta di Riva alle prossime sfide: FEU propone un'alleanza per il futuro dell ...",
+     "notizia, non un'offerta di lavoro",
+     "https://nursetimes.org/dalla-carta-di-riva-alle-prossime-sfide-feu-propone-unalleanza-per-il-futuro-dellemergenza-urgenza",
+     "2026-11-19"
+    ]
+   ],
    "pagine": [
     {
      "candidati": 1,
@@ -1225,14 +1235,7 @@
      "url": "feed"
     }
    ],
-   "scartati": [
-    [
-     "Dalla Carta di Riva alle prossime sfide: FEU propone un'alleanza per il futuro dell ...",
-     "notizia, non un'offerta di lavoro",
-     "https://nursetimes.org/dalla-carta-di-riva-alle-prossime-sfide-feu-propone-unalleanza-per-il-futuro-dellemergenza-urgenza"
-    ]
-   ],
-   "senza_pdf": []
+   "scartati": []
   },
   "Google Alerts 17": {
    "accettati": [],
@@ -1415,18 +1418,45 @@
    "accettati": [
     "CERCHIAMO INFERMIERE:I (m/f/d) per la nostra RSA Ciasa de Palsa Ojöp Frëinademetz",
     "La casa di riposo di Silandro cerca nuovi collaboratori/trici",
-    "CERCASI INFERMIERE/A PER EMODIALISI DOMICILIARE – BOLZANO",
-    "Hotel Palace Merano cerca infermiere",
-    "Fondo Ospedale della S.S. Trinità RESIDENZA PER ANZIANI ANNENBERG LACES – Formazione di un",
-    "INPS – Ricerca infermiere/a",
-    "Fondazione Pitsch cerca infermieri/e",
-    "Fondazione Casa di Riposo Heinrich von Rottenburg Caldaro",
-    "Fondazione Pitsch cerca personale",
-    "Infermiere/a a tempo pieno o part time",
-    "Study nurse @Bolzano @Istituto per la Medicina di Emergenza in Montagna – EURAC RESEARCH",
-    "Comunità comprensoriale Burgraviato – Avviso pubblico",
-    "Comunità Comprensoriale Burgraviato – Assunzioni a tempo determinato",
-    "Infermiere/a a tempo pieno o part time"
+    "CERCASI INFERMIERE/A PER EMODIALISI DOMICILIARE – BOLZANO"
+   ],
+   "gia_scartati": [
+    [
+     "Ricerca di funzionario sanitario in comando presso l’INPS di Bolzano",
+     "ruolo diverso (dal titolo)",
+     "https://www.opibz.it/ricerca-di-funzionario-sanitario-in-comando-presso-linps-di-bolzano/",
+     "2026-11-19"
+    ],
+    [
+     "Infermiere a Caorle",
+     "fuori regione",
+     "https://www.opibz.it/infermiere-a-caorle/",
+     "2026-11-19"
+    ],
+    [
+     "Cerchiamo un RESPONSABILE TECNICO-ASSISTENZIALE",
+     "ruolo diverso (dal titolo)",
+     "https://www.opibz.it/cerchiamo-un-responsabile-tecnico-assistenziale/",
+     "2026-11-19"
+    ],
+    [
+     "CERCHIAMO UN/UNA RESPONSABILE DI PIANO",
+     "ruolo diverso (dal titolo)",
+     "https://www.opibz.it/cerchiamo-un-una-responsabile-di-piano/",
+     "2026-11-19"
+    ],
+    [
+     "INPS – Ricerca infermiere/a",
+     "ruolo diverso (coordinamento, direzione o comando)",
+     "https://www.opibz.it/inps-ricerca-infermiere-a/",
+     "2026-11-19"
+    ],
+    [
+     "Avviso – Collegio tecnico – Dirigenza tecnico-assistenziale",
+     "ruolo diverso (dal titolo)",
+     "https://www.opibz.it/avviso-collegio-tecnico-dirigenza-tecnico-assistenziale/",
+     "2026-11-19"
+    ]
    ],
    "pagine": [
     {
@@ -1434,38 +1464,7 @@
      "url": "https://www.opibz.it/?page_id=5109"
     }
    ],
-   "scartati": [
-    [
-     "Ricerca di funzionario sanitario in comando presso l’INPS di Bolzano",
-     "ruolo diverso (dal titolo)",
-     "https://www.opibz.it/ricerca-di-funzionario-sanitario-in-comando-presso-linps-di-bolzano/"
-    ],
-    [
-     "Infermiere a Caorle",
-     "fuori regione",
-     "https://www.opibz.it/infermiere-a-caorle/"
-    ],
-    [
-     "Cerchiamo un RESPONSABILE TECNICO-ASSISTENZIALE",
-     "ruolo diverso (dal titolo)",
-     "https://www.opibz.it/cerchiamo-un-responsabile-tecnico-assistenziale/"
-    ],
-    [
-     "CERCHIAMO UN/UNA RESPONSABILE DI PIANO",
-     "ruolo diverso (dal titolo)",
-     "https://www.opibz.it/cerchiamo-un-una-responsabile-di-piano/"
-    ],
-    [
-     "INPS – Ricerca infermiere/a",
-     "ruolo diverso (coordinamento, direzione o comando)",
-     "https://www.opibz.it/inps-ricerca-infermiere-a/"
-    ],
-    [
-     "Avviso – Collegio tecnico – Dirigenza tecnico-assistenziale",
-     "ruolo diverso (dal titolo)",
-     "https://www.opibz.it/avviso-collegio-tecnico-dirigenza-tecnico-assistenziale/"
-    ]
-   ],
+   "scartati": [],
    "senza_pdf": []
   },
   "OPI Trento – annunci di lavoro": {
@@ -1474,15 +1473,21 @@
     "A.P.S.P. C. Vannetti – Rovereto – Selezione per liberi professionisti – PROROGA TERMINI",
     "A.P.S.P. C. Vannetti – Rovereto – bando di concorso",
     "Cooperativa Sociale Villa Maria Onlus – ricerca di personale",
-    "A.P.S.P. Suor Agnese – Concorso per infermieri",
-    "APSP “San Giuseppe” di Primiero (TN) – ricerca di personale",
-    "Fondazione Casa di Riposo Heinrich von Rottenburg (APSP) – Caldaro BZ – ricerca personale",
-    "A.P.S.P. Padre Odone Nicolini – Pieve di Bono – Prezzo TN – ricerca personale",
-    "A.P.S.P. Centro Residenziale A. Collini – Ricerca personale tempo determinato",
-    "A.P.S.P. “OPERA ROMANI” – Nomi TN – bando di concorso",
-    "A.P.S.P. “Levico CURAE” – Levico Terme (TN) – selezione",
-    "Cooperativa D.O.C. Ricerca personale infermieristico",
-    "Avviso di selezione pubblica per il conferimento di incarichi libero professionali a infer"
+    "APSP “San Giuseppe” di Primiero (TN) – ricerca di personale"
+   ],
+   "gia_scartati": [
+    [
+     "A.P.S.P. Margherita Grazioli – Trento – pubblica selezione per coordinatore",
+     "ruolo diverso (dal titolo)",
+     "https://opi.tn.it/a-p-s-p-margherita-grazioli-trento-bando-di-concorso/",
+     "2026-11-19"
+    ],
+    [
+     "Società Cooperativa Sociale Stella Montis Fondo – Borgo d’Ananunia (TN) – ricerca di personale",
+     "ruolo diverso (coordinamento, direzione o comando)",
+     "https://opi.tn.it/societa-cooperativa-sociale-stella-montis-fondo-borgo-dananunia-tn-ricerca-di-personale/",
+     "2026-11-19"
+    ]
    ],
    "pagine": [
     {
@@ -1490,34 +1495,8 @@
      "url": "https://opi.tn.it/segreteria/annunci-di-lavoro/"
     }
    ],
-   "scartati": [
-    [
-     "A.P.S.P. Margherita Grazioli – Trento – pubblica selezione per coordinatore",
-     "ruolo diverso (dal titolo)",
-     "https://opi.tn.it/a-p-s-p-margherita-grazioli-trento-bando-di-concorso/"
-    ],
-    [
-     "Società Cooperativa Sociale Stella Montis Fondo – Borgo d’Ananunia (TN) – ricerca di personale",
-     "ruolo diverso (coordinamento, direzione o comando)",
-     "https://opi.tn.it/societa-cooperativa-sociale-stella-montis-fondo-borgo-dananunia-tn-ricerca-di-personale/"
-    ]
-   ],
+   "scartati": [],
    "senza_pdf": [
-    {
-     "link": [
-      [
-       "a",
-       "www.apspgrazioli.it",
-       "http://www.apspgrazioli.it/"
-      ],
-      [
-       "a",
-       "Messaggio di benvenuto nella comunità professionale ai futur",
-       "https://opi.tn.it/messaggio-di-benvenuto-nella-comunita-professionale-ai-futuri-colleghi-e-informazioni-per-liscrizione-allalbo-8/"
-      ]
-     ],
-     "url": "https://opi.tn.it/a-p-s-p-margherita-grazioli-trento-bando-di-concorso/"
-    },
     {
      "link": [
       [
@@ -1592,8 +1571,8 @@
      "link": [
       [
        "a",
-       "www.stellamontisfondo.it",
-       "http://www.stellamontisfondo.it"
+       "https://www.apsp-primiero.net/",
+       "https://www.apsp-primiero.net/"
       ],
       [
        "a",
@@ -1601,7 +1580,7 @@
        "https://opi.tn.it/messaggio-di-benvenuto-nella-comunita-professionale-ai-futuri-colleghi-e-informazioni-per-liscrizione-allalbo-8/"
       ]
      ],
-     "url": "https://opi.tn.it/societa-cooperativa-sociale-stella-montis-fondo-borgo-dananunia-tn-ricerca-di-personale/"
+     "url": "https://opi.tn.it/apsp-san-giuseppe-di-primiero-tn-ricerca-di-personale/"
     }
    ]
   },
@@ -1786,6 +1765,14 @@
     "APSP di Primiero - Infermiere",
     "APSP di Lavis - Infermieri"
    ],
+   "gia_scartati": [
+    [
+     "Selezione pubblica per il conferimento di un incarico libero professionale per Psicologo - APSP di Folgaria",
+     "non riguarda infermieri",
+     "https://www.upipa.tn.it/Bacheca/Concorsi/Selezione-pubblica-per-il-conferimento-di-un-incarico-libero-professionale-per-Psicologo-APSP-di-Folgaria",
+     "2026-11-19"
+    ]
+   ],
    "pagine": [
     {
      "candidati": 2,
@@ -1796,13 +1783,7 @@
      "url": "https://www.upipa.tn.it/Bacheca/Concorsi/(offset)/10"
     }
    ],
-   "scartati": [
-    [
-     "Selezione pubblica per il conferimento di un incarico libero professionale per Psicologo - APSP di Folgaria",
-     "non riguarda infermieri",
-     "https://www.upipa.tn.it/Bacheca/Concorsi/Selezione-pubblica-per-il-conferimento-di-un-incarico-libero-professionale-per-Psicologo-APSP-di-Folgaria"
-    ]
-   ]
+   "scartati": []
   },
   "Villa Sant'Anna Merano – lavora con noi": {
    "accettati": [
@@ -1833,7 +1814,7 @@
    "scartati": []
   }
  },
- "richieste": 141,
+ "richieste": 103,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }
