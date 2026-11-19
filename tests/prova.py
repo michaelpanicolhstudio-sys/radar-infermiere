@@ -605,6 +605,29 @@ verifica("resoconto: interessati con compenso e da quando",
          {k: invio.leggi_esito("Siamo interessati, compenso orario di 38 euro, da gennaio 2027.")[k] for k in ("esito", "euro_ora", "da_quando")},
          {"esito": "sì", "euro_ora": 38.0, "da_quando": "da gennaio 2027"})
 verifica("resoconto: risposta negativa in tedesco", invio.leggi_esito("Leider haben wir derzeit keinen Bedarf.")["esito"], "no")
+# Risposte vere del 17-19/11 (frasi accorciate), con l'esito deciso da Michael in data/esiti.json.
+_risposte_vere = [
+    ("In questo momento non abbiamo bisogno, in ogni caso sarebbero assai gradite una sua offerta per l'anno 2027 e curriculum vitae", "più avanti"),
+    ("Al momento non abbiamo necessità ma può comunque inviarci il curriculum.", "più avanti"),
+    ("Attualmente non abbiamo la necessità di infermieri liberi professionisti. Le chiedo comunque di mandarci curriculum per possibili future esigenze", "più avanti"),
+    ("La nostra struttura collabora con infermieri in libera professione. Per il momento siamo al completo, però se ci gira il suo curriculum lo consideriamo.", "più avanti"),
+    ("Buongiorno, chiediamo gentilmente l'invio di un cv.", "più avanti"),
+    ("A fine di trasmettere la sua candidatura agli uffici competenti, Le chiediamo gentilmente di trasmetterci il Suo curriculum vitae.", "più avanti"),
+    ("La invito a trasmettere il suo cv aggiornato. Sarà contattato compatibilmente con le esigenze di servizio, ma prioritariamente l'accesso è tramite procedure concorsuali. Si valuta libera professione su eventuali esigenze indifferibili e qualora non vi siano candidati disponibili all'assunzione.", "più avanti"),
+    ("Confermo che la nostra struttura collabora con Infermieri in libera professione, Le chiedo cortesemente di inviarci il curriculum vitae aggiornato.", "sì"),
+    ("Collaboriamo anche con infermieri libero professionisti e pertanto può inviare il curriculum nel caso ci fossero esigenze.", "sì"),
+    ("Buon giorno, si collaboriamo con infermieri in libera professione, può inviarmi un curriculum?", "sì"),
+    ("Stiamo ancora cercando infermieri in libera professione. Se mi lascia il suo numero ci sentiamo domani.", "sì"),
+    ("Se interessato ad un colloquio le chiedo di rispondere a questa mail.", "sì"),
+    ("Buongiorno possiamo vederci già oggi pomeriggio alle 14.30. Avrei una certa urgenza", "sì"),
+    ("Siamo sempre in difficoltà a reperire infermieri, quindi la Sua candidatura non è certamente fuori luogo. Al momento dovremmo essere a posto.", "sì"),
+    ("Al momento il servizio infermieristico è coperto da personale dipendente. Avremo piacere di ricontattarla in caso di future opportunità.", "no"),
+    ("La nostra è una struttura residenziale per minori e non sanitaria.", "no"),
+    ("La ringrazio per l'interessamento, ma al momento non vi è necessità di attivare collaborazioni in libera professione.", "no"),
+    ("Le chiediamo la cortesia di compilare l'apposito modulo di domanda di assunzione/collaborazione, che le alleghiamo.", "da fare"),
+]
+verifica("resoconto: esito delle risposte vere come deciso da Michael",
+         [(t[:40], invio.leggi_esito(t)["esito"]) for t, _ in _risposte_vere], [(t[:40], e) for t, e in _risposte_vere])
 
 avviso_html = ("<table><tr><td><a href='https://it.indeed.com/rc/clk?jk=abc&utm_source=x&from=mail'>Infermiere/a libero professionista</a>"
                "<div>Cooperativa Sociale Esempio</div><div>Trento, Trentino-Alto Adige</div><div>35 € all'ora</div></td></tr>"

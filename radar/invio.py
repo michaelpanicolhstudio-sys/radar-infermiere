@@ -26,7 +26,7 @@ RE_NO = re.compile(r"non\s+(?:abbiamo|cerchiamo|ricerchiamo|necessitiamo|è\s+pr
                    r"al\s+momento\s+no|non\s+ci\s+sono\s+(?:posizioni|esigenze)|keinen\s+bedarf|derzeit\s+(?:nicht|kein)|"
                    r"leider\s+(?:nicht|kein)|nur\s+(?:angestellt|festangestellt)", re.I)
 RE_SI = re.compile(r"siamo\s+interessat|interessat[oi]\s+a|volentieri|saremmo\s+lieti|ben\s+volentieri|abbiamo\s+bisogno|"
-                   r"cerchiamo|ricerchiamo|disponibili\s+a|gerne|interesse\s+an|wir\s+suchen|bedarf\s+besteht|freuen\s+uns", re.I)
+                   r"cerchiamo|ricerchiamo|(?<!candidati\s)disponibili\s+a|gerne|interesse\s+an|wir\s+suchen|bedarf\s+besteht|freuen\s+uns", re.I)
 RE_LP = re.compile(r"libera\s+profession|libero\s+professionist|partita\s+iva|p\.\s?iva|freiberuf|mwst", re.I)
 RE_DIP = re.compile(r"assunzion|tempo\s+(?:in)?determinato|dipendente|contratto\s+di\s+lavoro|anstellung|festanstellung|angestellt", re.I)
 
@@ -179,6 +179,38 @@ def rispondi(contatti: dict, rif: str, testo: str, oggi: date, cfg: dict, regist
 # Resoconto delle risposte
 # --------------------------------------------------------------------------
 
+# Lettura dell'esito, tarata sulle risposte vere del 17-19/11 classificate da Michael (data/esiti.json).
+RE_DA_FARE = re.compile(r"compilare\s+(?:l['’]\s*)?(?:apposit[oa]\s+)?(?:modulo|scheda|domanda)|modulo\s+(?:di\s+domanda\s+)?da\s+compilare|"
+                        r"formular\s+aus(?:zu)?f[üu]ll", re.I)
+RE_SI_FORTE = re.compile(r"colloqui|vederci|incontrarci|stiamo\s+(?:ancora\s+)?cercando|ancora\s+cercando|"
+                         r"difficolt[àa]\s+a\s+(?:reperire|trovare)|vorstellungsgespr[äa]ch|kennenlern", re.I)
+RE_NO_ORA = re.compile(r"non\s+(?:abbiamo|vi\s+è|c['’]\s*è|ci\s+sono|si\s+ravvisa)\s+(?:al\s+momento\s+)?(?:la\s+|alcun[ao]?\s+)?(?:necessit|bisogno|esigenz)|"
+                       r"al\s+completo|copert[oi]\s+da\s+personale|non\s+(?:è|e)\s+(?:una\s+struttura\s+)?sanitaria|non\s+sanitari[ao]", re.I)
+RE_NO_DEFINITIVO = re.compile(r"non\s+sanitari[ao]|non\s+(?:è|e)\s+(?:una\s+struttura\s+)?sanitaria|non\s+collaboriamo|"
+                              r"non\s+(?:ci\s+avvaliamo|utilizziamo)\s+(?:di\s+)?(?:liberi|libero|infermieri)", re.I)
+RE_CV = re.compile(r"curricul|\bcv\b|lebenslauf", re.I)
+RE_COLLABORA_LP = re.compile(r"(?<!non\s)collabor\w*\s+(?:anche\s+|già\s+)?con\s+(?:gli\s+|degli\s+|dei\s+)?(?:infermier\w*|liberi\s+professionist)", re.I)
+
+
+def _esito(testo: str, euro_ora) -> str:
+    """sì / più avanti / no / da fare / da leggere, come li sceglierebbe Michael leggendo la risposta."""
+    if RE_DA_FARE.search(testo):
+        return "da fare"
+    if RE_NO_DEFINITIVO.search(testo):
+        return "no"
+    if RE_SI_FORTE.search(testo) or euro_ora:
+        return "sì"
+    no_ora = RE_NO_ORA.search(testo) or RE_NO.search(testo)
+    if no_ora:
+        # «Ora no, ma mandi il CV / un'offerta»: resta una porta aperta.
+        return "più avanti" if RE_CV.search(testo) or re.search(r"offerta\s+per", testo, re.I) else "no"
+    if RE_COLLABORA_LP.search(testo) or RE_SI.search(testo):
+        return "sì"
+    if RE_CV.search(testo):
+        return "più avanti"
+    return "da leggere"
+
+
 def leggi_esito(testo: str) -> dict:
     """Cosa dice una risposta: esito, tipo di rapporto, compenso, turni, quando."""
     compenso, euro_ora = estrai.estrai_compenso(testo)
@@ -193,8 +225,7 @@ def leggi_esito(testo: str) -> dict:
         if ore:
             parole.append(f"{ore.group(1)} ore a settimana")
         turni = ", ".join(parole) or None
-    no, si = RE_NO.search(testo), RE_SI.search(testo)
-    esito = "no" if no and not (si and si.start() > no.start() + 200) else ("sì" if si or euro_ora else "da leggere")
+    esito = _esito(testo, euro_ora)
     rapporto = "libera professione" if RE_LP.search(testo) else ("dipendente" if RE_DIP.search(testo) else None)
     m = re.search(r"(?:da\s+subito|subito|immediatamente|ab\s+sofort|da(?:l)?\s+(?:\d{1,2}\s+)?(?:gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|"
                   r"agosto|settembre|ottobre|novembre|dicembre)(?:\s+\d{4})?)", testo, re.I)
