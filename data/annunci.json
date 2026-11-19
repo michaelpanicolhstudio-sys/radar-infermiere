@@ -3553,7 +3553,7 @@
    "Annuncio in tedesco"
   ],
   "cambi": [
-   "ore e turni: tempo pieno, part-time → part-time"
+   "ore e turni: part-time → tempo pieno, part-time"
   ],
   "cita_tedesco": false,
   "compenso": null,
@@ -3582,8 +3582,8 @@
    },
    {
     "max": 15,
-    "motivo": "part-time",
-    "punti": 4,
+    "motivo": "tempo pieno, part-time",
+    "punti": 7,
     "voce": "Ore e turni"
    },
    {
@@ -3598,7 +3598,7 @@
   "euro_ora": null,
   "fonte": "Vinzenzhaus Bolzano – Jobs",
   "id": "c756aaab1eb7",
-  "impronta": "21e06570ed6e",
+  "impronta": "82a8830cb291",
   "in_tedesco": true,
   "km": 42,
   "letto_il": "2026-11-19",
@@ -3608,17 +3608,18 @@
   "pec": null,
   "primo_visto": "2026-11-13",
   "pubblicato": null,
-  "punteggio": 37,
+  "punteggio": 40,
   "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
-   "parziale": true
+   "parziale": true,
+   "pieno": true
   },
   "struttura": "RSA o casa di riposo",
   "tipo_fonte": "pagina",
   "titolo": "Posizioni aperte al Vinzenzhaus (anche Krankenpfleger:in)",
-  "turni": "part-time",
+  "turni": "tempo pieno, part-time",
   "ultimo_visto": "2026-11-19",
   "url": "https://sozialgenossenschaft-vinzenz.it/vinzenzhaus/vinzenzhaus-jobs/",
   "zona": "Bolzano"

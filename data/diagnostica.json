@@ -1377,13 +1377,20 @@
    "accettati": [],
    "pagine": [
     {
-     "candidati": 0,
-     "caratteri": 439,
+     "candidati": 1,
+     "caratteri": 1244,
      "titolo_feed": "Google Alert - infermiere lavoro Rovereto OR Riva OR Arco OR Pergine OR Cles",
      "url": "feed"
     }
    ],
-   "scartati": []
+   "scartati": [
+    [
+     "Dalla Carta di Riva alle prossime sfide: FEU propone un'alleanza per il futuro dell ...",
+     "notizia, non un'offerta di lavoro",
+     "https://nursetimes.org/dalla-carta-di-riva-alle-prossime-sfide-feu-propone-unalleanza-per-il-futuro-dellemergenza-urgenza"
+    ]
+   ],
+   "senza_pdf": []
   },
   "Google Alerts 17": {
    "accettati": [],
@@ -1962,7 +1969,7 @@
    "scartati": []
   }
  },
- "richieste": 103,
+ "richieste": 105,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }
