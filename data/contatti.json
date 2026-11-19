@@ -372,6 +372,7 @@
  },
  "s:9cee32bc6a1e": {
   "a": [
+   "direttore@centroservizimale.it",
    "info@centroservizimale.it"
   ],
   "automatica": true,
@@ -407,7 +408,19 @@
   "automatica": true,
   "inviata_il": "2026-11-17",
   "rif": "R-abb9fae4",
-  "risposte": [],
+  "risposte": [
+   {
+    "compenso": null,
+    "da": "info@apspborgo.it",
+    "data": "2026-11-19",
+    "euro_ora": null,
+    "incontro": null,
+    "mid": "<!&!AAAAAAAAAAAYAAAAAAAAAFaspFWKsqlIqGp+f3mXk77CgAAAEAAAANS9ZcZDLKlBli1zw7gn2NUBAAAAAA==@apspborgo.it>",
+    "oggetto": "R: Infermiere libero professionista – richiesta di informazioni (Rif. R-abb9fae4)",
+    "testo": "Buongiorno, chiediamo gentilmente l'invio di un cv.\n\nCordiali saluti\n\nClaudia Purin\nInt. 4005\nUfficio ospiti/segreteria/protocollo\nMail: info@apspborgo.it\n\n                \n\nAzienda Pubblica di Servizi alla Persona\n“S. Lorenzo e S. Maria della Misericordia”\nVia per Telve, 7 - 38051 Borgo Valsugana (TN)\nTelefono: +39 0461 754123\nFax: +39 0461 752909\nCodice Fiscale 81000970228\nPartita IVA 00988390225\nwww.apspborgo.it\n\nLe informazioni contenute in questo messaggio sono strettamente confidenziali e rivolte esclusivamente ai destinatari sopra indicati. Ogni successivo inoltro, diffusione, copia e/o altro utilizzo, se non espressamente autorizzato, è vietato e costituisce violazione della disciplina in materia di tutela dei dati personali (Reg. UE 16/679). Nel caso aveste ricevuto questa comunicazione per errore vi chiediamo di informaci immediatamente e di eliminare il messaggio, compresi eventuali file allegati, senza trattenerne copia. Personale incaricato potrà accedere alla risposta fornita alla presente comunicazione. Grazie per l’attenzione.\n\nRispetta l'ambiente: se non ti è necessario, non stampare questa mail",
+    "turni": null
+   }
+  ],
   "via": "gmail"
  },
  "s:ae492b93a78d": {
