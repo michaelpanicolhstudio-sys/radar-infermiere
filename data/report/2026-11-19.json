@@ -1,11 +1,28 @@
 {
- "aggiornati": [],
+ "aggiornati": [
+  {
+   "cambi": [
+    "ore e turni: tempo pieno, part-time → part-time"
+   ],
+   "compenso": null,
+   "contratto": null,
+   "datore": "Seniorenwohnheim Vinzenzhaus",
+   "id": "c756aaab1eb7",
+   "minuti": 35,
+   "piva": false,
+   "punteggio": 37,
+   "scadenza": null,
+   "titolo": "Posizioni aperte al Vinzenzhaus (anche Krankenpfleger:in)",
+   "url": "https://sozialgenossenschaft-vinzenz.it/vinzenzhaus/vinzenzhaus-jobs/",
+   "zona": "Bolzano"
+  }
+ ],
  "attivi": 28,
  "attivi_piva": 10,
  "data": "2026-11-19",
  "fonti_lette": 36,
  "fonti_totali": 36,
- "giri": 2,
+ "giri": 3,
  "nuovi": [],
  "problemi": [],
  "scadenze7": [

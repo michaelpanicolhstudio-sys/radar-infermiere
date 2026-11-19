@@ -2160,7 +2160,7 @@
    }
   ],
   "email": "info@schlossmoos.it",
-  "estratto": "…egehelfer/in (Vollzeit) Leifers Caritas Krankenpfleger*in Lana ST. JOSEF Freiberufler / Freelancer (m/w) Bozen, südtirolweit PEGASUS",
+  "estratto": "Freiberufliche Tätigkeit in der Pflege Sozialgenossenschaft Zum Heiligen Vinzenz Wiesen, Pfitsch Vollzeit Teilzeit Freelancer Projektarbeit 17.11.2026 Sozialgenossenschaft Zum Heiligen Vinzenz Traustonstr. 190 , 39049 Wi…",
   "euro_ora": null,
   "fonte": "Schloss Moos – libera professione (suedtirolerjobs)",
   "id": "670aca98057e",
@@ -3553,13 +3553,13 @@
    "Annuncio in tedesco"
   ],
   "cambi": [
-   "titolo: Vinzenzhaus – Jobs - Sozialgenossenschaft zum HL Vinzenz → Posizioni aperte al Vinzenzhaus (anche Krankenpfleger:in)"
+   "ore e turni: tempo pieno, part-time → part-time"
   ],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": null,
   "da_pdf": null,
-  "data_novita": "2026-11-13",
+  "data_novita": "2026-11-19",
   "datore": "Seniorenwohnheim Vinzenzhaus",
   "dettaglio_punteggio": [
    {
@@ -3582,8 +3582,8 @@
    },
    {
     "max": 15,
-    "motivo": "tempo pieno, part-time",
-    "punti": 7,
+    "motivo": "part-time",
+    "punti": 4,
     "voce": "Ore e turni"
    },
    {
@@ -3594,11 +3594,11 @@
    }
   ],
   "email": null,
-  "estratto": "…tag. Ihr Profil Berufsqualifikation als Krankenpfleger:in oder Sozialbetreuer:in Strukturierte, eigenverantwortliche und proaktive Arbeitsweise Verständnis für organisatorische Abläufe und Zusammenhänge Fähigkeit ein Tea…",
+  "estratto": "Vinzenzhaus – Jobs waldemarker 2026-11-19T15:20:11+01:00 Zu den aktuellen Jobs Jobs fürs Leben. Pflege deine Talente. Beruflich und persönlich wachsen. Genau das kannst du bei uns. Denn die modernen Pflegeansätze, die wi…",
   "euro_ora": null,
   "fonte": "Vinzenzhaus Bolzano – Jobs",
   "id": "c756aaab1eb7",
-  "impronta": "82a8830cb291",
+  "impronta": "21e06570ed6e",
   "in_tedesco": true,
   "km": 42,
   "letto_il": "2026-11-19",
@@ -3608,18 +3608,17 @@
   "pec": null,
   "primo_visto": "2026-11-13",
   "pubblicato": null,
-  "punteggio": 40,
+  "punteggio": 37,
   "regole": 10,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
-   "parziale": true,
-   "pieno": true
+   "parziale": true
   },
   "struttura": "RSA o casa di riposo",
   "tipo_fonte": "pagina",
   "titolo": "Posizioni aperte al Vinzenzhaus (anche Krankenpfleger:in)",
-  "turni": "tempo pieno, part-time",
+  "turni": "part-time",
   "ultimo_visto": "2026-11-19",
   "url": "https://sozialgenossenschaft-vinzenz.it/vinzenzhaus/vinzenzhaus-jobs/",
   "zona": "Bolzano"
