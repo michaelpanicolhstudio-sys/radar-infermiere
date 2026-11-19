@@ -501,6 +501,8 @@ def trova_allarmi(memoria: dict, cfg: dict, gia: dict | None = None) -> list[dic
         for aid, a in memoria.items():
             if a.get("sparito_dal"):
                 continue
+            if a.get("scadenza") and str(a["scadenza"]) < date.today().isoformat():
+                continue  # bando già scaduto: nessun allarme
             testo = " ".join(str(a.get(k) or "") for k in ("titolo", "datore", "url", "testo")).lower()
             url = str(a.get("url") or "").lower()
             if siti and not any(s in url for s in siti):

@@ -783,6 +783,7 @@ _mem = {"a1": {"titolo": "Avviso incarichi libero professionali infermieri centr
         "a3": {"titolo": "Concorso infermieri", "url": "https://www.asuit.tn.it/bandi-concorsi/y"},
         "a4": {"titolo": "Centro traumatologico Campiglio", "url": "https://www.asuit.tn.it/z", "sparito_dal": "2026-01-01"}}
 verifica("allarmi: solo il bando giusto dal sito giusto", [x["id"] for x in _usc.trova_allarmi(_mem, _cfg_al)], ["a1"])
+verifica("allarmi: bando scaduto ignorato", _usc.trova_allarmi({"s": {"titolo": "centri traumatologici", "url": "https://www.asuit.tn.it/s", "scadenza": "2020-01-01"}}, _cfg_al), [])
 verifica("allarmi: non si ripetono", _usc.trova_allarmi(_mem, _cfg_al, {"Trauma": ["a1"]}), [])
 _o, _t, _p = _usc.componi_allarme(_usc.trova_allarmi(_mem, _cfg_al))
 verifica("allarmi: oggetto riconoscibile", _o.startswith("⚠️ ALLARME Radar: Trauma"), True)
