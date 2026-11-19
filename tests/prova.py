@@ -775,5 +775,17 @@ _r = _inv.resoconto([{"chiave": "s:a", "nome": "A", "comune": "Mori", "minuti": 
 verifica("esiti a mano: nuova risposta dopo l'aggiornamento li sospende", (_r["esito"] != "più avanti", _r["prossimo"]), (True, None))
 _inv.esiti_manuali = _orig
 
+# Allarmi: un bando ASUIT sui centri traumatologici fa scattare l'allarme una volta sola; altri siti no.
+from radar import uscite as _usc
+_cfg_al = {"allarmi": [{"nome": "Trauma", "siti": ["asuit.tn.it"], "parole": ["traumatolog", "campiglio"]}]}
+_mem = {"a1": {"titolo": "Avviso incarichi libero professionali infermieri centri traumatologici", "url": "https://www.asuit.tn.it/bandi-concorsi/x"},
+        "a2": {"titolo": "Infermiere centro traumatologico", "url": "https://www.indeed.it/x"},
+        "a3": {"titolo": "Concorso infermieri", "url": "https://www.asuit.tn.it/bandi-concorsi/y"},
+        "a4": {"titolo": "Centro traumatologico Campiglio", "url": "https://www.asuit.tn.it/z", "sparito_dal": "2026-01-01"}}
+verifica("allarmi: solo il bando giusto dal sito giusto", [x["id"] for x in _usc.trova_allarmi(_mem, _cfg_al)], ["a1"])
+verifica("allarmi: non si ripetono", _usc.trova_allarmi(_mem, _cfg_al, {"Trauma": ["a1"]}), [])
+_o, _t, _p = _usc.componi_allarme(_usc.trova_allarmi(_mem, _cfg_al))
+verifica("allarmi: oggetto riconoscibile", _o.startswith("⚠️ ALLARME Radar: Trauma"), True)
+
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

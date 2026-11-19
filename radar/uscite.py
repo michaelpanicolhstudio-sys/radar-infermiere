@@ -485,3 +485,46 @@ def costruisci_sito(cfg: dict, oggi: date, destinazione: Path | None = None) -> 
     sw.write_text(sw.read_text(encoding="utf-8").replace("__VERSIONE__", adesso.strftime("%Y%m%d%H%M")),
                   encoding="utf-8")
     return dest
+
+FILE_ALLARMI = motore.RADICE / "data" / "allarmi_inviati.json"
+
+
+def trova_allarmi(memoria: dict, cfg: dict, gia: dict | None = None) -> list[dict]:
+    """Annunci che fanno scattare un allarme di config.yaml («allarmi»): tutte le parole di un gruppo
+    («tutte») e almeno una di «parole» nel titolo/datore/link, solo dai siti in «siti» se indicati.
+    Ogni annuncio fa scattare lo stesso allarme una volta sola (registro in data/allarmi_inviati.json)."""
+    gia = gia or {}
+    trovati = []
+    for al in cfg.get("allarmi") or []:
+        parole = [x.lower() for x in al.get("parole") or []]
+        siti = [x.lower() for x in al.get("siti") or []]
+        for aid, a in memoria.items():
+            if a.get("sparito_dal"):
+                continue
+            testo = " ".join(str(a.get(k) or "") for k in ("titolo", "datore", "url", "testo")).lower()
+            url = str(a.get("url") or "").lower()
+            if siti and not any(s in url for s in siti):
+                continue
+            if not any(w in testo for w in parole):
+                continue
+            if aid in (gia.get(al["nome"]) or []):
+                continue
+            trovati.append({"allarme": al["nome"], "id": aid, "titolo": a.get("titolo"), "url": a.get("url"),
+                            "scadenza": a.get("scadenza"), "nota": al.get("nota", "")})
+    return trovati
+
+
+def componi_allarme(trovati: list[dict]) -> tuple[str, str, str]:
+    nomi = sorted({t["allarme"] for t in trovati})
+    oggetto = "⚠️ ALLARME Radar: " + ", ".join(nomi)
+    righe = []
+    for t in trovati:
+        righe.append(f"{t['titolo']}\n{t['url']}" + (f"\nScadenza: {t['scadenza']}" if t.get("scadenza") else ""))
+    note = sorted({t["nota"] for t in trovati if t.get("nota")})
+    testo = "È uscito un bando che stavi aspettando.\n\n" + "\n\n".join(righe) + ("\n\n" + "\n".join(note) if note else "")
+    pagina = ("<div style=\"font:15px/1.5 -apple-system,'Segoe UI',Arial,sans-serif;color:#18222B\">"
+              "<p style='font-size:18px;color:#B3261E'><b>⚠️ È uscito un bando che stavi aspettando</b></p>"
+              + "".join(f"<p><b>{html.escape(t['titolo'] or '')}</b><br><a href='{_sicuro(t['url'] or '')}'>Apri il bando</a>"
+                        + (f"<br>Scadenza: {html.escape(str(t['scadenza']))}" if t.get('scadenza') else "") + "</p>" for t in trovati)
+              + "".join(f"<p style='color:#5B6770'>{html.escape(n)}</p>" for n in note) + "</div>")
+    return oggetto, testo, pagina

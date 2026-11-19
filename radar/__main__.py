@@ -176,6 +176,19 @@ def main() -> int:
             uscite.invia_email(oggetto, testo, pagina, allegati=allegati)
         except Exception as e:  # l'email non deve far fallire il giro: i dati sono già salvati
             print(f"⚠ Email non inviata: {type(e).__name__}: {e}", file=sys.stderr)
+    # Allarmi specifici (es. bandi ASUIT dei centri traumatologici): email a parte, una volta per bando.
+    try:
+        gia = motore.leggi_json(uscite.FILE_ALLARMI, {})
+        trovati = uscite.trova_allarmi(memoria, cfg, gia)
+        if trovati:
+            o2, t2, p2 = uscite.componi_allarme(trovati)
+            print("\n" + o2 + "\n" + t2)
+            if not args.senza_email and uscite.invia_email(o2, t2, p2):
+                for t in trovati:
+                    gia.setdefault(t["allarme"], []).append(t["id"])
+                motore.scrivi_json(uscite.FILE_ALLARMI, gia)
+    except Exception as e:
+        print(f"⚠ Allarmi non controllati: {type(e).__name__}: {e}", file=sys.stderr)
     _segnala_a_github(True)
     return 0
 

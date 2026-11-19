@@ -97,7 +97,7 @@ fonti:
       - https://www.asuit.tn.it/bandi-concorsi?page=7
       - https://www.asuit.tn.it/bandi-concorsi?page=8
       - https://www.asuit.tn.it/bandi-concorsi?page=9
-    parole_link: [infermier, libero professional, libero-professional, incarichi lp, penitenziar, carcer]
+    parole_link: [infermier, libero professional, libero-professional, incarichi lp, penitenziar, carcer, traumatolog, campiglio, fassa]
     affidabilita: ufficiale
     datore: ASUIT (Trentino)
     attiva: true
@@ -450,3 +450,12 @@ giorni_annuncio_datato: 120    # pubblicato da più giorni e senza scadenza vali
 giorni_rilettura_datati: 30    # gli annunci datati o scaduti vengono riletti solo ogni tot giorni
 giorni_scaduti_visibili: 60    # dopo tot giorni dalla scadenza un annuncio esce dall'app
 giorni_memoria_scarti: 14      # una pagina scartata (non per infermieri) non viene riaperta per tot giorni
+
+# Allarmi specifici: quando compare un annuncio che corrisponde, parte subito un'email a parte
+# («⚠️ ALLARME Radar: …»), una sola volta per annuncio. Chiesto da Michael il 19/11/2026.
+allarmi:
+  - nome: Bando centri traumatologici ASUIT (Campiglio / Sèn Jan)
+    siti: [asuit.tn.it, apss.tn.it]
+    parole: [traumatolog, campiglio, "sèn jan", "sen jan", "san giovanni di fassa"]
+    nota: "Lo scorso inverno l'avviso è uscito a fine dicembre, con scadenza a metà gennaio (320-360 € al giorno). Sei ancora dipendente ASDAA: per partecipare serve l'autorizzazione o le dimissioni."
+
