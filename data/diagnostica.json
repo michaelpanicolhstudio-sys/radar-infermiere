@@ -2,7 +2,7 @@
  "data": "2026-11-20",
  "esplora": [
   {
-   "caratteri": 3089,
+   "caratteri": 3015,
    "inizio": "Offerte di lavoro delle residenze per anziani dell'Alto Adige Hier finden Sie die Stellenangebote unserer Mitgliedsheime. Die Einträge werden von den einzelnen Seniorenwohnheimen bekanntgegeben und sind auch auf der entsprechenden Seite des Heimes zu finden. Auf der Homepage https://career.bz.it fin",
    "link": [
     [
@@ -28,6 +28,10 @@
     [
      "https://career.bz.it/it/",
      "https://career.bz.it/it/"
+    ],
+    [
+     "APSP Fondo Ospedale della Santissima Trinità Residenza per Anziani Ann",
+     "https://www.vds-suedtirol.it/it/swh/479/job/inserviente-il-reparto-cucina-tempo-parziale"
     ],
     [
      "Fondazione Casa di Riposo \"Heinrich von Rottenburg\"",
@@ -64,10 +68,6 @@
     [
      "Residenza per Anziani \"Peter Paul Schrott\"",
      "https://www.vds-suedtirol.it/it/swh/462/job/sozialbetreuerin-berufsbild-nr-38-der-v-funktionsebene-operatore-operatrice-socio-2"
-    ],
-    [
-     "Residenza per Anziani \"Peter Paul Schrott\"",
-     "https://www.vds-suedtirol.it/it/swh/462/job/pflegehelferin-berufsbild-nr-20-der-iv-funktionsebene-operatore-trice-socio-sanitarioa-2"
     ],
     [
      "2",
@@ -1464,6 +1464,7 @@
      "url": "https://www.opibz.it/?page_id=5109"
     }
    ],
+   "pdf_scartati": [],
    "scartati": [],
    "senza_pdf": []
   },
@@ -1493,6 +1494,26 @@
     {
      "candidati": 15,
      "url": "https://opi.tn.it/segreteria/annunci-di-lavoro/"
+    }
+   ],
+   "pdf_scartati": [
+    {
+     "lasciati": [
+      "https://opi.tn.it/wp-content/uploads/2025/10/STAMPED20261016131231-DET_304_26_dd_15_10_Allegato_signed.pdf"
+     ],
+     "presi": [
+      "https://opi.tn.it/wp-content/uploads/2026/10/avviso_proroga_termini_selezioneINF_signed.pdf"
+     ],
+     "url": "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/"
+    },
+    {
+     "lasciati": [
+      "https://opi.tn.it/wp-content/uploads/2025/10/DET_294_26_dd__09_10_Allegato_domanda.pdf"
+     ],
+     "presi": [
+      "https://opi.tn.it/wp-content/uploads/2025/10/DET_294_26_dd__09_10_Allegato_bando_signed.pdf"
+     ],
+     "url": "https://opi.tn.it/a-p-s-p-c-vannetti-bando/"
     }
    ],
    "scartati": [],
@@ -1748,6 +1769,7 @@
      "url": "https://www.upipa.tn.it/Bacheca/Concorsi/(offset)/10"
     }
    ],
+   "pdf_scartati": [],
    "scartati": []
   },
   "Villa Sant'Anna Merano – lavora con noi": {
@@ -1779,7 +1801,7 @@
    "scartati": []
   }
  },
- "richieste": 105,
+ "richieste": 103,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }
