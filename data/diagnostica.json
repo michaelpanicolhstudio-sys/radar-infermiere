@@ -1499,15 +1499,6 @@
    "pdf_scartati": [
     {
      "lasciati": [
-      "https://opi.tn.it/wp-content/uploads/2025/10/STAMPED20261016131231-DET_304_26_dd_15_10_Allegato_signed.pdf"
-     ],
-     "presi": [
-      "https://opi.tn.it/wp-content/uploads/2026/10/avviso_proroga_termini_selezioneINF_signed.pdf"
-     ],
-     "url": "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/"
-    },
-    {
-     "lasciati": [
       "https://opi.tn.it/wp-content/uploads/2025/10/DET_294_26_dd__09_10_Allegato_domanda.pdf"
      ],
      "presi": [
@@ -1801,7 +1792,7 @@
    "scartati": []
   }
  },
- "richieste": 103,
+ "richieste": 105,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }

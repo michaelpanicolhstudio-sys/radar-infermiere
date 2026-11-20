@@ -1082,28 +1082,33 @@
  },
  "36e85170a7c8": {
   "affidabilita": "ufficiale",
-  "avvisi": [],
+  "avvisi": [
+   "Dal PDF allegato: ore e turni, compenso"
+  ],
   "cambi": [],
   "cita_tedesco": false,
-  "compenso": null,
+  "compenso": "33 €/h",
   "contratto": "P.IVA / libera professione",
   "da_pdf": {
-   "caratteri": 753,
+   "caratteri": 25994,
    "cita_tedesco": false,
-   "compenso": null,
+   "compenso": "33 €/h",
    "contratto": "P.IVA / libera professione",
    "email": "andrea.zencher@apspvannetti.it",
    "estratto": "…TO DI INCARICHI LIBERO PROFESSIONALI DI INFERMIERE PRESSO L’A.P.S.P. CLEMENTINO VANNETTI PROROGA TERMINI Si comunica che, con Determinazione del Direttore n. 315 dd. 05/11/2026, è stato prorogato il termine per la presen…",
-   "euro_ora": null,
-   "indizi_compenso": [],
+   "euro_ora": 33.0,
    "infermiere": true,
    "km": 45,
    "minuti": 40,
    "pec": "apspvannetti@pec.it",
-   "scadenza": "2026-11-27",
-   "scadenza_frase": "di Infermiere. Il nuovo termine è pertanto il giorno 27/11/2026 ore 12:00.",
-   "segnali_turni": {},
-   "turni": null,
+   "scadenza": "2026-11-06",
+   "scadenza_frase": "dell’Azienda, che dovrà pervenire entro le ore 12.00 del 06/11/2026, utilizzand",
+   "segnali_turni": {
+    "dodici": true,
+    "notti": true,
+    "weekend": true
+   },
+   "turni": "turni da 12 h, notti, weekend/festivi",
    "v": 4,
    "zona": "Rovereto"
   },
@@ -1118,8 +1123,8 @@
    },
    {
     "max": 25,
-    "motivo": "compenso orario non indicato",
-    "punti": 5,
+    "motivo": "33 €/h: nella media",
+    "punti": 15,
     "voce": "Compenso"
    },
    {
@@ -1130,8 +1135,8 @@
    },
    {
     "max": 15,
-    "motivo": "ore e turni non indicati",
-    "punti": 5,
+    "motivo": "turni da 12 h, notti, weekend/festivi",
+    "punti": 15,
     "voce": "Ore e turni"
    },
    {
@@ -1143,10 +1148,10 @@
   ],
   "email": "andrea.zencher@apspvannetti.it",
   "estratto": "…to di incarichi libero professionali di infermiere. L’avviso è pubblicato sul sito web azienda www.apspvannetti.it e in calce alla pagina. Le domande dovranno pervenire mezzo PEC all’indirizzo apspvannetti@pec.it entro e…",
-  "euro_ora": null,
+  "euro_ora": 33.0,
   "fonte": "OPI Trento – annunci di lavoro",
   "id": "36e85170a7c8",
-  "impronta": "28cad5e1e2d1",
+  "impronta": "824c7650c254",
   "in_tedesco": false,
   "km": 45,
   "letto_il": "2026-11-20",
@@ -1155,20 +1160,25 @@
   "novita": null,
   "origine": "manuale",
   "pdf_letti": [
-   "https://opi.tn.it/wp-content/uploads/2026/10/avviso_proroga_termini_selezioneINF_signed.pdf"
+   "https://opi.tn.it/wp-content/uploads/2026/10/avviso_proroga_termini_selezioneINF_signed.pdf",
+   "https://opi.tn.it/wp-content/uploads/2025/10/STAMPED20261016131231-DET_304_26_dd_15_10_Allegato_signed.pdf"
   ],
   "pec": "apspvannetti@pec.it",
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-16",
-  "punteggio": 62,
+  "punteggio": 82,
   "regole": 11,
   "scadenza": "2026-11-27",
   "scadenza_frase": "Personale dell’Azienda. Proroga termini di scadenza: 27/11/2026 ore 12.00 A",
-  "segnali_turni": {},
+  "segnali_turni": {
+   "dodici": true,
+   "notti": true,
+   "weekend": true
+  },
   "struttura": "RSA o casa di riposo",
   "tipo_fonte": "elenco",
   "titolo": "Incarichi libero-professionali di infermiere (avviso di pubblica selezione)",
-  "turni": null,
+  "turni": "turni da 12 h, notti, weekend/festivi",
   "ultimo_visto": "2026-11-20",
   "url": "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/",
   "zona": "Rovereto"
