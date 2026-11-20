@@ -1184,8 +1184,8 @@
    },
    {
     "max": 15,
-    "motivo": "turni da 12 h, notti, weekend/festivi",
-    "punti": 15,
+    "motivo": "notti, weekend/festivi",
+    "punti": 12,
     "voce": "Ore e turni"
    },
    {
@@ -1200,7 +1200,7 @@
   "euro_ora": 33.0,
   "fonte": "OPI Trento – annunci di lavoro",
   "id": "36e85170a7c8",
-  "impronta": "824c7650c254",
+  "impronta": "b6b9182ee7a0",
   "in_tedesco": false,
   "km": 45,
   "letto_il": "2026-11-20",
@@ -1215,19 +1215,19 @@
   "pec": "apspvannetti@pec.it",
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-16",
-  "punteggio": 82,
+  "punteggio": 79,
   "regole": 11,
   "scadenza": "2026-11-27",
   "scadenza_frase": "Personale dell’Azienda. Proroga termini di scadenza: 27/11/2026 ore 12.00 A",
   "segnali_turni": {
-   "dodici": true,
+   "dodici_escluso": "In relazione al periodo emergenziale è consentito il ricorso a turni fino a 12 ore",
    "notti": true,
    "weekend": true
   },
   "struttura": "RSA o casa di riposo",
   "tipo_fonte": "elenco",
   "titolo": "Incarichi libero-professionali di infermiere (avviso di pubblica selezione)",
-  "turni": "turni da 12 h, notti, weekend/festivi",
+  "turni": "notti, weekend/festivi",
   "ultimo_visto": "2026-11-20",
   "url": "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/",
   "zona": "Rovereto"
