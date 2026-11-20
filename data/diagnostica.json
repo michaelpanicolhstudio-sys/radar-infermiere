@@ -2,7 +2,159 @@
  "data": "2026-11-20",
  "esplora": [
   {
-   "errore": "errore di rete (ConnectionError)",
+   "caratteri": 3089,
+   "inizio": "Offerte di lavoro delle residenze per anziani dell'Alto Adige Hier finden Sie die Stellenangebote unserer Mitgliedsheime. Die Einträge werden von den einzelnen Seniorenwohnheimen bekanntgegeben und sind auch auf der entsprechenden Seite des Heimes zu finden. Auf der Homepage https://career.bz.it fin",
+   "link": [
+    [
+     "Deutsch",
+     "https://www.vds-suedtirol.it/de/jobs"
+    ],
+    [
+     "Italiano",
+     "https://www.vds-suedtirol.it/it/jobs"
+    ],
+    [
+     "Amministrazione trasparente",
+     "https://www.vds-suedtirol.it/it/societa-trasparente"
+    ],
+    [
+     "Contenuti Trasparenza",
+     "https://www.vds-suedtirol.it/it/contenuti-trasparenza-1"
+    ],
+    [
+     "https://career.bz.it",
+     "https://career.bz.it"
+    ],
+    [
+     "https://career.bz.it/it/",
+     "https://career.bz.it/it/"
+    ],
+    [
+     "Fondazione Casa di Riposo \"Heinrich von Rottenburg\"",
+     "https://www.vds-suedtirol.it/it/swh/468/job/auswahlverfahren-fuer-die-ernennung-zur-direktorin-oder-zum-direktor-des-oebpb"
+    ],
+    [
+     "Residenza per Anziani Lagundo Mathias Ladurner APSP",
+     "https://www.vds-suedtirol.it/it/swh/445/job/cercasi-infermierea-professionale-6"
+    ],
+    [
+     "Residenza per Anziani Lagundo Mathias Ladurner APSP",
+     "https://www.vds-suedtirol.it/it/swh/445/job/cercasi-operatoreoperatrice-socio-assistenziale-0"
+    ],
+    [
+     "A.P.S.P. \"Josefsheim\"",
+     "https://www.vds-suedtirol.it/it/swh/518/job/befristete-anstellung-als-physiotherapeutin-bzw-ergotherapeutin"
+    ],
+    [
+     "A.P.S.P. \"Josefsheim\"",
+     "https://www.vds-suedtirol.it/it/swh/518/job/befristete-anstellung-als-sozialbetreuerin"
+    ],
+    [
+     "Fondazione Casa di Riposo Santa Valburga A.P.S.P.",
+     "https://www.vds-suedtirol.it/it/swh/509/job/procedura-di-incarico-come-responsabile-tecnico-assistenziale-casa-di-riposo-s-valburga"
+    ],
+    [
+     "Residenza per Anziani \"Leoheim\"",
+     "https://www.vds-suedtirol.it/it/swh/521/job/sozialbetreuerin-berufsbild-nr-38-der-v-funktionsebene-operatore-operatrice-socio-2"
+    ],
+    [
+     "Residenza per Anziani \"Claraheim\"",
+     "https://www.vds-suedtirol.it/it/swh/469/job/sozialbetreuerin-berufsbild-nr-38-der-v-funktionsebene-operatore-operatrice-socio-2"
+    ],
+    [
+     "Residenza per Anziani \"Peter Paul Schrott\"",
+     "https://www.vds-suedtirol.it/it/swh/462/job/sozialbetreuerin-berufsbild-nr-38-der-v-funktionsebene-operatore-operatrice-socio-2"
+    ],
+    [
+     "Residenza per Anziani \"Peter Paul Schrott\"",
+     "https://www.vds-suedtirol.it/it/swh/462/job/pflegehelferin-berufsbild-nr-20-der-iv-funktionsebene-operatore-trice-socio-sanitarioa-2"
+    ],
+    [
+     "2",
+     "https://www.vds-suedtirol.it/it/jobs?page=1"
+    ],
+    [
+     "3",
+     "https://www.vds-suedtirol.it/it/jobs?page=2"
+    ],
+    [
+     "4",
+     "https://www.vds-suedtirol.it/it/jobs?page=3"
+    ],
+    [
+     "Request new password",
+     "https://www.vds-suedtirol.it/it/user/password"
+    ],
+    [
+     "AREA SOCI",
+     "https://www.vds-suedtirol.it/it/member-area-info-it"
+    ],
+    [
+     "Login",
+     "https://www.vds-suedtirol.it/it/user/login"
+    ],
+    [
+     "",
+     "https://www.vds-suedtirol.it/it"
+    ],
+    [
+     "Chi siamo",
+     "https://www.vds-suedtirol.it/it/l-associazione-delle-residenze-anziani-dellalto-adige"
+    ],
+    [
+     "L'associazione",
+     "https://www.vds-suedtirol.it/it/lassociazione"
+    ],
+    [
+     "Il Consiglio Direttivo",
+     "https://www.vds-suedtirol.it/it/il-consiglio-direttivo"
+    ],
+    [
+     "L'ufficio dell'Associazione",
+     "https://www.vds-suedtirol.it/it/luffico-dellassociazione"
+    ],
+    [
+     "Comunicati stampa dell'Associazione",
+     "https://www.vds-suedtirol.it/it/comunicati-stampa-dellassociazione"
+    ],
+    [
+     "Manifestazioni",
+     "https://www.vds-suedtirol.it/it/manifestazioni-dellassociazione"
+    ],
+    [
+     "Servizi",
+     "https://www.vds-suedtirol.it/it/i%20nostri%20servizi"
+    ],
+    [
+     "Pubblicazioni",
+     "https://www.vds-suedtirol.it/it/publications"
+    ],
+    [
+     "Residenze associate",
+     "https://www.vds-suedtirol.it/it/swh"
+    ],
+    [
+     "Attualità dalle residenze associate",
+     "https://www.vds-suedtirol.it/it/attualita-dalle-residenze-associate"
+    ],
+    [
+     "Assistenza Anziani",
+     "https://www.vds-suedtirol.it/it/assistenza-agli-anziani-0"
+    ],
+    [
+     "direkt an das Heim in Ihrer Nähe",
+     "https://www.vds-suedtirol.it/de/swh"
+    ],
+    [
+     "Impressum",
+     "https://www.vds-suedtirol.it/it/impressum"
+    ],
+    [
+     "Privacy - Cookies",
+     "https://www.vds-suedtirol.it/it/privacy-cookies-informativa-sito-internet-arpa"
+    ]
+   ],
+   "titolo": "Associazione delle Residenze per Anziani dell'Alto Adige",
    "url": "https://www.vds-suedtirol.it/it/jobs"
   },
   {
@@ -933,50 +1085,6 @@
     ]
    ]
   },
-  "Avvisi email – Adecco": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Etjca": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Gi Group": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Indeed": {
-   "accettati": 0,
-   "candidati": 1
-  },
-  "Avvisi email – InfoJobs": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Jobrapido": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – LinkedIn": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Manpower": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Openjobmetis": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Randstad": {
-   "accettati": 0,
-   "candidati": 0
-  },
-  "Avvisi email – Umana": {
-   "accettati": 0,
-   "candidati": 0
-  },
   "Brixsana Bressanone – Karriere": {
    "accettati": [
     "Infermiere/a (KrankenpflegerIn) – tempo pieno, da subito"
@@ -992,11 +1100,35 @@
    "scartati": []
   },
   "Case di riposo dell'Alto Adige (VdS) – offerte": {
-   "accettati": [],
+   "accettati": [
+    "Infermiere/a",
+    "Infermiere/a",
+    "Infermiere/a",
+    "Infermiere/a",
+    "Infermiere/a – part-time (18, 20 o 22 ore/settimana)",
+    "Infermiere/a – a tempo determinato, tempo pieno, per 12 mesi",
+    "Infermiere/a"
+   ],
    "pagine": [
     {
-     "errore": "errore di rete (ConnectionError)",
+     "candidati": 1,
      "url": "https://www.vds-suedtirol.it/de/jobs"
+    },
+    {
+     "candidati": 4,
+     "url": "https://www.vds-suedtirol.it/de/jobs?page=1"
+    },
+    {
+     "candidati": 1,
+     "url": "https://www.vds-suedtirol.it/de/jobs?page=2"
+    },
+    {
+     "candidati": 1,
+     "url": "https://www.vds-suedtirol.it/de/jobs?page=3"
+    },
+    {
+     "candidati": 0,
+     "url": "https://www.vds-suedtirol.it/de/jobs?page=4"
     }
    ],
    "scartati": []
@@ -1384,41 +1516,6 @@
      "link": [
       [
        "a",
-       "www.apspvannetti.it",
-       "http://www.apspvannetti.it"
-      ],
-      [
-       "a",
-       "Precedente",
-       "https://opi.tn.it/a-p-s-p-c-vannetti-bando/"
-      ],
-      [
-       "a",
-       "Messaggio di benvenuto nella comunità professionale ai futur",
-       "https://opi.tn.it/messaggio-di-benvenuto-nella-comunita-professionale-ai-futuri-colleghi-e-informazioni-per-liscrizione-allalbo-8/"
-      ]
-     ],
-     "url": "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/"
-    },
-    {
-     "link": [
-      [
-       "a",
-       "www.apspvannetti.it",
-       "http://www.apspvannetti.it"
-      ],
-      [
-       "a",
-       "Messaggio di benvenuto nella comunità professionale ai futur",
-       "https://opi.tn.it/messaggio-di-benvenuto-nella-comunita-professionale-ai-futuri-colleghi-e-informazioni-per-liscrizione-allalbo-8/"
-      ]
-     ],
-     "url": "https://opi.tn.it/a-p-s-p-c-vannetti-bando/"
-    },
-    {
-     "link": [
-      [
-       "a",
        "https://coopvillamaria.org/collabora-con-noi/lavora-con-noi/",
        "https://coopvillamaria.org/collabora-con-noi/lavora-con-noi/"
       ],
@@ -1682,7 +1779,7 @@
    "scartati": []
   }
  },
- "richieste": 94,
+ "richieste": 105,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }

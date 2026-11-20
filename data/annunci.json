@@ -350,7 +350,7 @@
   "impronta": "39e4cbf796aa",
   "in_tedesco": false,
   "km": 50,
-  "letto_il": "2026-11-19",
+  "letto_il": "2026-11-20",
   "minuti": 42,
   "novita": "aggiornato",
   "pdf_letti": [
@@ -372,7 +372,7 @@
   "tipo_fonte": "elenco",
   "titolo": "Infermiere/a",
   "turni": "tempo pieno, part-time",
-  "ultimo_visto": "2026-11-19",
+  "ultimo_visto": "2026-11-20",
   "url": "https://www.vds-suedtirol.it/de/swh/469/job/berufskrankenpflegerin-berufsbild-nr-64-der-viiter-funktionsebeneinfermierea-2",
   "zona": "Cornedo all'Isarco"
  },
@@ -523,7 +523,7 @@
   "impronta": "cda2f7ee944b",
   "in_tedesco": true,
   "km": 68,
-  "letto_il": "2026-11-19",
+  "letto_il": "2026-11-20",
   "minuti": 65,
   "novita": "nuovo",
   "pdf_letti": [
@@ -544,7 +544,7 @@
   "tipo_fonte": "elenco",
   "titolo": "Infermiere/a",
   "turni": "3 turni (anche notti)",
-  "ultimo_visto": "2026-11-19",
+  "ultimo_visto": "2026-11-20",
   "url": "https://www.vds-suedtirol.it/de/swh/489/job/berufskrankenpfleger-gesucht",
   "zona": "Meltina"
  },
@@ -626,7 +626,7 @@
   "impronta": "aaee883b7afc",
   "in_tedesco": true,
   "km": 74,
-  "letto_il": "2026-11-19",
+  "letto_il": "2026-11-20",
   "minuti": 58,
   "novita": "aggiornato",
   "pdf_letti": [
@@ -648,7 +648,7 @@
   "tipo_fonte": "elenco",
   "titolo": "Infermiere/a",
   "turni": "36 h/settimana, tempo pieno",
-  "ultimo_visto": "2026-11-19",
+  "ultimo_visto": "2026-11-20",
   "url": "https://www.vds-suedtirol.it/de/swh/445/job/berufskrankenpflegerin-gesucht-4",
   "zona": "Lagundo"
  },
@@ -805,7 +805,7 @@
   "impronta": "9cd8e71fee16",
   "in_tedesco": true,
   "km": 148,
-  "letto_il": "2026-11-19",
+  "letto_il": "2026-11-20",
   "minuti": 120,
   "novita": "aggiornato",
   "pdf_letti": [
@@ -827,7 +827,7 @@
   "tipo_fonte": "elenco",
   "titolo": "Infermiere/a – a tempo determinato, tempo pieno, per 12 mesi",
   "turni": "tempo pieno, part-time",
-  "ultimo_visto": "2026-11-19",
+  "ultimo_visto": "2026-11-20",
   "url": "https://www.vds-suedtirol.it/de/swh/467/job/vollzeitstelle-als-berufskrankenpflegerin-provisorisch-fuer-12-monate-posto-tempo-pieno",
   "zona": "San Candido"
  },
@@ -979,7 +979,7 @@
   "impronta": "39e4cbf796aa",
   "in_tedesco": false,
   "km": 62,
-  "letto_il": "2026-11-19",
+  "letto_il": "2026-11-20",
   "minuti": 55,
   "novita": "aggiornato",
   "pdf_letti": [
@@ -1001,7 +1001,7 @@
   "tipo_fonte": "elenco",
   "titolo": "Infermiere/a",
   "turni": "tempo pieno, part-time",
-  "ultimo_visto": "2026-11-19",
+  "ultimo_visto": "2026-11-20",
   "url": "https://www.vds-suedtirol.it/de/swh/521/job/berufskrankenpflegerin-berufsbild-nr-64-der-viiter-funktionsebeneinfermierea-1",
   "zona": "Nova Levante"
  },
@@ -1087,7 +1087,26 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "P.IVA / libera professione",
-  "da_pdf": null,
+  "da_pdf": {
+   "caratteri": 753,
+   "cita_tedesco": false,
+   "compenso": null,
+   "contratto": "P.IVA / libera professione",
+   "email": "andrea.zencher@apspvannetti.it",
+   "estratto": "…TO DI INCARICHI LIBERO PROFESSIONALI DI INFERMIERE PRESSO L’A.P.S.P. CLEMENTINO VANNETTI PROROGA TERMINI Si comunica che, con Determinazione del Direttore n. 315 dd. 05/11/2026, è stato prorogato il termine per la presen…",
+   "euro_ora": null,
+   "indizi_compenso": [],
+   "infermiere": true,
+   "km": 45,
+   "minuti": 40,
+   "pec": "apspvannetti@pec.it",
+   "scadenza": "2026-11-27",
+   "scadenza_frase": "di Infermiere. Il nuovo termine è pertanto il giorno 27/11/2026 ore 12:00.",
+   "segnali_turni": {},
+   "turni": null,
+   "v": 4,
+   "zona": "Rovereto"
+  },
   "data_novita": null,
   "datore": "APSP «Clementino Vannetti»",
   "dettaglio_punteggio": [
@@ -1122,7 +1141,7 @@
     "voce": "Fonte"
    }
   ],
-  "email": null,
+  "email": "andrea.zencher@apspvannetti.it",
   "estratto": "…to di incarichi libero professionali di infermiere. L’avviso è pubblicato sul sito web azienda www.apspvannetti.it e in calce alla pagina. Le domande dovranno pervenire mezzo PEC all’indirizzo apspvannetti@pec.it entro e…",
   "euro_ora": null,
   "fonte": "OPI Trento – annunci di lavoro",
@@ -1135,7 +1154,9 @@
   "nota_manuale": "Inserito a mano il 12/11/2026. Scadenza prorogata al 27/11/2026 ore 12:00. Domanda via PEC. Posti, ore e compenso sono nel PDF dell'avviso (non letto).",
   "novita": null,
   "origine": "manuale",
-  "pdf_letti": [],
+  "pdf_letti": [
+   "https://opi.tn.it/wp-content/uploads/2026/10/avviso_proroga_termini_selezioneINF_signed.pdf"
+  ],
   "pec": "apspvannetti@pec.it",
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-16",
@@ -1231,7 +1252,7 @@
   "impronta": "18775642de65",
   "in_tedesco": false,
   "km": 72,
-  "letto_il": "2026-11-19",
+  "letto_il": "2026-11-20",
   "minuti": 65,
   "novita": "aggiornato",
   "pdf_letti": [
@@ -1253,7 +1274,7 @@
   "tipo_fonte": "elenco",
   "titolo": "Infermiere/a – part-time (18, 20 o 22 ore/settimana)",
   "turni": "18, 20 o 22 h/settimana, part-time",
-  "ultimo_visto": "2026-11-19",
+  "ultimo_visto": "2026-11-20",
   "url": "https://www.vds-suedtirol.it/de/swh/507/job/krankenpflegerinnen-7ter-fe-mit-18-20-und-22-wochenstunden",
   "zona": "San Pancrazio"
  },
@@ -2949,7 +2970,7 @@
   "impronta": "39e4cbf796aa",
   "in_tedesco": false,
   "km": 60,
-  "letto_il": "2026-11-19",
+  "letto_il": "2026-11-20",
   "minuti": 55,
   "novita": "aggiornato",
   "pdf_letti": [
@@ -2971,7 +2992,7 @@
   "tipo_fonte": "elenco",
   "titolo": "Infermiere/a",
   "turni": "tempo pieno, part-time",
-  "ultimo_visto": "2026-11-19",
+  "ultimo_visto": "2026-11-20",
   "url": "https://www.vds-suedtirol.it/de/swh/462/job/berufskrankenpflegerin-berufsbild-nr-64-der-viiter-funktionsebene-infermierea-0",
   "zona": "Nova Ponente"
  },
@@ -3175,7 +3196,34 @@
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "Concorso / graduatoria",
-  "da_pdf": null,
+  "da_pdf": {
+   "caratteri": 40000,
+   "cita_tedesco": false,
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "email": null,
+   "estratto": "…TIMANALI) nella figura professionale di INFERMIERE Area 3 (Funzionari) – Livello Base – 1^posizione retributiva di cui n. 3 (tre) posti riservati ai volontari delle forze armate Il Direttore visto il Regolamento del Pers…",
+   "euro_ora": null,
+   "indizi_compenso": [
+    "5000 www.apspvannetti.it. - pec: apspvannetti@pec.it • stipendio base iniziale: euro 23.001,72.=; • indennità integrativa speciale: euro 6.545,06.",
+    "assegno annuo: euro 3.360,00.=; • indennità figura professionale di Infermiere: euro 3.000,00.=; • tredicesima mensilità; • ogni altra competenza",
+    "gati i seguenti documenti: 1. ricevuta del pagamento della tassa di concorso di euro 25,00=. Il pagamento dovrà essere effettuato unicamente trami"
+   ],
+   "infermiere": true,
+   "km": 45,
+   "minuti": 40,
+   "pec": "apspvannetti@pec.it",
+   "scadenza": "2026-11-13",
+   "scadenza_frase": "Umane dell’Azienda entro e non oltre le ore 12:00 del giorno venerdì 13 novembre 2026 Il termine",
+   "segnali_turni": {
+    "ore_settimana": 36,
+    "parziale": true,
+    "pieno": true
+   },
+   "turni": "36 h/settimana, tempo pieno, part-time",
+   "v": 4,
+   "zona": "Rovereto"
+  },
   "data_novita": null,
   "datore": "APSP «Clementino Vannetti»",
   "dettaglio_punteggio": [
@@ -3223,7 +3271,9 @@
   "nota_manuale": "Inserito a mano il 12/11/2026.",
   "novita": null,
   "origine": "manuale",
-  "pdf_letti": [],
+  "pdf_letti": [
+   "https://opi.tn.it/wp-content/uploads/2025/10/DET_294_26_dd__09_10_Allegato_bando_signed.pdf"
+  ],
   "pec": "apspvannetti@pec.it",
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-15",
