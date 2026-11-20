@@ -856,5 +856,22 @@ verifica("allarmi: non si ripetono", _usc.trova_allarmi(_mem, _cfg_al, {"Trauma"
 _o, _t, _p = _usc.componi_allarme(_usc.trova_allarmi(_mem, _cfg_al))
 verifica("allarmi: oggetto riconoscibile", _o.startswith("⚠️ ALLARME Radar: Trauma"), True)
 
+# 20/11: primo avviso vero di Indeed («Infermieri ParaMedica srl Asiago, Veneto»): la diagnostica diceva solo
+# «candidati 1, accettati 0», senza dire che cosa era stato scartato e perché.
+_tmp_av = Path(tempfile.mkdtemp())
+motore.FILE_ANNUNCI, motore.FILE_FONTI, motore.CARTELLA_REPORT = _tmp_av / "a.json", _tmp_av / "f.json", _tmp_av / "r"
+motore.FILE_DIAGNOSTICA = _tmp_av / "d.json"
+_cfg_av = dict(cfg5)
+_cfg_av["fonti"], _cfg_av["feed_google_alerts"], _cfg_av["esplora"] = [], [], []
+_av = {"Indeed": [{"url": "https://it.indeed.com/viewjob?jk=1", "titolo": "Infermieri",
+                   "sommario": "Infermieri ParaMedica srl Asiago, Veneto"},
+                  {"url": "https://it.indeed.com/viewjob?jk=2", "titolo": "Infermiere/a con partita IVA",
+                   "sommario": "Infermiere/a con partita IVA Italiassistenza Trento, Trentino-Alto Adige"}]}
+motore.giro(_cfg_av, ReteFinta({}), date(2026, 11, 20), registra=muto, avvisi=_av)
+_d_av = motore.leggi_json(motore.FILE_DIAGNOSTICA, {})["fonti"]["Avvisi email – Indeed"]
+verifica("avvisi email: la diagnostica dice cosa è stato scartato e perché",
+         (_d_av["accettati"], [x[:2] for x in _d_av["scartati"]]),
+         (1, [["Infermieri ParaMedica srl Asiago, Veneto", "fuori regione"]]))
+
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

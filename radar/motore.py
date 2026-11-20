@@ -861,18 +861,22 @@ def giro(cfg: dict, rete, oggi: date, registra=print, diagnostica: bool = True,
                  {"nome": f"Avvisi email – {nome}", "tipo": "rss", "affidabilita": "aggregatore", "solo_regione": True})
         fonti_attive.add(fonte["nome"])
         fonti_lette.add(fonte["nome"])
-        presi = 0
+        presi, scarti_email = 0, []
         for cand in candidati:
-            a, _ = _costruisci(cand, cand.get("sommario", ""), cand.get("pubblicato"), fonte, cfg, comuni, oggi,
+            a, motivo = _costruisci(cand, cand.get("sommario", ""), cand.get("pubblicato"), fonte, cfg, comuni, oggi,
                                ["Segnalato da te via email: apri il link per i dettagli"] if segnalati else
                                ["Dall'avviso email del portale: apri il link per i dettagli"],
                                controlla_ruolo=not segnalati)
             if a and a["id"] not in trovati:
                 trovati[a["id"]] = a
                 presi += 1
-        registra(f"• {fonte['nome']}: {presi} annunci")
+            elif not a:
+                # 20/11: Indeed «Infermieri ParaMedica srl Asiago, Veneto» risultava solo «candidati 1, accettati 0»:
+                # la diagnostica deve dire che cosa è stato scartato e perché.
+                scarti_email.append([(cand.get("sommario") or cand.get("titolo") or "")[:120], motivo or "n.d.", cand.get("url", "")[:200]])
+        registra(f"• {fonte['nome']}: {presi} annunci" + (f" ({len(scarti_email)} scartati)" if scarti_email else ""))
         if diagnostica:
-            diag["fonti"][fonte["nome"]] = {"candidati": len(candidati), "accettati": presi}
+            diag["fonti"][fonte["nome"]] = {"candidati": len(candidati), "accettati": presi, "scartati": scarti_email[:10]}
 
     novita = aggiorna_memoria(memoria, list(trovati.values()), fonti_lette, fonti_attive, scartati, oggi, cfg)
     for a in segna_doppioni(memoria, oggi):
