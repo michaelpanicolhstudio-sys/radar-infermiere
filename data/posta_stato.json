@@ -30,15 +30,17 @@
     "Modifica profilo",
     "Metti in pausa queste email"
    ],
-   "annunci": 1,
-   "email": 3,
+   "annunci": 2,
+   "email": 4,
    "esempi": [
-    "Infermieri ParaMedica srl Asiago, Veneto"
+    "Infermieri ParaMedica srl Asiago, Veneto",
+    "Infermiera / Infermiere Professionale Coop SOS Bolzano - Bozen, Trentino-Alto Adige"
    ],
    "oggetti": [
     "Trova il tuo prossimo lavoro",
     "Suggerimento: l'universo dice: “Candidati ora!”",
-    "Infermieri presso ParaMedica srl"
+    "Infermieri presso ParaMedica srl",
+    "Infermiera / Infermiere Professionale presso Coop SOS"
    ]
   },
   "InfoJobs": {
@@ -84,8 +86,8 @@
  },
  "data": "2026-11-20",
  "note": [
-  "• Posta: 34 contatti inviati, 0 risposte nuove",
-  "• Avvisi di Indeed: 1 annunci per infermieri nelle email degli ultimi giorni",
+  "• Posta: 34 contatti inviati, 1 risposte nuove",
+  "• Avvisi di Indeed: 2 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di LinkedIn: 0 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di InfoJobs: 0 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di Jobrapido: 0 annunci per infermieri nelle email degli ultimi giorni",
