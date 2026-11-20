@@ -305,7 +305,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 4,
+   "v": 5,
    "zona": "Nova Ponente"
   },
   "data_novita": "2026-11-13",
@@ -476,9 +476,11 @@
    "pec": null,
    "scadenza": null,
    "scadenza_frase": null,
-   "segnali_turni": {},
-   "turni": null,
-   "v": 4,
+   "segnali_turni": {
+    "notti": true
+   },
+   "turni": "3 turni (anche notti)",
+   "v": 5,
    "zona": "Meltina"
   },
   "data_novita": "2026-11-13",
@@ -581,7 +583,7 @@
     "pieno": true
    },
    "turni": "36 h/settimana, tempo pieno, part-time",
-   "v": 4,
+   "v": 5,
    "zona": "Lagundo"
   },
   "data_novita": "2026-11-13",
@@ -760,7 +762,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 4,
+   "v": 5,
    "zona": "San Candido"
   },
   "data_novita": "2026-11-13",
@@ -933,7 +935,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 4,
+   "v": 5,
    "zona": "Nova Ponente"
   },
   "data_novita": "2026-11-13",
@@ -1104,12 +1106,12 @@
    "scadenza": "2026-11-06",
    "scadenza_frase": "dell’Azienda, che dovrà pervenire entro le ore 12.00 del 06/11/2026, utilizzand",
    "segnali_turni": {
-    "dodici": true,
+    "dodici_escluso": "In relazione al periodo emergenziale è consentito il ricorso a turni fino a 12 ore",
     "notti": true,
     "weekend": true
    },
-   "turni": "turni da 12 h, notti, weekend/festivi",
-   "v": 4,
+   "turni": "notti, weekend/festivi",
+   "v": 5,
    "zona": "Rovereto"
   },
   "data_novita": null,
@@ -1217,7 +1219,7 @@
     "pieno": true
    },
    "turni": "18, 20 o 22 h/settimana, tempo pieno, part-time",
-   "v": 4,
+   "v": 5,
    "zona": "San Pancrazio"
   },
   "data_novita": "2026-11-13",
@@ -2075,7 +2077,7 @@
     "weekend": true
    },
    "turni": "36 h/settimana, notti, weekend/festivi, tempo pieno, part-time",
-   "v": 4,
+   "v": 5,
    "zona": "Lavis"
   },
   "data_novita": null,
@@ -2596,7 +2598,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 4,
+   "v": 5,
    "zona": "Primiero San Martino di Castrozza"
   },
   "data_novita": "2026-11-13",
@@ -2934,7 +2936,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 4,
+   "v": 5,
    "zona": "Nova Ponente"
   },
   "data_novita": "2026-11-13",
@@ -3231,7 +3233,7 @@
     "pieno": true
    },
    "turni": "36 h/settimana, tempo pieno, part-time",
-   "v": 4,
+   "v": 5,
    "zona": "Rovereto"
   },
   "data_novita": null,
@@ -3538,7 +3540,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 4,
+   "v": 5,
    "zona": "Trento"
   },
   "data_novita": "2026-11-15",
@@ -4552,7 +4554,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 4,
+   "v": 5,
    "zona": "Cavalese"
   },
   "data_novita": "2026-11-13",

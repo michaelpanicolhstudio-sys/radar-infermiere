@@ -2,7 +2,7 @@
  "data": "2026-11-20",
  "esplora": [
   {
-   "caratteri": 3015,
+   "caratteri": 2871,
    "inizio": "Offerte di lavoro delle residenze per anziani dell'Alto Adige Hier finden Sie die Stellenangebote unserer Mitgliedsheime. Die Einträge werden von den einzelnen Seniorenwohnheimen bekanntgegeben und sind auch auf der entsprechenden Seite des Heimes zu finden. Auf der Homepage https://career.bz.it fin",
    "link": [
     [
@@ -28,6 +28,14 @@
     [
      "https://career.bz.it/it/",
      "https://career.bz.it/it/"
+    ],
+    [
+     "Residenza per Anziani Lagundo Mathias Ladurner APSP",
+     "https://www.vds-suedtirol.it/it/swh/445/job/pflegehelferin-als-ersatz-fuer-personal-im-krankenstand-gesucht"
+    ],
+    [
+     "Residenza per Anziani Lagundo Mathias Ladurner APSP",
+     "https://www.vds-suedtirol.it/it/swh/445/job/pflegehelfer-als-ersatz-fuer-personal-im-krankenstand-gesucht"
     ],
     [
      "APSP Fondo Ospedale della Santissima Trinità Residenza per Anziani Ann",
@@ -60,14 +68,6 @@
     [
      "Residenza per Anziani \"Leoheim\"",
      "https://www.vds-suedtirol.it/it/swh/521/job/sozialbetreuerin-berufsbild-nr-38-der-v-funktionsebene-operatore-operatrice-socio-2"
-    ],
-    [
-     "Residenza per Anziani \"Claraheim\"",
-     "https://www.vds-suedtirol.it/it/swh/469/job/sozialbetreuerin-berufsbild-nr-38-der-v-funktionsebene-operatore-operatrice-socio-2"
-    ],
-    [
-     "Residenza per Anziani \"Peter Paul Schrott\"",
-     "https://www.vds-suedtirol.it/it/swh/462/job/sozialbetreuerin-berufsbild-nr-38-der-v-funktionsebene-operatore-operatrice-socio-2"
     ],
     [
      "2",
@@ -1115,11 +1115,11 @@
      "url": "https://www.vds-suedtirol.it/de/jobs"
     },
     {
-     "candidati": 4,
+     "candidati": 3,
      "url": "https://www.vds-suedtirol.it/de/jobs?page=1"
     },
     {
-     "candidati": 1,
+     "candidati": 2,
      "url": "https://www.vds-suedtirol.it/de/jobs?page=2"
     },
     {
@@ -1219,18 +1219,10 @@
   },
   "Google Alerts 16": {
    "accettati": [],
-   "gia_scartati": [
-    [
-     "Dalla Carta di Riva alle prossime sfide: FEU propone un'alleanza per il futuro dell ...",
-     "notizia, non un'offerta di lavoro",
-     "https://nursetimes.org/dalla-carta-di-riva-alle-prossime-sfide-feu-propone-unalleanza-per-il-futuro-dellemergenza-urgenza",
-     "2026-11-19"
-    ]
-   ],
    "pagine": [
     {
-     "candidati": 1,
-     "caratteri": 1244,
+     "candidati": 0,
+     "caratteri": 439,
      "titolo_feed": "Google Alert - infermiere lavoro Rovereto OR Riva OR Arco OR Pergine OR Cles",
      "url": "feed"
     }
@@ -1792,7 +1784,7 @@
    "scartati": []
   }
  },
- "richieste": 105,
+ "richieste": 125,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }
