@@ -354,6 +354,17 @@ r = motore.giro(cfg5, ReteFinta(pagine3), date(2026, 11, 14), registra=muto)
 dopo = motore.leggi_json(motore.FILE_ANNUNCI, {})[manuale["id"]]
 verifica("dati a mano conservati, scadenza aggiornata", (dopo["titolo"], dopo["turni"], dopo["scadenza"], dopo["origine"]), ("Personale infermieristico (CCNL AIOP)", "turni da 12 h", "2026-11-18", "manuale"))
 verifica("la proroga compare tra gli aggiornati", [x["cambi"] for x in r["aggiornati"]], [["scadenza: n.d. → 2026-11-18"]])
+verifica("al primo giro si fissano i campi scritti a mano", "turni" in dopo.get("campi_manuali", []) and "compenso" not in dopo["campi_manuali"], True)
+# 20/11 sera: Vannetti P.IVA (a mano) teneva «turni da 12 h» letti in automatico da un PDF il giorno prima: salvati
+# nell'annuncio, al giro dopo sembravano scritti a mano e nessuna lettura migliore li correggeva più.
+manuale_b = {**manuale, "turni": "turni da 12 h, notti", "segnali_turni": {"dodici": True, "notti": True},
+             "campi_manuali": ["titolo", "datore", "contratto", "zona", "km", "minuti", "pubblicato"]}
+motore.scrivi_json(motore.FILE_ANNUNCI, {manuale_b["id"]: manuale_b})
+r_b = motore.giro(cfg5, ReteFinta(pagine3), date(2026, 11, 14), registra=muto)
+dopo_b = motore.leggi_json(motore.FILE_ANNUNCI, {})[manuale_b["id"]]
+verifica("un dato letto in automatico su un annuncio a mano si aggiorna",
+         (dopo_b["titolo"], dopo_b["turni"], dopo_b.get("segnali_turni")), ("Personale infermieristico (CCNL AIOP)", None, {}))
+verifica("e non è un aggiornamento per Michael", [x["cambi"] for x in r_b["aggiornati"]], [["scadenza: n.d. → 2026-11-18"]])
 
 print("Regole della seconda messa a punto")
 verifica("compenso: tra medici e infermieri vale quello degli infermieri",

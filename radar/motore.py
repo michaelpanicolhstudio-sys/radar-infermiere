@@ -17,6 +17,8 @@ FILE_FONTI = RADICE / "data" / "fonti_stato.json"
 FILE_DIAGNOSTICA = RADICE / "data" / "diagnostica.json"
 CARTELLA_REPORT = RADICE / "data" / "report"
 
+CAMPI_A_MANO = ("titolo", "datore", "contratto", "compenso", "euro_ora", "turni", "segnali_turni",
+                "zona", "km", "minuti", "pubblicato")
 CAMPI_CONFRONTO = ["titolo", "contratto", "compenso", "scadenza", "turni"]
 NOMI_CAMPI = {"titolo": "titolo", "contratto": "contratto", "compenso": "compenso",
               "scadenza": "scadenza", "turni": "ore e turni"}
@@ -498,10 +500,16 @@ def aggiorna_memoria(memoria: dict, trovati: list[dict], fonti_lette: set[str], 
         # Annunci letti a mano: i dati controllati da una persona vincono su quelli automatici.
         # Fa eccezione la scadenza, che può essere prorogata.
         if vecchio.get("origine") == "manuale":
-            for campo in ("titolo", "datore", "contratto", "compenso", "euro_ora", "turni", "segnali_turni",
-                          "zona", "km", "minuti", "pubblicato"):
+            # Vincono solo i campi scritti davvero a mano (`campi_manuali`, fissati al primo giro):
+            # un dato letto in automatico e salvato non deve diventare «a mano» e restare fermo
+            # (Vannetti: turni da 12 h presi da una lettura vecchia del PDF, mai più corretti).
+            manuali = vecchio.get("campi_manuali")
+            if manuali is None:
+                manuali = [c for c in CAMPI_A_MANO if vecchio.get(c) not in (None, "", {})]
+            for campo in manuali:
                 if vecchio.get(campo) not in (None, "", {}):
                     a[campo] = vecchio[campo]
+            a["campi_manuali"] = manuali
             if a.get("scadenza") is None:
                 a["scadenza"] = vecchio.get("scadenza")
             a["origine"] = "manuale"

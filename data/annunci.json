@@ -150,6 +150,14 @@
    "Cita tedesco o bilinguismo"
   ],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "zona",
+   "km",
+   "minuti"
+  ],
   "cita_tedesco": true,
   "compenso": null,
   "contratto": "Concorso / graduatoria",
@@ -213,6 +221,15 @@
   "affidabilita": "aggregatore",
   "avvisi": [],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "zona",
+   "km",
+   "minuti",
+   "pubblicato"
+  ],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "P.IVA / libera professione",
@@ -382,6 +399,17 @@
    "Cita tedesco o bilinguismo"
   ],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "turni",
+   "segnali_turni",
+   "zona",
+   "km",
+   "minuti",
+   "pubblicato"
+  ],
   "cita_tedesco": true,
   "compenso": null,
   "contratto": "P.IVA / libera professione",
@@ -658,6 +686,16 @@
   "affidabilita": "ufficiale",
   "avvisi": [],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "turni",
+   "segnali_turni",
+   "zona",
+   "km",
+   "minuti",
+   "pubblicato"
+  ],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": null,
@@ -1088,6 +1126,15 @@
    "Dal PDF allegato: ore e turni, compenso"
   ],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "zona",
+   "km",
+   "minuti",
+   "pubblicato"
+  ],
   "cita_tedesco": false,
   "compenso": "33 €/h",
   "contratto": "P.IVA / libera professione",
@@ -1392,6 +1439,15 @@
   "affidabilita": "aggregatore",
   "avvisi": [],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "zona",
+   "km",
+   "minuti",
+   "pubblicato"
+  ],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "P.IVA / libera professione",
@@ -1656,6 +1712,15 @@
   "affidabilita": "struttura",
   "avvisi": [],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "turni",
+   "segnali_turni",
+   "zona",
+   "km",
+   "minuti"
+  ],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": null,
@@ -1732,6 +1797,16 @@
    "Cita tedesco o bilinguismo"
   ],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "turni",
+   "segnali_turni",
+   "zona",
+   "km",
+   "minuti"
+  ],
   "cita_tedesco": true,
   "compenso": null,
   "contratto": "P.IVA o dipendente",
@@ -2052,6 +2127,18 @@
    "Dal PDF allegato: ore e turni, compenso"
   ],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "compenso",
+   "turni",
+   "segnali_turni",
+   "zona",
+   "km",
+   "minuti",
+   "pubblicato"
+  ],
   "cita_tedesco": false,
   "compenso": "stipendio base 23.001,72 € l'anno, più indennità",
   "contratto": "Concorso / graduatoria",
@@ -2156,6 +2243,17 @@
   "affidabilita": "aggregatore",
   "avvisi": [],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "turni",
+   "segnali_turni",
+   "zona",
+   "km",
+   "minuti",
+   "pubblicato"
+  ],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "P.IVA / libera professione",
@@ -2233,6 +2331,15 @@
   "cambi": [
    "scadenza: 2026-11-15 → 2026-12-11 (sessione successiva)"
   ],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "compenso",
+   "zona",
+   "km",
+   "minuti"
+  ],
   "cita_tedesco": false,
   "compenso": "es. Cles: 36.960,54 € lordi l'anno",
   "contratto": "Dipendente a tempo determinato",
@@ -2300,6 +2407,18 @@
   "affidabilita": "ufficiale",
   "avvisi": [],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "compenso",
+   "turni",
+   "segnali_turni",
+   "zona",
+   "km",
+   "minuti",
+   "pubblicato"
+  ],
   "cita_tedesco": false,
   "compenso": "da circa 2.500 € netti al mese",
   "contratto": "Dipendente a tempo determinato",
@@ -2375,6 +2494,17 @@
   "affidabilita": "aggregatore",
   "avvisi": [],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "turni",
+   "segnali_turni",
+   "zona",
+   "km",
+   "minuti",
+   "pubblicato"
+  ],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "P.IVA / libera professione",
@@ -2441,6 +2571,15 @@
   "affidabilita": "aggregatore",
   "avvisi": [],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "zona",
+   "km",
+   "minuti",
+   "pubblicato"
+  ],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "Collaborazione",
@@ -2673,6 +2812,15 @@
   "affidabilita": "ufficiale",
   "avvisi": [],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "zona",
+   "km",
+   "minuti",
+   "pubblicato"
+  ],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "Dipendente a tempo indeterminato",
@@ -3205,6 +3353,17 @@
   "affidabilita": "ufficiale",
   "avvisi": [],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "turni",
+   "segnali_turni",
+   "zona",
+   "km",
+   "minuti",
+   "pubblicato"
+  ],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "Concorso / graduatoria",
@@ -3692,6 +3851,15 @@
   "affidabilita": "ufficiale",
   "avvisi": [],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "zona",
+   "km",
+   "minuti",
+   "pubblicato"
+  ],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "P.IVA o dipendente",
@@ -3764,6 +3932,15 @@
   "affidabilita": "aggregatore",
   "avvisi": [],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "zona",
+   "km",
+   "minuti",
+   "pubblicato"
+  ],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "P.IVA / libera professione",
@@ -3827,6 +4004,15 @@
   "affidabilita": "aggregatore",
   "avvisi": [],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "zona",
+   "km",
+   "minuti",
+   "pubblicato"
+  ],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "P.IVA / libera professione",
@@ -3966,6 +4152,16 @@
   "affidabilita": "aggregatore",
   "avvisi": [],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "turni",
+   "segnali_turni",
+   "zona",
+   "km",
+   "minuti"
+  ],
   "cita_tedesco": false,
   "compenso": null,
   "contratto": "P.IVA o dipendente",
@@ -4273,6 +4469,16 @@
    "Preso dallo stesso bando su UPIPA – concorsi delle APSP: compenso"
   ],
   "cambi": [],
+  "campi_manuali": [
+   "titolo",
+   "datore",
+   "contratto",
+   "compenso",
+   "zona",
+   "km",
+   "minuti",
+   "pubblicato"
+  ],
   "cita_tedesco": false,
   "compenso": "stipendio base 23.001,72 € l'anno, più indennità",
   "contratto": "Concorso / graduatoria",
