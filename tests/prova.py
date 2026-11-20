@@ -488,6 +488,17 @@ verifica("turni: tre turni (italiano) segnala le notti", estrai.estrai_turni("di
 verifica("turni: «3 Schichten» con le notti già scritte non si ripete",
          estrai.estrai_turni("Dreischichtbetrieb inklusive Nachtdienst")[0], "notti, 3 turni")
 verifica("turni: 3 posti non sono 3 turni", estrai.estrai_turni("3 posti per infermieri, turni da concordare")[0], None)
+# 20/11 sera: avviso Vannetti P.IVA, presenza «possibilmente non superiore a 10 ore» e 12 ore solo «in relazione
+# al periodo emergenziale»: risultava «turni da 12 h» e prendeva tutti i punti dei turni.
+_t12 = estrai.estrai_turni("La presenza giornaliera sarà possibilmente non superiore a 10 ore; in relazione al periodo "
+                           "emergenziale potranno essere richiesti turni fino a 12 ore. Compenso per ore ordinarie, festive e notturne.")
+verifica("turni: 12 ore solo per emergenza non sono turni da 12 h", (_t12[0], _t12[1].get("dodici")),
+         ("notti, weekend/festivi", None))
+verifica("turni: la frase scartata resta per la diagnostica", "emergenziale" in _t12[1].get("dodici_escluso", ""), True)
+verifica("turni: «non oltre 12 ore» è un limite", estrai.estrai_turni("orario non oltre 12 ore consecutive")[0], None)
+verifica("turni: turni da 12 ore veri restano", estrai.estrai_turni("Turni da 12 ore, notti e festivi")[1].get("dodici"), True)
+verifica("turni: dopo un'eccezione conta un 12 ore vero", estrai.estrai_turni(
+    "In via eccezionale 12 ore. Di norma turni di 12 ore diurni")[0], "turni da 12 h")
 verifica("VdS: titolo leggibile dall'indirizzo (ore)",
          estrai.titolo_leggibile("Krankenpflegerinnen 7ter fe mit 18 20 und 22 wochenstunden"), "Infermiere/a – part-time (18, 20 o 22 ore/settimana)")
 verifica("VdS: titolo leggibile dall'indirizzo (graduatoria con altri profili)",

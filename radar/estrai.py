@@ -844,9 +844,23 @@ def estrai_turni(testo: str) -> tuple[str | None, dict]:
         ore = int(m.group(1))
         etichette.append(f"{ore} h/settimana")
         segnali["ore_settimana"] = ore
-    if re.search(r"\b12\s*(?:h\b|ore\b|stunden)", testo, re.I):
+    # «12 ore» conta solo se descrive il turno: non quando è un limite («non oltre 12 ore»)
+    # o un'eccezione («in relazione al periodo emergenziale… 12 ore»), come nell'avviso Vannetti.
+    for m12 in re.finditer(r"\b12\s*(?:h\b|ore\b|stunden)", testo, re.I):
+        inizio = max(testo.rfind(".", 0, m12.start()), testo.rfind(";", 0, m12.start())) + 1
+        fine = [p for p in (testo.find(".", m12.end()), testo.find(";", m12.end())) if p >= 0]
+        frase = testo[inizio: min(fine) if fine else len(testo)]
+        prima = testo[max(inizio, m12.start() - 40): m12.start()]
+        limite = re.search(r"(?:non\s+superiore\s+a(?:lle)?|non\s+oltre(?:\s+le)?|al\s+massimo|massimo\s+(?:di\s+)?|"
+                           r"max\.?|höchstens|maximal)\s*$", prima, re.I)
+        eccezione = re.search(r"emergenz|eccezional|straordinari|in\s+via\s+del\s+tutto|ausnahm|notfall", frase, re.I)
+        if limite or eccezione:
+            segnali.setdefault("dodici_escluso", pulisci(frase)[:160])
+            continue
         etichette.append("turni da 12 h")
         segnali["dodici"] = True
+        segnali.pop("dodici_escluso", None)
+        break
     if re.search(r"\bnott[ei]\b|notturn|nachtdienst|nachtschicht|\bnächte", testo, re.I):
         etichette.append("notti")
         segnali["notti"] = True
