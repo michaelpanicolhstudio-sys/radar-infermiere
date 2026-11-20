@@ -114,7 +114,9 @@ _RE_PDF_INUTILE = re.compile(
     r"domanda|modulo|fac[\s_-]?simile|informativa|privacy|curriculum|autocertific|consenso|graduatoria|esito|"
     r"verbale|calendario|convocaz|diario|ammess|schema|carta[\s_-]dei[\s_-]servizi|organigramma|statuto|"
     r"regolamento|tariff|menu|bilancio", re.I)
-_RE_PDF_UTILE = re.compile(r"avviso|bando|selezion|incaric|ricerca|concorso|prorog|ausschreibung|stellen|annuncio", re.I)
+# 20/11: «…DET_304_26_dd_15_10_Allegato_signed.pdf» (Vannetti P.IVA) è l'avviso: l'allegato di una determinazione.
+_RE_PDF_UTILE = re.compile(r"avviso|bando|selezion|incaric|ricerca|concorso|prorog|ausschreibung|stellen|annuncio|"
+                           r"(?:^|[^a-z])det(?:ermina\w*)?[_\s.-]*(?:n[_.]?\s*)?\d+.*allegat", re.I)
 _RE_ETICHETTA_VUOTA = re.compile(r"^(?:scarica(?:\s+il)?(?:\s+pdf)?|download|apri|visualizza|pdf|clicca\s+qui|leggi|allegato|file)?\W*$", re.I)
 _RE_CONTORNO = re.compile(r"sidebar|^widget|footer|cookie|breadcrumb|navbar|^menu|-menu$|related|correlat", re.I)
 _ATTRIBUTI_LINK = ("href", "src", "data", "data-src", "data-pdf", "data-pdf-url", "data-file", "data-url")

@@ -754,6 +754,12 @@ verifica("PDF nel codice: avviso in un attributo insolito e proroga nello script
           "https://opi.tn.it/wp-content/uploads/2026/11/PROROGA-termini.pdf"])
 verifica("PDF nel codice: la diagnostica elenca quelli lasciati fuori per il nome",
          estrai.pdf_scartati_nel_codice(_html_v, "https://opi.tn.it/v/"), ["https://opi.tn.it/wp-content/uploads/2026/10/informativa-privacy.pdf"])
+_html_v2 = ("<div data-a='https://opi.tn.it/wp-content/uploads/2025/10/STAMPED20261016131231-DET_304_26_dd_15_10_Allegato_signed.pdf'></div>"
+            "<div data-a='https://opi.tn.it/wp-content/uploads/2025/10/DET_294_26_dd__09_10_Allegato_domanda.pdf'></div>"
+            "<div data-a='https://opi.tn.it/wp-content/uploads/2025/10/Determinato_allegato.pdf'></div>")
+verifica("PDF nel codice: l'allegato di una determinazione è l'avviso (la domanda no)",
+         [x["url"].rsplit("/", 1)[-1] for x in estrai.leggi_pagina(_html_v2, "https://opi.tn.it/v/")["pdf"]],
+         ["STAMPED20261016131231-DET_304_26_dd_15_10_Allegato_signed.pdf"])
 verifica("PDF nel codice: link normali hanno la precedenza",
          [x["url"] for x in estrai.leggi_pagina("<article><a href='/a/bando.pdf'>Bando</a><script>'https://x.it/avviso2.pdf'</script></article>",
                                                 "https://opi.tn.it/p/")["pdf"]], ["https://opi.tn.it/a/bando.pdf"])
