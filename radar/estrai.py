@@ -173,6 +173,25 @@ def _url_pdf(url: str) -> str | None:
     return None
 
 
+# 20/11: OPI Trento, Vannetti: la pagina mostra tre riquadri «scarica il pdf» (avviso, proroga), ma il
+# Radar non trovava nessun PDF: l'indirizzo non sta in href/src (visualizzatori e pulsanti dei plugin lo
+# tengono in attributi insoliti o negli script). Ultima risorsa: gli indirizzi .pdf scritti nel codice.
+_RE_PDF_NEL_CODICE = re.compile(
+    r"(?:https?:(?:\\?/){2}[^\s\"'<>()]+?|(?:\\?/)wp-content(?:\\?/)uploads(?:\\?/)[^\s\"'<>()]+?)\.pdf\b", re.I)
+
+
+def _pdf_nel_codice(html: str, base: str, massimo: int = 3) -> list[dict]:
+    """PDF citati nel codice della pagina, tenuti solo se dal nome sembrano un avviso o un bando."""
+    visti: dict[str, dict] = {}
+    for m in _RE_PDF_NEL_CODICE.finditer(html or ""):
+        url = urljoin(base, m.group(0).replace("\\/", "/"))
+        nome = unquote(urlparse(url).path.rsplit("/", 1)[-1])
+        if _RE_PDF_INUTILE.search(nome) or not _RE_PDF_UTILE.search(nome):
+            continue
+        visti.setdefault(normalizza_url(url), {"url": url, "testo": nome[:120], "peso": 0})
+    return list(visti.values())[:massimo]
+
+
 def _etichetta(tag) -> str:
     """Testo del link; se è solo «scarica» o «download», il titolo del blocco che lo contiene."""
     testo = pulisci(tag.get_text(" ") or "")
@@ -254,6 +273,23 @@ def allegati_dubbi(html: str, base: str, massimo: int = 8) -> list[list[str]]:
                     or altro_sito) and valore not in visti:
                 visti.add(valore)
                 trovati.append([tag.name, testo, indirizzo[:200]])
+    # 20/11: i pulsanti «scarica il pdf» senza indirizzo leggibile: si scrive com'è fatto il tag
+    # (nome e attributi), così si capisce dove il sito tiene l'indirizzo del PDF.
+    for tag in soup.find_all(True):
+        if len(trovati) >= massimo or tag.name in ("script", "style", "html", "body") or _nel_contorno(tag):
+            continue
+        proprio = pulisci(" ".join(t for t in tag.find_all(string=True, recursive=False)))
+        if not re.fullmatch(r"(?:scarica(?:\s+il)?\s+pdf|download(?:\s+pdf)?|scarica)\W*", proprio, re.I):
+            continue
+        # Anche i due contenitori sopra: spesso l'indirizzo sta nel riquadro, non nella scritta.
+        pezzi = []
+        for el in [tag] + [g for g in list(tag.parents)[:2] if g.name not in ("body", "html", "[document]")]:
+            att = "; ".join(f"{k}={' '.join(v) if isinstance(v, list) else v}" for k, v in el.attrs.items())
+            pezzi.append(f"{el.name}[{att}]" if el is not tag else att)
+        attributi = " ↑ ".join(x for x in pezzi if x)
+        if any(x[1] == proprio and x[2] == attributi[:200] for x in trovati):
+            continue
+        trovati.append([tag.name, proprio[:60], attributi[:200] or "(nessun attributo)"])
     return trovati[:massimo]
 
 
@@ -313,6 +349,8 @@ def leggi_pagina(html: str, base: str = "", intera_se_vuota: bool = False) -> di
     if base and not pdf and soup.body is not None and nodo is not soup.body:
         # Alcuni temi mettono gli allegati fuori dal testo dell'articolo.
         pdf = _link_pdf(soup.body, base, solo_sicuri=True)
+    if base and not pdf:
+        pdf = _pdf_nel_codice(html, base)
     _ripulisci(nodo)
     testo = pulisci(nodo.get_text(" "))
     if intera_se_vuota and len(testo) < 200 and soup.body is not None and nodo is not soup.body:

@@ -740,6 +740,28 @@ _html_d = ("<html><head><link rel='icon' href='https://opi.tn.it/wp-content/uplo
 verifica("PDF mancanti: niente icone, sì al link dell'avviso su un altro sito",
          [x[2] for x in estrai.allegati_dubbi(_html_d, "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/")],
          ["https://www.apspvannetti.it/Albo-pretorio/Avvisi/Incarichi-infermieri"])
+# 20/11: OPI Trento, Vannetti P.IVA: tre riquadri «scarica il pdf» (avviso e proroga) ma nessun PDF trovato:
+# l'indirizzo sta in un attributo insolito o nello script del visualizzatore, non in href/src.
+_html_v = ("<html><head><link rel='icon' href='https://opi.tn.it/x.ico'></head><body><article><h1>Vannetti – liberi professionisti</h1>"
+           "<p>L'avviso è pubblicato in calce alla pagina.</p>"
+           "<div class='pdf-box' data-source='https://opi.tn.it/wp-content/uploads/2026/10/Avviso-incarichi-LP-infermieri.pdf'>"
+           "<span class='btn'>scarica il pdf</span></div>"
+           "<script>var v={\"file\":\"https:\\/\\/opi.tn.it\\/wp-content\\/uploads\\/2026\\/11\\/PROROGA-termini.pdf\"};</script>"
+           "<div data-x='/wp-content/uploads/2026/10/informativa-privacy.pdf'></div></article></body></html>")
+verifica("PDF nel codice: avviso in un attributo insolito e proroga nello script, niente informativa",
+         [x["url"] for x in estrai.leggi_pagina(_html_v, "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/")["pdf"]],
+         ["https://opi.tn.it/wp-content/uploads/2026/10/Avviso-incarichi-LP-infermieri.pdf",
+          "https://opi.tn.it/wp-content/uploads/2026/11/PROROGA-termini.pdf"])
+verifica("PDF nel codice: link normali hanno la precedenza",
+         [x["url"] for x in estrai.leggi_pagina("<article><a href='/a/bando.pdf'>Bando</a><script>'https://x.it/avviso2.pdf'</script></article>",
+                                                "https://opi.tn.it/p/")["pdf"]], ["https://opi.tn.it/a/bando.pdf"])
+_html_b = ("<html><body><article><p>Avviso in calce.</p><div class='wpfd-file' data-id='77'><span>scarica il pdf</span></div>"
+           "<button onclick='apri(77)'>Download</button></article></body></html>")
+verifica("PDF mancanti: i pulsanti «scarica il pdf» senza indirizzo sono descritti",
+         [x[:2] for x in estrai.allegati_dubbi(_html_b, "https://opi.tn.it/v/")], [["span", "scarica il pdf"], ["button", "Download"]])
+verifica("PDF mancanti: si vedono gli attributi del pulsante",
+         [x[2] for x in estrai.allegati_dubbi(_html_b, "https://opi.tn.it/v/")],
+         ["div[class=wpfd-file; data-id=77] ↑ article[]", "onclick=apri(77) ↑ article[]"])
 # 19/11: sei offerte in P.IVA scritte a mano (Italiassistenza ×2, Cerba, ParaMedica, IQVIA, Privatassistenza)
 # erano senza tipo: il nome non lo dice, ma lo dicono il titolo («assistenza domiciliare», «RSA»)
 # o l'elenco Strutture di Michael («Italiassistenza – Assistenza domiciliare»). Sparivano dal filtro «Domiciliare».
