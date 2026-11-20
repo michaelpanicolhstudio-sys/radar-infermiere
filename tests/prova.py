@@ -752,6 +752,8 @@ verifica("PDF nel codice: avviso in un attributo insolito e proroga nello script
          [x["url"] for x in estrai.leggi_pagina(_html_v, "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/")["pdf"]],
          ["https://opi.tn.it/wp-content/uploads/2026/10/Avviso-incarichi-LP-infermieri.pdf",
           "https://opi.tn.it/wp-content/uploads/2026/11/PROROGA-termini.pdf"])
+verifica("PDF nel codice: la diagnostica elenca quelli lasciati fuori per il nome",
+         estrai.pdf_scartati_nel_codice(_html_v, "https://opi.tn.it/v/"), ["https://opi.tn.it/wp-content/uploads/2026/10/informativa-privacy.pdf"])
 verifica("PDF nel codice: link normali hanno la precedenza",
          [x["url"] for x in estrai.leggi_pagina("<article><a href='/a/bando.pdf'>Bando</a><script>'https://x.it/avviso2.pdf'</script></article>",
                                                 "https://opi.tn.it/p/")["pdf"]], ["https://opi.tn.it/a/bando.pdf"])

@@ -298,6 +298,11 @@ def _dettaglio(cand: dict, fonte: dict, rete, cfg: dict, comuni: list[dict], ogg
             testo = pagina["testo"]
             pubblicato = pubblicato or pagina["pubblicato"]
             link_pdf = pagina["pdf"]
+            if nota is not None and len(link_pdf) < 2 and len(nota.setdefault("pdf_scartati", [])) < 6:
+                # 20/11: Vannetti P.IVA, trovata solo la proroga: quali altri PDF ha la pagina?
+                altri = estrai.pdf_scartati_nel_codice(html, cand["url"])
+                if altri:
+                    nota["pdf_scartati"].append({"url": cand["url"], "presi": [p["url"] for p in link_pdf], "lasciati": altri})
             if nota is not None and not link_pdf and len(nota.setdefault("senza_pdf", [])) < 6:
                 dubbi = estrai.allegati_dubbi(html, cand["url"])
                 if dubbi:

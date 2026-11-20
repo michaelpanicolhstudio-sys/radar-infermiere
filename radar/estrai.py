@@ -180,16 +180,23 @@ _RE_PDF_NEL_CODICE = re.compile(
     r"(?:https?:(?:\\?/){2}[^\s\"'<>()]+?|(?:\\?/)wp-content(?:\\?/)uploads(?:\\?/)[^\s\"'<>()]+?)\.pdf\b", re.I)
 
 
-def _pdf_nel_codice(html: str, base: str, massimo: int = 3) -> list[dict]:
-    """PDF citati nel codice della pagina, tenuti solo se dal nome sembrano un avviso o un bando."""
+def _pdf_nel_codice(html: str, base: str, massimo: int = 3, scartati: bool = False) -> list[dict]:
+    """PDF citati nel codice della pagina, tenuti solo se dal nome sembrano un avviso o un bando.
+    Con scartati=True ritorna invece quelli lasciati fuori per il nome (per la diagnostica)."""
     visti: dict[str, dict] = {}
     for m in _RE_PDF_NEL_CODICE.finditer(html or ""):
         url = urljoin(base, m.group(0).replace("\\/", "/"))
         nome = unquote(urlparse(url).path.rsplit("/", 1)[-1])
-        if _RE_PDF_INUTILE.search(nome) or not _RE_PDF_UTILE.search(nome):
+        buono = not _RE_PDF_INUTILE.search(nome) and bool(_RE_PDF_UTILE.search(nome))
+        if buono == scartati:
             continue
         visti.setdefault(normalizza_url(url), {"url": url, "testo": nome[:120], "peso": 0})
-    return list(visti.values())[:massimo]
+    return list(visti.values())[: (8 if scartati else massimo)]
+
+
+def pdf_scartati_nel_codice(html: str, base: str) -> list[str]:
+    """Messa a punto: indirizzi di PDF presenti nel codice ma non presi perché il nome non dice «avviso/bando»."""
+    return [x["url"][:200] for x in _pdf_nel_codice(html, base, scartati=True)]
 
 
 def _etichetta(tag) -> str:
