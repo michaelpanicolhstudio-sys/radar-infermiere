@@ -23,14 +23,22 @@
     "Supporto",
     "Cerca lavoro",
     "Vedi le nuove posizioni",
-    "Supporto"
+    "Supporto",
+    "Visualizza annuncio",
+    "Non adatto al mio profilo",
+    "Scopri di più",
+    "Modifica profilo",
+    "Metti in pausa queste email"
    ],
-   "annunci": 0,
-   "email": 2,
-   "esempi": [],
+   "annunci": 1,
+   "email": 3,
+   "esempi": [
+    "Infermieri ParaMedica srl Asiago, Veneto"
+   ],
    "oggetti": [
     "Trova il tuo prossimo lavoro",
-    "Suggerimento: l'universo dice: “Candidati ora!”"
+    "Suggerimento: l'universo dice: “Candidati ora!”",
+    "Infermieri presso ParaMedica srl"
    ]
   },
   "InfoJobs": {
@@ -74,10 +82,10 @@
    "esempi": []
   }
  },
- "data": "2026-11-19",
+ "data": "2026-11-20",
  "note": [
-  "• Posta: 33 contatti inviati, 1 risposte nuove",
-  "• Avvisi di Indeed: 0 annunci per infermieri nelle email degli ultimi giorni",
+  "• Posta: 34 contatti inviati, 0 risposte nuove",
+  "• Avvisi di Indeed: 1 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di LinkedIn: 0 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di InfoJobs: 0 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di Jobrapido: 0 annunci per infermieri nelle email degli ultimi giorni",
