@@ -270,11 +270,19 @@ def resoconto(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict) -
                 "mia_risposta_il": mie[-1].get("data") if mie else None, "prossimo": mano.get("prossimo")}
         if mano.get("esito"):
             riga["esito"] = mano["esito"]
+        # 21/11 Casa Laner: «Tocca a te» restava anche dopo la risposta di Michael. Se lui ha scritto dopo
+        # che il passo «da fare» è stato deciso (o dopo l'ultima risposta della struttura), ora tocca a loro.
+        riferimento = mano.get("aggiornato") if mano else (ultima.get("data") if ultima else None)
+        if riga["esito"] == "da fare" and riga["mia_risposta_il"] and riferimento and riga["mia_risposta_il"] > riferimento:
+            gg = lambda iso: f"{iso[8:10]}/{iso[5:7]}"
+            riga["esito"] = "hai risposto"
+            riga["prossimo"] = f"Hai risposto il {gg(riga['mia_risposta_il'])}: ora tocca a loro." + (
+                f" Passo scritto il {gg(riferimento)}: {riga['prossimo']}" if riga.get("prossimo") else "")
         if riga["euro_ora"]:
             calcolo = conti.conto_offerta({"euro_ora": riga["euro_ora"], "km": riga["km"] or 0, "minuti": riga["minuti"] or 0}, par)
             riga["netto_ora"], riga["turni_obiettivo"] = calcolo["netto_ora_porta_a_porta"], calcolo["turni_per_obiettivo"]
         righe.append(riga)
-    ordine = {"da fare": 0, "sì": 1, "da leggere": 2, "più avanti": 3, "in attesa": 4, "no": 5}
+    ordine = {"da fare": 0, "sì": 1, "hai risposto": 1.5, "da leggere": 2, "più avanti": 3, "in attesa": 4, "no": 5}
     return sorted(righe, key=lambda r: (ordine.get(r["esito"], 9), -(r["euro_ora"] or 0), r["minuti"] if r["minuti"] is not None else 999))
 
 
@@ -289,7 +297,7 @@ def scrivi_resoconto_excel(righe: list[dict], percorso: Path) -> Path:
     ws.append(intestazione)
     for cella in ws[1]:
         cella.font = Font(bold=True)
-    colori = {"sì": "E3F1E3", "no": "F6E1E1", "da leggere": "FFF4CC", "da fare": "FFE2C2", "più avanti": "E6EEF7"}
+    colori = {"sì": "E3F1E3", "no": "F6E1E1", "da leggere": "FFF4CC", "da fare": "FFE2C2", "hai risposto": "E3F1E3", "più avanti": "E6EEF7"}
     for r in righe:
         ws.append([r["nome"], r["comune"], r["minuti"], r["inviata_il"], r["risposta_il"], r["esito"], r.get("prossimo"), r["rapporto"],
                    r["compenso"], r["euro_ora"], r["netto_ora"], r["turni_obiettivo"], r["turni"], r["da_quando"],

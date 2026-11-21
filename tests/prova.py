@@ -871,6 +871,21 @@ verifica("esiti a mano: esito, prossimo passo e mia risposta", (_r["esito"], _r[
 _c["s:a"]["risposte"].append({"data": "2026-11-20", "testo": "Siamo interessati"})
 _r = _inv.resoconto([{"chiave": "s:a", "nome": "A", "comune": "Mori", "minuti": 45}], {}, _c, CFG)[0]
 verifica("esiti a mano: nuova risposta dopo l'aggiornamento li sospende", (_r["esito"] != "più avanti", _r["prossimo"]), (True, None))
+# 21/11: Casa Laner restava «Tocca a te: compila il modulo» (esito del 18/11) anche dopo che Michael aveva risposto il 21/11.
+_tm.write_text('{"s:b": {"esito": "da fare", "aggiornato": "2026-11-18", "prossimo": "Compila il loro modulo."}}', encoding="utf-8")
+_cb = {"s:b": {"inviata_il": "2026-11-17", "risposte": [{"data": "2026-11-18", "testo": "le chiediamo di compilare l'apposito modulo"}],
+               "mie_risposte": [{"data": "2026-11-21"}]}}
+_r = _inv.resoconto([{"chiave": "s:b", "nome": "B"}], {}, _cb, CFG)[0]
+verifica("esiti: «da fare» già fatto quando Michael ha risposto dopo", (_r["esito"], _r["prossimo"]),
+         ("hai risposto", "Hai risposto il 21/11: ora tocca a loro. Passo scritto il 18/11: Compila il loro modulo."))
+_cb["s:b"]["mie_risposte"] = [{"data": "2026-11-18"}]
+_r = _inv.resoconto([{"chiave": "s:b", "nome": "B"}], {}, _cb, CFG)[0]
+verifica("esiti: risposta di Michael dello stesso giorno, il passo resta", (_r["esito"], _r["prossimo"]), ("da fare", "Compila il loro modulo."))
+_tm.write_text('{}', encoding="utf-8")
+_cb["s:b"]["mie_risposte"] = [{"data": "2026-11-19"}]
+_r = _inv.resoconto([{"chiave": "s:b", "nome": "B"}], {}, _cb, CFG)[0]
+verifica("esiti: «da fare» letto in automatico, Michael ha risposto dopo", (_r["esito"], _r["prossimo"]),
+         ("hai risposto", "Hai risposto il 19/11: ora tocca a loro."))
 _inv.esiti_manuali = _orig
 
 # Allarmi: un bando ASUIT sui centri traumatologici fa scattare l'allarme una volta sola; altri siti no.

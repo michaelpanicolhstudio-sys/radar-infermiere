@@ -12,7 +12,7 @@
   var RADAR_GIA_ANIMATO = false;
   var MESI = ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"];
   var ETICHETTE = { interessante: "Interessante", contattato: "Contattato", scartato: "Scartato" };
-  var ETICHETTE_ESITO = { "da fare": "Tocca a te", "sì": "Interessati", "più avanti": "Più avanti", "no": "Non ora", "da leggere": "Da leggere", "in attesa": "In attesa" };
+  var ETICHETTE_ESITO = { "da fare": "Tocca a te", "hai risposto": "Hai risposto", "sì": "Interessati", "più avanti": "Più avanti", "no": "Non ora", "da leggere": "Da leggere", "in attesa": "In attesa" };
   var NS = "http://www.w3.org/2000/svg";
 
   // ---------- memoria sul telefono (stati e note) ----------
@@ -873,7 +873,7 @@
   function vistaContatti(v) {
     var info = DATI.invio || {}, righe = DATI.resoconto || [], coda = DATI.lettere || [];
     var risposte = righe.filter(function (r) { return r.esito !== "in attesa"; });
-    var si = righe.filter(function (r) { return r.esito === "sì" || r.esito === "da fare"; });
+    var si = righe.filter(function (r) { return r.esito === "sì" || r.esito === "da fare" || r.esito === "hai risposto"; });
     v.appendChild(el("p", { class: "sommario" },
       el("b", { text: plurale(info.inviate || 0, "lettera inviata", "lettere inviate") }), document.createTextNode(", "),
       el("b", { text: plurale(risposte.length, "risposta", "risposte") }), document.createTextNode(" (" + si.length + " interessate), "),
