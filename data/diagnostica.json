@@ -1492,13 +1492,21 @@
    "accettati": [],
    "pagine": [
     {
-     "candidati": 0,
-     "caratteri": 447,
+     "candidati": 1,
+     "caratteri": 1260,
      "titolo_feed": "Google Alert - infermiere APSP OR RSA OR \"casa di riposo\" Trentino OR \"Alto Adige\"",
      "url": "feed"
     }
    ],
-   "scartati": []
+   "pdf_scartati": [],
+   "scartati": [
+    [
+     "CCNL ARIS RSA , riparte il rinnovo: nuove tutele per infermieri e OSS - Nurse Times",
+     "notizia, non un'offerta di lavoro",
+     "https://nursetimes.org/rinnovo-ccnl-aris-rsa-tutele-infermieri-oss"
+    ]
+   ],
+   "senza_pdf": []
   },
   "Gruppo Bonvicini – lavora con noi": {
    "accettati": [
@@ -1922,7 +1930,7 @@
    "scartati": []
   }
  },
- "richieste": 100,
+ "richieste": 101,
  "strutture": {
   "saltato": "aggiornato il 2026-11-15"
  }
