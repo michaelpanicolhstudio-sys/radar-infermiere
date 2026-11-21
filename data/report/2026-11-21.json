@@ -1,0 +1,117 @@
+{
+ "aggiornati": [],
+ "attivi": 25,
+ "attivi_piva": 10,
+ "data": "2026-11-21",
+ "fonti_lette": 45,
+ "fonti_totali": 47,
+ "giri": 1,
+ "nuovi": [
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": null,
+   "datore": null,
+   "id": "a5f3215e3880",
+   "minuti": 35,
+   "piva": false,
+   "punteggio": 33,
+   "scadenza": null,
+   "titolo": "Infermiera / Infermiere Professionale",
+   "url": "https://cts.indeed.com/v3/H4sIAAAAAAAA_32TWcurSBCG_0tgcjWezyVuH4RBE43RuCVmvQnath1t9yXaOZz_Pp4ZmMuBgoLnLapu6vm5GBbfi1ff193311fa_0jLGML4B6iKrzpEMIy_QI7_StqqWGdVlLLhc25dNbQAtlTaU_vgCYswzZdFtW6XYbymBOeeRwl26E3V6uRpZ1eFkSuArUNIDu_2w6kQ06U6ThDcuLsn3ETu_Zrq95M7ixsITvagexFPKSdhpDaovcNN1oUkuonHm0VWRL_bDKOz1YsVk_iDxy1R-E_rdUGja7XVXossHAuctyW0aVOjt2HqjtkpdlzdkzTZwbU1yJjZ3DpoPPKIZhBljjRzMA9-ad5Gfss4OXOtO2akCj7j5QQ-dFN9gOoBrhHKEBA5LJ0-3ZRO4JJSJ2ki6CzInULCVytY_OpT5R7A6Ti89bTZZZpJ27BjHkFAUNfGQh03rmpYbg5vkuCm-InU8g1IcbXjSGWOgbqKn8G7WfVPKtG4YGN-YK8nHbSRIQ8CqyPqjpNS7cctu2oqVdDqWmrVECmm7r13lnaOyFk2jtSpiq9JAF_bjfZw-Ibf7LmtaNF2R30K0OytFOIOaSlsaIOaFJrbUapg7Xthp0Hq4ovGTdLEELQ9p9-rSZZZp4GRnp05P8Al0zzJUG7jrVvVQc4PvbtjclfygtC6e6sovsTHfXIeeq3gFEp4n51HwljQU48asXL_xtujihplq3auebAyujmURL6uMDOcUiI0gXu4uGH1fBhCCC4kieeHMjrD8PixVlA0XgfTYJCehEGA2PzZUYo3aeE06mSodr4mPPIpVyaFJ0e5BpfRJMLL79L7dV_KOO_gwSgzVbJlQjgS4GL1clhT8Mstd0pjvyR1Ox6QbJ4gZm6DbyD12GTpS7CasnTxxNKD76aNabkOQs7lbiRvJ2Jt7P_BbedatsWaXU4YROtTpRyFp80Cae9uZBJqD_oQfXC8iT1vOT_0WpAEfgnCAq83nOadPnruj_I1srLOX9132fjvxsWfi2Lx_XMRAlANZb-PZ1tZjhcZWZCkFT3HIUJmFf0TMDQr0pIk0SIzByBPAQ5ebTWg1xz27QD_o6SGM3qncJxtnulvv2fwv4bPYz3-fQWLHU3DBOGCayWaWfz69TdQcutkRgQAAA/A6Ps5xB1ilgYGW1Z67M7AKEfyjh_Rh_bTZa9pryOP5I",
+   "zona": "Bolzano"
+  }
+ ],
+ "problemi": [
+  "OPI Trento – annunci di lavoro: tempo scaduto",
+  "Case di riposo dell'Alto Adige (VdS) – offerte: errore di rete (ConnectionError)"
+ ],
+ "scadenze7": [
+  {
+   "cambi": [],
+   "compenso": "33 €/h",
+   "contratto": "P.IVA / libera professione",
+   "datore": "APSP «Clementino Vannetti»",
+   "id": "36e85170a7c8",
+   "minuti": 40,
+   "piva": true,
+   "punteggio": 79,
+   "scadenza": "2026-11-27",
+   "titolo": "Incarichi libero-professionali di infermiere (avviso di pubblica selezione)",
+   "url": "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/",
+   "zona": "Rovereto"
+  }
+ ],
+ "top5": [
+  {
+   "cambi": [],
+   "compenso": "33 €/h",
+   "contratto": "P.IVA / libera professione",
+   "datore": "APSP «Clementino Vannetti»",
+   "id": "36e85170a7c8",
+   "minuti": 40,
+   "piva": true,
+   "punteggio": 79,
+   "scadenza": "2026-11-27",
+   "titolo": "Incarichi libero-professionali di infermiere (avviso di pubblica selezione)",
+   "url": "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/",
+   "zona": "Rovereto"
+  },
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": "P.IVA / libera professione",
+   "datore": "Paziente privato (tramite OPI Bolzano)",
+   "id": "2520bf34250f",
+   "minuti": 35,
+   "piva": true,
+   "punteggio": 61,
+   "scadenza": null,
+   "titolo": "Infermiere/a per emodialisi domiciliare",
+   "url": "https://www.opibz.it/cercasi-infermiere-a-per-emodialisi-domiciliare-bolzano/",
+   "zona": "Bolzano"
+  },
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": "P.IVA / libera professione",
+   "datore": "ParaMedica srl",
+   "id": "78cece7b434e",
+   "minuti": 40,
+   "piva": true,
+   "punteggio": 61,
+   "scadenza": null,
+   "titolo": "Infermieri RSA zona Rovereto",
+   "url": "https://it.indeed.com/q-infermiere-con-alloggio-l-trento,-trentino-alto-adige-offerte-lavoro.html",
+   "zona": "Rovereto"
+  },
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": "P.IVA / libera professione",
+   "datore": "Italiassistenza spa",
+   "id": "1a836b7c1e81",
+   "minuti": 35,
+   "piva": true,
+   "punteggio": 55,
+   "scadenza": null,
+   "titolo": "Infermiere/a con partita IVA – Bolzano e provincia",
+   "url": "https://it.indeed.com/q-infermiere-l-trentino-alto-adige-offerte-lavoro.html?nis=5&ch=1",
+   "zona": "Bolzano"
+  },
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": "P.IVA / libera professione",
+   "datore": "CHC Italy (Cerba HealthCare)",
+   "id": "507e1f139787",
+   "minuti": 25,
+   "piva": true,
+   "punteggio": 55,
+   "scadenza": null,
+   "titolo": "Infermiere P.IVA (TN)",
+   "url": "https://it.indeed.com/q-infermiere-professionale-l-rovereto,-trentino-alto-adige-offerte-lavoro.html",
+   "zona": "Trento"
+  }
+ ]
+}

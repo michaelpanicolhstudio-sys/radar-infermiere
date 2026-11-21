@@ -1,9 +1,17 @@
 {
  "avvisi": {
   "Adecco": {
+   "altri_link": [
+    "richiedi la password per accedere al tuo account",
+    "Attiva i Job Alert",
+    "offerte di lavoro"
+   ],
    "annunci": 0,
-   "email": 0,
-   "esempi": []
+   "email": 1,
+   "esempi": [],
+   "oggetti": [
+    "Candidatura per la posizione JN -082026-759861 completata!"
+   ]
   },
   "Etjca": {
    "annunci": 0,
@@ -31,7 +39,7 @@
     "Metti in pausa queste email"
    ],
    "annunci": 2,
-   "email": 4,
+   "email": 5,
    "esempi": [
     "Infermieri ParaMedica srl Asiago, Veneto",
     "Infermiera / Infermiere Professionale Coop SOS Bolzano - Bozen, Trentino-Alto Adige"
@@ -40,7 +48,8 @@
     "Trova il tuo prossimo lavoro",
     "Suggerimento: l'universo dice: “Candidati ora!”",
     "Infermieri presso ParaMedica srl",
-    "Infermiera / Infermiere Professionale presso Coop SOS"
+    "Infermiera / Infermiere Professionale presso Coop SOS",
+    "Assistente di studio odontoiatrico (ASO) presso Smile Line Ortodonzia"
    ]
   },
   "InfoJobs": {
@@ -84,9 +93,9 @@
    "esempi": []
   }
  },
- "data": "2026-11-20",
+ "data": "2026-11-21",
  "note": [
-  "• Posta: 34 contatti inviati, 1 risposte nuove",
+  "• Posta: 34 contatti inviati, 0 risposte nuove",
   "• Avvisi di Indeed: 2 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di LinkedIn: 0 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di InfoJobs: 0 annunci per infermieri nelle email degli ultimi giorni",
