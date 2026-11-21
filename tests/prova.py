@@ -903,5 +903,21 @@ verifica("avvisi email: la diagnostica dice cosa è stato scartato e perché",
          (_d_av["accettati"], [x[:2] for x in _d_av["scartati"]]),
          (1, [["Infermieri ParaMedica srl Asiago, Veneto", "fuori regione"]]))
 
+# 21/11: Coop SOS (Indeed, Bolzano) era tra le novità senza datore: titolo «Infermiera / Infermiere Professionale»
+# e basta, anche se l'oggetto dell'email diceva «… presso Coop SOS» e il riassunto «… Coop SOS Bolzano - Bozen».
+_html_sos = ("<table><tr><td><a href='https://cts.indeed.com/v3/abc'>Infermiera / Infermiere Professionale</a>"
+             "<div>Coop SOS</div><div>Bolzano - Bozen, Trentino-Alto Adige</div></td></tr></table>")
+_sos = posta.annunci_da_avviso(_html_sos, ["infermier"], {}, "Infermiera / Infermiere Professionale presso Coop SOS")
+verifica("avvisi dei portali: il datore dall'oggetto «… presso X» se il riassunto lo conferma",
+         [x.get("datore") for x in _sos], ["Coop SOS"])
+verifica("avvisi dei portali: oggetto di un altro annuncio, nessun datore",
+         [x.get("datore") for x in posta.annunci_da_avviso(_html_sos, ["infermier"], {}, "Cuoco presso Hotel Alpi")], [None])
+verifica("avvisi dei portali: datore che il riassunto non conferma, nessun datore",
+         [x.get("datore") for x in posta.annunci_da_avviso(_html_sos, ["infermier"], {}, "Infermiera / Infermiere Professionale presso Clinica X")], [None])
+_av2 = {"Indeed": [{**_sos[0], "id": "sos1"}]}
+motore.giro(_cfg_av, ReteFinta({}), date(2026, 11, 21), registra=muto, avvisi=_av2)
+_a_sos = motore.leggi_json(motore.FILE_ANNUNCI, {}).get("sos1") or {}
+verifica("avvisi email: il datore dell'avviso arriva nell'annuncio", (_a_sos.get("datore"), _a_sos.get("zona")), ("Coop SOS", "Bolzano"))
+
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

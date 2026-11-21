@@ -231,7 +231,21 @@ def _url_pulito(url: str) -> str:
     return p._replace(query=urlencode(tieni), fragment="").geturl()
 
 
-def annunci_da_avviso(pagina: str, parole: list[str], note: dict | None = None) -> list[dict]:
+_RE_PRESSO = re.compile(r"^(.{8,140}?)\s+(?:presso|bei|at)\s+(.{2,80})$", re.I)
+
+
+def _datore_da_oggetto(oggetto: str, titolo: str, sommario: str) -> str | None:
+    """Indeed manda un'email per annuncio con oggetto «<titolo> presso <datore>» (21/11: Coop SOS).
+    Vale solo se il titolo è proprio quello del link e il datore compare nel riassunto subito dopo il titolo."""
+    m = _RE_PRESSO.match(estrai.pulisci(oggetto or ""))
+    if not m or estrai.chiave(m.group(1)) != estrai.chiave(titolo):
+        return None
+    datore = m.group(2).strip(" .!-–")
+    resto = sommario[len(titolo):] if sommario.lower().startswith(titolo.lower()) else ""
+    return datore if datore and resto.strip().lower().startswith(datore.lower()) else None
+
+
+def annunci_da_avviso(pagina: str, parole: list[str], note: dict | None = None, oggetto: str = "") -> list[dict]:
     """Dall'email di un portale (Indeed, LinkedIn…) prende i link agli annunci per infermieri,
     con il blocco di testo intorno (struttura, luogo, compenso) da cui il Radar estrae i dati."""
     soup = BeautifulSoup(pagina, "html.parser")
@@ -260,7 +274,11 @@ def annunci_da_avviso(pagina: str, parole: list[str], note: dict | None = None) 
         if chiave in visti:
             continue
         visti.add(chiave)
-        trovati.append({"titolo": titolo, "url": _url_pulito(a["href"]), "sommario": intorno[:450]})
+        voce = {"titolo": titolo, "url": _url_pulito(a["href"]), "sommario": intorno[:450]}
+        datore = _datore_da_oggetto(oggetto, titolo, intorno)
+        if datore:
+            voce["datore"] = datore
+        trovati.append(voce)
     return trovati
 
 
@@ -323,7 +341,7 @@ def avvisi_portali(cfg: dict, oggi: date, registra=print) -> dict[str, list[dict
                     quando = parsedate_to_datetime(msg.get("Date")).date()
                 except Exception:
                     quando = oggi
-                for c in annunci_da_avviso(pagina, cfg["parole"]["infermiere"], note):
+                for c in annunci_da_avviso(pagina, cfg["parole"]["infermiere"], note, estrai.pulisci(_intestazione(msg.get("Subject")))):
                     candidati.append({**c, "pubblicato": quando, "id": estrai.id_annuncio("avviso:" + estrai.chiave(c["sommario"][:120]))})
             risultati[nome] = candidati
             DIAGNOSTICA_AVVISI[nome] = {**note, "annunci": len(candidati), "esempi": [c["sommario"][:200] for c in candidati[:3]]}
