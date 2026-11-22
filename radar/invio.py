@@ -49,8 +49,24 @@ def coda(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict, oggi: 
                 scelte.append({**v, **lettere.lettera_dedicata(dedicata, rif)})
                 continue
             scrivi = lettere.lettera_conosciuta if any(x in v["nome"].lower() for x in conosciute) else lettere.lettera_breve
-            scelte.append({**v, **scrivi({"nome": v["nome"], "minuti": v.get("minuti")}, rif)})
+            scelte.append({**v, **scrivi({"nome": v["nome"], "minuti": v.get("minuti"), "provincia": v.get("provincia")}, rif)})
     return scelte
+
+
+def _provincia(comune: str | None) -> str | None:
+    """Provincia (TN/BZ) di un comune, da data/comuni.csv; None se non lo conosciamo."""
+    if not comune:
+        return None
+    import csv
+    try:
+        with open(motore.RADICE / "data" / "comuni.csv", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                nomi = [r["nome"]] + [x.strip() for x in (r.get("altri_nomi") or "").split(";") if x.strip()]
+                if comune.strip().lower() in (n.lower() for n in nomi):
+                    return (r.get("provincia") or "").strip() or None
+    except OSError:
+        return None
+    return None
 
 
 def _coda(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict, oggi: date) -> list[dict]:
@@ -65,7 +81,7 @@ def _coda(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict, oggi:
             continue
         visti.add(indirizzo)
         voci.append({"chiave": a["id"], "nome": a.get("datore") or a["titolo"], "a": indirizzo, "via_pec": not a.get("email"),
-                     "minuti": a.get("minuti"), "origine": "annuncio", **lettere.lettera_annuncio(a, modello, posta.rif(a["id"]))})
+                     "minuti": a.get("minuti"), "provincia": "BZ" if a.get("in_tedesco") else _provincia(a.get("zona")), "origine": "annuncio", **lettere.lettera_annuncio(a, modello, posta.rif(a["id"]))})
     for s in strutture:
         indirizzo = (s.get("email") or s.get("pec") or "").lower()
         if not indirizzo or ESCLUDI_TIPI.search(s.get("tipo") or "") or s.get("non_scrivere"):
@@ -74,7 +90,7 @@ def _coda(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict, oggi:
             continue
         visti.add(indirizzo)
         voci.append({"chiave": s["chiave"], "nome": s["nome"], "a": indirizzo, "via_pec": not s.get("email"),
-                     "minuti": s.get("minuti"), "origine": "struttura", **lettere.lettera(s, s["rif"])})
+                     "minuti": s.get("minuti"), "provincia": s.get("provincia"), "origine": "struttura", **lettere.lettera(s, s["rif"])})
     return voci
 
 

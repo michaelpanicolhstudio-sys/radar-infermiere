@@ -60,6 +60,17 @@ def lettera_breve(s: dict, rif: str) -> dict:
              "(partita IVA) e se al momento avete bisogno di coprire turni o sostituzioni.\n\n"
              "Vi ringrazio fin d'ora e vi chiedo la cortesia di considerare riservata questa richiesta.\n\n"
              "Cordiali saluti\nMichael Panico\nInfermiere")
+    if s.get("provincia") == "BZ":   # Alto Adige: prima in tedesco, poi la stessa lettera in italiano (approvata il 22/11/2026)
+        vicino = (f"und wohne in Mezzolombardo, etwa {minuti} Minuten von Ihnen entfernt." if minuti is not None and minuti <= 50
+                  else "und wohne in Mezzolombardo.")
+        tedesco = ("Sehr geehrte Damen und Herren,\n\n"
+                   f"mein Name ist Michael Panico, ich bin eingetragener Krankenpfleger (OPI) {vicino}\n\n"
+                   "Ich möchte fragen, ob Ihre Einrichtung mit freiberuflichen Krankenpflegern (mit MwSt.-Nummer) zusammenarbeitet "
+                   "oder dazu bereit wäre, und ob Sie derzeit Dienste oder Vertretungen zu besetzen haben.\n\n"
+                   "Ich spreche Italienisch und lerne Deutsch: Sie können mir gerne auch auf Italienisch antworten.\n\n"
+                   "Vielen Dank im Voraus. Ich bitte Sie, diese Anfrage vertraulich zu behandeln.\n\n" + FIRMA_DE)
+        return {"oggetto": f"Freiberuflicher Krankenpfleger / Infermiere libero professionista – Anfrage (Rif. {rif})",
+                "testo": tedesco + "\n\n— Versione italiana —\n\n" + testo}
     return {"oggetto": f"Infermiere libero professionista – richiesta di informazioni (Rif. {rif})", "testo": testo}
 
 
