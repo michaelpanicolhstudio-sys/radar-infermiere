@@ -342,7 +342,7 @@
     if (daScrivere.length) {
       v.appendChild(titoloSezione("Da contattare oggi", plurale(daScrivere.length, "email pronta", "email pronte")));
       elenco(v, daScrivere, {}, "");
-      v.appendChild(el("p", { class: "nota", text: "Apri l'offerta e tocca «Prepara l'email»: la invii tu. A ogni struttura si scrive una volta sola." }));
+      v.appendChild(el("p", { class: "nota", text: "Apri l'offerta e tocca «Prepara l'email in Gmail»: la invii tu. A ogni struttura si scrive una volta sola." }));
     }
 
     v.appendChild(titoloSezione("Novità", ultimo && ultimo.data !== DATI.oggi ? "giro del " + giornoBreve(ultimo.data) : null));
@@ -967,7 +967,7 @@
       var email = String(indirizzo).match(/[^\s<>@,;]+@[^\s<>@,;]+\.[^\s<>@,;]+/);
       if (!email || visti.has(email[0])) return;
       visti.add(email[0]);
-      azioni.appendChild(el("a", { class: "azione", href: "mailto:" + encodeURIComponent(email[0]).replace("%40", "@"), text: email[0] }));
+      azioni.appendChild(el("a", { class: "azione", href: linkGmail(email[0], "", ""), text: email[0] }));
     });
     return azioni.childElementCount ? azioni : el("p", { class: "nota", text: "Recapiti non disponibili." });
   }
@@ -1220,10 +1220,10 @@
     v.appendChild(oggetto); v.appendChild(testo);
     var bCopia = el("button", { class: "azione", text: "Copia il testo" });
     bCopia.addEventListener("click", function () { copiaTesto(oggetto.value + "\n\n" + testo.value, bCopia); });
-    var apri = el("a", { class: "azione principale", href: "#", text: "Apri in Mail" });
-    apri.addEventListener("click", function () { apri.href = "mailto:?subject=" + encodeURIComponent(oggetto.value) + "&body=" + encodeURIComponent(testo.value); });
+    var apri = el("a", { class: "azione principale", href: "#", text: "Apri in Gmail" });
+    apri.addEventListener("click", function () { apri.href = linkGmail("", oggetto.value, testo.value); });
     v.appendChild(el("div", { class: "azioni" }, apri, bCopia));
-    v.appendChild(el("p", { class: "nota", text: "L'email parte dal tuo telefono solo quando premi Invia. Il destinatario lo scegli tu in Mail." }));
+    v.appendChild(el("p", { class: "nota", text: "L'email parte dal tuo telefono solo quando premi Invia. Il destinatario lo scegli tu in Gmail." }));
   }
 
   var PASSI_AVVIO = [
@@ -1272,14 +1272,28 @@
     return { oggetto: "Disponibilità come infermiere in libera professione (Rif. " + s.rif + ")",
       testo: "Buongiorno,\n\nsono un infermiere iscritto all'OPI e sto valutando collaborazioni in libera professione in Trentino-Alto Adige.\nVi chiedo se avete bisogno, ora o nei prossimi mesi, di infermieri a partita IVA (turni, sostituzioni, prestazioni), e a quali condizioni: impegno orario e compenso orario.\n\nGrazie e cordiali saluti\nMichael Panico" };
   }
-  function linkPosta(indirizzo, posta) { return "mailto:" + encodeURIComponent(indirizzo) + "?subject=" + encodeURIComponent(posta.oggetto) + "&body=" + encodeURIComponent(posta.testo); }
+  // Le email si preparano nell'app Gmail (googlegmail://); la PEC e il pulsante «Usa Mail» restano su Mail (mailto).
+  function linkPosta(indirizzo, posta) { return linkGmail(indirizzo, posta.oggetto, posta.testo); }
+  function linkGmail(a, oggetto, testo) {
+    var q = [];
+    if (a) q.push("to=" + encodeURIComponent(a));
+    if (oggetto) q.push("subject=" + encodeURIComponent(oggetto));
+    if (testo) q.push("body=" + encodeURIComponent(testo));
+    return "googlegmail:///co?" + q.join("&");
+  }
+  function mailtoDi(gmail) {
+    var q = gmail.split("?")[1] || "", to = "";
+    q = q.split("&").filter(function (x) { if (x.indexOf("to=") === 0) { to = x.slice(3); return false; } return true; }).join("&");
+    return "mailto:" + to + (q ? "?" + q : "");
+  }
   function segnaInviata(id) { var m = copia(mio(id)); m.inviata = DATI.oggi || isoDi(new Date()); MIEI[id] = m; salvaMiei(); }
   function bottoniPosta(contenitore, chiave, email, pec, posta, contatto) {
     var inviata = (contatto && contatto.inviata_il) || mio(chiave).inviata;
     if (inviata) { contenitore.appendChild(el("p", { class: "nota", text: "Email di primo contatto già inviata il " + giorno(inviata) + ": non la rimando." })); return; }
     var az = el("div", { class: "azioni" });
-    if (email) az.appendChild(el("a", { class: "azione principale", href: linkPosta(email, posta), text: "Prepara l'email", onclick: function () { segnaInviata(chiave); } }));
-    if (pec) az.appendChild(el("a", { class: "azione" + (email ? "" : " principale"), href: linkPosta(pec, posta), text: "Scrivi alla PEC", onclick: function () { segnaInviata(chiave); } }));
+    if (email) az.appendChild(el("a", { class: "azione principale", href: linkPosta(email, posta), text: "Prepara l'email in Gmail", onclick: function () { segnaInviata(chiave); } }));
+    if (email) az.appendChild(el("a", { class: "azione", href: mailtoDi(linkPosta(email, posta)), text: "Usa Mail", onclick: function () { segnaInviata(chiave); } }));
+    if (pec) az.appendChild(el("a", { class: "azione" + (email ? "" : " principale"), href: mailtoDi(linkPosta(pec, posta)), text: "Scrivi alla PEC", onclick: function () { segnaInviata(chiave); } }));
     var b = el("button", { class: "azione", text: "Copia il testo" });
     b.addEventListener("click", function () { copiaTesto(posta.oggetto + "\n\n" + posta.testo, b); });
     az.appendChild(b);
