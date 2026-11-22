@@ -936,16 +936,31 @@ def estrai_datore(titolo: str) -> str | None:
 _PAROLE_PICCOLE = {"per", "di", "del", "della", "dei", "delle", "e", "la", "il", "lo", "gli", "in", "anziani", "da"}
 
 
+_ACCENTI = {"A": "à", "E": "è", "I": "ì", "O": "ò", "U": "ù"}
+
+
 def _minuscole_nome(nome: str) -> str:
     parole = []
     for p in nome.split():
+        # «CITTA'» (maiuscolo senza accenti, scritto con l'apostrofo) → «Città» (22/11, Indeed)
+        p = re.sub(r"([AEIOU])['’]$", lambda m: _ACCENTI[m.group(1)].upper(), p)
         if p.lower() in _PAROLE_PICCOLE:
             parole.append(p.lower())
+        elif re.fullmatch(r"[A-ZÀ-Ü]{3,}\.", p):
+            parole.append(p[0] + p[1:].lower())  # abbreviazioni: «SOC.» → «Soc.», «COOP.» → «Coop.»
         elif "." in p or p in ("RSA", "APSP", "ÖBPB"):
             parole.append(p)  # sigle (S.S., A.P.S.P., RSA)
         else:
             parole.append(re.sub(r"^(\W*)(\w)", lambda m: m.group(1) + m.group(2).upper(), p.lower()))
     return " ".join(parole)
+
+
+def nome_leggibile(nome: str | None) -> str | None:
+    """Un nome di struttura tutto in maiuscolo («CITTA' AZZURRA SOC. COOP. BOLZANO») si riscrive
+    in minuscolo leggibile, lasciando le sigle; gli altri nomi restano come sono."""
+    if not nome or re.search(r"[a-zà-ü]", nome) or len(nome.split()) < 2:
+        return nome
+    return _minuscole_nome(nome)
 
 
 def estrai_datore_da_testo(testo: str) -> str | None:

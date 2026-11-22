@@ -934,5 +934,15 @@ motore.giro(_cfg_av, ReteFinta({}), date(2026, 11, 21), registra=muto, avvisi=_a
 _a_sos = motore.leggi_json(motore.FILE_ANNUNCI, {}).get("sos1") or {}
 verifica("avvisi email: il datore dell'avviso arriva nell'annuncio", (_a_sos.get("datore"), _a_sos.get("zona")), ("Coop SOS", "Bolzano"))
 
+# 22/11: l'unica novità del giorno (Indeed) aveva il datore tutto in maiuscolo, come lo scrive l'oggetto
+# dell'email: «CITTA' AZZURRA SOC. COOP. BOLZANO». Sul telefono si legge male; «CITTA'» è «Città».
+_html_ca = ("<table><tr><td><a href='https://cts.indeed.com/v3/xyz'>infermiere/a</a>"
+            "<div>CITTA' AZZURRA SOC. COOP. BOLZANO</div><div>39100 Bolzano - Bozen</div></td></tr></table>")
+verifica("avvisi dei portali: datore in maiuscolo riscritto leggibile",
+         [x.get("datore") for x in posta.annunci_da_avviso(_html_ca, ["infermier"], {}, "infermiere/a presso CITTA' AZZURRA SOC. COOP. BOLZANO")],
+         ["Città Azzurra Soc. Coop. Bolzano"])
+verifica("nome leggibile: nomi già scritti bene restano uguali",
+         [estrai.nome_leggibile(x) for x in ("Coop SOS", "ParaMedica srl", "INPS", None)], ["Coop SOS", "ParaMedica srl", "INPS", None])
+
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

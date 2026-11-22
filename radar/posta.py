@@ -242,7 +242,9 @@ def _datore_da_oggetto(oggetto: str, titolo: str, sommario: str) -> str | None:
         return None
     datore = m.group(2).strip(" .!-–")
     resto = sommario[len(titolo):] if sommario.lower().startswith(titolo.lower()) else ""
-    return datore if datore and resto.strip().lower().startswith(datore.lower()) else None
+    if not datore or not resto.strip().lower().startswith(datore.lower()):
+        return None
+    return estrai.nome_leggibile(datore)  # «CITTA' AZZURRA SOC. COOP.» → «Città Azzurra Soc. Coop.» (22/11)
 
 
 def annunci_da_avviso(pagina: str, parole: list[str], note: dict | None = None, oggetto: str = "") -> list[dict]:
