@@ -13,6 +13,11 @@
   var MESI = ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"];
   var ETICHETTE = { interessante: "Interessante", contattato: "Contattato", scartato: "Scartato" };
   var ETICHETTE_ESITO = { "da fare": "Tocca a te", "hai risposto": "Hai risposto", "sì": "Interessati", "più avanti": "Più avanti", "no": "Non ora", "da leggere": "Da leggere", "in attesa": "In attesa" };
+  var ESITI_CONTATTI = {
+    "da fare": "da-gestire", "da leggere": "da-gestire", "sì": "si", "hai risposto": "si",
+    "più avanti": "avanti", "in attesa": "attesa", "no": "no"
+  };
+  var FILTRO_CONTATTI = "", ORDINE_CONTATTI = "esito";
   var NS = "http://www.w3.org/2000/svg";
 
   // ---------- memoria sul telefono (stati e note) ----------
@@ -229,8 +234,7 @@
     etichetteRadar(punti, ostacoli, L);
     punti.forEach(function (p) {
       var gradi = ((p.a * 180 / Math.PI) + 360) % 360;
-      var g = sv("g", { class: "eco" + (p.z.piva ? " piva" : ""), tabindex: "0", role: "button",
-        "aria-label": p.nome + ": " + plurale(p.z.n, "offerta", "offerte") + ", " + p.c.minuti + " minuti" });
+      var g = sv("g", { class: "eco" + (p.z.piva ? " piva" : "") });
       g.style.setProperty("--ritardo", (gradi / 360 * 1.8).toFixed(2) + "s");
       g.appendChild(sv("circle", { cx: p.x.toFixed(1), cy: p.y.toFixed(1), r: p.raggio.toFixed(1) }));
       var n = sv("text", { x: p.x.toFixed(1), y: (p.y + 3.7).toFixed(1) });
@@ -239,8 +243,6 @@
       var titolo = sv("title", {});
       titolo.textContent = p.nome + ": " + plurale(p.z.n, "offerta", "offerte") + (p.z.piva ? " (" + p.z.piva + " in libera professione)" : "") + ", " + p.c.minuti + " min";
       g.appendChild(titolo);
-      g.addEventListener("click", function () { vaiAZona(p.nome); });
-      g.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); vaiAZona(p.nome); } });
       svg.appendChild(g);
       if (p.etichetta) {
         var nome = sv("text", { class: "nome", x: p.etichetta.x.toFixed(1), y: p.etichetta.y.toFixed(1), "text-anchor": p.etichetta.ancora });
@@ -262,6 +264,7 @@
 
   // ---------- vista: oggi ----------
   function vistaOggi(v) {
+    var oggi = new Date();
     var attive = DATI.offerte.filter(eAttiva);
     var ultimo = DATI.report[0];
     var novita = [];
@@ -275,8 +278,33 @@
       .sort(function (a, b) { return a.scadenza < b.scadenza ? -1 : 1; });
     var piva = attive.filter(function (o) { return o.piva; });
 
-    v.appendChild(el("h1", { class: "titolo", text: "Consegne" }));
-    v.appendChild(el("p", { class: "sotto-titolo", text: (DATI.oggi_lungo || "") + (DATI.ora ? ", aggiornate alle " + DATI.ora : "") }));
+    var attivita = el("section", { class: "oggi-attivita", "aria-labelledby": "priorita" });
+    attivita.appendChild(el("h1", { class: "titolo", text: "Oggi" }));
+    attivita.appendChild(el("p", { class: "oggi-data", text: new Intl.DateTimeFormat("it-IT", { dateStyle: "full" }).format(oggi) }));
+    attivita.appendChild(el("h2", { id: "priorita", text: "Da fare" }));
+    var lista = el("div", { class: "priorita" });
+    var righe = DATI.resoconto || [];
+    righe.filter(function (r) {
+      return r.esito === "da fare" || (r.esito !== "no" && r.esito !== "hai risposto" &&
+        /\b(?:richiam[a-z]*|telefonare|chiamare|chiamalo|chiamala|chiama)\b/i.test(r.prossimo || ""));
+    }).forEach(function (r) {
+      lista.appendChild(attivitaContatto("telefono", r.esito === "da fare" ? "Tocca a te" : "Da richiamare", r));
+    });
+    (DATI.incontri || []).filter(function (x) { return x.data >= isoDi(oggi); }).forEach(function (x) {
+      lista.appendChild(el("a", { class: "priorita-riga", href: x.ics },
+        iconaPriorita("calendario"),
+        el("span", {}, el("small", { text: "Colloquio · " + giornoBreve(x.data) + (x.ora ? " · " + x.ora : "") }),
+          el("strong", { text: x.nome }), el("span", { text: "Aggiungi al calendario" })),
+        el("span", { "aria-hidden": "true", text: "›" })));
+    });
+    righe.filter(function (r) { return r.esito === "da leggere"; }).forEach(function (r) {
+      lista.appendChild(attivitaContatto("posta", "Risposta da leggere", r));
+    });
+    if (!lista.childElementCount) lista.appendChild(el("p", { class: "priorita-vuota", text: "Nessuna attività da gestire." }));
+    attivita.appendChild(lista);
+    v.appendChild(attivita);
+    v.appendChild(riepilogoContatti());
+    v.appendChild(titoloSezione("Radar delle offerte"));
     if (!DATI.offerte.length) {
       v.appendChild(el("p", { class: "vuoto", text: "Ancora nessun dato. Il primo giro del Radar li porterà qui." }));
       return;
@@ -292,6 +320,17 @@
     v.appendChild(radar(!RADAR_GIA_ANIMATO));
     RADAR_GIA_ANIMATO = true;
     v.appendChild(legendaRadar());
+    var perZona = zoneAttive(), zone = Object.keys(perZona).sort(function (a, b) { return a.localeCompare(b, "it"); });
+    if (zone.length) {
+      var selezionaZona = el("select", { "aria-label": "Offerte per zona" }, el("option", { value: "", text: "Scegli una zona" }));
+      zone.forEach(function (nome) {
+        selezionaZona.appendChild(el("option", { value: nome, text: nome + " · " + plurale(perZona[nome].n, "offerta", "offerte") }));
+      });
+      selezionaZona.addEventListener("change", function () {
+        if (selezionaZona.value) vaiAZona(selezionaZona.value);
+      });
+      v.appendChild(el("label", { class: "campo radar-zona" }, el("span", { text: "Offerte per zona" }), selezionaZona));
+    }
 
     var promemoria = [];
     var tardi = FATTURE.elenco.filter(inRitardo), bozze = daFatturare();
@@ -299,26 +338,6 @@
     if (bozze.length && Number(oggiIso().slice(8)) <= 7) promemoria.push(["Turni del mese scorso da fatturare: " + plurale(bozze.length, "fattura da preparare", "fatture da preparare") + ".", "fatture"]);
     scadenzeDocumenti().forEach(function (d) { promemoria.push([d.nome + (d.scaduto ? ": scaduto il " : ": scade il ") + giorno(d.data) + ".", "avvio"]); });
     promemoria.forEach(function (x) { v.appendChild(el("button", { class: "avviso tocco", text: x[0], onclick: function () { ALTRO = x[1]; cambiaVista("altro"); } })); });
-    var incontri = (DATI.incontri || []).filter(function (x) { return x.data >= DATI.oggi; });
-    if (incontri.length) {
-      v.appendChild(titoloSezione("Incontri"));
-      incontri.forEach(function (x) {
-        v.appendChild(el("div", { class: "pannello" }, el("p", { text: x.nome + ", " + giorno(x.data) + (x.ora ? " alle " + x.ora : "") }),
-          el("div", { class: "azioni" }, el("a", { class: "azione principale", href: x.ics, text: "Aggiungi al calendario" }))));
-      });
-    }
-    var conRisposta = DATI.offerte.filter(function (o) { return o.contatto && o.contatto.risposte.length; });
-    var strutRisp = (DATI.resoconto || []).filter(function (r) { return r.esito !== "in attesa" && !trova(r.chiave); });
-    if (conRisposta.length || strutRisp.length) {
-      v.appendChild(titoloSezione("Hanno risposto", strutRisp.length ? plurale(strutRisp.length, "struttura", "strutture") : null));
-      strutRisp.forEach(function (r) {
-        var dove = r.comune ? r.comune + (r.minuti !== null && r.minuti !== undefined ? ", " + r.minuti + " min" : "") : "";
-        v.appendChild(el("button", { class: "avviso tocco" + (r.esito === "da fare" ? "" : " neutro"), onclick: function () { ALTRO = "contatti"; cambiaVista("altro"); } },
-          el("b", { text: r.nome }), document.createTextNode(" · " + (ETICHETTE_ESITO[r.esito] || r.esito) + (dove ? " · " + dove : "")),
-          r.prossimo ? el("small", { style: "display:block", text: r.prossimo }) : null));
-      });
-      if (conRisposta.length) elenco(v, conRisposta, {}, "");
-    }
     var daScrivere = attive.filter(function (o) { return o.da_contattare && !mio(o.id).inviata; });
     if (daScrivere.length) {
       v.appendChild(titoloSezione("Da contattare oggi", plurale(daScrivere.length, "email pronta", "email pronte")));
@@ -437,6 +456,17 @@
     v.appendChild(el("p", { class: "sotto-titolo", text: "Dove sono le offerte attive, per minuti d'auto da " + DATI.casa }));
     v.appendChild(radar(false));
     v.appendChild(legendaRadar());
+    var perZona = zoneAttive(), zone = Object.keys(perZona).sort(function (a, b) { return a.localeCompare(b, "it"); });
+    if (zone.length) {
+      var selezionaZona = el("select", { "aria-label": "Offerte per zona" }, el("option", { value: "", text: "Scegli una zona" }));
+      zone.forEach(function (nome) {
+        selezionaZona.appendChild(el("option", { value: nome, text: nome + " · " + plurale(perZona[nome].n, "offerta", "offerte") }));
+      });
+      selezionaZona.addEventListener("change", function () {
+        if (selezionaZona.value) vaiAZona(selezionaZona.value);
+      });
+      v.appendChild(el("label", { class: "campo radar-zona" }, el("span", { text: "Offerte per zona" }), selezionaZona));
+    }
     var zone = zoneAttive();
     var righe = Object.keys(zone).map(comune).filter(Boolean).sort(function (a, b) { return a.minuti - b.minuti; });
     v.appendChild(titoloSezione("Dalla più vicina"));
@@ -478,20 +508,28 @@
     var massimo = Math.max.apply(null, valori.map(function (x) { return x || 0; }));
     if (!massimo) { v.appendChild(el("p", { class: "vuoto", text: "Nessuna novità registrata negli ultimi 14 giorni." })); return; }
     var lettura = el("p", { class: "lettura", "aria-live": "polite", text: "Tocca una colonna per leggere il giorno." });
-    var colonne = el("div", { class: "colonne" }), assi = el("div", { class: "assi", "aria-hidden": "true" });
+    var grafico = el("div", { class: "grafico-novita" });
+    var colonne;
     var indiceMassimo = valori.indexOf(massimo);
     giorni.forEach(function (g, k) {
+      if (k % 7 === 0) {
+        colonne = el("div", { class: "colonne" });
+        grafico.appendChild(colonne);
+      }
       var val = valori[k] || 0, barra = el("i");
       barra.style.height = (massimo ? Math.round(val / massimo * 100) : 0) + "%";
       var testo = giornoBreve(g) + ": " + (valori[k] === null ? "nessun giro" : plurale(val, "novità", "novità"));
       var col = el("button", { class: "colonna" + (val ? "" : " zero"), "aria-label": testo, title: testo, onclick: function () {
-        Array.prototype.forEach.call(colonne.children, function (c) { c.classList.remove("scelta"); });
+        var precedente = grafico.querySelector(".scelta");
+        if (precedente) precedente.classList.remove("scelta");
         col.classList.add("scelta"); lettura.textContent = testo;
-      } }, (val && (k === indiceMassimo || k === giorni.length - 1)) ? el("b", { text: String(val) }) : null, barra);
+      } }, (val && (k === indiceMassimo || k === giorni.length - 1)) ? el("b", { text: String(val) }) : null,
+        el("span", { class: "altezza-colonna", "aria-hidden": "true" }, barra),
+        el("span", { class: "giorno-colonna", "aria-hidden": "true", text: String(Number(g.slice(8))) }));
       colonne.appendChild(col);
-      assi.appendChild(el("span", { text: (k % 2 === 1 || k === giorni.length - 1) ? String(Number(g.slice(8))) : "" }));
     });
-    v.appendChild(colonne); v.appendChild(assi); v.appendChild(lettura);
+    v.appendChild(grafico);
+    v.appendChild(lettura);
   }
   function voceReport(r) {
     var testo = (r.datore || r.titolo) + (r.zona ? ", " + r.zona : "") + (r.scadenza ? ", scade il " + giornoBreve(r.scadenza) : "");
@@ -643,7 +681,7 @@
   function salvaChiave(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* memoria non disponibile */ } }
   var AGENDA = leggiChiave("radar-agenda", { giorni: {} });
   var CONTI_MIEI = leggiChiave("radar-conti", {});
-  var MESE_AGENDA = null, GIORNO_SCELTO = null, AVVISO_AGENDA = "", ALTRO = "contatti", CERCA_STR = "", TIPO_STR = "";
+  var MESE_AGENDA = null, GIORNO_SCELTO = null, AVVISO_AGENDA = "", ALTRO = "strutture", CERCA_STR = "", TIPO_STR = "";
   var GIORNI_SETT = ["lun", "mar", "mer", "gio", "ven", "sab", "dom"];
   var MESI_LUNGHI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"];
   var TIPI_TURNO = { M: ["Mattina", 7], P: ["Pomeriggio", 7], N: ["Notte", 10], G: ["Giornata", 12], X: ["Impegno personale", 0] };
@@ -870,41 +908,147 @@
   }
 
   // ---------- vista: contatti (lettere in coda e resoconto delle risposte) ----------
+  function riepilogoContatti() {
+    var righe = DATI.resoconto || [];
+    var interessate = righe.filter(function (r) { return r.esito === "sì" || r.esito === "da fare" || r.esito === "hai risposto"; });
+    var valori = [
+      ["Lettere inviate", (DATI.invio || {}).inviate || 0],
+      ["Contatti con risposta", righe.filter(function (r) { return r.risposta_il; }).length],
+      ["Interessate", interessate.length],
+      ["In attesa", righe.filter(function (r) { return r.esito === "in attesa"; }).length]
+    ];
+    var sezione = el("section", { class: "riepilogo", "aria-label": "Riepilogo contatti" });
+    valori.forEach(function (x) {
+      sezione.appendChild(el("div", { class: "metrica" }, el("strong", { text: String(x[1]) }), el("span", { text: x[0] })));
+    });
+    return sezione;
+  }
+
+  function iconaPriorita(tipo) {
+    var tracciati = {
+      telefono: "M5 3h4l2 5-3 2a13 13 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z",
+      calendario: "M7 3v4m10-4v4M3 9h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z",
+      posta: "m3 6 9 7 9-7M5 5h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"
+    };
+    var icona = sv("svg", { viewBox: "0 0 24 24", "aria-hidden": "true" });
+    icona.appendChild(sv("path", { d: tracciati[tipo] }));
+    return el("span", { class: "priorita-icona " + tipo }, icona);
+  }
+
+  function attivitaContatto(icona, azione, r) {
+    return el("button", { class: "priorita-riga", onclick: function () {
+      FILTRO_CONTATTI = "";
+      cambiaVista("contatti");
+      var d = document.getElementById("contatto-" + r.chiave);
+      d.open = true;
+      d.querySelector("summary").focus();
+      d.scrollIntoView({ block: "start" });
+    } }, iconaPriorita(icona),
+      el("span", {}, el("small", { text: azione }), el("strong", { text: r.nome }),
+        r.prossimo ? el("span", { class: "priorita-anteprima", text: r.prossimo }) : null),
+      el("span", { "aria-hidden": "true", text: "›" }));
+  }
+
+  function recapitiContatto(r, fonte) {
+    var azioni = el("div", { class: "recapiti" });
+    var contatto = fonte.contatto || {};
+    var numeri = (r.prossimo || "").match(/(?:^|[^\w+])((?:\+39[ .-]?)?(?:0\d{1,3}|3\d{2})(?:[ .-]?\d){6,8})(?!\d)/g) || [];
+    var visti = new Set();
+    [fonte.telefono, r.telefono].concat(numeri).filter(Boolean).forEach(function (numero) {
+      var testo = String(numero).trim().replace(/^[^+\d]+/, "");
+      var tel = testo.replace(/[^+\d]/g, "");
+      if (!/^\+?\d{8,15}$/.test(tel) || visti.has(tel)) return;
+      visti.add(tel);
+      azioni.appendChild(el("a", { class: "azione", href: "tel:" + tel, text: "Chiama " + testo }));
+    });
+    var risposte = contatto.risposte || [];
+    var mittente = (risposte[risposte.length - 1] || {}).da;
+    [fonte.email || mittente, fonte.pec].filter(Boolean).forEach(function (indirizzo) {
+      var email = String(indirizzo).match(/[^\s<>@,;]+@[^\s<>@,;]+\.[^\s<>@,;]+/);
+      if (!email || visti.has(email[0])) return;
+      visti.add(email[0]);
+      azioni.appendChild(el("a", { class: "azione", href: "mailto:" + encodeURIComponent(email[0]).replace("%40", "@"), text: email[0] }));
+    });
+    return azioni.childElementCount ? azioni : el("p", { class: "nota", text: "Recapiti non disponibili." });
+  }
+
+  function schedaContatto(r) {
+    var d = el("details", { class: "contatto " + (ESITI_CONTATTI[r.esito] || "attesa"), id: "contatto-" + r.chiave });
+    var distanza = r.minuti != null ? r.minuti + " min" : (r.km != null ? r.km + " km" : "");
+    var dove = [r.comune, distanza].filter(Boolean).join(" · ");
+    var ultimo = r.risposta_il ? "Risposta " + giorno(r.risposta_il) : (r.inviata_il ? "Invio " + giorno(r.inviata_il) : "");
+    d.appendChild(el("summary", {},
+      el("span", { class: "contatto-testo" },
+        el("span", { class: "esito", text: ETICHETTE_ESITO[r.esito] || r.esito || "Esito non disponibile" }),
+        el("strong", { text: r.nome }),
+        el("small", { text: [dove, ultimo].filter(Boolean).join(" · ") })),
+      el("span", { class: "contatto-freccia", "aria-hidden": "true", text: "›" })));
+    var corpo = el("div", { class: "contatto-corpo" });
+    if (r.prossimo) corpo.appendChild(el("p", { class: "prossimo" }, el("strong", { text: "Prossimo passo" }), r.prossimo));
+    var o = trova(r.chiave);
+    var st = (DATI.strutture || []).find(function (x) { return x.chiave === r.chiave; });
+    corpo.appendChild(recapitiContatto(r, o || st || {}));
+    corpo.appendChild(el("div", { class: "dati" },
+      dato("Inviata", r.inviata_il ? giorno(r.inviata_il) : null), dato("Risposta", r.risposta_il ? giorno(r.risposta_il) : null),
+      dato("Hai risposto", r.mia_risposta_il ? giorno(r.mia_risposta_il) : null),
+      dato("Rapporto", r.rapporto), dato("Compenso", r.compenso || (r.euro_ora ? r.euro_ora + " €/h" : null)),
+      dato("Netto/ora", r.netto_ora ? r.netto_ora.toLocaleString("it-IT") + " € col viaggio" : null),
+      dato("Turni", r.turni), dato("Da quando", r.da_quando),
+      dato("Per l'obiettivo", r.turni_obiettivo ? r.turni_obiettivo + " turni al mese" : null),
+      dato("Incontro", r.incontro ? giorno(r.incontro.data) + (r.incontro.ora ? " alle " + r.incontro.ora : "") : null)));
+    bloccoRisposte(corpo, (o || st || {}).contatto);
+    if (o) corpo.appendChild(el("button", { class: "collegamento", text: "Apri l'offerta", onclick: function () { apriScheda(o.id); } }));
+    d.appendChild(corpo);
+    return d;
+  }
+
   function vistaContatti(v) {
     var info = DATI.invio || {}, righe = DATI.resoconto || [], coda = DATI.lettere || [];
-    var risposte = righe.filter(function (r) { return r.esito !== "in attesa"; });
-    var si = righe.filter(function (r) { return r.esito === "sì" || r.esito === "da fare" || r.esito === "hai risposto"; });
-    v.appendChild(el("p", { class: "sommario" },
-      el("b", { text: plurale(info.inviate || 0, "lettera inviata", "lettere inviate") }), document.createTextNode(", "),
-      el("b", { text: plurale(risposte.length, "risposta", "risposte") }), document.createTextNode(" (" + si.length + " interessate), "),
-      el("b", { text: coda.length + " in coda" }), document.createTextNode(".")));
-    v.appendChild(el("p", { class: info.attivo ? "avviso neutro" : "avviso", text: info.attivo
-      ? "Invio automatico attivo: ogni mattina partono fino a " + info.al_giorno + " lettere, dalla tua casella, mai due volte alla stessa struttura."
-      : "Invio automatico spento: le lettere sono pronte qui sotto, puoi inviarle tu una per una dalla scheda della struttura." }));
-    if (info.excel) v.appendChild(el("div", { class: "azioni" }, el("a", { class: "azione principale", href: info.excel, download: "", text: "Scarica il resoconto in Excel" })));
-
-    v.appendChild(titoloSezione("Resoconto", righe.length ? "dalle più interessanti" : null));
-    if (!righe.length) v.appendChild(el("p", { class: "vuoto", text: "Ancora nessuna lettera inviata. Le risposte compariranno qui con compenso, turni e disponibilità." }));
-    righe.forEach(function (r) {
-      var d = el("details", { class: "rep" });
-      var etichetta = ETICHETTE_ESITO[r.esito] || r.esito;
-      var dove = r.comune ? r.comune + (r.minuti !== null && r.minuti !== undefined ? " (" + r.minuti + " min)" : "") : "";
-      d.appendChild(el("summary", {}, el("span", { text: r.nome }), el("small", { text: etichetta + (dove ? ", " + dove : "") + (r.euro_ora ? ", " + r.euro_ora + " €/h" : "") })));
-      if (r.prossimo) d.appendChild(el("p", { class: "nota", text: "Prossimo passo: " + r.prossimo }));
-      d.appendChild(el("div", { class: "dati" }, dato("Dove", dove || null), dato("Hai risposto", r.mia_risposta_il ? giorno(r.mia_risposta_il) : null),
-        dato("Inviata", giorno(r.inviata_il)), dato("Risposta", r.risposta_il ? giorno(r.risposta_il) : null),
-        dato("Rapporto", r.rapporto), dato("Compenso", r.compenso), dato("Netto/ora", r.netto_ora ? r.netto_ora.toLocaleString("it-IT") + " € col viaggio" : null),
-        dato("Turni", r.turni), dato("Da quando", r.da_quando),
-        dato("Per l'obiettivo", r.turni_obiettivo ? r.turni_obiettivo + " turni al mese" : null),
-        dato("Incontro", r.incontro ? giorno(r.incontro.data) + (r.incontro.ora ? " alle " + r.incontro.ora : "") : null)));
-      var o = trova(r.chiave);
-      if (o) d.appendChild(el("button", { class: "collegamento", text: "Apri l'offerta e la risposta", onclick: function () { apriScheda(o.id); } }));
-      else {
-        var st = (DATI.strutture || []).filter(function (x) { return x.chiave === r.chiave; })[0];
-        if (st) bloccoRisposte(d, st.contatto);
-      }
-      v.appendChild(d);
+    v.appendChild(el("h1", { class: "titolo", text: "Contatti" }));
+    v.appendChild(riepilogoContatti());
+    v.appendChild(titoloSezione("Resoconto"));
+    var filtro = el("select", { "aria-label": "Esito" }, el("option", { value: "", text: "Tutti gli esiti" }));
+    Object.keys(ETICHETTE_ESITO).forEach(function (esito) {
+      filtro.appendChild(el("option", { value: esito, text: ETICHETTE_ESITO[esito] }));
     });
+    filtro.value = FILTRO_CONTATTI;
+    var ordine = el("select", { "aria-label": "Ordina per" }, el("option", { value: "esito", text: "Priorità" }),
+      el("option", { value: "distanza", text: "Distanza" }), el("option", { value: "data", text: "Più recenti" }));
+    ordine.value = ORDINE_CONTATTI;
+    v.appendChild(el("div", { class: "contatti-filtri" },
+      el("label", { class: "campo" }, el("span", { text: "Esito" }), filtro),
+      el("label", { class: "campo" }, el("span", { text: "Ordina per" }), ordine)));
+    var conta = el("p", { class: "conta", role: "status" });
+    var lista = el("div", { class: "contatti-lista" });
+    v.appendChild(conta);
+    v.appendChild(lista);
+
+    function aggiornaContatti() {
+      FILTRO_CONTATTI = filtro.value;
+      ORDINE_CONTATTI = ordine.value;
+      var visibili = righe.filter(function (r) { return !FILTRO_CONTATTI || r.esito === FILTRO_CONTATTI; });
+      if (ORDINE_CONTATTI === "distanza") visibili.sort(function (a, b) {
+        return (a.minuti == null ? Infinity : a.minuti) - (b.minuti == null ? Infinity : b.minuti);
+      });
+      if (ORDINE_CONTATTI === "data") {
+        function ultimaAttivita(r) {
+          return [r.inviata_il, r.risposta_il, r.mia_risposta_il].filter(Boolean).sort().pop() || "";
+        }
+        visibili.sort(function (a, b) { return ultimaAttivita(b).localeCompare(ultimaAttivita(a)); });
+      }
+      conta.textContent = plurale(visibili.length, "contatto", "contatti");
+      lista.textContent = "";
+      visibili.forEach(function (r) { lista.appendChild(schedaContatto(r)); });
+      if (!visibili.length) lista.appendChild(el("p", { class: "vuoto", text: FILTRO_CONTATTI
+        ? "Nessun contatto con questo esito." : "Le strutture compariranno qui dopo il primo invio." }));
+    }
+    filtro.addEventListener("change", aggiornaContatti);
+    ordine.addEventListener("change", aggiornaContatti);
+    aggiornaContatti();
+    if (info.excel) v.appendChild(el("div", { class: "azioni" }, el("a", { class: "azione", href: info.excel, download: "", text: "Scarica il resoconto in Excel" })));
+    v.appendChild(el("p", { class: info.attivo ? "avviso neutro" : "avviso", text: info.attivo
+      ? "Invio automatico attivo · Fino a " + info.al_giorno + " lettere ogni mattina."
+      : "Invio automatico spento · Puoi preparare le email dalle schede delle strutture." }));
 
     v.appendChild(titoloSezione("Lettere in coda", coda.length ? String(coda.length) : null));
     if (!coda.length) v.appendChild(el("p", { class: "vuoto", text: "Nessuna lettera in coda: tutte le strutture con un indirizzo sono già state contattate." }));
@@ -1083,7 +1227,7 @@
   }
 
   var PASSI_AVVIO = [
-    ["Prima di decidere", [["commercialista", "Colloquio con un commercialista che segue infermieri (imposta al 5% o al 15%? clienti legati ad ASDAA?)"], ["personale", "Chiesti al personale ASDAA: periodo di prova, preavviso, ferie e ore"], ["cuscinetto", "Messi da parte almeno 3 mesi di spese"], ["sondaggio", "Sondate le prime strutture (Altro, Contatti)"]]],
+    ["Prima di decidere", [["commercialista", "Colloquio con un commercialista che segue infermieri (imposta al 5% o al 15%? clienti legati ad ASDAA?)"], ["personale", "Chiesti al personale ASDAA: periodo di prova, preavviso, ferie e ore"], ["cuscinetto", "Messi da parte almeno 3 mesi di spese"], ["sondaggio", "Sondate le prime strutture (Contatti)"]]],
     ["Uscita da ASDAA", [["dimissioni", "Lettera di dimissioni inviata via PEC"], ["carte", "Ritirati certificato di servizio, idoneità, vaccinazioni, attestati, crediti ECM"]]],
     ["Apertura", [["piva", "Partita IVA aperta (ATECO 86.94.01, regime forfettario)"], ["enpapi", "Iscrizione a ENPAPI entro 60 giorni"], ["pec", "PEC personale attiva e comunicata all'OPI"], ["polizza", "Polizza RC professionale attiva"], ["conto", "Conto corrente dedicato"], ["fatturazione", "Programma di fatturazione elettronica scelto"]]],
     ["Prima del primo turno", [["visita", "Visita dal medico competente e giudizio di idoneità"], ["fascicolo", "Fascicolo dei documenti in PDF sul telefono"], ["cv", "CV completato e aggiornato"], ["contratto", "Primo contratto o lettera d'incarico firmata"]]]
@@ -1154,7 +1298,7 @@
   function vistaAltro(v) {
     v.appendChild(el("h1", { class: "titolo", text: "Altro" }));
     var barra = el("div", { class: "filtri" });
-    [["contatti", "Contatti"], ["strutture", "Strutture"], ["fatture", "Fatture"], ["modelli", "Email pronte"], ["avvio", "Avvio"], ["zone", "Zone"], ["report", "Report"], ["dati", "I miei dati"]].forEach(function (x) {
+    [["strutture", "Strutture"], ["fatture", "Fatture"], ["modelli", "Email pronte"], ["avvio", "Avvio"], ["zone", "Zone"], ["report", "Report"], ["dati", "I miei dati"]].forEach(function (x) {
       barra.appendChild(el("button", { class: ALTRO === x[0] ? "pastiglia" : "pastiglia spenta", text: x[1], onclick: function () { ALTRO = x[0]; disegna(); } }));
     });
     v.appendChild(barra);
@@ -1163,7 +1307,6 @@
     if (ALTRO === "zone") return vistaZone(dentro);
     if (ALTRO === "report") return vistaReport(dentro);
     if (ALTRO === "dati") return vistaDati(dentro);
-    if (ALTRO === "contatti") return vistaContatti(dentro);
     if (ALTRO === "fatture") return vistaFatture(dentro);
     if (ALTRO === "modelli") return vistaModelli(dentro);
     if (ALTRO === "avvio") return vistaAvvio(dentro);
@@ -1223,7 +1366,7 @@
   }
 
   // ---------- navigazione ----------
-  var VISTE = { oggi: vistaOggi, offerte: vistaOfferte, agenda: vistaAgenda, conti: vistaConti, altro: vistaAltro, scadenze: vistaScadenze, zone: vistaZone, report: vistaReport };
+  var VISTE = { oggi: vistaOggi, contatti: vistaContatti, offerte: vistaOfferte, agenda: vistaAgenda, conti: vistaConti, altro: vistaAltro, scadenze: vistaScadenze, zone: vistaZone, report: vistaReport };
   function disegna() {
     var v = document.getElementById("vista");
     v.textContent = "";
@@ -1242,6 +1385,24 @@
     b.addEventListener("click", function () { if (b.getAttribute("data-vista") === "offerte" && VISTA !== "offerte") FILTRI.zona = ""; cambiaVista(b.getAttribute("data-vista")); });
   });
 
+  // ---------- tema ----------
+  var preferenzaTema = window.matchMedia("(prefers-color-scheme: dark)");
+  var tema = leggiChiave("radar-tema", null);
+  var bottoneTema = document.getElementById("tema");
+  function applicaTema() {
+    var scuro = tema ? tema === "scuro" : preferenzaTema.matches;
+    document.documentElement.dataset.tema = scuro ? "scuro" : "chiaro";
+    bottoneTema.setAttribute("aria-pressed", String(scuro));
+    document.querySelector('meta[name="theme-color"]').content = scuro ? "#101b1a" : "#f0f5f3";
+  }
+  bottoneTema.addEventListener("click", function () {
+    tema = document.documentElement.dataset.tema === "scuro" ? "chiaro" : "scuro";
+    salvaChiave("radar-tema", tema);
+    applicaTema();
+  });
+  preferenzaTema.addEventListener("change", applicaTema);
+  applicaTema();
+
   // ---------- avvio ----------
   function mostraDati(d) {
     DATI = d;
@@ -1250,7 +1411,7 @@
     s.textContent = vecchi ? "Dati del " + giornoBreve(d.oggi) + ": riapri l'app con la rete attiva" : "Aggiornato il " + d.generato;
     s.className = "stato-dati" + (vecchi ? " vecchi" : "");
     var m = /^#o=([0-9a-f]+)$/.exec(location.hash);
-    if (/^#(offerte|agenda|conti|altro|scadenze)$/.test(location.hash)) cambiaVista(location.hash.slice(1)); else disegna();
+    if (/^#(contatti|offerte|agenda|conti|altro|scadenze)$/.test(location.hash)) cambiaVista(location.hash.slice(1)); else disegna();
     if (m) apriScheda(m[1]);
   }
   fetch("dati.json", { cache: "no-store" })

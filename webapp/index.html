@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Radar Infermiere</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#F3F5F7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0F151B" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f0f5f3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Radar">
@@ -18,14 +17,20 @@
 </head>
 <body>
 <header class="testata">
-  <span class="marchio">Radar</span>
-  <span id="aggiornato" class="stato-dati">Carico i dati…</span>
+  <div class="identita">
+    <span class="simbolo" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><path d="m12 12 7-7"/></svg></span>
+    <div><span class="marchio">Radar Infermiere</span>
+    <span id="aggiornato" class="stato-dati" role="status">Carico i dati…</span></div>
+  </div>
+  <button id="tema" class="tema" type="button" aria-label="Tema scuro" aria-pressed="false"><svg class="luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 15.4A9 9 0 0 1 8.6 3.2a9 9 0 1 0 12.2 12.2Z"/></svg>
+    <svg class="sole" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></button>
 </header>
 
 <main id="vista" tabindex="-1"></main>
 
 <nav class="schede" aria-label="Sezioni">
-  <button data-vista="oggi" class="attiva"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.500"/><path d="M12 12l6-6"/></svg><span>Oggi</span></button>
+  <button data-vista="oggi" class="attiva" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.500"/><path d="M12 12l6-6"/></svg><span>Oggi</span></button>
+  <button data-vista="contatti"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><circle cx="12" cy="9" r="2.5"/><path d="M8 16a4 4 0 0 1 8 0"/></svg><span>Contatti</span></button>
   <button data-vista="offerte"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h11"/></svg><span>Offerte</span></button>
   <button data-vista="agenda"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span>Agenda</span></button>
   <button data-vista="conti"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7"/></svg><span>Conti</span></button>
