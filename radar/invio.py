@@ -270,6 +270,11 @@ def resoconto(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict) -
                 "mia_risposta_il": mie[-1].get("data") if mie else None, "prossimo": mano.get("prossimo")}
         if mano.get("esito"):
             riga["esito"] = mano["esito"]
+        for campo in ("da_quando", "turni", "rapporto"):
+            if mano.get(campo):
+                riga[campo] = mano[campo]
+        if isinstance(mano.get("incontro"), dict) and mano["incontro"].get("data"):
+            riga["incontro"] = mano["incontro"]
         # 21/11 Casa Laner: «Tocca a te» restava anche dopo la risposta di Michael. Se lui ha scritto dopo
         # che il passo «da fare» è stato deciso (o dopo l'ultima risposta della struttura), ora tocca a loro.
         riferimento = mano.get("aggiornato") if mano else (ultima.get("data") if ultima else None)

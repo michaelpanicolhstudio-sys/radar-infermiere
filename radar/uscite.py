@@ -443,7 +443,12 @@ def costruisci_sito(cfg: dict, oggi: date, destinazione: Path | None = None) -> 
     for s in strutture:
         c = contatti.get(s["chiave"])
         s["contatto"] = _contatto_per_app(c)
-        for r in (c or {}).get("risposte", []):
+        fissati = [r["incontro"] for r in (c or {}).get("risposte", []) if r.get("incontro")]
+        mano = (invio.esiti_manuali().get(s["chiave"]) or {}).get("incontro")
+        if isinstance(mano, dict) and mano.get("data"):
+            fissati = [m for m in fissati if m.get("data") != mano["data"]] + [mano]  # confermato da Michael: vale più della data letta in automatico
+        for inc in fissati:
+            r = {"incontro": inc}
             if r.get("incontro") and r["incontro"]["data"] >= oggi.isoformat():
                 (dest / "ics" / f"incontro-{s['id']}.ics").write_text(incontro_ics(s["nome"], r["incontro"], s["id"], adesso), encoding="utf-8", newline="")
                 incontri.append({"id": None, "nome": s["nome"], **r["incontro"], "ics": f"ics/incontro-{s['id']}.ics"})
