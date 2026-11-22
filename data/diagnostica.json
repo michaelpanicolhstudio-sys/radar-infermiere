@@ -1081,67 +1081,6 @@
     ]
    ]
   },
-  "Avvisi email – Adecco": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Etjca": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Gi Group": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Indeed": {
-   "accettati": 2,
-   "candidati": 3,
-   "scartati": [
-    [
-     "Infermieri ParaMedica srl Asiago, Veneto",
-     "fuori regione",
-     "https://cts.indeed.com/v3/H4sIAAAAAAAA_32U2aqrWBCG3yXQ-6o9e6lx2hCabJMYZ6NRozfBKc5Zupw9nHdvTzf0ZVMFBf9fVBV18f3cDbuvXdb3Tff1-Zn3P_J3nCTxjwjWn02QJkH8GVXlXy8E60MBw5wInlupgz7KsLzHxPszqYO8-ihQXx4oLKozHNuiZN"
-    ]
-   ]
-  },
-  "Avvisi email – InfoJobs": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Jobrapido": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – LinkedIn": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Manpower": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Openjobmetis": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Randstad": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Umana": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
   "Brixsana Bressanone – Karriere": {
    "accettati": [
     "Infermiere/a (KrankenpflegerIn) – tempo pieno, da subito"
@@ -1993,48 +1932,6 @@
  },
  "richieste": 99,
  "strutture": {
-  "ipa": {
-   "colonne": [
-    "_id",
-    "Codice_IPA",
-    "Denominazione_ente",
-    "Codice_fiscale_ente",
-    "Tipologia",
-    "Codice_Categoria",
-    "Codice_natura",
-    "Codice_ateco",
-    "Ente_in_liquidazione",
-    "Codice_MIUR",
-    "Codice_ISTAT",
-    "Acronimo",
-    "Nome_responsabile",
-    "Cognome_responsabile",
-    "Titolo_responsabile",
-    "Codice_comune_ISTAT",
-    "Codice_catastale_comune",
-    "CAP",
-    "Indirizzo",
-    "Mail1",
-    "Tipo_Mail1",
-    "Mail2",
-    "Tipo_Mail2",
-    "Mail3",
-    "Tipo_Mail3",
-    "Mail4",
-    "Tipo_Mail4",
-    "Mail5",
-    "Tipo_Mail5",
-    "Sito_istituzionale",
-    "Url_facebook",
-    "Url_linkedin",
-    "Url_twitter",
-    "Url_youtube",
-    "Data_aggiornamento"
-   ],
-   "righe": 23777,
-   "trovate": 66
-  },
-  "istat": "282 comuni",
-  "siti_controllati": 1
+  "saltato": "aggiornato il 2026-11-22"
  }
 }
