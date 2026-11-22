@@ -142,6 +142,16 @@
   "risposte": [],
   "via": "gmail"
  },
+ "s:13c04d2d120e": {
+  "a": [
+   "pflegeheimleifers@bzgue.org"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-22",
+  "rif": "R-13c04d2d",
+  "risposte": [],
+  "via": "gmail"
+ },
  "s:15191c725b44": {
   "a": [
    "info@apspbrentonico.it"
@@ -186,6 +196,16 @@
   ],
   "via": "gmail"
  },
+ "s:274b6afe900e": {
+  "a": [
+   "info@tramin.ah-cr.bz.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-22",
+  "rif": "R-274b6afe",
+  "risposte": [],
+  "via": "gmail"
+ },
  "s:2bec4e56c354": {
   "a": [
    "direttore@apspstrigno.it"
@@ -208,6 +228,16 @@
   ],
   "via": "gmail"
  },
+ "s:2c8629ccf12f": {
+  "a": [
+   "info@salurn.ah-cr.bz.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-22",
+  "rif": "R-2c8629cc",
+  "risposte": [],
+  "via": "gmail"
+ },
  "s:394e84104103": {
   "a": [
    "info@healthycent.com"
@@ -215,6 +245,26 @@
   "automatica": true,
   "inviata_il": "2026-11-18",
   "rif": "R-394e8410",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:43d08c19d1a0": {
+  "a": [
+   "info@fondazioneviaroggia.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-22",
+  "rif": "R-43d08c19",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:5795b7f0a5ab": {
+  "a": [
+   "info@ah-kaltern.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-22",
+  "rif": "R-5795b7f0",
   "risposte": [],
   "via": "gmail"
  },
@@ -259,6 +309,16 @@
   "risposte": [],
   "via": "gmail"
  },
+ "s:6126dd9711f9": {
+  "a": [
+   "info@cittazzurra.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-22",
+  "rif": "R-6126dd97",
+  "risposte": [],
+  "via": "gmail"
+ },
  "s:69ea01f5ec8b": {
   "a": [
    "economo@apsptaio.org"
@@ -276,6 +336,16 @@
   "automatica": true,
   "inviata_il": "2026-11-17",
   "rif": "R-73ce6cbf",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:786bc34d5f6f": {
+  "a": [
+   "altes.spital@bzgue.org"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-22",
+  "rif": "R-786bc34d",
   "risposte": [],
   "via": "gmail"
  },
@@ -380,6 +450,16 @@
   "risposte": [],
   "via": "gmail"
  },
+ "s:996fa9f6e500": {
+  "a": [
+   "info@griesfeld.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-22",
+  "rif": "R-996fa9f6",
+  "risposte": [],
+  "via": "gmail"
+ },
  "s:9cee32bc6a1e": {
   "a": [
    "direttore@centroservizimale.it",
@@ -409,6 +489,16 @@
     "turni": null
    }
   ],
+  "via": "gmail"
+ },
+ "s:a585b4347da7": {
+  "a": [
+   "info@altenheim-stpauls.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-22",
+  "rif": "R-a585b434",
+  "risposte": [],
   "via": "gmail"
  },
  "s:abb9fae4a76a": {
@@ -524,6 +614,16 @@
   ],
   "via": "gmail"
  },
+ "s:ba081e1e7470": {
+  "a": [
+   "info@seniorenheim-leifers.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-22",
+  "rif": "R-ba081e1e",
+  "risposte": [],
+  "via": "gmail"
+ },
  "s:bb14f08c85a3": {
   "a": [
    "info@iaps.it",
@@ -562,6 +662,16 @@
   "automatica": true,
   "inviata_il": "2026-11-17",
   "rif": "R-bbe4aaaf",
+  "risposte": [],
+  "via": "gmail"
+ },
+ "s:c69e1d40f4d8": {
+  "a": [
+   "info@wellplus.it"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-22",
+  "rif": "R-c69e1d40",
   "risposte": [],
   "via": "gmail"
  },
