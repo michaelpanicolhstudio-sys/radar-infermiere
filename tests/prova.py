@@ -944,5 +944,14 @@ verifica("avvisi dei portali: datore in maiuscolo riscritto leggibile",
 verifica("nome leggibile: nomi già scritti bene restano uguali",
          [estrai.nome_leggibile(x) for x in ("Coop SOS", "ParaMedica srl", "INPS", None)], ["Coop SOS", "ParaMedica srl", "INPS", None])
 
+# 22/11: INPS Bolzano aveva la PEC «direzione.provinciale.bolzano@postacert.i» (presa dal PDF, dove l'indirizzo
+# va a capo); poco più avanti lo stesso PDF la scrive intera. Una PEC monca porterebbe una lettera nel vuoto.
+verifica("email: indirizzo spezzato a capo, vale quello intero",
+         estrai.trova_email("a mezzo PEC all'indirizzo direzione.provinciale.bolzano@postacert.i nps.gov.it. "
+                            "Inviare a direzione.provinciale.bolzano@postacert.inps.gov.it entro il 26/12."),
+         {"email": None, "pec": "direzione.provinciale.bolzano@postacert.inps.gov.it"})
+verifica("email: indirizzo spezzato e mai scritto intero, meglio nessuno",
+         estrai.trova_email("PEC: direzione.provinciale.bolzano@postacert.i nps.gov.it"), {"email": None, "pec": None})
+
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

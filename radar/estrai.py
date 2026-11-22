@@ -306,9 +306,13 @@ def trova_email(testo: str, escludi_domini: set[str] | None = None) -> dict:
     """Indirizzi della struttura citati nell'annuncio. Gli indirizzi privati (gmail, libero…) si scartano."""
     escludi = {d.lower() for d in (escludi_domini or set())}
     posta, pec = None, None
-    for m in _RE_EMAIL.finditer(testo or ""):
-        indirizzo = m.group(0).strip(".").lower()
+    trovati = [m.group(0).strip(".").lower() for m in _RE_EMAIL.finditer(testo or "")]
+    for indirizzo in trovati:
         dominio = indirizzo.split("@", 1)[1]
+        # Indirizzo spezzato a capo nel PDF («…@postacert.i» + «nps.gov.it», INPS 22/11): un dominio che finisce
+        # con una sola lettera, o che è l'inizio di un altro indirizzo trovato, è un pezzo, non un indirizzo.
+        if len(dominio.rsplit(".", 1)[-1]) < 2 or any(t != indirizzo and t.startswith(indirizzo) for t in trovati):
+            continue
         if _POSTA_PRIVATA.search(indirizzo) or any(dominio == d or dominio.endswith("." + d) for d in escludi):
             continue
         if re.search(r"pec|legalmail|postacert|cert\.", dominio):
