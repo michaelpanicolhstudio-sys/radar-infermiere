@@ -276,6 +276,8 @@ def annunci_da_avviso(pagina: str, parole: list[str], note: dict | None = None, 
         if chiave in visti:
             continue
         visti.add(chiave)
+        if titolo[:1].islower():
+            titolo = titolo[:1].upper() + titolo[1:]  # «infermiere/a» del link → «Infermiere/a» (22/11)
         voce = {"titolo": titolo, "url": _url_pulito(a["href"]), "sommario": intorno[:450]}
         datore = _datore_da_oggetto(oggetto, titolo, intorno)
         if datore:

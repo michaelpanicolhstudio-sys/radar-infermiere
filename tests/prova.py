@@ -959,6 +959,9 @@ _html_ca = ("<table><tr><td><a href='https://cts.indeed.com/v3/xyz'>infermiere/a
 verifica("avvisi dei portali: datore in maiuscolo riscritto leggibile",
          [x.get("datore") for x in posta.annunci_da_avviso(_html_ca, ["infermier"], {}, "infermiere/a presso CITTA' AZZURRA SOC. COOP. BOLZANO")],
          ["Città Azzurra Soc. Coop. Bolzano"])
+# 22/11 sera: nell'app la novità si leggeva «infermiere/a», minuscolo come nel link di Indeed.
+verifica("avvisi dei portali: il titolo comincia con la maiuscola",
+         [x["titolo"] for x in posta.annunci_da_avviso(_html_ca, ["infermier"], {}, "")], ["Infermiere/a"])
 verifica("nome leggibile: nomi già scritti bene restano uguali",
          [estrai.nome_leggibile(x) for x in ("Coop SOS", "ParaMedica srl", "INPS", None)], ["Coop SOS", "ParaMedica srl", "INPS", None])
 
