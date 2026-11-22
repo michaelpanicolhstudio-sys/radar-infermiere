@@ -483,7 +483,7 @@ giorni_memoria_scarti: 14      # una pagina scartata (non per infermieri) non vi
 # («⚠️ ALLARME Radar: …»), una sola volta per annuncio. Chiesto da Michael il 19/11/2026.
 allarmi:
   - nome: Bando centri traumatologici ASUIT (Campiglio / Sèn Jan)
-    siti: [asuit.tn.it, apss.tn.it]
+    siti: [asuit.tn.it, apss.tn.it, opi.tn.it]   # OPI Trento ripubblica l'avviso (07/01/2026)
     parole: [traumatolog, campiglio, "sèn jan", "sen jan", "san giovanni di fassa"]
     nota: "Lo scorso inverno l'avviso è uscito a fine dicembre, con scadenza a metà gennaio (320-360 € al giorno). Sei ancora dipendente ASDAA: per partecipare serve l'autorizzazione o le dimissioni."
 

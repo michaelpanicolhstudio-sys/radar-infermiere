@@ -1,7 +1,7 @@
 """Prove offline: nessuna connessione, pagine finte.  Avvio:  python tests/prova.py"""
 import sys
 import tempfile
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -900,6 +900,24 @@ verifica("allarmi: bando scaduto ignorato", _usc.trova_allarmi({"s": {"titolo": 
 verifica("allarmi: non si ripetono", _usc.trova_allarmi(_mem, _cfg_al, {"Trauma": ["a1"]}), [])
 _o, _t, _p = _usc.componi_allarme(_usc.trova_allarmi(_mem, _cfg_al))
 verifica("allarmi: oggetto riconoscibile", _o.startswith("⚠️ ALLARME Radar: Trauma"), True)
+
+# 22/11 sera: l'avviso invernale di Campiglio/Sèn Jan l'anno scorso è uscito anche su OPI Trento (pagina del 07/01),
+# ma l'allarme guardava solo asuit.tn.it. Aggiungendo OPI, la pagina vecchia di gennaio (senza scadenza, «datata»)
+# non deve far scattare l'allarme, e un bando visto su due siti (doppione) deve dare un allarme solo.
+_cfg_al2 = {"giorni_annuncio_datato": 120,
+            "allarmi": [{"nome": "Trauma", "siti": ["asuit.tn.it", "opi.tn.it"], "parole": ["traumatolog", "campiglio"]}]}
+_oggi_al = date.today()
+_mem2 = {"vecchio": {"titolo": "Avviso incarichi libero professionali infermieri ambulatori traumatologici Campiglio",
+                     "url": "https://opi.tn.it/avviso-x/", "pubblicato": (_oggi_al - timedelta(days=300)).isoformat()},
+         "nuovo": {"titolo": "Avviso incarichi libero professionali infermieri ambulatori traumatologici Campiglio",
+                   "url": "https://opi.tn.it/avviso-y/", "pubblicato": _oggi_al.isoformat()},
+         "copia": {"titolo": "SLP 20/26 centri traumatologici", "url": "https://www.asuit.tn.it/bandi-concorsi/slp",
+                   "doppione_di": "nuovo"}}
+verifica("allarmi: pagina OPI nuova sì, vecchia «datata» no, doppione no",
+         [x["id"] for x in _usc.trova_allarmi(_mem2, _cfg_al2)], ["nuovo"])
+verifica("allarmi: bando già segnalato, la sua copia su un altro sito non ripete l'allarme",
+         _usc.trova_allarmi({"copia": {**_mem2["copia"], "doppione_di": None},
+                             "nuovo": {**_mem2["nuovo"], "doppione_di": "copia"}}, _cfg_al2, {"Trauma": ["nuovo"]}), [])
 
 # 20/11: primo avviso vero di Indeed («Infermieri ParaMedica srl Asiago, Veneto»): la diagnostica diceva solo
 # «candidati 1, accettati 0», senza dire che cosa era stato scartato e perché.

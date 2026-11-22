@@ -503,18 +503,24 @@ def trova_allarmi(memoria: dict, cfg: dict, gia: dict | None = None) -> list[dic
     for al in cfg.get("allarmi") or []:
         parole = [x.lower() for x in al.get("parole") or []]
         siti = [x.lower() for x in al.get("siti") or []]
+        segnalati = set(gia.get(al["nome"]) or [])
         for aid, a in memoria.items():
-            if a.get("sparito_dal"):
-                continue
+            if a.get("sparito_dal") or a.get("doppione_di"):
+                continue  # una copia dello stesso bando su un altro sito non fa un secondo allarme
             if a.get("scadenza") and str(a["scadenza"]) < date.today().isoformat():
                 continue  # bando già scaduto: nessun allarme
+            if motore.e_datato(a, date.today(), cfg):
+                continue  # pagina vecchia senza scadenza (es. OPI di gennaio sul bando passato)
+            copie = {k for k, b in memoria.items() if b.get("doppione_di") == aid}
+            if copie & segnalati:
+                continue  # lo stesso bando è già stato segnalato quando si vedeva l'altra copia
             testo = " ".join(str(a.get(k) or "") for k in ("titolo", "datore", "url", "testo")).lower()
             url = str(a.get("url") or "").lower()
             if siti and not any(s in url for s in siti):
                 continue
             if not any(w in testo for w in parole):
                 continue
-            if aid in (gia.get(al["nome"]) or []):
+            if aid in segnalati:
                 continue
             trovati.append({"allarme": al["nome"], "id": aid, "titolo": a.get("titolo"), "url": a.get("url"),
                             "scadenza": a.get("scadenza"), "nota": al.get("nota", "")})
