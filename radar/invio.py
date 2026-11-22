@@ -270,7 +270,7 @@ def resoconto(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict) -
                 "mia_risposta_il": mie[-1].get("data") if mie else None, "prossimo": mano.get("prossimo")}
         if mano.get("esito"):
             riga["esito"] = mano["esito"]
-        for campo in ("da_quando", "turni", "rapporto", "compenso", "euro_ora"):
+        for campo in ("da_quando", "turni", "rapporto", "compenso", "euro_ora", "comune", "km", "minuti"):
             if mano.get(campo):
                 riga[campo] = mano[campo]
         if isinstance(mano.get("incontro"), dict) and mano["incontro"].get("data"):

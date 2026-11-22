@@ -8,13 +8,16 @@
  "s:afdcfc298516": {
   "esito": "sì",
   "aggiornato": "2026-11-22",
-  "prossimo": "Telefonata del 19/11: centro prelievi lun–sab, 3 ore la mattina, 30 €/h + 4% ENPAPI. Sedi: Trento (3 ore pagate, viaggio non pagato) e Baselga di Piné in apertura (4 ore pagate: il viaggio oltre mezz'ora è pagato). Vogliono 1–2 sabati al mese a rotazione e non accettano chi smonta dalla notte. Mezzolombardo chiusa, Andalo e Lavis già coperte. CV inviato il 19/11.",
+  "prossimo": "Telefonata del 19/11: centro prelievi lun–sab, 3 ore la mattina, 30 €/h + 4% ENPAPI. Conti fatti su Baselga di Piné, in apertura: 3 ore di lavoro, 4 pagate (il viaggio oltre mezz'ora è pagato). A Trento invece 3 ore pagate, viaggio a carico tuo. Vogliono 1–2 sabati al mese a rotazione e non accettano chi smonta dalla notte. Mezzolombardo chiusa, Andalo e Lavis già coperte. CV inviato il 19/11.",
   "ore_turno": 3,
-  "ore_pagate": 3,
+  "ore_pagate": 4,
   "turni_max_mese": 26,
   "turni": "3 ore la mattina, lun–sab; 1–2 sabati al mese; no dopo una notte",
   "euro_ora": 30,
-  "compenso": "30 €/h + 4% ENPAPI"
+  "compenso": "30 €/h + 4% ENPAPI",
+  "comune": "Baselga di Piné",
+  "km": 38,
+  "minuti": 42
  },
  "s:e9415d518306": {
   "esito": "sì",
