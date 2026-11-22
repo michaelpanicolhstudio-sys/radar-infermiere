@@ -270,7 +270,7 @@ def resoconto(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict) -
                 "mia_risposta_il": mie[-1].get("data") if mie else None, "prossimo": mano.get("prossimo")}
         if mano.get("esito"):
             riga["esito"] = mano["esito"]
-        for campo in ("da_quando", "turni", "rapporto"):
+        for campo in ("da_quando", "turni", "rapporto", "compenso", "euro_ora"):
             if mano.get(campo):
                 riga[campo] = mano[campo]
         if isinstance(mano.get("incontro"), dict) and mano["incontro"].get("data"):
@@ -284,8 +284,11 @@ def resoconto(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict) -
             riga["prossimo"] = f"Hai risposto il {gg(riga['mia_risposta_il'])}: ora tocca a loro." + (
                 f" Passo scritto il {gg(riferimento)}: {riga['prossimo']}" if riga.get("prossimo") else "")
         if riga["euro_ora"]:
-            calcolo = conti.conto_offerta({"euro_ora": riga["euro_ora"], "km": riga["km"] or 0, "minuti": riga["minuti"] or 0}, par)
+            calcolo = conti.conto_offerta({"euro_ora": riga["euro_ora"], "km": riga["km"] or 0, "minuti": riga["minuti"] or 0,
+                                           **{k: mano[k] for k in ("ore_turno", "ore_pagate", "turni_max_mese") if mano.get(k)}}, par)
             riga["netto_ora"], riga["turni_obiettivo"] = calcolo["netto_ora_porta_a_porta"], calcolo["turni_per_obiettivo"]
+            riga["ore_turno"], riga["ore_pagate"] = calcolo["ore_turno"], calcolo["ore_pagate"]
+            riga["turni_max_mese"], riga["basta_da_sola"] = calcolo["turni_max_mese"], calcolo["basta_da_sola"]
         righe.append(riga)
     ordine = {"da fare": 0, "sì": 1, "hai risposto": 1.5, "da leggere": 2, "più avanti": 3, "in attesa": 4, "no": 5}
     return sorted(righe, key=lambda r: (ordine.get(r["esito"], 9), -(r["euro_ora"] or 0), r["minuti"] if r["minuti"] is not None else 999))

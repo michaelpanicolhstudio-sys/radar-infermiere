@@ -994,7 +994,10 @@
       dato("Rapporto", r.rapporto), dato("Compenso", r.compenso || (r.euro_ora ? r.euro_ora + " €/h" : null)),
       dato("Netto/ora", r.netto_ora ? r.netto_ora.toLocaleString("it-IT") + " € col viaggio" : null),
       dato("Turni", r.turni), dato("Da quando", r.da_quando),
-      dato("Per l'obiettivo", r.turni_obiettivo ? r.turni_obiettivo + " turni al mese" : null),
+      r.ore_turno ? dato("Turno", String(r.ore_turno).replace(".", ",") + " ore" + (r.ore_pagate && r.ore_pagate !== r.ore_turno ? ", " + String(r.ore_pagate).replace(".", ",") + " pagate" : "")) : null,
+      dato("Per l'obiettivo", !r.turni_obiettivo ? null : r.basta_da_sola === false
+        ? "da sola non basta: servirebbero " + r.turni_obiettivo + " turni al mese, ne offre al massimo " + r.turni_max_mese
+        : r.turni_obiettivo + " turni al mese"),
       dato("Incontro", r.incontro ? giorno(r.incontro.data) + (r.incontro.ora ? " alle " + r.incontro.ora : "") : null)));
     bloccoRisposte(corpo, (o || st || {}).contatto);
     if (o) corpo.appendChild(el("button", { class: "collegamento", text: "Apri l'offerta", onclick: function () { apriScheda(o.id); } }));

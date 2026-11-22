@@ -7,8 +7,14 @@
  },
  "s:afdcfc298516": {
   "esito": "sì",
-  "aggiornato": "2026-11-19",
-  "prossimo": "Telefonata del 19/11: centro prelievi lun–sab, 3 ore la mattina, 30 €/h + 4% ENPAPI. Sedi possibili: Trento (viaggio non pagato, ~65 € netti a mattina) e Baselga di Piné in apertura (1 ora di viaggio pagata, ~81 € netti). Mezzolombardo chiusa, Andalo e Lavis già coperte. CV inviato il 19/11."
+  "aggiornato": "2026-11-22",
+  "prossimo": "Telefonata del 19/11: centro prelievi lun–sab, 3 ore la mattina, 30 €/h + 4% ENPAPI. Sedi: Trento (3 ore pagate, viaggio non pagato) e Baselga di Piné in apertura (4 ore pagate: il viaggio oltre mezz'ora è pagato). Vogliono 1–2 sabati al mese a rotazione e non accettano chi smonta dalla notte. Mezzolombardo chiusa, Andalo e Lavis già coperte. CV inviato il 19/11.",
+  "ore_turno": 3,
+  "ore_pagate": 3,
+  "turni_max_mese": 26,
+  "turni": "3 ore la mattina, lun–sab; 1–2 sabati al mese; no dopo una notte",
+  "euro_ora": 30,
+  "compenso": "30 €/h + 4% ENPAPI"
  },
  "s:e9415d518306": {
   "esito": "sì",
@@ -52,8 +58,11 @@
  },
  "s:0c4d0ee98ebe": {
   "esito": "sì",
-  "aggiornato": "2026-11-19",
-  "prossimo": "Colloquio del 19/11 fatto: 35 €/h + 4% ENPAPI, turni da 8 ore, libero di farne da 1 al mese in su. Riserva principale nel piano."
+  "aggiornato": "2026-11-22",
+  "prossimo": "Colloquio del 19/11 fatto: 35 €/h + 4% ENPAPI, turni da 8 ore, libero di farne da 1 al mese in su. Riserva principale nel piano.",
+  "euro_ora": 35,
+  "compenso": "35 €/h + 4% ENPAPI",
+  "ore_turno": 8
  },
  "s:5c4f5be5b691": {
   "esito": "sì",

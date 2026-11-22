@@ -46,19 +46,23 @@ def conto_offerta(a: dict, p: dict) -> dict:
     tariffa = a.get("euro_ora")
     stimata = tariffa is None
     tariffa = float(tariffa or p["tariffa_predefinita"])
-    ore = 12 if (a.get("segnali_turni") or {}).get("dodici") else p["ore_turno"]
+    # Ore del turno e ore pagate: se note (es. Cerba 3 h, 4 pagate col viaggio) valgono più della stima generica.
+    ore = float(a.get("ore_turno") or (12 if (a.get("segnali_turni") or {}).get("dodici") else p["ore_turno"]))
+    ore_pagate = float(a.get("ore_pagate") or ore)
     km, minuti = float(a.get("km") or 0), float(a.get("minuti") or 0)
     viaggio_turno = 2 * km * p["costo_km"]
-    netto_turno = tariffa * ore * quota_netta(p) - viaggio_turno
+    netto_turno = tariffa * ore_pagate * quota_netta(p) - viaggio_turno
     serve = p["obiettivo_netto_mese"] + p["fondo_pensione_mese"] + p["spese_fisse_mese"]
     turni = math.ceil(serve / netto_turno) if netto_turno > 0 else None
+    massimo = a.get("turni_max_mese")
     return {
-        "tariffa": tariffa, "tariffa_stimata": stimata, "ore_turno": ore,
+        "tariffa": tariffa, "tariffa_stimata": stimata, "ore_turno": ore, "ore_pagate": ore_pagate,
+        "turni_max_mese": massimo, "basta_da_sola": None if not (massimo and turni) else turni <= int(massimo),
         "netto_turno": round(netto_turno, 2),
         "netto_ora": round(netto_turno / ore, 2),
         "netto_ora_porta_a_porta": round(netto_turno / (ore + 2 * minuti / 60), 2),
         "turni_per_obiettivo": turni,
-        "fatturato_annuo": round(tariffa * ore * (turni or 0) * 12),
+        "fatturato_annuo": round(tariffa * ore_pagate * (turni or 0) * 12),
     }
 
 
