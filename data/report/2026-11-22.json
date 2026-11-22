@@ -1,0 +1,114 @@
+{
+ "aggiornati": [],
+ "attivi": 26,
+ "attivi_piva": 10,
+ "data": "2026-11-22",
+ "fonti_lette": 47,
+ "fonti_totali": 47,
+ "giri": 1,
+ "nuovi": [
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": null,
+   "datore": "CITTA' AZZURRA SOC. COOP. BOLZANO",
+   "id": "bbfd9e13ae3c",
+   "minuti": 35,
+   "piva": false,
+   "punteggio": 33,
+   "scadenza": null,
+   "titolo": "infermiere/a",
+   "url": "https://cts.indeed.com/v3/H4sIAAAAAAAA_42Ry46bMBRA_wWpWTUT24AhkaKKBKVDmDaPMhmlG2SMeRlDxjEEZzT_XqaLVuqqqyudo6sr3fNmdMbCKJS6XBezWakeyiZlLH2grZhJOqM1_1LxpWWlqekSjICLcUrxJJOtWFZtUiISj0MQRYupZISqsieqbJtpqaZBFDNBynqi-BJyFyjH6mqe8coFcJIkS63tDmHvML96OuTwWIC4OfjBy4DaMmGJ16P6-8aKs73WPDHdA4tkSOJ11ovTFvh4yO62RKz--pKvrGNW5ehCorTMdwxKAQfPHvT5fMr9_jm63Zob9NX6PhDnsROn43EXPD2GlafNOq_cuTeIzfYgG9nuniqFn6bBcEcB8_tzsNbrA9nYffGz4h6-6SYLg1gCRdvtq0D8WUxfr_71k-lPBk6T5Y92FWLnG0o8HWXQTlcrECZ3nq7T_X4iq8vfV3BQzSFwATI-G8JYvBmE0rZrVJCOQZBpO3COXdcCoyZ5vm2T3wIC04QOxrbjjoLWJeVRIdsuL0apZMf-UH1hI-pLdhsDjfQj2Qj-N9q4ofjHwX_CGe_vvwD6LIPTNAIAAA/RmAWNu-Q1OKSzkAOnAfgfrEj1BojEC9TIbzclaMKkLQ",
+   "zona": "Bolzano"
+  }
+ ],
+ "problemi": [],
+ "scadenze7": [
+  {
+   "cambi": [],
+   "compenso": "33 €/h",
+   "contratto": "P.IVA / libera professione",
+   "datore": "APSP «Clementino Vannetti»",
+   "id": "36e85170a7c8",
+   "minuti": 40,
+   "piva": true,
+   "punteggio": 79,
+   "scadenza": "2026-11-27",
+   "titolo": "Incarichi libero-professionali di infermiere (avviso di pubblica selezione)",
+   "url": "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/",
+   "zona": "Rovereto"
+  }
+ ],
+ "top5": [
+  {
+   "cambi": [],
+   "compenso": "33 €/h",
+   "contratto": "P.IVA / libera professione",
+   "datore": "APSP «Clementino Vannetti»",
+   "id": "36e85170a7c8",
+   "minuti": 40,
+   "piva": true,
+   "punteggio": 79,
+   "scadenza": "2026-11-27",
+   "titolo": "Incarichi libero-professionali di infermiere (avviso di pubblica selezione)",
+   "url": "https://opi.tn.it/a-p-s-p-c-vannetti-2-copy/",
+   "zona": "Rovereto"
+  },
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": "P.IVA / libera professione",
+   "datore": "Paziente privato (tramite OPI Bolzano)",
+   "id": "2520bf34250f",
+   "minuti": 35,
+   "piva": true,
+   "punteggio": 61,
+   "scadenza": null,
+   "titolo": "Infermiere/a per emodialisi domiciliare",
+   "url": "https://www.opibz.it/cercasi-infermiere-a-per-emodialisi-domiciliare-bolzano/",
+   "zona": "Bolzano"
+  },
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": "P.IVA / libera professione",
+   "datore": "ParaMedica srl",
+   "id": "78cece7b434e",
+   "minuti": 40,
+   "piva": true,
+   "punteggio": 61,
+   "scadenza": null,
+   "titolo": "Infermieri RSA zona Rovereto",
+   "url": "https://it.indeed.com/q-infermiere-con-alloggio-l-trento,-trentino-alto-adige-offerte-lavoro.html",
+   "zona": "Rovereto"
+  },
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": "P.IVA / libera professione",
+   "datore": "Italiassistenza spa",
+   "id": "1a836b7c1e81",
+   "minuti": 35,
+   "piva": true,
+   "punteggio": 55,
+   "scadenza": null,
+   "titolo": "Infermiere/a con partita IVA – Bolzano e provincia",
+   "url": "https://it.indeed.com/q-infermiere-l-trentino-alto-adige-offerte-lavoro.html?nis=5&ch=1",
+   "zona": "Bolzano"
+  },
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": "P.IVA / libera professione",
+   "datore": "CHC Italy (Cerba HealthCare)",
+   "id": "507e1f139787",
+   "minuti": 25,
+   "piva": true,
+   "punteggio": 55,
+   "scadenza": null,
+   "titolo": "Infermiere P.IVA (TN)",
+   "url": "https://it.indeed.com/q-infermiere-professionale-l-rovereto,-trentino-alto-adige-offerte-lavoro.html",
+   "zona": "Trento"
+  }
+ ]
+}
