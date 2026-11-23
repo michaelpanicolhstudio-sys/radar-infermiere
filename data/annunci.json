@@ -2296,7 +2296,7 @@
    }
   ],
   "email": "info@schlossmoos.it",
-  "estratto": "Freiberufliche Tätigkeit in der Pflege Sozialgenossenschaft Zum Heiligen Vinzenz Wiesen, Pfitsch Vollzeit Teilzeit Freelancer Projektarbeit 17.11.2026 Sozialgenossenschaft Zum Heiligen Vinzenz Traustonstr. 190 , 39049 Wi…",
+  "estratto": "…ancer (m/w) Bozen, südtirolweit PEGASUS Krankenpfleger:in (w/m/d) Siculiana, Sizilien ADLER Spa Resorts & Retreats KinderbetreuerIn oder SozialbetreuerIn (w/m/d) Kitas Prad - Teilzeit Prad Sozialgenossenschaft Tagesmütte…",
   "euro_ora": null,
   "fonte": "Schloss Moos – libera professione (suedtirolerjobs)",
   "id": "670aca98057e",
@@ -2405,6 +2405,98 @@
   "ultimo_visto": "2026-11-12",
   "url": "https://www.asuit.tn.it/bandi-concorsi",
   "zona": "Mezzolombardo"
+ },
+ "6f35858fc0d3": {
+  "affidabilita": "ufficiale",
+  "avvisi": [
+   "Dal PDF allegato: scadenza, compenso"
+  ],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": "40 €/h",
+  "contratto": "P.IVA / libera professione",
+  "da_pdf": {
+   "caratteri": 15342,
+   "cita_tedesco": false,
+   "compenso": "40 €/h",
+   "contratto": "P.IVA / libera professione",
+   "email": "urp@asuit.tn.it",
+   "estratto": "…NTO DI INCARICHI LIBERO PROFESSIONALI A INFERMIERI DA DESTINARE AL PERCORSO DI FAST TRACK ORTOPEDICO-TRAUMATOLOGICO PRESSO L’OSPEDALE DI CLES DURANTE LA STAGIONE INVERNALE 2026/2027. In esecuzione della deliberazione del…",
+   "euro_ora": 40.0,
+   "infermiere": true,
+   "km": 22,
+   "minuti": 28,
+   "pec": "asuit@pec.asuit.tn.it",
+   "scadenza": "2026-12-07",
+   "scadenza_frase": "di partecipazione scade il giorno 7 dicembre 2026 ad ore 23.5",
+   "segnali_turni": {},
+   "turni": null,
+   "v": 5,
+   "zona": "Cles"
+  },
+  "data_novita": "2026-11-23",
+  "datore": "ASUIT (Trentino)",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "libera professione / P.IVA",
+    "punti": 30,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "40 €/h: ottimo",
+    "punti": 25,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 28 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "ore e turni non indicati",
+    "punti": 5,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "ente o albo ufficiale",
+    "punti": 10,
+    "voce": "Fonte"
+   }
+  ],
+  "email": "urp@asuit.tn.it",
+  "estratto": "…NTO DI INCARICHI LIBERO PROFESSIONALI A INFERMIERI DA DESTINARE AL PERCORSO DI FAST TRACK ORTOPEDICO-TRAUMATOLOGICO PRESSO L’OSPEDALE DI CLES DURANTE LA STAGIONE INVERNALE 2026/2027. Bando Nuovo Borsa di studio o incaric…",
+  "euro_ora": 40.0,
+  "fonte": "ASUIT – bandi e concorsi",
+  "id": "6f35858fc0d3",
+  "impronta": "885689bfa8dd",
+  "in_tedesco": false,
+  "km": 22,
+  "letto_il": "2026-11-23",
+  "minuti": 28,
+  "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.asuit.tn.it/system/files/paragrafi/documenti/55130/p_allegati/65900/SLP%2017%2026%20%20Avviso.pdf"
+  ],
+  "pec": "asuit@pec.asuit.tn.it",
+  "primo_visto": "2026-11-23",
+  "pubblicato": null,
+  "punteggio": 82,
+  "regole": 11,
+  "scadenza": "2026-12-07",
+  "scadenza_frase": "di partecipazione scade il giorno 7 dicembre 2026 ad ore 23.5",
+  "segnali_turni": {},
+  "struttura": "Ospedale o azienda sanitaria",
+  "tipo_fonte": "elenco",
+  "titolo": "AVVISO DI SELEZIONE PUBBLICA PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONALI A INFERMIERI DA DESTINARE AL PERCORSO DI FAST TRACK ORTOPEDICO-TRAUMATOLOGICO PRESSO L’OSPEDALE DI CLES DURANTE LA ST",
+  "turni": null,
+  "ultimo_visto": "2026-11-23",
+  "url": "https://www.asuit.tn.it/bandi-concorsi/avviso-di-selezione-pubblica-il-conferimento-di-incarichi-libero-professionali-15",
+  "zona": "Cles"
  },
  "74acb1da2a46": {
   "affidabilita": "ufficiale",
@@ -3831,6 +3923,103 @@
   "ultimo_visto": "2026-11-23",
   "url": "https://www.asuit.tn.it/bandi-concorsi/selezione-pubblica-titoli-la-formazione-di-graduatorie-assunzioni-tempo-determinato",
   "zona": "Cavalese"
+ },
+ "bb5e71443e5d": {
+  "affidabilita": "ufficiale",
+  "avvisi": [],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": "Concorso / graduatoria",
+  "da_pdf": {
+   "caratteri": 1432,
+   "cita_tedesco": false,
+   "compenso": null,
+   "contratto": "Concorso / graduatoria",
+   "email": "andrea.zencher@apspvannetti.it",
+   "estratto": "…timanali) nella figura professionale di INFERMIERE Area 3 (Funzionari) – Livello base – 1^ posizione retributiva, di cui n. 3 (tre) posti riservati ai volontari delle Forze Armate Con la presente si informa che con Deter…",
+   "euro_ora": null,
+   "indizi_compenso": [],
+   "infermiere": true,
+   "km": 45,
+   "minuti": 40,
+   "pec": "apspvannetti@pec.it",
+   "scadenza": "2026-12-04",
+   "scadenza_frase": "Forze Armate. Il nuovo termine per la presentazione delle domande è il seguente: ORE 12:00 DEL 04/12/2026 Cordiali sa",
+   "segnali_turni": {
+    "ore_settimana": 36,
+    "pieno": true
+   },
+   "turni": "36 h/settimana, tempo pieno",
+   "v": 5,
+   "zona": "Rovereto"
+  },
+  "data_novita": "2026-11-23",
+  "datore": "APSP Vannetti di Rovereto",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "posto da dipendente",
+    "punti": 5,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 40 min d'auto",
+    "punti": 12,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "36 h/settimana, tempo pieno",
+    "punti": 7,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "ente o albo ufficiale",
+    "punti": 10,
+    "voce": "Fonte"
+   }
+  ],
+  "email": "andrea.zencher@apspvannetti.it",
+  "estratto": "…di sezione APSP Vannetti di Rovereto - Infermiere - Proroga termini Concorso pubblico per esami per la copertura di n. 10 (dieci) posti a tempo indeterminato e a tempo pieno (36 ore settimanali) nella figura professiona…",
+  "euro_ora": null,
+  "fonte": "UPIPA – concorsi delle APSP",
+  "id": "bb5e71443e5d",
+  "impronta": "8d30a02135de",
+  "in_tedesco": false,
+  "km": 45,
+  "letto_il": "2026-11-23",
+  "minuti": 40,
+  "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.upipa.tn.it/content/download/49639/697773/file/Proroga_termine_avviso_inf_2026_signed_prot.pdf"
+  ],
+  "pec": "apspvannetti@pec.it",
+  "primo_visto": "2026-11-23",
+  "pubblicato": "2026-11-23",
+  "punteggio": 39,
+  "regole": 11,
+  "scadenza": "2026-12-04",
+  "scadenza_frase": "230,43 kB) Termine di presentazione Venerdì, 04 Dicembre 2026 ore 12:00 I",
+  "segnali_turni": {
+   "ore_settimana": 36,
+   "pieno": true
+  },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
+  "titolo": "APSP Vannetti di Rovereto - Infermiere - Proroga termini",
+  "turni": "36 h/settimana, tempo pieno",
+  "ultimo_visto": "2026-11-23",
+  "url": "https://www.upipa.tn.it/Bacheca/Concorsi/APSP-Vannetti-di-Rovereto-Infermiere-Proroga-termini",
+  "zona": "Rovereto"
  },
  "bbfd9e13ae3c": {
   "affidabilita": "aggregatore",
