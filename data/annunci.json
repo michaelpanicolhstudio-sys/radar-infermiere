@@ -570,6 +570,7 @@
   "segnali_turni": {
    "notti": true
   },
+  "sparito_dal": "2026-11-23",
   "struttura": "RSA o casa di riposo",
   "tipo_fonte": "elenco",
   "titolo": "Infermiere/a",
@@ -4785,6 +4786,105 @@
   "ultimo_visto": "2026-11-23",
   "url": "https://www.opibz.it/infermiere-a-a-tempo-pieno-o-part-time/",
   "zona": "Caldaro"
+ },
+ "e68ea6ebff76": {
+  "affidabilita": "struttura",
+  "avvisi": [
+   "Annuncio in tedesco"
+  ],
+  "cambi": [],
+  "cita_tedesco": true,
+  "compenso": null,
+  "contratto": "Concorso / graduatoria",
+  "da_pdf": {
+   "caratteri": 3225,
+   "cita_tedesco": true,
+   "compenso": null,
+   "contratto": null,
+   "email": null,
+   "estratto": "…egeheim in Mölten und suchen eine/einen BERUFSKRANKENPFLEGER (w/m) Sie sollten folgende Anforderungen und Fähigkeiten mitbringen: Ihr Profil •Hochschuldiplom als KrankenpflegerIn •Bereitschaft zur Arbeit im 3 Schicht Sys…",
+   "euro_ora": null,
+   "indizi_compenso": [],
+   "infermiere": true,
+   "km": 68,
+   "minuti": 65,
+   "pec": null,
+   "scadenza": null,
+   "scadenza_frase": null,
+   "segnali_turni": {
+    "notti": true
+   },
+   "turni": "3 turni (anche notti)",
+   "v": 5,
+   "zona": "Meltina"
+  },
+  "data_novita": "2026-11-23",
+  "datore": "Altershilfe Tschögglberg ÖBPB",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "posto da dipendente",
+    "punti": 5,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 65 min d'auto",
+    "punti": 5,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "3 turni (anche notti)",
+    "punti": 9,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "sito della struttura",
+    "punti": 8,
+    "voce": "Fonte"
+   }
+  ],
+  "doppione_di": "25f691690999",
+  "email": null,
+  "estratto": "…egeheim in Mölten und suchen eine/einen BERUFSKRANKENPFLEGER:IN Sie sollten folgende Anforderungen und Fähigkeiten mitbringen: Ihr Profil •Hochschuldiplom als KrankenpflegerIn •Bereitschaft zur Arbeit im 3 Schicht System…",
+  "euro_ora": null,
+  "fonte": "Case di riposo dell'Alto Adige (VdS) – offerte",
+  "id": "e68ea6ebff76",
+  "impronta": "cda2f7ee944b",
+  "in_tedesco": true,
+  "km": 68,
+  "letto_il": "2026-11-23",
+  "minuti": 65,
+  "novita": "nuovo",
+  "pdf_letti": [
+   "https://www.vds-suedtirol.it/sites/vds-suedtirol.it/files/job-documents/k_krankenpfleger_0.pdf",
+   "https://www.vds-suedtirol.it/sites/vds-suedtirol.it/files/job-documents/krankenpfleger.pdf"
+  ],
+  "pec": null,
+  "primo_visto": "2026-11-23",
+  "pubblicato": null,
+  "punteggio": 32,
+  "regole": 11,
+  "scadenza": null,
+  "scadenza_frase": null,
+  "segnali_turni": {
+   "notti": true
+  },
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "elenco",
+  "titolo": "Infermiere/a",
+  "turni": "3 turni (anche notti)",
+  "ultimo_visto": "2026-11-23",
+  "url": "https://www.vds-suedtirol.it/de/swh/489/job/berufskrankenpfleger-berufskrankenpflegerin-gesucht",
+  "zona": "Meltina"
  },
  "ed9ea67da326": {
   "affidabilita": "ufficiale",
