@@ -78,13 +78,26 @@ def testo_messaggio(msg) -> tuple[str, str]:
 
 def taglia_citazione(testo: str) -> str:
     """Tiene la risposta e toglie il messaggio originale citato sotto."""
-    righe = []
-    for riga in testo.replace("\r", "").split("\n"):
+    righe = testo.replace("\r", "").split("\n")
+    tenute = []
+    for i, riga in enumerate(righe):
         pulita = riga.strip()
-        if pulita.startswith(">") or re.match(r"^(?:Il\s.{4,90}ha scritto:|Am\s.{4,90}schrieb.*:|On\s.{4,90}wrote:|-{3,}\s*(?:Messaggio originale|Original)|Da:\s.+|Von:\s.+)", pulita, re.I):
+        # L'intestazione può andare a capo: «Il giorno … Michael Panico <» / «indirizzo> ha scritto:» (Città Azzurra, 23/11).
+        con_dopo = f"{pulita} {righe[i + 1].strip()}" if i + 1 < len(righe) else pulita
+        if (pulita.startswith(">")
+                or re.match(r"^(?:Il\s.{4,90}ha scritto:|Am\s.{4,90}schrieb.*:|On\s.{4,90}wrote:|-{3,}\s*(?:Messaggio originale|Original)|"
+                            r"(?:Da|Von|From):\s.+|Da\s+\"[^\"]+\")", pulita, re.I)
+                or re.match(r"^(?:Il|Am|On)\s.{4,160}(?:ha scritto|schrieb|wrote)\s*:", con_dopo, re.I)
+                # La lettera di Michael incollata sotto senza intestazione (Casa Laner, 23/11).
+                or re.match(r"^(?:mi chiamo|mein name ist)\s+michael\s+panico", pulita, re.I)):
             break
-        righe.append(riga)
-    return re.sub(r"\n{3,}", "\n\n", "\n".join(righe)).strip()
+        tenute.append(riga)
+    # Il saluto iniziale della lettera citata e la riga «______» di Outlook prima dell'intestazione.
+    while tenute and (not tenute[-1].strip() or re.fullmatch(r"\s*(?:_{5,}|-{5,}|Buongiorno,?|Sehr geehrte.*|Gentil\w*\s.*,)\s*", tenute[-1], re.I)):
+        if tenute[-1].strip() and len(tenute) == 1:
+            break
+        tenute.pop()
+    return re.sub(r"\n{3,}", "\n\n", "\n".join(tenute)).strip()
 
 
 def trova_incontro(testo: str, oggi: date) -> dict | None:

@@ -227,8 +227,23 @@ def _esito(testo: str, euro_ora) -> str:
     return "da leggere"
 
 
+# Note legali in fondo alle email: «cancellare subito», «informarci immediatamente» non dicono quando si comincia (23/11).
+# Un paragrafo è una nota legale se ne ha almeno due segni («massima riservatezza» da solo è una frase vera, Riva 23/11).
+RE_NOTA_LEGALE = re.compile(r"d\.\s?lgs|gdpr|reg(?:olamento)?\.?\s*\(?ue\)?|196/2003|679|privacy|riservat|confidenzial|per\s+errore|"
+                            r"destinatari|non\s+stampare|empf(?:ae|ä)nger|irrt(?:ue|ü)mlich|vertraulich|datenschutz", re.I)
+
+
+def solo_risposta(testo: str) -> str:
+    """Il testo scritto dalla struttura: senza il messaggio citato, le note legali e le righe con P.IVA e codice fiscale."""
+    testo = posta.taglia_citazione(testo or "")
+    paragrafi = [p for p in re.split(r"\n\s*\n", testo) if len({m.group(0).lower() for m in RE_NOTA_LEGALE.finditer(p)}) < 2]
+    tenuti = ["\n".join(r for r in p.split("\n") if not re.search(r"\b\d{11}\b", r)) for p in paragrafi]
+    return "\n\n".join(p for p in tenuti if p.strip())
+
+
 def leggi_esito(testo: str) -> dict:
     """Cosa dice una risposta: esito, tipo di rapporto, compenso, turni, quando."""
+    testo = solo_risposta(testo)
     compenso, euro_ora = estrai.estrai_compenso(testo)
     turni, _ = estrai.estrai_turni(testo)
     if not turni:
@@ -243,7 +258,9 @@ def leggi_esito(testo: str) -> dict:
         turni = ", ".join(parole) or None
     esito = _esito(testo, euro_ora)
     rapporto = "libera professione" if RE_LP.search(testo) else ("dipendente" if RE_DIP.search(testo) else None)
-    m = re.search(r"(?:da\s+subito|subito|immediatamente|ab\s+sofort|da(?:l)?\s+(?:\d{1,2}\s+)?(?:gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|"
+    # «subito» da solo non basta: «le rispondo subito» (Borgo, 23/11) non è una data d'inizio.
+    m = re.search(r"(?:da\s+subito|(?:disponibil\w*|inizi\w*|iniziare|cominciare|partire|anche)\s+(?:da\s+)?(?:subito|immediatamente)|"
+                  r"decorrenza\s+immediata|ab\s+sofort|da(?:l)?\s+(?:\d{1,2}\s+)?(?:gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|"
                   r"agosto|settembre|ottobre|novembre|dicembre)(?:\s+\d{4})?)", testo, re.I)
     return {"esito": esito, "rapporto": rapporto, "compenso": compenso, "euro_ora": euro_ora, "turni": turni,
             "da_quando": m.group(0) if m else None}
@@ -271,7 +288,8 @@ def resoconto(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict) -
         a = memoria.get(chiave) or {}
         risposte = c.get("risposte") or []
         ultima = risposte[-1] if risposte else None
-        esito = leggi_esito(" ".join(r.get("testo") or "" for r in risposte)) if risposte else {}
+        # Ogni risposta si pulisce da sola: tagliare la citazione sul testo unito perderebbe le risposte dopo la prima.
+        esito = leggi_esito("\n\n".join(solo_risposta(r.get("testo") or "") for r in risposte)) if risposte else {}
         incontro = next((r["incontro"] for r in reversed(risposte) if r.get("incontro")), None)
         mano = manuali.get(chiave) or {}
         if mano and ultima and ultima.get("data", "") > mano.get("aggiornato", ""):

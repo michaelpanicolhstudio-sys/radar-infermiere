@@ -974,5 +974,31 @@ verifica("email: indirizzo spezzato a capo, vale quello intero",
 verifica("email: indirizzo spezzato e mai scritto intero, meglio nessuno",
          estrai.trova_email("PEC: direzione.provinciale.bolzano@postacert.i nps.gov.it"), {"email": None, "pec": None})
 
+# 23/11: nelle risposte vere resta il messaggio di Michael citato sotto, con intestazioni che la regola non
+# riconosceva: «Il giorno … Michael Panico <» spezzata su due righe (Città Azzurra), «From:» di Outlook (Chiesa
+# Serena), «Da "Michael Panico"» senza due punti (Borgo), la lettera incollata senza intestazione (Casa Laner).
+verifica("posta: citazione con intestazione su due righe",
+         posta.taglia_citazione("Può inviarci un CV?\n\nIl giorno dom 22 nov 2026 alle ore 15:51 Michael Panico <\ninfermiere@x.it> ha scritto:\n\nSono disponibile da subito."),
+         "Può inviarci un CV?")
+verifica("posta: citazione di Outlook «From:» e «Da \"…\"»",
+         [posta.taglia_citazione(t) for t in ("Domani alle 10?\n________________________________\nFrom: Michael Panico <a@x.it>\nSent: …",
+                                             "Saluti\n\nDa \"Michael Panico\" a@x.it\n\nA b@x.it\n\nSarei disponibile martedì")],
+         ["Domani alle 10?", "Saluti"])
+verifica("posta: la lettera di Michael incollata sotto senza intestazione",
+         posta.taglia_citazione("Le chiediamo di compilare il modulo.\nCordiali saluti\nBuongiorno,\n\nmi chiamo Michael Panico e sono un infermiere iscritto all'OPI."),
+         "Le chiediamo di compilare il modulo.\nCordiali saluti")
+# 23/11: Città Azzurra chiedeva solo il CV, ma la lettura dava «libera professione» (dalla firma
+# «C.F./P.Iva/St.Nr./MwSt – 01493930216») e «da subito» (dalla nota legale «cancellare il messaggio subito dopo»).
+_citta_azzurra = ("Gentile sig. Panico,\npuò inviarci gentilmente un CV per valutare un possibile colloquio\nconoscitivo?\nCordiali saluti\n\n"
+                  "Soc. Coop. Città Azzurra\n*C.F./P.Iva/St.Nr./MwSt – 01493930216 *\n\n"
+                  "Questo documento è indirizzato esclusivamente al destinatario. Tutte le\ninformazioni sono soggette a\nriservatezza secondo i termini del D.Lgs. 196/2003. "
+                  "Se avesse ricevuto per errore questo messaggio, La\npreghiamo di contattare il mittente e di\ncancellare il messaggio subito dopo.\n\n"
+                  "Wer diese Mitteilung irrtuemlicherweise erhaelt ist\ngebeten uns umgehend zu informieren")
+verifica("resoconto: firma e nota legale non dicono rapporto né data",
+         {k: invio.leggi_esito(_citta_azzurra)[k] for k in ("esito", "rapporto", "da_quando")},
+         {"esito": "sì", "rapporto": None, "da_quando": None})
+verifica("resoconto: «da subito» detto davvero resta",
+         invio.leggi_esito("Cerchiamo infermieri in libera professione da subito.\n\nLe informazioni contenute in questo messaggio sono riservate.")["da_quando"], "da subito")
+
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)
