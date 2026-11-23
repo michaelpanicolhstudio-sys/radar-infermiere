@@ -457,7 +457,19 @@
   "automatica": true,
   "inviata_il": "2026-11-22",
   "rif": "R-996fa9f6",
-  "risposte": [],
+  "risposte": [
+   {
+    "compenso": null,
+    "da": "enzo.lauria@griesfeld.it",
+    "data": "2026-11-23",
+    "euro_ora": null,
+    "incontro": null,
+    "mid": "<AM7P190MB07276408E680E9059225C79A9A452@AM7P190MB0727.EURP190.PROD.OUTLOOK.COM>",
+    "oggetto": "Info contatto",
+    "testo": "Buongiorno,\nLa ringrazio della sua candidatura,\nPotrebbe inviarci il curriculum\n\nGrazie\n\nEnzo Lauria\nPflegedienstleiter\nResponsabile tecnico assistenziale\nTel: 0471/826340\n\nÖ.B.P.B. – A.P.S.P.\nwww.griesfeld.it<http://www.griesfeld.it/>",
+    "turni": null
+   }
+  ],
   "via": "gmail"
  },
  "s:9cee32bc6a1e": {
