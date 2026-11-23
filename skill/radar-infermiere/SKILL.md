@@ -49,6 +49,7 @@ Prima di tutto: «preparami / prepariamo» NON è «invia». Prepara la lettera,
 ## Controllare le risposte
 - `git pull`, poi leggi TUTTO data/contatti.json: per ogni struttura `risposte` (da, data, oggetto, testo, mid) e `mie_risposte`. Non dire mai «non c'è niente» senza averlo letto tutto.
 - Una risposta è in attesa se non c'è una `mie_risposte` con data uguale o successiva.
+- Conta solo ciò che ha scritto la struttura: il testo salvato può contenere sotto la lettera di Michael citata («Il giorno … ha scritto:» anche su due righe, «From:», «Da "…"», o la lettera incollata senza intestazione), la firma con P.IVA e la nota legale. «Immediatamente / subito» della nota legale, «P.IVA» della firma e «libero professionista» dell'oggetto citato non dicono né il rapporto né la data d'inizio: se la struttura non lo scrive, «n.d.».
 
 ## Rispondere a una struttura (solo dopo «invia»)
 - Dispatch con rispondi_rif = codice R-xxxx, rispondi_testo = testo, rispondi_allegato = nome file in data/allegati/ (es. CV_Michael_Panico_infermiere.pdf).
@@ -64,6 +65,7 @@ Prima di tutto: «preparami / prepariamo» NON è «invia». Prepara la lettera,
 
 ## Report e allarmi
 - Per dire cosa c'è di nuovo leggi `data/report/<oggi>.json` (nuovi, aggiornati, problemi) e `data/annunci.json`; per le risposte vale la sezione «Controllare le risposte».
+- Se un annuncio dice solo la provincia («Provincia di Trento»), la zona resta n.d. con l'avviso «comune non indicato»: non mettere il capoluogo né i suoi minuti.
 - Allarmi in `config.yaml` → `allarmi` (oggi: bando invernale ASUIT di Campiglio / Sèn Jan, guardato su asuit.tn.it, apss.tn.it e opi.tn.it). Scattano una volta per bando (registro `data/allarmi_inviati.json`); non scattano per bandi scaduti, pagine «datate» senza scadenza (oltre 120 giorni) e copie dello stesso bando su un altro sito.
 - Aggiungendo un sito o una parola a un allarme, prova prima `uscite.trova_allarmi` sui dati veri con il registro: non deve uscire nessun bando vecchio.
 
