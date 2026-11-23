@@ -1000,5 +1000,12 @@ verifica("resoconto: firma e nota legale non dicono rapporto né data",
 verifica("resoconto: «da subito» detto davvero resta",
          invio.leggi_esito("Cerchiamo infermieri in libera professione da subito.\n\nLe informazioni contenute in questo messaggio sono riservate.")["da_quando"], "da subito")
 
+# 23/11: l'avviso Indeed di IQVIA diceva solo «Provincia di Trento, Trentino-Alto Adige»: nell'app «Zona non
+# riconosciuta», come se potesse essere fuori regione. Il comune resta n.d. (niente minuti inventati), ma si dice la provincia.
+_iq = motore._costruisci({"titolo": "IQVIA Italia Infermiere per attività domiciliari", "url": "https://cts.indeed.com/v3/x",
+                          "sommario": "IQVIA Italia Infermiere per attività domiciliari IQVIA Solutions Italy srl Provincia di Trento, Trentino-Alto Adige"},
+                         "", None, _fa, CFG, COMUNI, OGGI, [])[0]
+verifica("zona: solo la provincia, comune n.d.", (_iq["zona"], [x for x in _iq["avvisi"] if "ona" in x]),
+         (None, ["Zona: provincia di Trento, comune non indicato"]))
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

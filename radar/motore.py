@@ -247,7 +247,12 @@ def _costruisci(cand: dict, testo: str, pubblicato, fonte: dict, cfg: dict, comu
     elif campi["cita_tedesco"]:
         avvisi.append("Cita tedesco o bilinguismo")
     if not campi["zona"]:
-        avvisi.append("Zona non riconosciuta")
+        # «Provincia di Trento» da sola (avvisi dei portali, IQVIA 23/11): si dice la provincia, il comune resta n.d.
+        prov = re.search(r"provincia\s+(?:autonoma\s+)?di\s+(trento|bolzano)|provinz\s+bozen", f"{titolo} {cand.get('sommario', '')}", re.I)
+        if prov:
+            avvisi.append(f"Zona: provincia di {(prov.group(1) or 'Bolzano').capitalize()}, comune non indicato")
+        else:
+            avvisi.append("Zona non riconosciuta")
 
     tipo = fonte.get("tipo", "elenco")
     a = {
