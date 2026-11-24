@@ -952,7 +952,7 @@ def _minuscole_nome(nome: str) -> str:
             parole.append(p.lower())
         elif re.fullmatch(r"[A-ZÀ-Ü]{3,}\.", p):
             parole.append(p[0] + p[1:].lower())  # abbreviazioni: «SOC.» → «Soc.», «COOP.» → «Coop.»
-        elif "." in p or p in ("RSA", "APSP", "ÖBPB"):
+        elif "." in p or p in ("RSA", "APSP", "ÖBPB") or re.fullmatch(r"\W*[A-Z](?:/[A-Z])+\W*", p):
             parole.append(p)  # sigle (S.S., A.P.S.P., RSA)
         else:
             parole.append(re.sub(r"^(\W*)(\w)", lambda m: m.group(1) + m.group(2).upper(), p.lower()))
@@ -965,6 +965,13 @@ def nome_leggibile(nome: str | None) -> str | None:
     if not nome or re.search(r"[a-zà-ü]", nome) or len(nome.split()) < 2:
         return nome
     return _minuscole_nome(nome)
+
+
+def titolo_leggibile_maiuscolo(titolo: str) -> str:
+    """Un titolo tutto in maiuscolo («INFERMIERE M/F», Indeed 24/11) si riscrive leggibile; sigle come M/F restano."""
+    if titolo and not re.search(r"[a-zà-ü]", titolo) and len(re.sub(r"\W", "", titolo)) > 3:
+        return _minuscole_nome(titolo)
+    return titolo
 
 
 def estrai_datore_da_testo(testo: str) -> str | None:

@@ -984,6 +984,15 @@ verifica("avvisi dei portali: datore in maiuscolo riscritto leggibile",
 # 22/11 sera: nell'app la novità si leggeva «infermiere/a», minuscolo come nel link di Indeed.
 verifica("avvisi dei portali: il titolo comincia con la maiuscola",
          [x["titolo"] for x in posta.annunci_da_avviso(_html_ca, ["infermier"], {}, "")], ["Infermiere/a"])
+# 24/11: unica novità del giorno «INFERMIERE M/F» di «Cerba Healthcare Corporate Servicelab S.R.L» (il punto finale della sigla tolto).
+_html_cb = ("<table><tr><td><a href='https://cts.indeed.com/v3/abc'>INFERMIERE M/F</a>"
+            "<div>CERBA HEALTHCARE CORPORATE SERVICELAB S.R.L.</div><div>Provincia di Trento, Trentino-Alto Adige</div></td></tr></table>")
+_cb_av = posta.annunci_da_avviso(_html_cb, ["infermier"], {}, "INFERMIERE M/F presso CERBA HEALTHCARE CORPORATE SERVICELAB S.R.L.")
+verifica("avvisi dei portali: titolo in maiuscolo leggibile, sigle intatte", [(x["titolo"], x.get("datore")) for x in _cb_av],
+         [("Infermiere M/F", "Cerba Healthcare Corporate Servicelab S.R.L.")])
+verifica("avvisi dei portali: titoli in maiuscolo di una parola o con (m/w/d)",
+         [x["titolo"] for x in posta.annunci_da_avviso("<a href='https://it.indeed.com/x'>INFERMIERE</a><a href='https://it.indeed.com/y'>KRANKENPFLEGER (M/W/D)</a>",
+                                                       ["infermier", "krankenpfleg"], {})], ["Infermiere", "Krankenpfleger (M/W/D)"])
 verifica("nome leggibile: nomi già scritti bene restano uguali",
          [estrai.nome_leggibile(x) for x in ("Coop SOS", "ParaMedica srl", "INPS", None)], ["Coop SOS", "ParaMedica srl", "INPS", None])
 

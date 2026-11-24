@@ -253,7 +253,9 @@ def _datore_da_oggetto(oggetto: str, titolo: str, sommario: str) -> str | None:
     m = _RE_PRESSO.match(estrai.pulisci(oggetto or ""))
     if not m or estrai.chiave(m.group(1)) != estrai.chiave(titolo):
         return None
-    datore = m.group(2).strip(" .!-–")
+    datore = m.group(2).strip(" !-–")
+    if not re.search(r"\b[A-Za-z]\.(?:[A-Za-z]\.?)+$", datore):
+        datore = datore.rstrip(" .")  # il punto finale di una sigla resta («S.R.L.», 24/11)
     resto = sommario[len(titolo):] if sommario.lower().startswith(titolo.lower()) else ""
     if not datore or not resto.strip().lower().startswith(datore.lower()):
         return None
@@ -289,6 +291,7 @@ def annunci_da_avviso(pagina: str, parole: list[str], note: dict | None = None, 
         if chiave in visti:
             continue
         visti.add(chiave)
+        titolo = estrai.titolo_leggibile_maiuscolo(titolo)
         if titolo[:1].islower():
             titolo = titolo[:1].upper() + titolo[1:]  # «infermiere/a» del link → «Infermiere/a» (22/11)
         voce = {"titolo": titolo, "url": _url_pulito(a["href"]), "sommario": intorno[:450]}
