@@ -886,6 +886,28 @@ _cb["s:b"]["mie_risposte"] = [{"data": "2026-11-19"}]
 _r = _inv.resoconto([{"chiave": "s:b", "nome": "B"}], {}, _cb, CFG)[0]
 verifica("esiti: «da fare» letto in automatico, Michael ha risposto dopo", (_r["esito"], _r["prossimo"]),
          ("hai risposto", "Hai risposto il 19/11: ora tocca a loro."))
+# 24/11: Città Azzurra («può inviarci gentilmente un CV…?») era solo «Interessati», senza passo: la richiesta del CV
+# non compariva tra le cose da fare. Griesfeld («Potrebbe inviarci il curriculum») era «Più avanti» anche dopo il CV di Michael.
+_cc = {"s:c": {"inviata_il": "2026-11-22", "risposte": [{"data": "2026-11-23", "testo": "Gentile sig. Panico,\npuò inviarci gentilmente un CV per valutare un possibile colloquio\nconoscitivo?"}]}}
+_r = _inv.resoconto([{"chiave": "s:c", "nome": "C"}], {}, _cc, CFG)[0]
+verifica("esiti: CV chiesto e non ancora mandato è da fare", (_r["esito"], _r["prossimo"]),
+         ("da fare", "Ti hanno chiesto il CV il 23/11: se non l'hai ancora mandato, rispondi alla loro email con il CV."))
+_cc["s:c"]["mie_risposte"] = [{"data": "2026-11-23", "allegato": "CV_Michael.pdf"}]
+_r = _inv.resoconto([{"chiave": "s:c", "nome": "C"}], {}, _cc, CFG)[0]
+verifica("esiti: CV chiesto e mandato, tocca a loro", (_r["esito"], _r["prossimo"]),
+         ("hai risposto", "Hai risposto il 23/11 con il CV: ora tocca a loro."))
+_cc["s:c"]["risposte"] = [{"data": "2026-11-23", "testo": "Grazie per averci inviato il curriculum, la terremo presente."}]
+_cc["s:c"].pop("mie_risposte")
+verifica("esiti: CV già ricevuto non è una richiesta",
+         _inv.resoconto([{"chiave": "s:c", "nome": "C"}], {}, _cc, CFG)[0]["esito"] != "da fare", True)
+_tm.write_text('{"s:c": {"esito": "più avanti", "aggiornato": "2026-11-23", "prossimo": "CV inviato il 23/11."}}', encoding="utf-8")
+_cc["s:c"]["risposte"] = [{"data": "2026-11-23", "testo": "Potrebbe inviarci il curriculum"}]
+_r = _inv.resoconto([{"chiave": "s:c", "nome": "C"}], {}, _cc, CFG)[0]
+verifica("esiti: con l'esito scritto a mano la richiesta del CV non cambia nulla", (_r["esito"], _r["prossimo"]), ("più avanti", "CV inviato il 23/11."))
+verifica("richiesta del CV: frasi vere", [bool(_inv.RE_CHIEDE_CV.search(t)) for t in (
+    "Potrebbe inviarci il curriculum", "chiediamo gentilmente l'invio di un cv.", "Le chiediamo gentilmente di trasmetterci il Suo curriculum vitae.",
+    "se ci gira il suo curriculum lo consideriamo", "può inviarmi un curriculum?", "Abbiamo ricevuto il suo CV", "Grazie per averci inviato il CV")],
+    [True, True, True, True, True, False, False])
 _inv.esiti_manuali = _orig
 
 # Allarmi: un bando ASUIT sui centri traumatologici fa scattare l'allarme una volta sola; altri siti no.

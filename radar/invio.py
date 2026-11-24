@@ -205,6 +205,9 @@ RE_NO_ORA = re.compile(r"non\s+(?:abbiamo|vi\s+è|c['’]\s*è|ci\s+sono|si\s+ra
 RE_NO_DEFINITIVO = re.compile(r"non\s+sanitari[ao]|non\s+(?:è|e)\s+(?:una\s+struttura\s+)?sanitaria|non\s+collaboriamo|"
                               r"non\s+(?:ci\s+avvaliamo|utilizziamo)\s+(?:di\s+)?(?:liberi|libero|infermieri)", re.I)
 RE_CV = re.compile(r"curricul|\bcv\b|lebenslauf", re.I)
+# Una richiesta del CV è un passo per Michael (Città Azzurra, Griesfeld 23/11); «averci inviato il CV» no.
+RE_CHIEDE_CV = re.compile(r"(?:\binviar\w*|\binvii\b|\bmandar\w*|\bmandi\b|\btrasmetter\w*|\btrasmetta\b|\bgir[ai]\b|\ballegar\w*|"
+                          r"\bl['’]\s*invio\s+d|\bschicken|\bzusenden|\bübermitteln)[^.?!\n]{0,60}?(?:curricul|\bcv\b|lebenslauf)", re.I)
 RE_COLLABORA_LP = re.compile(r"(?<!non\s)collabor\w*\s+(?:anche\s+|già\s+)?con\s+(?:gli\s+|degli\s+|dei\s+)?(?:infermier\w*|liberi\s+professionist)", re.I)
 
 
@@ -317,6 +320,19 @@ def resoconto(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict) -
             riga["esito"] = "hai risposto"
             riga["prossimo"] = f"Hai risposto il {gg(riga['mia_risposta_il'])}: ora tocca a loro." + (
                 f" Passo scritto il {gg(riferimento)}: {riga['prossimo']}" if riga.get("prossimo") else "")
+        # 24/11: chi chiede il CV aspetta Michael. Senza un esito scritto a mano: «Tocca a te» finché lui non risponde,
+        # poi «Hai risposto» (le sue risposte partono sempre sull'ultima email della struttura, anche lo stesso giorno).
+        if not mano and ultima and riga["esito"] not in ("no", "da fare", "hai risposto") \
+                and RE_CHIEDE_CV.search(solo_risposta(ultima.get("testo") or "")):
+            gg = lambda iso: f"{iso[8:10]}/{iso[5:7]}"
+            dopo = [m for m in mie if (m.get("data") or "") >= (ultima.get("data") or "")]
+            if dopo:
+                con_cv = any("cv" in (m.get("allegato") or "").lower() for m in dopo)
+                riga["esito"] = "hai risposto"
+                riga["prossimo"] = f"Hai risposto il {gg(dopo[-1]['data'])}{' con il CV' if con_cv else ''}: ora tocca a loro."
+            else:
+                riga["esito"] = "da fare"
+                riga["prossimo"] = f"Ti hanno chiesto il CV il {gg(ultima['data'])}: se non l'hai ancora mandato, rispondi alla loro email con il CV."
         if riga["euro_ora"]:
             calcolo = conti.conto_offerta({"euro_ora": riga["euro_ora"], "km": riga["km"] or 0, "minuti": riga["minuti"] or 0,
                                            **{k: mano[k] for k in ("ore_turno", "ore_pagate", "turni_max_mese") if mano.get(k)}}, par)
