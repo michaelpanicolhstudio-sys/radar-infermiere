@@ -1038,5 +1038,13 @@ _iq = motore._costruisci({"titolo": "IQVIA Italia Infermiere per attività domic
                          "", None, _fa, CFG, COMUNI, OGGI, [])[0]
 verifica("zona: solo la provincia, comune n.d.", (_iq["zona"], [x for x in _iq["avvisi"] if "ona" in x]),
          (None, ["Zona: provincia di Trento, comune non indicato"]))
+
+# 24/11: per Cerba (Indeed, «Provincia di Trento») l'email diceva «zona n.d.» e l'app «zona n.d.», anche se
+# l'avviso nella scheda diceva già la provincia: si perdeva l'informazione proprio nel riassunto che Michael legge.
+_rg = motore._riga({**_iq, "punteggio": 26})
+verifica("email: la provincia al posto di «zona n.d.»", uscite._dettagli(_rg),
+         "contratto n.d., compenso n.d., provincia di Trento (comune n.d.)")
+verifica("provincia: solo se manca il comune", (motore.provincia_senza_comune(_iq),
+         motore.provincia_senza_comune({**_iq, "zona": "Trento"}), motore.provincia_senza_comune({"avvisi": []})), ("Trento", None, None))
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

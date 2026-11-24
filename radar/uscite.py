@@ -53,7 +53,8 @@ def _conta(n: int, uno: str, molti: str) -> str:
 def _dettagli(r: dict) -> str:
     pezzi = [ETICHETTE_CONTRATTO.get(r.get("contratto"), "contratto n.d."),
              r.get("compenso") or "compenso n.d.",
-             f"{r['zona']} ({r['minuti']} min)" if r.get("zona") else "zona n.d."]
+             f"{r['zona']} ({r['minuti']} min)" if r.get("zona")
+             else f"provincia di {r['provincia']} (comune n.d.)" if r.get("provincia") else "zona n.d."]
     if r.get("scadenza"):
         pezzi.append(f"scade il {_giorno(r['scadenza'])[:5]}")
     return ", ".join(pezzi)
@@ -411,6 +412,7 @@ def costruisci_sito(cfg: dict, oggi: date, destinazione: Path | None = None) -> 
         if a.get("scadenza") and (oggi - date.fromisoformat(a["scadenza"])).days > int(cfg.get("giorni_scaduti_visibili", 60)):
             continue
         o = {k: a.get(k) for k in CAMPI_APP}
+        o["provincia"] = motore.provincia_senza_comune(a)
         o["datato"] = motore.e_datato(a, oggi, cfg)
         o["scaduto"] = motore.e_scaduto(a, oggi) or o["datato"]
         o["dipendente"] = motore.e_dipendente(a)

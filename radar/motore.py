@@ -810,10 +810,23 @@ def aggiorna_stato_fonti(stato: dict, fonte: dict, esito: dict, oggi: date) -> s
 # Giro completo
 # --------------------------------------------------------------------------
 
+def provincia_senza_comune(a: dict) -> str | None:
+    """«Trento»/«Bolzano» quando l'annuncio dice solo la provincia (avvisi dei portali): serve al riassunto
+    dell'email e dell'app, che altrimenti direbbero «zona n.d.» (Cerba, 24/11). Mai un comune inventato."""
+    if a.get("zona"):
+        return None
+    for avviso in a.get("avvisi") or []:
+        m = re.match(r"Zona: provincia di (Trento|Bolzano), comune non indicato", avviso)
+        if m:
+            return m.group(1)
+    return None
+
+
 def _riga(a: dict) -> dict:
     riga = {k: a.get(k) for k in ("id", "titolo", "datore", "contratto", "compenso", "zona", "minuti",
                                   "scadenza", "punteggio", "url", "cambi")}
     riga["piva"] = e_piva(a)
+    riga["provincia"] = provincia_senza_comune(a)
     return riga
 
 

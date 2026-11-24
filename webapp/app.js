@@ -114,7 +114,7 @@
     }
     var dove = o.zona
       ? el("span", { class: "dove" }, el("b", { text: o.minuti + "′" }), el("small", { text: o.zona }))
-      : el("span", { class: "dove" }, el("small", { text: "zona n.d." }));
+      : el("span", { class: "dove" }, el("small", { text: o.provincia ? "prov. " + (o.provincia === "Bolzano" ? "BZ" : "TN") : "zona n.d." }));
     return el("button", { class: "riga" + (o.scaduto || o.sparito_dal || m.stato === "scartato" ? " spenta" : ""), onclick: function () { apriScheda(o.id); } },
       sinistra,
       el("span", { class: "chi" },
@@ -626,7 +626,8 @@
 
     corpo.appendChild(el("div", { class: "dati" },
       dato("Contratto", o.contratto), dato("Compenso", o.compenso), dato("Ore e turni", o.turni),
-      dato("Zona", o.zona ? o.zona + ", circa " + o.minuti + " min e " + o.km + " km da " + DATI.casa : null),
+      dato("Zona", o.zona ? o.zona + ", circa " + o.minuti + " min e " + o.km + " km da " + DATI.casa
+        : o.provincia ? "provincia di " + o.provincia + ", comune non indicato" : null),
       dato("Scadenza", o.scadenza ? giorno(o.scadenza) + (o.scadenza_frase ? " («" + o.scadenza_frase + "»)" : "") : null), dato("Pubblicato", o.pubblicato ? giorno(o.pubblicato) : null),
       dato("Struttura", o.struttura), dato("Contatti", [o.email, o.pec ? o.pec + " (PEC)" : null].filter(Boolean).join(", ") || null),
       dato("Fonte", o.fonte), dato("Visto dal", giorno(o.primo_visto) + (o.ultimo_visto ? ", ultimo controllo il " + giornoBreve(o.ultimo_visto) : ""))));
