@@ -360,7 +360,19 @@
   "automatica": true,
   "inviata_il": "2026-11-17",
   "rif": "R-73ce6cbf",
-  "risposte": [],
+  "risposte": [
+   {
+    "compenso": null,
+    "da": "direttore@casacristani.it",
+    "data": "2026-11-24",
+    "euro_ora": null,
+    "incontro": null,
+    "mid": "<PAWP194MB2181091C6B90AFBD48961D2BA2442@PAWP194MB2181.EURP194.PROD.OUTLOOK.COM>",
+    "oggetto": "R: Michael Panico, infermiere – collaborazione in libera professione (Rif. R-73ce6cbf)",
+    "testo": "Buongiorno,\n\nLa ringrazio per averci contattato e per la proposta di collaborazione.\n\nAl momento non abbiamo necessità di ulteriore personale infermieristico; terremo comunque in debita considerazione la Sua disponibilità e la Sua proposta per eventuali future esigenze.\n\nGrazie ancora per l'interesse dimostrato nei confronti della nostra struttura.\n\nCordialmente\nLuigi Chini\n\n==================================\nLuigi Chini – Direttore\n\nA.P.S.P. “CRISTANI – DE LUCA”\nAzienda Pubblica di Servizi alla Persona\nVia Barone Giovanni Cristani, 38\n38016 MEZZOCORONA (Trento)\nPart. IVA: 00375880226  Cod. Fisc. 00374380228\nTel. 0461/605303 – Fax 0461/604262\ne-mail: direttore@casacristani.it\n-----------------------------------------------------------------------------\nAVVISO DI RISERVATEZZA: Le informazioni contenute in questo messaggio sono strettamente confidenziali e rivolte esclusivamente ai destinatari sopra indicati. Ogni successivo inoltro, diffusione, copia e/o altro utilizzo, se non espressamente autorizzato, è vietato e costituisce violazione della disciplina in materia di tutela dei dati personali (Reg. UE 16/679). Nel caso aveste ricevuto questa comunicazione per errore Vi chiediamo di informaci immediatamente e di eliminare il messaggio, compresi eventuali file allegati, senza trattenerne copia. Personale incaricato potrà accedere alla risposta fornita alla presente comunicazione. Grazie per l’attenzione.\nPRIVACY NOTICE: The informations contained in this message are strictly confidential and direct exclusively for the recipients indicated above. Any subsequent forwarding, dissemination, copying and / or other use, unless expressly authorized, is prohibited and constitutes a violation of the regulations regarding the protection of personal data (EU Regulation 16/679). In case you received this communication by mistake, we ask you to inform us immediately and to delete the message, including any attached files, without retaining a copy. Staff in charge will have access to the answer given to this communication. Thanks for the attention.",
+    "turni": null
+   }
+  ],
   "via": "gmail"
  },
  "s:786bc34d5f6f": {
