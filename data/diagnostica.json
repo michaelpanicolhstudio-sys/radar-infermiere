@@ -1245,67 +1245,6 @@
     ]
    ]
   },
-  "Avvisi email – Adecco": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Etjca": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Gi Group": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Indeed": {
-   "accettati": 4,
-   "candidati": 5,
-   "scartati": [
-    [
-     "Infermieri ParaMedica srl Asiago, Veneto",
-     "fuori regione",
-     "https://cts.indeed.com/v3/H4sIAAAAAAAA_32U2aqrWBCG3yXQ-6o9e6lx2hCabJMYZ6NRozfBKc5Zupw9nHdvTzf0ZVMFBf9fVBV18f3cDbuvXdb3Tff1-Zn3P_J3nCTxjwjWn02QJkH8GVXlXy8E60MBw5wInlupgz7KsLzHxPszqYO8-ihQXx4oLKozHNuiZN"
-    ]
-   ]
-  },
-  "Avvisi email – InfoJobs": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Jobrapido": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – LinkedIn": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Manpower": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Openjobmetis": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Randstad": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Umana": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
   "Brixsana Bressanone – Karriere": {
    "accettati": [
     "Infermiere/a (KrankenpflegerIn) – tempo pieno, da subito"
@@ -1338,6 +1277,10 @@
       [
        "Italiano",
        "https://www.vds-suedtirol.it/it/jobs"
+      ],
+      [
+       "Inhalte Transparenz",
+       "https://www.vds-suedtirol.it/de/contenuti-trasparenza-0"
       ],
       [
        "https://career.bz.it",
@@ -1456,10 +1399,6 @@
        "https://www.vds-suedtirol.it/de/aktuelles-aus-den-mitgliedsheimen"
       ],
       [
-       "Inhalte Transparenz",
-       "https://www.vds-suedtirol.it/de/bla"
-      ],
-      [
        "Seniorenbetreuung",
        "https://www.vds-suedtirol.it/de/seniorenbetreuung"
       ],
@@ -1474,6 +1413,10 @@
       [
        "Impressum",
        "https://www.vds-suedtirol.it/de/impressum"
+      ],
+      [
+       "Privacy - Cookies",
+       "https://www.vds-suedtirol.it/de/privacy"
       ]
      ],
      "url": "https://www.vds-suedtirol.it/de/jobs"
@@ -1726,8 +1669,17 @@
    "scartati": []
   },
   "Gruppo Bonvicini – lavora con noi": {
-   "accettati": [],
-   "pagine": [],
+   "accettati": [
+    "Lavora con noi"
+   ],
+   "pagine": [
+    {
+     "caratteri": 828,
+     "inizio": "Lavora con noi Posizioni aperte Vuoi entrare a far parte del nostro team? Qui trovi tutte le figure professionali che cerchiamo in questo momento. Consulta gli annunci, compila il form e inviaci la tua candidatura. Farmacista a tempo pieno Farmacie Bonvicini Tempo pieno Candidati Fisioterapista per pazienti interni Casa di Cura Bonvicini Tempo pieno: terapie manuali, terapie strumentali, idrokines",
+     "pdf": [],
+     "url": "https://www.gruppobonvicini.it/lavora-con-noi/"
+    }
+   ],
    "scartati": []
   },
   "Martinsbrunn Merano – Job & Karriere": {
@@ -2099,11 +2051,11 @@
    ],
    "pagine": [
     {
-     "candidati": 3,
+     "candidati": 2,
      "url": "https://www.upipa.tn.it/Bacheca/Concorsi"
     },
     {
-     "candidati": 0,
+     "candidati": 1,
      "url": "https://www.upipa.tn.it/Bacheca/Concorsi/(offset)/10"
     }
    ],
@@ -2116,7 +2068,7 @@
    ],
    "pagine": [
     {
-     "caratteri": 4227,
+     "caratteri": 4217,
      "inizio": "Close Search Lavora nella Casa di Cura Sant’Anna di Merano Navigate to the next section La Casa di Cura Sant’Anna cerca medici, chirurghi e professionisti (m/f) Vuoi lavorare in Alto Adige presso la Casa di Cura Sant’Anna e le sue strutture sanitarie? Siamo sempre alla ricerca di personale preparato, capace di arricchire l’offerta della casa di cura. Candidature spontanee Se di seguito non individ",
      "pdf": [],
      "url": "https://villa-santanna.eu/lavora-con-noi/"
