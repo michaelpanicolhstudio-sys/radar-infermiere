@@ -305,10 +305,13 @@ invio:
   al_giorno: 12        # quante lettere al massimo per mattina (poche alla volta: niente aspetto da spam)
   pausa_secondi: 8
   mittente: "Michael Panico"
-  una_tantum: "2026-11-24"                      # data di un invio unico (AAAA-MM-GG); vuoto = nessun invio. Si imposta solo su richiesta di Michael
+  una_tantum: ""                      # data di un invio unico (AAAA-MM-GG); vuoto = nessun invio. Si imposta solo su richiesta di Michael
   una_tantum_massimo: 80
   # Sondaggio prudente approvato da Michael il 16/11/2026: solo queste strutture (pezzo del nome), lettera breve.
-  selezione: ["APSP Anaunia (coordinatore)", "APSP Anaunia (info)"]   # TEMPORANEO
+  selezione: [Endrizzi, Grazioli, Tschiderer, "APSP Santa Maria", Montel, Opera Romani, Levico Curae, "Villa Sant'Anna", Cristani, "APSP San Giovanni", Anaunia, Cerba,
+              # Trentino, preparate il 17/11/2026 (partono solo con il «via» di Michael)
+              "Casa di Cura Solatrix", "Centro Servizi Socio Sanitari e Residenziali Male'", "A.P.S.P. Cesare Benedetti", "APSP San Giuseppe", "A.P.S.P. Residenza Molino", "Apsp S.Lorenzo e S.Maria della Misericordia", "Apsp Ubaldo Campagnola", "APSP Dott. Antonio Bontempelli", "A.P.S.P. Casa Laner", "APSP Giudicarie Esteriori", "APSP di Brentonico", "Redenta Floriani", "SUOR FILIPPINA", "APSP Citta di Riva", "Casa Mia APSP", "Casa di Riposo Giovanelli",
+              "Stella Montis"]
   dedicate:   # lettere scritte apposta, approvate da Michael prima dell'invio
     Vannetti:   # approvata da Michael il 22/11/2026: solo informazioni sull'avviso, nessuna candidatura
       oggetto: "Avviso incarichi libero-professionali infermiere – richiesta di informazioni"
