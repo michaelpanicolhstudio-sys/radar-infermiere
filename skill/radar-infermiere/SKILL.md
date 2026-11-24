@@ -66,7 +66,8 @@ Prima di tutto: «preparami / prepariamo» NON è «invia». Prepara la lettera,
 
 ## Report e allarmi
 - Per dire cosa c'è di nuovo leggi `data/report/<oggi>.json` (nuovi, aggiornati, problemi) e `data/annunci.json`; per le risposte vale la sezione «Controllare le risposte».
-- Se un annuncio dice solo la provincia («Provincia di Trento»), la zona resta n.d. con l'avviso «comune non indicato»: non mettere il capoluogo né i suoi minuti.
+- Se un annuncio dice solo la provincia («Provincia di Trento»), nel report scrivi «provincia di Trento (comune n.d.)», non «zona n.d.»: mai il capoluogo né i suoi minuti.
+- Titoli tutti in maiuscolo: riportali come frase leggibile (sigle, numeri e comuni intatti), senza cambiare cosa dicono; se sono troncati, chiudili con «…».
 - Allarmi in `config.yaml` → `allarmi` (oggi: bando invernale ASUIT di Campiglio / Sèn Jan, guardato su asuit.tn.it, apss.tn.it e opi.tn.it). Scattano una volta per bando (registro `data/allarmi_inviati.json`); non scattano per bandi scaduti, pagine «datate» senza scadenza (oltre 120 giorni) e copie dello stesso bando su un altro sito.
 - Aggiungendo un sito o una parola a un allarme, prova prima `uscite.trova_allarmi` sui dati veri con il registro: non deve uscire nessun bando vecchio.
 
