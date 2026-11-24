@@ -638,7 +638,7 @@
    "url": "https://www.civicatnapsp.it/"
   },
   {
-   "caratteri": 2107,
+   "caratteri": 2126,
    "inizio": "S. Spirito - Fondazione Montel dal curare al prendersi cura Tutti i servizi Contatti Azienda Pubblica di Servizi alla Persona Orientiamo la nostra attività al rispetto della dignità della persona e alla garanzia del principio di riservatezza. Garantiamo adeguatezza, flessibilità e personalizzazione ",
    "link": [
     [
@@ -776,6 +776,18 @@
       [
        "Leggi di più",
        "https://www.apspgrazioli.it/Servizi/Invia-la-tua-candidatura#page-content"
+      ],
+      [
+       "Pubblica selezione per Coordinatore dei Servizi Sanitari Assistenziali",
+       "https://www.apspgrazioli.it/Albo-online/Concorsi-e-selezioni/Pubblica-selezione-per-Coordinatore-dei-Servizi-Sanitari-Assistenziali"
+      ],
+      [
+       "Pubblica selezione per Assistente Amministrativo",
+       "https://www.apspgrazioli.it/Albo-online/Concorsi-e-selezioni/Pubblica-selezione-per-Assistente-Amministrativo"
+      ],
+      [
+       "Concorso pubblico per n. 12 posti in figura di OSS",
+       "https://www.apspgrazioli.it/Albo-online/Concorsi-e-selezioni/Concorso-pubblico-per-n.-12-posti-in-figura-di-OSS"
       ],
       [
        "Selezione per OSS e Ausiliari",
@@ -1669,17 +1681,8 @@
    "scartati": []
   },
   "Gruppo Bonvicini – lavora con noi": {
-   "accettati": [
-    "Lavora con noi"
-   ],
-   "pagine": [
-    {
-     "caratteri": 828,
-     "inizio": "Lavora con noi Posizioni aperte Vuoi entrare a far parte del nostro team? Qui trovi tutte le figure professionali che cerchiamo in questo momento. Consulta gli annunci, compila il form e inviaci la tua candidatura. Farmacista a tempo pieno Farmacie Bonvicini Tempo pieno Candidati Fisioterapista per pazienti interni Casa di Cura Bonvicini Tempo pieno: terapie manuali, terapie strumentali, idrokines",
-     "pdf": [],
-     "url": "https://www.gruppobonvicini.it/lavora-con-noi/"
-    }
-   ],
+   "accettati": [],
+   "pagine": [],
    "scartati": []
   },
   "Martinsbrunn Merano – Job & Karriere": {
@@ -1771,7 +1774,6 @@
    "accettati": [
     "Casa di cura Eremo – Arco TN",
     "A.P.S.P. C. Vannetti – Rovereto – Selezione per liberi professionisti – PROROGA TERMINI",
-    "A.P.S.P. C. Vannetti – Rovereto – bando di concorso",
     "Cooperativa Sociale Villa Maria Onlus – ricerca di personale",
     "APSP “San Giuseppe” di Primiero (TN) – ricerca di personale"
    ],
@@ -1795,18 +1797,14 @@
      "url": "https://opi.tn.it/segreteria/annunci-di-lavoro/"
     }
    ],
-   "pdf_scartati": [
-    {
-     "lasciati": [
-      "https://opi.tn.it/wp-content/uploads/2025/10/DET_294_26_dd__09_10_Allegato_domanda.pdf"
-     ],
-     "presi": [
-      "https://opi.tn.it/wp-content/uploads/2025/10/DET_294_26_dd__09_10_Allegato_bando_signed.pdf"
-     ],
-     "url": "https://opi.tn.it/a-p-s-p-c-vannetti-bando/"
-    }
+   "pdf_scartati": [],
+   "scartati": [
+    [
+     "ParaMedica Srl – Veneto – Ricerca di personale",
+     "fuori regione",
+     "https://opi.tn.it/a-p-s-p-redenta-floriani-castel-ivano-concorso-copy/"
+    ]
    ],
-   "scartati": [],
    "senza_pdf": [
     {
      "link": [
@@ -1814,6 +1812,11 @@
        "a",
        "www.eremoarco.it",
        "http://www.eremoarco.it"
+      ],
+      [
+       "a",
+       "Successivo",
+       "https://opi.tn.it/a-p-s-p-margherita-grazioli-trento-bando-di-concorso/"
       ],
       [
        "a",
@@ -1829,11 +1832,6 @@
        "a",
        "https://coopvillamaria.org/collabora-con-noi/lavora-con-noi/",
        "https://coopvillamaria.org/collabora-con-noi/lavora-con-noi/"
-      ],
-      [
-       "a",
-       "Successivo",
-       "https://opi.tn.it/a-p-s-p-c-vannetti-bando/"
       ],
       [
        "a",
@@ -1857,6 +1855,16 @@
       ]
      ],
      "url": "https://opi.tn.it/apsp-san-giuseppe-di-primiero-tn-ricerca-di-personale/"
+    },
+    {
+     "link": [
+      [
+       "a",
+       "Messaggio di benvenuto nella comunità professionale ai futur",
+       "https://opi.tn.it/messaggio-di-benvenuto-nella-comunita-professionale-ai-futuri-colleghi-e-informazioni-per-liscrizione-allalbo-8/"
+      ]
+     ],
+     "url": "https://opi.tn.it/a-p-s-p-redenta-floriani-castel-ivano-concorso-copy/"
     }
    ]
   },
@@ -2051,11 +2059,11 @@
    ],
    "pagine": [
     {
-     "candidati": 2,
+     "candidati": 3,
      "url": "https://www.upipa.tn.it/Bacheca/Concorsi"
     },
     {
-     "candidati": 1,
+     "candidati": 0,
      "url": "https://www.upipa.tn.it/Bacheca/Concorsi/(offset)/10"
     }
    ],
@@ -2091,7 +2099,7 @@
    "scartati": []
   }
  },
- "richieste": 101,
+ "richieste": 102,
  "strutture": {
   "saltato": "aggiornato il 2026-11-22"
  }

@@ -516,6 +516,16 @@
   ],
   "via": "gmail"
  },
+ "s:99e70ff41cc8": {
+  "a": [
+   "info@apsptaio.org"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-24",
+  "rif": "R-99e70ff4",
+  "risposte": [],
+  "via": "gmail"
+ },
  "s:9cee32bc6a1e": {
   "a": [
    "direttore@centroservizimale.it",
@@ -856,6 +866,16 @@
     "turni": null
    }
   ],
+  "via": "gmail"
+ },
+ "s:e33293bf5356": {
+  "a": [
+   "coordinatore@apsptaio.org"
+  ],
+  "automatica": true,
+  "inviata_il": "2026-11-24",
+  "rif": "R-e33293bf",
+  "risposte": [],
   "via": "gmail"
  },
  "s:e9415d518306": {
