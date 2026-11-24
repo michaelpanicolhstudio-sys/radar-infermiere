@@ -31,7 +31,7 @@ CAMPI_DAL_DOPPIONE = {"compenso": "compenso", "euro_ora": None, "email": "email"
 # Tra annunci diversi dello stesso datore si prendono solo i dati del datore, mai compenso o date.
 CAMPI_DEL_DATORE = {"email": "email", "pec": "PEC", "struttura": None}
 # Si aumenta quando cambiano le regole di pertinenza: le pagine già scartate vengono riaperte una volta.
-VERSIONE_REGOLE = 11
+VERSIONE_REGOLE = 12  # 12: titoli in maiuscolo riscritti, tagli a fine parola (24/11)
 VERSIONE_PDF = 5      # cambia quando migliorano le regole: i PDF già letti vengono riletti
 # Siti-bacheca: i loro indirizzi email non sono il contatto della struttura che cerca personale.
 DOMINI_BACHECA = {"opi.tn.it", "opibz.it", "upipa.tn.it", "suedtirolerjobs.it", "fnopi.it", "google.com"}
@@ -153,7 +153,7 @@ def _costruisci(cand: dict, testo: str, pubblicato, fonte: dict, cfg: dict, comu
                 controlla_ruolo: bool = True) -> tuple[dict | None, str | None]:
     """Ritorna (annuncio, None) oppure (None, motivo dello scarto)."""
     parole = cfg["parole"]
-    titolo = cand["titolo"]
+    titolo = estrai.titolo_leggibile_maiuscolo(cand["titolo"], comuni)  # ASUIT 24/11: avvisi tutti in maiuscolo
     corpo = testo or cand.get("sommario", "")
     tutto = f"{titolo} {cand.get('sommario', '')} {testo}"
     pdf_utile = bool(da_pdf) and da_pdf.get("caratteri", 0) >= 100

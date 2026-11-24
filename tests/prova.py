@@ -1046,5 +1046,23 @@ verifica("email: la provincia al posto di «zona n.d.»", uscite._dettagli(_rg),
          "contratto n.d., compenso n.d., provincia di Trento (comune n.d.)")
 verifica("provincia: solo se manca il comune", (motore.provincia_senza_comune(_iq),
          motore.provincia_senza_comune({**_iq, "zona": "Trento"}), motore.provincia_senza_comune({"avvisi": []})), ("Trento", None, None))
+
+# 24/11: la prima delle «5 migliori» (ASUIT Cles, 40 €/h) aveva il titolo tutto in maiuscolo, tagliato a metà
+# parola («…DURANTE LA ST»): nell'email e nell'app si leggeva male. Sigle, numeri e nomi dei comuni restano.
+_asuit_t = ("AVVISO DI SELEZIONE PUBBLICA PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONALI A INFERMIERI DA DESTINARE AL "
+            "PERCORSO DI FAST TRACK ORTOPEDICO-TRAUMATOLOGICO PRESSO L’OSPEDALE DI CLES DURANTE LA STAGIONE INVERNALE 2026/2027")
+verifica("titolo in maiuscolo: frase leggibile, comuni con la maiuscola",
+         [estrai.titolo_leggibile_maiuscolo(t, COMUNI) for t in ("SC 03/26 AVVISO APERTO INFERMIERE CAVALESE",
+          "INCARICHI A INFERMIERI PER MADONNA DI CAMPIGLIO E SEN JAN DI FASSA (ASUIT)", "Infermiere/a – part-time")],
+         ["SC 03/26 Avviso aperto infermiere Cavalese",
+          "Incarichi a infermieri per Madonna di Campiglio e Sen Jan di Fassa (ASUIT)", "Infermiere/a – part-time"])
+verifica("titolo lungo: tagliato a fine parola, con i puntini",
+         (len(estrai.taglia_titolo(_asuit_t)) <= 200, estrai.taglia_titolo(_asuit_t).endswith("DI CLES DURANTE LA…"), estrai.taglia_titolo("Breve")),
+         (True, True, "Breve"))
+_fp = {"nome": "ASUIT – bandi e concorsi", "tipo": "elenco", "url": "https://www.asuit.tn.it/bandi-concorsi", "affidabilita": "ufficiale"}
+_as = motore._costruisci({"titolo": estrai.taglia_titolo(_asuit_t), "url": "https://www.asuit.tn.it/bandi-concorsi/avviso-15"},
+                         "Incarichi libero professionali a infermieri presso l’Ospedale di Cles. Compenso orario 40 euro.", None, _fp, CFG, COMUNI, OGGI, [])[0]
+verifica("annuncio: titolo in maiuscolo riscritto", _as["titolo"][:60], "Avviso di selezione pubblica per il conferimento di incarich")
+verifica("annuncio: il comune nel titolo resta maiuscolo", "di Cles durante" in _as["titolo"], True)
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

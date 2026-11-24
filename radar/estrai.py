@@ -374,7 +374,7 @@ def leggi_pagina(html: str, base: str = "", intera_se_vuota: bool = False) -> di
             tag.decompose()
         testo = pulisci(soup.body.get_text(" "))
     testo = taglia_correlati(testo)
-    return {"titolo": titolo[:200], "testo": testo, "pubblicato": pubblicato, "pdf": pdf}
+    return {"titolo": taglia_titolo(titolo), "testo": testo, "pubblicato": pubblicato, "pdf": pdf}
 
 
 def link_da_elenco(html: str, base: str, parole: list[str], tutti: bool) -> list[dict]:
@@ -416,7 +416,7 @@ def link_da_elenco(html: str, base: str, parole: list[str], tutti: bool) -> list
         else:
             if len(titolo) < 6 or not contiene(titolo + " " + p.path.replace("-", " "), parole):
                 continue
-        visti[norm] = {"url": url, "titolo": titolo[:200], "pdf": p.path.lower().endswith(".pdf")}
+        visti[norm] = {"url": url, "titolo": taglia_titolo(titolo), "pdf": p.path.lower().endswith(".pdf")}
     return list(visti.values())
 
 
@@ -523,7 +523,7 @@ def leggi_feed(xml: str) -> list[dict]:
                         quando = None
         if link:
             url = _url_vero(link)
-            voci.append({"url": url, "titolo": titolo[:200], "sommario": sommario[:600],
+            voci.append({"url": url, "titolo": taglia_titolo(titolo), "sommario": sommario[:600],
                          "pubblicato": quando, "pdf": urlparse(url).path.lower().endswith(".pdf")})
     return voci
 
@@ -967,11 +967,49 @@ def nome_leggibile(nome: str | None) -> str | None:
     return _minuscole_nome(nome)
 
 
-def titolo_leggibile_maiuscolo(titolo: str) -> str:
-    """Un titolo tutto in maiuscolo («INFERMIERE M/F», Indeed 24/11) si riscrive leggibile; sigle come M/F restano."""
-    if titolo and not re.search(r"[a-zà-ü]", titolo) and len(re.sub(r"\W", "", titolo)) > 3:
-        return _minuscole_nome(titolo)
-    return titolo
+_SIGLE_TITOLO = {"ASUIT", "APSS", "APSP", "ASDAA", "SABES", "RSA", "RSAO", "OSS", "OSA", "INPS", "OPI", "UPIPA", "ÖBPB",
+                 "ENPAPI", "CCNL", "AIOP", "IVA", "TN", "BZ", "UO", "SC", "SLP", "SRL", "SPA", "ONLUS", "ASL", "ULSS", "PS"}
+
+
+def _parola_titolo(p: str, prima: bool, seguente: str) -> str:
+    nudo = re.sub(r"\W", "", p)
+    if (nudo.upper() in _SIGLE_TITOLO or "." in p or re.search(r"\d", p) or re.fullmatch(r"\W*[A-Z](?:/[A-Z])+\W*", p)
+            or (nudo.isalpha() and len(nudo) <= 3 and re.match(r"\d", seguente))):
+        return p  # sigle e numeri: «SC 03/26», «M/F», «A.P.S.P.», «ASUIT»
+    p = p.lower()
+    return re.sub(r"^(\W*)(\w)", lambda m: m.group(1) + m.group(2).upper(), p) if prima else p
+
+
+def taglia_titolo(titolo: str, massimo: int = 200) -> str:
+    """Accorcia un titolo troppo lungo a fine parola, con «…» (ASUIT 24/11: «…DURANTE LA ST»)."""
+    if len(titolo) <= massimo:
+        return titolo
+    corto = titolo[:massimo - 1]
+    if " " in corto and not titolo[massimo - 1].isspace():
+        corto = corto.rsplit(" ", 1)[0]
+    return corto.rstrip(" ,;:–—-") + "…"
+
+
+def titolo_leggibile_maiuscolo(titolo: str, comuni: list[dict] | None = None) -> str:
+    """Un titolo tutto in maiuscolo («INFERMIERE M/F», Indeed 24/11; avvisi ASUIT) si riscrive come frase:
+    maiuscola all'inizio, sigle e numeri intatti, nomi dei comuni con la maiuscola (se passati)."""
+    if not titolo or re.search(r"[a-zà-ü]", titolo) or len(re.sub(r"\W", "", titolo)) <= 3:
+        return titolo
+    parole, uscita, inizio = titolo.split(), [], True
+    for i, p in enumerate(parole):
+        nuova = _parola_titolo(p, inizio, parole[i + 1] if i + 1 < len(parole) else "")
+        inizio = inizio and nuova == p  # la maiuscola va alla prima parola che non è una sigla
+        uscita.append(nuova)
+    frase = " ".join(uscita)
+    nomi = {n for c in comuni or [] for n in (c.get("nomi") or [c["nome"]])}
+    nomi |= {unicodedata.normalize("NFKD", n).encode("ascii", "ignore").decode() for n in nomi}  # «Sèn Jan» scritto «SEN JAN»
+    for nome in sorted(nomi, key=len, reverse=True):
+        if len(nome) < 4:
+            continue  # «Ala», «Dro»: parole troppo comuni per riconoscerle in un titolo
+        schema = r"(?<![\wà-ü])" + re.escape(nome) + r"(?![\wà-ü])"
+        frase = re.sub(schema, lambda m: " ".join(w if w.lower() in _PAROLE_PICCOLE else w[:1].upper() + w[1:]
+                                                  for w in m.group(0).split(" ")), frase, flags=re.I)
+    return frase
 
 
 def estrai_datore_da_testo(testo: str) -> str | None:
