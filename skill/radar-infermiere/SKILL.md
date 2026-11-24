@@ -61,6 +61,7 @@ Prima di tutto: «preparami / prepariamo» NON è «invia». Prepara la lettera,
 
 ## App e stato delle strutture
 - data/esiti.json: per ogni chiave della struttura `esito` (da fare, sì, più avanti, no, da leggere, in attesa), `prossimo` (una frase) e `aggiornato`. Vince sulla lettura automatica finché la struttura non riscrive. Aggiornalo dopo ogni risposta letta o inviata: è ciò che Michael vede in Oggi e Contatti.
+- Chi chiede il CV aspetta Michael: senza esito a mano l'app mostra «Tocca a te» finché in `mie_risposte` non c'è una sua risposta dello stesso giorno o dopo, poi «Hai risposto». Le risposte mandate dal telefono il Radar non le vede: se Michael dice di aver già mandato il CV, scrivilo in data/esiti.json («più avanti» o «sì», «CV inviato il …»).
 - Gli appuntamenti fissati (colloqui, telefonate) vanno nel calendario personale in arancione (colorId 6), una sola volta: prima cerca se esiste già.
 
 ## Report e allarmi
