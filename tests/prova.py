@@ -1064,5 +1064,38 @@ _as = motore._costruisci({"titolo": estrai.taglia_titolo(_asuit_t), "url": "http
                          "Incarichi libero professionali a infermieri presso l’Ospedale di Cles. Compenso orario 40 euro.", None, _fp, CFG, COMUNI, OGGI, [])[0]
 verifica("annuncio: titolo in maiuscolo riscritto", _as["titolo"][:60], "Avviso di selezione pubblica per il conferimento di incarich")
 verifica("annuncio: il comune nel titolo resta maiuscolo", "di Cles durante" in _as["titolo"], True)
+# 25/11: l'unica novità (Indeed) era «INFERMIERE - Trento e provincia» di Sol spa: il titolo non era tutto
+# in maiuscolo, quindi la regola del 24/11 non scattava. Anche i pezzi in maiuscolo dentro un titolo misto
+# si riscrivono: parola del ruolo → frase; nomi di più parole («OPERA ROMANI», «EURAC RESEARCH») → nome leggibile.
+# Sigle (ASUIT, CCNL AIOP, A.P.S.P.) e nomi singoli («Levico CURAE», «IQVIA Italia») restano come sono.
+verifica("titolo misto: pezzi in maiuscolo riscritti",
+         [estrai.titolo_leggibile_maiuscolo(t, COMUNI) for t in (
+             "INFERMIERE - Trento e provincia", "Cercasi INFERMIERI a Trento",
+             "A.P.S.P. “OPERA ROMANI” – Nomi TN – bando di concorso",
+             "Study nurse @Bolzano – EURAC RESEARCH",
+             "Fondo Ospedale della S.S. Trinità RESIDENZA PER ANZIANI ANNENBERG LACES – graduatoria",
+             "A.P.S.P. “Levico CURAE” – Levico Terme (TN) – selezione", "IQVIA Italia Infermiere per attività domiciliari",
+             "Personale infermieristico a tempo indeterminato (CCNL AIOP)", "INPS – Ricerca infermiere/a",
+             "APSP di Primiero - Infermiere")],
+         ["Infermiere - Trento e provincia", "Cercasi infermieri a Trento",
+          "A.P.S.P. “Opera Romani” – Nomi TN – bando di concorso",
+          "Study nurse @Bolzano – Eurac Research",
+          "Fondo Ospedale della S.S. Trinità Residenza per anziani Annenberg Laces – graduatoria",
+          "A.P.S.P. “Levico CURAE” – Levico Terme (TN) – selezione", "IQVIA Italia Infermiere per attività domiciliari",
+          "Personale infermieristico a tempo indeterminato (CCNL AIOP)", "INPS – Ricerca infermiere/a",
+          "APSP di Primiero - Infermiere"])
+
+# 25/11: Casa Cristani (24/11) «Al momento non abbiamo necessità di ulteriore personale infermieristico; terremo
+# comunque in debita considerazione la Sua disponibilità … per eventuali future esigenze»: Michael l'ha messa
+# «più avanti», la lettura automatica diceva «no». Chi dice che terrà la disponibilità lascia una porta aperta;
+# «coperto da personale dipendente» resta un no anche se promettono di ricontattare.
+verifica("resoconto: «ora no, ma terremo la sua disponibilità» è più avanti",
+         [invio.leggi_esito(t)["esito"] for t in (
+             "Al momento non abbiamo necessità di ulteriore personale infermieristico; terremo comunque in debita "
+             "considerazione la Sua disponibilità e la Sua proposta per eventuali future esigenze.",
+             "Al momento non abbiamo bisogno, ma terremo presente la sua candidatura.",
+             "Al momento il servizio infermieristico è coperto da personale dipendente. Terremo presente la sua disponibilità.",
+             "Al momento non abbiamo necessità.")],
+         ["più avanti", "più avanti", "no", "no"])
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

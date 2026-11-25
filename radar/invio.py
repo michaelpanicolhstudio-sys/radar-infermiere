@@ -204,6 +204,9 @@ RE_NO_ORA = re.compile(r"non\s+(?:abbiamo|vi\s+è|c['’]\s*è|ci\s+sono|si\s+ra
                        r"al\s+completo|copert[oi]\s+da\s+personale|non\s+(?:è|e)\s+(?:una\s+struttura\s+)?sanitaria|non\s+sanitari[ao]", re.I)
 RE_NO_DEFINITIVO = re.compile(r"non\s+sanitari[ao]|non\s+(?:è|e)\s+(?:una\s+struttura\s+)?sanitaria|non\s+collaboriamo|"
                               r"non\s+(?:ci\s+avvaliamo|utilizziamo)\s+(?:di\s+)?(?:liberi|libero|infermieri)", re.I)
+# «Terremo (in debita considerazione / presente) la Sua disponibilità / candidatura» (Cristani 24/11).
+RE_TERREMO = re.compile(r"\bterr(?:emo|ò|o)\s+(?:comunque\s+)?(?:in\s+(?:debita\s+|dovuta\s+)?considerazione|presente|conto)[^.!?\n]{0,40}?"
+                        r"(?:disponibilit|candidatur|propost|curricul|nominativ)", re.I)
 RE_CV = re.compile(r"curricul|\bcv\b|lebenslauf", re.I)
 # Una richiesta del CV è un passo per Michael (Città Azzurra, Griesfeld 23/11); «averci inviato il CV» no.
 RE_CHIEDE_CV = re.compile(r"(?:\binviar\w*|\binvii\b|\bmandar\w*|\bmandi\b|\btrasmetter\w*|\btrasmetta\b|\bgir[ai]\b|\ballegar\w*|"
@@ -221,8 +224,13 @@ def _esito(testo: str, euro_ora) -> str:
         return "sì"
     no_ora = RE_NO_ORA.search(testo) or RE_NO.search(testo)
     if no_ora:
-        # «Ora no, ma mandi il CV / un'offerta»: resta una porta aperta.
-        return "più avanti" if RE_CV.search(testo) or re.search(r"offerta\s+per", testo, re.I) else "no"
+        # «Ora no, ma mandi il CV / un'offerta / terremo la sua disponibilità»: resta una porta aperta
+        # (Cristani 24/11). «Coperto da personale dipendente» resta un no anche se promettono di ricontattare.
+        if RE_CV.search(testo) or re.search(r"offerta\s+per", testo, re.I):
+            return "più avanti"
+        if RE_TERREMO.search(testo) and not re.search(r"copert[oai]\s+da\s+personale", testo, re.I):
+            return "più avanti"
+        return "no"
     if RE_COLLABORA_LP.search(testo) or RE_SI.search(testo):
         return "sì"
     if RE_CV.search(testo):
