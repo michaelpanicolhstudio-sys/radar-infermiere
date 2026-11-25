@@ -1112,5 +1112,12 @@ verifica("ore al mese: Monatsstunden", estrai.estrai_turni("ca. 120 Monatsstunde
 verifica("ore al mese: uno stipendio mensile non sono ore", estrai.estrai_turni("2.229,40 euro lordi al mese")[0], None)
 verifica("ore al mese: il punteggio non scende se c'è solo il monte ore",
          punteggio._turni(estrai.estrai_turni("minimo di 60 ore/mese")[1], "min. 60 h/mese")[0] >= 0.33, True)
+
+# 25/11 sera: la pagina Martinsbrunn (Stiftung St. Elisabeth) ora elenca «Krankenpfleger/Krankenpflegerin (m/w/d)»
+# ed è entrata tra le novità col titolo del sito «Karriere & Jobs - Stiftung St. Elisabeth», che non dice che c'è un
+# posto da infermiere. Le pagine fisse con più offerte hanno il titolo scritto in config.yaml (regola del 14/11).
+_cfg_fonti = {f["nome"]: f for f in yaml.safe_load(open(Path(__file__).resolve().parent.parent / "config.yaml", encoding="utf-8"))["fonti"]}
+verifica("titolo fisso: Martinsbrunn dice che cercano un infermiere",
+         "Krankenpfleger" in (_cfg_fonti["Martinsbrunn Merano – Job & Karriere"].get("titolo") or ""), True)
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)
