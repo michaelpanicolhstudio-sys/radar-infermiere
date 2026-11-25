@@ -51,6 +51,7 @@ Prima di tutto: «preparami / prepariamo» NON è «invia». Prepara la lettera,
 - Una risposta è in attesa se non c'è una `mie_risposte` con data uguale o successiva.
 - Conta solo ciò che ha scritto la struttura: il testo salvato può contenere sotto la lettera di Michael citata («Il giorno … ha scritto:» anche su due righe, «From:», «Da "…"», o la lettera incollata senza intestazione), la firma con P.IVA e la nota legale. «Immediatamente / subito» della nota legale, «P.IVA» della firma e «libero professionista» dell'oggetto citato non dicono né il rapporto né la data d'inizio: se la struttura non lo scrive, «n.d.».
 - Esito: «ora no, ma mandi il CV / un'offerta / terremo presente la sua disponibilità» è «più avanti»; «coperto da personale dipendente» o «non collaboriamo con liberi professionisti» è «no», anche se promettono di ricontattare.
+- Riporta sempre turni e monte ore al mese se la struttura li scrive («7–15 turni/mese da 8 h, max 195 h/mese», «min. 60–80 h/mese»): per la partita IVA sono il dato che decide il guadagno. Se non li scrive, «n.d.».
 
 ## Rispondere a una struttura (solo dopo «invia»)
 - Dispatch con rispondi_rif = codice R-xxxx, rispondi_testo = testo, rispondi_allegato = nome file in data/allegati/ (es. CV_Michael_Panico_infermiere.pdf).
@@ -74,6 +75,7 @@ Prima di tutto: «preparami / prepariamo» NON è «invia». Prepara la lettera,
 
 ## Aggiungere strutture
 - Riga in data/strutture.csv con note «Scelta N …» o «Scartata per ora: motivo». Se il nome esiste già, correggi la riga esistente (altrimenti la lettera non entra in coda).
+- Una pagina «lavora con noi» aggiunta come fonte in config.yaml ha sempre un `titolo:` che dice che cercano (anche) un infermiere, ricavato solo da ciò che dice la pagina; se la struttura ha più sedi e la pagina non dice quale, la zona va segnata come da verificare.
 
 ## Lezioni
 Leggi LEZIONI.md e README.md del repo prima di cambiare codice; aggiungi lì ogni nuovo errore con la regola generale.
