@@ -990,10 +990,50 @@ def taglia_titolo(titolo: str, massimo: int = 200) -> str:
     return corto.rstrip(" ,;:–—-") + "…"
 
 
+_RUOLO_MAIUSCOLO = re.compile(r"(?:INFERMIER|KRANKENPFLEG|PFLEGE|PERSONALE)[A-ZÀ-Ü/]*", re.I)
+
+
+def _parola_maiuscola(p: str) -> bool:
+    """Una parola scritta tutta in maiuscolo che non è una sigla («OPERA», non «ASUIT», «A.P.S.P.», «M/F», «03/26»)."""
+    nudo = re.sub(r"\W", "", p)
+    return (len(nudo) >= 2 and nudo.isalpha() and nudo.isupper() and "." not in p and "/" not in p
+            and nudo.upper() not in _SIGLE_TITOLO)
+
+
+def _maiuscole_nel_titolo(titolo: str) -> str:
+    """In un titolo misto, i pezzi in maiuscolo (Sol spa, Indeed 25/11: «INFERMIERE - Trento e provincia»):
+    se c'è la parola del ruolo sono una frase («INFERMIERE» → «Infermiere» a inizio frase, «infermiere» dentro);
+    altrimenti due o più parole di fila sono un nome («OPERA ROMANI» → «Opera Romani»). Sigle e nomi singoli restano."""
+    parole = titolo.split(" ")
+    uscita, i = [], 0
+    while i < len(parole):
+        j = i
+        while j < len(parole) and _parola_maiuscola(parole[j]):
+            j += 1
+        pezzo = parole[i:j]
+        ruolo = any(_RUOLO_MAIUSCOLO.match(re.sub(r"^\W+", "", x)) for x in pezzo)
+        if len(pezzo) >= 2 and not ruolo:
+            uscita.append(_minuscole_nome(" ".join(pezzo)))
+            i = j
+            continue
+        if ruolo:  # «CERCHIAMO INFERMIERE:I (m/f/d)» → «Cerchiamo infermiere:i (m/f/d)»: è una frase, non un nome
+            frase = " ".join(pezzo).lower()
+            if i == 0 or re.fullmatch(r"[-–—|:]+", parole[i - 1] or ""):
+                frase = re.sub(r"^(\W*)(\w)", lambda m: m.group(1) + m.group(2).upper(), frase)
+            uscita.append(frase)
+            i = j
+            continue
+        uscita.append(parole[i])
+        i += 1
+    return " ".join(uscita)
+
+
 def titolo_leggibile_maiuscolo(titolo: str, comuni: list[dict] | None = None) -> str:
     """Un titolo tutto in maiuscolo («INFERMIERE M/F», Indeed 24/11; avvisi ASUIT) si riscrive come frase:
     maiuscola all'inizio, sigle e numeri intatti, nomi dei comuni con la maiuscola (se passati)."""
-    if not titolo or re.search(r"[a-zà-ü]", titolo) or len(re.sub(r"\W", "", titolo)) <= 3:
+    if titolo and re.search(r"[a-zà-ü]", titolo):
+        return _maiuscole_nel_titolo(titolo)
+    if not titolo or len(re.sub(r"\W", "", titolo)) <= 3:
         return titolo
     parole, uscita, inizio = titolo.split(), [], True
     for i, p in enumerate(parole):
