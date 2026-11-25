@@ -1,5 +1,6 @@
 # Cambiamenti della skill radar-infermiere (dal più recente)
 
+- 2026-11-25 — «Controllare le risposte»: «ora no, ma terremo presente la sua disponibilità» è «più avanti», «coperto da personale dipendente» resta «no». «Report e allarmi»: anche i titoli solo in parte maiuscoli si riportano leggibili.
 - 2026-11-24 (sera) — «Report e allarmi»: con la sola provincia si scrive «provincia di … (comune n.d.)» invece di «zona n.d.»; i titoli tutti in maiuscolo si riportano come frase leggibile.
 - 2026-11-24 — «App e stato delle strutture»: una richiesta del CV è «Tocca a te» finché Michael non risponde; se l'ha mandato dal telefono va scritto in data/esiti.json.
 - 2026-11-23 — «Controllare le risposte»: si legge solo il testo della struttura (non la lettera citata, la firma con P.IVA o la nota legale), che non decidono rapporto né data d'inizio. «Report»: un annuncio con la sola provincia resta con zona n.d. («comune non indicato»).
