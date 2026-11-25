@@ -2932,7 +2932,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 5,
+   "v": 6,
    "zona": "Levico Terme"
   },
   "data_novita": "2026-11-13",
@@ -2987,7 +2987,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-04-22",
   "punteggio": 39,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2026-05-22",
   "scadenza_frase": "e selezioni ”. Il termine di presentazione della domanda scade il giorno 22 maggio 2026 alle ore 12",
   "segnali_turni": {
@@ -4052,7 +4052,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, alloggio",
-   "v": 5,
+   "v": 6,
    "zona": null
   },
   "data_novita": "2026-11-13",
@@ -4107,7 +4107,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-01-12",
   "punteggio": 32,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
