@@ -1,530 +1,516 @@
 {
  "APSP Margherita Grazioli (Trento) – lavora con noi": {
-  "giorni_a_zero": 119,
+  "giorni_a_zero": 120,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "APSP Vannetti Rovereto – concorsi e avvisi": {
-  "giorni_a_zero": 119,
+  "giorni_a_zero": 120,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "ASUIT – bandi e concorsi": {
   "giorni_a_zero": 0,
-  "letti": 3,
+  "letti": 6,
   "massimo_candidati": 6,
   "pertinenti": 4,
-  "regole": 11,
-  "riusati": 1,
+  "regole": 12,
+  "riusati": 0,
   "scartati": 2,
   "scarti": {
    "7842efa7904b": {
-    "d": "2026-11-19",
+    "d": "2026-11-25",
     "m": "ruolo diverso (dal titolo)",
     "t": "Ricognizione interna al fine dell’acquisizione di disponibilità da parte di dirigenti medi",
-    "tl": "Ricognizione interna al fine dell’acquisizione di disponibilità da parte di dirigenti medici per lo svolgimento di prestazioni orarie aggiuntive nelle attività di ortopedia e traumatologia presso tutt",
+    "tl": "Ricognizione interna al fine dell’acquisizione di disponibilità da parte di dirigenti medici per lo svolgimento di prestazioni orarie aggiuntive nelle attività di ortopedia e traumatologia presso…",
     "u": "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-1"
    },
    "b5a61d84e016": {
-    "d": "2026-11-19",
+    "d": "2026-11-25",
     "m": "non riguarda infermieri",
     "t": "AVVISO DI SELEZIONE PUBBLICA SELEZIONE PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONA",
-    "tl": "AVVISO DI SELEZIONE PUBBLICA SELEZIONE PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONALI A LAUREATI IN MEDICINA E CHIRURGIA PER LO SVOLGIMENTO DI ATTIVITÀ SANITARIA PRESSO L’OSPEDALE DI COMUNITÀ D",
+    "tl": "AVVISO DI SELEZIONE PUBBLICA SELEZIONE PER IL CONFERIMENTO DI INCARICHI LIBERO PROFESSIONALI A LAUREATI IN MEDICINA E CHIRURGIA PER LO SVOLGIMENTO DI ATTIVITÀ SANITARIA PRESSO L’OSPEDALE DI COMUNITÀ…",
     "u": "https://www.asuit.tn.it/bandi-concorsi/avviso-di-selezione-pubblica-selezione-il-conferimento-di-incarichi-libero-1"
    }
   },
   "ultimi_candidati": 6,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Altenheim Kaltern (Caldaro) – Karriere": {
   "giorni_a_zero": 0,
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Brixsana Bressanone – Karriere": {
   "giorni_a_zero": 0,
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Case di riposo dell'Alto Adige (VdS) – offerte": {
   "giorni_a_zero": 0,
   "letti": 4,
   "massimo_candidati": 8,
   "pertinenti": 4,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 4,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 1": {
-  "giorni_a_zero": 122,
+  "giorni_a_zero": 123,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 10": {
-  "giorni_a_zero": 95,
+  "giorni_a_zero": 96,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 11": {
-  "giorni_a_zero": 95,
+  "giorni_a_zero": 96,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 12": {
-  "giorni_a_zero": 95,
+  "giorni_a_zero": 96,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 13": {
-  "giorni_a_zero": 95,
+  "giorni_a_zero": 96,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 14": {
-  "giorni_a_zero": 95,
+  "giorni_a_zero": 96,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 15": {
-  "giorni_a_zero": 95,
+  "giorni_a_zero": 96,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 16": {
-  "giorni_a_zero": 25,
+  "giorni_a_zero": 26,
   "letti": 0,
   "massimo_candidati": 1,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
-  "scarti": {
-   "61598cf4793c": {
-    "d": "2026-11-19",
-    "m": "notizia, non un'offerta di lavoro",
-    "t": "Dalla Carta di Riva alle prossime sfide: FEU propone un'alleanza per il futuro dell ...",
-    "u": "https://nursetimes.org/dalla-carta-di-riva-alle-prossime-sfide-feu-propone-unalleanza-per-il-futuro-dellemergenza-urgenza"
-   }
-  },
+  "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 17": {
-  "giorni_a_zero": 95,
+  "giorni_a_zero": 96,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 18": {
-  "giorni_a_zero": 95,
+  "giorni_a_zero": 96,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 19": {
-  "giorni_a_zero": 95,
+  "giorni_a_zero": 96,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 2": {
-  "giorni_a_zero": 122,
+  "giorni_a_zero": 123,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 3": {
-  "giorni_a_zero": 39,
+  "giorni_a_zero": 40,
   "letti": 0,
   "massimo_candidati": 1,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 4": {
-  "giorni_a_zero": 71,
+  "giorni_a_zero": 72,
   "letti": 0,
   "massimo_candidati": 2,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 5": {
-  "giorni_a_zero": 39,
+  "giorni_a_zero": 40,
   "letti": 0,
   "massimo_candidati": 2,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 6": {
-  "giorni_a_zero": 95,
+  "giorni_a_zero": 96,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 7": {
-  "giorni_a_zero": 95,
+  "giorni_a_zero": 96,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 8": {
-  "giorni_a_zero": 95,
+  "giorni_a_zero": 96,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Google Alerts 9": {
-  "giorni_a_zero": 18,
+  "giorni_a_zero": 19,
   "letti": 0,
   "massimo_candidati": 1,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
-  "scarti": {
-   "68c99628e105": {
-    "d": "2026-11-21",
-    "m": "notizia, non un'offerta di lavoro",
-    "t": "CCNL ARIS RSA , riparte il rinnovo: nuove tutele per infermieri e OSS - Nurse Times",
-    "u": "https://nursetimes.org/rinnovo-ccnl-aris-rsa-tutele-infermieri-oss"
-   }
-  },
+  "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Gruppo Bonvicini – lavora con noi": {
   "giorni_a_zero": 0,
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Martinsbrunn Merano – Job & Karriere": {
   "giorni_a_zero": 0,
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Melittaklinik Bolzano – lavora con noi": {
   "giorni_a_zero": 0,
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "OPI Bolzano – offerte di lavoro": {
   "giorni_a_zero": 0,
-  "letti": 3,
+  "letti": 20,
   "massimo_candidati": 20,
   "pertinenti": 14,
-  "regole": 11,
-  "riusati": 11,
+  "regole": 12,
+  "riusati": 0,
   "scartati": 6,
   "scarti": {
    "5bafa01d710d": {
-    "d": "2026-11-19",
+    "d": "2026-11-25",
     "m": "ruolo diverso (dal titolo)",
     "t": "CERCHIAMO UN/UNA RESPONSABILE DI PIANO",
     "u": "https://www.opibz.it/cerchiamo-un-una-responsabile-di-piano/"
    },
    "7cf9e8beb729": {
-    "d": "2026-11-19",
+    "d": "2026-11-25",
     "m": "ruolo diverso (dal titolo)",
     "t": "Avviso – Collegio tecnico – Dirigenza tecnico-assistenziale",
     "u": "https://www.opibz.it/avviso-collegio-tecnico-dirigenza-tecnico-assistenziale/"
    },
    "8cf6eedf9c7c": {
-    "d": "2026-11-19",
+    "d": "2026-11-25",
     "m": "ruolo diverso (coordinamento, direzione o comando)",
     "t": "INPS – Ricerca infermiere/a",
     "u": "https://www.opibz.it/inps-ricerca-infermiere-a/"
    },
    "8da56e6bf004": {
-    "d": "2026-11-19",
+    "d": "2026-11-25",
     "m": "ruolo diverso (dal titolo)",
     "t": "Ricerca di funzionario sanitario in comando presso l’INPS di Bolzano",
     "u": "https://www.opibz.it/ricerca-di-funzionario-sanitario-in-comando-presso-linps-di-bolzano/"
    },
    "8f03c58d63f6": {
-    "d": "2026-11-19",
+    "d": "2026-11-25",
     "m": "fuori regione",
     "t": "Infermiere a Caorle",
     "u": "https://www.opibz.it/infermiere-a-caorle/"
    },
    "9a4a2d3719fa": {
-    "d": "2026-11-19",
+    "d": "2026-11-25",
     "m": "ruolo diverso (dal titolo)",
     "t": "Cerchiamo un RESPONSABILE TECNICO-ASSISTENZIALE",
     "u": "https://www.opibz.it/cerchiamo-un-responsabile-tecnico-assistenziale/"
    }
   },
   "ultimi_candidati": 20,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "OPI Trento – annunci di lavoro": {
   "giorni_a_zero": 0,
-  "letti": 4,
+  "letti": 15,
   "massimo_candidati": 16,
   "pertinenti": 12,
-  "regole": 11,
-  "riusati": 8,
+  "regole": 12,
+  "riusati": 0,
   "scartati": 3,
   "scarti": {
    "3ca69f8fe699": {
-    "d": "2026-11-19",
+    "d": "2026-11-25",
     "m": "ruolo diverso (coordinamento, direzione o comando)",
     "t": "Società Cooperativa Sociale Stella Montis Fondo – Borgo d’Ananunia (TN) – ricerca di perso",
     "tl": "Società Cooperativa Sociale Stella Montis Fondo – Borgo d’Ananunia (TN) – ricerca di personale",
     "u": "https://opi.tn.it/societa-cooperativa-sociale-stella-montis-fondo-borgo-dananunia-tn-ricerca-di-personale/"
    },
    "b8072167c3aa": {
-    "d": "2026-11-24",
+    "d": "2026-11-25",
     "m": "fuori regione",
     "t": "ParaMedica Srl – Veneto – Ricerca di personale",
     "u": "https://opi.tn.it/a-p-s-p-redenta-floriani-castel-ivano-concorso-copy/"
    },
    "e330f50b2d56": {
-    "d": "2026-11-19",
+    "d": "2026-11-25",
     "m": "ruolo diverso (dal titolo)",
     "t": "A.P.S.P. Margherita Grazioli – Trento – pubblica selezione per coordinatore",
     "u": "https://opi.tn.it/a-p-s-p-margherita-grazioli-trento-bando-di-concorso/"
    }
   },
   "ultimi_candidati": 15,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Schloss Moos – Jobs (sito della cooperativa)": {
   "giorni_a_zero": 0,
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Schloss Moos – libera professione (suedtirolerjobs)": {
   "giorni_a_zero": 0,
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "UPIPA – avvisi delle APSP": {
-  "giorni_a_zero": 122,
+  "giorni_a_zero": 123,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "UPIPA – concorsi delle APSP": {
   "giorni_a_zero": 0,
-  "letti": 2,
+  "letti": 3,
   "massimo_candidati": 6,
   "pertinenti": 2,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 1,
   "scarti": {
    "f4b8a3261b0d": {
-    "d": "2026-11-19",
+    "d": "2026-11-25",
     "m": "non riguarda infermieri",
     "t": "Selezione pubblica per il conferimento di un incarico libero professionale per Psicologo -",
     "tl": "Selezione pubblica per il conferimento di un incarico libero professionale per Psicologo - APSP di Folgaria",
@@ -532,33 +518,33 @@
    }
   },
   "ultimi_candidati": 3,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Villa Sant'Anna Merano – lavora con noi": {
   "giorni_a_zero": 0,
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  },
  "Vinzenzhaus Bolzano – Jobs": {
   "giorni_a_zero": 0,
   "letti": 1,
   "massimo_candidati": 1,
   "pertinenti": 1,
-  "regole": 11,
+  "regole": 12,
   "riusati": 0,
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-24",
-  "ultimo_ok": "2026-11-24"
+  "ultimo_giro": "2026-11-25",
+  "ultimo_ok": "2026-11-25"
  }
 }
