@@ -58,7 +58,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-06-12",
   "punteggio": 30,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -130,7 +130,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 37,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -216,6 +216,78 @@
   "ultimo_visto": "2026-11-12",
   "url": "https://sabes.onboard.org/it/jobs/byekMD4w",
   "zona": "Bolzano"
+ },
+ "17adcea2170a": {
+  "affidabilita": "struttura",
+  "avvisi": [
+   "Annuncio in tedesco"
+  ],
+  "cambi": [],
+  "cita_tedesco": false,
+  "compenso": null,
+  "contratto": null,
+  "da_pdf": null,
+  "data_novita": "2026-11-25",
+  "datore": "Martinsbrunn (Stiftung St. Elisabeth)",
+  "dettaglio_punteggio": [
+   {
+    "max": 30,
+    "motivo": "contratto non indicato",
+    "punti": 8,
+    "voce": "Contratto"
+   },
+   {
+    "max": 25,
+    "motivo": "compenso orario non indicato",
+    "punti": 5,
+    "voce": "Compenso"
+   },
+   {
+    "max": 20,
+    "motivo": "circa 55 min d'auto",
+    "punti": 5,
+    "voce": "Distanza"
+   },
+   {
+    "max": 15,
+    "motivo": "ore e turni non indicati",
+    "punti": 5,
+    "voce": "Ore e turni"
+   },
+   {
+    "max": 10,
+    "motivo": "sito della struttura",
+    "punti": 8,
+    "voce": "Fonte"
+   }
+  ],
+  "email": null,
+  "estratto": "…/d) Stationsarzt/Stationsärztin (m/w/d) Krankenpfleger/Krankenpflegerin (m/w/d) Aktuell nichts für dich dabei? Initiativbewerbung",
+  "euro_ora": null,
+  "fonte": "Martinsbrunn Merano – Job & Karriere",
+  "id": "17adcea2170a",
+  "impronta": "cc89bac5946d",
+  "in_tedesco": true,
+  "km": 70,
+  "letto_il": "2026-11-25",
+  "minuti": 55,
+  "novita": "nuovo",
+  "pdf_letti": [],
+  "pec": null,
+  "primo_visto": "2026-11-25",
+  "pubblicato": null,
+  "punteggio": 31,
+  "regole": 14,
+  "scadenza": null,
+  "scadenza_frase": null,
+  "segnali_turni": {},
+  "struttura": "RSA o casa di riposo",
+  "tipo_fonte": "pagina",
+  "titolo": "Karriere & Jobs - Stiftung St. Elisabeth",
+  "turni": null,
+  "ultimo_visto": "2026-11-25",
+  "url": "https://www.martinsbrunn.it/job-karriere/",
+  "zona": "Merano"
  },
  "1a836b7c1e81": {
   "affidabilita": "aggregatore",
@@ -322,7 +394,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 5,
+   "v": 6,
    "zona": "Nova Ponente"
   },
   "data_novita": "2026-11-13",
@@ -378,7 +450,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 37,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2026-11-30",
   "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
   "segnali_turni": {
@@ -466,7 +538,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-07-28",
   "punteggio": 61,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -508,7 +580,7 @@
     "notti": true
    },
    "turni": "3 turni (anche notti)",
-   "v": 5,
+   "v": 6,
    "zona": "Meltina"
   },
   "data_novita": "2026-11-13",
@@ -564,7 +636,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 32,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -753,7 +825,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-15",
   "punteggio": 49,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -931,7 +1003,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-06-01",
   "punteggio": 33,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -975,7 +1047,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 5,
+   "v": 6,
    "zona": "Nova Ponente"
   },
   "data_novita": "2026-11-13",
@@ -1032,7 +1104,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 30,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2026-11-30",
   "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
   "segnali_turni": {
@@ -1107,7 +1179,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2024-07-17",
   "punteggio": 39,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1160,7 +1232,7 @@
     "weekend": true
    },
    "turni": "notti, weekend/festivi",
-   "v": 5,
+   "v": 6,
    "zona": "Rovereto"
   },
   "data_novita": null,
@@ -1218,7 +1290,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-16",
   "punteggio": 79,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2026-11-27",
   "scadenza_frase": "Personale dell’Azienda. Proroga termini di scadenza: 27/11/2026 ore 12.00 A",
   "segnali_turni": {
@@ -1367,7 +1439,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 5,
+   "v": 6,
    "zona": "Caldaro"
   },
   "data_novita": "2026-11-13",
@@ -1423,7 +1495,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2024-07-29",
   "punteggio": 42,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1537,7 +1609,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 5,
+   "v": 6,
    "zona": "Caldaro"
   },
   "data_novita": "2026-11-13",
@@ -1593,7 +1665,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-06-25",
   "punteggio": 42,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1780,7 +1852,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": null,
   "punteggio": 40,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1866,7 +1938,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": null,
   "punteggio": 52,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -1910,7 +1982,7 @@
     "pieno": true
    },
    "turni": "36 h/settimana, tempo pieno",
-   "v": 5,
+   "v": 6,
    "zona": "Nomi"
   },
   "data_novita": "2026-11-13",
@@ -1965,7 +2037,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-04-28",
   "punteggio": 39,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2026-05-22",
   "scadenza_frase": "21 – 38060 Nomi (TN), entro e non oltre le ore 12.00 del giorno 22 maggio 2026 A.P.S.P. “O",
   "segnali_turni": {
@@ -2039,7 +2111,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-09-25",
   "punteggio": 33,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -2080,7 +2152,7 @@
     "dodici": true
    },
    "turni": "turni da 12 h, alloggio",
-   "v": 5,
+   "v": 6,
    "zona": "Madonna di Campiglio"
   },
   "data_novita": "2026-11-15",
@@ -2135,7 +2207,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 80,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2026-09-10",
   "scadenza_frase": "di partecipazione scade il giorno 10 settembre 2026 ad ore 23.5",
   "segnali_turni": {
@@ -2321,7 +2393,7 @@
    }
   ],
   "email": "info@schlossmoos.it",
-  "estratto": "…ancer (m/w) Bozen, südtirolweit PEGASUS Krankenpfleger:in (w/m/d) Siculiana, Sizilien ADLER Spa Resorts & Retreats KinderbetreuerIn oder SozialbetreuerIn (w/m/d) Kitas Prad - Teilzeit Prad Sozialgenossenschaft Tagesmütte…",
+  "estratto": "Freiberufliche Tätigkeit in der Pflege Sozialgenossenschaft Zum Heiligen Vinzenz Wiesen, Pfitsch Vollzeit Teilzeit Freelancer Projektarbeit 17.11.2026 Sozialgenossenschaft Zum Heiligen Vinzenz Traustonstr. 190 , 39049 Wi…",
   "euro_ora": null,
   "fonte": "Schloss Moos – libera professione (suedtirolerjobs)",
   "id": "670aca98057e",
@@ -2338,7 +2410,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-18",
   "punteggio": 55,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -2456,7 +2528,7 @@
    "scadenza_frase": "di partecipazione scade il giorno 7 dicembre 2026 ad ore 23.5",
    "segnali_turni": {},
    "turni": null,
-   "v": 5,
+   "v": 6,
    "zona": "Cles"
   },
   "data_novita": "2026-11-23",
@@ -2511,7 +2583,7 @@
   "primo_visto": "2026-11-23",
   "pubblicato": null,
   "punteggio": 82,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2026-12-07",
   "scadenza_frase": "di partecipazione scade il giorno 7 dicembre 2026 ad ore 23.5",
   "segnali_turni": {},
@@ -2667,7 +2739,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-27",
   "punteggio": 27,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -2960,7 +3032,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 5,
+   "v": 6,
    "zona": "Parcines"
   },
   "data_novita": "2026-11-25",
@@ -3015,7 +3087,7 @@
   "primo_visto": "2026-11-25",
   "pubblicato": null,
   "punteggio": 30,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2026-12-15",
   "scadenza_frase": "essere presentate entro le ore 11.00 del 15/12/2026 nella segre",
   "segnali_turni": {
@@ -3058,7 +3130,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 5,
+   "v": 6,
    "zona": "Primiero San Martino di Castrozza"
   },
   "data_novita": "2026-11-13",
@@ -3114,7 +3186,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-11-03",
   "punteggio": 27,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2026-12-04",
   "scadenza_frase": "505,54 kB) Termine di presentazione Venerdì, 04 Dicembre 2026 ore 12:00 I",
   "segnali_turni": {
@@ -3198,7 +3270,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-10-19",
   "punteggio": 30,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -3236,7 +3308,7 @@
    "scadenza_frase": null,
    "segnali_turni": {},
    "turni": null,
-   "v": 5,
+   "v": 6,
    "zona": "Merano"
   },
   "data_novita": "2026-11-13",
@@ -3291,7 +3363,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2024-07-17",
   "punteggio": 30,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -3361,7 +3433,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-06-23",
   "punteggio": 40,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -3405,7 +3477,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 5,
+   "v": 6,
    "zona": "Nova Ponente"
   },
   "data_novita": "2026-11-13",
@@ -3462,7 +3534,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 30,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2026-11-30",
   "scadenza_frase": "30.11.2026 12:00 Uhr Scadenza: 30.11.2026 ore 12:00 T",
   "segnali_turni": {
@@ -3506,7 +3578,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 5,
+   "v": 6,
    "zona": "Laces"
   },
   "data_novita": "2026-11-13",
@@ -3561,7 +3633,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-02-27",
   "punteggio": 32,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2026-03-06",
   "scadenza_frase": "essere pre­sentate entro le ore 12.00 del 06.03.2026 in Segreter",
   "segnali_turni": {
@@ -3602,7 +3674,7 @@
    "scadenza_frase": null,
    "segnali_turni": {},
    "turni": null,
-   "v": 5,
+   "v": 6,
    "zona": "Merano"
   },
   "data_novita": "2026-11-13",
@@ -3658,7 +3730,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2023-09-24",
   "punteggio": 30,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -3876,7 +3948,7 @@
     "weekend": true
    },
    "turni": "weekend/festivi",
-   "v": 5,
+   "v": 6,
    "zona": "Bolzano"
   },
   "data_novita": "2026-11-13",
@@ -3932,7 +4004,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-12-19",
   "punteggio": 40,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2025-12-26",
   "scadenza_frase": "postacert.inps.gov.it entro il termine perentorio di venerdì 26/12/2025. Il bando i",
   "segnali_turni": {
@@ -4080,7 +4152,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 5,
+   "v": 6,
    "zona": "Trento"
   },
   "data_novita": "2026-11-15",
@@ -4136,7 +4208,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 32,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2026-12-31",
   "scadenza_frase": "procedura telematica entro le ore 23.59 del giorno 31 dicembre 2026. Detto term",
   "segnali_turni": {
@@ -4251,7 +4323,7 @@
     "pieno": true
    },
    "turni": "36 h/settimana, tempo pieno",
-   "v": 5,
+   "v": 6,
    "zona": "Rovereto"
   },
   "data_novita": "2026-11-23",
@@ -4306,7 +4378,7 @@
   "primo_visto": "2026-11-23",
   "pubblicato": "2026-11-23",
   "punteggio": 39,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2026-12-04",
   "scadenza_frase": "230,43 kB) Termine di presentazione Venerdì, 04 Dicembre 2026 ore 12:00 I",
   "segnali_turni": {
@@ -4455,7 +4527,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 40,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -4539,7 +4611,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-03-05",
   "punteggio": 49,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -4757,7 +4829,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 33,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -4873,7 +4945,7 @@
    "scadenza_frase": "di partecipazione scade il giorno 15 gennaio 2026 alle ore 23",
    "segnali_turni": {},
    "turni": null,
-   "v": 5,
+   "v": 6,
    "zona": "Madonna di Campiglio"
   },
   "data_novita": "2026-11-25",
@@ -4933,7 +5005,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-01-07",
   "punteggio": 75,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2026-01-15",
   "scadenza_frase": "di partecipazione scade il giorno 15 gennaio 2026 alle ore 23",
   "segnali_turni": {},
@@ -4971,7 +5043,7 @@
    "scadenza_frase": null,
    "segnali_turni": {},
    "turni": null,
-   "v": 5,
+   "v": 6,
    "zona": "Pinzolo"
   },
   "data_novita": "2026-11-13",
@@ -5026,7 +5098,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-05-22",
   "punteggio": 30,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -5065,7 +5137,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 5,
+   "v": 6,
    "zona": "Caldaro"
   },
   "data_novita": "2026-11-13",
@@ -5121,7 +5193,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2023-09-13",
   "punteggio": 42,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -5311,7 +5383,7 @@
   "primo_visto": "2026-11-12",
   "pubblicato": "2026-07-03",
   "punteggio": 25,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2026-12-04",
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -5493,7 +5565,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2025-08-08",
   "punteggio": 30,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {},
@@ -5606,7 +5678,7 @@
     "pieno": true
    },
    "turni": "tempo pieno, part-time",
-   "v": 5,
+   "v": 6,
    "zona": "Cavalese"
   },
   "data_novita": "2026-11-13",
@@ -5662,7 +5734,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 32,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2026-12-31",
   "scadenza_frase": "procedura telematica entro le ore 23.59 del giorno 31 dicembre 2026. Detto term",
   "segnali_turni": {
@@ -5740,7 +5812,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": null,
   "punteggio": 56,
-  "regole": 13,
+  "regole": 14,
   "scadenza": null,
   "scadenza_frase": null,
   "segnali_turni": {
@@ -5785,7 +5857,7 @@
     "weekend": true
    },
    "turni": "36 h/settimana, weekend/festivi, tempo pieno, part-time",
-   "v": 5,
+   "v": 6,
    "zona": "Castello Tesino"
   },
   "data_novita": "2026-11-13",
@@ -5840,7 +5912,7 @@
   "primo_visto": "2026-11-13",
   "pubblicato": "2026-07-15",
   "punteggio": 32,
-  "regole": 13,
+  "regole": 14,
   "scadenza": "2026-08-14",
   "scadenza_frase": "dell’APSP “Suor Agnese” entro le ore 12.00 del giorno 14.08.2026. A.P.S.P. S",
   "segnali_turni": {

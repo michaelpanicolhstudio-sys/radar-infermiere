@@ -1,12 +1,27 @@
 {
  "aggiornati": [],
- "attivi": 32,
+ "attivi": 33,
  "attivi_piva": 11,
  "data": "2026-11-25",
  "fonti_lette": 36,
  "fonti_totali": 36,
- "giri": 2,
+ "giri": 3,
  "nuovi": [
+  {
+   "cambi": [],
+   "compenso": null,
+   "contratto": null,
+   "datore": "Martinsbrunn (Stiftung St. Elisabeth)",
+   "id": "17adcea2170a",
+   "minuti": 55,
+   "piva": false,
+   "provincia": null,
+   "punteggio": 31,
+   "scadenza": null,
+   "titolo": "Karriere & Jobs - Stiftung St. Elisabeth",
+   "url": "https://www.martinsbrunn.it/job-karriere/",
+   "zona": "Merano"
+  },
   {
    "cambi": [],
    "compenso": null,
