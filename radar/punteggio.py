@@ -45,7 +45,9 @@ def _turni(segnali: dict, testo: str | None) -> tuple[float, str]:
     f += 0.35 if segnali.get("dodici") else 0
     f += 0.30 if segnali.get("notti") else 0
     f += 0.20 if segnali.get("weekend") else 0
-    f += 0.15 if (segnali.get("pieno") or segnali.get("ore_settimana", 0) >= 20) else 0
+    f += 0.15 if (segnali.get("pieno") or segnali.get("ore_settimana", 0) >= 20 or segnali.get("ore_mese", 0) >= 80) else 0
+    # Un monte ore scritto è un'informazione in più: non deve valere meno di «non indicati» (25/11).
+    f = max(f, 0.33) if segnali.get("ore_mese") else f
     return min(1.0, f), testo or ""
 
 

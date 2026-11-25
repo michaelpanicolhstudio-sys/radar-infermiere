@@ -1097,5 +1097,20 @@ verifica("resoconto: «ora no, ma terremo la sua disponibilità» è più avanti
              "Al momento il servizio infermieristico è coperto da personale dipendente. Terremo presente la sua disponibilità.",
              "Al momento non abbiamo necessità.")],
          ["più avanti", "più avanti", "no", "no"])
+
+# 25/11 sera: le risposte di Benedetti («dai 7 ai 15 turni mensili per 8 h per un massimo di 195 h al mese») e
+# Vannetti («un minimo di 60/80 ore/mese») davano turni «n.d.»: le ore al mese non si leggevano, né nelle
+# risposte né negli avvisi. Per un libero professionista il monte ore mensile è il dato che decide il guadagno.
+verifica("ore al mese: turni e massimo mensile (Benedetti)",
+         invio.leggi_esito("Normalmente dai 7 ai 15 turni mensili per 8 h per un massimo di 195 h al mese.")["turni"],
+         "7–15 turni/mese da 8 h, max 195 h/mese")
+verifica("ore al mese: minimo con due cifre (Vannetti)",
+         estrai.estrai_turni("Normalmente vengono indicate un minimo di 60/80 ore/mese.")[0], "min. 60–80 h/mese")
+verifica("ore al mese: fino a … ore mensili",
+         estrai.estrai_turni("per un impegno fino a 195 ore mensili")[1].get("ore_mese"), 195)
+verifica("ore al mese: Monatsstunden", estrai.estrai_turni("ca. 120 Monatsstunden")[0], "120 h/mese")
+verifica("ore al mese: uno stipendio mensile non sono ore", estrai.estrai_turni("2.229,40 euro lordi al mese")[0], None)
+verifica("ore al mese: il punteggio non scende se c'è solo il monte ore",
+         punteggio._turni(estrai.estrai_turni("minimo di 60 ore/mese")[1], "min. 60 h/mese")[0] >= 0.33, True)
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

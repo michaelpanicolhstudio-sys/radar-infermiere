@@ -848,6 +848,22 @@ def estrai_turni(testo: str) -> tuple[str | None, dict]:
         ore = int(m.group(1))
         etichette.append(f"{ore} h/settimana")
         segnali["ore_settimana"] = ore
+    # Turni e ore al mese (risposte Benedetti e Vannetti, 25/11): «dai 7 ai 15 turni mensili per 8 h»,
+    # «un massimo di 195 h al mese», «un minimo di 60/80 ore/mese», «120 Monatsstunden».
+    tm = re.search(r"(?<![\d.,])(?:dai?\s+)?(\d{1,2})(?:\s*(?:-|–|a|ai|al|bis)\s*(\d{1,2}))?\s+(?:turni|dienste)\s+"
+                   r"(?:mensili|al\s+mese|a\s+mese|/\s*mese|im\s+monat|pro\s+monat)(?:\s+(?:per|da|di|zu)\s+(\d{1,2})\s*(?:h\b|ore\b|stunden))?",
+                   testo, re.I)
+    if tm and 1 <= int(tm.group(1)) <= 31 and (not tm.group(2) or int(tm.group(1)) < int(tm.group(2)) <= 31):
+        etichette.append((f"{tm.group(1)}–{tm.group(2)}" if tm.group(2) else tm.group(1)) + " turni/mese"
+                         + (f" da {tm.group(3)} h" if tm.group(3) else ""))
+    om = re.search(r"(?<![\d.,])(\d{2,3})(?:\s*(?:/|-|–)\s*(\d{2,3}))?\s*(?:(?:h|ore|stunden)\s*(?:/|al|a|per|pro|im)?\s*"
+                   r"(?:mese\b|mensil|monat)|monatsstunden)", testo, re.I)
+    if om and 10 <= int(om.group(1)) <= 250 and (not om.group(2) or int(om.group(1)) < int(om.group(2)) <= 250):
+        prima = testo[max(0, om.start() - 30): om.start()]
+        tipo = ("max " if re.search(r"(?:massimo|max\.?|fino\s+a|non\s+oltre|non\s+superiore\s+a|höchstens|bis\s+zu)\s*(?:di\s+)?$", prima, re.I)
+                else "min. " if re.search(r"(?:minimo|almeno|min\.?|mindestens)\s*(?:di\s+)?$", prima, re.I) else "")
+        etichette.append(tipo + (f"{om.group(1)}–{om.group(2)}" if om.group(2) else om.group(1)) + " h/mese")
+        segnali["ore_mese"] = int(om.group(2) or om.group(1))
     # «12 ore» conta solo se descrive il turno: non quando è un limite («non oltre 12 ore»)
     # o un'eccezione («in relazione al periodo emergenziale… 12 ore»), come nell'avviso Vannetti.
     for m12 in re.finditer(r"\b12\s*(?:h\b|ore\b|stunden)", testo, re.I):
