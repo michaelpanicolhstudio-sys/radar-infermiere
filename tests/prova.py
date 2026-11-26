@@ -1173,5 +1173,20 @@ verifica("email (HTML): titolo lungo con «…» a fine parola",
 # 26/11 sera: l'allarme scriveva la scadenza come «2026-12-31»; nelle email le date sono sempre «31/12/2026».
 _o, _t, _h = uscite.componi_allarme([{"allarme": "Campiglio", "titolo": "Avviso Campiglio", "url": "https://x.it", "scadenza": "2026-12-31"}])
 verifica("allarme: scadenza scritta come nelle altre email", ("Scadenza: 31/12/2026" in _t, "Scadenza: 31/12/2026" in _h), (True, True))
+
+# 26/11 sera: il passo di Residenza Molino («glielo hai mandato (346 5787395)») dava nell'app il bottone
+# «Chiama 346 5787395»: il numero di Michael. Il suo numero non diventa mai un numero da chiamare.
+verifica("app: il numero di Michael arriva all'app", str(CFG["profilo"].get("telefono")), "346 5787395")
+if shutil.which("node"):
+    _js = (RADICE / "webapp" / "app.js").read_text(encoding="utf-8")
+    _pezzo = _js[_js.index("// <numeri-da-chiamare>"):_js.index("// </numeri-da-chiamare>")]
+    _prova_js = _pezzo + """
+var a = numeriDaChiamare([null], "26/11: Selene Rossi ha chiesto il tuo numero; glielo hai mandato (346 5787395). Aspetta.", "346 5787395");
+var b = numeriDaChiamare(["0464 688044"], "Tel. 0464 688044, cell. +39 349 6424461; il tuo è +39 346 578 7395", "346 5787395");
+console.log(JSON.stringify({ a: a.map(function (x) { return x.testo; }), b: b.map(function (x) { return x.testo; }) }));
+"""
+    _ris = _json.loads(subprocess.run(["node", "-e", _prova_js], capture_output=True, text=True, check=True).stdout)
+    verifica("app: niente «Chiama» con il numero di Michael", _ris["a"], [])
+    verifica("app: i numeri delle strutture restano", _ris["b"], ["0464 688044", "+39 349 6424461"])
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

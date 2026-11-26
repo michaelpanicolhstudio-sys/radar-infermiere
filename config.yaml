@@ -7,6 +7,8 @@
 
 profilo:
   casa: Mezzolombardo
+  # Il tuo numero: l'app non lo propone mai come «Chiama» quando compare in un prossimo passo.
+  telefono: "346 5787395"
   # no = non lo parlo | base = lo sto studiando | b2 = ho l'attestato
   tedesco: base
   # true = mostra anche concorsi e posti da dipendente (etichettati, punteggio basso)

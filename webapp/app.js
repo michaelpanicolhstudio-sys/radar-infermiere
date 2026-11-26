@@ -950,17 +950,31 @@
       el("span", { "aria-hidden": "true", text: "›" }));
   }
 
+  // <numeri-da-chiamare>
+  // 26/11 sera: Molino, «glielo hai mandato (346 5787395)» dava il bottone «Chiama» con il numero di Michael.
+  // Il suo numero (config.yaml → profilo.telefono) non diventa mai un numero da chiamare.
+  function soloCifre(n) { return String(n || "").replace(/[^\d]/g, "").replace(/^(?:0039|39)(?=3\d{8,9}$|0\d{5,10}$)/, ""); }
+  function numeriDaChiamare(fissi, prossimo, mio) {
+    var trovati = String(prossimo || "").match(/(?:^|[^\w+])((?:\+39[ .-]?)?(?:0\d{1,3}|3\d{2})(?:[ .-]?\d){6,8})(?!\d)/g) || [];
+    var visti = new Set(), fuori = soloCifre(mio), risultato = [];
+    fissi.concat(trovati).filter(Boolean).forEach(function (numero) {
+      var testo = String(numero).trim().replace(/^[^+\d]+/, "");
+      var tel = testo.replace(/[^+\d]/g, "");
+      if (!/^\+?\d{8,15}$/.test(tel) || visti.has(tel) || (fuori && soloCifre(tel) === fuori)) return;
+      visti.add(tel);
+      risultato.push({ testo: testo, tel: tel });
+    });
+    return risultato;
+  }
+  // </numeri-da-chiamare>
+
   function recapitiContatto(r, fonte) {
     var azioni = el("div", { class: "recapiti" });
     var contatto = fonte.contatto || {};
-    var numeri = (r.prossimo || "").match(/(?:^|[^\w+])((?:\+39[ .-]?)?(?:0\d{1,3}|3\d{2})(?:[ .-]?\d){6,8})(?!\d)/g) || [];
     var visti = new Set();
-    [fonte.telefono, r.telefono].concat(numeri).filter(Boolean).forEach(function (numero) {
-      var testo = String(numero).trim().replace(/^[^+\d]+/, "");
-      var tel = testo.replace(/[^+\d]/g, "");
-      if (!/^\+?\d{8,15}$/.test(tel) || visti.has(tel)) return;
-      visti.add(tel);
-      azioni.appendChild(el("a", { class: "azione", href: "tel:" + tel, text: "Chiama " + testo }));
+    numeriDaChiamare([fonte.telefono, r.telefono], r.prossimo, DATI.mio_telefono).forEach(function (n) {
+      visti.add(n.tel);
+      azioni.appendChild(el("a", { class: "azione", href: "tel:" + n.tel, text: "Chiama " + n.testo }));
     });
     var risposte = contatto.risposte || [];
     var mittente = (risposte[risposte.length - 1] || {}).da;

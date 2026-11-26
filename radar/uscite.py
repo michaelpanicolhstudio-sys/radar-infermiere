@@ -490,6 +490,7 @@ def costruisci_sito(cfg: dict, oggi: date, destinazione: Path | None = None) -> 
     dati = {"generato": adesso.strftime("%d/%m/%Y %H:%M"), "ora": adesso.strftime("%H:%M"),
             "oggi": oggi.isoformat(), "oggi_lungo": data_lunga(oggi),
             "casa": cfg.get("profilo", {}).get("casa", "Mezzolombardo"),
+            "mio_telefono": str(cfg.get("profilo", {}).get("telefono") or ""),
             "email_contatto": cfg.get("email_contatto") or {},
             "offerte": offerte, "report": report, "comuni": comuni,
             "strutture": strutture, "incontri": sorted(incontri, key=lambda x: x["data"]),
