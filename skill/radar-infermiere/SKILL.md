@@ -63,11 +63,12 @@ Prima di tutto: «preparami / prepariamo» NON è «invia». Prepara la lettera,
 
 ## App e stato delle strutture
 - data/esiti.json: per ogni chiave della struttura `esito` (da fare, sì, più avanti, no, da leggere, in attesa), `prossimo` (una frase) e `aggiornato`. Vince sulla lettura automatica finché la struttura non riscrive. Aggiornalo dopo ogni risposta letta o inviata: è ciò che Michael vede in Oggi e Contatti.
-- Chi chiede il CV aspetta Michael: senza esito a mano l'app mostra «Tocca a te» finché in `mie_risposte` non c'è una sua risposta dello stesso giorno o dopo, poi «Hai risposto». Le risposte mandate dal telefono il Radar non le vede: se Michael dice di aver già mandato il CV, scrivilo in data/esiti.json («più avanti» o «sì», «CV inviato il …»).
+- Chi chiede il CV o un recapito telefonico aspetta Michael: senza esito a mano l'app mostra «Tocca a te» finché in `mie_risposte` non c'è una sua risposta dello stesso giorno o dopo, poi «Hai risposto». Se il CV era già partito prima verso un altro indirizzo, di' quando e a chi, e che va rimandato a chi lo chiede ora (non che se n'è dimenticato). Un numero scritto da loro («può chiamarci al …») non è una richiesta. Le risposte mandate dal telefono il Radar non le vede: se Michael dice di aver già mandato CV o numero, scrivilo in data/esiti.json.
 - Gli appuntamenti fissati (colloqui, telefonate) vanno nel calendario personale in arancione (colorId 6), una sola volta: prima cerca se esiste già.
 
 ## Report e allarmi
 - Per dire cosa c'è di nuovo leggi `data/report/<oggi>.json` (nuovi, aggiornati, problemi) e `data/annunci.json`; per le risposte vale la sezione «Controllare le risposte».
+- Le email dei portali che confermano una candidatura («Candidatura inviata», link /indeedapply/) non sono offerte nuove: non riportarle come novità.
 - Se un annuncio dice solo la provincia («Provincia di Trento»), nel report scrivi «provincia di Trento (comune n.d.)», non «zona n.d.»: mai il capoluogo né i suoi minuti.
 - Titoli in maiuscolo, anche solo in parte («INFERMIERE - Trento e provincia»): riportali come frase leggibile, i nomi di struttura con le iniziali maiuscole («Opera Romani»), sigle, numeri e comuni intatti, senza cambiare cosa dicono; se sono troncati, chiudili con «…».
 - Allarmi in `config.yaml` → `allarmi` (oggi: bando invernale ASUIT di Campiglio / Sèn Jan, guardato su asuit.tn.it, apss.tn.it e opi.tn.it). Scattano una volta per bando (registro `data/allarmi_inviati.json`); non scattano per bandi scaduti, pagine «datate» senza scadenza (oltre 120 giorni) e copie dello stesso bando su un altro sito.
