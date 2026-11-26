@@ -1156,5 +1156,22 @@ _r = _inv.resoconto([{"chiave": "s:av", "nome": "A"}], {}, _ca, CFG)[0]
 verifica("esiti: CV richiesto di nuovo dopo averlo già mandato", (_r["esito"], _r["prossimo"]),
          ("da fare", "Ti hanno chiesto il CV il 26/11 (morena.campostrini@apspavio.it). L'avevi già mandato il 18/11 a "
                      "info@apspavio.it: rispondi a questa email con il CV."))
+
+print("\nRevisione del 26/11 (sera)")
+# 26/11 sera: nell'email del 26/11 la prima delle «5 migliori» (ASUIT Cles, 40 €/h) finiva «…libero professionali a infer»:
+# il titolo era tagliato a 90 lettere a metà parola, perdendo proprio «infermieri». Si taglia a fine parola, con «…».
+_cles = {"id": "x", "punteggio": 82, "datore": "ASUIT (Trentino)", "contratto": "P.IVA / libera professione", "compenso": "40 €/h",
+         "zona": "Cles", "minuti": 28, "scadenza": "2026-12-07", "url": "https://www.asuit.tn.it/x",
+         "titolo": "Avviso di selezione pubblica per il conferimento di incarichi libero professionali a infermieri da destinare "
+                   "al percorso di fast track ortopedico-traumatologico presso l’ospedale di Cles durante la…"}
+verifica("email: titolo lungo tagliato a fine parola", uscite._riga_testo(_cles).split("\n")[0],
+         "[82] ASUIT (Trentino) – Avviso di selezione pubblica per il conferimento di incarichi libero professionali a…")
+verifica("email: titolo breve intatto", uscite._breve("Infermiere/a", 90), "Infermiere/a")
+verifica("email (HTML): titolo lungo con «…» a fine parola",
+         "conferimento di incarichi libero professionali a infermieri da destinare al percorso…" in uscite._riga_html(_cles, None), True)
+
+# 26/11 sera: l'allarme scriveva la scadenza come «2026-12-31»; nelle email le date sono sempre «31/12/2026».
+_o, _t, _h = uscite.componi_allarme([{"allarme": "Campiglio", "titolo": "Avviso Campiglio", "url": "https://x.it", "scadenza": "2026-12-31"}])
+verifica("allarme: scadenza scritta come nelle altre email", ("Scadenza: 31/12/2026" in _t, "Scadenza: 31/12/2026" in _h), (True, True))
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

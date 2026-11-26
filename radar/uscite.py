@@ -42,6 +42,16 @@ def _giorno(iso: str | None) -> str:
     return f"{g}/{m}/{a}"
 
 
+def _breve(testo: str, n: int) -> str:
+    """Accorcia a n lettere senza spezzare le parole (26/11: «…libero professionali a infer» nell'email)."""
+    if len(testo) <= n:
+        return testo
+    pezzo = testo[:n]
+    if not testo[n].isspace() and " " in pezzo:
+        pezzo = pezzo.rsplit(" ", 1)[0]
+    return pezzo.rstrip(" ,;:–-…") + "…"
+
+
 def data_lunga(d: date) -> str:
     return f"{GIORNI[d.weekday()]} {d.day} {MESI[d.month - 1]}"
 
@@ -63,7 +73,7 @@ def _dettagli(r: dict) -> str:
 def _riga_testo(r: dict) -> str:
     capo = f"[{r['punteggio']}] {r.get('datore') or r['titolo']}"
     if r.get("datore") and r["titolo"] != r["datore"]:
-        capo += f" – {r['titolo'][:90]}"
+        capo += f" – {_breve(r['titolo'], 90)}"
     return "\n   ".join([capo, _dettagli(r), r["url"]])
 
 
@@ -73,7 +83,7 @@ def _sicuro(url: str | None) -> str:
 
 def _riga_html(r: dict, url_app: str | None, extra: str = "") -> str:
     nome = html.escape(r.get("datore") or r["titolo"])
-    ruolo = html.escape(r["titolo"][:120]) if r.get("datore") and r["titolo"] != r["datore"] else ""
+    ruolo = html.escape(_breve(r["titolo"], 120)) if r.get("datore") and r["titolo"] != r["datore"] else ""
     legame = _sicuro(f"{url_app.rstrip('/')}/#o={r['id']}") if url_app else _sicuro(r["url"])
     colore = "#2F47C2" if r.get("piva") else "#5B6873"
     return (
@@ -534,12 +544,12 @@ def componi_allarme(trovati: list[dict]) -> tuple[str, str, str]:
     oggetto = "⚠️ ALLARME Radar: " + ", ".join(nomi)
     righe = []
     for t in trovati:
-        righe.append(f"{t['titolo']}\n{t['url']}" + (f"\nScadenza: {t['scadenza']}" if t.get("scadenza") else ""))
+        righe.append(f"{t['titolo']}\n{t['url']}" + (f"\nScadenza: {_giorno(t['scadenza'])}" if t.get("scadenza") else ""))
     note = sorted({t["nota"] for t in trovati if t.get("nota")})
     testo = "È uscito un bando che stavi aspettando.\n\n" + "\n\n".join(righe) + ("\n\n" + "\n".join(note) if note else "")
     pagina = ("<div style=\"font:15px/1.5 -apple-system,'Segoe UI',Arial,sans-serif;color:#18222B\">"
               "<p style='font-size:18px;color:#B3261E'><b>⚠️ È uscito un bando che stavi aspettando</b></p>"
               + "".join(f"<p><b>{html.escape(t['titolo'] or '')}</b><br><a href='{_sicuro(t['url'] or '')}'>Apri il bando</a>"
-                        + (f"<br>Scadenza: {html.escape(str(t['scadenza']))}" if t.get('scadenza') else "") + "</p>" for t in trovati)
+                        + (f"<br>Scadenza: {html.escape(_giorno(t['scadenza']))}" if t.get('scadenza') else "") + "</p>" for t in trovati)
               + "".join(f"<p style='color:#5B6770'>{html.escape(n)}</p>" for n in note) + "</div>")
     return oggetto, testo, pagina
