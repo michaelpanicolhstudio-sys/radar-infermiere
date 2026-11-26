@@ -1,130 +1,135 @@
 {
- "_nota": "Esito e prossimo passo scritti a mano (Claude con Michael). Vincono sulla lettura automatica finché la struttura non scrive di nuovo dopo la data 'aggiornato'. Esiti: sì, più avanti, no, da leggere, in attesa.",
- "s:ec0b6e4d03ed": {
-  "esito": "sì",
-  "aggiornato": "2026-11-22",
-  "prossimo": "Sollecito inviato il 22/11 (proposti mar 24 pomeriggio o mer 25 mattina). Se non risponde: chiamalo mar 24 alle 14 (0463 601300, cell. 349 6424461)."
- },
- "s:afdcfc298516": {
-  "esito": "sì",
-  "aggiornato": "2026-11-22",
-  "prossimo": "Telefonata del 19/11: centro prelievi lun–sab, 3 ore la mattina, 30 €/h + 4% ENPAPI. Conti fatti su Baselga di Piné, in apertura: 3 ore di lavoro, 4 pagate (il viaggio oltre mezz'ora è pagato). A Trento invece 3 ore pagate, viaggio a carico tuo. Vogliono 1–2 sabati al mese a rotazione e non accettano chi smonta dalla notte. Mezzolombardo chiusa, Andalo e Lavis già coperte. CV inviato il 19/11.",
-  "ore_turno": 3,
-  "ore_pagate": 4,
-  "turni_max_mese": 26,
-  "turni": "3 ore la mattina, lun–sab; 1–2 sabati al mese; no dopo una notte",
-  "euro_ora": 30,
-  "compenso": "30 €/h + 4% ENPAPI",
-  "comune": "Baselga di Piné",
-  "km": 38,
-  "minuti": 42
- },
- "s:e9415d518306": {
-  "esito": "sì",
-  "aggiornato": "2026-11-18",
-  "prossimo": "Collaborano con infermieri a partita IVA. CV e domande (turni, ore, compenso, documenti) inviati il 18/11: aspetta la risposta."
- },
- "s:f89c4707d5f4": {
-  "esito": "più avanti",
-  "aggiornato": "2026-11-18",
-  "prossimo": "Usano liberi professionisti, ora al completo. Turni concordati con la coordinatrice: di solito 7-15 turni da 8 h al mese (max 195 h). Documenti: OPI, attestati, partita IVA, assicurazione, titolo di studio. Compenso da concordare con la direzione."
- },
- "s:01c80ba8ac30": {
-  "esito": "più avanti",
-  "aggiornato": "2026-11-18",
-  "prossimo": "Ora non serve, ma vogliono CV e un'offerta per il 2027. CV e domande per l'offerta inviati il 18/11: quando rispondono, prepariamo l'offerta."
- },
- "s:7b0c127537f2": {
-  "esito": "più avanti",
-  "aggiornato": "2026-11-18",
-  "prossimo": "Hanno chiesto il CV per gli uffici: inviato il 17/11."
- },
- "s:bb14f08c85a3": {
-  "esito": "più avanti",
-  "aggiornato": "2026-11-18",
-  "prossimo": "CV inviato il 17/11. Preferiscono assumere con concorso; libera professione solo per urgenze senza candidati."
- },
- "s:e264c57201a6": {
-  "esito": "in attesa",
-  "aggiornato": "2026-11-21",
-  "prossimo": "Il 21/11 hai chiesto se per la libera professione serve davvero il modulo di assunzione: aspetta la risposta. Se serve, compila solo i dati di lavoro."
- },
- "s:e30b4638aacc": {
-  "esito": "più avanti",
-  "aggiornato": "2026-11-18",
-  "prossimo": "Ora non hanno bisogno di liberi professionisti. CV inviato il 18/11 per il futuro."
- },
- "s:2bec4e56c354": {
-  "esito": "no",
-  "aggiornato": "2026-11-18",
-  "prossimo": "Al momento non hanno necessità."
- },
- "s:0c4d0ee98ebe": {
-  "esito": "sì",
-  "aggiornato": "2026-11-22",
-  "prossimo": "Colloquio del 19/11 fatto: 35 €/h + 4% ENPAPI, turni da 8 ore, libero di farne da 1 al mese in su. Riserva principale nel piano.",
-  "euro_ora": 35,
-  "compenso": "35 €/h + 4% ENPAPI",
-  "ore_turno": 8
- },
- "s:5c4f5be5b691": {
-  "esito": "sì",
-  "aggiornato": "2026-11-18",
-  "prossimo": "Collaborano con infermieri liberi professionisti. CV inviato il 18/11: ti chiamano in caso di necessità."
- },
- "s:860b3891ff91": {
-  "esito": "più avanti",
-  "aggiornato": "2026-11-18",
-  "prossimo": "Ora non hanno necessità. CV inviato il 18/11."
- },
- "s:ae492b93a78d": {
-  "esito": "in attesa",
-  "aggiornato": "2026-11-19",
-  "prossimo": "Tariffa per liberi professionisti 33 €/h (riferita da Michael il 19/11). Non hanno ancora risposto per mail: passare di persona o telefonare e chiedere quanti turni al mese."
- },
- "s:73ce6cbf7b20": {
-  "esito": "più avanti",
-  "aggiornato": "2026-11-24",
-  "prossimo": "24/11: il direttore Luigi Chini risponde che ora non hanno bisogno di altri infermieri; terranno la tua disponibilità per il futuro. Niente da fare: non chiamarli."
- },
- "s:15191c725b44": {
-  "esito": "no",
-  "aggiornato": "2026-11-19",
-  "prossimo": "Servizio infermieristico coperto da dipendenti; vi ricontattano in caso di future opportunità."
- },
- "s:245515de4ac6": {
-  "esito": "no",
-  "aggiornato": "2026-11-19",
-  "prossimo": "Struttura residenziale per minori, non sanitaria: non fa al caso nostro."
- },
- "s:e230d5086f2b": {
-  "esito": "sì",
-  "aggiornato": "2026-11-19",
-  "prossimo": "Collaborano con infermieri liberi professionisti. CV e domande (turni, impegno al mese, compenso) inviati il 19/11: aspetta la risposta."
- },
- "s:9cee32bc6a1e": {
-  "esito": "sì",
-  "aggiornato": "2026-11-19",
-  "prossimo": "Telefonata del direttore Gianni Delpero (19/11): pagano 38 €/h a un loro collaboratore per le notti. Da chiarire: orario della notte, quante notti al mese, da quando."
- },
- "s:abb9fae4a76a": {
-  "esito": "sì",
-  "aggiornato": "2026-11-24",
-  "prossimo": "Colloquio del 24/11 andato molto bene (Laura Fratton). Servono soprattutto notti da 9 ore; di solito pagano 35 €/h ma aspettano un'offerta: hai proposto 40 €/h. Aspetta la loro risposta sull'offerta; tel. 0461 754123 int. 4202.",
-  "da_quando": "gennaio 2027",
-  "turni": "soprattutto notti da 9 ore",
-  "euro_ora": 40,
-  "compenso": "40 €/h proposti da te (loro di media danno 35)",
-  "ore_turno": 9
- },
- "36e85170a7c8": {
-  "esito": "sì",
-  "aggiornato": "2026-11-24",
-  "rapporto": "incarico libero professionale (avviso pubblico)",
-  "compenso": "33 €/h",
-  "euro_ora": 33,
-  "turni": "notti solo dopo un periodo iniziale",
-  "da_quando": "si può indicare una data successiva",
-  "prossimo": "24/11: Zencher dice che la domanda via PEC non serve: devi mandargli tu le tue disponibilità (giorni, ore al mese, da quando). Di solito chiedono 60–80 ore/mese; all'inizio niente notti. Tel. 0464 455006."
- }
+  "_nota": "Esito e prossimo passo scritti a mano (Claude con Michael). Vincono sulla lettura automatica finché la struttura non scrive di nuovo dopo la data 'aggiornato'. Esiti: sì, più avanti, no, da leggere, in attesa.",
+  "s:ec0b6e4d03ed": {
+    "esito": "sì",
+    "aggiornato": "2026-11-22",
+    "prossimo": "Sollecito inviato il 22/11 (proposti mar 24 pomeriggio o mer 25 mattina). Se non risponde: chiamalo mar 24 alle 14 (0463 601300, cell. 349 6424461)."
+  },
+  "s:afdcfc298516": {
+    "esito": "sì",
+    "aggiornato": "2026-11-22",
+    "prossimo": "Telefonata del 19/11: centro prelievi lun–sab, 3 ore la mattina, 30 €/h + 4% ENPAPI. Conti fatti su Baselga di Piné, in apertura: 3 ore di lavoro, 4 pagate (il viaggio oltre mezz'ora è pagato). A Trento invece 3 ore pagate, viaggio a carico tuo. Vogliono 1–2 sabati al mese a rotazione e non accettano chi smonta dalla notte. Mezzolombardo chiusa, Andalo e Lavis già coperte. CV inviato il 19/11.",
+    "ore_turno": 3,
+    "ore_pagate": 4,
+    "turni_max_mese": 26,
+    "turni": "3 ore la mattina, lun–sab; 1–2 sabati al mese; no dopo una notte",
+    "euro_ora": 30,
+    "compenso": "30 €/h + 4% ENPAPI",
+    "comune": "Baselga di Piné",
+    "km": 38,
+    "minuti": 42
+  },
+  "s:e9415d518306": {
+    "esito": "sì",
+    "aggiornato": "2026-11-26",
+    "prossimo": "Collaborano con P.IVA. 26/11: la coordinatrice Morena Campostrini ha chiesto il CV (già inviato il 18/11 a info@): rimandato a lei il 26/11. Aspetta che ti contatti; tel. 0464 688044."
+  },
+  "s:f89c4707d5f4": {
+    "esito": "più avanti",
+    "aggiornato": "2026-11-18",
+    "prossimo": "Usano liberi professionisti, ora al completo. Turni concordati con la coordinatrice: di solito 7-15 turni da 8 h al mese (max 195 h). Documenti: OPI, attestati, partita IVA, assicurazione, titolo di studio. Compenso da concordare con la direzione."
+  },
+  "s:01c80ba8ac30": {
+    "esito": "più avanti",
+    "aggiornato": "2026-11-18",
+    "prossimo": "Ora non serve, ma vogliono CV e un'offerta per il 2027. CV e domande per l'offerta inviati il 18/11: quando rispondono, prepariamo l'offerta."
+  },
+  "s:7b0c127537f2": {
+    "esito": "più avanti",
+    "aggiornato": "2026-11-18",
+    "prossimo": "Hanno chiesto il CV per gli uffici: inviato il 17/11."
+  },
+  "s:bb14f08c85a3": {
+    "esito": "più avanti",
+    "aggiornato": "2026-11-18",
+    "prossimo": "CV inviato il 17/11. Preferiscono assumere con concorso; libera professione solo per urgenze senza candidati."
+  },
+  "s:e264c57201a6": {
+    "esito": "in attesa",
+    "aggiornato": "2026-11-21",
+    "prossimo": "Il 21/11 hai chiesto se per la libera professione serve davvero il modulo di assunzione: aspetta la risposta. Se serve, compila solo i dati di lavoro."
+  },
+  "s:e30b4638aacc": {
+    "esito": "più avanti",
+    "aggiornato": "2026-11-18",
+    "prossimo": "Ora non hanno bisogno di liberi professionisti. CV inviato il 18/11 per il futuro."
+  },
+  "s:2bec4e56c354": {
+    "esito": "no",
+    "aggiornato": "2026-11-18",
+    "prossimo": "Al momento non hanno necessità."
+  },
+  "s:0c4d0ee98ebe": {
+    "esito": "sì",
+    "aggiornato": "2026-11-22",
+    "prossimo": "Colloquio del 19/11 fatto: 35 €/h + 4% ENPAPI, turni da 8 ore, libero di farne da 1 al mese in su. Riserva principale nel piano.",
+    "euro_ora": 35,
+    "compenso": "35 €/h + 4% ENPAPI",
+    "ore_turno": 8
+  },
+  "s:5c4f5be5b691": {
+    "esito": "sì",
+    "aggiornato": "2026-11-18",
+    "prossimo": "Collaborano con infermieri liberi professionisti. CV inviato il 18/11: ti chiamano in caso di necessità."
+  },
+  "s:860b3891ff91": {
+    "esito": "più avanti",
+    "aggiornato": "2026-11-18",
+    "prossimo": "Ora non hanno necessità. CV inviato il 18/11."
+  },
+  "s:ae492b93a78d": {
+    "esito": "in attesa",
+    "aggiornato": "2026-11-19",
+    "prossimo": "Tariffa per liberi professionisti 33 €/h (riferita da Michael il 19/11). Non hanno ancora risposto per mail: passare di persona o telefonare e chiedere quanti turni al mese."
+  },
+  "s:73ce6cbf7b20": {
+    "esito": "più avanti",
+    "aggiornato": "2026-11-24",
+    "prossimo": "24/11: il direttore Luigi Chini risponde che ora non hanno bisogno di altri infermieri; terranno la tua disponibilità per il futuro. Niente da fare: non chiamarli."
+  },
+  "s:15191c725b44": {
+    "esito": "no",
+    "aggiornato": "2026-11-19",
+    "prossimo": "Servizio infermieristico coperto da dipendenti; vi ricontattano in caso di future opportunità."
+  },
+  "s:245515de4ac6": {
+    "esito": "no",
+    "aggiornato": "2026-11-19",
+    "prossimo": "Struttura residenziale per minori, non sanitaria: non fa al caso nostro."
+  },
+  "s:e230d5086f2b": {
+    "esito": "sì",
+    "aggiornato": "2026-11-19",
+    "prossimo": "Collaborano con infermieri liberi professionisti. CV e domande (turni, impegno al mese, compenso) inviati il 19/11: aspetta la risposta."
+  },
+  "s:9cee32bc6a1e": {
+    "esito": "sì",
+    "aggiornato": "2026-11-19",
+    "prossimo": "Telefonata del direttore Gianni Delpero (19/11): pagano 38 €/h a un loro collaboratore per le notti. Da chiarire: orario della notte, quante notti al mese, da quando."
+  },
+  "s:abb9fae4a76a": {
+    "esito": "sì",
+    "aggiornato": "2026-11-24",
+    "prossimo": "Colloquio del 24/11 andato molto bene (Laura Fratton). Servono soprattutto notti da 9 ore; di solito pagano 35 €/h ma aspettano un'offerta: hai proposto 40 €/h. Aspetta la loro risposta sull'offerta; tel. 0461 754123 int. 4202.",
+    "da_quando": "gennaio 2027",
+    "turni": "soprattutto notti da 9 ore",
+    "euro_ora": 40,
+    "compenso": "40 €/h proposti da te (loro di media danno 35)",
+    "ore_turno": 9
+  },
+  "36e85170a7c8": {
+    "esito": "sì",
+    "aggiornato": "2026-11-24",
+    "rapporto": "incarico libero professionale (avviso pubblico)",
+    "compenso": "33 €/h",
+    "euro_ora": 33,
+    "turni": "notti solo dopo un periodo iniziale",
+    "da_quando": "si può indicare una data successiva",
+    "prossimo": "24/11: Zencher dice che la domanda via PEC non serve: devi mandargli tu le tue disponibilità (giorni, ore al mese, da quando). Di solito chiedono 60–80 ore/mese; all'inizio niente notti. Tel. 0464 455006."
+  },
+  "s:d9403e7295d6": {
+    "esito": "in attesa",
+    "aggiornato": "2026-11-26",
+    "prossimo": "26/11: Selene Rossi ha chiesto il tuo numero; glielo hai mandato (346 5787395). Aspetta la sua telefonata."
+  }
 }
