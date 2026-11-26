@@ -154,7 +154,7 @@
    "url": "https://www.vds-suedtirol.it/it/jobs"
   },
   {
-   "caratteri": 2816,
+   "caratteri": 2770,
    "inizio": "Die Stiftung St. Elisabeth ist mehr als eine Pflegeinstitution. Mit 5 Seniorenwohnheimen, 2 Privatkliniken, einem Bildungs- & Tagungszentrum, einem Mehrgenerationenhaus und einer Kita bieten wir an 7 Standorten im ganzen Land Raum für verschiedenste Talente und Qualifikationen. 7 Standorte 700 Mitar",
    "link": [
     [
@@ -188,10 +188,6 @@
     [
      "Physiotherapeut/Physiotherapeutin (m/w/d) Jesuheim (Girlan) Teilzeit",
      "https://stiftung-st-elisabeth.onboard.org/de/jobs/RGbow7e2"
-    ],
-    [
-     "Front Office & Sekretariat (m/w/d) Lichtenburg (Nals) Vollzeit",
-     "https://stiftung-st-elisabeth.onboard.org/de/jobs/YGLo104Z"
     ],
     [
      "Koch/Köchin im Wohnbereich des Seniorenwohnheims Grieserhof (Bozen)",
@@ -414,12 +410,12 @@
      "https://www.apspcles.it/Lavora-con-noi"
     ],
     [
-     "Concorso addetto ai servizi ausiliari livello ingresso-comunicazione c",
-     "https://www.apspcles.it/Novita/Ultime-Novita/Concorso-addetto-ai-servizi-ausiliari-livello-ingresso-comunicazione-calendario-e-criteri-prove-di-esame-dd.-17-12-2026"
+     "Concorso Operatore dei servizi ausiliari base servizio lavanderia: con",
+     "https://www.apspcles.it/Novita/Ultime-Novita/Concorso-Operatore-dei-servizi-ausiliari-base-servizio-lavanderia-convocazione-prove-orali-26-11-2026"
     ],
     [
-     "Concorso Operatore dei servizi ausiliari base servizio lavanderia: cal",
-     "https://www.apspcles.it/Novita/Ultime-Novita/Concorso-Operatore-dei-servizi-ausiliari-base-servizio-lavanderia-calendario-e-criteri-valutazione-prove-esame-26-11-2026"
+     "Concorso addetto ai servizi ausiliari livello ingresso-comunicazione c",
+     "https://www.apspcles.it/Novita/Ultime-Novita/Concorso-addetto-ai-servizi-ausiliari-livello-ingresso-comunicazione-calendario-e-criteri-prove-di-esame-dd.-17-12-2026"
     ],
     [
      "Dichiarazioni di accessibilità",
@@ -1037,173 +1033,11 @@
    ],
    "pagine": [
     {
-     "candidati": 0,
-     "link_in_pagina": [
-      [
-       "Amministrazione Trasparente",
-       "https://www.asuit.tn.it/amministrazione-trasparente"
-      ],
-      [
-       "Lavora con noi",
-       "https://www.asuit.tn.it/lavora-con-noi"
-      ],
-      [
-       "Personale convenzionato",
-       "https://www.asuit.tn.it/servizio-acquisizione-e-gestione-personale-convenzionato"
-      ],
-      [
-       "Personale dipendente",
-       "https://www.asuit.tn.it/bandi-concorsi?combine=&field_data_apertura_value_1=&field_data_apertura_value=&field_data_scadenza_value=&field_data_scadenza_value_1=&field_stato_bando_value=All&field_tipologia_bando_target_id%5B429%5D=429"
-      ],
-      [
-       "Bandi e concorsi",
-       "https://www.asuit.tn.it/bandi-concorsi"
-      ],
-      [
-       "Prevenzione e sicurezza ambienti di vita e lavoro",
-       "https://www.asuit.tn.it/servizi?combine=&field_tipologia_target_id%5B43%5D=43"
-      ],
-      [
-       "Avviso per il conferimento di incarichi di lavoro autonomo a medici in",
-       "https://www.asuit.tn.it/bandi-concorsi/avviso-il-conferimento-di-incarichi-di-lavoro-autonomo-medici-formazione"
-      ],
-      [
-       "Ricognizione interna al fine dell’acquisizione di disponibilità da par",
-       "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-2"
-      ],
-      [
-       "Ricognizione interna al fine dell’acquisizione di disponibilità da par",
-       "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-3"
-      ],
-      [
-       "Ricognizione interna al fine dell’acquisizione di disponibilità da par",
-       "https://www.asuit.tn.it/bandi-concorsi/ricognizione-interna-al-fine-dellacquisizione-di-disponibilita-da-parte-di-4"
-      ],
-      [
-       "Pagina 1",
-       "https://www.asuit.tn.it/bandi-concorsi?page=0"
-      ],
-      [
-       "Pagina 2",
-       "https://www.asuit.tn.it/bandi-concorsi?page=1"
-      ],
-      [
-       "Pagina 3",
-       "https://www.asuit.tn.it/bandi-concorsi?page=2"
-      ],
-      [
-       "Pagina 4",
-       "https://www.asuit.tn.it/bandi-concorsi?page=3"
-      ],
-      [
-       "Pagina 5",
-       "https://www.asuit.tn.it/bandi-concorsi?page=4"
-      ],
-      [
-       "Pagina 6",
-       "https://www.asuit.tn.it/bandi-concorsi?page=5"
-      ],
-      [
-       "Pagina 7",
-       "https://www.asuit.tn.it/bandi-concorsi?page=6"
-      ],
-      [
-       "Ultima pagina Ultima »",
-       "https://www.asuit.tn.it/bandi-concorsi?page=235"
-      ],
-      [
-       "Albo online - Pubblicità legale",
-       "https://www.asuit.tn.it/documenti?combine=&field_categoria_target_id%5B143%5D=143&field_data_value=&field_data_value_1=&field_protocollo_value=&field_unita_organizzativa_target_id_verf=All"
-      ],
-      [
-       "Amministrazione Trasparente",
-       "https://www.asuit.tn.it/amministrazione-trasparente/amministrazione-trasparente"
-      ],
-      [
-       "Operatori e partner",
-       "https://www.asuit.tn.it/operatori-e-partner"
-      ],
-      [
-       "Stanza del cittadino",
-       "https://www2.stanzadelcittadino.it/apss/it/?path=/apss/it/&permanent=1&httpPort=80&httpsPort=443"
-      ],
-      [
-       "",
-       "https://www.asuit.tn.it/"
-      ],
-      [
-       "Chi siamo",
-       "https://www.asuit.tn.it/chi-siamo-0"
-      ],
-      [
-       "Entità organizzative",
-       "https://www.asuit.tn.it/entita-organizzative"
-      ],
-      [
-       "Persone",
-       "https://www.asuit.tn.it/persone"
-      ],
-      [
-       "Organigramma",
-       "https://www.asuit.tn.it/organigramma"
-      ],
-      [
-       "Documenti e dati",
-       "https://www.asuit.tn.it/documenti-e-dati"
-      ],
-      [
-       "Le certificazioni",
-       "https://www.asuit.tn.it/le-certificazioni"
-      ],
-      [
-       "Comitati",
-       "https://www.asuit.tn.it/comitati"
-      ],
-      [
-       "",
-       "https://www.asuit.tn.it/azienda-sanitaria-universitaria-integrata-del-trentino"
-      ],
-      [
-       "Servizi in evidenza",
-       "https://www.asuit.tn.it/servizi-evidenza"
-      ],
-      [
-       "Canali digitali",
-       "https://www.asuit.tn.it/canali-digitali"
-      ],
-      [
-       "Assistenza ospedaliera e territoriale",
-       "https://www.asuit.tn.it/servizi?combine=&field_tipologia_target_id%5B1%5D=1"
-      ],
-      [
-       "Certificati, patenti, vaccinazioni, autorizzazioni, rimborsi",
-       "https://www.asuit.tn.it/servizi?combine=&field_tipologia_target_id%5B2%5D=2"
-      ],
-      [
-       "Consultorio per il singolo, la coppia, la famiglia",
-       "https://www.asuit.tn.it/servizi?combine=&field_tipologia_target_id%5B36%5D=36"
-      ],
-      [
-       "Cure domiciliari ed assegno di cura",
-       "https://www.asuit.tn.it/servizi?combine=&field_tipologia_target_id%5B37%5D=37"
-      ],
-      [
-       "Dipendenze e salute mentale",
-       "https://www.asuit.tn.it/servizi?combine=&field_tipologia_target_id%5B38%5D=38"
-      ],
-      [
-       "Farmaci - ticket - esenzioni",
-       "https://www.asuit.tn.it/servizi?combine=&field_tipologia_target_id%5B39%5D=39"
-      ],
-      [
-       "Invalidità e prestazioni collegate",
-       "https://www.asuit.tn.it/servizi?combine=&field_tipologia_target_id%5B40%5D=40"
-      ]
-     ],
+     "candidati": 1,
      "url": "https://www.asuit.tn.it/bandi-concorsi"
     },
     {
-     "candidati": 1,
+     "candidati": 0,
      "url": "https://www.asuit.tn.it/bandi-concorsi?page=1"
     },
     {
@@ -1261,67 +1095,6 @@
     ]
    ]
   },
-  "Avvisi email – Adecco": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Etjca": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Gi Group": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Indeed": {
-   "accettati": 6,
-   "candidati": 7,
-   "scartati": [
-    [
-     "Infermieri ParaMedica srl Asiago, Veneto",
-     "fuori regione",
-     "https://cts.indeed.com/v3/H4sIAAAAAAAA_32U2aqrWBCG3yXQ-6o9e6lx2hCabJMYZ6NRozfBKc5Zupw9nHdvTzf0ZVMFBf9fVBV18f3cDbuvXdb3Tff1-Zn3P_J3nCTxjwjWn02QJkH8GVXlXy8E60MBw5wInlupgz7KsLzHxPszqYO8-ihQXx4oLKozHNuiZN"
-    ]
-   ]
-  },
-  "Avvisi email – InfoJobs": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Jobrapido": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – LinkedIn": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Manpower": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Openjobmetis": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Randstad": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Umana": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
   "Brixsana Bressanone – Karriere": {
    "accettati": [
     "Infermiere/a (KrankenpflegerIn) – tempo pieno, da subito"
@@ -1377,6 +1150,10 @@
        "https://career.bz.it/it/"
       ],
       [
+       "Stiftung Martinsheim",
+       "https://www.vds-suedtirol.it/de/swh/470/job/oeffentlicher-wettbewerb-nach-pruefungen-zur-besetzung-von-1-stelle-vollzeit-als"
+      ],
+      [
        "Seniorenheim Algund Mathias Ladurner ÖBPB",
        "https://www.vds-suedtirol.it/de/swh/445/job/pflegehelferin-als-ersatz-fuer-personal-im-krankenstand-gesucht"
       ],
@@ -1411,10 +1188,6 @@
       [
        "Seniorenwohnheim \"Claraheim\"",
        "https://www.vds-suedtirol.it/de/swh/469/job/pflegehelferin-berufsbild-nr-20-der-iv-funktionsebene-operatore-trice-socio-sanitarioa-2"
-      ],
-      [
-       "Seniorenwohnheim \"Leoheim\"",
-       "https://www.vds-suedtirol.it/de/swh/521/job/pflegehelferin-berufsbild-nr-20-der-iv-funktionsebene-operatore-trice-socio-sanitarioa-2"
       ],
       [
        "2",
@@ -1785,7 +1558,7 @@
    ],
    "pagine": [
     {
-     "caratteri": 2816,
+     "caratteri": 2770,
      "inizio": "Die Stiftung St. Elisabeth ist mehr als eine Pflegeinstitution. Mit 5 Seniorenwohnheimen, 2 Privatkliniken, einem Bildungs- & Tagungszentrum, einem Mehrgenerationenhaus und einer Kita bieten wir an 7 Standorten im ganzen Land Raum für verschiedenste Talente und Qualifikationen. 7 Standorte 700 Mitarbeitende Unsere Einrichtungen 1 Freyenthurn Mühlbach 2 Grieserhof Bozen 3 Jesuheim Girlan 4 Lebensrä",
      "pdf": [],
      "url": "https://www.martinsbrunn.it/job-karriere/"
