@@ -1,28 +1,12 @@
 {
  "aggiornati": [],
- "attivi": 33,
+ "attivi": 32,
  "attivi_piva": 10,
  "data": "2026-11-26",
  "fonti_lette": 47,
  "fonti_totali": 47,
  "giri": 1,
- "nuovi": [
-  {
-   "cambi": [],
-   "compenso": null,
-   "contratto": null,
-   "datore": null,
-   "id": "700eeda2f360",
-   "minuti": 25,
-   "piva": false,
-   "provincia": null,
-   "punteggio": 33,
-   "scadenza": null,
-   "titolo": "Infermiere - Trento e provincia",
-   "url": "https://apply.indeed.com/indeedapply/confirmemail/viewjob?iaUid=1k8abjai9hc1a801&apiToken=67ecf072503d86bfc40bfae6b32e3eb99acc07df3a405a6afdab3556d4cfbc4d",
-   "zona": "Trento"
-  }
- ],
+ "nuovi": [],
  "problemi": [],
  "scadenze7": [
   {

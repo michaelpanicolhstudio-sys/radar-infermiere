@@ -237,6 +237,11 @@ _RE_RUMORE_LINK = re.compile(r"annulla|unsubscribe|abmelden|impostazioni|setting
                              r"vedi tutti|see all|alle anzeigen|scarica l'app|download|aiuto|help|accedi|log ?in", re.I)
 
 
+# Conferme di candidatura (Indeed «Candidatura inviata», link apply.indeed.com/indeedapply, 26/11): non sono annunci.
+_RE_CONFERMA = re.compile(r"candidatura\s+(?:inviata|completata|ricevuta)|application\s+submitted|bewerbung\s+(?:gesendet|eingegangen)", re.I)
+_RE_URL_CONFERMA = re.compile(r"/indeedapply/|confirmemail", re.I)
+
+
 def _url_pulito(url: str) -> str:
     """Toglie i parametri di tracciamento più comuni, tenendo quelli che identificano l'annuncio (jk, id…)."""
     p = urlparse(url)
@@ -287,6 +292,10 @@ def annunci_da_avviso(pagina: str, parole: list[str], note: dict | None = None, 
                 break
             blocco = su
         intorno = estrai.pulisci(blocco.get_text(" "))
+        if _RE_URL_CONFERMA.search(a["href"]) or _RE_CONFERMA.search(intorno[:200]):
+            if note is not None:
+                note.setdefault("conferme", []).append(titolo[:80])
+            continue
         chiave = estrai.chiave(intorno[:160])
         if chiave in visti:
             continue
