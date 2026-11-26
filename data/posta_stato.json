@@ -25,9 +25,6 @@
   },
   "Indeed": {
    "altri_link": [
-    "Cerca lavoro",
-    "Vedi le nuove posizioni",
-    "Supporto",
     "Visualizza annuncio",
     "Non adatto al mio profilo",
     "Scopri di più",
@@ -36,9 +33,12 @@
     "Centro di supporto",
     "Centro di supporto",
     "Visualizza annuncio",
-    "Non adatto al mio profilo"
+    "Non adatto al mio profilo",
+    "Scopri di più",
+    "Modifica profilo",
+    "Metti in pausa queste email"
    ],
-   "annunci": 6,
+   "annunci": 7,
    "email": 8,
    "esempi": [
     "Infermieri ParaMedica srl Asiago, Veneto",
@@ -46,11 +46,11 @@
     "infermiere/a CITTA' AZZURRA SOC. COOP. BOLZANO 39100 Bolzano - Bozen"
    ],
    "oggetti": [
-    "Suggerimento: l'universo dice: “Candidati ora!”",
     "Infermieri presso ParaMedica srl",
     "Infermiera / Infermiere Professionale presso Coop SOS",
     "Assistente di studio odontoiatrico (ASO) presso Smile Line Ortodonzia",
-    "infermiere/a presso CITTA' AZZURRA SOC. COOP. BOLZANO"
+    "infermiere/a presso CITTA' AZZURRA SOC. COOP. BOLZANO",
+    "IQVIA Italia Infermiere per attività domiciliari presso IQVIA Solutions Italy srl"
    ]
   },
   "InfoJobs": {
@@ -94,10 +94,10 @@
    "esempi": []
   }
  },
- "data": "2026-11-25",
+ "data": "2026-11-26",
  "note": [
   "• Posta: 48 contatti inviati, 0 risposte nuove",
-  "• Avvisi di Indeed: 6 annunci per infermieri nelle email degli ultimi giorni",
+  "• Avvisi di Indeed: 7 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di LinkedIn: 0 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di InfoJobs: 0 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di Jobrapido: 0 annunci per infermieri nelle email degli ultimi giorni",

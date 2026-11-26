@@ -1,8 +1,8 @@
 {
- "data": "2026-11-25",
+ "data": "2026-11-26",
  "esplora": [
   {
-   "caratteri": 3167,
+   "caratteri": 3291,
    "inizio": "Offerte di lavoro delle residenze per anziani dell'Alto Adige Hier finden Sie die Stellenangebote unserer Mitgliedsheime. Die Einträge werden von den einzelnen Seniorenwohnheimen bekanntgegeben und sind auch auf der entsprechenden Seite des Heimes zu finden. Auf der Homepage https://career.bz.it fin",
    "link": [
     [
@@ -50,10 +50,6 @@
      "https://www.vds-suedtirol.it/it/swh/518/job/befristete-anstellung-als-physiotherapeutin-bzw-ergotherapeutin"
     ],
     [
-     "A.P.S.P. \"Josefsheim\"",
-     "https://www.vds-suedtirol.it/it/swh/518/job/befristete-anstellung-als-sozialbetreuerin"
-    ],
-    [
      "Residenza per Anziani \"Leoheim\"",
      "https://www.vds-suedtirol.it/it/swh/521/job/sozialbetreuerin-berufsbild-nr-38-der-v-funktionsebene-operatore-operatrice-socio-2"
     ],
@@ -68,6 +64,10 @@
     [
      "Residenza per Anziani \"Peter Paul Schrott\"",
      "https://www.vds-suedtirol.it/it/swh/462/job/pflegehelferin-berufsbild-nr-20-der-iv-funktionsebene-operatore-trice-socio-sanitarioa-2"
+    ],
+    [
+     "Residenza per Anziani \"Claraheim\"",
+     "https://www.vds-suedtirol.it/it/swh/469/job/pflegehelferin-berufsbild-nr-20-der-iv-funktionsebene-operatore-trice-socio-sanitarioa-2"
     ],
     [
      "2",
@@ -1261,6 +1261,67 @@
     ]
    ]
   },
+  "Avvisi email – Adecco": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – Etjca": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – Gi Group": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – Indeed": {
+   "accettati": 6,
+   "candidati": 7,
+   "scartati": [
+    [
+     "Infermieri ParaMedica srl Asiago, Veneto",
+     "fuori regione",
+     "https://cts.indeed.com/v3/H4sIAAAAAAAA_32U2aqrWBCG3yXQ-6o9e6lx2hCabJMYZ6NRozfBKc5Zupw9nHdvTzf0ZVMFBf9fVBV18f3cDbuvXdb3Tff1-Zn3P_J3nCTxjwjWn02QJkH8GVXlXy8E60MBw5wInlupgz7KsLzHxPszqYO8-ihQXx4oLKozHNuiZN"
+    ]
+   ]
+  },
+  "Avvisi email – InfoJobs": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – Jobrapido": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – LinkedIn": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – Manpower": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – Openjobmetis": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – Randstad": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – Umana": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
   "Brixsana Bressanone – Karriere": {
    "accettati": [
     "Infermiere/a (KrankenpflegerIn) – tempo pieno, da subito"
@@ -1332,10 +1393,6 @@
        "https://www.vds-suedtirol.it/de/swh/518/job/befristete-anstellung-als-physiotherapeutin-bzw-ergotherapeutin"
       ],
       [
-       "Ö.B.P.B. “Josefsheim”",
-       "https://www.vds-suedtirol.it/de/swh/518/job/befristete-anstellung-als-sozialbetreuerin"
-      ],
-      [
        "Seniorenwohnheim \"Leoheim\"",
        "https://www.vds-suedtirol.it/de/swh/521/job/sozialbetreuerin-berufsbild-nr-38-der-v-funktionsebene-operatore-operatrice-socio-2"
       ],
@@ -1354,6 +1411,10 @@
       [
        "Seniorenwohnheim \"Claraheim\"",
        "https://www.vds-suedtirol.it/de/swh/469/job/pflegehelferin-berufsbild-nr-20-der-iv-funktionsebene-operatore-trice-socio-sanitarioa-2"
+      ],
+      [
+       "Seniorenwohnheim \"Leoheim\"",
+       "https://www.vds-suedtirol.it/de/swh/521/job/pflegehelferin-berufsbild-nr-20-der-iv-funktionsebene-operatore-trice-socio-sanitarioa-2"
       ],
       [
        "2",
@@ -1705,8 +1766,17 @@
    "scartati": []
   },
   "Gruppo Bonvicini – lavora con noi": {
-   "accettati": [],
-   "pagine": [],
+   "accettati": [
+    "Lavora con noi"
+   ],
+   "pagine": [
+    {
+     "caratteri": 828,
+     "inizio": "Lavora con noi Posizioni aperte Vuoi entrare a far parte del nostro team? Qui trovi tutte le figure professionali che cerchiamo in questo momento. Consulta gli annunci, compila il form e inviaci la tua candidatura. Farmacista a tempo pieno Farmacie Bonvicini Tempo pieno Candidati Fisioterapista per pazienti interni Casa di Cura Bonvicini Tempo pieno: terapie manuali, terapie strumentali, idrokines",
+     "pdf": [],
+     "url": "https://www.gruppobonvicini.it/lavora-con-noi/"
+    }
+   ],
    "scartati": []
   },
   "Martinsbrunn Merano – Job & Karriere": {
@@ -1740,8 +1810,7 @@
   "OPI Bolzano – offerte di lavoro": {
    "accettati": [
     "Cerchiamo infermiere:i (m/f/d) per la nostra RSA Ciasa de Palsa Ojöp Frëinademetz",
-    "La casa di riposo di Silandro cerca nuovi collaboratori/trici",
-    "Cercasi infermiere/a per emodialisi domiciliare – Bolzano"
+    "La casa di riposo di Silandro cerca nuovi collaboratori/trici"
    ],
    "gia_scartati": [
     [
@@ -1796,9 +1865,7 @@
     "Casa di cura Eremo – Arco TN",
     "A.P.S.P. C. Vannetti – Rovereto – Selezione per liberi professionisti – Proroga Termini",
     "Cooperativa Sociale Villa Maria Onlus – ricerca di personale",
-    "APSP “San Giuseppe” di Primiero (TN) – ricerca di personale",
-    "A.P.S.P. “Levico CURAE” – Levico Terme (TN) – selezione",
-    "Cooperativa D.O.C. Ricerca personale infermieristico"
+    "APSP “San Giuseppe” di Primiero (TN) – ricerca di personale"
    ],
    "gia_scartati": [
     [
@@ -1826,17 +1893,7 @@
      "url": "https://opi.tn.it/segreteria/annunci-di-lavoro/"
     }
    ],
-   "pdf_scartati": [
-    {
-     "lasciati": [
-      "https://opi.tn.it/wp-content/uploads/2025/08/Domanda-selezione-urgente-infermiere.pdf"
-     ],
-     "presi": [
-      "https://opi.tn.it/wp-content/uploads/2025/08/Avviso-selezione-urgente-infermiere.pdf"
-     ],
-     "url": "https://opi.tn.it/a-p-s-p-levico-curae-selezione/"
-    }
-   ],
+   "pdf_scartati": [],
    "scartati": [],
    "senza_pdf": [
     {
@@ -2122,7 +2179,7 @@
    "scartati": []
   }
  },
- "richieste": 105,
+ "richieste": 100,
  "strutture": {
   "saltato": "aggiornato il 2026-11-22"
  }
