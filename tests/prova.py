@@ -1119,5 +1119,42 @@ verifica("ore al mese: il punteggio non scende se c'è solo il monte ore",
 _cfg_fonti = {f["nome"]: f for f in yaml.safe_load(open(Path(__file__).resolve().parent.parent / "config.yaml", encoding="utf-8"))["fonti"]}
 verifica("titolo fisso: Martinsbrunn dice che cercano un infermiere",
          "Krankenpfleger" in (_cfg_fonti["Martinsbrunn Merano – Job & Karriere"].get("titolo") or ""), True)
+
+# 26/11: la conferma di Indeed «Candidatura inviata INFERMIERE - Trento e provincia Sol spa» (link apply.indeed.com/
+# indeedapply/confirmemail) è entrata come novità del giorno, senza datore e doppione dell'annuncio Sol spa del 25/11.
+# Una conferma di candidatura non è un annuncio: si conta a parte, gli altri annunci della stessa email restano.
+_html_conf = ("<div><p>Candidatura inviata</p><a href='https://apply.indeed.com/indeedapply/confirmemail/viewjob?iaUid=1'>"
+              "INFERMIERE - Trento e provincia</a><p>Sol spa - Italy,TN</p></div>"
+              "<div><a href='https://it.indeed.com/rc/clk?jk=abc'>Infermiere RSA</a><p>Casa X - Trento</p></div>")
+_nota_conf = {}
+verifica("avvisi: la conferma di una candidatura non è un annuncio",
+         [x["titolo"] for x in posta.annunci_da_avviso(_html_conf, ["infermier"], _nota_conf, "Candidatura inviata")], ["Infermiere RSA"])
+verifica("avvisi: la conferma resta nella diagnostica", _nota_conf.get("conferme"), ["INFERMIERE - Trento e provincia"])
+
+# 26/11: Residenza Molino «Posso chiederle un recapito telefonico in modo da poterci sentire telefonicamente?» restava
+# «da leggere» senza passo. Chi chiede il numero aspetta Michael, come chi chiede il CV.
+_cm = {"s:m": {"inviata_il": "2026-11-17", "risposte": [{"data": "2026-11-26", "testo": "Buongiorno,\nho ricevuto la sua e-mail.\n"
+       "Posso chiederle un recapito telefonico in modo da poterci sentire telefonicamente?\n\nCordiali saluti,\n\nSelene Rossi"}]}}
+_r = _inv.resoconto([{"chiave": "s:m", "nome": "M"}], {}, _cm, CFG)[0]
+verifica("esiti: chiedono il numero di telefono, tocca a Michael", (_r["esito"], _r["prossimo"]),
+         ("da fare", "Ti hanno chiesto un recapito telefonico il 26/11: se non l'hai ancora fatto, rispondi alla loro email con il tuo numero."))
+_cm["s:m"]["mie_risposte"] = [{"data": "2026-11-26"}]
+verifica("esiti: numero chiesto e Michael ha risposto",
+         _inv.resoconto([{"chiave": "s:m", "nome": "M"}], {}, _cm, CFG)[0]["esito"], "hai risposto")
+verifica("richiesta del telefono: frasi vere", [bool(_inv.RE_CHIEDE_TEL.search(t)) for t in (
+    "Posso chiederle un recapito telefonico?", "mi lasci un suo numero di telefono", "Può comunicarci un contatto telefonico?",
+    "Bitte teilen Sie uns Ihre Telefonnummer mit", "Tel. 0461/605303", "può chiamarci al numero 0461 754123")],
+    [True, True, True, True, False, False])
+
+# 26/11: APSP Avio, la coordinatrice chiede il CV, ma Michael l'aveva già mandato il 18/11 a info@apspavio.it.
+# «Se non l'hai ancora mandato» non basta: il passo dice quando e a chi l'ha mandato, e a chi rimandarlo.
+_ca = {"s:av": {"inviata_il": "2026-11-17", "mie_risposte": [{"data": "2026-11-18", "a": "info@apspavio.it", "allegato": "CV_Michael.pdf"}],
+       "risposte": [{"data": "2026-11-18", "da": "info@apspavio.it", "testo": "Collaboriamo con infermieri liberi professionisti."},
+                    {"data": "2026-11-26", "da": "morena.campostrini@apspavio.it",
+                     "testo": "chiedo gentilmente di inviarmi il Suo curriculum vitae, così da poter valutare il Suo profilo."}]}}
+_r = _inv.resoconto([{"chiave": "s:av", "nome": "A"}], {}, _ca, CFG)[0]
+verifica("esiti: CV richiesto di nuovo dopo averlo già mandato", (_r["esito"], _r["prossimo"]),
+         ("da fare", "Ti hanno chiesto il CV il 26/11 (morena.campostrini@apspavio.it). L'avevi già mandato il 18/11 a "
+                     "info@apspavio.it: rispondi a questa email con il CV."))
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

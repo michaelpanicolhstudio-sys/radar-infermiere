@@ -211,6 +211,9 @@ RE_CV = re.compile(r"curricul|\bcv\b|lebenslauf", re.I)
 # Una richiesta del CV è un passo per Michael (Città Azzurra, Griesfeld 23/11); «averci inviato il CV» no.
 RE_CHIEDE_CV = re.compile(r"(?:\binviar\w*|\binvii\b|\bmandar\w*|\bmandi\b|\btrasmetter\w*|\btrasmetta\b|\bgir[ai]\b|\ballegar\w*|"
                           r"\bl['’]\s*invio\s+d|\bschicken|\bzusenden|\bübermitteln)[^.?!\n]{0,60}?(?:curricul|\bcv\b|lebenslauf)", re.I)
+# Chi chiede il numero per sentirsi al telefono aspetta Michael (Residenza Molino 26/11); «può chiamarci al …» no.
+RE_CHIEDE_TEL = re.compile(r"(?:recapito|numero|contatto)\s+(?:di\s+)?telefonic\w*|(?:recapito|numero|contatto)\s+(?:di\s+)?telefono|"
+                           r"(?:suo|sua|vostro|un)\s+(?:numero|recapito)\b[^.?!\n]{0,30}?(?:telefon|cellular|sentir)|telefonnummer|handynummer", re.I)
 RE_COLLABORA_LP = re.compile(r"(?<!non\s)collabor\w*\s+(?:anche\s+|già\s+)?con\s+(?:gli\s+|degli\s+|dei\s+)?(?:infermier\w*|liberi\s+professionist)", re.I)
 
 
@@ -330,17 +333,31 @@ def resoconto(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict) -
                 f" Passo scritto il {gg(riferimento)}: {riga['prossimo']}" if riga.get("prossimo") else "")
         # 24/11: chi chiede il CV aspetta Michael. Senza un esito scritto a mano: «Tocca a te» finché lui non risponde,
         # poi «Hai risposto» (le sue risposte partono sempre sull'ultima email della struttura, anche lo stesso giorno).
-        if not mano and ultima and riga["esito"] not in ("no", "da fare", "hai risposto") \
-                and RE_CHIEDE_CV.search(solo_risposta(ultima.get("testo") or "")):
+        # 26/11: lo stesso vale per chi chiede un recapito telefonico (Molino); se il CV era già partito prima
+        # verso un altro indirizzo (Avio: info@ il 18/11, poi lo chiede la coordinatrice), il passo lo dice.
+        testo_ultima = solo_risposta(ultima.get("testo") or "") if ultima else ""
+        chiede_cv, chiede_tel = bool(RE_CHIEDE_CV.search(testo_ultima)), bool(RE_CHIEDE_TEL.search(testo_ultima))
+        if not mano and ultima and riga["esito"] not in ("no", "da fare", "hai risposto") and (chiede_cv or chiede_tel):
             gg = lambda iso: f"{iso[8:10]}/{iso[5:7]}"
             dopo = [m for m in mie if (m.get("data") or "") >= (ultima.get("data") or "")]
+            cv_prima = [m for m in mie if "cv" in (m.get("allegato") or "").lower() and (m.get("data") or "") < (ultima.get("data") or "")]
             if dopo:
                 con_cv = any("cv" in (m.get("allegato") or "").lower() for m in dopo)
                 riga["esito"] = "hai risposto"
                 riga["prossimo"] = f"Hai risposto il {gg(dopo[-1]['data'])}{' con il CV' if con_cv else ''}: ora tocca a loro."
+            elif chiede_cv and cv_prima:
+                chi = ultima.get("da")
+                gia = cv_prima[-1]
+                riga["esito"] = "da fare"
+                riga["prossimo"] = (f"Ti hanno chiesto il CV il {gg(ultima['data'])}{f' ({chi})' if chi else ''}. L'avevi già mandato il "
+                                    f"{gg(gia['data'])}{' a ' + gia['a'] if gia.get('a') else ''}: rispondi a questa email con il CV.")
             else:
                 riga["esito"] = "da fare"
-                riga["prossimo"] = f"Ti hanno chiesto il CV il {gg(ultima['data'])}: se non l'hai ancora mandato, rispondi alla loro email con il CV."
+                cosa = ("il CV e un recapito telefonico", "con il CV e il tuo numero") if chiede_cv and chiede_tel else \
+                       (("il CV", "con il CV") if chiede_cv else ("un recapito telefonico", "con il tuo numero"))
+                fatto = "mandato" if chiede_cv and not chiede_tel else "fatto"
+                riga["prossimo"] = (f"Ti hanno chiesto {cosa[0]} il {gg(ultima['data'])}: se non l'hai ancora {fatto}, "
+                                    f"rispondi alla loro email {cosa[1]}.")
         if riga["euro_ora"]:
             calcolo = conti.conto_offerta({"euro_ora": riga["euro_ora"], "km": riga["km"] or 0, "minuti": riga["minuti"] or 0,
                                            **{k: mano[k] for k in ("ore_turno", "ore_pagate", "turni_max_mese") if mano.get(k)}}, par)
