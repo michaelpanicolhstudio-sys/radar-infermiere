@@ -798,6 +798,28 @@
     "oggetto": "R: Infermiere libero professionista – richiesta di informazioni (Rif. R-d9403e72)",
     "testo": "Buongiorno,\nho ricevuto la sua e-mail.\nPosso chiederle un recapito telefonico in modo da poterci sentire telefonicamente?\n\nCordiali saluti,\n\nSelene Rossi",
     "turni": null
+   },
+   {
+    "compenso": null,
+    "da": "selene.rossi@residenzamolino.it",
+    "data": "2026-11-27",
+    "euro_ora": null,
+    "incontro": null,
+    "mid": "<PAWPR10MB475618206589835E41EFDF03FBF8412@PAWPR10MB475618.EURPRD10.PROD.OUTLOOK.COM>",
+    "oggetto": "R: Infermiere libero professionista – richiesta di informazioni (Rif. R-d9403e72)",
+    "testo": "Va bene, grazie!\nLa contatto oggi in giornata!\n\nSelene Rossi",
+    "turni": null
+   },
+   {
+    "compenso": null,
+    "da": "selene.rossi@residenzamolino.it",
+    "data": "2026-11-27",
+    "euro_ora": null,
+    "incontro": null,
+    "mid": "<PAWPR10MB475618A9BBF2539614245EE3FAF8412@PAWPR10MB475618.EURPRD10.PROD.OUTLOOK.COM>",
+    "oggetto": "R: Infermiere libero professionista – richiesta di informazioni (Rif. R-d9403e72)",
+    "testo": "Ottimo, la chiamo alle 15!\nA dopo,\n\nSelene",
+    "turni": null
    }
   ],
   "via": "gmail"
