@@ -1222,5 +1222,15 @@ verifica("email: titolo che continua senza trattino resta intero", uscite._ruolo
 _o, _t, _h = uscite.componi_email({"data": "2026-11-27", "nuovi": [], "aggiornati": [], "scadenze7": [_van], "top5": [], "problemi": [],
                                    "attivi": 1, "attivi_piva": 0, "fonti_lette": 1, "fonti_totali": 1}, None)
 verifica("email intera: scade oggi", "scade oggi" in _t, True)
+# 27/11: dal Google Alert «infermiere partita IVA Trento» è entrato come offerta (ASUIT, «P.IVA o dipendente») un articolo
+# di cronaca del Dolomiti su un infermiere che ha lasciato il posto fisso: il sommario conteneva le parole cercate.
+_tz = "“Non voglio più ridurre i pazienti a numeri”. La scelta di Giuliano Zandonai, infermiere che ..."
+_uz = "https://www.ildolomiti.it/cronaca/2026/non-voglio-piu-ridurre-i-pazienti-a-numeri-la-scelta-di-giuliano-zandonai-infermiere"
+verifica("notizia: articolo di cronaca con «partita IVA» nel sommario",
+         estrai.e_notizia(_tz, _uz, "… lasciato il posto fisso in ospedale per lavorare come infermiere con partita IVA a Trento …"), True)
+verifica("notizia: annuncio sul giornale con «selezione» nel sommario resta",
+         estrai.e_notizia("Ospedale di Cles, servono infermieri", "https://www.ildolomiti.it/cronaca/2026/x", "Asuit ha aperto una selezione per infermieri"), False)
+verifica("notizia: fuori dalla sezione notizie «partita IVA» nel sommario resta un segno d'offerta",
+         estrai.e_notizia("Infermiere a Trento", "https://www.esempio.it/lavoro/x", "infermiere con partita IVA per RSA"), False)
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

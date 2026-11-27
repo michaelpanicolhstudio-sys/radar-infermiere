@@ -1171,13 +1171,22 @@ _RE_SINDACATI = re.compile(
     r"\bNT\s+News\b|egregio\s+direttore|lettera\s+al\s+direttore", re.I)
 
 
+# 27/11 il Dolomiti, /cronaca/: «La scelta di Giuliano Zandonai, infermiere che…» (ha lasciato il posto fisso) è entrato
+# come offerta dal Google Alert «infermiere partita IVA Trento»: le parole cercate stanno in ogni sommario dell'avviso.
+# Per un articolo nella sezione notizie di un giornale il sommario salva solo con segni che parlano di un posto vero.
+_RE_SEGNALE_FORTE = re.compile(
+    r"selezion|avviso\s+pubblico|\bbando|concors|candidatur|candidars|graduatori|lavora\s+con\s+noi|"
+    r"offert[ae]\s+di\s+lavoro|posizion[ei]\s+apert|stellenangebot|wir\s+suchen|gesucht|\bcerc(?:a|ano|hiamo)\s+(?:\d+\s+)?infermier", re.I)
+
+
 def e_notizia(titolo: str, url: str, sommario: str = "", testo: str = "") -> bool:
     """Articolo di giornale su infermieri, senza nulla che lo faccia somigliare a un'offerta."""
     if _RE_SEGNALE_OFFERTA.search(titolo):
         return False
     if _RE_TITOLO_POLITICA.search(titolo) or _RE_SINDACATI.search(f"{sommario} {(testo or '')[:400]}"):
         return True
-    if _RE_SEGNALE_OFFERTA.search(sommario):
+    sezione_notizie = bool(_RE_SEZIONE_NOTIZIE.search(url or ""))
+    if (_RE_SEGNALE_FORTE if sezione_notizie else _RE_SEGNALE_OFFERTA).search(sommario):
         return False
     return bool(_RE_TITOLO_NOTIZIA.search(titolo) or _RE_SEZIONE_NOTIZIE.search(url or ""))
 
