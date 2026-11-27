@@ -1207,5 +1207,20 @@ verifica("incontro: «la contatteremo» senza giorno non è una telefonata",
 verifica("incontro: «chiamata in servizio» senza giorno no", posta.trova_incontro("Il bando prevede la chiamata in servizio a tempo determinato.", _v), None)
 _ics = uscite.incontro_ics("Residenza Molino", {"data": "2026-11-27", "ora": "15:00", "frase": "la chiamo alle 15", "tipo": "telefonata"}, "x", datetime(2026, 11, 27, 9))
 verifica("calendario: la telefonata si chiama così", ("SUMMARY:Telefonata: Residenza Molino" in _ics, "TRIGGER:-PT15M" in _ics), (True, True))
+# 27/11: nell'email l'avviso Vannetti P.IVA (33 €/h) diceva «scade il 27/11» proprio il 27/11, mentre l'app dice «scade oggi»;
+# e la proroga Vannetti ripeteva il datore: «APSP Vannetti di Rovereto – APSP Vannetti di Rovereto - Infermiere - Proroga termini».
+_van = {"id": "y", "punteggio": 39, "datore": "APSP Vannetti di Rovereto", "contratto": "Concorso / graduatoria", "compenso": None,
+        "zona": "Rovereto", "minuti": 40, "scadenza": "2026-11-27", "url": "https://www.upipa.tn.it/x",
+        "titolo": "APSP Vannetti di Rovereto - Infermiere - Proroga termini"}
+verifica("email: il datore non si ripete nel titolo", uscite._riga_testo(_van, _v).split("\n")[0],
+         "[39] APSP Vannetti di Rovereto – Infermiere - Proroga termini")
+verifica("email: scade oggi / domani / il", (uscite._dettagli(_van, _v).split(", ")[-1], uscite._dettagli(_van, date(2026, 11, 26)).split(", ")[-1],
+                                             uscite._dettagli(_van, date(2026, 11, 20)).split(", ")[-1]), ("scade oggi", "scade domani", "scade il 27/11"))
+verifica("email (HTML): scade oggi", "scade oggi" in uscite._riga_html(_van, None, "", _v), True)
+verifica("email: titolo che continua senza trattino resta intero", uscite._ruolo({"titolo": "Fondazione Pitsch cerca infermieri/e", "datore": "Fondazione Pitsch"}),
+         "Fondazione Pitsch cerca infermieri/e")
+_o, _t, _h = uscite.componi_email({"data": "2026-11-27", "nuovi": [], "aggiornati": [], "scadenze7": [_van], "top5": [], "problemi": [],
+                                   "attivi": 1, "attivi_piva": 0, "fonti_lette": 1, "fonti_totali": 1}, None)
+verifica("email intera: scade oggi", "scade oggi" in _t, True)
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

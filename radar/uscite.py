@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import html
+import re
 import json
 import os
 import shutil
@@ -60,30 +61,52 @@ def _conta(n: int, uno: str, molti: str) -> str:
     return f"{n} {uno if n == 1 else molti}"
 
 
-def _dettagli(r: dict) -> str:
+def _ruolo(r: dict) -> str:
+    """Il titolo senza il nome del datore davanti, che nell'email è già scritto sopra
+    (27/11: «APSP Vannetti di Rovereto – APSP Vannetti di Rovereto - Infermiere - Proroga termini»)."""
+    titolo, datore = r["titolo"], (r.get("datore") or "").strip()
+    if datore and titolo.lower().startswith(datore.lower()):
+        resto = re.match(r"\s*[–—:|-]\s*(.+)", titolo[len(datore):], re.S)
+        if resto:
+            return resto.group(1)[0].upper() + resto.group(1)[1:]
+    return titolo
+
+
+def _scade(iso: str, oggi: date | None) -> str:
+    """«scade oggi», «scade domani», altrimenti «scade il 30/11» (come nell'app; 27/11: Vannetti P.IVA scadeva quel giorno)."""
+    if oggi:
+        giorni = (date.fromisoformat(iso) - oggi).days
+        if giorni == 0:
+            return "scade oggi"
+        if giorni == 1:
+            return "scade domani"
+    return f"scade il {_giorno(iso)[:5]}"
+
+
+def _dettagli(r: dict, oggi: date | None = None) -> str:
     pezzi = [ETICHETTE_CONTRATTO.get(r.get("contratto"), "contratto n.d."),
              r.get("compenso") or "compenso n.d.",
              f"{r['zona']} ({r['minuti']} min)" if r.get("zona")
              else f"provincia di {r['provincia']} (comune n.d.)" if r.get("provincia") else "zona n.d."]
     if r.get("scadenza"):
-        pezzi.append(f"scade il {_giorno(r['scadenza'])[:5]}")
+        pezzi.append(_scade(r["scadenza"], oggi))
     return ", ".join(pezzi)
 
 
-def _riga_testo(r: dict) -> str:
+def _riga_testo(r: dict, oggi: date | None = None) -> str:
     capo = f"[{r['punteggio']}] {r.get('datore') or r['titolo']}"
     if r.get("datore") and r["titolo"] != r["datore"]:
-        capo += f" – {_breve(r['titolo'], 90)}"
-    return "\n   ".join([capo, _dettagli(r), r["url"]])
+        capo += f" – {_breve(_ruolo(r), 90)}"
+    return "\n   ".join([capo, _dettagli(r, oggi), r["url"]])
 
 
 def _sicuro(url: str | None) -> str:
     return html.escape(url, quote=True) if url and url.startswith(("http://", "https://")) else "#"
 
 
-def _riga_html(r: dict, url_app: str | None, extra: str = "") -> str:
+def _riga_html(r: dict, url_app: str | None, extra: str = "", oggi: date | None = None) -> str:
     nome = html.escape(r.get("datore") or r["titolo"])
-    ruolo = html.escape(_breve(r["titolo"], 120)) if r.get("datore") and r["titolo"] != r["datore"] else ""
+    ruolo = html.escape(_breve(_ruolo(r), 120)) if r.get("datore") and r["titolo"] != r["datore"] else ""
     legame = _sicuro(f"{url_app.rstrip('/')}/#o={r['id']}") if url_app else _sicuro(r["url"])
     colore = "#2F47C2" if r.get("piva") else "#5B6873"
     return (
@@ -92,7 +115,7 @@ def _riga_html(r: dict, url_app: str | None, extra: str = "") -> str:
         "<td valign='top' style=\"font:15px/1.4 -apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#18222B\">"
         f"<a href='{legame}' style='color:#18222B;font-weight:600;text-decoration:none'>{nome}</a>"
         + (f"<br><span style='color:#3D4A55'>{ruolo}</span>" if ruolo else "")
-        + f"<br><span style='font-size:13px;color:#5B6873'>{html.escape(_dettagli(r))}</span>"
+        + f"<br><span style='font-size:13px;color:#5B6873'>{html.escape(_dettagli(r, oggi))}</span>"
         + (f"<br><span style='font-size:13px;color:#8A5300'>{html.escape(extra)}</span>" if extra else "")
         + f"<br><a href='{_sicuro(r['url'])}' style='font-size:13px;color:#2F47C2'>Annuncio originale</a>"
         "</td></tr></table>")
@@ -183,8 +206,8 @@ def componi_email(report: dict, url_app: str | None) -> tuple[str, str, str]:
         corpo.append(f"<h2 style='margin:22px 0 12px;padding-top:14px;border-top:1px solid #DCE2E7;font-size:16px;font-weight:700'>{html.escape(nome)}</h2>")
         for r in righe:
             extra = ("Cambiato: " + "; ".join(r.get("cambi") or [])) if con_cambi and r.get("cambi") else ""
-            testo.append("- " + _riga_testo(r) + (f"\n   {extra}" if extra else ""))
-            corpo.append(_riga_html(r, url_app, extra))
+            testo.append("- " + _riga_testo(r, giorno) + (f"\n   {extra}" if extra else ""))
+            corpo.append(_riga_html(r, url_app, extra, giorno))
     if report["problemi"]:
         testo += ["", "FONTI DA CONTROLLARE"] + [f"- {x}" for x in report["problemi"]]
         corpo.append("<h2 style='margin:22px 0 10px;padding-top:14px;border-top:1px solid #DCE2E7;font-size:16px;font-weight:700'>Fonti da controllare</h2>")
