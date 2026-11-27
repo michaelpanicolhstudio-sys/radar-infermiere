@@ -70,6 +70,7 @@ Prima di tutto: «preparami / prepariamo» NON è «invia». Prepara la lettera,
 ## Report e allarmi
 - Per dire cosa c'è di nuovo leggi `data/report/<oggi>.json` (nuovi, aggiornati, problemi) e `data/annunci.json`; per le risposte vale la sezione «Controllare le risposte».
 - Le email dei portali che confermano una candidatura («Candidatura inviata», link /indeedapply/) non sono offerte nuove: non riportarle come novità.
+- Gli articoli di giornale (cronaca, interviste a infermieri) non sono offerte, anche se parlano di partita IVA: dalle «novità» toglili, senza prendere datore o contratto dal testo dell'articolo.
 - Se un annuncio dice solo la provincia («Provincia di Trento»), nel report scrivi «provincia di Trento (comune n.d.)», non «zona n.d.»: mai il capoluogo né i suoi minuti.
 - Titoli in maiuscolo, anche solo in parte («INFERMIERE - Trento e provincia»): riportali come frase leggibile, i nomi di struttura con le iniziali maiuscole («Opera Romani»), sigle, numeri e comuni intatti, senza cambiare cosa dicono; se sono troncati, tagliali a fine parola e chiudili con «…». Se il titolo comincia con il nome del datore già scritto, non ripeterlo. Date sempre «gg/mm/aaaa»; per le scadenze vicine «scade oggi / domani».
 - Allarmi in `config.yaml` → `allarmi` (oggi: bando invernale ASUIT di Campiglio / Sèn Jan, guardato su asuit.tn.it, apss.tn.it e opi.tn.it). Scattano una volta per bando (registro `data/allarmi_inviati.json`); non scattano per bandi scaduti, pagine «datate» senza scadenza (oltre 120 giorni) e copie dello stesso bando su un altro sito.
