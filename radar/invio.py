@@ -290,6 +290,34 @@ def esiti_manuali(percorso: Path | None = None) -> dict:
     return {k: v for k, v in dati.items() if not k.startswith("_") and isinstance(v, dict)}
 
 
+RE_PROPOSTA_MIA = re.compile(r"\bhai\s+(?:proposto|chiesto|suggerito)\b|\bproponi\b|\bproporre\b", re.I)
+
+
+def incontro_manuale(mano: dict) -> dict | None:
+    """L'appuntamento di un esito scritto a mano: il campo `incontro`, o quello scritto nel passo
+    («27/11: al telefono … ha fissato il colloquio per martedì 1/12 alle 11», Cles 27/11), contato dal giorno
+    `aggiornato`. Una proposta di Michael non ancora confermata («hai proposto il colloquio…») non è un appuntamento."""
+    if not mano:
+        return None
+    if isinstance(mano.get("incontro"), dict) and mano["incontro"].get("data"):
+        return mano["incontro"]
+    testo = re.sub(r"^\s*\d{1,2}/\d{1,2}(?:/\d{2,4})?\s*:\s*", "", mano.get("prossimo") or "")
+    if not testo or not mano.get("aggiornato"):
+        return None
+    for frase in re.split(r"(?<=[^\W_]{2}[.!?])\s+", testo):  # «via E. Chini» non chiude la frase
+        if RE_PROPOSTA_MIA.search(frase):
+            continue
+        try:
+            trovato = posta.trova_incontro(frase, date.fromisoformat(mano["aggiornato"]))
+        except ValueError:
+            return None
+        # Nei passi a mano le date fino al giorno della nota raccontano cose già successe
+        # («Colloquio del 24/11 andato molto bene», «Telefonata del direttore (19/11)»).
+        if trovato and trovato["data"] > mano["aggiornato"]:
+            return trovato
+    return None
+
+
 def resoconto(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict) -> list[dict]:
     nomi = {s["chiave"]: s for s in strutture}
     par = conti.parametri(cfg)
@@ -321,8 +349,8 @@ def resoconto(strutture: list[dict], memoria: dict, contatti: dict, cfg: dict) -
         for campo in ("da_quando", "turni", "rapporto", "compenso", "euro_ora", "comune", "km", "minuti"):
             if mano.get(campo):
                 riga[campo] = mano[campo]
-        if isinstance(mano.get("incontro"), dict) and mano["incontro"].get("data"):
-            riga["incontro"] = mano["incontro"]
+        if incontro_manuale(mano):
+            riga["incontro"] = incontro_manuale(mano)
         # 21/11 Casa Laner: «Tocca a te» restava anche dopo la risposta di Michael. Se lui ha scritto dopo
         # che il passo «da fare» è stato deciso (o dopo l'ultima risposta della struttura), ora tocca a loro.
         riferimento = mano.get("aggiornato") if mano else (ultima.get("data") if ultima else None)

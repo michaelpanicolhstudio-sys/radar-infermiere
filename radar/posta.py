@@ -140,8 +140,15 @@ def trova_incontro(testo: str, oggi: date) -> dict | None:
     trovati = sorted([(m, "incontro") for m in RE_INCONTRO.finditer(testo)] + [(m, "telefonata") for m in RE_TELEFONATA.finditer(testo)],
                      key=lambda x: x[0].start())
     for m, tipo in trovati:
-        finestra = testo[max(0, m.start() - 60): m.end() + 160]
-        giorno, d = _giorno_vicino(finestra, oggi)
+        finestra = frase = testo[max(0, m.start() - 60): m.end() + 160]
+        # Prima la data che segue la parola («colloquio … martedì 1/12»), poi quella prima: «27/11: … fissato
+        # il colloquio per martedì 1/12» dava il 27/11 (Cles, 27/11).
+        dopo = testo[m.start(): m.end() + 160]
+        giorno, d = _giorno_vicino(dopo, oggi)
+        if d:
+            finestra = dopo
+        else:
+            giorno, d = _giorno_vicino(finestra, oggi)
         o = None
         if d:
             o = RE_ORA.search(finestra[d.end():]) or RE_ORA.search(finestra[:d.start()])
@@ -158,7 +165,7 @@ def trova_incontro(testo: str, oggi: date) -> dict | None:
                 ora = f"{h:02d}:{minuti:02d}"
         if tipo == "telefonata" and not ora and not d:
             continue
-        trovato = {"data": giorno.isoformat(), "ora": ora, "frase": estrai.pulisci(finestra)[:200]}
+        trovato = {"data": giorno.isoformat(), "ora": ora, "frase": estrai.pulisci(frase)[:200]}
         if tipo == "telefonata":
             trovato["tipo"] = "telefonata"
         return trovato

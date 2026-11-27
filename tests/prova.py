@@ -229,6 +229,10 @@ pagine2[BASE] = "<html><body><main><p>Sito in manutenzione</p></main></body></ht
 r2 = motore.giro(cfg, ReteFinta(pagine2), date(2026, 11, 13), registra=muto)
 verifica("giorno 2: niente di nuovo", len(r2["nuovi"]), 0)
 verifica("giorno 2: struttura cambiata segnalata", any("cambiato struttura" in x for x in r2["problemi"]), True)
+# 27/11 sera: OPI Bolzano a zero link per due giri, ma la diagnostica non diceva che cosa era arrivato.
+_pag2 = motore.leggi_json(motore.FILE_DIAGNOSTICA, {})["fonti"]["Ente"]["pagine"][0]
+verifica("diagnostica: elenco senza link dice cosa è arrivato", (_pag2["caratteri"] > 0, _pag2["titolo"], _pag2["inizio"]),
+         (True, None, "Sito in manutenzione"))
 verifica("giorno 2: nessun annuncio dato per sparito", [a.get("sparito_dal") for a in motore.leggi_json(motore.FILE_ANNUNCI, {}).values()], [None] * 5)
 
 pagine3 = dict(pagine)
@@ -1232,5 +1236,22 @@ verifica("notizia: annuncio sul giornale con «selezione» nel sommario resta",
          estrai.e_notizia("Ospedale di Cles, servono infermieri", "https://www.ildolomiti.it/cronaca/2026/x", "Asuit ha aperto una selezione per infermieri"), False)
 verifica("notizia: fuori dalla sezione notizie «partita IVA» nel sommario resta un segno d'offerta",
          estrai.e_notizia("Infermiere a Trento", "https://www.esempio.it/lavoro/x", "infermiere con partita IVA per RSA"), False)
+
+print("\nRevisione del 27/11 sera")
+# 27/11: al telefono la coordinatrice di Cles ha fissato il colloquio per martedì 1/12 alle 11. Scritto con Michael
+# nel passo di data/esiti.json, ma senza campo `incontro`: in app e nel calendario non c'era nessun appuntamento.
+# Anche la lettura automatica prendeva la data prima della parola («27/11: … colloquio per martedì 1/12» → 27/11).
+_cles = {"esito": "sì", "aggiornato": "2026-11-27",
+         "prossimo": "27/11: al telefono Cattani ha fissato il colloquio conoscitivo per martedì 1/12 alle 11, APSP Santa Maria, via E. Chini 37, Cles. Chiedi turni, ore al mese e compenso."}
+verifica("esito a mano: il colloquio scritto nel passo è un appuntamento",
+         {k: v for k, v in (invio.incontro_manuale(_cles) or {}).items() if k != "frase"}, {"data": "2026-12-01", "ora": "11:00"})
+verifica("incontro: vale la data dopo la parola", (posta.trova_incontro("Grazie della mail del 27/11, possiamo fare un colloquio martedì 1/12 alle 11?", _v) or {}).get("data"), "2026-12-01")
+verifica("esito a mano: una proposta di Michael non è un appuntamento",
+         invio.incontro_manuale({"aggiornato": "2026-11-27", "prossimo": "27/11: hai proposto il colloquio per giovedì 3/12 alle 9:00. Aspetta la conferma."}), None)
+verifica("esito a mano: cose già successe non sono appuntamenti",
+         [invio.incontro_manuale(m) for m in ({"aggiornato": "2026-11-24", "prossimo": "Colloquio del 24/11 andato molto bene (Laura Fratton)."},
+                                              {"aggiornato": "2026-11-18", "prossimo": "CV inviato il 18/11: ti chiamano in caso di necessità."})], [None, None])
+verifica("esito a mano: il campo incontro vince", invio.incontro_manuale({"aggiornato": "2026-11-27", "prossimo": "colloquio martedì 1/12 alle 11",
+                                                                          "incontro": {"data": "2026-12-02", "ora": "10:00"}}), {"data": "2026-12-02", "ora": "10:00"})
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

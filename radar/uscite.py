@@ -481,7 +481,7 @@ def costruisci_sito(cfg: dict, oggi: date, destinazione: Path | None = None) -> 
         c = contatti.get(s["chiave"])
         s["contatto"] = _contatto_per_app(c)
         fissati = [r["incontro"] for r in (c or {}).get("risposte", []) if r.get("incontro")]
-        mano = (invio.esiti_manuali().get(s["chiave"]) or {}).get("incontro")
+        mano = invio.incontro_manuale(invio.esiti_manuali().get(s["chiave"]) or {})
         if isinstance(mano, dict) and mano.get("data"):
             fissati = [m for m in fissati if m.get("data") != mano["data"]] + [mano]  # confermato da Michael: vale più della data letta in automatico
         for inc in fissati:
