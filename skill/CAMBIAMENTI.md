@@ -1,5 +1,6 @@
 # Cambiamenti della skill radar-infermiere (dal più recente)
 
+- 2026-11-27 — «App e stato»: anche le telefonate promesse («la chiamo alle 15») sono appuntamenti, con i giorni a parole contati dal giorno della risposta; prima di aggiornare esiti.json leggere tutte le risposte del giorno. «Report»: niente datore ripetuto nel titolo, «scade oggi / domani».
 - 2026-11-26 (sera) — «App e stato»: nel prossimo passo solo i numeri della struttura, non quello di Michael. «Report»: titoli tagliati a fine parola, date gg/mm/aaaa.
 - 2026-11-26 — «App e stato»: anche la richiesta di un recapito telefonico è «Tocca a te»; se il CV era già stato mandato a un altro indirizzo, il passo lo dice. «Report»: le conferme di candidatura dei portali non sono novità.
 - 2026-11-25 (sera) — «Controllare le risposte»: riportare turni e ore al mese scritti dalla struttura. «Aggiungere strutture»: le pagine fonte hanno un titolo che dice che cercano un infermiere; zona da verificare se la struttura ha più sedi.
