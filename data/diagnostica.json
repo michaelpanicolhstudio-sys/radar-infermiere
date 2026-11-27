@@ -414,8 +414,8 @@
      "https://www.apspcles.it/Lavora-con-noi"
     ],
     [
-     "Concorso Operatore dei servizi ausiliari base servizio lavanderia: ris",
-     "https://www.apspcles.it/Novita/Ultime-Novita/Concorso-Operatore-dei-servizi-ausiliari-base-servizio-lavanderia-risultati-prove-orali-26-11-2026"
+     "Concorso Operatore dei servizi ausiliari base servizio lavanderia: gra",
+     "https://www.apspcles.it/Novita/Ultime-Novita/Concorso-Operatore-dei-servizi-ausiliari-base-servizio-lavanderia-graduatoria-finale"
     ],
     [
      "Concorso addetto ai servizi ausiliari livello ingresso-comunicazione c",
@@ -756,6 +756,8 @@
    "pagine": [
     {
      "candidati": 0,
+     "caratteri": 67648,
+     "inizio": "Risorse umane e formazione / Argomenti / APSP Grazioli - A.P.S.P. Margherita Grazioli Vai al contenuto principale Vai al footer Provincia autonoma di Trento Links Provincia autonoma di Trento Amministrazione Trasparente Lavora con noi A.P.S.P. Margherita Grazioli Azienda Pubblica di Servizi alla Per",
      "link_in_pagina": [
       [
        "Amministrazione Trasparente",
@@ -878,6 +880,7 @@
        "https://www.apspgrazioli.it/Servizi/(view)/Iscrizione e accesso alle strutture"
       ]
      ],
+     "titolo": "Risorse umane e formazione / Argomenti / APSP Grazioli - A.P.S.P. Margherita Grazioli",
      "url": "https://www.apspgrazioli.it/Argomenti/Risorse-umane-e-formazione"
     }
    ],
@@ -888,6 +891,8 @@
    "pagine": [
     {
      "candidati": 0,
+     "caratteri": 61185,
+     "inizio": "Concorsi / Albo pretorio / A.P.S.P. Clementino Vannetti di Rovereto - A.P.S.P. Clementino Vannetti di Rovereto Vai al contenuto principale Vai al footer U.P.I.P.A. (Unione Provinciale Istituzioni Per l'Assistenza) Links U.P.I.P.A. (Unione Provinciale Istituzioni Per l'Assistenza) Amministrazione Tra",
      "link_in_pagina": [
       [
        "Amministrazione Trasparente",
@@ -1006,6 +1011,7 @@
        "https://www.apspvannetti.it/I-nostri-servizi/08.-Casa-Amalia-Alberti"
       ]
      ],
+     "titolo": "Concorsi / Albo pretorio / A.P.S.P. Clementino Vannetti di Rovereto - A.P.S.P. Clementino Vannetti di Rovereto",
      "url": "https://www.apspvannetti.it/Albo-pretorio/Concorsi"
     },
     {
@@ -1132,6 +1138,8 @@
    "pagine": [
     {
      "candidati": 0,
+     "caratteri": 41427,
+     "inizio": "Stellenangebote der Seniorenwohnheime Südtirols | Verband der Seniorenwohnheime Südtirols Skip to main content Deutsch Italiano Seniorenbetreuung in Südtirol Mitglied Verband der Seniorenwohnheime Südtirols Username * Password * Request new password Login Mitgliederbereich Login Verband der Senioren",
      "link_in_pagina": [
       [
        "Deutsch",
@@ -1282,6 +1290,7 @@
        "https://www.vds-suedtirol.it/de/privacy"
       ]
      ],
+     "titolo": "Stellenangebote der Seniorenwohnheime Südtirols | Verband der Seniorenwohnheime Südtirols",
      "url": "https://www.vds-suedtirol.it/de/jobs"
     },
     {
@@ -1402,13 +1411,21 @@
    "accettati": [],
    "pagine": [
     {
-     "candidati": 0,
-     "caratteri": 439,
+     "candidati": 1,
+     "caratteri": 1429,
      "titolo_feed": "Google Alert - infermiere lavoro Rovereto OR Riva OR Arco OR Pergine OR Cles",
      "url": "feed"
     }
    ],
-   "scartati": []
+   "pdf_scartati": [],
+   "scartati": [
+    [
+     "“Non voglio più ridurre i pazienti a numeri”. La scelta di Giuliano Zandonai, infermiere che ...",
+     "notizia, non un'offerta di lavoro",
+     "https://www.ildolomiti.it/cronaca/2026/non-voglio-piu-ridurre-i-pazienti-a-numeri-la-scelta-di-giuliano-zandonai-infermiere-che-ha-lasciato-il-posto-fisso-in-ospedale-non-tornerei-nemmeno-per-mille-euro-in-piu"
+    ]
+   ],
+   "senza_pdf": []
   },
   "Google Alerts 17": {
    "accettati": [],
@@ -1460,11 +1477,31 @@
   },
   "Google Alerts 3": {
    "accettati": [],
+   "gia_scartati": [
+    [
+     "“Non voglio più ridurre i pazienti a numeri”. La scelta di Giuliano Zandonai, infermiere che ...",
+     "notizia, non un'offerta di lavoro",
+     "https://www.ildolomiti.it/cronaca/2026/non-voglio-piu-ridurre-i-pazienti-a-numeri-la-scelta-di-giuliano-zandonai-infermiere-che-ha-lasciato-il-posto-fisso-in-ospedale-non-tornerei-nemmeno-per-mille-euro-in-piu",
+     "2026-11-27"
+    ]
+   ],
    "pagine": [
     {
      "candidati": 1,
      "caratteri": 1376,
      "titolo_feed": "Google Alert - infermiere partita IVA Trento",
+     "url": "feed"
+    }
+   ],
+   "scartati": []
+  },
+  "Google Alerts 4": {
+   "accettati": [],
+   "pagine": [
+    {
+     "candidati": 1,
+     "caratteri": 1396,
+     "titolo_feed": "Google Alert - infermiere Trento OR Trentino lavoro",
      "url": "feed"
     }
    ],
@@ -1477,32 +1514,6 @@
     ]
    ],
    "senza_pdf": []
-  },
-  "Google Alerts 4": {
-   "accettati": [],
-   "gia_scartati": [
-    [
-     "Infermieri , rapporto Fnopi-Sant'Anna: organici sotto la media Ocse e competenze poco valorizzate",
-     "fuori regione",
-     "https://www.sanita33.it/ospedali/8602/infermieri-rapporto-fnopi-sant-anna-organici-sotto-la-media-ocse-e-competenze-poco-valorizzate.html",
-     "2026-11-26"
-    ],
-    [
-     "Meno posti letto al Santa Chiara, Nursing Up attacca la Provincia - TrentoToday",
-     "notizia, non un'offerta di lavoro",
-     "https://www.trentotoday.it/cronaca/ospedale-santa-chiara-posti-letto-infermieri-nursing-up.html",
-     "2026-11-26"
-    ]
-   ],
-   "pagine": [
-    {
-     "candidati": 2,
-     "caratteri": 2171,
-     "titolo_feed": "Google Alert - infermiere Trento OR Trentino lavoro",
-     "url": "feed"
-    }
-   ],
-   "scartati": []
   },
   "Google Alerts 5": {
    "accettati": [],
@@ -1565,17 +1576,8 @@
    "scartati": []
   },
   "Gruppo Bonvicini – lavora con noi": {
-   "accettati": [
-    "Lavora con noi"
-   ],
-   "pagine": [
-    {
-     "caratteri": 828,
-     "inizio": "Lavora con noi Posizioni aperte Vuoi entrare a far parte del nostro team? Qui trovi tutte le figure professionali che cerchiamo in questo momento. Consulta gli annunci, compila il form e inviaci la tua candidatura. Farmacista a tempo pieno Farmacie Bonvicini Tempo pieno Candidati Fisioterapista per pazienti interni Casa di Cura Bonvicini Tempo pieno: terapie manuali, terapie strumentali, idrokines",
-     "pdf": [],
-     "url": "https://www.gruppobonvicini.it/lavora-con-noi/"
-    }
-   ],
+   "accettati": [],
+   "pagine": [],
    "scartati": []
   },
   "Martinsbrunn Merano – Job & Karriere": {
@@ -1607,15 +1609,57 @@
    "scartati": []
   },
   "OPI Bolzano – offerte di lavoro": {
-   "accettati": [],
+   "accettati": [
+    "Cerchiamo infermiere:i (m/f/d) per la nostra RSA Ciasa de Palsa Ojöp Frëinademetz",
+    "La casa di riposo di Silandro cerca nuovi collaboratori/trici"
+   ],
+   "gia_scartati": [
+    [
+     "Ricerca di funzionario sanitario in comando presso l’INPS di Bolzano",
+     "ruolo diverso (dal titolo)",
+     "https://www.opibz.it/ricerca-di-funzionario-sanitario-in-comando-presso-linps-di-bolzano/",
+     "2026-11-25"
+    ],
+    [
+     "Infermiere a Caorle",
+     "fuori regione",
+     "https://www.opibz.it/infermiere-a-caorle/",
+     "2026-11-25"
+    ],
+    [
+     "Cerchiamo un RESPONSABILE TECNICO-ASSISTENZIALE",
+     "ruolo diverso (dal titolo)",
+     "https://www.opibz.it/cerchiamo-un-responsabile-tecnico-assistenziale/",
+     "2026-11-25"
+    ],
+    [
+     "CERCHIAMO UN/UNA RESPONSABILE DI PIANO",
+     "ruolo diverso (dal titolo)",
+     "https://www.opibz.it/cerchiamo-un-una-responsabile-di-piano/",
+     "2026-11-25"
+    ],
+    [
+     "INPS – Ricerca infermiere/a",
+     "ruolo diverso (coordinamento, direzione o comando)",
+     "https://www.opibz.it/inps-ricerca-infermiere-a/",
+     "2026-11-25"
+    ],
+    [
+     "Avviso – Collegio tecnico – Dirigenza tecnico-assistenziale",
+     "ruolo diverso (dal titolo)",
+     "https://www.opibz.it/avviso-collegio-tecnico-dirigenza-tecnico-assistenziale/",
+     "2026-11-25"
+    ]
+   ],
    "pagine": [
     {
-     "candidati": 0,
-     "link_in_pagina": [],
+     "candidati": 20,
      "url": "https://www.opibz.it/?page_id=5109"
     }
    ],
-   "scartati": []
+   "pdf_scartati": [],
+   "scartati": [],
+   "senza_pdf": []
   },
   "OPI Trento – annunci di lavoro": {
    "accettati": [
@@ -1738,6 +1782,8 @@
    "pagine": [
     {
      "candidati": 0,
+     "caratteri": 86742,
+     "inizio": "Avvisi / Bacheca / Upipa - Unione Provinciale Istituzioni Per l'Assistenza - U.P.I.P.A. - società cooperativa Vai al Contenuto Vai alla navigazione del sito Attenzione! Questa pagina potrebbe non essere visualizzata correttamente. Stai utilizzando una versione obsoleta di Internet Explorer. Per un'e",
      "link_in_pagina": [
       [
        "Family Audit - Avvisi ed eventi",
@@ -1876,6 +1922,7 @@
        "https://www.upipa.tn.it/Ambiti-ed-aree-di-attivita/Rappresentanza-politica-e-sindacale/Regione-Autonoma-Trentino-Alto-Adige-Suedtirol"
       ]
      ],
+     "titolo": "Avvisi / Bacheca / Upipa - Unione Provinciale Istituzioni Per l'Assistenza - U.P.I.P.A. - società cooperativa",
      "url": "https://www.upipa.tn.it/Bacheca/Avvisi"
     }
    ],
@@ -1936,7 +1983,7 @@
    "scartati": []
   }
  },
- "richieste": 101,
+ "richieste": 103,
  "strutture": {
   "saltato": "aggiornato il 2026-11-22"
  }
