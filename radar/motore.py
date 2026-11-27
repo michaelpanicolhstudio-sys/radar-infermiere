@@ -402,6 +402,11 @@ def raccogli_fonte(fonte: dict, rete, cfg: dict, comuni: list[dict], oggi: date,
             pagina_nota = {"url": url, "candidati": len(trovati)}
             if not trovati and i == 0:
                 pagina_nota["link_in_pagina"] = estrai.tutti_i_link(html, url, 40)
+                # OPI Bolzano 27/11: zero link, ma non si capiva se era arrivata una pagina vuota, un blocco
+                # o la pagina vera cambiata. Come per i feed (16/11): dire che cosa è arrivato.
+                titolo_pag = re.search(r"<title[^>]*>(.*?)</title>", html or "", re.I | re.S)
+                pagina_nota.update(caratteri=len(html or ""), titolo=estrai.pulisci(titolo_pag.group(1))[:120] if titolo_pag else None,
+                                   inizio=estrai.senza_tag(re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", html or ""))[:300])
             nota["pagine"].append(pagina_nota)
             for c in trovati:
                 chiave = estrai.normalizza_url(c["url"])
