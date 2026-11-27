@@ -6,7 +6,7 @@
    "url": "https://www.vds-suedtirol.it/it/jobs"
   },
   {
-   "caratteri": 2770,
+   "caratteri": 2804,
    "inizio": "Die Stiftung St. Elisabeth ist mehr als eine Pflegeinstitution. Mit 5 Seniorenwohnheimen, 2 Privatkliniken, einem Bildungs- & Tagungszentrum, einem Mehrgenerationenhaus und einer Kita bieten wir an 7 Standorten im ganzen Land Raum für verschiedenste Talente und Qualifikationen. 7 Standorte 700 Mitar",
    "link": [
     [
@@ -60,6 +60,10 @@
     [
      "Krankenpfleger/Krankenpflegerin (m/w/d) Marienklinik (Bozen) Vollzeit,",
      "https://stiftung-st-elisabeth.onboard.org/de/jobs/54WXJ7G9"
+    ],
+    [
+     "Hausmeister/Hausmeisterin (m/w/d) Marienklinik (Bozen) Vollzeit",
+     "https://stiftung-st-elisabeth.onboard.org/de/jobs/zmg2BveO"
     ],
     [
      "Initiativbewerbung",
@@ -947,61 +951,6 @@
     ]
    ]
   },
-  "Avvisi email – Adecco": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Etjca": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Gi Group": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Indeed": {
-   "accettati": 5,
-   "candidati": 5,
-   "scartati": []
-  },
-  "Avvisi email – InfoJobs": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Jobrapido": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – LinkedIn": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Manpower": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Openjobmetis": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Randstad": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Umana": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
   "Brixsana Bressanone – Karriere": {
    "accettati": [
     "Infermiere/a (KrankenpflegerIn) – tempo pieno, da subito"
@@ -1171,16 +1120,20 @@
    "scartati": []
   },
   "Google Alerts 3": {
-   "accettati": [],
+   "accettati": [
+    "“Non voglio più ridurre i pazienti a numeri”. La scelta di Giuliano Zandonai, infermiere c"
+   ],
    "pagine": [
     {
-     "candidati": 0,
-     "caratteri": 409,
+     "candidati": 1,
+     "caratteri": 1376,
      "titolo_feed": "Google Alert - infermiere partita IVA Trento",
      "url": "feed"
     }
    ],
-   "scartati": []
+   "pdf_scartati": [],
+   "scartati": [],
+   "senza_pdf": []
   },
   "Google Alerts 4": {
    "accettati": [],
@@ -1288,7 +1241,7 @@
    ],
    "pagine": [
     {
-     "caratteri": 2770,
+     "caratteri": 2804,
      "inizio": "Die Stiftung St. Elisabeth ist mehr als eine Pflegeinstitution. Mit 5 Seniorenwohnheimen, 2 Privatkliniken, einem Bildungs- & Tagungszentrum, einem Mehrgenerationenhaus und einer Kita bieten wir an 7 Standorten im ganzen Land Raum für verschiedenste Talente und Qualifikationen. 7 Standorte 700 Mitarbeitende Unsere Einrichtungen 1 Freyenthurn Mühlbach 2 Grieserhof Bozen 3 Jesuheim Girlan 4 Lebensrä",
      "pdf": [],
      "url": "https://www.martinsbrunn.it/job-karriere/"
@@ -1311,57 +1264,15 @@
    "scartati": []
   },
   "OPI Bolzano – offerte di lavoro": {
-   "accettati": [
-    "Cerchiamo infermiere:i (m/f/d) per la nostra RSA Ciasa de Palsa Ojöp Frëinademetz",
-    "La casa di riposo di Silandro cerca nuovi collaboratori/trici"
-   ],
-   "gia_scartati": [
-    [
-     "Ricerca di funzionario sanitario in comando presso l’INPS di Bolzano",
-     "ruolo diverso (dal titolo)",
-     "https://www.opibz.it/ricerca-di-funzionario-sanitario-in-comando-presso-linps-di-bolzano/",
-     "2026-11-25"
-    ],
-    [
-     "Infermiere a Caorle",
-     "fuori regione",
-     "https://www.opibz.it/infermiere-a-caorle/",
-     "2026-11-25"
-    ],
-    [
-     "Cerchiamo un RESPONSABILE TECNICO-ASSISTENZIALE",
-     "ruolo diverso (dal titolo)",
-     "https://www.opibz.it/cerchiamo-un-responsabile-tecnico-assistenziale/",
-     "2026-11-25"
-    ],
-    [
-     "CERCHIAMO UN/UNA RESPONSABILE DI PIANO",
-     "ruolo diverso (dal titolo)",
-     "https://www.opibz.it/cerchiamo-un-una-responsabile-di-piano/",
-     "2026-11-25"
-    ],
-    [
-     "INPS – Ricerca infermiere/a",
-     "ruolo diverso (coordinamento, direzione o comando)",
-     "https://www.opibz.it/inps-ricerca-infermiere-a/",
-     "2026-11-25"
-    ],
-    [
-     "Avviso – Collegio tecnico – Dirigenza tecnico-assistenziale",
-     "ruolo diverso (dal titolo)",
-     "https://www.opibz.it/avviso-collegio-tecnico-dirigenza-tecnico-assistenziale/",
-     "2026-11-25"
-    ]
-   ],
+   "accettati": [],
    "pagine": [
     {
-     "candidati": 20,
+     "candidati": 0,
+     "link_in_pagina": [],
      "url": "https://www.opibz.it/?page_id=5109"
     }
    ],
-   "pdf_scartati": [],
-   "scartati": [],
-   "senza_pdf": []
+   "scartati": []
   },
   "OPI Trento – annunci di lavoro": {
    "accettati": [
@@ -1682,7 +1593,7 @@
    "scartati": []
   }
  },
- "richieste": 96,
+ "richieste": 94,
  "strutture": {
   "saltato": "aggiornato il 2026-11-22"
  }
