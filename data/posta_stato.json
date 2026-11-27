@@ -4,13 +4,23 @@
    "altri_link": [
     "richiedi la password per accedere al tuo account",
     "Attiva i Job Alert",
-    "offerte di lavoro"
+    "offerte di lavoro",
+    "Per vedere questa mail come una pagina web clicca qui",
+    "Scopri di più",
+    "Scopri di più",
+    "Scopri di più",
+    "Scopri di più",
+    "Scopri di più",
+    "Inizia ora",
+    "clicca qui",
+    "AGGIORNA CV"
    ],
    "annunci": 0,
-   "email": 1,
+   "email": 2,
    "esempi": [],
    "oggetti": [
-    "Candidatura per la posizione JN -082026-759861 completata!"
+    "Candidatura per la posizione JN -082026-759861 completata!",
+    "Fai emergere il tuo valore professionale"
    ]
   },
   "Etjca": {
@@ -34,23 +44,26 @@
     "Centro di supporto",
     "Visualizza annuncio",
     "Non adatto al mio profilo",
+    "Assistente di studio odontoiatrico (ASO)",
     "Scopri di più",
-    "Modifica profilo",
-    "Metti in pausa queste email"
+    "Modifica profilo"
    ],
-   "annunci": 7,
+   "annunci": 5,
+   "conferme": [
+    "INFERMIERE - Trento e provincia"
+   ],
    "email": 8,
    "esempi": [
-    "Infermieri ParaMedica srl Asiago, Veneto",
     "Infermiera / Infermiere Professionale Coop SOS Bolzano - Bozen, Trentino-Alto Adige",
-    "infermiere/a CITTA' AZZURRA SOC. COOP. BOLZANO 39100 Bolzano - Bozen"
+    "infermiere/a CITTA' AZZURRA SOC. COOP. BOLZANO 39100 Bolzano - Bozen",
+    "IQVIA Italia Infermiere per attività domiciliari IQVIA Solutions Italy srl Provincia di Trento, Trentino-Alto Adige"
    ],
    "oggetti": [
-    "Infermieri presso ParaMedica srl",
     "Infermiera / Infermiere Professionale presso Coop SOS",
     "Assistente di studio odontoiatrico (ASO) presso Smile Line Ortodonzia",
     "infermiere/a presso CITTA' AZZURRA SOC. COOP. BOLZANO",
-    "IQVIA Italia Infermiere per attività domiciliari presso IQVIA Solutions Italy srl"
+    "IQVIA Italia Infermiere per attività domiciliari presso IQVIA Solutions Italy srl",
+    "INFERMIERE M/F presso CERBA HEALTHCARE CORPORATE SERVICELAB S.R.L."
    ]
   },
   "InfoJobs": {
@@ -94,10 +107,10 @@
    "esempi": []
   }
  },
- "data": "2026-11-26",
+ "data": "2026-11-27",
  "note": [
-  "• Posta: 48 contatti inviati, 1 risposte nuove",
-  "• Avvisi di Indeed: 7 annunci per infermieri nelle email degli ultimi giorni",
+  "• Posta: 48 contatti inviati, 0 risposte nuove",
+  "• Avvisi di Indeed: 5 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di LinkedIn: 0 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di InfoJobs: 0 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di Jobrapido: 0 annunci per infermieri nelle email degli ultimi giorni",
