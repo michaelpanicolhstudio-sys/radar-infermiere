@@ -875,6 +875,17 @@
     "oggetto": "R: Infermiere libero professionista – richiesta di informazioni (Rif. R-d9403e72)",
     "testo": "Ottimo, la chiamo alle 15!\nA dopo,\n\nSelene",
     "turni": null
+   },
+   {
+    "compenso": null,
+    "da": "selene.rossi@residenzamolino.it",
+    "data": "2026-11-27",
+    "euro_ora": null,
+    "incontro": null,
+    "mid": "<PAWPR10MB475618EF5D37AA7F64697A2FB5F8412@PAWPR10MB475618.EURPRD10.PROD.OUTLOOK.COM>",
+    "oggetto": "R: Infermiere libero professionista – richiesta di informazioni (Rif. R-d9403e72)",
+    "testo": "Buongiorno.\nIo sarei disponibile 3 dicembre al mattino entro le 10.15, poi ho un impegno! Riusciresti?\nI turni sono questi:\nSO: 6-11\nM: 6-13.30\nP:13.30-19.30\nSP:16.00-21.10\nN: 21.00-6.10\n\nSu quanti turni servirebbero, non so dire un numero preciso. In base alle disponibilità date, vedo quali turni possono essere utili!\n\nBuona serata\n\nSelene",
+    "turni": null
    }
   ],
   "via": "gmail"
