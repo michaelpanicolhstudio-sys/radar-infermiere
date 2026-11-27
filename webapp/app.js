@@ -292,8 +292,8 @@
     });
     (DATI.incontri || []).filter(function (x) { return x.data >= isoDi(oggi); }).forEach(function (x) {
       lista.appendChild(el("a", { class: "priorita-riga", href: x.ics },
-        iconaPriorita("calendario"),
-        el("span", {}, el("small", { text: "Colloquio · " + giornoBreve(x.data) + (x.ora ? " · " + x.ora : "") }),
+        iconaPriorita(x.tipo === "telefonata" ? "telefono" : "calendario"),
+        el("span", {}, el("small", { text: (x.tipo === "telefonata" ? "Telefonata · " : "Colloquio · ") + giornoBreve(x.data) + (x.ora ? " · " + x.ora : "") }),
           el("strong", { text: x.nome }), el("span", { text: "Aggiungi al calendario" })),
         el("span", { "aria-hidden": "true", text: "›" })));
     });
@@ -831,7 +831,7 @@
   function schedaGiorno(iso, scadenze, incontri) {
     var t = AGENDA.giorni[iso] || {}, c = conti(), box = el("div", { class: "pannello" });
     box.appendChild(el("h3", { text: nomeGiorno(iso) + " " + MESI_LUNGHI[+iso.slice(5, 7) - 1] }));
-    if (incontri[iso]) box.appendChild(el("p", { class: "avviso", text: "Incontro con " + incontri[iso].nome + (incontri[iso].ora ? " alle " + incontri[iso].ora : "") }));
+    if (incontri[iso]) box.appendChild(el("p", { class: "avviso", text: (incontri[iso].tipo === "telefonata" ? "Telefonata con " : "Incontro con ") + incontri[iso].nome + (incontri[iso].ora ? " alle " + incontri[iso].ora : "") }));
     if (scadenze[iso]) box.appendChild(el("p", { class: "nota", text: plurale(scadenze[iso], "annuncio scade", "annunci scadono") + " in questo giorno." }));
     var tipo = el("select", { "aria-label": "Tipo di turno" });
     Object.keys(TIPI_TURNO).forEach(function (k) { var o = el("option", { value: k, text: TIPI_TURNO[k][0] }); if ((t.tipo || "M") === k) o.selected = true; tipo.appendChild(o); });
@@ -1013,7 +1013,7 @@
       dato("Per l'obiettivo", !r.turni_obiettivo ? null : r.basta_da_sola === false
         ? "da sola non basta: servirebbero " + r.turni_obiettivo + " turni al mese, ne offre al massimo " + r.turni_max_mese
         : r.turni_obiettivo + " turni al mese"),
-      dato("Incontro", r.incontro ? giorno(r.incontro.data) + (r.incontro.ora ? " alle " + r.incontro.ora : "") : null)));
+      dato(r.incontro && r.incontro.tipo === "telefonata" ? "Telefonata" : "Incontro", r.incontro ? giorno(r.incontro.data) + (r.incontro.ora ? " alle " + r.incontro.ora : "") : null)));
     bloccoRisposte(corpo, (o || st || {}).contatto);
     if (o) corpo.appendChild(el("button", { class: "collegamento", text: "Apri l'offerta", onclick: function () { apriScheda(o.id); } }));
     d.appendChild(corpo);
@@ -1322,7 +1322,7 @@
     if (!contatto) return;
     (contatto.risposte || []).forEach(function (r) {
       contenitore.appendChild(titoloSezione("Risposta del " + giorno(r.data)));
-      var fatti = [r.compenso, r.turni, r.incontro ? "incontro proposto il " + giorno(r.incontro.data) + (r.incontro.ora ? " alle " + r.incontro.ora : "") : null].filter(Boolean);
+      var fatti = [r.compenso, r.turni, r.incontro ? (r.incontro.tipo === "telefonata" ? "telefonata il " : "incontro proposto il ") + giorno(r.incontro.data) + (r.incontro.ora ? " alle " + r.incontro.ora : "") : null].filter(Boolean);
       if (fatti.length) contenitore.appendChild(el("p", { class: "avviso", text: "Ho letto: " + fatti.join(", ") + ". Controlla nel testo." }));
       contenitore.appendChild(el("p", { class: "estratto", text: r.testo }));
     });

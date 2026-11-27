@@ -29,6 +29,13 @@ _POSTA_COMUNE = ("gmail.com", "googlemail.com", "libero.it", "hotmail.", "outloo
                  "virgilio.it", "alice.it", "tiscali.it", "pec.it", "legalmail.it", "postecert.it", "arubapec.it")
 RE_INCONTRO = re.compile(r"colloqui\w*|incontr\w+|appuntament\w*|vederci|conoscerci|conoscerla|venire\s+(?:a\s+trovarci|in\s+struttura)|"
                          r"gespr[äa]ch\w*|termin\b|vorstellung\w*|kennenlernen|treffen", re.I)
+# 27/11 Residenza Molino: «La contatto oggi in giornata!», «Ottimo, la chiamo alle 15!» è una telefonata fissata.
+RE_TELEFONATA = re.compile(r"\b(?:la|le|lo|ti|vi)\s+(?:ri)?(?:chiam|contatt|telefon)\w*|\bci\s+sentiamo\b|\bsentirci\b|"
+                           r"\btelefonat\w*|\bchiamata\b|\banrufen\b|\btelefonisch\w*", re.I)
+_GIORNI_SETT = ["luned", "marted", "mercoled", "gioved", "venerd", "sabat", "domenic"]
+RE_GIORNO_RELATIVO = re.compile(r"\b(?:(dopodomani)|(domani)|(oggi|in\s+giornata|stamattina|stamani|stasera|questo\s+pomeriggio|heute)|"
+                                r"(luned|marted|mercoled|gioved|venerd|sabat|domenic)\w*)\b", re.I)
+RE_GIORNO_MESE = re.compile(r"(?<![\d/.])(\d{1,2})/(\d{1,2})(?![\d/])")
 RE_ORA = re.compile(r"(?:ore|alle|um|h\.?)\s*(\d{1,2})(?:[:.,](\d{2}))?|\b(\d{1,2})[:.](\d{2})\s*(?:uhr)?", re.I)
 
 
@@ -100,23 +107,61 @@ def taglia_citazione(testo: str) -> str:
     return re.sub(r"\n{3,}", "\n\n", "\n".join(tenute)).strip()
 
 
+def _giorno_vicino(finestra: str, oggi: date) -> tuple[date | None, re.Match | None]:
+    """La data dell'incontro: completa («24/11/2026»), senza anno («27/11») o detta a parole («oggi», «domani», «venerdì»)."""
+    d = estrai.RE_DATA.search(finestra)
+    if d:
+        return estrai._data_da_match(d), d
+    d = RE_GIORNO_MESE.search(finestra)
+    if d:
+        try:
+            g = date(oggi.year, int(d.group(2)), int(d.group(1)))
+            if g < oggi - timedelta(days=30):
+                g = date(oggi.year + 1, g.month, g.day)
+            return g, d
+        except ValueError:
+            pass
+    d = RE_GIORNO_RELATIVO.search(finestra)
+    if d:
+        if d.group(1):
+            return oggi + timedelta(days=2), d
+        if d.group(2):
+            return oggi + timedelta(days=1), d
+        if d.group(3):
+            return oggi, d
+        avanti = (_GIORNI_SETT.index(d.group(4).lower()) - oggi.weekday()) % 7 or 7
+        return oggi + timedelta(days=avanti), d
+    return None, None
+
+
 def trova_incontro(testo: str, oggi: date) -> dict | None:
-    """Se la risposta propone un incontro con una data, la restituisce (con l'ora, se c'è)."""
-    for m in RE_INCONTRO.finditer(testo):
+    """Se la risposta propone un incontro o una telefonata con un giorno, la restituisce (con l'ora, se c'è).
+    `oggi` è il giorno della risposta: «domani» e «venerdì» si contano da lì."""
+    trovati = sorted([(m, "incontro") for m in RE_INCONTRO.finditer(testo)] + [(m, "telefonata") for m in RE_TELEFONATA.finditer(testo)],
+                     key=lambda x: x[0].start())
+    for m, tipo in trovati:
         finestra = testo[max(0, m.start() - 60): m.end() + 160]
-        d = estrai.RE_DATA.search(finestra)
-        if not d:
-            continue
-        giorno = estrai._data_da_match(d)
+        giorno, d = _giorno_vicino(finestra, oggi)
+        o = None
+        if d:
+            o = RE_ORA.search(finestra[d.end():]) or RE_ORA.search(finestra[:d.start()])
+        elif tipo == "telefonata":
+            # «La chiamo alle 15!» senza giorno: è lo stesso giorno della risposta.
+            o = RE_ORA.search(testo[m.end(): m.end() + 40])
+            giorno = oggi if o else None
         if not giorno or not (0 <= (giorno - oggi).days <= 120):
             continue
         ora = None
-        o = RE_ORA.search(finestra[d.end():]) or RE_ORA.search(finestra[:d.start()])
         if o:
             h, minuti = int(o.group(1) or o.group(3)), int(o.group(2) or o.group(4) or 0)
             if 6 <= h <= 21 and minuti < 60:
                 ora = f"{h:02d}:{minuti:02d}"
-        return {"data": giorno.isoformat(), "ora": ora, "frase": estrai.pulisci(finestra)[:200]}
+        if tipo == "telefonata" and not ora and not d:
+            continue
+        trovato = {"data": giorno.isoformat(), "ora": ora, "frase": estrai.pulisci(finestra)[:200]}
+        if tipo == "telefonata":
+            trovato["tipo"] = "telefonata"
+        return trovato
     return None
 
 
@@ -131,7 +176,7 @@ def leggi_risposta(msg, oggi: date) -> dict:
     return {"mid": (msg.get("Message-ID") or "").strip(), "data": quando,
             "da": (getaddresses([_intestazione(msg.get("From"))]) or [("", "")])[0][1].lower(),
             "oggetto": _intestazione(msg.get("Subject"))[:160], "testo": testo[:4000],
-            "compenso": compenso, "euro_ora": euro_ora, "turni": turni, "incontro": trova_incontro(testo, oggi)}
+            "compenso": compenso, "euro_ora": euro_ora, "turni": turni, "incontro": trova_incontro(testo, date.fromisoformat(quando))}
 
 
 def _cartella_speciale(M, segno: str) -> str | None:

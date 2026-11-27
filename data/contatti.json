@@ -102,7 +102,11 @@
     "da": "chiesaserena@cdcsolatrix.it",
     "data": "2026-11-18",
     "euro_ora": null,
-    "incontro": null,
+    "incontro": {
+     "data": "2026-11-18",
+     "frase": "Buongiorno possiamo vederci già oggi pomeriggio alle 14.30 Avrei una certa urgenza Grazie Inviato da Outlook per Android<https://aka.ms/AAb9ysg>",
+     "ora": "14:30"
+    },
     "mid": "<PAXPR01MB83022A8718896F31BAAA87C3B07A2@PAXPR01MB8302.eurprd01.prod.exchangelabs.com>",
     "oggetto": "Re: Infermiere libero professionista – richiesta di informazioni (Rif. R-0c4d0ee9)",
     "testo": "Buongiorno possiamo vederci già oggi pomeriggio alle 14.30\nAvrei una certa urgenza\n\nGrazie\n\nInviato da Outlook per Android<https://aka.ms/AAb9ysg>\n________________________________\nFrom: Gladis Prezzi <ufficiopersonale@cdcsolatrix.it>\nSent: Wednesday, 18 November 2026 11:36:00\nTo: Roberta Ipocoana <ipocoanaroberta@cdcsolatrix.it>; Serena Chiesa <chiesaserena@cdcsolatrix.it>\nSubject: I: Infermiere libero professionista – richiesta di informazioni (Rif. R-0c4d0ee9)\n\nRag. Gladys Prezzi\n\nAmministrazione del Personale\n\nTEL. 0464-491313\n\n[cid:image001.png@01DD7750.FB6CE650]",
@@ -804,7 +808,12 @@
     "da": "selene.rossi@residenzamolino.it",
     "data": "2026-11-27",
     "euro_ora": null,
-    "incontro": null,
+    "incontro": {
+     "data": "2026-11-27",
+     "frase": "Va bene, grazie! La contatto oggi in giornata! Selene Rossi",
+     "ora": null,
+     "tipo": "telefonata"
+    },
     "mid": "<PAWPR10MB475618206589835E41EFDF03FBF8412@PAWPR10MB475618.EURPRD10.PROD.OUTLOOK.COM>",
     "oggetto": "R: Infermiere libero professionista – richiesta di informazioni (Rif. R-d9403e72)",
     "testo": "Va bene, grazie!\nLa contatto oggi in giornata!\n\nSelene Rossi",
@@ -815,7 +824,12 @@
     "da": "selene.rossi@residenzamolino.it",
     "data": "2026-11-27",
     "euro_ora": null,
-    "incontro": null,
+    "incontro": {
+     "data": "2026-11-27",
+     "frase": "Ottimo, la chiamo alle 15! A dopo, Selene",
+     "ora": "15:00",
+     "tipo": "telefonata"
+    },
     "mid": "<PAWPR10MB475618A9BBF2539614245EE3FAF8412@PAWPR10MB475618.EURPRD10.PROD.OUTLOOK.COM>",
     "oggetto": "R: Infermiere libero professionista – richiesta di informazioni (Rif. R-d9403e72)",
     "testo": "Ottimo, la chiamo alle 15!\nA dopo,\n\nSelene",

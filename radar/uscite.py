@@ -262,6 +262,7 @@ def evento_ics(a: dict, adesso: datetime) -> str:
 
 
 def incontro_ics(nome: str, incontro: dict, uid: str, adesso: datetime) -> str:
+    tel = incontro.get("tipo") == "telefonata"
     giorno = date.fromisoformat(incontro["data"])
     if incontro.get("ora"):
         h, m = (int(x) for x in incontro["ora"].split(":"))
@@ -271,9 +272,10 @@ def incontro_ics(nome: str, incontro: dict, uid: str, adesso: datetime) -> str:
         quando = [f"DTSTART;VALUE=DATE:{giorno:%Y%m%d}", f"DTEND;VALUE=DATE:{giorno + timedelta(days=1):%Y%m%d}"]
     righe = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Radar Infermiere//IT", "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
              "BEGIN:VEVENT", f"UID:incontro-{uid}@radar-infermiere", f"DTSTAMP:{adesso.astimezone(timezone.utc):%Y%m%dT%H%M%SZ}",
-             *quando, f"SUMMARY:{_ics_testo('Incontro: ' + nome)}",
+             *quando, f"SUMMARY:{_ics_testo(('Telefonata: ' if tel else 'Incontro: ') + nome)}",
              f"DESCRIPTION:{_ics_testo('Dalla risposta: ' + (incontro.get('frase') or '') + ' (data letta in automatico: controllala)')}",
-             "BEGIN:VALARM", "TRIGGER:-P1D", "ACTION:DISPLAY", "DESCRIPTION:Incontro domani", "END:VALARM",
+             "BEGIN:VALARM", "TRIGGER:-PT15M" if tel else "TRIGGER:-P1D", "ACTION:DISPLAY",
+             "DESCRIPTION:Telefonata tra 15 minuti" if tel else "DESCRIPTION:Incontro domani", "END:VALARM",
              "END:VEVENT", "END:VCALENDAR"]
     return "\r\n".join(_ics_piega(r) for r in righe) + "\r\n"
 

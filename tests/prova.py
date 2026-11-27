@@ -1188,5 +1188,24 @@ console.log(JSON.stringify({ a: a.map(function (x) { return x.testo; }), b: b.ma
     _ris = _json.loads(subprocess.run(["node", "-e", _prova_js], capture_output=True, text=True, check=True).stdout)
     verifica("app: niente «Chiama» con il numero di Michael", _ris["a"], [])
     verifica("app: i numeri delle strutture restano", _ris["b"], ["0464 688044", "+39 349 6424461"])
+
+print("\nRevisione del 27/11")
+# 27/11: Residenza Molino ha scritto «La contatto oggi in giornata!» e poi «Ottimo, la chiamo alle 15!», ma l'app non
+# mostrava nessun appuntamento; il 18/11 «possiamo vederci già oggi pomeriggio alle 14.30» era sfuggito allo stesso modo.
+# Una telefonata fissata conta come un incontro (tipo «telefonata»); «oggi», «domani», «venerdì», «27/11» valgono come date.
+_v = date(2026, 11, 27)
+verifica("incontro: telefonata con l'ora, giorno della risposta", posta.trova_incontro("Ottimo, la chiamo alle 15!\nA dopo,\n\nSelene", _v),
+         {"data": "2026-11-27", "ora": "15:00", "frase": "Ottimo, la chiamo alle 15! A dopo, Selene", "tipo": "telefonata"})
+verifica("incontro: telefonata «oggi in giornata»", (posta.trova_incontro("Va bene, grazie!\nLa contatto oggi in giornata!", _v) or {}).get("data"), "2026-11-27")
+verifica("incontro: «vederci oggi pomeriggio alle 14.30»",
+         {k: v for k, v in (posta.trova_incontro("Buongiorno possiamo vederci già oggi pomeriggio alle 14.30", date(2026, 11, 18)) or {}).items() if k != "frase"},
+         {"data": "2026-11-18", "ora": "14:30"})
+verifica("incontro: colloquio venerdì senza data", (posta.trova_incontro("Possiamo fare un colloquio venerdì alle 10?", date(2026, 11, 25)) or {}).get("data"), "2026-11-27")
+verifica("incontro: data senza anno", (posta.trova_incontro("Le propongo un colloquio il 2/12 alle 9.30.", _v) or {}).get("ora"), "09:30")
+verifica("incontro: «la contatteremo» senza giorno non è una telefonata",
+         posta.trova_incontro("Terremo presente la sua disponibilità e la contatteremo per eventuali future esigenze.", _v), None)
+verifica("incontro: «chiamata in servizio» senza giorno no", posta.trova_incontro("Il bando prevede la chiamata in servizio a tempo determinato.", _v), None)
+_ics = uscite.incontro_ics("Residenza Molino", {"data": "2026-11-27", "ora": "15:00", "frase": "la chiamo alle 15", "tipo": "telefonata"}, "x", datetime(2026, 11, 27, 9))
+verifica("calendario: la telefonata si chiama così", ("SUMMARY:Telefonata: Residenza Molino" in _ics, "TRIGGER:-PT15M" in _ics), (True, True))
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)
