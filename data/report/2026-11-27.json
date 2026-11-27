@@ -1,31 +1,14 @@
 {
  "aggiornati": [],
- "attivi": 33,
- "attivi_piva": 11,
+ "attivi": 32,
+ "attivi_piva": 10,
  "data": "2026-11-27",
- "fonti_lette": 34,
+ "fonti_lette": 35,
  "fonti_totali": 36,
- "giri": 3,
- "nuovi": [
-  {
-   "cambi": [],
-   "compenso": null,
-   "contratto": "P.IVA o dipendente",
-   "datore": "ASUIT (Trentino)",
-   "id": "34cc028f851a",
-   "minuti": 25,
-   "piva": true,
-   "provincia": null,
-   "punteggio": 49,
-   "scadenza": null,
-   "titolo": "“Non voglio più ridurre i pazienti a numeri”. La scelta di Giuliano Zandonai, infermiere che ...",
-   "url": "https://www.ildolomiti.it/cronaca/2026/non-voglio-piu-ridurre-i-pazienti-a-numeri-la-scelta-di-giuliano-zandonai-infermiere-che-ha-lasciato-il-posto-fisso-in-ospedale-non-tornerei-nemmeno-per-mille-euro-in-piu",
-   "zona": "Trento"
-  }
- ],
+ "giri": 4,
+ "nuovi": [],
  "problemi": [
-  "OPI Bolzano – offerte di lavoro: oggi nessun annuncio nell'elenco, mentre prima ce n'erano (ultima lettura buona: 2026-11-27). Il sito potrebbe aver cambiato struttura.",
-  "Case di riposo dell'Alto Adige (VdS) – offerte: errore di rete (ConnectionError)"
+  "OPI Bolzano – offerte di lavoro: oggi nessun annuncio nell'elenco, mentre prima ce n'erano (ultima lettura buona: 2026-11-27). Il sito potrebbe aver cambiato struttura."
  ],
  "scadenze7": [
   {
