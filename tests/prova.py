@@ -1282,5 +1282,18 @@ verifica("email: l'appuntamento è nell'oggetto e nel testo",
 _o, _t, _h = uscite.componi_email({**_vuoto, "appuntamenti": [{"nome": "Molino", "data": "2026-11-28", "ora": "15:00", "tipo": "telefonata"}]}, None)
 verifica("email: telefonata di oggi", "oggi alle 15:00 – telefonata: Molino" in _t, True)
 verifica("email: senza appuntamenti resta «niente di nuovo»", uscite.componi_email(_vuoto, None)[0], "Radar 28/11: niente di nuovo")
+# 28/11: nel giro di prova delle 10:47 OPI Bolzano ha mandato al posto dell'elenco una pagina di controllo anti-robot
+# («Un momento, per favore… Attendi che la tua richiesta venga verificata», 12.092 caratteri, zero link) e l'email
+# avrebbe detto «Il sito potrebbe aver cambiato struttura». È un blocco passeggero: va detto così (gli annunci restano).
+_blocco = ("<html><head><title>Un momento, per favore…</title></head><body><div>Loader</div>"
+           "<p>Attendi che la tua richiesta venga verificata…</p><script>var x=1;</script></body></html>")
+_f_bl = {"nome": "OPI Bolzano", "tipo": "elenco", "url": "https://www.opibz.it/?page_id=5109", "affidabilita": "ufficiale"}
+_st_bl = {"massimo_candidati": 20, "ultimo_ok": "2026-11-27"}
+_es_bl = motore.raccogli_fonte(_f_bl, ReteFinta({_f_bl["url"]: _blocco}), CFG, COMUNI, OGGI, {}, _st_bl, {})
+verifica("elenco: una pagina di controllo anti-robot è un problema passeggero, non un sito cambiato",
+         ("anti-robot" in (_es_bl["errore"] or ""), "cambiato struttura" in (motore.aggiorna_stato_fonti(_st_bl, _f_bl, _es_bl, OGGI) or "")), (True, False))
+verifica("elenco: una pagina vera senza link resta «sito cambiato»",
+         motore.raccogli_fonte(_f_bl, ReteFinta({_f_bl["url"]: "<html><head><title>Offerte di lavoro</title></head><body><p>Nessuna offerta</p></body></html>"}),
+                               CFG, COMUNI, OGGI, {}, {"massimo_candidati": 20}, {})["errore"], None)
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)

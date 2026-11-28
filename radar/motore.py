@@ -277,6 +277,10 @@ def _costruisci(cand: dict, testo: str, pubblicato, fonte: dict, cfg: dict, comu
     return a, None
 
 
+RE_CONTROLLO_ROBOT = re.compile(r"un\s+momento,?\s+per\s+favore|richiesta\s+venga\s+verificata|just\s+a\s+moment|checking\s+your\s+browser|"
+                                r"verify(?:ing)?\s+you\s+are\s+(?:a\s+)?human|bitte\s+warten|anfrage\s+wird\s+(?:gepr|überpr)", re.I)
+
+
 def _passeggero(errore: str) -> bool:
     """Errori che non dicono nulla sull'annuncio (rete lenta, server occupato), a differenza di un 404."""
     if errore.startswith(("tempo scaduto", "errore di rete")):
@@ -407,6 +411,12 @@ def raccogli_fonte(fonte: dict, rete, cfg: dict, comuni: list[dict], oggi: date,
                 titolo_pag = re.search(r"<title[^>]*>(.*?)</title>", html or "", re.I | re.S)
                 pagina_nota.update(caratteri=len(html or ""), titolo=estrai.pulisci(titolo_pag.group(1))[:120] if titolo_pag else None,
                                    inizio=estrai.senza_tag(re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", html or ""))[:300])
+                # OPI Bolzano 28/11: «Un momento, per favore… Attendi che la tua richiesta venga verificata».
+                # Un controllo anti-robot non dice che il sito è cambiato: è passeggero (non si aggira: si riprova al giro dopo).
+                if i == 0 and RE_CONTROLLO_ROBOT.search(f"{pagina_nota['titolo'] or ''} {pagina_nota['inizio']}"):
+                    nota["pagine"].append(pagina_nota)
+                    esito["errore"] = "pagina di controllo anti-robot al posto dell'elenco (passeggero): annunci tenuti dall'ultima lettura buona"
+                    return esito
             nota["pagine"].append(pagina_nota)
             for c in trovati:
                 chiave = estrai.normalizza_url(c["url"])
