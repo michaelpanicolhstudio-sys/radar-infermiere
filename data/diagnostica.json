@@ -1105,61 +1105,6 @@
     ]
    ]
   },
-  "Avvisi email – Adecco": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Etjca": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Gi Group": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Indeed": {
-   "accettati": 4,
-   "candidati": 4,
-   "scartati": []
-  },
-  "Avvisi email – InfoJobs": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Jobrapido": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – LinkedIn": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Manpower": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Openjobmetis": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Randstad": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
-  "Avvisi email – Umana": {
-   "accettati": 0,
-   "candidati": 0,
-   "scartati": []
-  },
   "Brixsana Bressanone – Karriere": {
    "accettati": [
     "Infermiere/a (KrankenpflegerIn) – tempo pieno, da subito"
@@ -1404,6 +1349,14 @@
   },
   "Google Alerts 11": {
    "accettati": [],
+   "gia_scartati": [
+    [
+     "“Non voglio più ridurre i pazienti a numeri”. La scelta di Giuliano Zandonai, infermiere che ...",
+     "notizia, non un'offerta di lavoro",
+     "https://www.ildolomiti.it/cronaca/2026/non-voglio-piu-ridurre-i-pazienti-a-numeri-la-scelta-di-giuliano-zandonai-infermiere-che-ha-lasciato-il-posto-fisso-in-ospedale-non-tornerei-nemmeno-per-mille-euro-in-piu",
+     "2026-11-28"
+    ]
+   ],
    "pagine": [
     {
      "candidati": 1,
@@ -1412,15 +1365,7 @@
      "url": "feed"
     }
    ],
-   "pdf_scartati": [],
-   "scartati": [
-    [
-     "“Non voglio più ridurre i pazienti a numeri”. La scelta di Giuliano Zandonai, infermiere che ...",
-     "notizia, non un'offerta di lavoro",
-     "https://www.ildolomiti.it/cronaca/2026/non-voglio-piu-ridurre-i-pazienti-a-numeri-la-scelta-di-giuliano-zandonai-infermiere-che-ha-lasciato-il-posto-fisso-in-ospedale-non-tornerei-nemmeno-per-mille-euro-in-piu"
-    ]
-   ],
-   "senza_pdf": []
+   "scartati": []
   },
   "Google Alerts 12": {
    "accettati": [],
@@ -1540,18 +1485,10 @@
   },
   "Google Alerts 3": {
    "accettati": [],
-   "gia_scartati": [
-    [
-     "“Non voglio più ridurre i pazienti a numeri”. La scelta di Giuliano Zandonai, infermiere che ...",
-     "notizia, non un'offerta di lavoro",
-     "https://www.ildolomiti.it/cronaca/2026/non-voglio-piu-ridurre-i-pazienti-a-numeri-la-scelta-di-giuliano-zandonai-infermiere-che-ha-lasciato-il-posto-fisso-in-ospedale-non-tornerei-nemmeno-per-mille-euro-in-piu",
-     "2026-11-27"
-    ]
-   ],
    "pagine": [
     {
-     "candidati": 1,
-     "caratteri": 1376,
+     "candidati": 0,
+     "caratteri": 409,
      "titolo_feed": "Google Alert - infermiere partita IVA Trento",
      "url": "feed"
     }
@@ -1639,8 +1576,17 @@
    "scartati": []
   },
   "Gruppo Bonvicini – lavora con noi": {
-   "accettati": [],
-   "pagine": [],
+   "accettati": [
+    "Lavora con noi"
+   ],
+   "pagine": [
+    {
+     "caratteri": 828,
+     "inizio": "Lavora con noi Posizioni aperte Vuoi entrare a far parte del nostro team? Qui trovi tutte le figure professionali che cerchiamo in questo momento. Consulta gli annunci, compila il form e inviaci la tua candidatura. Farmacista a tempo pieno Farmacie Bonvicini Tempo pieno Candidati Fisioterapista per pazienti interni Casa di Cura Bonvicini Tempo pieno: terapie manuali, terapie strumentali, idrokines",
+     "pdf": [],
+     "url": "https://www.gruppobonvicini.it/lavora-con-noi/"
+    }
+   ],
    "scartati": []
   },
   "Martinsbrunn Merano – Job & Karriere": {
@@ -1672,57 +1618,18 @@
    "scartati": []
   },
   "OPI Bolzano – offerte di lavoro": {
-   "accettati": [
-    "Cerchiamo infermiere:i (m/f/d) per la nostra RSA Ciasa de Palsa Ojöp Frëinademetz",
-    "La casa di riposo di Silandro cerca nuovi collaboratori/trici"
-   ],
-   "gia_scartati": [
-    [
-     "Ricerca di funzionario sanitario in comando presso l’INPS di Bolzano",
-     "ruolo diverso (dal titolo)",
-     "https://www.opibz.it/ricerca-di-funzionario-sanitario-in-comando-presso-linps-di-bolzano/",
-     "2026-11-25"
-    ],
-    [
-     "Infermiere a Caorle",
-     "fuori regione",
-     "https://www.opibz.it/infermiere-a-caorle/",
-     "2026-11-25"
-    ],
-    [
-     "Cerchiamo un RESPONSABILE TECNICO-ASSISTENZIALE",
-     "ruolo diverso (dal titolo)",
-     "https://www.opibz.it/cerchiamo-un-responsabile-tecnico-assistenziale/",
-     "2026-11-25"
-    ],
-    [
-     "CERCHIAMO UN/UNA RESPONSABILE DI PIANO",
-     "ruolo diverso (dal titolo)",
-     "https://www.opibz.it/cerchiamo-un-una-responsabile-di-piano/",
-     "2026-11-25"
-    ],
-    [
-     "INPS – Ricerca infermiere/a",
-     "ruolo diverso (coordinamento, direzione o comando)",
-     "https://www.opibz.it/inps-ricerca-infermiere-a/",
-     "2026-11-25"
-    ],
-    [
-     "Avviso – Collegio tecnico – Dirigenza tecnico-assistenziale",
-     "ruolo diverso (dal titolo)",
-     "https://www.opibz.it/avviso-collegio-tecnico-dirigenza-tecnico-assistenziale/",
-     "2026-11-25"
-    ]
-   ],
+   "accettati": [],
    "pagine": [
     {
-     "candidati": 20,
+     "candidati": 0,
+     "caratteri": 12092,
+     "inizio": "Un momento, per favore… Loader Attendi che la tua richiesta venga verificata…",
+     "link_in_pagina": [],
+     "titolo": "Un momento, per favore…",
      "url": "https://www.opibz.it/?page_id=5109"
     }
    ],
-   "pdf_scartati": [],
-   "scartati": [],
-   "senza_pdf": []
+   "scartati": []
   },
   "OPI Trento – annunci di lavoro": {
    "accettati": [
@@ -2046,7 +1953,7 @@
    "scartati": []
   }
  },
- "richieste": 103,
+ "richieste": 98,
  "strutture": {
   "saltato": "aggiornato il 2026-11-22"
  }
