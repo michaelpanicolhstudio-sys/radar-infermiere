@@ -57,6 +57,25 @@ def data_lunga(d: date) -> str:
     return f"{GIORNI[d.weekday()]} {d.day} {MESI[d.month - 1]}"
 
 
+def appuntamenti_vicini(incontri: list[dict], oggi: date, giorni: int = 7) -> list[dict]:
+    """Colloqui e telefonate da oggi ai prossimi `giorni` giorni, uno per struttura e ora, in ordine di data
+    (28/11: il colloquio di Cles dell'1/12 era solo nell'app, l'email del mattino non lo diceva)."""
+    fine, visti, vicini = (oggi + timedelta(days=giorni)).isoformat(), set(), []
+    for inc in sorted(incontri, key=lambda x: (x.get("data") or "", x.get("ora") or "")):
+        chiave = (inc.get("nome"), inc.get("data"), inc.get("ora"))
+        if not inc.get("data") or not (oggi.isoformat() <= inc["data"] <= fine) or chiave in visti:
+            continue
+        visti.add(chiave)
+        vicini.append({k: inc.get(k) for k in ("nome", "data", "ora", "tipo")})
+    return vicini
+
+
+def _quando(inc: dict, oggi: date) -> str:
+    d = date.fromisoformat(inc["data"])
+    giorno = "oggi" if d == oggi else "domani" if (d - oggi).days == 1 else data_lunga(d)
+    return giorno + (f" alle {inc['ora']}" if inc.get("ora") else "")
+
+
 def _conta(n: int, uno: str, molti: str) -> str:
     return f"{n} {uno if n == 1 else molti}"
 
@@ -132,7 +151,8 @@ def componi_email(report: dict, url_app: str | None) -> tuple[str, str, str]:
     stato = f"{_conta(report['attivi'], 'offerta attiva', 'offerte attive')}, {report['fonti_lette']} fonti lette su {report['fonti_totali']}"
 
     risposte, proposte = report.get("risposte_nuove") or [], report.get("da_contattare") or []
-    if not (n or s or p or aggiornati or risposte):
+    appuntamenti = report.get("appuntamenti") or []
+    if not (n or s or p or aggiornati or risposte or appuntamenti):
         oggetto = f"Radar {breve}: niente di nuovo"
         riga = f"Niente di nuovo oggi. {stato[0].upper() + stato[1:]}."
         if url_app:
@@ -140,6 +160,8 @@ def componi_email(report: dict, url_app: str | None) -> tuple[str, str, str]:
         return oggetto, riga, f"<p style=\"font:15px/1.5 -apple-system,'Segoe UI',Arial,sans-serif;color:#18222B\">{html.escape(riga)}</p>"
 
     parti = []
+    if appuntamenti:
+        parti.append(_conta(len(appuntamenti), "appuntamento", "appuntamenti"))
     if risposte:
         parti.append(_conta(len(risposte), "risposta arrivata", "risposte arrivate"))
     if n:
@@ -177,6 +199,14 @@ def componi_email(report: dict, url_app: str | None) -> tuple[str, str, str]:
     if url_app:
         corpo.append(f"<p style='margin:0 0 22px'><a href='{_sicuro(url_app)}' style='display:inline-block;background:#2F47C2;"
                      "color:#ffffff;font-weight:600;font-size:15px;text-decoration:none;padding:11px 20px;border-radius:10px'>Apri l'app</a></p>")
+    if appuntamenti:
+        testo += ["", "APPUNTAMENTI DEI PROSSIMI GIORNI"]
+        corpo.append("<h2 style='margin:22px 0 12px;padding-top:14px;border-top:1px solid #DCE2E7;font-size:16px;font-weight:700'>Appuntamenti dei prossimi giorni</h2>")
+        for inc in appuntamenti:
+            cosa = "telefonata" if inc.get("tipo") == "telefonata" else "colloquio"
+            testo.append(f"- {_quando(inc, giorno)} – {cosa}: {inc.get('nome') or 'n.d.'}")
+            corpo.append(f"<p style='margin:0 0 8px;font-size:14px'><b>{html.escape(_quando(inc, giorno))}</b> – "
+                         f"{cosa}: {html.escape(inc.get('nome') or 'n.d.')}</p>")
     if risposte:
         testo += ["", "RISPOSTE ARRIVATE"]
         corpo.append("<h2 style='margin:22px 0 12px;padding-top:14px;border-top:1px solid #DCE2E7;font-size:16px;font-weight:700'>Risposte arrivate</h2>")

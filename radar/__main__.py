@@ -9,6 +9,7 @@ Opzioni utili:
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import sys
 from datetime import datetime
@@ -158,6 +159,11 @@ def main() -> int:
     memoria = motore.leggi_json(motore.FILE_ANNUNCI, {})
     contatti = motore.leggi_json(uscite.FILE_CONTATTI, {})
     report["risposte_nuove"] = risposte_nuove
+    try:  # gli appuntamenti sono già calcolati per l'app: l'email li ripete (28/11, colloquio di Cles)
+        incontri = json.loads((dest / "dati.json").read_text(encoding="utf-8")).get("incontri") or []
+        report["appuntamenti"] = uscite.appuntamenti_vicini(incontri, oggi)
+    except (OSError, ValueError):
+        report["appuntamenti"] = []
     report["lettere_inviate"] = [v["nome"] for v in inviate]
     report["da_contattare"] = [{"id": a["id"], "titolo": a["titolo"], "datore": a.get("datore")}
                                for a in uscite.scegli_da_contattare(memoria, contatti, cfg, oggi)]

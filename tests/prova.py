@@ -1266,5 +1266,21 @@ verifica("resoconto: «non hanno questo tipo di rapporto» è un no",
              "Siamo spiacenti di non poter accogliere la Sua richiesta.",
              "Al momento non abbiamo necessità; siamo spiacenti di non poter accogliere la richiesta, ma può inviarci il curriculum.")],
          ["no", "no", "no", "più avanti"])
+# 28/11: l'email del mattino diceva solo «3 scadenze vicine», ma martedì 1/12 alle 11 c'è il colloquio di Cles
+# (in app e nel calendario dell'app, non nell'email). Gli appuntamenti dei prossimi 7 giorni vanno anche nell'email.
+_inc = [{"id": None, "nome": "APSP Santa Maria", "data": "2026-12-01", "ora": "11:00", "frase": "…"},
+        {"id": None, "nome": "A.P.S.P. Residenza Molino", "data": "2026-11-27", "ora": "15:00", "tipo": "telefonata"},
+        {"id": None, "nome": "Lontano", "data": "2026-12-20", "ora": "09:00"},
+        {"id": None, "nome": "APSP Santa Maria", "data": "2026-12-01", "ora": "11:00"}]
+verifica("email: appuntamenti dei prossimi 7 giorni, senza quelli passati, lontani o ripetuti",
+         [(x["nome"], x["data"]) for x in uscite.appuntamenti_vicini(_inc, date(2026, 11, 28))], [("APSP Santa Maria", "2026-12-01")])
+_vuoto = {"data": "2026-11-28", "nuovi": [], "aggiornati": [], "scadenze7": [], "top5": [], "problemi": [], "attivi": 31,
+          "fonti_lette": 46, "fonti_totali": 47}
+_o, _t, _h = uscite.componi_email({**_vuoto, "appuntamenti": uscite.appuntamenti_vicini(_inc, date(2026, 11, 28))}, None)
+verifica("email: l'appuntamento è nell'oggetto e nel testo",
+         ("1 appuntamento" in _o, "martedì 1 dicembre alle 11:00 – colloquio: APSP Santa Maria" in _t, "APSP Santa Maria" in _h), (True, True, True))
+_o, _t, _h = uscite.componi_email({**_vuoto, "appuntamenti": [{"nome": "Molino", "data": "2026-11-28", "ora": "15:00", "tipo": "telefonata"}]}, None)
+verifica("email: telefonata di oggi", "oggi alle 15:00 – telefonata: Molino" in _t, True)
+verifica("email: senza appuntamenti resta «niente di nuovo»", uscite.componi_email(_vuoto, None)[0], "Radar 28/11: niente di nuovo")
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)
