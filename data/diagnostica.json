@@ -1604,32 +1604,62 @@
    "scartati": []
   },
   "Melittaklinik Bolzano – lavora con noi": {
-   "accettati": [
-    "Lavora con noi (cerca anche personale infermieristico)"
-   ],
-   "pagine": [
-    {
-     "caratteri": 8639,
-     "inizio": "Close Search Lavora con noi Crescere nella sanità d’eccellenza, nel cuore dell’Alto Adige Entrare in Melittaklinik significa far parte di un polo sanitario d’eccellenza in continua evoluzione, dove competenza medica, innovazione tecnologica e attenzione alla persona si incontrano in un ambiente moderno, sostenibile e multidisciplinare. La nostra clinica rappresenta un punto di riferimento per diag",
-     "pdf": [],
-     "url": "https://melittaklinik.com/lavora-con-noi/"
-    }
-   ],
+   "accettati": [],
+   "pagine": [],
    "scartati": []
   },
   "OPI Bolzano – offerte di lavoro": {
-   "accettati": [],
+   "accettati": [
+    "Cerchiamo infermiere:i (m/f/d) per la nostra RSA Ciasa de Palsa Ojöp Frëinademetz",
+    "La casa di riposo di Silandro cerca nuovi collaboratori/trici"
+   ],
+   "gia_scartati": [
+    [
+     "Ricerca di funzionario sanitario in comando presso l’INPS di Bolzano",
+     "ruolo diverso (dal titolo)",
+     "https://www.opibz.it/ricerca-di-funzionario-sanitario-in-comando-presso-linps-di-bolzano/",
+     "2026-11-25"
+    ],
+    [
+     "Infermiere a Caorle",
+     "fuori regione",
+     "https://www.opibz.it/infermiere-a-caorle/",
+     "2026-11-25"
+    ],
+    [
+     "Cerchiamo un RESPONSABILE TECNICO-ASSISTENZIALE",
+     "ruolo diverso (dal titolo)",
+     "https://www.opibz.it/cerchiamo-un-responsabile-tecnico-assistenziale/",
+     "2026-11-25"
+    ],
+    [
+     "CERCHIAMO UN/UNA RESPONSABILE DI PIANO",
+     "ruolo diverso (dal titolo)",
+     "https://www.opibz.it/cerchiamo-un-una-responsabile-di-piano/",
+     "2026-11-25"
+    ],
+    [
+     "INPS – Ricerca infermiere/a",
+     "ruolo diverso (coordinamento, direzione o comando)",
+     "https://www.opibz.it/inps-ricerca-infermiere-a/",
+     "2026-11-25"
+    ],
+    [
+     "Avviso – Collegio tecnico – Dirigenza tecnico-assistenziale",
+     "ruolo diverso (dal titolo)",
+     "https://www.opibz.it/avviso-collegio-tecnico-dirigenza-tecnico-assistenziale/",
+     "2026-11-25"
+    ]
+   ],
    "pagine": [
     {
-     "candidati": 0,
-     "caratteri": 12092,
-     "inizio": "Un momento, per favore… Loader Attendi che la tua richiesta venga verificata…",
-     "link_in_pagina": [],
-     "titolo": "Un momento, per favore…",
+     "candidati": 20,
      "url": "https://www.opibz.it/?page_id=5109"
     }
    ],
-   "scartati": []
+   "pdf_scartati": [],
+   "scartati": [],
+   "senza_pdf": []
   },
   "OPI Trento – annunci di lavoro": {
    "accettati": [
@@ -1720,17 +1750,8 @@
    ]
   },
   "Schloss Moos – Jobs (sito della cooperativa)": {
-   "accettati": [
-    "Posizioni aperte a Schloss Moos (anche Krankenpfleger:in)"
-   ],
-   "pagine": [
-    {
-     "caratteri": 4161,
-     "inizio": "Schloss Moos – Jobs waldemarker 2026-10-15T11:46:46+02:00 Zu den aktuellen Jobs Jobs am Puls der Zeit. Finde deinen Platz im Leben. Bei uns findest du Aufgaben, die Sinn machen, Kolleg*innen, die mitdenken, und ein Umfeld, in dem du dich entfalten kannst. Ob Berufseinstieg, Umstieg oder Neustart. Bring deine fachliche Kompetenz und deine menschlichen Qualitäten in unser aufgeschlossenes, motiviert",
-     "pdf": [],
-     "url": "https://sozialgenossenschaft-vinzenz.it/schloss-moos/schloss-moos-jobs/"
-    }
-   ],
+   "accettati": [],
+   "pagine": [],
    "scartati": []
   },
   "Schloss Moos – libera professione (suedtirolerjobs)": {
@@ -1925,35 +1946,17 @@
    "scartati": []
   },
   "Villa Sant'Anna Merano – lavora con noi": {
-   "accettati": [
-    "Lavora nella Casa di Cura Sant’Anna di Merano"
-   ],
-   "pagine": [
-    {
-     "caratteri": 4217,
-     "inizio": "Close Search Lavora nella Casa di Cura Sant’Anna di Merano Navigate to the next section La Casa di Cura Sant’Anna cerca medici, chirurghi e professionisti (m/f) Vuoi lavorare in Alto Adige presso la Casa di Cura Sant’Anna e le sue strutture sanitarie? Siamo sempre alla ricerca di personale preparato, capace di arricchire l’offerta della casa di cura. Candidature spontanee Se di seguito non individ",
-     "pdf": [],
-     "url": "https://villa-santanna.eu/lavora-con-noi/"
-    }
-   ],
+   "accettati": [],
+   "pagine": [],
    "scartati": []
   },
   "Vinzenzhaus Bolzano – Jobs": {
-   "accettati": [
-    "Posizioni aperte al Vinzenzhaus (anche Krankenpfleger:in)"
-   ],
-   "pagine": [
-    {
-     "caratteri": 5584,
-     "inizio": "Vinzenzhaus – Jobs waldemarker 2026-11-19T15:51:33+01:00 Zu den aktuellen Jobs Jobs fürs Leben. Pflege deine Talente. Beruflich und persönlich wachsen. Genau das kannst du bei uns. Denn die modernen Pflegeansätze, die wir im Vinzenzhaus verfolgen, sind nicht nur für unsere Senior*innen attraktiv, sondern auch für unser Mitarbeitenden. Bring deine fachliche Kompetenz und deine menschlichen Qualität",
-     "pdf": [],
-     "url": "https://sozialgenossenschaft-vinzenz.it/vinzenzhaus/vinzenzhaus-jobs/"
-    }
-   ],
+   "accettati": [],
+   "pagine": [],
    "scartati": []
   }
  },
- "richieste": 98,
+ "richieste": 104,
  "strutture": {
   "saltato": "aggiornato il 2026-11-22"
  }

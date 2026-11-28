@@ -3,12 +3,15 @@
  "attivi": 31,
  "attivi_piva": 9,
  "data": "2026-11-28",
- "fonti_lette": 35,
+ "fonti_lette": 32,
  "fonti_totali": 36,
- "giri": 2,
+ "giri": 3,
  "nuovi": [],
  "problemi": [
-  "OPI Bolzano – offerte di lavoro: oggi nessun annuncio nell'elenco, mentre prima ce n'erano (ultima lettura buona: 2026-11-28). Il sito potrebbe aver cambiato struttura."
+  "Villa Sant'Anna Merano – lavora con noi: tempo scaduto",
+  "Schloss Moos – Jobs (sito della cooperativa): tempo scaduto",
+  "Vinzenzhaus Bolzano – Jobs: tempo scaduto",
+  "Melittaklinik Bolzano – lavora con noi: tempo scaduto"
  ],
  "scadenze7": [
   {
