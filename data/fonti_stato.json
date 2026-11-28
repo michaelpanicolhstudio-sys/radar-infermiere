@@ -1,6 +1,6 @@
 {
  "APSP Margherita Grazioli (Trento) – lavora con noi": {
-  "giorni_a_zero": 131,
+  "giorni_a_zero": 132,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -9,11 +9,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "APSP Vannetti Rovereto – concorsi e avvisi": {
-  "giorni_a_zero": 131,
+  "giorni_a_zero": 132,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -22,8 +22,8 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "ASUIT – bandi e concorsi": {
   "giorni_a_zero": 0,
@@ -50,8 +50,8 @@
    }
   },
   "ultimi_candidati": 6,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Altenheim Kaltern (Caldaro) – Karriere": {
   "giorni_a_zero": 0,
@@ -63,8 +63,8 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Brixsana Bressanone – Karriere": {
   "giorni_a_zero": 0,
@@ -76,8 +76,8 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Case di riposo dell'Alto Adige (VdS) – offerte": {
   "giorni_a_zero": 0,
@@ -96,11 +96,11 @@
    }
   },
   "ultimi_candidati": 6,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 1": {
-  "giorni_a_zero": 134,
+  "giorni_a_zero": 135,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -109,11 +109,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 10": {
-  "giorni_a_zero": 107,
+  "giorni_a_zero": 108,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -122,24 +122,32 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 11": {
-  "giorni_a_zero": 107,
-  "letti": 0,
-  "massimo_candidati": 0,
+  "giorni_a_zero": 0,
+  "letti": 1,
+  "massimo_candidati": 1,
   "pertinenti": 0,
   "regole": 14,
   "riusati": 0,
-  "scartati": 0,
-  "scarti": {},
-  "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "scartati": 1,
+  "scarti": {
+   "34cc028f851a": {
+    "d": "2026-11-28",
+    "m": "notizia, non un'offerta di lavoro",
+    "t": "“Non voglio più ridurre i pazienti a numeri”. La scelta di Giuliano Zandonai, infermiere c",
+    "tl": "“Non voglio più ridurre i pazienti a numeri”. La scelta di Giuliano Zandonai, infermiere che ...",
+    "u": "https://www.ildolomiti.it/cronaca/2026/non-voglio-piu-ridurre-i-pazienti-a-numeri-la-scelta-di-giuliano-zandonai-infermiere-che-ha-lasciato-il-posto-fisso-in-ospedale-non-tornerei-nemmeno-per-mille-euro-in-piu"
+   }
+  },
+  "ultimi_candidati": 1,
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 12": {
-  "giorni_a_zero": 107,
+  "giorni_a_zero": 108,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -148,11 +156,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 13": {
-  "giorni_a_zero": 107,
+  "giorni_a_zero": 108,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -161,11 +169,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 14": {
-  "giorni_a_zero": 107,
+  "giorni_a_zero": 108,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -174,11 +182,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 15": {
-  "giorni_a_zero": 107,
+  "giorni_a_zero": 108,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -187,12 +195,12 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 16": {
   "giorni_a_zero": 0,
-  "letti": 1,
+  "letti": 0,
   "massimo_candidati": 1,
   "pertinenti": 0,
   "regole": 14,
@@ -208,11 +216,11 @@
    }
   },
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 17": {
-  "giorni_a_zero": 107,
+  "giorni_a_zero": 108,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -221,11 +229,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 18": {
-  "giorni_a_zero": 107,
+  "giorni_a_zero": 108,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -234,11 +242,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 19": {
-  "giorni_a_zero": 107,
+  "giorni_a_zero": 108,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -247,11 +255,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 2": {
-  "giorni_a_zero": 134,
+  "giorni_a_zero": 135,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -260,8 +268,8 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 3": {
   "giorni_a_zero": 0,
@@ -281,12 +289,12 @@
    }
   },
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 4": {
   "giorni_a_zero": 0,
-  "letti": 1,
+  "letti": 0,
   "massimo_candidati": 2,
   "pertinenti": 0,
   "regole": 14,
@@ -315,11 +323,11 @@
    }
   },
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 5": {
-  "giorni_a_zero": 51,
+  "giorni_a_zero": 52,
   "letti": 0,
   "massimo_candidati": 2,
   "pertinenti": 0,
@@ -328,11 +336,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 6": {
-  "giorni_a_zero": 107,
+  "giorni_a_zero": 108,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -341,11 +349,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 7": {
-  "giorni_a_zero": 107,
+  "giorni_a_zero": 108,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -354,11 +362,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 8": {
-  "giorni_a_zero": 107,
+  "giorni_a_zero": 108,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -367,11 +375,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Google Alerts 9": {
-  "giorni_a_zero": 30,
+  "giorni_a_zero": 31,
   "letti": 0,
   "massimo_candidati": 1,
   "pertinenti": 0,
@@ -380,8 +388,8 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Gruppo Bonvicini – lavora con noi": {
   "giorni_a_zero": 0,
@@ -394,7 +402,7 @@
   "scarti": {},
   "ultimi_candidati": 1,
   "ultimo_errore": "risposta HTTP 202",
-  "ultimo_giro": "2026-11-27",
+  "ultimo_giro": "2026-11-28",
   "ultimo_ok": "2026-11-27"
  },
  "Martinsbrunn Merano – Job & Karriere": {
@@ -407,8 +415,8 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Melittaklinik Bolzano – lavora con noi": {
   "giorni_a_zero": 0,
@@ -420,8 +428,8 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "OPI Bolzano – offerte di lavoro": {
   "giorni_a_zero": 0,
@@ -470,8 +478,8 @@
    }
   },
   "ultimi_candidati": 20,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "OPI Trento – annunci di lavoro": {
   "giorni_a_zero": 0,
@@ -503,8 +511,8 @@
    }
   },
   "ultimi_candidati": 15,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Schloss Moos – Jobs (sito della cooperativa)": {
   "giorni_a_zero": 0,
@@ -516,8 +524,8 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Schloss Moos – libera professione (suedtirolerjobs)": {
   "giorni_a_zero": 0,
@@ -529,11 +537,11 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "UPIPA – avvisi delle APSP": {
-  "giorni_a_zero": 134,
+  "giorni_a_zero": 135,
   "letti": 0,
   "massimo_candidati": 0,
   "pertinenti": 0,
@@ -542,8 +550,8 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 0,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "UPIPA – concorsi delle APSP": {
   "giorni_a_zero": 0,
@@ -563,8 +571,8 @@
    }
   },
   "ultimi_candidati": 3,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Villa Sant'Anna Merano – lavora con noi": {
   "giorni_a_zero": 0,
@@ -576,8 +584,8 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  },
  "Vinzenzhaus Bolzano – Jobs": {
   "giorni_a_zero": 0,
@@ -589,7 +597,7 @@
   "scartati": 0,
   "scarti": {},
   "ultimi_candidati": 1,
-  "ultimo_giro": "2026-11-27",
-  "ultimo_ok": "2026-11-27"
+  "ultimo_giro": "2026-11-28",
+  "ultimo_ok": "2026-11-28"
  }
 }

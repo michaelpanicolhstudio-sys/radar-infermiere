@@ -2,9 +2,6 @@
  "avvisi": {
   "Adecco": {
    "altri_link": [
-    "richiedi la password per accedere al tuo account",
-    "Attiva i Job Alert",
-    "offerte di lavoro",
     "Per vedere questa mail come una pagina web clicca qui",
     "Scopri di più",
     "Scopri di più",
@@ -13,13 +10,15 @@
     "Scopri di più",
     "Inizia ora",
     "clicca qui",
-    "AGGIORNA CV"
+    "AGGIORNA CV",
+    "CV MAKER",
+    "CONSIGLI",
+    "Iscriviti al canale Telegram della tua città"
    ],
    "annunci": 0,
-   "email": 2,
+   "email": 1,
    "esempi": [],
    "oggetti": [
-    "Candidatura per la posizione JN -082026-759861 completata!",
     "Fai emergere il tuo valore professionale"
    ]
   },
@@ -44,26 +43,26 @@
     "Centro di supporto",
     "Visualizza annuncio",
     "Non adatto al mio profilo",
-    "Assistente di studio odontoiatrico (ASO)",
     "Scopri di più",
-    "Modifica profilo"
+    "Modifica profilo",
+    "Metti in pausa queste email"
    ],
-   "annunci": 5,
+   "annunci": 4,
    "conferme": [
     "INFERMIERE - Trento e provincia"
    ],
-   "email": 8,
+   "email": 6,
    "esempi": [
-    "Infermiera / Infermiere Professionale Coop SOS Bolzano - Bozen, Trentino-Alto Adige",
     "infermiere/a CITTA' AZZURRA SOC. COOP. BOLZANO 39100 Bolzano - Bozen",
-    "IQVIA Italia Infermiere per attività domiciliari IQVIA Solutions Italy srl Provincia di Trento, Trentino-Alto Adige"
+    "IQVIA Italia Infermiere per attività domiciliari IQVIA Solutions Italy srl Provincia di Trento, Trentino-Alto Adige",
+    "INFERMIERE M/F CERBA HEALTHCARE CORPORATE SERVICELAB S.R.L. Provincia di Trento, Trentino-Alto Adige"
    ],
    "oggetti": [
-    "Infermiera / Infermiere Professionale presso Coop SOS",
-    "Assistente di studio odontoiatrico (ASO) presso Smile Line Ortodonzia",
     "infermiere/a presso CITTA' AZZURRA SOC. COOP. BOLZANO",
     "IQVIA Italia Infermiere per attività domiciliari presso IQVIA Solutions Italy srl",
-    "INFERMIERE M/F presso CERBA HEALTHCARE CORPORATE SERVICELAB S.R.L."
+    "INFERMIERE M/F presso CERBA HEALTHCARE CORPORATE SERVICELAB S.R.L.",
+    "INFERMIERE - Trento e provincia presso Sol spa",
+    "Candidatura per INFERMIERE - Trento e provincia attraverso Indeed"
    ]
   },
   "InfoJobs": {
@@ -107,10 +106,10 @@
    "esempi": []
   }
  },
- "data": "2026-11-27",
+ "data": "2026-11-28",
  "note": [
-  "• Posta: 48 contatti inviati, 1 risposte nuove",
-  "• Avvisi di Indeed: 5 annunci per infermieri nelle email degli ultimi giorni",
+  "• Posta: 48 contatti inviati, 0 risposte nuove",
+  "• Avvisi di Indeed: 4 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di LinkedIn: 0 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di InfoJobs: 0 annunci per infermieri nelle email degli ultimi giorni",
   "• Avvisi di Jobrapido: 0 annunci per infermieri nelle email degli ultimi giorni",

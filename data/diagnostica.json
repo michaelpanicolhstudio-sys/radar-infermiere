@@ -1,5 +1,5 @@
 {
- "data": "2026-11-27",
+ "data": "2026-11-28",
  "esplora": [
   {
    "caratteri": 3291,
@@ -1105,6 +1105,61 @@
     ]
    ]
   },
+  "Avvisi email – Adecco": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – Etjca": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – Gi Group": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – Indeed": {
+   "accettati": 4,
+   "candidati": 4,
+   "scartati": []
+  },
+  "Avvisi email – InfoJobs": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – Jobrapido": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – LinkedIn": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – Manpower": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – Openjobmetis": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – Randstad": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
+  "Avvisi email – Umana": {
+   "accettati": 0,
+   "candidati": 0,
+   "scartati": []
+  },
   "Brixsana Bressanone – Karriere": {
    "accettati": [
     "Infermiere/a (KrankenpflegerIn) – tempo pieno, da subito"
@@ -1351,13 +1406,21 @@
    "accettati": [],
    "pagine": [
     {
-     "candidati": 0,
-     "caratteri": 436,
+     "candidati": 1,
+     "caratteri": 1410,
      "titolo_feed": "Google Alert - infermiere \"assistenza domiciliare\" OR ADI Trento OR Bolzano",
      "url": "feed"
     }
    ],
-   "scartati": []
+   "pdf_scartati": [],
+   "scartati": [
+    [
+     "“Non voglio più ridurre i pazienti a numeri”. La scelta di Giuliano Zandonai, infermiere che ...",
+     "notizia, non un'offerta di lavoro",
+     "https://www.ildolomiti.it/cronaca/2026/non-voglio-piu-ridurre-i-pazienti-a-numeri-la-scelta-di-giuliano-zandonai-infermiere-che-ha-lasciato-il-posto-fisso-in-ospedale-non-tornerei-nemmeno-per-mille-euro-in-piu"
+    ]
+   ],
+   "senza_pdf": []
   },
   "Google Alerts 12": {
    "accettati": [],
@@ -1409,6 +1472,14 @@
   },
   "Google Alerts 16": {
    "accettati": [],
+   "gia_scartati": [
+    [
+     "“Non voglio più ridurre i pazienti a numeri”. La scelta di Giuliano Zandonai, infermiere che ...",
+     "notizia, non un'offerta di lavoro",
+     "https://www.ildolomiti.it/cronaca/2026/non-voglio-piu-ridurre-i-pazienti-a-numeri-la-scelta-di-giuliano-zandonai-infermiere-che-ha-lasciato-il-posto-fisso-in-ospedale-non-tornerei-nemmeno-per-mille-euro-in-piu",
+     "2026-11-27"
+    ]
+   ],
    "pagine": [
     {
      "candidati": 1,
@@ -1417,15 +1488,7 @@
      "url": "feed"
     }
    ],
-   "pdf_scartati": [],
-   "scartati": [
-    [
-     "“Non voglio più ridurre i pazienti a numeri”. La scelta di Giuliano Zandonai, infermiere che ...",
-     "notizia, non un'offerta di lavoro",
-     "https://www.ildolomiti.it/cronaca/2026/non-voglio-piu-ridurre-i-pazienti-a-numeri-la-scelta-di-giuliano-zandonai-infermiere-che-ha-lasciato-il-posto-fisso-in-ospedale-non-tornerei-nemmeno-per-mille-euro-in-piu"
-    ]
-   ],
-   "senza_pdf": []
+   "scartati": []
   },
   "Google Alerts 17": {
    "accettati": [],
@@ -1497,6 +1560,14 @@
   },
   "Google Alerts 4": {
    "accettati": [],
+   "gia_scartati": [
+    [
+     "“Non voglio più ridurre i pazienti a numeri”. La scelta di Giuliano Zandonai, infermiere che ...",
+     "notizia, non un'offerta di lavoro",
+     "https://www.ildolomiti.it/cronaca/2026/non-voglio-piu-ridurre-i-pazienti-a-numeri-la-scelta-di-giuliano-zandonai-infermiere-che-ha-lasciato-il-posto-fisso-in-ospedale-non-tornerei-nemmeno-per-mille-euro-in-piu",
+     "2026-11-27"
+    ]
+   ],
    "pagine": [
     {
      "candidati": 1,
@@ -1505,15 +1576,7 @@
      "url": "feed"
     }
    ],
-   "pdf_scartati": [],
-   "scartati": [
-    [
-     "“Non voglio più ridurre i pazienti a numeri”. La scelta di Giuliano Zandonai, infermiere che ...",
-     "notizia, non un'offerta di lavoro",
-     "https://www.ildolomiti.it/cronaca/2026/non-voglio-piu-ridurre-i-pazienti-a-numeri-la-scelta-di-giuliano-zandonai-infermiere-che-ha-lasciato-il-posto-fisso-in-ospedale-non-tornerei-nemmeno-per-mille-euro-in-piu"
-    ]
-   ],
-   "senza_pdf": []
+   "scartati": []
   },
   "Google Alerts 5": {
    "accettati": [],
