@@ -50,7 +50,7 @@ Prima di tutto: «preparami / prepariamo» NON è «invia». Prepara la lettera,
 - `git pull`, poi leggi TUTTO data/contatti.json: per ogni struttura `risposte` (da, data, oggetto, testo, mid) e `mie_risposte`. Non dire mai «non c'è niente» senza averlo letto tutto.
 - Una risposta è in attesa se non c'è una `mie_risposte` con data uguale o successiva.
 - Conta solo ciò che ha scritto la struttura: il testo salvato può contenere sotto la lettera di Michael citata («Il giorno … ha scritto:» anche su due righe, «From:», «Da "…"», o la lettera incollata senza intestazione), la firma con P.IVA e la nota legale. «Immediatamente / subito» della nota legale, «P.IVA» della firma e «libero professionista» dell'oggetto citato non dicono né il rapporto né la data d'inizio: se la struttura non lo scrive, «n.d.».
-- Esito: «ora no, ma mandi il CV / un'offerta / terremo presente la sua disponibilità» è «più avanti»; «coperto da personale dipendente» o «non collaboriamo con liberi professionisti» è «no», anche se promettono di ricontattare.
+- Esito: «ora no, ma mandi il CV / un'offerta / terremo presente la sua disponibilità» è «più avanti»; «coperto da personale dipendente», «non collaboriamo con liberi professionisti», «non hanno questo tipo di rapporto» o «spiacenti di non poter accogliere» (senza richiesta di CV) è «no», anche se promettono di ricontattare.
 - Riporta sempre turni e monte ore al mese se la struttura li scrive («7–15 turni/mese da 8 h, max 195 h/mese», «min. 60–80 h/mese»): per la partita IVA sono il dato che decide il guadagno. Se non li scrive, «n.d.».
 
 ## Rispondere a una struttura (solo dopo «invia»)
@@ -70,6 +70,7 @@ Prima di tutto: «preparami / prepariamo» NON è «invia». Prepara la lettera,
 
 ## Report e allarmi
 - Per dire cosa c'è di nuovo leggi `data/report/<oggi>.json` (nuovi, aggiornati, problemi) e `data/annunci.json`; per le risposte vale la sezione «Controllare le risposte».
+- Nel report metti per primi gli appuntamenti dei prossimi 7 giorni (colloqui e telefonate, da `incontri` dell'app o da data/esiti.json): l'email del mattino li elenca in cima e nell'oggetto, il riassunto in chat deve fare lo stesso.
 - Le email dei portali che confermano una candidatura («Candidatura inviata», link /indeedapply/) non sono offerte nuove: non riportarle come novità.
 - Gli articoli di giornale (cronaca, interviste a infermieri) non sono offerte, anche se parlano di partita IVA: dalle «novità» toglili, senza prendere datore o contratto dal testo dell'articolo.
 - Se un annuncio dice solo la provincia («Provincia di Trento»), nel report scrivi «provincia di Trento (comune n.d.)», non «zona n.d.»: mai il capoluogo né i suoi minuti.

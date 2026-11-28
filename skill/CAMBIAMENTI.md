@@ -1,5 +1,6 @@
 # Cambiamenti della skill radar-infermiere (dal più recente)
 
+- 2026-11-28 — «Controllare le risposte»: «non hanno questo tipo di rapporto» e «spiacenti di non poter accogliere» sono «no». «Report»: gli appuntamenti dei prossimi 7 giorni vanno per primi, come nell'email del mattino.
 - 2026-11-27 (sera) — «App e stato»: i colloqui e le telefonate fissati si scrivono in esiti.json con giorno e ora (o campo `incontro`), così vanno in app e calendario; le proposte di Michael non confermate no.
 - 2026-11-27 — «App e stato»: anche le telefonate promesse («la chiamo alle 15») sono appuntamenti, con i giorni a parole contati dal giorno della risposta; prima di aggiornare esiti.json leggere tutte le risposte del giorno. «Report»: niente datore ripetuto nel titolo, «scade oggi / domani»; gli articoli di giornale non sono novità anche se citano la partita IVA.
 - 2026-11-26 (sera) — «App e stato»: nel prossimo passo solo i numeri della struttura, non quello di Michael. «Report»: titoli tagliati a fine parola, date gg/mm/aaaa.
