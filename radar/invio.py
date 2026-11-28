@@ -24,7 +24,9 @@ from . import conti, estrai, lettere, motore, posta
 ESCLUDI_TIPI = re.compile(r"penitenziar", re.I)
 RE_NO = re.compile(r"non\s+(?:abbiamo|cerchiamo|ricerchiamo|necessitiamo|è\s+previst|sono\s+previst|ci\s+avvaliamo|utilizziamo|collaboriamo)|"
                    r"al\s+momento\s+no|non\s+ci\s+sono\s+(?:posizioni|esigenze)|keinen\s+bedarf|derzeit\s+(?:nicht|kein)|"
-                   r"leider\s+(?:nicht|kein)|nur\s+(?:angestellt|festangestellt)", re.I)
+                   r"leider\s+(?:nicht|kein)|nur\s+(?:angestellt|festangestellt)|"
+                   # «Spiacente non poter accogliere la sua richiesta» (Oltradige-Bassa Atesina 27/11)
+                   r"spiacent\w*\s+(?:di\s+)?non\s+poter\w*\s+accogliere|non\s+(?:possiamo|potendo)\s+accogliere", re.I)
 RE_SI = re.compile(r"siamo\s+interessat|interessat[oi]\s+a|volentieri|saremmo\s+lieti|ben\s+volentieri|abbiamo\s+bisogno|"
                    r"cerchiamo|ricerchiamo|(?<!candidati\s)disponibili\s+a|gerne|interesse\s+an|wir\s+suchen|bedarf\s+besteht|freuen\s+uns", re.I)
 RE_LP = re.compile(r"libera\s+profession|libero\s+professionist|partita\s+iva|p\.\s?iva|freiberuf|mwst", re.I)
@@ -202,7 +204,10 @@ RE_SI_FORTE = re.compile(r"colloqui|vederci|incontrarci|stiamo\s+(?:ancora\s+)?c
                          r"difficolt[àa]\s+a\s+(?:reperire|trovare)|vorstellungsgespr[äa]ch|kennenlern", re.I)
 RE_NO_ORA = re.compile(r"non\s+(?:abbiamo|vi\s+è|c['’]\s*è|ci\s+sono|si\s+ravvisa)\s+(?:al\s+momento\s+)?(?:la\s+|alcun[ao]?\s+)?(?:necessit|bisogno|esigenz)|"
                        r"al\s+completo|copert[oi]\s+da\s+personale|non\s+(?:è|e)\s+(?:una\s+struttura\s+)?sanitaria|non\s+sanitari[ao]", re.I)
+# «Le strutture non hanno questo tipo di rapporto lavorativo» (Oltradige-Bassa Atesina 27/11): non usano la libera professione.
 RE_NO_DEFINITIVO = re.compile(r"non\s+sanitari[ao]|non\s+(?:è|e)\s+(?:una\s+struttura\s+)?sanitaria|non\s+collaboriamo|"
+                              r"non\s+(?:hanno|abbiamo|prevediamo|prevedono|attiviamo|utilizziamo)\s+(?:attualmente\s+|al\s+momento\s+)?"
+                              r"(?:questo|questa|tale|tali|questi|queste)\s+(?:tipo|tipi|tipologi\w+|form\w)\s+(?:di\s+)?(?:rapport|collaborazion|contratt|incaric)|"
                               r"non\s+(?:ci\s+avvaliamo|utilizziamo)\s+(?:di\s+)?(?:liberi|libero|infermieri)", re.I)
 # «Terremo (in debita considerazione / presente) la Sua disponibilità / candidatura» (Cristani 24/11).
 RE_TERREMO = re.compile(r"\bterr(?:emo|ò|o)\s+(?:comunque\s+)?(?:in\s+(?:debita\s+|dovuta\s+)?considerazione|presente|conto)[^.!?\n]{0,40}?"

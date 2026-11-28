@@ -1253,5 +1253,18 @@ verifica("esito a mano: cose già successe non sono appuntamenti",
                                               {"aggiornato": "2026-11-18", "prossimo": "CV inviato il 18/11: ti chiamano in caso di necessità."})], [None, None])
 verifica("esito a mano: il campo incontro vince", invio.incontro_manuale({"aggiornato": "2026-11-27", "prossimo": "colloquio martedì 1/12 alle 11",
                                                                           "incontro": {"data": "2026-12-02", "ora": "10:00"}}), {"data": "2026-12-02", "ora": "10:00"})
+
+print("\nRevisione del 28/11")
+# 28/11: la Comunità comprensoriale Oltradige-Bassa Atesina (Altes Spital, Domus Meridiana, 27/11) risponde
+# «Le strutture attualmente non hanno questo tipo di rapporto lavorativo. Spiacente non poter accogliere la sua
+# richiesta»: Michael l'ha messa «no», la lettura automatica diceva «da leggere» (visto confrontando leggi_esito con esiti.json).
+verifica("resoconto: «non hanno questo tipo di rapporto» è un no",
+         [invio.leggi_esito(t)["esito"] for t in (
+             "Ringraziamo per il Suo interesse. Le strutture attualmente non hanno questo tipo di rapporto lavorativo. "
+             "Spiacente non poter accogliere la sua richiesta.",
+             "Non prevediamo questa tipologia di collaborazione.",
+             "Siamo spiacenti di non poter accogliere la Sua richiesta.",
+             "Al momento non abbiamo necessità; siamo spiacenti di non poter accogliere la richiesta, ma può inviarci il curriculum.")],
+         ["no", "no", "no", "più avanti"])
 print("\n" + ("TUTTO OK" if not errori else f"{len(errori)} PROVE FALLITE: {errori}"))
 sys.exit(1 if errori else 0)
